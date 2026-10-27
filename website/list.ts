@@ -17,6 +17,7 @@ import {
   facetById,
   facetOf,
   firstSeenOf,
+  gainOf,
   includedBy,
   glanceHtml,
   installsOf,
@@ -35,6 +36,7 @@ import {
   tagLabel,
   tagOf,
   tagsOf,
+  weeklyOf,
 } from "./skills.ts";
 import { skipped, type Bundle, type Registry, type Skill } from "./types.ts";
 
@@ -46,12 +48,21 @@ const quiet = (tag: string) => tag === "by:community" || facetOf(tag) === "categ
 
 // ------------------------------------------------------------------- state
 
-export type Sort = "installs" | "downloads" | "stars" | "name" | "newest";
+/** The list's three pages: Top ranks by popularity, Hot by recent growth, New by when skills.sh first saw a skill. */
+export type View = "top" | "hot" | "new";
+export const VIEWS: Record<View, { path: string; label: string }> = {
+  top: { path: "", label: "Top" },
+  hot: { path: "hot/", label: "Hot" },
+  new: { path: "new/", label: "New" },
+};
+export type Sort = "installs" | "downloads" | "stars" | "name" | "hot" | "newest";
 export interface State {
+  view: View;
   q: string;
   tags: string[];
   registries: string[];
   repo: string | null;
+  /** Only Top lets you pick a sort; Hot and New have their own. */
   sort: Sort;
   /** One entry per repo: the most popular one stands for the rest. */
   one: boolean;
@@ -60,23 +71,31 @@ export interface State {
   /** Show the skipped skills too, which the list leaves out unless asked for. */
   all: boolean;
 }
-export const SORTS: Record<Sort, string> = {
+/** The sorts Top offers. */
+export const SORTS: Partial<Record<Sort, string>> = {
   installs: "Installs",
   downloads: "Downloads",
   stars: "Repo stars",
   name: "Name",
-  newest: "Newest",
 };
 
-export function parse(search: string): State {
+export function parse(search: string, view: View = "top"): State {
   const p = new URLSearchParams(search);
   const sort = p.get("sort") as Sort | null;
   return {
+    view,
     q: p.get("q") ?? "",
     tags: p.getAll("tag"),
     registries: p.getAll("registry"),
     repo: p.get("repo"),
-    sort: sort && sort in SORTS ? sort : "installs",
+    sort:
+      view === "hot"
+        ? "hot"
+        : view === "new"
+          ? "newest"
+          : sort && sort in SORTS
+            ? sort
+            : "installs",
     one: p.get("one") === "1",
     hide: p.get("hide") === "1",
     all: p.get("all") === "1",
@@ -89,14 +108,14 @@ export function query(s: State): string {
   for (const t of s.tags) p.append("tag", t);
   for (const r of s.registries) p.append("registry", r);
   if (s.repo) p.set("repo", s.repo);
-  if (s.sort !== "installs") p.set("sort", s.sort);
+  if (s.view === "top" && s.sort !== "installs") p.set("sort", s.sort);
   if (s.one) p.set("one", "1");
   if (s.hide) p.set("hide", "1");
   if (s.all) p.set("all", "1");
   const q = p.toString();
   return q ? `?${q}` : "";
 }
-export const FRESH: State = parse("");
+export const fresh = (view: View): State => parse("", view);
 /**
  * Select or unselect a tag. Selecting one unselects its parents and the tags it includes, since
  * either would only repeat or widen it: picking Design under Software engineering narrows the list
@@ -108,8 +127,11 @@ export function toggleTag(tags: string[], tag: string): string[] {
   return [...tags.filter((t) => !related.includes(t)), tag];
 }
 
-/** A link to the skills list filtered to the given state changes. */
-export const skillsLink = (patch: Partial<State>) => href() + query({ ...FRESH, ...patch });
+/** A link to the skills list filtered to the given state changes, on Top unless `patch` names another view. */
+export const skillsLink = (patch: Partial<State>) => {
+  const st = { ...fresh(patch.view ?? "top"), ...patch };
+  return href(VIEWS[st.view].path) + query(st);
+};
 
 // ------------------------------------------------------------------- filtering
 
@@ -196,6 +218,7 @@ const ORDER: Record<Sort, (a: Entry, b: Entry) => number> = {
     a.name.localeCompare(b.name),
   downloads: (a, b) => desc(downloadsOf(a), downloadsOf(b)) || ORDER.installs(a, b),
   stars: (a, b) => desc(starsOf(a), starsOf(b)) || ORDER.installs(a, b),
+  hot: (a, b) => desc(gainOf(a), gainOf(b)) || ORDER.installs(a, b),
   name: (a, b) => a.name.localeCompare(b.name) || ORDER.installs(a, b),
   newest: (a, b) =>
     (firstSeenOf(b) ?? "").localeCompare(firstSeenOf(a) ?? "") || ORDER.installs(a, b),
@@ -252,6 +275,14 @@ function filterChip(
 function metric(s: Entry, st: State): string {
   // A bundle's numbers are its most popular skill's.
   const of = isBundle(s) ? "The most of any of its skills: " : "";
+  if (st.sort === "hot") {
+    const weekly = weeklyOf(s);
+    const gain = gainOf(s);
+    if (!weekly || gain === null)
+      return `<span class="metric muted" title="No weekly installs on skills.sh">no trend</span>`;
+    const [first, last] = [weekly[0], weekly[weekly.length - 1]];
+    return `<span class="metric" title="${of}Installs in the latest week on skills.sh (${compact(last)}, week to ${date(data.asOf.installs)}) minus those 8 weeks earlier (${compact(first)})"><strong>${gain > 0 ? "+" : gain < 0 ? "−" : ""}${compact(Math.abs(gain))}</strong> /week</span>`;
+  }
   if (st.sort === "stars") {
     const stars = starsOf(s);
     return stars === null
@@ -278,7 +309,7 @@ function metric(s: Entry, st: State): string {
 
 const moreLink = (e: Entry, more: number, st: State) =>
   more
-    ? `<a class="more" href="${skillsLink({ repo: repoKey(e), sort: st.sort })}">+${more} more from ${esc(repoKey(e))}</a>`
+    ? `<a class="more" href="${skillsLink({ view: st.view, repo: repoKey(e), sort: st.sort })}">+${more} more from ${esc(repoKey(e))}</a>`
     : "";
 
 function skillRow(s: Skill, more: number, st: State): string {
@@ -435,7 +466,7 @@ export function resultsHtml(st: State): string {
   const { list, hidden, total, bundles } = results(st);
   // Out of every entry once skipped skills show, else out of the listed ones.
   const all = results({
-    ...FRESH,
+    ...fresh(st.view),
     all: st.all || list.some((e) => !isBundle(e) && skipped(data, e)),
   }).total;
   const repoNote = st.repo ? repoById.get(st.repo) : undefined;
@@ -450,9 +481,20 @@ export function resultsHtml(st: State): string {
         st.one && list.length !== total ? `, ${plural(list.length, "repo")}` : ""
       }${isFiltered(st) ? ` <span class="muted">of ${all}</span>` : ""}</p>
       <button type="button" class="filters-toggle" data-action="filters" aria-controls="filters">Filters</button>
-      <label class="sort">Sort by <select id="sort">${(Object.keys(SORTS) as Sort[])
-        .map((s) => `<option value="${s}"${s === st.sort ? " selected" : ""}>${SORTS[s]}</option>`)
-        .join("")}</select></label>
+      ${
+        st.view === "top"
+          ? `<label class="sort">Sort by <select id="sort">${(Object.keys(SORTS) as Sort[])
+              .map(
+                (s) =>
+                  `<option value="${s}"${s === st.sort ? " selected" : ""}>${SORTS[s]}</option>`,
+              )
+              .join("")}</select></label>`
+          : `<p class="sort muted">${
+              st.view === "hot"
+                ? "Most weekly installs gained over 8 weeks"
+                : "Newest on skills.sh first"
+            }</p>`
+      }
       <label class="check"><input type="checkbox" id="one"${st.one ? " checked" : ""} /> One per repo</label>
       <label class="check"><input type="checkbox" id="hide"${st.hide ? " checked" : ""} /> Hide copies</label>
       <label class="check" title="Also show the skills tagged ${esc(data.skip.map((s) => s.tag).join(", "))}, and those gone from their source"><input type="checkbox" id="all"${st.all ? " checked" : ""} /> Show all</label>
@@ -473,7 +515,7 @@ export function resultsHtml(st: State): string {
 
 export function listView(st: State): string {
   return `
-    <div class="skills-view">
+    <div class="skills-view" data-view="${st.view}">
       <aside id="filters" aria-label="Filters">
         <div class="search">
           <label for="q" class="sr-only">Search skills</label>

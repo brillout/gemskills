@@ -1,27 +1,23 @@
 import { dangerouslySkipEscape, escapeInject } from "vike/server";
 import type { PageContextServer } from "vike/types";
 import { href } from "../format.ts";
+import { VIEWS } from "../list.ts";
 import { GITHUB } from "../skills.ts";
 import "../style.css";
 
 /** A page's `Page` returns the HTML of its `<main>`. */
 export type Page = (pageContext: PageContextServer) => string;
 
-const VIEWS = [
-  ["", "Skills"],
-  ["tags/", "Tags"],
-  ["repos/", "Repos"],
-  ["about/", "About"],
-];
+const NAV = [...Object.values(VIEWS).map((v) => [v.path, v.label]), ["tags/", "Tags"]];
 
 export function onRenderHtml(pageContext: PageContextServer) {
   const { title, description } = pageContext.config;
   const value = (v: typeof title) => (typeof v === "function" ? v(pageContext) : (v ?? ""));
-  // Skill and bundle pages belong to the skills list.
-  const path = pageContext.urlPathname.replace(/^\/((skill|bundle)\/.*)?/, "");
-  const nav = VIEWS.map(
+  // Skill and bundle pages belong to Top. Pre-rendering passes paths without their trailing slash.
+  const path = pageContext.urlPathname.replace(/^\/((skill|bundle)\/.*)?/, "").replace(/\/$/, "");
+  const nav = NAV.map(
     ([to, label]) =>
-      `<a href="${href(to)}"${to === path ? ` aria-current="page"` : ""}>${label}</a>`,
+      `<a href="${href(to)}"${to.replace(/\/$/, "") === path ? ` aria-current="page"` : ""}>${label}</a>`,
   ).join("");
   const main = (pageContext.Page as Page)(pageContext);
   return escapeInject`<!doctype html>

@@ -1,4 +1,4 @@
-import { FRESH, listView } from "../../list.ts";
+import { fresh, listView } from "../../list.ts";
 
-/** The skills list, unfiltered; ./+client.ts applies the filters in the URL. */
-export default () => listView(FRESH);
+/** Top: the skills list, unfiltered; ../../list-client.ts applies the filters in the URL. */
+export default () => listView(fresh("top"));

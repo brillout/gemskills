@@ -106,6 +106,19 @@ export const firstSeenOf = (e: Skill | Bundle): string | null =>
   isBundle(e)
     ? (skillsOf(e).map(firstSeenOf).filter(Boolean).sort()[0] ?? null)
     : (e["skills.sh"]?.firstSeen ?? null);
+/** Installs per week on skills.sh over 8 weeks, oldest first; a bundle's are its skill's with the most installs in the latest week. */
+export const weeklyOf = (e: Skill | Bundle): number[] | null =>
+  isBundle(e)
+    ? (skillsOf(e)
+        .map(weeklyOf)
+        .filter((w) => w !== null)
+        .sort((a, b) => b[b.length - 1] - a[a.length - 1])[0] ?? null)
+    : (e["skills.sh"]?.weeklyInstalls ?? null);
+/** How much a skill's weekly installs grew over the 8 weeks: what Hot ranks by. */
+export const gainOf = (e: Skill | Bundle): number | null => {
+  const weekly = weeklyOf(e);
+  return weekly && weekly.length ? weekly[weekly.length - 1] - weekly[0] : null;
+};
 /** The registries that count downloads rather than installs. */
 export const DOWNLOADS = ["clawhub.ai", "skillhub.cn"] as const;
 export const downloadsOf = (e: Skill | Bundle): number | null =>
