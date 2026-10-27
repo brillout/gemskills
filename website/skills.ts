@@ -106,18 +106,11 @@ export const firstSeenOf = (e: Skill | Bundle): string | null =>
   isBundle(e)
     ? (skillsOf(e).map(firstSeenOf).filter(Boolean).sort()[0] ?? null)
     : (e["skills.sh"]?.firstSeen ?? null);
-/** Installs per week on skills.sh over 8 weeks, oldest first; a bundle's are its skill's with the most installs in the latest week. */
-export const weeklyOf = (e: Skill | Bundle): number[] | null =>
-  isBundle(e)
-    ? (skillsOf(e)
-        .map(weeklyOf)
-        .filter((w) => w !== null)
-        .sort((a, b) => b[b.length - 1] - a[a.length - 1])[0] ?? null)
-    : (e["skills.sh"]?.weeklyInstalls ?? null);
-/** How much a skill's weekly installs grew over the 8 weeks: what Hot ranks by. */
-export const gainOf = (e: Skill | Bundle): number | null => {
-  const weekly = weeklyOf(e);
-  return weekly && weekly.length ? weekly[weekly.length - 1] - weekly[0] : null;
+/** Installs on skills.sh in the latest of its 8 weeks. */
+export const weekOf = (e: Skill | Bundle): number | null => {
+  if (isBundle(e)) return most(skillsOf(e).map(weekOf));
+  const weekly = e["skills.sh"]?.weeklyInstalls;
+  return weekly?.length ? weekly[weekly.length - 1] : null;
 };
 /** The registries that count downloads rather than installs. */
 export const DOWNLOADS = ["clawhub.ai", "skillhub.cn"] as const;
@@ -125,6 +118,8 @@ export const downloadsOf = (e: Skill | Bundle): number | null =>
   isBundle(e)
     ? most(skillsOf(e).map(downloadsOf))
     : most(DOWNLOADS.map((r) => e[r]?.downloads ?? null));
+/** All-time downloads, as the skills list counts them: skills.sh installs, else ClawHub or Tencent SkillHub downloads. */
+export const allTimeOf = (e: Skill | Bundle): number | null => installsOf(e) ?? downloadsOf(e);
 
 /** Compare for a descending sort, unknown values last. */
 export const desc = (a: number | null, b: number | null) => (b ?? -1) - (a ?? -1);

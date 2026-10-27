@@ -12,12 +12,10 @@ import {
   bundleHref,
   bundleOf,
   data,
-  desc,
-  downloadsOf,
   facetById,
   facetOf,
   firstSeenOf,
-  gainOf,
+  allTimeOf,
   includedBy,
   glanceHtml,
   installsOf,
@@ -36,7 +34,7 @@ import {
   tagLabel,
   tagOf,
   tagsOf,
-  weeklyOf,
+  weekOf,
 } from "./skills.ts";
 import { skipped, type Bundle, type Registry, type Skill } from "./types.ts";
 
@@ -48,22 +46,135 @@ const quiet = (tag: string) => tag === "by:community" || facetOf(tag) === "categ
 
 // ------------------------------------------------------------------- state
 
-/** The list's three pages: Top ranks by popularity, Hot by recent growth, New by when skills.sh first saw a skill. */
+/** The list's three pages, which differ only in how they sort: Top by downloads, Hot by downloads in the latest week, New by publishing date. */
 export type View = "top" | "hot" | "new";
-export const VIEWS: Record<View, { path: string; label: string }> = {
-  top: { path: "", label: "Top" },
-  hot: { path: "hot/", label: "Hot" },
-  new: { path: "new/", label: "New" },
+export const VIEWS: Record<View, { path: string; label: string; sort: Prop }> = {
+  top: { path: "", label: "Top", sort: "downloads" },
+  hot: { path: "hot/", label: "Hot", sort: "week" },
+  new: { path: "new/", label: "New", sort: "published" },
 };
-export type Sort = "installs" | "downloads" | "stars" | "name" | "hot" | "newest";
+
+/** The numbers every row shows, which the list sorts by and the sliders filter on. */
+export type Prop = "published" | "stars" | "downloads" | "week";
+type Value = number | string;
+interface PropInfo {
+  label: string;
+  /** The entry's value, or null when unknown. Dates are YYYY-MM-DD. */
+  of: (e: Entry) => Value | null;
+  /** Where the value comes from, for its tooltip. */
+  title: (e: Entry) => string;
+  /** The slider's stops, lowest first. The last one is above every value, so the full range includes them all. */
+  stops: Value[];
+  date?: boolean;
+}
+
+/** 0, 10, 20, 50, 100… up past the largest value. */
+function countStops(of: (s: Skill) => number | null): number[] {
+  const max = Math.max(0, ...data.skills.map(of).filter((n) => n !== null));
+  const stops = [0];
+  for (let p = 10; stops[stops.length - 1] <= max; p *= 10) stops.push(p, 2 * p, 5 * p);
+  return stops.slice(0, stops.findIndex((n) => n > max) + 1);
+}
+/** The first of each month, from the earliest date's month to the month after the latest's. */
+function monthStops(of: (s: Skill) => string | null): string[] {
+  const dates = data.skills
+    .map(of)
+    .filter((d) => d !== null)
+    .sort();
+  if (!dates.length) return ["", "~"];
+  const stops: string[] = [];
+  let [y, m] = dates[0].split("-").map(Number);
+  for (;;) {
+    stops.push(`${y}-${String(m).padStart(2, "0")}-01`);
+    if (stops[stops.length - 1] > dates[dates.length - 1]) return stops;
+    [y, m] = m === 12 ? [y + 1, 1] : [y, m + 1];
+  }
+}
+
+const sources = (e: Entry) =>
+  DOWNLOADS.filter((r) => (isBundle(e) ? skillsOf(e) : [e]).some((x) => x[r]))
+    .map((r) => REGISTRIES[r])
+    .join(" and ");
+// A bundle's numbers are its most popular skill's.
+const most = (e: Entry) => (isBundle(e) ? "The most of any of its skills: " : "");
+export const PROPS: Record<Prop, PropInfo> = {
+  published: {
+    label: "Published",
+    of: firstSeenOf,
+    title: (e) =>
+      isBundle(e) ? "When skills.sh first saw one of its skills" : "When skills.sh first saw it",
+    stops: monthStops(firstSeenOf),
+    date: true,
+  },
+  stars: {
+    label: "Stars",
+    of: starsOf,
+    title: (e) => `GitHub stars of ${repoKey(e)}, ${date(data.asOf.stars)}`,
+    stops: countStops(starsOf),
+  },
+  downloads: {
+    label: "Downloads",
+    of: allTimeOf,
+    title: (e) =>
+      installsOf(e) !== null
+        ? `${most(e)}All-time installs on skills.sh, ${date(data.asOf.installs)}`
+        : `${most(e)}Downloads on ${sources(e)}, ${date(data.asOf.downloads)}`,
+    stops: countStops(allTimeOf),
+  },
+  week: {
+    label: "Downloads / week",
+    of: weekOf,
+    title: (e) => `${most(e)}Installs on skills.sh in the week to ${date(data.asOf.installs)}`,
+    stops: countStops(weekOf),
+  },
+};
+const PROP_IDS = Object.keys(PROPS) as Prop[];
+const lastStop = (p: Prop) => PROPS[p].stops.length - 1;
+
+/** A slider's range, as indexes into its stops: `lo` included, `hi` excluded. */
+export type Range = [lo: number, hi: number];
+export const fullRange = (p: Prop): Range => [0, lastStop(p)];
+const fullRanges = () =>
+  Object.fromEntries(PROP_IDS.map((p) => [p, fullRange(p)])) as Record<Prop, Range>;
+export const isNarrowed = (p: Prop, [lo, hi]: Range) => lo > 0 || hi < lastStop(p);
+
+const monthYear = new Intl.DateTimeFormat("en", {
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+/** A slider's range in words, such as "≥ 1K" or "Mar 2026 – May 2026". */
+export function rangeLabel(p: Prop, [lo, hi]: Range): string {
+  const { stops, date } = PROPS[p];
+  if (date) {
+    const month = (i: number) => monthYear.format(new Date(`${stops[i]}T00:00:00Z`));
+    // `hi` is excluded, so the range ends with the month before it.
+    const from = lo > 0 ? month(lo) : null;
+    const to = hi < lastStop(p) ? month(hi - 1) : null;
+    return from && to
+      ? from === to
+        ? from
+        : `${from} – ${to}`
+      : from
+        ? `Since ${from}`
+        : to
+          ? `Until ${to}`
+          : "Any";
+  }
+  const from = lo > 0 ? compact(stops[lo] as number) : null;
+  const to = hi < lastStop(p) ? compact(stops[hi] as number) : null;
+  return from && to ? `${from} – ${to}` : from ? `≥ ${from}` : to ? `< ${to}` : "Any";
+}
+
+export type Sort = Prop;
 export interface State {
   view: View;
   q: string;
   tags: string[];
   registries: string[];
   repo: string | null;
-  /** Only Top lets you pick a sort; Hot and New have their own. */
   sort: Sort;
+  ranges: Record<Prop, Range>;
   /** One entry per repo: the most popular one stands for the rest. */
   one: boolean;
   /** Hide republished copies. */
@@ -71,31 +182,27 @@ export interface State {
   /** Show the skipped skills too, which the list leaves out unless asked for. */
   all: boolean;
 }
-/** The sorts Top offers. */
-export const SORTS: Partial<Record<Sort, string>> = {
-  installs: "Installs",
-  downloads: "Downloads",
-  stars: "Repo stars",
-  name: "Name",
-};
 
 export function parse(search: string, view: View = "top"): State {
   const p = new URLSearchParams(search);
   const sort = p.get("sort") as Sort | null;
+  const ranges = fullRanges();
+  for (const prop of PROP_IDS) {
+    // Such as stars=1000..50000, or published=2026-03-01.. with no upper bound.
+    const [lo, hi] = (p.get(prop) ?? "").split("..");
+    const stops = PROPS[prop].stops.map(String);
+    if (lo && stops.includes(lo)) ranges[prop][0] = stops.indexOf(lo);
+    if (hi && stops.includes(hi) && stops.indexOf(hi) > ranges[prop][0])
+      ranges[prop][1] = stops.indexOf(hi);
+  }
   return {
     view,
     q: p.get("q") ?? "",
     tags: p.getAll("tag"),
     registries: p.getAll("registry"),
     repo: p.get("repo"),
-    sort:
-      view === "hot"
-        ? "hot"
-        : view === "new"
-          ? "newest"
-          : sort && sort in SORTS
-            ? sort
-            : "installs",
+    sort: sort && sort in PROPS ? sort : VIEWS[view].sort,
+    ranges,
     one: p.get("one") === "1",
     hide: p.get("hide") === "1",
     all: p.get("all") === "1",
@@ -108,7 +215,15 @@ export function query(s: State): string {
   for (const t of s.tags) p.append("tag", t);
   for (const r of s.registries) p.append("registry", r);
   if (s.repo) p.set("repo", s.repo);
-  if (s.view === "top" && s.sort !== "installs") p.set("sort", s.sort);
+  if (s.sort !== VIEWS[s.view].sort) p.set("sort", s.sort);
+  for (const prop of PROP_IDS) {
+    const [lo, hi] = s.ranges[prop];
+    if (isNarrowed(prop, [lo, hi]))
+      p.set(
+        prop,
+        `${lo > 0 ? PROPS[prop].stops[lo] : ""}..${hi < lastStop(prop) ? PROPS[prop].stops[hi] : ""}`,
+      );
+  }
   if (s.one) p.set("one", "1");
   if (s.hide) p.set("hide", "1");
   if (s.all) p.set("all", "1");
@@ -181,6 +296,12 @@ function passes(s: Skill, st: State, skip: string | null = null): boolean {
     return false;
   if (st.hide && s.tags.includes("flag:republished")) return false;
   if (st.repo && repoKey(s) !== st.repo) return false;
+  for (const p of PROP_IDS) {
+    const [lo, hi] = st.ranges[p];
+    if (!isNarrowed(p, [lo, hi])) continue;
+    const v = PROPS[p].of(s);
+    if (v === null || v < PROPS[p].stops[lo] || v >= PROPS[p].stops[hi]) return false;
+  }
   if (
     skip !== "registry" &&
     st.registries.length &&
@@ -206,23 +327,19 @@ function bundlePasses(b: Bundle, st: State): boolean {
 }
 
 const isFiltered = (st: State) =>
-  Boolean(st.q || st.tags.length || st.registries.length || st.repo || st.hide);
+  Boolean(st.q || st.tags.length || st.registries.length || st.repo || st.hide) ||
+  PROP_IDS.some((p) => isNarrowed(p, st.ranges[p]));
 
 /** On a tie, such as a bundle and its most installed skill, the bundle goes first. */
 const bundleFirst = (a: Entry, b: Entry) => Number(isBundle(b)) - Number(isBundle(a));
-const ORDER: Record<Sort, (a: Entry, b: Entry) => number> = {
-  installs: (a, b) =>
-    desc(installsOf(a), installsOf(b)) ||
-    desc(downloadsOf(a), downloadsOf(b)) ||
-    bundleFirst(a, b) ||
-    a.name.localeCompare(b.name),
-  downloads: (a, b) => desc(downloadsOf(a), downloadsOf(b)) || ORDER.installs(a, b),
-  stars: (a, b) => desc(starsOf(a), starsOf(b)) || ORDER.installs(a, b),
-  hot: (a, b) => desc(gainOf(a), gainOf(b)) || ORDER.installs(a, b),
-  name: (a, b) => a.name.localeCompare(b.name) || ORDER.installs(a, b),
-  newest: (a, b) =>
-    (firstSeenOf(b) ?? "").localeCompare(firstSeenOf(a) ?? "") || ORDER.installs(a, b),
-};
+/** Compare for a descending sort, unknown values last. */
+const descending = (a: Value | null, b: Value | null) =>
+  a === b ? 0 : a === null ? 1 : b === null ? -1 : a < b ? 1 : -1;
+const order = (sort: Sort) => (a: Entry, b: Entry) =>
+  descending(PROPS[sort].of(a), PROPS[sort].of(b)) ||
+  descending(allTimeOf(a), allTimeOf(b)) ||
+  bundleFirst(a, b) ||
+  a.name.localeCompare(b.name);
 
 /** The filtered, sorted list, plus how many entries each repo hides in one-per-repo mode. Skills that only work inside their bundle are listed in it. */
 function results(st: State): {
@@ -234,7 +351,7 @@ function results(st: State): {
   const matching = [
     ...data.bundles.filter((b) => bundlePasses(b, st)),
     ...data.skills.filter((s) => ownEntry(s) && passes(s, st)),
-  ].sort(ORDER[st.sort]);
+  ].sort(order(st.sort));
   const hidden = new Map<string, number>();
   const counted = { total: matching.length, bundles: matching.filter(isBundle).length };
   if (!st.one) return { list: matching, hidden, ...counted };
@@ -272,39 +389,14 @@ function filterChip(
   }><span>${esc(label)}</span><span class="n">${n}</span></button>`;
 }
 
-function metric(s: Entry, st: State): string {
-  // A bundle's numbers are its most popular skill's.
-  const of = isBundle(s) ? "The most of any of its skills: " : "";
-  if (st.sort === "hot") {
-    const weekly = weeklyOf(s);
-    const gain = gainOf(s);
-    if (!weekly || gain === null)
-      return `<span class="metric muted" title="No weekly installs on skills.sh">no trend</span>`;
-    const [first, last] = [weekly[0], weekly[weekly.length - 1]];
-    return `<span class="metric" title="${of}Installs in the latest week on skills.sh (${compact(last)}, week to ${date(data.asOf.installs)}) minus those 8 weeks earlier (${compact(first)})"><strong>${gain > 0 ? "+" : gain < 0 ? "−" : ""}${compact(Math.abs(gain))}</strong> /week</span>`;
-  }
-  if (st.sort === "stars") {
-    const stars = starsOf(s);
-    return stars === null
-      ? `<span class="metric muted" title="No GitHub repo star count">no stars</span>`
-      : `<span class="metric" title="GitHub stars of ${esc(repoKey(s))} on ${date(data.asOf.stars)}"><strong>${compact(stars)}</strong> stars</span>`;
-  }
-  const firstSeen = firstSeenOf(s);
-  if (st.sort === "newest" && firstSeen)
-    return `<span class="metric" title="First seen on skills.sh"><strong>${date(firstSeen)}</strong></span>`;
-  const installs = installsOf(s);
-  const installed = (n: number) =>
-    `<span class="metric" title="${of}All-time installs on skills.sh, ${date(data.asOf.installs)}"><strong>${compact(n)}</strong> installs</span>`;
-  if (installs !== null && st.sort !== "downloads") return installed(installs);
-  const downloads = downloadsOf(s);
-  if (downloads !== null)
-    return `<span class="metric" title="${of}Downloads on ${esc(
-      DOWNLOADS.filter((r) => (isBundle(s) ? skillsOf(s) : [s]).some((x) => x[r]))
-        .map((r) => REGISTRIES[r])
-        .join(" and "),
-    )}, ${date(data.asOf.downloads)}"><strong>${compact(downloads)}</strong> downloads</span>`;
-  if (installs !== null) return installed(installs);
-  return `<span class="metric muted" title="Not in the skills.sh all-time top 600 on ${date(data.asOf.installs)}">new</span>`;
+/** The row's numbers, top right, with the one the list is sorted by highlighted. */
+function propsHtml(e: Entry, st: State): string {
+  const rows = PROP_IDS.map((p) => {
+    const v = PROPS[p].of(e);
+    const shown = v === null ? "—" : PROPS[p].date ? date(v as string) : compact(v as number);
+    return `<div${p === st.sort ? ` class="on"` : ""}${v === null ? "" : ` title="${esc(PROPS[p].title(e))}"`}><dt>${PROPS[p].label}</dt><dd>${shown}</dd></div>`;
+  });
+  return `<dl class="props">${rows.join("")}</dl>`;
 }
 
 const moreLink = (e: Entry, more: number, st: State) =>
@@ -320,16 +412,18 @@ function skillRow(s: Skill, more: number, st: State): string {
   const bundle = bundleOf.get(s.id)?.bundle;
   return `
     <li class="skill${caution ? " caution" : ""}">
+      <div class="skill-body">
       <div class="skill-head">
         <h3><a class="skill-name" href="${skillHref(s.id)}">${esc(s.name)}</a></h3>
         <span class="skill-source">${esc(repoKey(s))}${
           bundle ? ` · part of <a href="${bundleHref(bundle.id)}">${esc(bundle.name)}</a>` : ""
         }</span>
-        ${metric(s, st)}
       </div>
       ${s.tldr?.glance.length ? glanceHtml(s.tldr.glance, 2) : `<p class="skill-desc">${esc(s.description)}</p>`}
       <div class="tags">${tags.map((t) => tagChip(t, null, st.tags.includes(t))).join("")}</div>
       ${moreLink(s, more, st)}
+      </div>
+      ${propsHtml(s, st)}
     </li>`;
 }
 
@@ -342,15 +436,17 @@ function bundleRow(b: Bundle, more: number, st: State): string {
   });
   return `
     <li class="skill bundle">
+      <div class="skill-body">
       <div class="skill-head">
         <h3><a class="skill-name" href="${bundleHref(b.id)}">${esc(b.name)}</a></h3>
         <span class="kind">Bundle · ${plural(b.skills.length, "skill")}</span>
         <span class="skill-source">${esc(repoKey(b))}</span>
-        ${metric(b, st)}
       </div>
       ${b.tldr?.glance.length ? glanceHtml(b.tldr.glance, 2) : `<p class="skill-desc">${esc(b.description)}</p>`}
       <p class="members">${members.join('<span aria-hidden="true"> · </span>')}</p>
       ${moreLink(b, more, st)}
+      </div>
+      ${propsHtml(b, st)}
     </li>`;
 }
 
@@ -457,6 +553,9 @@ function activeFilters(st: State): string {
   for (const t of st.tags) chips.push(remove("tag", t, t));
   for (const r of st.registries) chips.push(remove("registry", r, REGISTRIES[r as Registry] ?? r));
   if (st.repo) chips.push(remove("repo", st.repo, `from ${st.repo}`));
+  for (const p of PROP_IDS)
+    if (isNarrowed(p, st.ranges[p]))
+      chips.push(remove("range", p, `${PROPS[p].label}: ${rangeLabel(p, st.ranges[p])}`));
   return chips.length
     ? `<div class="active">${chips.join("")}<button type="button" class="link-button" data-action="clear">Clear all</button></div>`
     : "";
@@ -481,20 +580,9 @@ export function resultsHtml(st: State): string {
         st.one && list.length !== total ? `, ${plural(list.length, "repo")}` : ""
       }${isFiltered(st) ? ` <span class="muted">of ${all}</span>` : ""}</p>
       <button type="button" class="filters-toggle" data-action="filters" aria-controls="filters">Filters</button>
-      ${
-        st.view === "top"
-          ? `<label class="sort">Sort by <select id="sort">${(Object.keys(SORTS) as Sort[])
-              .map(
-                (s) =>
-                  `<option value="${s}"${s === st.sort ? " selected" : ""}>${SORTS[s]}</option>`,
-              )
-              .join("")}</select></label>`
-          : `<p class="sort muted">${
-              st.view === "hot"
-                ? "Most weekly installs gained over 8 weeks"
-                : "Newest on skills.sh first"
-            }</p>`
-      }
+      <label class="sort">Sort by <select id="sort">${PROP_IDS.map(
+        (p) => `<option value="${p}"${p === st.sort ? " selected" : ""}>${PROPS[p].label}</option>`,
+      ).join("")}</select></label>
       <label class="check"><input type="checkbox" id="one"${st.one ? " checked" : ""} /> One per repo</label>
       <label class="check"><input type="checkbox" id="hide"${st.hide ? " checked" : ""} /> Hide copies</label>
       <label class="check" title="Also show the skills tagged ${esc(data.skip.map((s) => s.tag).join(", "))}, and those gone from their source"><input type="checkbox" id="all"${st.all ? " checked" : ""} /> Show all</label>
@@ -513,6 +601,17 @@ export function resultsHtml(st: State): string {
     }`;
 }
 
+/** A two-handled slider per property. The client updates them in place while they're dragged. */
+export function rangesHtml(st: State): string {
+  return PROP_IDS.map((p) => {
+    const [lo, hi] = st.ranges[p];
+    const last = lastStop(p);
+    const handle = (end: 0 | 1, value: number) =>
+      `<input type="range" min="0" max="${last}" step="1" value="${value}" data-range="${p}" data-end="${end}" aria-label="${PROPS[p].label}, ${end ? "to" : "from"}" aria-valuetext="${rangeLabel(p, [lo, hi])}" />`;
+    return `<section class="facet range"><h2>${PROPS[p].label} <output data-range-label="${p}">${rangeLabel(p, [lo, hi])}</output></h2><div class="slider" data-slider="${p}" style="--lo: ${lo / last}; --hi: ${hi / last}">${handle(0, lo)}${handle(1, hi)}</div></section>`;
+  }).join("");
+}
+
 export function listView(st: State): string {
   return `
     <div class="skills-view" data-view="${st.view}">
@@ -521,6 +620,7 @@ export function listView(st: State): string {
           <label for="q" class="sr-only">Search skills</label>
           <input id="q" type="search" value="${esc(st.q)}" placeholder="Search names, descriptions, tags" autocomplete="off" spellcheck="false" />
         </div>
+        <div id="ranges">${rangesHtml(st)}</div>
         <div id="facets">${facetsHtml(st, false)}</div>
       </aside>
       <section id="results" aria-label="Skills">${resultsHtml(st)}</section>

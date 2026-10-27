@@ -217,6 +217,94 @@ code {
   text-transform: uppercase;
 }
 
+.range h2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.range output {
+  color: var(--text);
+  font-weight: 550;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Two range inputs on one track; only their handles take the pointer. */
+.slider {
+  --thumb: 16px;
+  position: relative;
+  height: var(--thumb);
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 2px);
+  height: 4px;
+  border-radius: 2px;
+}
+
+.slider::before {
+  left: calc(var(--thumb) / 2);
+  right: calc(var(--thumb) / 2);
+  background: var(--border);
+}
+
+.slider::after {
+  left: calc(var(--thumb) / 2 + var(--lo) * (100% - var(--thumb)));
+  width: calc((var(--hi) - var(--lo)) * (100% - var(--thumb)));
+  background: var(--accent);
+}
+
+.slider input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: none;
+  pointer-events: none;
+  appearance: none;
+}
+
+.slider input::-webkit-slider-thumb {
+  width: var(--thumb);
+  height: var(--thumb);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--surface);
+  pointer-events: auto;
+  cursor: pointer;
+  appearance: none;
+}
+
+.slider input::-moz-range-thumb {
+  width: var(--thumb);
+  height: var(--thumb);
+  box-sizing: border-box;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--surface);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.slider input::-moz-range-track {
+  background: none;
+}
+
+.slider input:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.slider input:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
 .facet h3.group {
   margin: 10px 0 6px;
   color: var(--text-3);
@@ -357,11 +445,63 @@ code {
 }
 
 .skill {
+  display: flex;
+  gap: 16px;
   margin-bottom: 10px;
   padding: 14px 16px;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--surface);
+}
+
+.skill-body {
+  flex: 1;
+  min-width: 0;
+}
+
+/* The row's numbers, top right; the one the list is sorted by is highlighted. */
+.props {
+  display: grid;
+  flex: none;
+  grid-template-columns: max-content max-content;
+  align-self: flex-start;
+  margin: 0;
+  font-size: 13px;
+}
+
+.props div {
+  display: contents;
+}
+
+.props dt,
+.props dd {
+  padding: 1px 8px;
+}
+
+.props dt {
+  color: var(--text-3);
+}
+
+.props dd {
+  margin: 0;
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.props .on dt,
+.props .on dd {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-weight: 650;
+}
+
+.props .on dt {
+  border-radius: 6px 0 0 6px;
+}
+
+.props .on dd {
+  border-radius: 0 6px 6px 0;
 }
 
 .skill-head {
@@ -1032,6 +1172,22 @@ code {
   .metric {
     margin-left: 0;
     width: 100%;
+  }
+
+  .skill {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* The numbers wrap into one line under the row. */
+  .props {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .props div {
+    display: flex;
   }
 
   .page {
