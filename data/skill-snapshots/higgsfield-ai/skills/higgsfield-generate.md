@@ -1,5 +1,5 @@
 ---
-version: 0.13.0
+version: 0.14.0
 name: higgsfield-generate
 description: |
   Generate images/videos/3D assets/audio via Higgsfield AI. Defaults:
