@@ -9161,9 +9161,9 @@
         "firstSeen": "2026-01-19"
       },
       "skillMd": {
-        "version": "86505e44f87d801aa1864a3c4109e9a8ae5c409f",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "49a31e0b3229ccdffe4944be9c61bc7481d1d432",
+        "updated": "2026-10-29",
+        "skew": 21
       }
     },
     {
@@ -10534,9 +10534,9 @@
         "firstSeen": "2026-04-03"
       },
       "skillMd": {
-        "version": "7afa71f4cb5aeaf8d083e155221167418a5aa43f",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "2edfb001c58aa038558178f4e80407c47df2266a",
+        "updated": "2026-10-29",
+        "skew": 1142
       }
     },
     {
@@ -13092,9 +13092,9 @@
         "firstSeen": "2026-01-19"
       },
       "skillMd": {
-        "version": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "ca45fc496a3436251f191354091d557da31c15b5",
+        "updated": "2026-10-29",
+        "skew": 275
       }
     },
     {
