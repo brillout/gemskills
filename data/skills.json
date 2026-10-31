@@ -9427,9 +9427,9 @@
         "firstSeen": "2026-01-23"
       },
       "skillMd": {
-        "version": "b1a5903c5b633b8c9f843ad7b629c2a78437040c",
-        "updated": "2026-10-20",
-        "skew": 0
+        "version": "faf6bc58769f524fb8f1c9c1e38e36c9c00cfc1b",
+        "updated": "2026-10-31",
+        "skew": 59
       }
     },
     {
@@ -12376,9 +12376,9 @@
         "firstSeen": "2026-01-22"
       },
       "skillMd": {
-        "version": "8ce7e12d51e0a3df4a353f037e33fb53be23db7e",
-        "updated": "2026-10-28",
-        "skew": 13
+        "version": "d1f585cdc299d5f55582b8e4d5e393ad43e5a783",
+        "updated": "2026-10-31",
+        "skew": 127
       }
     },
     {
