@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>implement-spec · Gem Skills</title>
+    <meta name="description" content="Use it when: a spec has been split into tickets, and you want all of them built in parallel. It does: puts a subagent on every ticket that&#039;s ready, each in its own git worktree, and merges their work as they finish. You get: the whole spec on one integration branch, code-reviewed, with the tickets closed or a pull request ready for review. Unlike implement: that skill has one agent build one piece in your session; this runs many agents over every ticket of a spec. Needs: subagents, and an issue tracker configured with setup-matt-pocock-skills, the author&#039;s one-time repo setup. Runs: only when you invoke it; the agent won&#039;t start it on its own." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>implement-spec</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a spec has been split into tickets, and you want all of them built in parallel</dd></div><div><dt>It does</dt><dd>puts a subagent on every ticket that&#39;s ready, each in its own git worktree, and merges their work as they finish</dd></div><div><dt>You get</dt><dd>the whole spec on one integration branch, code-reviewed, with the tickets closed or a pull request ready for review</dd></div><div><dt>Unlike implement</dt><dd>that skill has one agent build one piece in your session; this runs many agents over every ticket of a spec</dd></div><div><dt>Needs</dt><dd>subagents, and an issue tracker configured with setup-matt-pocock-skills, the author&#39;s one-time repo setup</dd></div><div><dt>Runs</dt><dd>only when you invoke it; the agent won&#39;t start it on its own</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 15 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/implement/">implement</a> · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/tdd/">tdd</a></p>
+    <p class="note">Only works inside its bundle: Works a spec and its tickets from to-spec and to-tickets on the configured tracker, has each subagent load tdd, and ends with code-review. Install <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It starts from a spec and its tickets, such as the same author&#39;s to-spec and to-tickets skills write. It reads the tickets as a graph: a ticket can start once the tickets blocking it are done, so at any moment some set of them is ready. An optional exploration subagent first saves notes outside the repo for the others to read. Then it creates an integration branch, the one branch everything merges into. Each ready ticket gets a subagent in the background, in its own worktree and branch, building test-first. When one finishes, another subagent merges its work into the integration branch, and any tickets that unblocks are started. Messages between agents stay short and point to the spec, tickets, notes and commits instead of repeating them. Once every ticket is done, the branch gets a code review and one subagent fixes everything it raises. It ends by marking the draft pull request ready, if there is one, or closing the tickets the way your tracker does, then removes the worktrees.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/implement-spec">the skill at 5beb35b</a>. Its SKILL.md has changed by 16 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill implement-spec</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill implement-spec">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/implement-spec">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/implement-spec">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>129,139 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Aug 21, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">26.6K</div>
+      <div class="stat-delta">week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 0; week to Aug 10: 0; week to Aug 17: 0; week to Aug 24: 9,806; week to Aug 31: 31,293; week to Sep 7: 31,210; week to Sep 14: 28,426; week to Sep 21: 26,596. Use the left and right arrow keys to read each week."
+        data-values="0,0,0,9806,31293,31210,28426,26596" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,50.0 38.6,50.0 71.1,50.0 103.7,36.2 136.3,6.0 168.9,6.1 201.4,10.0 234.0,12.6" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="12.6" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>0</td></tr><tr><td>Aug 10</td><td>0</td></tr><tr><td>Aug 17</td><td>0</td></tr><tr><td>Aug 24</td><td>9,806</td></tr><tr><td>Aug 31</td><td>31,293</td></tr><tr><td>Sep 7</td><td>31,210</td></tr><tr><td>Sep 14</td><td>28,426</td></tr><tr><td>Sep 21</td><td>26,596</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:issue-tracker" data-facet="needs" title="Reads or writes an issue tracker, GitHub Issues by default." href="/gemskills/?tag=needs%3Aissue-tracker">needs:issue-tracker</a><a class="tag" data-tag="needs:subagents" data-facet="needs" title="Relies on the agent being able to spawn subagents." href="/gemskills/?tag=needs%3Asubagents">needs:subagents</a></div>
+          <p class="tag-meaning">Reads or writes an issue tracker, GitHub Issues by default.</p><p class="tag-meaning">Relies on the agent being able to spawn subagents.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="implementation" data-facet="topic" href="/gemskills/?tag=implementation">implementation</a><a class="tag" data-tag="multi-agent" data-facet="topic" href="/gemskills/?tag=multi-agent">multi-agent</a><a class="tag" data-tag="issue-tracking" data-facet="topic" href="/gemskills/?tag=issue-tracking">issue-tracking</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/a496f5513d4a4cf889bc48e189e579f4b0bdf6aa/skills/engineering/implement-spec/SKILL.md">mattpocock/skills at a496f55</a>. Checked daily, last changed Oct 30, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: implement-spec
+description: &#34;Implement the result of /to-spec and /to-tickets in code.&#34;
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><p>You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.</p>
+<p>The issue tracker should have been provided to you. If not, tell the user to run <code>/setup-matt-pocock-skills</code>.</p>
+<p>The goal is the entire spec implemented on a single <strong>integration branch</strong>, with every ticket resolved the way the issue tracker closes work.</p>
+<p>The tickets are not a list of steps. They are a <strong>task graph</strong> with blocking relationships between them. This means there is always a <strong>frontier</strong> of tickets which are ready to be grabbed.</p>
+<p>Start every subagent with a fresh context window.</p>
+<p>Communication to and from subagents should be sparse. Communicate primarily through <strong>context pointers</strong>: to the spec, tickets, research notes, and previous commits. Don't duplicate information already available via pointers.</p>
+<p><strong>Implementer subagents</strong> should be run in the background where possible for maximum concurrency.</p>
+<h4>Steps</h4>
+<ol>
+<li>
+<p>Read the spec and tickets to understand the task graph.</p>
+</li>
+<li>
+<p>(optional) Use an <strong>exploration subagent</strong> to conduct any exploration required by the tickets - relevant codebase files or external documentation. Ensure the exploration subagent can save files - it should save its markdown notes in a directory outside the repo, accessible by all future subagents. This lets <strong>implementer subagents</strong> focus on implementation rather than exploration.</p>
+</li>
+<li>
+<p>Create the integration branch. If the issue tracker closes work through PRs, or the user asks for one, open a draft PR after the first merge in step 5 (a branch with no commits ahead of main can't open one), marked as closing the spec and tickets.</p>
+</li>
+<li>
+<p>Use a fresh <strong>implementer subagent</strong> for each ticket, each in its own worktree on its own branch. Each implementer subagent:</p>
+<ul>
+<li>confirms its worktree is based on the integration branch before starting, and resets onto it if not;</li>
+<li>calls the Skill tool with <code>tdd</code> to build the ticket;</li>
+<li>merges the integration branch tip into its own branch before reporting done</li>
+</ul>
+</li>
+<li>
+<p>Once an <strong>implementer subagent</strong> completes, merge its work to the integration branch with a <strong>merger subagent</strong>.</p>
+</li>
+<li>
+<p>If this changes the <strong>frontier</strong> of available tickets, kick off more <strong>implementer subagents</strong> to work on the new tickets. This allows for maximum concurrency.</p>
+</li>
+<li>
+<p>Once all tickets are complete, call the Skill tool with <code>code-review</code> on the integration branch. Fix all issues raised by the code review in a single fresh <strong>implementer subagent</strong>.</p>
+</li>
+<li>
+<p>If a draft PR exists, mark it ready for review. Otherwise, resolve each ticket the way the issue tracker closes work, and report the integration branch.</p>
+</li>
+<li>
+<p>Clean up all <strong>implementer subagent</strong> worktrees.</p>
+</li>
+</ol>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

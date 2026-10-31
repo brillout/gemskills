@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setup-pre-commit · Gem Skills</title>
+    <meta name="description" content="Use it when: you want every commit in a JavaScript or TypeScript repo formatted, type-checked and tested first. It does: installs Husky, lint-staged and Prettier, and writes a pre-commit hook that formats staged files, then runs your type check and tests. You get: a .husky/pre-commit hook, a lint-staged config, a Prettier config if you had none, and a commit adding them. Works with: npm, pnpm, Yarn or Bun, whichever lockfile it finds." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a></p>
+      <h1>setup-pre-commit</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want every commit in a JavaScript or TypeScript repo formatted, type-checked and tested first</dd></div><div><dt>It does</dt><dd>installs Husky, lint-staged and Prettier, and writes a pre-commit hook that formats staged files, then runs your type check and tests</dd></div><div><dt>You get</dt><dd>a .husky/pre-commit hook, a lint-staged config, a Prettier config if you had none, and a commit adding them</dd></div><div><dt>Works with</dt><dd>npm, pnpm, Yarn or Bun, whichever lockfile it finds</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Husky runs scripts on git events, and lint-staged runs a command on just the files you staged. The agent picks your package manager from the lockfile, installs the three tools as dev dependencies and initializes Husky. The hook it writes formats staged files with Prettier, skipping files Prettier can&#39;t read such as images, then runs your typecheck and test scripts over the whole project. If package.json has no typecheck or test script, it leaves that line out and tells you. An existing Prettier config is kept; otherwise it adds one with common defaults. It ends by committing the new files, which runs the new hook once and shows it works.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/misc/setup-pre-commit">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill setup-pre-commit</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill setup-pre-commit">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/setup-pre-commit">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/misc/setup-pre-commit">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>373,523 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Feb 13, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">26.8K</div>
+      <div class="stat-delta">+34% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 20,084; week to Aug 10: 22,024; week to Aug 17: 19,043; week to Aug 24: 28,983; week to Aug 31: 32,011; week to Sep 7: 31,492; week to Sep 14: 28,713; week to Sep 21: 26,821. Use the left and right arrow keys to read each week."
+        data-values="20084,22024,19043,28983,32011,31492,28713,26821" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,22.4 38.6,19.7 71.1,23.8 103.7,10.2 136.3,6.0 168.9,6.7 201.4,10.5 234.0,13.1" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="13.1" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>20,084</td></tr><tr><td>Aug 10</td><td>22,024</td></tr><tr><td>Aug 17</td><td>19,043</td></tr><tr><td>Aug 24</td><td>28,983</td></tr><tr><td>Aug 31</td><td>32,011</td></tr><tr><td>Sep 7</td><td>31,492</td></tr><tr><td>Sep 14</td><td>28,713</td></tr><tr><td>Sep 21</td><td>26,821</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:setup" data-facet="type" title="One-time configuration or scaffolding of a project, account or tool." href="/gemskills/?tag=type%3Asetup">type:setup</a></div>
+          <p class="tag-meaning">One-time configuration or scaffolding of a project, account or tool.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="ci" data-facet="topic" href="/gemskills/?tag=ci">ci</a><a class="tag" data-tag="git" data-facet="topic" href="/gemskills/?tag=git">git</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:husky" data-facet="stack" href="/gemskills/?tag=stack%3Ahusky">stack:husky</a><a class="tag" data-tag="stack:git" data-facet="stack" href="/gemskills/?tag=stack%3Agit">stack:git</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/misc/setup-pre-commit/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: setup-pre-commit
+description: Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing.</code></pre></details>
+        <div class="markdown"><h3>Setup Pre-Commit Hooks</h3>
+<h4>What This Sets Up</h4>
+<ul>
+<li><strong>Husky</strong> pre-commit hook</li>
+<li><strong>lint-staged</strong> running Prettier on all staged files</li>
+<li><strong>Prettier</strong> config (if missing)</li>
+<li><strong>typecheck</strong> and <strong>test</strong> scripts in the pre-commit hook</li>
+</ul>
+<h4>Steps</h4>
+<h5>1. Detect package manager</h5>
+<p>Check for <code>package-lock.json</code> (npm), <code>pnpm-lock.yaml</code> (pnpm), <code>yarn.lock</code> (yarn), <code>bun.lockb</code> (bun). Use whichever is present. Default to npm if unclear.</p>
+<h5>2. Install dependencies</h5>
+<p>Install as devDependencies:</p>
+<pre><code>husky lint-staged prettier
+</code></pre>
+<h5>3. Initialize Husky</h5>
+<pre><code class="language-bash">npx husky init
+</code></pre>
+<p>This creates <code>.husky/</code> dir and adds <code>prepare: &quot;husky&quot;</code> to package.json.</p>
+<h5>4. Create <code>.husky/pre-commit</code></h5>
+<p>Write this file (no shebang needed for Husky v9+):</p>
+<pre><code>npx lint-staged
+npm run typecheck
+npm run test
+</code></pre>
+<p><strong>Adapt</strong>: Replace <code>npm</code> with detected package manager. If repo has no <code>typecheck</code> or <code>test</code> script in package.json, omit those lines and tell the user.</p>
+<h5>5. Create <code>.lintstagedrc</code></h5>
+<pre><code class="language-json">{
+  &quot;*&quot;: &quot;prettier --ignore-unknown --write&quot;
+}
+</code></pre>
+<h5>6. Create <code>.prettierrc</code> (if missing)</h5>
+<p>Only create if no Prettier config exists. Use these defaults:</p>
+<pre><code class="language-json">{
+  &quot;useTabs&quot;: false,
+  &quot;tabWidth&quot;: 2,
+  &quot;printWidth&quot;: 80,
+  &quot;singleQuote&quot;: false,
+  &quot;trailingComma&quot;: &quot;es5&quot;,
+  &quot;semi&quot;: true,
+  &quot;arrowParens&quot;: &quot;always&quot;
+}
+</code></pre>
+<h5>7. Verify</h5>
+<ul>
+<li>[ ] <code>.husky/pre-commit</code> exists and is executable</li>
+<li>[ ] <code>.lintstagedrc</code> exists</li>
+<li>[ ] <code>prepare</code> script in package.json is <code>&quot;husky&quot;</code></li>
+<li>[ ] <code>prettier</code> config exists</li>
+<li>[ ] Run <code>npx lint-staged</code> to verify it works</li>
+</ul>
+<h5>8. Commit</h5>
+<p>Stage all changed/created files and commit with message: <code>Add pre-commit hooks (husky + lint-staged + prettier)</code></p>
+<p>This will run through the new pre-commit hooks: a good smoke test that everything works.</p>
+<h4>Notes</h4>
+<ul>
+<li>Husky v9+ doesn't need shebangs in hook files</li>
+<li><code>prettier --ignore-unknown</code> skips files Prettier can't parse (images, etc.)</li>
+<li>The pre-commit runs lint-staged first (fast, staged-only), then full typecheck and tests</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

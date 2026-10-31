@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>env-and-assets-bootstrap · Gem Skills</title>
+    <meta name="description" content="Use it when: a reproduction target is chosen and the environment, datasets and model checkpoints must be ready before the first run. It does: plans a conda environment from the README and repo files, and works out where checkpoints, datasets and caches should go. You get: setup notes, candidate conda commands, an asset list with sources, paths and status, and the risks still open. Comes between: RigorPilot&#039;s repo-mapping step (repo-intake-and-plan) and its first run (minimal-run-and-audit)." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=lllllllama%2Frigorpilot-skills">lllllllama/rigorpilot-skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/lllllllama/rigorpilot-skills/">RigorPilot</a></p>
+      <h1>env-and-assets-bootstrap</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a reproduction target is chosen and the environment, datasets and model checkpoints must be ready before the first run</dd></div><div><dt>It does</dt><dd>plans a conda environment from the README and repo files, and works out where checkpoints, datasets and caches should go</dd></div><div><dt>You get</dt><dd>setup notes, candidate conda commands, an asset list with sources, paths and status, and the risks still open</dd></div><div><dt>Comes between</dt><dd>RigorPilot&#39;s repo-mapping step (repo-intake-and-plan) and its first run (minimal-run-and-audit)</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 3 of 5 in the <a href="/gemskills/bundle/lllllllama/rigorpilot-skills/">RigorPilot</a> bundle · Before it: <a href="/gemskills/skill/lllllllama/rigorpilot-skills/skills/paper-context-resolver/">paper-context-resolver</a> · After it: <a href="/gemskills/skill/lllllllama/rigorpilot-skills/skills/minimal-run-and-audit/">minimal-run-and-audit</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The setup step in RigorPilot, a set of skills that reproduces deep-learning research code by following its README. For the environment it trusts, in order, the README&#39;s instructions, the repo&#39;s environment files, package metadata, then careful guesses from imports. It reuses an existing environment.yml, otherwise translates the requirements into a simple conda-plus-pip setup, avoids aggressive upgrades and records version doubts. A script that comes with the skill can create the environment, or just print the commands. For assets it finds checkpoints, datasets and caches through README links, configs and code, sticks to documented sources, and records each one&#39;s source, local path and status: present, missing, downloaded, skipped or unknown. It targets Linux first and supports Windows and macOS where practical; containers, cluster schedulers and custom CUDA builds are out of scope.</p>
+      <p class="muted">Summarizes <a href="https://github.com/lllllllama/rigorpilot-skills/tree/fb3ccdf5aa64b1fa5b1d0463e666a8bc8bc26e01/skills/env-and-assets-bootstrap">the skill at fb3ccdf</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/lllllllama/rigorpilot-skills --skill env-and-assets-bootstrap</code><button type="button" class="copy" data-copy="npx skills add https://github.com/lllllllama/rigorpilot-skills --skill env-and-assets-bootstrap">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/lllllllama/rigorpilot-skills/env-and-assets-bootstrap">skills.sh page</a> · <a href="https://github.com/lllllllama/rigorpilot-skills/tree/HEAD/skills/env-and-assets-bootstrap">Source on GitHub</a> · <a href="/gemskills/?repo=lllllllama%2Frigorpilot-skills">All skills from lllllllama/rigorpilot-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>450,018 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>492 <span class="muted">lllllllama/rigorpilot-skills</span></dd></div><div><dt>First seen</dt><dd>Mar 30, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">30</div>
+      <div class="stat-delta">-100% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 11,166; week to Aug 10: 32,229; week to Aug 17: 50,245; week to Aug 24: 41,208; week to Aug 31: 41; week to Sep 7: 29; week to Sep 14: 26; week to Sep 21: 30. Use the left and right arrow keys to read each week."
+        data-values="11166,32229,50245,41208,41,29,26,30" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,40.2 38.6,21.8 71.1,6.0 103.7,13.9 136.3,50.0 168.9,50.0 201.4,50.0 234.0,50.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="50.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>11,166</td></tr><tr><td>Aug 10</td><td>32,229</td></tr><tr><td>Aug 17</td><td>50,245</td></tr><tr><td>Aug 24</td><td>41,208</td></tr><tr><td>Aug 31</td><td>41</td></tr><tr><td>Sep 7</td><td>29</td></tr><tr><td>Sep 14</td><td>26</td></tr><tr><td>Sep 21</td><td>30</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:science" data-facet="category" title="Research reproduction, financial data, charts and diagrams." href="/gemskills/?tag=category%3Ascience">category:science</a></div>
+          <p class="tag-meaning">Research reproduction, financial data, charts and diagrams.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:setup" data-facet="type" title="One-time configuration or scaffolding of a project, account or tool." href="/gemskills/?tag=type%3Asetup">type:setup</a></div>
+          <p class="tag-meaning">One-time configuration or scaffolding of a project, account or tool.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="ml-research" data-facet="topic" href="/gemskills/?tag=ml-research">ml-research</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:python" data-facet="stack" href="/gemskills/?tag=stack%3Apython">stack:python</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/lllllllama/rigorpilot-skills/blob/fb3ccdf5aa64b1fa5b1d0463e666a8bc8bc26e01/skills/env-and-assets-bootstrap/SKILL.md">lllllllama/rigorpilot-skills at fb3ccdf</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: env-and-assets-bootstrap
+description: Rigor Setup skill for README-first deep learning repo reproduction. Use when the task is specifically to prepare a conservative conda-first environment, checkpoint and dataset path assumptions, cache location hints, and setup notes before any run on a README-documented repository. Do not use for repo scanning, full orchestration, paper interpretation, final run reporting, or generic environment setup that is not tied to a specific reproduction target.</code></pre></details>
+        <div class="markdown"><h3>env-and-assets-bootstrap</h3>
+<p>Use this as the Rigor Setup skill. The installed slug remains
+<code>env-and-assets-bootstrap</code> for compatibility.</p>
+<p>Use the shared operating principles in
+<code>../ai-research-reproduction/references/agent-operating-principles.md</code>; this skill should keep setup
+planning conservative while leaving environment-specific judgment to the model.</p>
+<h4>When to apply</h4>
+<ul>
+<li>After repo intake identifies a credible reproduction target.</li>
+<li>When environment creation or asset path preparation is needed before running commands.</li>
+<li>When the repo depends on checkpoints, datasets, or cache directories.</li>
+<li>When the user explicitly wants setup help before any run attempt.</li>
+</ul>
+<h4>When not to apply</h4>
+<ul>
+<li>When the repository already ships a ready-to-run environment that does not need translation.</li>
+<li>When the task is only to scan and plan.</li>
+<li>When the task is only to report results from commands that already ran.</li>
+<li>When the request is a generic conda or package-management question outside repo reproduction.</li>
+</ul>
+<h4>Clear boundaries</h4>
+<ul>
+<li>This skill prepares environment and asset assumptions.</li>
+<li>It does not own target selection.</li>
+<li>It does not own final reporting.</li>
+<li>It does not perform paper lookup except by forwarding gaps to the optional paper resolver.</li>
+</ul>
+<h4>Input expectations</h4>
+<ul>
+<li>target repo path</li>
+<li>selected reproduction goal</li>
+<li>relevant README setup steps</li>
+<li>any known OS or package constraints</li>
+</ul>
+<h4>Output expectations</h4>
+<ul>
+<li>conservative environment setup notes</li>
+<li>candidate conda commands</li>
+<li>asset path plan</li>
+<li>checkpoint and dataset source hints</li>
+<li>unresolved dependency or asset risks</li>
+</ul>
+<h4>Notes</h4>
+<p>Use <code>references/env-policy.md</code>, <code>references/assets-policy.md</code>, <code>scripts/bootstrap_env.py</code>, <code>scripts/plan_setup.py</code>, and <code>scripts/prepare_assets.py</code>.
+Use <code>scripts/bootstrap_env.sh</code> only as a POSIX wrapper around the Python bootstrapper when a shell entrypoint is more convenient.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

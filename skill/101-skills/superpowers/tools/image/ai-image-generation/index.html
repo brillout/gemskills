@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ai-image-generation · Gem Skills</title>
+    <meta name="description" content="Use it when: you want an image made from a prompt, or an existing image edited or upscaled. It does: runs GPT Image, FLUX, Gemini, Grok, Seedream and dozens of other image models through belt, the command line of the inference.sh model platform. You get: generated or edited images, and also upscaling and several images stitched into one. Needs: the belt CLI and an inference.sh account." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=101-skills%2Fsuperpowers">101-skills/superpowers</a></p>
+      <h1>ai-image-generation</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want an image made from a prompt, or an existing image edited or upscaled</dd></div><div><dt>It does</dt><dd>runs GPT Image, FLUX, Gemini, Grok, Seedream and dozens of other image models through belt, the command line of the inference.sh model platform</dd></div><div><dt>You get</dt><dd>generated or edited images, and also upscaling and several images stitched into one</dd></div><div><dt>Needs</dt><dd>the belt CLI and an inference.sh account</dd></div></dl></section>
+      
+      <p class="note">Copy of a skill from inference.sh&#39;s own repo, inference-sh/skills, republished under six org names that are all called superpowers.</p>
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>inference.sh hosts AI models as apps you run from its belt command line with a JSON input. This skill is a table of its image apps, each with what it&#39;s best at, and a ready command for the main ones. OpenAI&#39;s GPT-Image-2 handles generation, editing from a prompt and repainting part of an image; FLUX models accept add-ons that apply a custom style; some models go up to 4K, others are picked for legible text inside the image, and the fast, cheap ones go down to a hundredth of a cent per image. It also covers upscaling and stitching images side by side. It&#39;s a catalog, not a process: the agent picks the model that fits, and belt app list --category image shows the rest.</p>
+      <p class="muted">Summarizes <a href="https://github.com/101-skills/superpowers/tree/becc25649700d5457772a00e5143e28ccf9e5afa/tools/image/ai-image-generation">the skill at becc256</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/101-skills/superpowers --skill ai-image-generation</code><button type="button" class="copy" data-copy="npx skills add https://github.com/101-skills/superpowers --skill ai-image-generation">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/101-skills/superpowers/ai-image-generation">skills.sh page</a> · <a href="https://github.com/101-skills/superpowers/tree/HEAD/tools/image/ai-image-generation">Source on GitHub</a> · <a href="/gemskills/?repo=101-skills%2Fsuperpowers">All skills from 101-skills/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>300,761 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>4 <span class="muted">101-skills/superpowers</span></dd></div><div><dt>First seen</dt><dd>Aug 31, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">213K</div>
+      <div class="stat-delta">week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 0; week to Aug 10: 0; week to Aug 17: 0; week to Aug 24: 0; week to Aug 31: 0; week to Sep 7: 13,165; week to Sep 14: 63,881; week to Sep 21: 213,213. Use the left and right arrow keys to read each week."
+        data-values="0,0,0,0,0,13165,63881,213213" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,50.0 38.6,50.0 71.1,50.0 103.7,50.0 136.3,50.0 168.9,47.3 201.4,36.8 234.0,6.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="6.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>0</td></tr><tr><td>Aug 10</td><td>0</td></tr><tr><td>Aug 17</td><td>0</td></tr><tr><td>Aug 24</td><td>0</td></tr><tr><td>Aug 31</td><td>0</td></tr><tr><td>Sep 7</td><td>13,165</td></tr><tr><td>Sep 14</td><td>63,881</td></tr><tr><td>Sep 21</td><td>213,213</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:media" data-facet="category" title="Generate and edit video, images and audio." href="/gemskills/?tag=category%3Amedia">category:media</a></div>
+          <p class="tag-meaning">Generate and edit video, images and audio.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="image" data-facet="topic" href="/gemskills/?tag=image">image</a><a class="tag" data-tag="ai-generation" data-facet="topic" href="/gemskills/?tag=ai-generation">ai-generation</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:inference-sh" data-facet="stack" href="/gemskills/?tag=stack%3Ainference-sh">stack:inference-sh</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:republished" data-facet="flag" title="A copy of another publisher&#39;s skill under a different org. Each copy found had hundreds of thousands of installs while its original had fewer than twenty, so treat its ranking with caution." href="/gemskills/?tag=flag%3Arepublished">flag:republished</a></div>
+          <p class="tag-meaning">A copy of another publisher&#39;s skill under a different org. Each copy found had hundreds of thousands of installs while its original had fewer than twenty, so treat its ranking with caution.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/101-skills/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/image/ai-image-generation/SKILL.md">101-skills/superpowers at becc256</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: ai-image-generation
+description: &#34;Generate AI images with GPT-Image-2, FLUX, Gemini, Grok, Seedream, Reve and 50+ models via inference.sh CLI. Models: GPT-Image-2, FLUX Dev LoRA, FLUX.2 Klein LoRA, Gemini 3 Pro Image, Grok Imagine, Seedream 4.5, Reve, ImagineArt. Capabilities: text-to-image, image-to-image, inpainting, LoRA, image editing, upscaling, text rendering. Use for: AI art, product mockups, concept art, social media graphics, marketing visuals, illustrations. Triggers: flux, image generation, ai image, text to image, stable diffusion, generate image, ai art, midjourney alternative, dall-e alternative, text2img, t2i, image generator, ai picture, create image with ai, generative ai, ai illustration, grok image, gemini image, gpt image, openai image, chatgpt image&#34;
+allowed-tools: Bash(belt *)</code></pre></details>
+        <div class="markdown"><blockquote>
+<p><strong>Install the belt CLI skill:</strong> <code>npx skills add belt-sh/cli</code></p>
+</blockquote>
+<h3>AI Image Generation</h3>
+<p>Generate images with 50+ AI models via <a href="https://inference.sh">inference.sh</a> CLI.</p>
+<p><img src="https://cloud.inference.sh/app/files/u/4mg21r6ta37mpaz6ktzwtt8krr/01kg0v0nz7wv0qwqjtq1cam52z.jpeg" alt="AI Image Generation"></p>
+<h4>Quick Start</h4>
+<blockquote>
+<p>Requires inference.sh CLI (<code>belt</code>). <a href="https://raw.githubusercontent.com/inference-sh/skills/refs/heads/main/cli-install.md">Install instructions</a></p>
+</blockquote>
+<pre><code class="language-bash">belt login
+
+# Generate an image with FLUX
+belt app run falai/flux-dev-lora --input '{&quot;prompt&quot;: &quot;a cat astronaut in space&quot;}'
+</code></pre>
+<h4>Available Models</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>App ID</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPT-Image-2</strong></td>
+<td><code>openai/gpt-image-2</code></td>
+<td>Text-to-image, editing, inpainting</td>
+</tr>
+<tr>
+<td>FLUX Dev LoRA</td>
+<td><code>falai/flux-dev-lora</code></td>
+<td>High quality with custom styles</td>
+</tr>
+<tr>
+<td>FLUX.2 Klein LoRA</td>
+<td><code>falai/flux-2-klein-lora</code></td>
+<td>Fast with LoRA support (4B/9B)</td>
+</tr>
+<tr>
+<td><strong>P-Image</strong></td>
+<td><code>pruna/p-image</code></td>
+<td>Fast, economical, multiple aspects</td>
+</tr>
+<tr>
+<td><strong>P-Image-LoRA</strong></td>
+<td><code>pruna/p-image-lora</code></td>
+<td>Fast with preset LoRA styles</td>
+</tr>
+<tr>
+<td><strong>P-Image-Edit</strong></td>
+<td><code>pruna/p-image-edit</code></td>
+<td>Fast image editing</td>
+</tr>
+<tr>
+<td>Gemini 3 Pro</td>
+<td><code>google/gemini-3-pro-image-preview</code></td>
+<td>Google's latest</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Flash</td>
+<td><code>google/gemini-2-5-flash-image</code></td>
+<td>Fast Google model</td>
+</tr>
+<tr>
+<td>Grok Imagine</td>
+<td><code>xai/grok-imagine-image</code></td>
+<td>xAI's model, multiple aspects</td>
+</tr>
+<tr>
+<td>Seedream 4.5</td>
+<td><code>bytedance/seedream-4-5</code></td>
+<td>2K-4K cinematic quality</td>
+</tr>
+<tr>
+<td>Seedream 4.0</td>
+<td><code>bytedance/seedream-4-0</code></td>
+<td>High quality 2K-4K</td>
+</tr>
+<tr>
+<td>Seedream 3.0</td>
+<td><code>bytedance/seedream-3-0-t2i</code></td>
+<td>Accurate text rendering</td>
+</tr>
+<tr>
+<td>Reve</td>
+<td><code>falai/reve</code></td>
+<td>Natural language editing, text rendering</td>
+</tr>
+<tr>
+<td>ImagineArt 1.5 Pro</td>
+<td><code>falai/imagine-art-1-5-pro-preview</code></td>
+<td>Ultra-high-fidelity 4K</td>
+</tr>
+<tr>
+<td>FLUX Klein 4B</td>
+<td><code>pruna/flux-klein-4b</code></td>
+<td>Ultra-cheap ($0.0001/image)</td>
+</tr>
+<tr>
+<td>Topaz Upscaler</td>
+<td><code>falai/topaz-image-upscaler</code></td>
+<td>Professional upscaling</td>
+</tr>
+</tbody>
+</table>
+<h4>Browse All Image Apps</h4>
+<pre><code class="language-bash">belt app list --category image
+</code></pre>
+<h4>Examples</h4>
+<h5>GPT-Image-2</h5>
+<pre><code class="language-bash">belt app run openai/gpt-image-2 --input '{
+  &quot;prompt&quot;: &quot;professional product photo of sneakers, studio lighting&quot;,
+  &quot;quality&quot;: &quot;high&quot;
+}'
+</code></pre>
+<h5>GPT-Image-2 Editing</h5>
+<pre><code class="language-bash">belt app run openai/gpt-image-2 --input '{
+  &quot;prompt&quot;: &quot;change the background to a beach at sunset&quot;,
+  &quot;images&quot;: [&quot;https://your-image.jpg&quot;]
+}'
+</code></pre>
+<h5>Text-to-Image with FLUX</h5>
+<pre><code class="language-bash">belt app run falai/flux-dev-lora --input '{
+  &quot;prompt&quot;: &quot;professional product photo of a coffee mug, studio lighting&quot;
+}'
+</code></pre>
+<h5>Fast Generation with FLUX Klein</h5>
+<pre><code class="language-bash">belt app run falai/flux-2-klein-lora --input '{&quot;prompt&quot;: &quot;sunset over mountains&quot;}'
+</code></pre>
+<h5>Google Gemini 3 Pro</h5>
+<pre><code class="language-bash">belt app run google/gemini-3-pro-image-preview --input '{
+  &quot;prompt&quot;: &quot;photorealistic landscape with mountains and lake&quot;
+}'
+</code></pre>
+<h5>Grok Imagine</h5>
+<pre><code class="language-bash">belt app run xai/grok-imagine-image --input '{
+  &quot;prompt&quot;: &quot;cyberpunk city at night&quot;,
+  &quot;aspect_ratio&quot;: &quot;16:9&quot;
+}'
+</code></pre>
+<h5>Reve (with Text Rendering)</h5>
+<pre><code class="language-bash">belt app run falai/reve --input '{
+  &quot;prompt&quot;: &quot;A poster that says HELLO WORLD in bold letters&quot;
+}'
+</code></pre>
+<h5>Seedream 4.5 (4K Quality)</h5>
+<pre><code class="language-bash">belt app run bytedance/seedream-4-5 --input '{
+  &quot;prompt&quot;: &quot;cinematic portrait of a woman, golden hour lighting&quot;
+}'
+</code></pre>
+<h5>Image Upscaling</h5>
+<pre><code class="language-bash">belt app run falai/topaz-image-upscaler --input '{&quot;image_url&quot;: &quot;https://...&quot;}'
+</code></pre>
+<h5>Stitch Multiple Images</h5>
+<pre><code class="language-bash">belt app run infsh/stitch-images --input '{
+  &quot;images&quot;: [&quot;https://img1.jpg&quot;, &quot;https://img2.jpg&quot;],
+  &quot;direction&quot;: &quot;horizontal&quot;
+}'
+</code></pre>
+<h4>Related Skills</h4>
+<pre><code class="language-bash"># Full platform skill (all apps)
+npx skills add inference-sh/skills@infsh-cli
+
+# Pruna P-Image (fast &amp; economical)
+npx skills add inference-sh/skills@p-image
+
+# GPT-Image-2 (OpenAI)
+npx skills add inference-sh/skills@gpt-image
+
+# FLUX-specific skill
+npx skills add inference-sh/skills@flux-image
+
+# Upscaling &amp; enhancement
+npx skills add inference-sh/skills@image-upscaling
+
+# Background removal
+npx skills add inference-sh/skills@background-removal
+
+# Video generation
+npx skills add inference-sh/skills@ai-video-generation
+
+# AI avatars from images
+npx skills add inference-sh/skills@ai-avatar-video
+</code></pre>
+<p>Browse all apps: <code>belt app list</code></p>
+<h4>Documentation</h4>
+<ul>
+<li><a href="https://inference.sh/docs/apps/running">Running Apps</a> - How to run apps via CLI</li>
+<li><a href="https://inference.sh/docs/examples/image-generation">Image Generation Example</a> - Complete image generation guide</li>
+<li><a href="https://inference.sh/docs/apps/overview">Apps Overview</a> - Understanding the app ecosystem</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

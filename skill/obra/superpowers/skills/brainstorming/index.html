@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>brainstorming · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re about to build or plan something new, in software or not, and haven&#039;t spelled out what you want. It does: asks one open question per message and plays back what it understood, part by part, until the picture is complete. You get: a description of what to build that you approve: in chat for a small change, a design document for a project. Holds off: the agent builds nothing, not even scaffolding or installed packages, until you approve that description. Unlike grilling: Matt Pocock&#039;s grilling asks rounds of numbered questions with suggested answers; this one asks you to describe things in your own words. Can show: mockups, diagrams and clickable prototypes in a browser tab, if you accept its offer." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>brainstorming</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re about to build or plan something new, in software or not, and haven&#39;t spelled out what you want</dd></div><div><dt>It does</dt><dd>asks one open question per message and plays back what it understood, part by part, until the picture is complete</dd></div><div><dt>You get</dt><dd>a description of what to build that you approve: in chat for a small change, a design document for a project</dd></div><div><dt>Holds off</dt><dd>the agent builds nothing, not even scaffolding or installed packages, until you approve that description</dd></div><div><dt>Unlike grilling</dt><dd>Matt Pocock&#39;s grilling asks rounds of numbered questions with suggested answers; this one asks you to describe things in your own words</dd></div><div><dt>Can show</dt><dd>mockups, diagrams and clickable prototypes in a browser tab, if you accept its offer</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 2 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · Before it: <a href="/gemskills/skill/obra/superpowers/skills/using-superpowers/">using-superpowers</a> · After it: <a href="/gemskills/skill/obra/superpowers/skills/using-git-worktrees/">using-git-worktrees</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It assumes the agent knows less about what you want than it thinks. If your request already says everything (&#34;make the icon cornflower blue&#34;), it just does it. Otherwise its first message offers to skip the questions and asks about a real moment or a concrete picture. Each message then ends with a single question. It covers goals, non-goals, what would count as failure, things you&#39;ve seen elsewhere, and which choices of tools you want to make yourself. It can offer to look through your code or the web, or build a throwaway prototype. As each part becomes clear, it describes it back in 200 to 300 words and asks what&#39;s wrong. It then sizes the work: a quick task gets done, a small change is described in chat, a project gets a written design document, committed to the repo. Before you see that document, a fresh subagent reviews it as the person who&#39;d build from it, listing what it would still need to know; the agent settles what it can and brings you only the questions that are yours. For software, the next step is writing-plans, which turns the design into an implementation plan.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/brainstorming">the skill at bb92a77</a>. Its SKILL.md has changed by 1,023 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill brainstorming</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill brainstorming">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/brainstorming">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/brainstorming">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>370,462 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">8.6K</div>
+      <div class="stat-delta">-20% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 10,824; week to Aug 10: 10,207; week to Aug 17: 9,594; week to Aug 24: 9,132; week to Aug 31: 8,213; week to Sep 7: 8,264; week to Sep 14: 8,084; week to Sep 21: 8,612. Use the left and right arrow keys to read each week."
+        data-values="10824,10207,9594,9132,8213,8264,8084,8612" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,8.5 71.1,11.0 103.7,12.9 136.3,16.6 168.9,16.4 201.4,17.1 234.0,15.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="15.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>10,824</td></tr><tr><td>Aug 10</td><td>10,207</td></tr><tr><td>Aug 17</td><td>9,594</td></tr><tr><td>Aug 24</td><td>9,132</td></tr><tr><td>Aug 31</td><td>8,213</td></tr><tr><td>Sep 7</td><td>8,264</td></tr><tr><td>Sep 14</td><td>8,084</td></tr><tr><td>Sep 21</td><td>8,612</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:planning" data-facet="category" title="Make the agent question you and write the plan down before it writes code." href="/gemskills/?tag=category%3Aplanning">category:planning</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Make the agent question you and write the plan down before it writes code.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="requirements" data-facet="topic" href="/gemskills/?tag=requirements">requirements</a><a class="tag" data-tag="planning" data-facet="topic" href="/gemskills/?tag=planning">planning</a><a class="tag" data-tag="interview" data-facet="topic" href="/gemskills/?tag=interview">interview</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/brainstorming/SKILL.md">obra/superpowers at 2ce8aa1</a>. Checked daily, last changed Oct 22, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: brainstorming
+description: &#34;You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation).&#34;</code></pre></details>
+        <div class="markdown"><h3>Brainstorming</h3>
+<p>You are very good at building. You build what you believe your human
+partner wants, and that belief is usually thinner than it feels. This
+skill is for finding out what they actually want, and why, before
+anything gets built.</p>
+<p>People often haven't finished working out what they want. Good questions
+help them think it through. When you understand the why, you make the
+hundred decisions they never mention the way they would have made them.</p>
+<h4>First: What Do You Actually Know?</h4>
+<p>Before you reply, ask yourself: what do I know about what they want, and
+why?</p>
+<ul>
+<li><strong>Everything that matters is in the request</strong> (&quot;make the icon cornflower
+blue&quot;). This is a quick, clear task. Do it, and say what you did.</li>
+<li><strong>Something non-trivial is missing.</strong> Start the conversation.</li>
+</ul>
+<p>Before you start implementing, you must, in order:</p>
+<ol>
+<li>Lay out the approaches in a message of their own, and have your
+human partner pick one (see Lay out the approaches).</li>
+<li>Write the design doc, short or full (see Size the Work).</li>
+<li>Get their approval of that doc.</li>
+<li>Invoke the superpowers:writing-plans skill.</li>
+</ol>
+<p>Two things aren't implementing: a spike they said yes to (see Spike to
+feel things out), and doing what they asked once they've opted out of
+the questions.</p>
+<h4>Look Before You Ask</h4>
+<p>In an existing project, or when they've given you context (a spec, a plan,
+a handoff, files they pointed at, earlier conversation), dig in before your
+first message. Read what they referred to and the code or material it
+connects to, and keep reading until you can explain how the relevant
+parts work today and what this change would touch. Never ask what the
+project or their context already answers.</p>
+<h4>Your First Message</h4>
+<p>Move the work forward, with one of these:</p>
+<ul>
+<li><strong>They've already said what they want</strong> (a spec, a plan, a detailed
+request): aim for about 200 words for the whole message. Echo their
+request back in your own words, so they can see whether you've got its
+shape: what they want, who it's for, and why, as far as they've said.
+Add what you found that bears on it: how the relevant parts work today
+and what the change would touch. If you found something they may not
+have considered that would change what they're asking for or how it
+has to be built, like a constraint, a conflict, or a cheaper path, say
+so plainly. How to build it comes later, once you understand what they
+want (see Lay out the approaches). End with one line inviting
+corrections, then one question about what they want: the thing their
+request leaves open whose answer would most change what gets built.
+Specs are often incomplete, so confirm before you build on one.</li>
+<li><strong>They haven't:</strong> one open question, in their own terms, about the
+biggest thing their request leaves unsettled. Say why you're asking:
+what the answer would change about what you build. For &quot;a website for
+my bakery&quot;: &quot;If it's mostly for people deciding whether to stop by,
+I'd lead with hours and what's in the case today; taking orders is a
+different site. What do you want someone to do when they land on it?&quot;</li>
+</ul>
+<p>How the message ends depends on whether their message asked for
+brainstorming:</p>
+<ul>
+<li><strong>They asked for it</strong> (by name, by invoking it, or by asking for a
+design discussion): end with your question. They want this
+conversation.</li>
+<li><strong>They didn't:</strong> they may not want a conversation at all. After your
+question, add a light, one-line offer to just get going instead, like
+&quot;Or if you'd rather I just dive in, say so.&quot; If they take you up on
+it, this skill is done: state any significant how-it-gets-made choice
+(platform, language, medium) in one plain line, then do what they
+asked through the normal workflow.</li>
+</ul>
+<p>That's the whole message.</p>
+<h4>The Conversation</h4>
+<p>Each message ends with one question: a single sentence with no list of
+example answers hanging off it. Use plain language, pitched just a little
+above where your human partner is. Match their vocabulary; never use
+process jargon. You never need to quote this skill to your human
+partner.</p>
+<p>Be clear and concise. Lead with what matters. Avoid jargon. When you
+report what you found, give them the most important findings and offer
+the rest.</p>
+<p><strong>Get them describing.</strong> Open questions come first. Their own words carry
+intent that your options can't. Offer a short menu only when they're
+stuck. When they say &quot;just guess&quot; or &quot;what do you think?&quot;, propose
+something concrete.</p>
+<p><strong>How it gets made.</strong> Every project rests on choices about medium, tools,
+materials, and resources: the platform, programming language, and
+libraries for an app; the medium for a piece of art. Find out early which
+of those choices they want to make, which they're handing to you, and what
+they already have to work with. Someone with strong views or skills will
+want to talk it through. Someone counting on you needs sensible defaults,
+said in plain words. When there's existing work, build on what it already
+uses. Any choice you make goes in the design as your call, never as
+something they agreed to.</p>
+<p><strong>Ground to cover.</strong> This is territory, not a script. Never read these
+out as questions:</p>
+<ul>
+<li>what kind of thing this is, and what makes it special</li>
+<li>why now, and what success looks like to them</li>
+<li>goals, non-goals, and anti-goals (what would make this a failure even
+if it technically works)</li>
+<li>prior art: what they've seen elsewhere, loved or hated</li>
+<li>current state: what exists now, what they've tried</li>
+<li>the details they care about</li>
+</ul>
+<p><strong>Make every question specific</strong> to their project and what they've told
+you. Ask Socratically, the way a sharp colleague would: build each
+question on their last answer or on something you found, so it helps
+them think through a consequence or a case they may have missed
+(&quot;Voting closes before the meeting, and two members joined this month.
+Does someone who joins mid-round get a vote?&quot;). When the reason isn't
+already plain, say what you're hoping to learn or what the answer would
+change. A proposal they can correct, plus your reason for it, often
+beats a question.</p>
+<p><strong>Offer recon.</strong> Once you have a bit of grounding and looking further
+would help, offer to go look: deeper into their codebase or project,
+their own files and data, or the web. Say what you'd look for. They
+decide whether you go.</p>
+<p><strong>Lay out the approaches.</strong> Once you understand what they want, and
+before you write anything up, put the ways of building it in a message
+of its own. Come up with several real alternatives and drop the weak
+ones, including any that work against why they want it and any the
+existing work rules out. Present the two or three that remain, grounding
+each in what the project actually does and saying what it trades off.
+Recommend one and say why, then ask which way they want to go. When
+there's genuinely one sensible way, say so and explain why the others
+don't fit. This is for how it gets built; for what they want, get them
+describing first.</p>
+<p><strong>Show, don't tell.</strong> Offer the visual companion (below) whenever seeing
+would help more than reading:</p>
+<ul>
+<li>something they'll look at: a screen, a page, a printout, a sign</li>
+<li>a layout or arrangement: of a screen, a room, a schedule</li>
+<li>a flow or a sequence of steps</li>
+<li>options that would look different from each other</li>
+<li>a structure that's easier to see than read: a diagram, a timeline, a map</li>
+</ul>
+<p>Once they've accepted, use it for mockups to react to, side-by-side
+options, and throwaway prototypes they can click.</p>
+<p><strong>Spike to feel things out.</strong> Agentic work is waterfall, but very, very
+fast. A quick throwaway build is often the cheapest way to learn what
+they want or whether something works. Offer one when it would help.
+When they just want to spike, get out of the way. Spikes get no tests
+or minimal ones, aren't bulletproof, and skip the plan, implementation,
+and review process. Bring what the spike taught you back into the
+conversation.</p>
+<h4>Play It Back</h4>
+<p>Play back as you go. As soon as you understand one part well enough to
+describe it (what it's for and who it serves, say, or how one piece
+behaves), describe that part back in about 200-300 words, then return to
+questions about the next part. Playback and questions alternate through
+the whole conversation; the last chunk covers whatever is left.</p>
+<p>Only what they said goes in as theirs. Anything you filled in goes in
+as your proposal, with your reason. End each chunk by asking what's wrong
+or missing.</p>
+<p>Before you send a chunk, check it: does it describe something they'll
+look at, like a page, a screen, a schedule, or a printout? If so, and
+they haven't seen the visual companion offer yet, send the offer instead
+(its own message, below) and hold the chunk for the next message. Once
+they've accepted, put a mockup next to the description.</p>
+<h4>Size the Work</h4>
+<p>Once you understand what they want and they've picked an approach, say
+how big the work is in plain words. They can override it.</p>
+<table>
+<thead>
+<tr>
+<th>Size</th>
+<th>The design doc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A small change</td>
+<td>a short one: what you already covered together, written down</td>
+</tr>
+<tr>
+<td>A project</td>
+<td>the full written design (below)</td>
+</tr>
+</tbody>
+</table>
+<p>Short or full, the design doc has an <strong>Approaches</strong> part: the two or
+three ways you considered building it, what each trades off, which one
+they picked, and why. They pick in the conversation, before you write
+the doc.</p>
+<p>If it grows mid-task, stop, say so, and step up a size.</p>
+<p>If this is really several independent projects, say so, agree on an
+order, and brainstorm them one at a time.</p>
+<h4>The Written Design</h4>
+<p>Write a plain document a talented builder in the domain could plan
+from without going back to your human partner. Cover:</p>
+<ul>
+<li>intent and the why</li>
+<li>goals, non-goals, anti-goals</li>
+<li>constraints</li>
+<li>approaches (above)</li>
+<li>the parts of the how they decided, as they decided them</li>
+<li>what's left to the builder</li>
+</ul>
+<p>For a small change, the short design covers the same points in a line
+or two each and goes straight to your human partner, without the
+builder check.</p>
+<p><strong>Where it goes:</strong> in a software repo,
+<code>docs/superpowers/specs/YYYY-MM-DD-&lt;topic&gt;-design.md</code>, committed.
+Otherwise, ask. Your human partner's preferences override both.</p>
+<p><strong>Builder check</strong> (for a project): dispatch a fresh subagent with
+<code>builder-check-prompt.md</code> in this directory. When you tell your human
+partner you're writing it up, say a reviewer will read it first and you
+may come back once with a few questions. Don't hand over the document
+until the check is back. Sort what the builder asks into three piles:</p>
+<ul>
+<li><strong>Answered already</strong> by the conversation or the project: put the answer
+in the document.</li>
+<li><strong>Minor:</strong> a sensible builder could settle it without changing what gets
+built. Settle it yourself and mark it in the document as your call.</li>
+<li><strong>Theirs:</strong> only your human partner can answer it, and the answer changes
+what gets built.</li>
+</ul>
+<p>Bring the &quot;theirs&quot; pile in one message, most important first. Update the
+document with their answers, then hand it over with a short list of the
+calls you made so they can check those while reading. That's the only
+round of questions the check produces. Without a subagent tool, read the
+document as that builder yourself.</p>
+<p>&lt;HARD-GATE&gt;
+Nothing gets built until your human partner approves the design doc:
+the short one for a small change, the full one for a project.
+Building includes writing product code, scaffolding, installing
+dependencies, creating projects, and invoking an implementation skill.
+Reading and exploring are fine.</p>
+<p>Two exceptions. If they opted out of the questions, the skill is done
+and the gate goes with it. A spike they said yes to may be built; it
+stays labeled throwaway, and keeping what it produced is a new request
+that comes back through this gate.</p>
+<p>After the design doc is approved, the next step is the plan: invoke
+superpowers:writing-plans and no other skill.
+&lt;/HARD-GATE&gt;</p>
+<h4>Red Flags</h4>
+<table>
+<thead>
+<tr>
+<th>Thought</th>
+<th>Reality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;I'll offer a menu of what they might want&quot;</td>
+<td>Options steer. Ask them to describe it first.</td>
+</tr>
+<tr>
+<td>&quot;I'll fill in sensible defaults&quot;</td>
+<td>Good. Say them out loud. A default they never heard is one they couldn't reject.</td>
+</tr>
+<tr>
+<td>&quot;I've answered their questions, so I'll write the doc&quot;</td>
+<td>Lay out the approaches first, in a message of their own.</td>
+</tr>
+<tr>
+<td>&quot;I should explain the process first&quot;</td>
+<td>Ask your question. The process shows itself.</td>
+</tr>
+<tr>
+<td>&quot;They said 'sounds good' to the idea&quot;</td>
+<td>Approval covers what you showed them. A design doc you haven't written isn't approved.</td>
+</tr>
+<tr>
+<td>&quot;The spike works, I'll keep building on it&quot;</td>
+<td>Keeping it is a new request. Back through the gate.</td>
+</tr>
+</tbody>
+</table>
+<h4>Visual Companion</h4>
+<p>A browser tab for showing mockups, diagrams, and prototypes. It's a
+tool, not a mode: accepting it doesn't send every question to the
+browser.</p>
+<p><strong>Offer it just-in-time.</strong> Offer it the first time one of the moments
+above comes up, never upfront. The offer is its own message with nothing
+else in it:</p>
+<blockquote>
+<p>&quot;This might be easier if I show you. Want me to open a browser tab with some mockups?&quot;</p>
+</blockquote>
+<p>If they decline, stay in text and don't offer again unless they raise it.</p>
+<p><strong>Per question, ask: would they understand this better by seeing it?</strong>
+Mockups, layouts, diagrams, and side-by-side designs go in the browser.
+Requirements, scope, tradeoffs, and conceptual choices stay in text. A
+question about a UI topic isn't automatically a visual question.</p>
+<p>If they accept, read <code>visual-companion.md</code> in this directory before
+starting the server.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

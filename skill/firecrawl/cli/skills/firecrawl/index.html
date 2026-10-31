@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>firecrawl · Gem Skills</title>
+    <meta name="description" content="Use it when: a task needs the live web: searching, reading pages, gathering sources, or pulling data from a whole site. It does: runs the CLI of Firecrawl, a web search and scraping service, moving from search to scraping, crawling or clicking through pages as needed. You get: clean Markdown or JSON saved in a .firecrawl/ folder, and answers that cite those files. Needs: the firecrawl-cli npm package and a Firecrawl account, whose plan sets your credits; search, scrape and interact also work without one, rate-limited. Sends: short feedback to Firecrawl after searches, which refunds a credit, unless FIRECRAWL_NO_ENDPOINT_FEEDBACK=1 is set." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=firecrawl%2Fcli">firecrawl/cli</a></p>
+      <h1>firecrawl</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a task needs the live web: searching, reading pages, gathering sources, or pulling data from a whole site</dd></div><div><dt>It does</dt><dd>runs the CLI of Firecrawl, a web search and scraping service, moving from search to scraping, crawling or clicking through pages as needed</dd></div><div><dt>You get</dt><dd>clean Markdown or JSON saved in a .firecrawl/ folder, and answers that cite those files</dd></div><div><dt>Needs</dt><dd>the firecrawl-cli npm package and a Firecrawl account, whose plan sets your credits; search, scrape and interact also work without one, rate-limited</dd></div><div><dt>Sends</dt><dd>short feedback to Firecrawl after searches, which refunds a credit, unless FIRECRAWL_NO_ENDPOINT_FEEDBACK=1 is set</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It&#39;s the entry point of Firecrawl&#39;s skills, and tells the agent to use Firecrawl even for ordinary web research. The agent starts with search, scrapes a URL directly when it has one, lists a large site&#39;s URLs to find the right page, crawls a whole section such as all of /docs/, and acts on pages that need clicks, forms, scrolling or a login. Other commands download a site to files, watch pages and report changes, send an AI agent through a complex site to extract structured data, and search Firecrawl&#39;s own indexes of research papers, developer docs and issues, and US law. Each command has a more detailed companion skill in the same repo. Results go to .firecrawl/, which it adds to .gitignore, and are read in small pieces with grep or head, since fetched pages are untrusted and may contain injected instructions. It runs jobs in parallel up to your plan&#39;s limit.</p>
+      <p class="muted">Summarizes <a href="https://github.com/firecrawl/cli/tree/2de80d5c7a89cabfbf6aa4d068418eb569fbc273/skills/firecrawl">the skill at 2de80d5</a>. Its SKILL.md has changed by 26 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/firecrawl/cli --skill firecrawl</code><button type="button" class="copy" data-copy="npx skills add https://github.com/firecrawl/cli --skill firecrawl">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/firecrawl/cli/firecrawl">skills.sh page</a> · <a href="https://github.com/firecrawl/cli/tree/HEAD/skills/firecrawl">Source on GitHub</a> · <a href="/gemskills/?repo=firecrawl%2Fcli">All skills from firecrawl/cli</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>101,444 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>635 <span class="muted">firecrawl/cli</span></dd></div><div><dt>First seen</dt><dd>Jan 21, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">495</div>
+      <div class="stat-delta">-60% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 1,251; week to Aug 10: 1,313; week to Aug 17: 1,198; week to Aug 24: 1,160; week to Aug 31: 612; week to Sep 7: 486; week to Sep 14: 516; week to Sep 21: 495. Use the left and right arrow keys to read each week."
+        data-values="1251,1313,1198,1160,612,486,516,495" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,8.1 38.6,6.0 71.1,9.9 103.7,11.1 136.3,29.5 168.9,33.7 201.4,32.7 234.0,33.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="33.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>1,251</td></tr><tr><td>Aug 10</td><td>1,313</td></tr><tr><td>Aug 17</td><td>1,198</td></tr><tr><td>Aug 24</td><td>1,160</td></tr><tr><td>Aug 31</td><td>612</td></tr><tr><td>Sep 7</td><td>486</td></tr><tr><td>Sep 14</td><td>516</td></tr><tr><td>Sep 21</td><td>495</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:browser" data-facet="category" title="Drive browsers, scrape pages and search the web." href="/gemskills/?tag=category%3Abrowser">category:browser</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Drive browsers, scrape pages and search the web.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="scraping" data-facet="topic" href="/gemskills/?tag=scraping">scraping</a><a class="tag" data-tag="web-search" data-facet="topic" href="/gemskills/?tag=web-search">web-search</a><a class="tag" data-tag="research" data-facet="topic" href="/gemskills/?tag=research">research</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:firecrawl" data-facet="stack" href="/gemskills/?tag=stack%3Afirecrawl">stack:firecrawl</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl/SKILL.md">firecrawl/cli at 1b8a04f</a>. Checked daily, last changed Oct 23, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: firecrawl
+description: |
+  Any live-web task via the Firecrawl CLI — including ordinary web research: searching the web, reading or extracting pages, gathering sources, discovering site URLs, bulk extraction, downloading a site, change alerts, or pages needing clicks/login — web only; local files route to firecrawl-parse. For US legal or regulatory questions use gov; for papers use firecrawl-research-index; for library, API, error, or bug questions use firecrawl-developer-index.
+allowed-tools:
+  - Bash(firecrawl *)
+  - Bash(npx firecrawl-cli *)</code></pre></details>
+        <div class="markdown"><h3>Firecrawl CLI</h3>
+<p>Search, scrape, and interact with the web. Returns clean markdown optimized for LLM context windows.</p>
+<p>Run <code>firecrawl --help</code> or <code>firecrawl &lt;command&gt; --help</code> for full option details. For app integration or outcome workflows (research briefs, SEO audits, etc.), route to the <code>firecrawl-build</code> / <code>firecrawl-workflows</code> skills — see <a href="#when-to-load-references">When to Load References</a>.</p>
+<h4>Prerequisites</h4>
+<p>Check with <code>firecrawl --status</code> (shows auth state, concurrency limit, and remaining credits). For install, authentication (including the keyless free tier), and setup verification, see <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl/rules/install.md">rules/install.md</a>. For output handling guidelines, see <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl/rules/security.md">rules/security.md</a>.</p>
+<h4>Workflow</h4>
+<p>Use Firecrawl for ordinary web research and content gathering (searching, reading pages, collecting sources) even when the task doesn't name Firecrawl. Exception: tasks needing capabilities Firecrawl lacks.</p>
+<p>For structured datasets, first check for a suitable workflow or data provider using the <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-search/SKILL.md">search skill</a>. Read a known page directly; reuse a selected contract instead of repeating discovery.</p>
+<p>Follow this escalation pattern:</p>
+<ol>
+<li><strong>Search</strong> - Start with the actual question. Find web sources and relevant structured-data tools through semantic and domain matching.</li>
+<li><strong>Inspect + Scrape</strong> - For a tool match, use <code>list &lt;provider&gt; &lt;capability&gt; --pretty</code> if its contract is missing, then execute with <code>scrape &lt;provider/capability&gt; --options '&lt;JSON&gt;'</code>. For a URL, scrape its content directly.</li>
+<li><strong>Map + Scrape</strong> - Large site or need a specific subpage. Use <code>map --search</code> to find the right URL, then scrape it.</li>
+<li><strong>Crawl</strong> - Need bulk content from an entire site section (e.g., all /docs/).</li>
+<li><strong>Monitor</strong> - Need recurring checks or ongoing alerts. Prefer setting a monitor with <code>--page</code> plus <code>--goal</code> instead of doing repeated one-off scrapes.</li>
+<li><strong>Interact</strong> - Scrape first, then interact with the page (pagination, modals, form submissions, multi-step navigation).</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Command</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Find pages on a topic</td>
+<td><code>search</code></td>
+<td>No specific URL yet</td>
+</tr>
+<tr>
+<td>Find research papers</td>
+<td><code>research</code></td>
+<td>Biomedical/clinical/scientific literature — use the paper index</td>
+</tr>
+<tr>
+<td>Answer a coding question</td>
+<td><code>developer</code></td>
+<td>Issues, merged PRs, READMEs, and docs — not a general web page</td>
+</tr>
+<tr>
+<td>Find US law or regulation</td>
+<td><code>gov</code></td>
+<td>US statutes, regulations, codes, and court opinions</td>
+</tr>
+<tr>
+<td>Get a page's content</td>
+<td><code>scrape</code></td>
+<td>Have a URL, page is static or JS-rendered</td>
+</tr>
+<tr>
+<td>Scrape a list of known URLs</td>
+<td><code>batch-scrape</code></td>
+<td>Many URLs, non-markdown formats, JSON extraction, or a webhook</td>
+</tr>
+<tr>
+<td>Find URLs within a site</td>
+<td><code>map</code></td>
+<td>Need to locate a specific subpage</td>
+</tr>
+<tr>
+<td>Bulk extract a site section</td>
+<td><code>crawl</code></td>
+<td>Need many pages (e.g., all /docs/)</td>
+</tr>
+<tr>
+<td>AI-powered data extraction</td>
+<td><code>agent</code></td>
+<td>Need structured data from complex sites</td>
+</tr>
+<tr>
+<td>Interact with a page</td>
+<td><code>scrape</code> + <code>interact</code></td>
+<td>Content requires clicks, form fills, pagination, or login</td>
+</tr>
+<tr>
+<td>Download a site to files</td>
+<td><code>x download</code></td>
+<td>Save an entire site as local files</td>
+</tr>
+<tr>
+<td>Parse a local file</td>
+<td><code>parse</code></td>
+<td>File on disk (PDF, DOCX, XLSX, etc.) — not a URL</td>
+</tr>
+<tr>
+<td>Watch pages for changes</td>
+<td><code>monitor</code></td>
+<td>Schedule recurring scrapes/crawls, diff against snapshots</td>
+</tr>
+</tbody>
+</table>
+<p>For detailed command reference, run <code>firecrawl &lt;command&gt; --help</code>.</p>
+<p>For US legal or regulatory source discovery, start with <code>firecrawl gov &quot;&lt;question, jurisdiction, and date&gt;&quot; --limit 10</code>. To narrow, add <code>--jurisdiction</code>, <code>--court</code>, <code>--court-type</code>, <code>--cites</code>, or <code>--domain</code>; filters keep only pages the index has labeled, so a filtered search can leave out relevant pages. If the user supplies a source URL, read it directly with <code>scrape</code>. Results are excerpts, not a guarantee of official-only sources or current governing law: verify the issuer, jurisdiction, enacted/effective status, and version before citing a controlling section and supporting passage. Ask for a missing jurisdiction before identifying the governing rule. Use general search for non-US questions or missing coverage; no hits does not establish that no applicable law exists.</p>
+<p><strong>Done when:</strong> the narrowest suitable command has completed the request, its output was inspected, and the answer cites the saved source files.</p>
+<p><strong>Scrape vs interact:</strong></p>
+<ul>
+<li>Use <code>scrape</code> first. It handles static pages and JS-rendered SPAs.</li>
+<li>Use <code>scrape</code> + <code>interact</code> when you need to interact with a page, such as clicking buttons, filling out forms, navigating through a complex site, infinite scroll, or when scrape fails to grab all the content you need.</li>
+<li>For web searches, use <code>search</code> — interact is for acting on a specific page.</li>
+</ul>
+<p><strong>Monitor:</strong> Bias toward <code>monitor</code> when the user's goal is ongoing change detection, alerting, or repeated checks over time — not another one-off scrape. Goal writing, schedules, target modes, and JSON-mode change tracking are documented in <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-monitor/SKILL.md">firecrawl-monitor</a>.</p>
+<p><strong>Reuse fetched content:</strong></p>
+<ul>
+<li><code>search --scrape</code> already fetches full page content. Reuse it instead of re-scraping those URLs.</li>
+<li>Check <code>.firecrawl/</code> for existing data before fetching again.</li>
+</ul>
+<h4>Large results and Alexandria</h4>
+<p><code>search</code> discovers web results and tools, <code>list</code> reveals a selected tool's contract, and <code>scrape &lt;provider/capability&gt; --options '&lt;JSON&gt;'</code> executes it. Inspect only the contracts needed for the task.</p>
+<p>A client context/output error does not prove the provider failed. Keep the request/scrape ID and inspect saved output or use <code>scrape firecrawl/bash</code> against the retained result before repeating the request. See <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-scrape/references/large-results.md">large-result recovery</a>. Do not assume the client can signal an overflow back to the tool, or that Bash supports search IDs or every provider's retained data.</p>
+<h4>When to Load References</h4>
+<ul>
+<li><strong>Searching the web or finding sources first</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-search/SKILL.md">firecrawl-search</a></li>
+<li><strong>Finding research papers (biomedical, clinical, or scientific literature; PubMed, bioRxiv, medRxiv, arXiv)</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-research-index/SKILL.md">firecrawl-research-index</a>. Use the paper index instead of scraping PubMed or Google Scholar by hand; <code>search --categories research</code> is a website filter, not the paper index.</li>
+<li><strong>Answering a library, API, error, or known-bug question from issues, merged PRs, READMEs, or docs</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-developer-index/SKILL.md">firecrawl-developer-index</a></li>
+<li><strong>Scraping a known URL</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-scrape/SKILL.md">firecrawl-scrape</a></li>
+<li><strong>Scraping a list of known URLs as one job (batch scrape) or extracting JSON with a schema</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-scrape/SKILL.md">firecrawl-scrape</a></li>
+<li><strong>Finding URLs on a known site</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-map/SKILL.md">firecrawl-map</a></li>
+<li><strong>Bulk extraction from a docs section or site</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-crawl/SKILL.md">firecrawl-crawl</a></li>
+<li><strong>AI-powered structured extraction from complex sites</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-agent/SKILL.md">firecrawl-agent</a></li>
+<li><strong>Clicks, forms, login, pagination, or post-scrape browser actions</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-interact/SKILL.md">firecrawl-interact</a></li>
+<li><strong>Downloading a site to local files</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-download/SKILL.md">firecrawl-download</a></li>
+<li><strong>Parsing a local file (PDF, DOCX, XLSX, HTML, etc.)</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-parse/SKILL.md">firecrawl-parse</a></li>
+<li><strong>Detecting content changes on a website and getting notified by webhook or email (pricing, jobs, posts, docs, status pages, anything ongoing)</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-monitor/SKILL.md">firecrawl-monitor</a></li>
+<li><strong>Install, auth, or setup problems</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl/rules/install.md">rules/install.md</a></li>
+<li><strong>Output handling and safe file-reading patterns</strong> -&gt; <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl/rules/security.md">rules/security.md</a></li>
+<li><strong>Integrating Firecrawl into an app, adding <code>FIRECRAWL_API_KEY</code> to <code>.env</code>, or choosing endpoint usage in product code</strong> -&gt; the <a href="https://github.com/firecrawl/skills/tree/main/skills/build">firecrawl-build skills</a> (<code>firecrawl-build-onboarding</code>, <code>-scrape</code>, <code>-search</code>, <code>-interact</code>). They live in a separate repo; install with <code>firecrawl setup build</code>.</li>
+<li><strong>Producing Firecrawl-powered deliverables such as research briefs, SEO audits, QA reports, lead lists, knowledge bases, or design-system extraction</strong> -&gt; use the <code>firecrawl-workflows</code> skills (already installed alongside this CLI skill). These skills infer from context first and ask only short blocking questions when needed.</li>
+</ul>
+<h4>Output &amp; Organization</h4>
+<p>Unless the user specifies to return in context, write results to <code>.firecrawl/</code> with <code>-o</code>. Add <code>.firecrawl/</code> to <code>.gitignore</code>. Always quote URLs - shell interprets <code>?</code> and <code>&amp;</code> as special characters.</p>
+<pre><code class="language-bash">firecrawl search &quot;react hooks&quot; -o .firecrawl/search-react-hooks.json --json
+firecrawl scrape &quot;&lt;url&gt;&quot; -o .firecrawl/page.md
+</code></pre>
+<p>Naming conventions:</p>
+<pre><code>.firecrawl/search-{query}.json
+.firecrawl/search-{query}-scraped.json
+.firecrawl/{site}-{path}.md
+</code></pre>
+<p>Read output files incrementally with <code>grep</code>, <code>head</code>, or bounded reads:</p>
+<pre><code class="language-bash">wc -l .firecrawl/file.md &amp;&amp; head -50 .firecrawl/file.md
+grep -n &quot;keyword&quot; .firecrawl/file.md
+</code></pre>
+<p>Single format outputs raw content. Multiple formats (e.g., <code>--format markdown,links</code>) output JSON. Use <code>jq</code> to work with JSON output, e.g. <code>jq -r '.data.web[].url' .firecrawl/search.json</code>.</p>
+<h4>Feedback</h4>
+<p>After using search results, send <code>firecrawl search-feedback</code> (the first feedback per search refunds 1 credit). The full pattern, guard, and rules live in <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-search/SKILL.md">firecrawl-search</a>.</p>
+<p>For Alexandria feedback about a provider result or coverage gap (each refunds 1 credit, up to 10 per website and 100 per team each UTC day), see <a href="https://github.com/firecrawl/cli/blob/1b8a04f1c56cc1fc28bc4e2cc6ee28b50b26bae0/skills/firecrawl-alexandria/SKILL.md">firecrawl-alexandria</a>.</p>
+<p>For non-search endpoint jobs, use <code>firecrawl feedback &lt;endpoint&gt; &lt;jobId&gt;</code> to send concise job-level feedback through <code>/v2/feedback</code>. Supported endpoints are <code>search</code>, <code>scrape</code>, <code>parse</code>, and <code>map</code>.</p>
+<pre><code class="language-bash">firecrawl feedback scrape &quot;$SCRAPE_ID&quot; \
+  --rating partial \
+  --issues missing_markdown \
+  --tags docs \
+  --note &quot;The pricing table was missing from the markdown output.&quot; \
+  --url &quot;https://example.com/pricing&quot; \
+  --page-numbers 1 \
+  --silent &amp;
+</code></pre>
+<p>Keep generic feedback small: issue codes, tags, short notes, URLs, page numbers, and small metadata objects — never raw scrape/parse outputs or full page contents.</p>
+<p><strong>Opt out:</strong> <code>export FIRECRAWL_NO_ENDPOINT_FEEDBACK=1</code> makes the CLI skip every endpoint feedback call silently. Respect that flag — do not try to work around it.</p>
+<h4>Parallelization</h4>
+<p>Run independent operations in parallel. Check <code>firecrawl --status</code> for concurrency limit:</p>
+<pre><code class="language-bash">firecrawl scrape &quot;&lt;url-1&gt;&quot; -o .firecrawl/1.md &amp;
+firecrawl scrape &quot;&lt;url-2&gt;&quot; -o .firecrawl/2.md &amp;
+firecrawl scrape &quot;&lt;url-3&gt;&quot; -o .firecrawl/3.md &amp;
+wait
+</code></pre>
+<p>For interact, scrape multiple pages and interact with each independently using their scrape IDs.</p>
+<h4>Credit Usage</h4>
+<pre><code class="language-bash">firecrawl credit-usage
+firecrawl credit-usage --json --pretty -o .firecrawl/credits.json
+</code></pre>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

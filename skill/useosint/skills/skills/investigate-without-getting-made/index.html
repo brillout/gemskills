@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>investigate-without-getting-made · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re researching a person or company online and they mustn&#039;t find out, for due diligence, journalism or an internal investigation. It does: sizes precautions to who might notice, then controls what each visit gives away: logged-in accounts, network, browser fingerprint and timing. You get: a setup plan that fits the risk, and a grade after each action of what the target could know, from clean to attributed. Covers: research personas (fake accounts) kept apart from your real identity, VPN versus residential proxy versus Tor, and one virtual machine per case. Draws the line: fake accounts may only watch, never draw people out or get into closed groups; never log in to the target&#039;s systems or use leaked passwords." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=useosint%2Fskills">useosint/skills</a></p>
+      <h1>investigate-without-getting-made</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re researching a person or company online and they mustn&#39;t find out, for due diligence, journalism or an internal investigation</dd></div><div><dt>It does</dt><dd>sizes precautions to who might notice, then controls what each visit gives away: logged-in accounts, network, browser fingerprint and timing</dd></div><div><dt>You get</dt><dd>a setup plan that fits the risk, and a grade after each action of what the target could know, from clean to attributed</dd></div><div><dt>Covers</dt><dd>research personas (fake accounts) kept apart from your real identity, VPN versus residential proxy versus Tor, and one virtual machine per case</dd></div><div><dt>Draws the line</dt><dd>fake accounts may only watch, never draw people out or get into closed groups; never log in to the target&#39;s systems or use leaked passwords</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Investigators are rarely caught by a clever target; they&#39;re caught by platforms doing what they advertise: showing who viewed a profile, suggesting the investigator as someone the target may know, marking a story as seen. So the main risk it guards against is being logged into a real account. The agent first asks who might notice, what they would see and what it would cost, and matches the setup to that, from a normal browser for public registries to a dedicated virtual machine and a home-style connection for capable targets, warning that an over-hardened setup gets blocked and stands out. It lists what a visit leaks, from the company that owns your network to fonts, screen size, locale and working hours, and how a real phone number, recovery email, payment card or reused avatar can tie a persona to you for good. Personas are built and aged ahead of time, kept consistent, and never reused across cases. It prefers archived copies to live visits and logs every exposure with a time. It also says plainly that fake accounts break most platforms&#39; terms, and that impersonating a real person can be a crime.</p>
+      <p class="muted">Summarizes <a href="https://github.com/useosint/skills/tree/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/investigate-without-getting-made">the skill at 06243a5</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/useosint/skills --skill investigate-without-getting-made</code><button type="button" class="copy" data-copy="npx skills add https://github.com/useosint/skills --skill investigate-without-getting-made">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/useosint/skills/investigate-without-getting-made">skills.sh page</a> · <a href="https://github.com/useosint/skills/tree/HEAD/skills/investigate-without-getting-made">Source on GitHub</a> · <a href="/gemskills/?repo=useosint%2Fskills">All skills from useosint/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>58,097 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>38 <span class="muted">useosint/skills</span></dd></div><div><dt>First seen</dt><dd>Aug 2, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">30</div>
+      <div class="stat-delta">-99% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 3,277; week to Aug 10: 14,060; week to Aug 17: 40,633; week to Aug 24: 21; week to Aug 31: 35; week to Sep 7: 22; week to Sep 14: 18; week to Sep 21: 30. Use the left and right arrow keys to read each week."
+        data-values="3277,14060,40633,21,35,22,18,30" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,46.5 38.6,34.8 71.1,6.0 103.7,50.0 136.3,50.0 168.9,50.0 201.4,50.0 234.0,50.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="50.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>3,277</td></tr><tr><td>Aug 10</td><td>14,060</td></tr><tr><td>Aug 17</td><td>40,633</td></tr><tr><td>Aug 24</td><td>21</td></tr><tr><td>Aug 31</td><td>35</td></tr><tr><td>Sep 7</td><td>22</td></tr><tr><td>Sep 14</td><td>18</td></tr><tr><td>Sep 21</td><td>30</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:osint" data-facet="category" title="Investigate people, images and leaks from public sources." href="/gemskills/?tag=category%3Aosint">category:osint</a></div>
+          <p class="tag-meaning">Investigate people, images and leaks from public sources.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="osint" data-facet="topic" href="/gemskills/?tag=osint">osint</a><a class="tag" data-tag="privacy" data-facet="topic" href="/gemskills/?tag=privacy">privacy</a><a class="tag" data-tag="fingerprinting" data-facet="topic" href="/gemskills/?tag=fingerprinting">fingerprinting</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:dual-use" data-facet="flag" title="Legitimate uses exist, but the same capability can evade bot detection or investigate other people. Read the SKILL.md before installing." href="/gemskills/?tag=flag%3Adual-use">flag:dual-use</a></div>
+          <p class="tag-meaning">Legitimate uses exist, but the same capability can evade bot detection or investigate other people. Read the SKILL.md before installing.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/investigate-without-getting-made/SKILL.md">useosint/skills at 06243a5</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: investigate-without-getting-made
+description: &#62;-
+  Investigator OPSEC — threat-model who might notice you, control your attribution surface
+  across IP, ASN, browser and TLS fingerprint, timing and logged-in accounts, separate
+  research identity from real identity, build and age a sockpuppet research persona, and
+  choose between VPN, residential proxy and Tor. Use when setting up a research account,
+  avoiding tipping off a subject, worrying about LinkedIn profile-view leakage, needing a
+  burner phone or email, or hardening a research VM or browser profile. Applies to covert due
+  diligence, insider-threat investigation, source protection in journalism, and
+  law-enforcement online work. Reference at
+  useosint.com/skills/investigate-without-getting-made.
+</code></pre></details>
+        <div class="markdown"><h3>Investigate without getting made</h3>
+<p>Collection is bidirectional. Most investigators are burned not by a clever
+adversary but by a platform doing exactly what it advertises: telling the
+subject who looked at their profile, suggesting the investigator to the subject
+as someone they may know, or marking a story as viewed. The default failure is
+not a leaked IP address. It is being logged into a real account.</p>
+<h4>Threat-model first</h4>
+<p>OPSEC effort should be proportionate. Answer three questions before you spend a
+day building infrastructure — or before you decide you need none.</p>
+<ol>
+<li><strong>Who might notice?</strong> A dormant shell company, a moderately technical
+individual, a criminal group running monitored infrastructure, or a state
+service. Their capability sets the bar.</li>
+<li><strong>What would they see?</strong> Passive collection: a line in a server log. A
+logged-in visit: your name. An interaction: your persona and its history.</li>
+<li><strong>What is the consequence?</strong> Nothing, or evidence destroyed and accounts gone
+dark, or the investigation attributed to your organisation and disclosed, or
+physical risk to you or a source.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Proportionate posture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registries, archives, CT logs, court records</td>
+<td>Normal browser, no persona. You are one of thousands.</td>
+</tr>
+<tr>
+<td>Viewing a target's public website</td>
+<td>Clean browser profile, commercial VPN, no logged-in sessions.</td>
+</tr>
+<tr>
+<td>Any logged-in platform view of a target</td>
+<td>Persona account, dedicated profile, and check the platform's viewer-notification behaviour first.</td>
+</tr>
+<tr>
+<td>Target operates monitored infrastructure or is technically capable</td>
+<td>Dedicated VM, non-datacentre egress, no reused fingerprint, timing discipline.</td>
+</tr>
+<tr>
+<td>Organised crime, harassment risk, physical safety in play</td>
+<td>Everything above plus compartmented hardware, and a colleague who knows what you're doing.</td>
+</tr>
+</tbody>
+</table>
+<p>Over-engineering costs too: a locked-down setup gets CAPTCHA'd, rate-limited and
+blocked, so you collect less, and unusual configurations are themselves
+distinctive. Blend in where blending in is the goal. And before working out how
+to view something safely, check whether an archive already holds it
+(<code>read-deleted-pages</code>) — a snapshot tells the target nothing.</p>
+<h4>Your attribution surface</h4>
+<p>What a site or platform can learn from a visit:</p>
+<table>
+<thead>
+<tr>
+<th>Surface</th>
+<th>What it gives away</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP and <strong>ASN</strong></td>
+<td>The network, not the address, is the tell: a datacentre ASN says &quot;VPN or scraper&quot;, a corporate ASN says your employer's name — the worst outcome, and common, because people forget the office network is an identifier</td>
+</tr>
+<tr>
+<td>Browser fingerprint</td>
+<td>User-agent, window geometry, fonts, canvas and WebGL rendering, hardware concurrency, timezone — often unique and, crucially, stable across sessions and IPs, so it links your visits to each other when nothing else does</td>
+</tr>
+<tr>
+<td>TLS fingerprint</td>
+<td>The client hello (cipher suites, extensions, ordering) identifies your client independently of anything the browser exposes; it is why a tool behind a proxy is trivially separable from a real browser — the headers say Chrome and the handshake does not</td>
+</tr>
+<tr>
+<td>Language and locale</td>
+<td><code>Accept-Language</code>, timezone offset, units. An English-locale browser reading a regional-language site from a third-country datacentre IP is memorable</td>
+</tr>
+<tr>
+<td>Timing</td>
+<td>Activity only in one country's working hours, gaps on its holidays, bursts on the hour. Timing survives every other control you apply</td>
+</tr>
+<tr>
+<td>Link previews</td>
+<td>Pasting a target URL into chat, a ticket, or a doc makes that platform fetch it; the fetch hits the target's server and correlates with your other activity. Disable previews or defang URLs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Logged-in accounts are the big one.</strong> Authentication converts an anonymous
+request into an identified one, and the leaks are features: profile-view
+notifications and viewer lists, story and video view lists, &quot;people you may
+know&quot; suggestions driven by contact-list and interaction graphs, read receipts,
+follower and list notifications, mutual-connection displays. Some fire with no
+action beyond loading a page.</p>
+<p>Per-surface checks, what each platform category exposes, and the settings that
+do and don't help: <a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/investigate-without-getting-made/reference/attribution-surface.md">reference/attribution-surface.md</a>.</p>
+<h4>Separation is absolute</h4>
+<p>Research identity and real identity never touch. Not &quot;mostly&quot; — one crossing
+links them permanently, and it is not reversible once a platform has correlated
+it. The specific leaks, roughly in order of how often they burn people:</p>
+<ul>
+<li><strong>A real phone number for SMS verification.</strong> The strongest cross-platform
+identifier there is; platforms link accounts on it internally and use it to
+power contact-based suggestions. One verification links the persona to you
+forever, including retroactively.</li>
+<li><strong>A recovery email that is yours</strong> — or one that is another persona's, which
+links the personas to each other.</li>
+<li><strong>A payment method.</strong> Any card, wallet, or subscription, including the VPN.</li>
+<li><strong>A reused password</strong>, which surfaces in a future breach and clusters your
+accounts for anyone who buys the dump — see <code>what-leaked-about-you</code>.</li>
+<li><strong>A synced browser profile</strong>, carrying history, autofill, and saved passwords
+into the research environment. Personal cookies and sessions do the rest.</li>
+<li><strong>An avatar that reverse-searches back to you</strong> — or to anyone
+(<code>find-the-original-image</code>). A cropped personal photo, a friend's photo, and a
+stock image all fail, for different reasons. Strip upload metadata too
+(<code>secrets-in-file-metadata</code>).</li>
+<li><strong>Style and habits.</strong> A distinctive phrasing, a recurring typo, fixed hours.</li>
+<li><strong>Contact-list upload.</strong> Granting an app contacts access, on a phone that has
+ever held your real contacts, hands the platform the graph that links
+everything.</li>
+</ul>
+<h4>Personas</h4>
+<p>Build one only when observation genuinely requires an account, and read the ToS
+section below first. A brand-new empty account is both useless and conspicuous: it can't see much and
+it looks exactly like what it is, so it gets blocked, challenged, or banned at
+the moment you need it. Personas need plausible history and age, so create them
+well before the case that needs them and let them accumulate ordinary activity.
+Maintain a small stable rather than one per investigation.</p>
+<p>Coherence is the whole game: name, locale, language, timezone, posting hours,
+interests, and connections all agreeing with each other and with the platform's
+demographics. A persona claiming a city while posting on that city's night
+schedule is a contradiction a human notices instantly.</p>
+<p>Step-by-step build, identifier sourcing, ageing schedule, and the maintenance
+routine: <a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/investigate-without-getting-made/reference/persona-runbook.md">reference/persona-runbook.md</a>.</p>
+<p>Hard limit, regardless of mandate: personas are for <strong>observation</strong> — not for
+eliciting private information, inducing anyone to act, or gaining entry to
+closed systems or groups on a false pretext you have no authorization to make.</p>
+<h4>Network egress</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Good for</th>
+<th>Bad for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commercial VPN</td>
+<td>Hiding your ASN and rough location from ordinary sites; the common default</td>
+<td>Anything that blocks datacentre ranges; anything where &quot;obvious VPN&quot; is itself a signal; trusting the provider</td>
+</tr>
+<tr>
+<td>Residential / mobile proxy</td>
+<td>Appearing as an ordinary consumer connection; reaching services that block datacentres</td>
+<td>Cost, variable reliability, and a serious sourcing problem — see below</td>
+</tr>
+<tr>
+<td>Tor</td>
+<td>Strong anonymity against network observers; accessing onion services</td>
+<td>Persona accounts (exit nodes are a published list, so expect blocks, CAPTCHAs, and account security challenges); anything needing session stability or geographic plausibility</td>
+</tr>
+<tr>
+<td>Your own VPS</td>
+<td>Control and stability</td>
+<td>Being a datacentre IP that traces to a billing identity, which is often worse than a VPN</td>
+</tr>
+</tbody>
+</table>
+<p>Tor is the strongest tool here and the wrong one most of the time: exit
+addresses are publicly enumerable, so a monitored target sees &quot;someone using Tor
+looked at this&quot; — more attention-getting than an ordinary visit — and platforms
+treat Tor logins as high-risk, triggering the verification challenges that kill
+a persona.</p>
+<p>Residential proxies deserve a specific warning: many pools are assembled from
+consumer devices enrolled through bundled SDKs whose users did not meaningfully
+consent, and your traffic exits through a stranger's home connection — an
+ethical problem and potentially a legal one for both of you. Know how your
+provider sources its pool, or don't use one.</p>
+<p>Verify whatever you choose: check the exit address and its ASN, confirm DNS
+resolves through the tunnel, and block WebRTC, which reveals addresses
+independently of it.</p>
+<h4>Environment and compartmentation</h4>
+<p>One case, one environment. A dedicated VM per case is the clean answer; a
+dedicated browser profile is the minimum. Containerised tab isolation separates
+cookies but not fingerprint — a convenience, not a boundary. Across setups: no
+personal accounts ever signed in; snapshot clean and roll back between cases;
+keep notes and downloads in the case's encrypted store; never open a target's
+document or PDF in an environment that can reach your real identity.</p>
+<p>Compartmentation means a persona used on case A is never used on case B. Two
+targets who compare notes — and targets in one ecosystem do — reconstruct your
+operation from the overlap. Same for numbers, emails, proxies, and avatars.</p>
+<p><strong>Never authenticate to anything belonging to the target.</strong> Not their portal,
+not their wifi, not a login with credentials found in breach data, not a
+&quot;forgot password&quot; flow to confirm an account exists. That is the line between
+open-source research and unauthorized access, and it does not move because the
+password was easy to find.</p>
+<h4>Where this goes wrong</h4>
+<ul>
+<li><strong>The logged-in slip.</strong> A colleague sends a link, you click it in your normal
+browser, and the target has your name. The most common burn by a distance.
+Defang shared URLs and make the research browser visually distinct.</li>
+<li><strong>The privacy setting that isn't.</strong> Anonymous-browsing modes stop the <em>name</em>
+reaching the target, but the platform still has it, the setting can revert,
+and some notifications aren't covered. They reduce exposure, not remove it.</li>
+<li><strong>Contact-graph suggestions.</strong> You never visited the profile, yet they're
+suggested to you and you to them, because your device or persona touched a
+number or address in their contact graph.</li>
+<li><strong>Verification challenge mid-case.</strong> Ageing and stable egress reduce it;
+nothing eliminates it. Plan for the account to die at the worst moment.</li>
+<li><strong>Metadata in your own outputs.</strong> Screenshots and reports carrying your
+username, hostname, or internal paths, sent to a client.</li>
+<li><strong>Correlating your own personas.</strong> Same avatar generator, same bio template,
+same three interests, made in one afternoon from one exit IP. Platforms
+cluster on exactly this.</li>
+<li><strong>Assuming passive means invisible.</strong> One request in a server log is nothing;
+a distinctive pattern across a hundred is a signature. And scanners and API
+clients carry their own TLS and header fingerprints, with some logging your
+queries server-side — know what egresses where.</li>
+</ul>
+<h4>Grading your exposure</h4>
+<p>After any collection action, grade what the target could know.</p>
+<ul>
+<li><strong>Clean</strong> — nothing reached target-controlled infrastructure: third-party
+archives, registries, and logs only.</li>
+<li><strong>Anonymous contact</strong> — the target's servers logged a request carrying no
+identity beyond an IP you control and a common fingerprint.</li>
+<li><strong>Pseudonymous contact</strong> — the target can see a persona: a viewer entry, a
+follow, a notification. Recoverable if the persona is clean and compartmented.</li>
+<li><strong>Attributed</strong> — a real identity, employer ASN, or cross-linked selector
+reached the target. Stop, record what was exposed and when, and tell the case
+owner; a concealed burn becomes a burn the other side discovers first.</li>
+</ul>
+<p>Log exposure events as they happen, with timestamps. Reconstructing them after a
+case goes wrong is guesswork, and the client will ask.</p>
+<h4>Worked example</h4>
+<p>Objective: is a supplier's named director active in an industry forum? Subject
+is a small business owner, not technically sophisticated, but the forum is niche
+and members notice new accounts.</p>
+<p>Posture: commercial VPN, dedicated browser profile, an existing aged persona
+from the stable — not a new one, because the forum's member list shows join
+dates.</p>
+<p>The dead end that matters: the forum blocks the VPN's ranges outright. Instead
+of escalating tooling, the archive route (<code>read-deleted-pages</code>) yields cached
+thread pages containing most of what was needed, with no contact at all. Graded
+clean.</p>
+<p>One question still needs a live profile page. The persona logs in from a
+consumer connection rather than the VPN, in the forum's working hours, views the
+profile, and leaves. The forum has no &quot;who viewed&quot; feature, so exposure is
+graded anonymous contact — with a note that the administrator can still read
+access logs.</p>
+<p>Not done: a professional-network profile view of the same person, because that
+platform notifies. The question it would have answered went into the report's
+gaps section instead. A tipped-off subject costs more than an unanswered
+secondary question.</p>
+<h4>Pivots</h4>
+<p>OPSEC is a precondition, not a producer of selectors. Run it before
+<code>pattern-of-life-from-socials</code>, <code>hunt-a-handle</code>, <code>find-leaks-in-the-wild</code>, and
+any interactive step in <code>find-anyone</code> or <code>x-ray-a-company</code>. Check avatars with
+<code>find-the-original-image</code>, strip uploads with <code>secrets-in-file-metadata</code>, prefer
+<code>read-deleted-pages</code> to live visits, and log exposure events so
+<code>write-the-intel-brief</code> can state what the subject may know.</p>
+<h4>Legal and ToS notes</h4>
+<p>Say this plainly: <strong>fake accounts violate most platforms' terms of service.</strong>
+Accurate-information requirements are near-universal, the accounts get banned,
+and the ban can take your collection with it. Terms breach is generally a
+contract matter rather than a crime, but the boundary between breaching terms
+and unauthorized access is jurisdiction-specific and has been litigated both
+ways. Decide with counsel whether your mandate covers it, and record it.</p>
+<p>Impersonating a <strong>real, identifiable person</strong> is a far more serious matter than
+an invented persona — a number of jurisdictions criminalise online impersonation
+specifically (California Penal Code § 528.5 is one example), and it exposes you
+to defamation and civil claims. Impersonating a <strong>law-enforcement officer,
+government official, or lawyer</strong> is a criminal offence in its own right in many
+places, including under US federal law, and no investigative mandate covers it.</p>
+<p>Also: a persona is personal data processing under GDPR-style regimes when used
+to collect on living people, and the persona's own conduct is attributable to
+your organisation. See <a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/ETHICS.md">../../ETHICS.md</a>. If you cannot justify
+the persona in writing, do not create it.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

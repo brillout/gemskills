@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gh-issue-sync · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;d rather triage, search and edit a repo&#039;s GitHub issues as files in your editor than on github.com. It does: pulls issues into Markdown files under .issues/, then pushes your edits, new issues and comments back. You get: one Markdown file per issue, with its title, labels, assignees, milestone and state at the top. Needs: the gh-issue-sync CLI, which this skill ships with, run inside a git repository." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mitsuhiko%2Fgh-issue-sync">mitsuhiko/gh-issue-sync</a></p>
+      <h1>gh-issue-sync</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;d rather triage, search and edit a repo&#39;s GitHub issues as files in your editor than on github.com</dd></div><div><dt>It does</dt><dd>pulls issues into Markdown files under .issues/, then pushes your edits, new issues and comments back</dd></div><div><dt>You get</dt><dd>one Markdown file per issue, with its title, labels, assignees, milestone and state at the top</dd></div><div><dt>Needs</dt><dd>the gh-issue-sync CLI, which this skill ships with, run inside a git repository</dd></div></dl></section>
+      
+      <p class="note">Top of the skills.sh hot chart on 2026-09-21.</p>
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A short command reference for the gh-issue-sync CLI. After init in a git repository, pull fetches open issues, and closed ones with --all, into .issues/open/ and .issues/closed/: one Markdown file per issue, named after its number and title, such as 42-fix-login-bug.md. A header block holds the title, labels, assignees, milestone, state and links to related issues; the body is the issue text. You or the agent edit these files, status and diff show what changed, and push sends it, with --dry-run to preview first. A new issue gets a placeholder number until push creates it on GitHub, then the file is renamed and mentions of it in other issues are updated. To comment, you write a .comment.md file next to the issue; it&#39;s posted on push, then deleted. Pull skips files that conflict with local changes unless you force it.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mitsuhiko/gh-issue-sync/tree/955fe4c48653599294f9130008a996e2d9048ef5/skill">the skill at 955fe4c</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mitsuhiko/gh-issue-sync --skill gh-issue-sync</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mitsuhiko/gh-issue-sync --skill gh-issue-sync">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mitsuhiko/gh-issue-sync/gh-issue-sync">skills.sh page</a> · <a href="https://github.com/mitsuhiko/gh-issue-sync/tree/HEAD/skill">Source on GitHub</a> · <a href="/gemskills/?repo=mitsuhiko%2Fgh-issue-sync">All skills from mitsuhiko/gh-issue-sync</a></p>
+          <dl class="facts"><div><dt>Repo stars</dt><dd>165 <span class="muted">mitsuhiko/gh-issue-sync</span></dd></div><div><dt>First seen</dt><dd>Jan 22, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:issue-tracker" data-facet="needs" title="Reads or writes an issue tracker, GitHub Issues by default." href="/gemskills/?tag=needs%3Aissue-tracker">needs:issue-tracker</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">Reads or writes an issue tracker, GitHub Issues by default.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="issue-tracking" data-facet="topic" href="/gemskills/?tag=issue-tracking">issue-tracking</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:github" data-facet="stack" href="/gemskills/?tag=stack%3Agithub">stack:github</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mitsuhiko/gh-issue-sync/blob/955fe4c48653599294f9130008a996e2d9048ef5/skill/SKILL.md">mitsuhiko/gh-issue-sync at 955fe4c</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: gh-issue-sync
+description: &#34;Manage GitHub issues locally as Markdown files. Use for triaging, searching, editing, and creating issues without leaving your editor or terminal.&#34;</code></pre></details>
+        <div class="markdown"><h3>gh-issue-sync</h3>
+<p>Syncs GitHub issues to local Markdown files in <code>.issues/open/</code> and <code>.issues/closed/</code>.</p>
+<h4>Commands</h4>
+<pre><code>gh-issue-sync init              # Initialize in git repo
+gh-issue-sync pull              # Fetch open issues (--all for closed too)
+gh-issue-sync push              # Push local changes (--dry-run to preview)
+gh-issue-sync list              # List issues (supports gh issue list flags + --search)
+gh-issue-sync new &quot;Title&quot;       # Create issue (--label, --edit)
+gh-issue-sync close 42          # Close (--reason completed|not_planned)
+gh-issue-sync reopen 42
+gh-issue-sync status            # Show local changes
+gh-issue-sync diff 42           # Show diff (--remote to re-fetch)
+</code></pre>
+<h4>File Format</h4>
+<p><code>.issues/open/42-fix-login-bug.md</code>:</p>
+<pre><code class="language-markdown">---
+title: Fix login bug
+labels: [bug, priority:high]
+assignees: [alice]
+milestone: v1.0
+state: open
+# For closed: state_reason: completed|not_planned
+# Optional: parent: 10, blocked_by: [11, 12], blocks: [15]
+---
+
+Issue body in Markdown.
+</code></pre>
+<p>Issue number is derived from the filename, not stored in frontmatter.</p>
+<h4>Temporary Issues</h4>
+<p>New issues get a <code>T</code>-prefixed ID (e.g., <code>T1a2b3c</code>). The filename must start with <code>T</code>:</p>
+<pre><code>.issues/open/T1a2b3c-my-new-issue.md
+</code></pre>
+<p>On <code>push</code>, the file is renamed to the real issue number (e.g., <code>42-my-new-issue.md</code>) and <code>number:</code> in frontmatter is updated. Any <code>#T1a2b3c</code> references in other issues are also updated to <code>#42</code>.</p>
+<h4>Comments</h4>
+<p>To post a comment when pushing, create a <code>.comment.md</code> file next to the issue:</p>
+<pre><code>.issues/open/42.comment.md
+.issues/open/42-fix-login-bug.comment.md
+</code></pre>
+<p>Content is plain Markdown. The file is deleted after the comment is posted.</p>
+<h4>Notes</h4>
+<ul>
+<li>Pull skips conflicts; use <code>--force</code> to overwrite local</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

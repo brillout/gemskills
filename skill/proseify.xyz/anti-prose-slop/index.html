@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>anti-prose-slop · Gem Skills</title>
+    <meta name="description" content="Use it when: you want an agent to write a whole novel or novella that doesn&#039;t read like generic AI prose. It does: uses Proseify, an online book-writing service for agents, to pick a genre guide, study classic passages, plan the book and draft every chapter. You get: a full manuscript, assembled chapter by chapter in one Markdown file. Needs: Proseify&#039;s MCP server and an API key from a Proseify plan. Unlike humanizer: that skill cleans up existing text; this one writes long fiction from scratch." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=proseify.xyz">proseify.xyz</a></p>
+      <h1>anti-prose-slop</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want an agent to write a whole novel or novella that doesn&#39;t read like generic AI prose</dd></div><div><dt>It does</dt><dd>uses Proseify, an online book-writing service for agents, to pick a genre guide, study classic passages, plan the book and draft every chapter</dd></div><div><dt>You get</dt><dd>a full manuscript, assembled chapter by chapter in one Markdown file</dd></div><div><dt>Needs</dt><dd>Proseify&#39;s MCP server and an API key from a Proseify plan</dd></div><div><dt>Unlike humanizer</dt><dd>that skill cleans up existing text; this one writes long fiction from scratch</dd></div></dl></section>
+      
+      <p class="note">Listed on the skills.sh trending chart on 2026-09-21.</p>
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Despite the name, it&#39;s a whole-book writing workflow. Its one rule is &#34;genre before prose&#34;: a gothic ghost story and a Regency romance want different sentence lengths, moods and endings, so the agent first fetches Proseify&#39;s guide to the genre: its pacing, how much dialogue it uses and the style it expects. It asks you one question up front, novel (about 80,000 words in 40 chapters) or novella (the default, 30 chapters, about 48,000 words), then searches Proseify&#39;s collection of public-domain books, mainly from Project Gutenberg, for passages in the voice it wants, and plans the book. It drafts every chapter in order at full length, because summarizing the later chapters is the usual way agents fake a finished book. Between drafts it edits out &#34;seemed to&#34; and &#34;began to&#34;, stacked adverbs, &#34;she felt&#34; and &#34;she noticed&#34;, repeated sentences and chapters that all open the same way. Finally Proseify scores the book and flags thin chapters, and the agent rewrites the weakest.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/proseify.xyz/anti-prose-slop.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://proseify.xyz/</code><button type="button" class="copy" data-copy="npx skills add https://proseify.xyz/">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/site/proseify.xyz/anti-prose-slop">skills.sh page</a> · <a href="/gemskills/?repo=proseify.xyz">All skills from proseify.xyz</a></p>
+          <dl class="facts"></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:writing" data-facet="category" title="Articles, docs, internal comms, research write-ups and prose that doesn&#39;t read as generated." href="/gemskills/?tag=category%3Awriting">category:writing</a></div>
+          <p class="tag-meaning">Articles, docs, internal comms, research write-ups and prose that doesn&#39;t read as generated.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:mcp" data-facet="needs" title="Needs an MCP server connected." href="/gemskills/?tag=needs%3Amcp">needs:mcp</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">Needs an MCP server connected.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="writing" data-facet="topic" href="/gemskills/?tag=writing">writing</a><a class="tag" data-tag="anti-slop" data-facet="topic" href="/gemskills/?tag=anti-slop">anti-slop</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:proseify" data-facet="stack" href="/gemskills/?tag=stack%3Aproseify">stack:proseify</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://proseify.xyz/.well-known/skills/index.json">proseify.xyz</a>, sha256:bec5094b3d68…. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: anti-prose-slop
+description: Stop AI agents from shipping generic AI prose when writing books with Proseify.
+license: MIT
+metadata:
+  version: &#34;1.0.0&#34;
+  author: &#34;Proseify &#60;support@proseify.xyz&#62;&#34;
+  compatibility: &#34;Works with any AI agent that can call the Proseify MCP server (Claude Code, Codex, Cursor, OpenCode, Hermes).&#34;
+  tags: &#34;book-writing, mcp, longform, fiction, prose-quality, editing&#34;</code></pre></details>
+        <div class="markdown"><blockquote>
+<p><strong>Stop AI writing agents from shipping generic prose.</strong></p>
+</blockquote>
+<h3>Stop Making Prose Slop</h3>
+<p>Write distinctive, publishable longform with the Proseify MCP — a curated
+public-domain corpus plus a guided drafting pipeline.</p>
+<p><strong>Prerequisite:</strong> connect the Proseify MCP first. No key, no tools.</p>
+<pre><code class="language-json">{
+  &quot;mcpServers&quot;: {
+    &quot;proseify&quot;: {
+      &quot;type&quot;: &quot;http&quot;,
+      &quot;url&quot;: &quot;https://mcp.proseify.xyz/mcp&quot;,
+      &quot;headers&quot;: { &quot;Authorization&quot;: &quot;Bearer YOUR_KEY&quot; }
+    }
+  }
+}
+</code></pre>
+<p>Get a key at <a href="https://proseify.xyz">https://proseify.xyz</a> (sign in → pick a plan → paste your config).</p>
+<h4>The one rule</h4>
+<p><strong>Genre before prose.</strong> Every generation decision after the first sentence
+depends on picking the right tradition. A gothic ghost story and a Regency
+romance want different sentence lengths, different climates, different endings.
+Call <code>get_genre_recipe</code> before writing; don't use <code>plan_book</code> to skip it.</p>
+<h4>The workflow</h4>
+<ol>
+<li><strong>Agree the length FIRST.</strong> Before planning anything, ask the user one
+question: <em>&quot;Full novel (~70–90k words) or novella (~20–30k)?&quot;</em> Then pass
+<strong>explicit</strong> arguments — <code>plan_book(&quot;...&quot;, genre, target_chapters=40, target_words=80000)</code> for a novel, or omit for the default (30 chapters ≈
+48k words). Never accept the bare default without confirming: agents that
+&quot;just go&quot; produce novellas when the customer asked for a book, and stop
+mid-book to ask about tools instead of finishing the manuscript.</li>
+<li><strong>Identify the genre.</strong> Don't guess. Cross-check against <code>list_genres</code> and
+<code>get_genre_recipe(genre)</code> before writing. Mislabeled genre = mis-voiced book.</li>
+<li><strong>Read the recipe.</strong> It returns pacing beats, dialogue ratio, and
+stylistic anchors from the tradition. Read them all before planning.</li>
+<li><strong>Search the corpus.</strong> Use <code>search_corpus</code> for 3–5 model passages that
+match the register you want. Quote a line to yourself; match its rhythm.</li>
+<li><strong>Plan before drafting.</strong> <code>plan_book</code> produces the architecture. Use it —
+don't freestyle 40 chapters without a map.</li>
+<li><strong>Draft EVERY chapter, in chapter order, without stopping.</strong> The common
+failure: the agent drafts chapters 1–5, summarises the rest, and calls it
+done. A book isn't done until every planned chapter exists at its full
+target length. If you have a per-session step budget, write the next
+chapter at the start of each new turn rather than summarising.</li>
+<li><strong>Self-edit between drafts.</strong> Anti-slop pass, every time:
+<ul>
+<li>Cut &quot;seemed to&quot;, &quot;began to&quot;, &quot;settled into&quot;.</li>
+<li>Kill adverb-stacking (&quot;quietly, almost reverently…&quot;).</li>
+<li>Delete sentences that only restate the previous one.</li>
+<li>Check chapter openings — vary them. Never six chapters in a row that open
+with weather.</li>
+<li>Read the last page out loud; if it sounds like a summary, rewrite it.</li>
+</ul>
+</li>
+<li><strong>Verify with <code>evaluate_book</code>.</strong> If the score is below your own bar,
+don't ship it — revise the weakest chapters and re-evaluate.</li>
+</ol>
+<h4>Anti-slop checklist (per chapter)</h4>
+<ul>
+<li>[ ] Voice matches the recipe, not &quot;ChatGPT normal&quot;.</li>
+<li>[ ] Dialogue keeps its register (era, class, region).</li>
+<li>[ ] Scene boundaries do work — each has a job, not just a location change.</li>
+<li>[ ] No repeated sentence-opening constructions within three paragraphs.</li>
+<li>[ ] Concrete nouns beat abstractions. &quot;The bell rang&quot; beats &quot;A sound occurred.&quot;</li>
+</ul>
+<h4>Traps the corpus protects against</h4>
+<ul>
+<li><strong>The thesaurus trap.</strong> Don't swap synonyms for variety; swap for precision.</li>
+<li><strong>The cliffhanger trap.</strong> One per book, not one per chapter.</li>
+<li><strong>The filter-words trap.</strong> &quot;She felt / saw / heard / noticed&quot; — cut them.</li>
+<li><strong>The dialogue-as-exposition trap.</strong> Nobody explains the plot over tea.</li>
+</ul>
+<h4>Pitfalls</h4>
+<ul>
+<li><code>plan_book</code> result is large. Don't call it repeatedly for the same book; call
+once, hold the outline in context, work chapter by chapter.</li>
+<li><strong>Default is 30 chapters ≈ 48k words (novella-length).</strong> A full novel needs
+explicit <code>target_chapters=40, target_words=80000</code> (cap is 40 chapters).
+Confirm this with the user before planning (step 1).</li>
+<li><strong>The summarise trap:</strong> the #1 way agents &quot;finish&quot; a book is writing chapters
+1–5 fully and compressing the rest into one-line summaries. <code>evaluate_book</code>
+catches thin chapters — run it before declaring done, and re-draft any
+chapter under its per-chapter target.</li>
+<li>Long agent sessions get cut off. Persist progress: keep the assembled
+manuscript in a file (<code>assemble_book</code> markdown) and append chapter by
+chapter so an interrupted session resumes instead of restarting.</li>
+<li><code>search_corpus</code> supports FTS5 syntax (quotes, AND/OR/NOT, <code>*</code> wildcards)
+but long operator chains are clamped to 10 terms.</li>
+</ul>
+<h4>Licensing</h4>
+<p>Books sourced from Project Gutenberg and similar public-domain corpora; safe
+commercial use. See the corpus page on <a href="https://proseify.xyz">https://proseify.xyz</a> for per-book details.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

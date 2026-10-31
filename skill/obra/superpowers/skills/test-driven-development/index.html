@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test-driven-development · Gem Skills</title>
+    <meta name="description" content="Use it when: the agent implements any feature, bug fix, refactor or behavior change. It does: makes it write one failing test, watch it fail, write the least code that passes, then clean up. Forbids: code without a failing test first: code written before its test is deleted, not kept as a reference. Exceptions: throwaway prototypes, generated code and config files, each only with your permission." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>test-driven-development</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>the agent implements any feature, bug fix, refactor or behavior change</dd></div><div><dt>It does</dt><dd>makes it write one failing test, watch it fail, write the least code that passes, then clean up</dd></div><div><dt>Forbids</dt><dd>code without a failing test first: code written before its test is deleted, not kept as a reference</dd></div><div><dt>Exceptions</dt><dd>throwaway prototypes, generated code and config files, each only with your permission</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 7 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · Before it: <a href="/gemskills/skill/obra/superpowers/skills/executing-plans/">executing-plans</a> · After it: <a href="/gemskills/skill/obra/superpowers/skills/requesting-code-review/">requesting-code-review</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Its one rule is &#34;no production code without a failing test first&#34;. Each cycle starts with one small test of real behavior, with a clear name and no mocks unless they can&#39;t be avoided. The agent runs it and checks that it fails for the right reason: the feature is missing, not a typo. A test that passes straight away is testing existing behavior and gets fixed. Then it writes the simplest code that passes, with no extra options, and runs the project&#39;s whole test suite, not just the new test, reporting any failure it sees, even one it didn&#39;t cause. Only when everything passes does it refactor. A bug gets a test that reproduces it before any fix. The skill answers the usual excuses (too simple to test, I&#39;ll test after, I already tried it by hand, deleting hours of work is wasteful) and lists the signs that mean: delete the code and start over. A companion guide covers writing tests that fail when the code breaks, and when mocking is safe.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/test-driven-development">the skill at bb92a77</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill test-driven-development</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill test-driven-development">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/test-driven-development">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/test-driven-development">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>232,256 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">6.8K</div>
+      <div class="stat-delta">-7% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 7,263; week to Aug 10: 6,699; week to Aug 17: 6,400; week to Aug 24: 6,748; week to Aug 31: 6,286; week to Sep 7: 6,481; week to Sep 14: 6,441; week to Sep 21: 6,754. Use the left and right arrow keys to read each week."
+        data-values="7263,6699,6400,6748,6286,6481,6441,6754" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,9.4 71.1,11.2 103.7,9.1 136.3,11.9 168.9,10.7 201.4,11.0 234.0,9.1" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="9.1" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>7,263</td></tr><tr><td>Aug 10</td><td>6,699</td></tr><tr><td>Aug 17</td><td>6,400</td></tr><tr><td>Aug 24</td><td>6,748</td></tr><tr><td>Aug 31</td><td>6,286</td></tr><tr><td>Sep 7</td><td>6,481</td></tr><tr><td>Sep 14</td><td>6,441</td></tr><tr><td>Sep 21</td><td>6,754</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="tdd" data-facet="topic" href="/gemskills/?tag=tdd">tdd</a><a class="tag" data-tag="testing" data-facet="topic" href="/gemskills/?tag=testing">testing</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/test-driven-development/SKILL.md">obra/superpowers at bb92a77</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: test-driven-development
+description: Use when implementing any feature or bugfix, before writing implementation code</code></pre></details>
+        <div class="markdown"><h3>Test-Driven Development (TDD)</h3>
+<h4>Overview</h4>
+<p>Write the test first. Watch it fail. Write minimal code to pass.</p>
+<p><strong>Core principle:</strong> If you didn't watch the test fail, you don't know if it tests the right thing.</p>
+<p><strong>Violating the letter of the rules is violating the spirit of the rules.</strong></p>
+<h4>When to Use</h4>
+<p><strong>Always:</strong></p>
+<ul>
+<li>New features</li>
+<li>Bug fixes</li>
+<li>Refactoring</li>
+<li>Behavior changes</li>
+</ul>
+<p><strong>Exceptions (ask your human partner):</strong></p>
+<ul>
+<li>Throwaway prototypes</li>
+<li>Generated code</li>
+<li>Configuration files</li>
+</ul>
+<p>Thinking &quot;skip TDD just this once&quot;? Stop. That's rationalization.</p>
+<h4>The Iron Law</h4>
+<pre><code>NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
+</code></pre>
+<p>Write code before the test? Delete it. Start over.</p>
+<p><strong>No exceptions:</strong></p>
+<ul>
+<li>Don't keep it as &quot;reference&quot;</li>
+<li>Don't &quot;adapt&quot; it while writing tests</li>
+<li>Don't look at it</li>
+<li>Delete means delete</li>
+</ul>
+<p>Implement fresh from tests. Period.</p>
+<h4>Red-Green-Refactor</h4>
+<pre><code class="language-dot">digraph tdd_cycle {
+    rankdir=LR;
+    red [label=&quot;RED\nWrite failing test&quot;, shape=box, style=filled, fillcolor=&quot;#ffcccc&quot;];
+    verify_red [label=&quot;Verify fails\ncorrectly&quot;, shape=diamond];
+    green [label=&quot;GREEN\nMinimal code&quot;, shape=box, style=filled, fillcolor=&quot;#ccffcc&quot;];
+    verify_green [label=&quot;Verify passes\nAll green&quot;, shape=diamond];
+    refactor [label=&quot;REFACTOR\nClean up&quot;, shape=box, style=filled, fillcolor=&quot;#ccccff&quot;];
+    next [label=&quot;Next&quot;, shape=ellipse];
+
+    red -&gt; verify_red;
+    verify_red -&gt; green [label=&quot;yes&quot;];
+    verify_red -&gt; red [label=&quot;wrong\nfailure&quot;];
+    green -&gt; verify_green;
+    verify_green -&gt; refactor [label=&quot;yes&quot;];
+    verify_green -&gt; green [label=&quot;no&quot;];
+    refactor -&gt; verify_green [label=&quot;stay\ngreen&quot;];
+    verify_green -&gt; next;
+    next -&gt; red;
+}
+</code></pre>
+<h5>RED - Write Failing Test</h5>
+<p>Write one minimal test showing what should happen.</p>
+<p>&lt;Good&gt;</p>
+<pre><code class="language-typescript">test('retries failed operations 3 times', async () =&gt; {
+  let attempts = 0;
+  const operation = () =&gt; {
+    attempts++;
+    if (attempts &lt; 3) throw new Error('fail');
+    return 'success';
+  };
+
+  const result = await retryOperation(operation);
+
+  expect(result).toBe('success');
+  expect(attempts).toBe(3);
+});
+</code></pre>
+<p>Clear name, tests real behavior, one thing
+&lt;/Good&gt;</p>
+<p>&lt;Bad&gt;</p>
+<pre><code class="language-typescript">test('retry works', async () =&gt; {
+  const mock = jest.fn()
+    .mockRejectedValueOnce(new Error())
+    .mockRejectedValueOnce(new Error())
+    .mockResolvedValueOnce('success');
+  await retryOperation(mock);
+  expect(mock).toHaveBeenCalledTimes(3);
+});
+</code></pre>
+<p>Vague name, tests mock not code
+&lt;/Bad&gt;</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>One behavior</li>
+<li>Clear name</li>
+<li>Real code (no mocks unless unavoidable)</li>
+</ul>
+<h5>Verify RED - Watch It Fail</h5>
+<p><strong>MANDATORY. Never skip.</strong></p>
+<pre><code class="language-bash">npm test path/to/test.test.ts
+</code></pre>
+<p>Confirm:</p>
+<ul>
+<li>Test fails (not errors)</li>
+<li>Failure message is expected</li>
+<li>Fails because feature missing (not typos)</li>
+</ul>
+<p><strong>Test passes?</strong> You're testing existing behavior. Fix test.</p>
+<p><strong>Test errors?</strong> Fix error, re-run until it fails correctly.</p>
+<h5>GREEN - Minimal Code</h5>
+<p>Write simplest code to pass the test.</p>
+<p>&lt;Good&gt;</p>
+<pre><code class="language-typescript">async function retryOperation&lt;T&gt;(fn: () =&gt; Promise&lt;T&gt;): Promise&lt;T&gt; {
+  for (let i = 0; i &lt; 3; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      if (i === 2) throw e;
+    }
+  }
+  throw new Error('unreachable');
+}
+</code></pre>
+<p>Just enough to pass
+&lt;/Good&gt;</p>
+<p>&lt;Bad&gt;</p>
+<pre><code class="language-typescript">async function retryOperation&lt;T&gt;(
+  fn: () =&gt; Promise&lt;T&gt;,
+  options?: {
+    maxRetries?: number;
+    backoff?: 'linear' | 'exponential';
+    onRetry?: (attempt: number) =&gt; void;
+  }
+): Promise&lt;T&gt; {
+  // YAGNI
+}
+</code></pre>
+<p>Over-engineered
+&lt;/Bad&gt;</p>
+<p>Don't add features, refactor other code, or &quot;improve&quot; beyond the test.</p>
+<h5>Verify GREEN - Watch It Pass</h5>
+<p><strong>MANDATORY.</strong></p>
+<pre><code class="language-bash">npm test path/to/test.test.ts
+</code></pre>
+<p>Confirm:</p>
+<ul>
+<li>Test passes</li>
+<li>Other tests still pass</li>
+<li>Output pristine (no errors, warnings)</li>
+</ul>
+<p><strong>Test fails?</strong> Fix code, not test.</p>
+<p><strong>Other tests fail?</strong> Fix now.</p>
+<p><strong>&quot;Other tests&quot; means the project's suite, not just your file.</strong> A
+green run of the test you wrote is not a green suite. Before you call
+the change done, run the project's test command (bare <code>pytest</code>,
+<code>npm test</code>, <code>cargo test</code> — whatever the repo uses) even when your task
+named only one test file. A scope statement in your task bounds the
+deliverable, not your verification. Any failure that run shows —
+including one you didn't cause — goes in your report by name; a red
+test you watched scroll past and didn't mention is a report falsified
+by omission.</p>
+<h5>REFACTOR - Clean Up</h5>
+<p>After green only:</p>
+<ul>
+<li>Remove duplication</li>
+<li>Improve names</li>
+<li>Extract helpers</li>
+</ul>
+<p>Keep tests green. Don't add behavior.</p>
+<h5>Repeat</h5>
+<p>Next failing test for next feature.</p>
+<h4>Good Tests</h4>
+<table>
+<thead>
+<tr>
+<th>Quality</th>
+<th>Good</th>
+<th>Bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Minimal</strong></td>
+<td>One thing. &quot;and&quot; in name? Split it.</td>
+<td><code>test('validates email and domain and whitespace')</code></td>
+</tr>
+<tr>
+<td><strong>Clear</strong></td>
+<td>Name describes behavior</td>
+<td><code>test('test1')</code></td>
+</tr>
+<tr>
+<td><strong>Shows intent</strong></td>
+<td>Demonstrates desired API</td>
+<td>Obscures what code should do</td>
+</tr>
+</tbody>
+</table>
+<p>When writing or changing any test, read <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/test-driven-development/writing-good-tests.md">writing-good-tests.md</a> for the rules that keep tests honest:</p>
+<ul>
+<li>Name the production change that would make the test fail — before writing it</li>
+<li>Assert on real behavior, never on mock behavior</li>
+<li>Keep test-only code in test utilities, out of production classes</li>
+<li>Understand a dependency's side effects before mocking it</li>
+</ul>
+<h4>Common Rationalizations</h4>
+<table>
+<thead>
+<tr>
+<th>Excuse</th>
+<th>Reality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Too simple to test&quot;</td>
+<td>Simple code breaks. Test takes 30 seconds.</td>
+</tr>
+<tr>
+<td>&quot;I'll test after&quot;</td>
+<td>Tests written after pass immediately — which proves nothing. They may test the wrong thing, test the implementation instead of the behavior, or miss the edge case you forgot. You never watched it fail, so you never proved it can catch the bug. Test-first forces that failure.</td>
+</tr>
+<tr>
+<td>&quot;Tests after achieve same goals (spirit not ritual)&quot;</td>
+<td>Tests-after answer &quot;what does this do?&quot;; tests-first answer &quot;what should this do?&quot; Tests written after are biased by the code you already wrote — you verify the cases you remembered, not the ones you'd have discovered. Coverage without proof the tests work.</td>
+</tr>
+<tr>
+<td>&quot;Already manually tested&quot;</td>
+<td>Manual testing is ad-hoc: no record of what you covered, no way to re-run it when the code changes, easy to forget cases under pressure. &quot;Worked when I tried it&quot; ≠ comprehensive. Automated tests run the same way every time.</td>
+</tr>
+<tr>
+<td>&quot;Deleting X hours is wasteful&quot;</td>
+<td>Sunk cost fallacy — that time is already spent either way. The real choice: rewrite with TDD (high confidence) vs. keep it and bolt tests on after (low confidence, likely bugs). Keeping code you can't trust is the waste.</td>
+</tr>
+<tr>
+<td>&quot;Keep as reference, write tests first&quot;</td>
+<td>You'll adapt it. That's testing after. Delete means delete.</td>
+</tr>
+<tr>
+<td>&quot;Need to explore first&quot;</td>
+<td>Fine. Throw away exploration, start with TDD.</td>
+</tr>
+<tr>
+<td>&quot;Test hard = design unclear&quot;</td>
+<td>Listen to test. Hard to test = hard to use.</td>
+</tr>
+<tr>
+<td>&quot;TDD will slow me down&quot;</td>
+<td>TDD IS the pragmatic path: catches bugs before commit, prevents regressions, lets you refactor without fear. &quot;Pragmatic&quot; shortcuts mean debugging in production — slower, not faster.</td>
+</tr>
+<tr>
+<td>&quot;Manual test faster&quot;</td>
+<td>Manual doesn't prove edge cases. You'll re-test every change.</td>
+</tr>
+<tr>
+<td>&quot;Existing code has no tests&quot;</td>
+<td>You're improving it. Add tests for existing code.</td>
+</tr>
+</tbody>
+</table>
+<h4>Red Flags - STOP and Start Over</h4>
+<ul>
+<li>Code before test</li>
+<li>Test after implementation</li>
+<li>Test passes immediately</li>
+<li>Can't explain why test failed</li>
+<li>Tests added &quot;later&quot;</li>
+<li>Rationalizing &quot;just this once&quot;</li>
+<li>&quot;I already manually tested it&quot;</li>
+<li>&quot;Tests after achieve the same purpose&quot;</li>
+<li>&quot;It's about spirit not ritual&quot;</li>
+<li>&quot;Keep as reference&quot; or &quot;adapt existing code&quot;</li>
+<li>&quot;Already spent X hours, deleting is wasteful&quot;</li>
+<li>&quot;TDD is dogmatic, I'm being pragmatic&quot;</li>
+<li>&quot;This is different because...&quot;</li>
+</ul>
+<p><strong>All of these mean: Delete code. Start over with TDD.</strong></p>
+<h4>Example: Bug Fix</h4>
+<p><strong>Bug:</strong> Empty email accepted</p>
+<p><strong>RED</strong></p>
+<pre><code class="language-typescript">test('rejects empty email', async () =&gt; {
+  const result = await submitForm({ email: '' });
+  expect(result.error).toBe('Email required');
+});
+</code></pre>
+<p><strong>Verify RED</strong></p>
+<pre><code class="language-bash">$ npm test
+FAIL: expected 'Email required', got undefined
+</code></pre>
+<p><strong>GREEN</strong></p>
+<pre><code class="language-typescript">function submitForm(data: FormData) {
+  if (!data.email?.trim()) {
+    return { error: 'Email required' };
+  }
+  // ...
+}
+</code></pre>
+<p><strong>Verify GREEN</strong></p>
+<pre><code class="language-bash">$ npm test
+PASS
+</code></pre>
+<p><strong>REFACTOR</strong>
+Extract validation for multiple fields if needed.</p>
+<h4>Verification Checklist</h4>
+<p>Before marking work complete:</p>
+<ul>
+<li>[ ] Every new function/method has a test</li>
+<li>[ ] Watched each test fail before implementing</li>
+<li>[ ] Each test failed for expected reason (feature missing, not typo)</li>
+<li>[ ] Wrote minimal code to pass each test</li>
+<li>[ ] All tests pass</li>
+<li>[ ] Output pristine (no errors, warnings)</li>
+<li>[ ] Tests use real code (mocks only if unavoidable)</li>
+<li>[ ] Edge cases and errors covered</li>
+</ul>
+<p>Can't check all boxes? You skipped TDD. Start over.</p>
+<h4>When Stuck</h4>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Don't know how to test</td>
+<td>Write wished-for API. Write assertion first. Ask your human partner.</td>
+</tr>
+<tr>
+<td>Test too complicated</td>
+<td>Design too complicated. Simplify interface.</td>
+</tr>
+<tr>
+<td>Must mock everything</td>
+<td>Code too coupled. Use dependency injection.</td>
+</tr>
+<tr>
+<td>Test setup huge</td>
+<td>Extract helpers. Still complex? Simplify design.</td>
+</tr>
+</tbody>
+</table>
+<h4>Debugging Integration</h4>
+<p>Bug found? Write failing test reproducing it. Follow TDD cycle. Test proves fix and prevents regression.</p>
+<p>Never fix bugs without a test.</p>
+<h4>Final Rule</h4>
+<pre><code>Production code → test exists and failed first
+Otherwise → not TDD
+</code></pre>
+<p>No exceptions without your human partner's permission.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wizard · Gem Skills</title>
+    <meta name="description" content="Use it when: a setup needs steps only you can do, such as copying API keys from dashboards or adding CI secrets. It does: writes a bash script that walks you through each step: opens the page, says what to click, saves what you paste. You get: a script that fills .env and GitHub secrets, with a progress count, confirmations and hidden entry for secrets. Doesn&#039;t: run the script itself, or take over steps the agent could do on its own." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a></p>
+      <h1>wizard</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a setup needs steps only you can do, such as copying API keys from dashboards or adding CI secrets</dd></div><div><dt>It does</dt><dd>writes a bash script that walks you through each step: opens the page, says what to click, saves what you paste</dd></div><div><dt>You get</dt><dd>a script that fills .env and GitHub secrets, with a progress count, confirmations and hidden entry for secrets</dd></div><div><dt>Doesn&#39;t</dt><dd>run the script itself, or take over steps the agent could do on its own</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Here a wizard is an interactive bash script for a manual procedure that&#39;s tedious to do by hand and tedious to explain to an AI again: setting up a service, credentials or CI secrets, finding your way around a third-party dashboard, a one-off migration. The agent first reads the repo (.env.example, README, docker-compose, the secrets your GitHub workflows use) and shows you the stages in order, with the value each produces, for you to adjust. It then spells out each stage&#39;s path, such as &#34;Dashboard → Developers → API keys → Reveal → copy&#34;, and asks you or checks the docs rather than invent a step it isn&#39;t sure of. A bundled template handles the experience: one stage per screen, how many are left, a confirmation before anything irreversible, opening links on any OS, and saving values to .env and GitHub secrets. The agent checks the syntax and reads the script through to confirm every value lands where it should, but doesn&#39;t run it, since that needs you. The script is meant for one run and then deleted, unless you want the setup repeatable and commit it.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/wizard">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill wizard</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill wizard">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/wizard">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/wizard">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>390,895 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Jun 29, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">34.7K</div>
+      <div class="stat-delta">+75% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 19,850; week to Aug 10: 42,981; week to Aug 17: 41,317; week to Aug 24: 44,161; week to Aug 31: 41,947; week to Sep 7: 41,252; week to Sep 14: 37,335; week to Sep 21: 34,729. Use the left and right arrow keys to read each week."
+        data-values="19850,42981,41317,44161,41947,41252,37335,34729" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,30.2 38.6,7.2 71.1,8.8 103.7,6.0 136.3,8.2 168.9,8.9 201.4,12.8 234.0,15.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="15.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>19,850</td></tr><tr><td>Aug 10</td><td>42,981</td></tr><tr><td>Aug 17</td><td>41,317</td></tr><tr><td>Aug 24</td><td>44,161</td></tr><tr><td>Aug 31</td><td>41,947</td></tr><tr><td>Sep 7</td><td>41,252</td></tr><tr><td>Sep 14</td><td>37,335</td></tr><tr><td>Sep 21</td><td>34,729</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:command" data-facet="type" title="A one-shot action you invoke by name, such as turning the conversation into a PRD." href="/gemskills/?tag=type%3Acommand">type:command</a></div>
+          <p class="tag-meaning">A one-shot action you invoke by name, such as turning the conversation into a PRD.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="infrastructure" data-facet="topic" href="/gemskills/?tag=infrastructure">infrastructure</a><a class="tag" data-tag="ci" data-facet="topic" href="/gemskills/?tag=ci">ci</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/wizard/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: wizard
+description: Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don&#39;t invoke this for steps the agent can perform itself.</code></pre></details>
+        <div class="markdown"><h3>Wizard</h3>
+<p>A <strong>wizard</strong> is a bash script that walks a human, step by step, through a manual procedure that's tedious to do by hand and tedious to re-explain to an AI every time. It opens each URL, says exactly what to click and copy, captures the values, writes them where they belong (<code>.env</code>, GitHub secrets), confirms at every stage, and shows how many stages are left. It might configure third-party services, run a one-off migration, or move the project from one state to another.</p>
+<p>The delightful UX is already solved by <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/wizard/template.sh">template.sh</a>: stage-by-stage progress, confirmation gates, cross-platform URL opening (including WSL), hidden secret entry, idempotent <code>.env</code> upserts, <code>gh secret</code>/<code>gh variable</code> writes, and a closing summary. <strong>Your job is only to scope the procedure and author its stages.</strong> The library above the <code>STAGES</code> marker is identical in every wizard; that consistency is the point: never hand-edit it.</p>
+<p>A wizard is ephemeral by default: built for one run, saved to a scratch or <code>scripts/</code> path, deleted when the job's done. Commit it only when the user wants a repeatable setup path that should live in the repo.</p>
+<h4>Process</h4>
+<h5>1. Scope the procedure</h5>
+<p>Work out every manual step the human must take and every value that gets captured along the way. Read the repo first, don't ask cold:</p>
+<ul>
+<li>For setup: <code>.env</code>, <code>.env.example</code>, <code>.env.*</code>, <code>README</code>, <code>docker-compose*</code>, framework config, and <code>.github/workflows/*</code> (every <code>secrets.*</code> / <code>vars.*</code> reference is a value the wizard must produce).</li>
+<li>For a migration or transition: the current state, the target state, and the irreversible actions between them.</li>
+</ul>
+<p>Then show the user the ordered list of stages and the values each produces, and confirm: they may add, drop, or reorder.</p>
+<p><strong>Done when:</strong> every stage is named in order, and for each captured value you know (a) where the human gets it, (b) where it's written (<code>.env</code>, a GitHub secret, both, or nowhere; some stages are pure actions), and (c) whether it's secret (hidden entry) or public.</p>
+<h5>2. Map each stage's journey</h5>
+<p>For each stage, write the precise path a human follows: which URL to open, what to do there, where a value is shown, which variable it fills: e.g. &quot;Dashboard → Developers → API keys → Reveal test key → copy&quot;. Where you don't actually know the current UI or the exact command, say so and ask the user or check the docs: never invent steps that may not exist.</p>
+<p><strong>Done when:</strong> every stage traces to concrete instructions a stranger could follow.</p>
+<h5>3. Author the wizard</h5>
+<p>Copy <code>template.sh</code> to the target path. Replace the example stage with one <code>stage</code> per step, in dependency order. Use the library helpers: <code>stage</code>, <code>say</code>/<code>step</code>, <code>open_url</code>, <code>ask</code>/<code>ask_secret</code>, <code>write_env</code>, <code>set_secret</code>/<code>set_var</code>, <code>pause</code>/<code>confirm</code>. Set <code>TOTAL_STAGES</code> to the number of stages you wrote.</p>
+<p>Hold the bar the template sets: open the URL before asking for its value, use <code>ask_secret</code> for anything secret, <code>write_env</code> every persisted value, <code>set_secret</code> only the values CI actually needs, and <code>confirm</code> before any irreversible action. Each <code>stage</code> clears the screen so only the current step is visible: keep a stage to one focused task so nothing the human needs scrolls away. Don't touch the library above the marker.</p>
+<h5>4. Verify and hand off</h5>
+<ul>
+<li><code>bash -n &lt;script&gt;</code>; run <code>shellcheck</code> if available.</li>
+<li><code>chmod +x &lt;script&gt;</code>.</li>
+<li>Don't run it end-to-end yourself: it opens browsers and blocks on human input. Trace it statically instead: every value from step 1 is captured and lands where step 1 said, and every <code>set_secret</code> name exactly matches a <code>secrets.*</code> reference in CI.</li>
+<li>Tell the user how to run it. If it's a repeatable setup path, commit it and link it from the README so the next person runs the script instead of asking an AI.</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

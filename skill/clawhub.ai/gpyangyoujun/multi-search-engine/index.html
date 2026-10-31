@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>multi-search-engine · Gem Skills</title>
+    <meta name="description" content="Use it when: you want web results from several search engines at once, without signing up for a search API. It does: fetches result pages from 16 engines&#039; websites, using 7 Chinese engines for Chinese queries and 9 international ones otherwise. You get: one summary report merged from every engine that answered. Engines: Baidu, Sogou, WeChat and four more for Chinese; Google, DuckDuckGo, Brave, Startpage, WolframAlpha and four more otherwise. Needs: an agent that can fetch web pages; no API keys or accounts." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Fgpyangyoujun">clawhub.ai/gpyangyoujun</a></p>
+      <h1>multi-search-engine</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want web results from several search engines at once, without signing up for a search API</dd></div><div><dt>It does</dt><dd>fetches result pages from 16 engines&#39; websites, using 7 Chinese engines for Chinese queries and 9 international ones otherwise</dd></div><div><dt>You get</dt><dd>one summary report merged from every engine that answered</dd></div><div><dt>Engines</dt><dd>Baidu, Sogou, WeChat and four more for Chinese; Google, DuckDuckGo, Brave, Startpage, WolframAlpha and four more otherwise</dd></div><div><dt>Needs</dt><dd>an agent that can fetch web pages; no API keys or accounts</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Instead of calling a search API, the agent fetches ordinary search-result pages, as a browser would. A query in Chinese goes to seven Chinese engines (Baidu, Bing China and international, 360, Sogou, WeChat search and Shenma); anything else goes to nine international ones (Google, Google Hong Kong, DuckDuckGo, Yahoo, Startpage, Brave, Ecosia, Qwant and WolframAlpha). Requests go out in small batches, a second or two apart, and a blocked request is retried once. The skill also lists search operators (site:, filetype:, exact phrases, exclusions), Google&#39;s time filters from the past hour to the past year, DuckDuckGo shortcuts such as !gh to search GitHub, and WolframAlpha queries for math, currency conversion and stock prices. Complying with each engine&#39;s terms of service is left to you.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/gpyangyoujun/multi-search-engine.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @gpyangyoujun/multi-search-engine</code><button type="button" class="copy" data-copy="openclaw skills install @gpyangyoujun/multi-search-engine">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/gpyangyoujun/skills/multi-search-engine">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Fgpyangyoujun">All skills from clawhub.ai/gpyangyoujun</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>161,526 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div><div><dt>Downloads</dt><dd>583,225 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:browser" data-facet="category" title="Drive browsers, scrape pages and search the web." href="/gemskills/?tag=category%3Abrowser">category:browser</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Drive browsers, scrape pages and search the web.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="web-search" data-facet="topic" href="/gemskills/?tag=web-search">web-search</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/gpyangyoujun/skills/multi-search-engine">ClawHub</a>, version 2.1.3. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: &#34;multi-search-engine&#34;
+description: &#34;Multi search engine integration with 16 engines (7 CN + 9 Global). Supports advanced search operators, time filters, site search, privacy engines, and WolframAlpha knowledge queries. No API keys required.&#34;</code></pre></details>
+        <div class="markdown"><h3>Multi Search Engine</h3>
+<p>Integration of 16 search engines for web crawling without API keys.</p>
+<h4>Workflow</h4>
+<ol>
+<li>
+<p><strong>Preparation</strong>: AI Agent initializes an empty in-memory cookie store. Cookies are only acquired dynamically during search operations when access is denied</p>
+</li>
+<li>
+<p><strong>Language Evaluation</strong>: Detect the language attribute of the search query. If the query is in Chinese, use Domestic search engines (Baidu, Bing CN, Bing INT, 360, Sogou, WeChat, Shenma). If the query is non-Chinese, use International search engines (Google, Google HK, DuckDuckGo, Yahoo, Startpage, Brave, Ecosia, Qwant, WolframAlpha). Select engines based on query relevance and availability.</p>
+</li>
+<li>
+<p><strong>Controlled Search</strong>: Use web_fetch to execute search requests with rate limiting:</p>
+<ul>
+<li>Add 1-2 second delay between requests to respect server load</li>
+<li>Batch requests in groups of 3-4 engines with sequential execution between batches</li>
+<li>Include standard browser headers to identify as legitimate user agent</li>
+<li>If access is denied (403/429), fetch engine homepage to obtain fresh session cookies</li>
+</ul>
+</li>
+<li>
+<p><strong>Cookie Management</strong>:</p>
+<ul>
+<li>Cookies are stored ONLY in memory during runtime</li>
+<li>Cookies are acquired on-demand when search requests fail</li>
+<li>No cookies are read from or written to config.json or any file</li>
+<li>Cookies are cleared after search session completes</li>
+<li>Only session cookies from search engine domains are captured</li>
+</ul>
+</li>
+<li>
+<p><strong>Retry Mechanism</strong>: If a search fails due to cookie/session issues, retry once with freshly acquired cookies after a 2-second delay</p>
+</li>
+<li>
+<p><strong>Result Aggregation</strong>: Consolidate successful results from search engines, organize and summarize them to output a core search report</p>
+</li>
+</ol>
+<h4>Search Engines</h4>
+<h5>Domestic (7)</h5>
+<ul>
+<li><strong>Baidu</strong>: <code>https://www.baidu.com/s?wd={keyword}</code></li>
+<li><strong>Bing CN</strong>: <code>https://cn.bing.com/search?q={keyword}&amp;ensearch=0</code></li>
+<li><strong>Bing INT</strong>: <code>https://cn.bing.com/search?q={keyword}&amp;ensearch=1</code></li>
+<li><strong>360</strong>: <code>https://www.so.com/s?q={keyword}</code></li>
+<li><strong>Sogou</strong>: <code>https://sogou.com/web?query={keyword}</code></li>
+<li><strong>WeChat</strong>: <code>https://wx.sogou.com/weixin?type=2&amp;query={keyword}</code></li>
+<li><strong>Shenma</strong>: <code>https://m.sm.cn/s?q={keyword}</code></li>
+</ul>
+<h5>International (9)</h5>
+<ul>
+<li><strong>Google</strong>: <code>https://www.google.com/search?q={keyword}</code></li>
+<li><strong>Google HK</strong>: <code>https://www.google.com.hk/search?q={keyword}</code></li>
+<li><strong>DuckDuckGo</strong>: <code>https://duckduckgo.com/html/?q={keyword}</code></li>
+<li><strong>Yahoo</strong>: <code>https://search.yahoo.com/search?p={keyword}</code></li>
+<li><strong>Startpage</strong>: <code>https://www.startpage.com/sp/search?query={keyword}</code></li>
+<li><strong>Brave</strong>: <code>https://search.brave.com/search?q={keyword}</code></li>
+<li><strong>Ecosia</strong>: <code>https://www.ecosia.org/search?q={keyword}</code></li>
+<li><strong>Qwant</strong>: <code>https://www.qwant.com/?q={keyword}</code></li>
+<li><strong>WolframAlpha</strong>: <code>https://www.wolframalpha.com/input?i={keyword}</code></li>
+</ul>
+<h4>Quick Examples</h4>
+<pre><code class="language-javascript">// Basic search
+web_fetch({&quot;url&quot;: &quot;https://www.google.com/search?q=python+tutorial&quot;})
+
+// Site-specific
+web_fetch({&quot;url&quot;: &quot;https://www.google.com/search?q=site:github.com+react&quot;})
+
+// File type
+web_fetch({&quot;url&quot;: &quot;https://www.google.com/search?q=machine+learning+filetype:pdf&quot;})
+
+// Time filter (past week)
+web_fetch({&quot;url&quot;: &quot;https://www.google.com/search?q=ai+news&amp;tbs=qdr:w&quot;})
+
+// Privacy search
+web_fetch({&quot;url&quot;: &quot;https://duckduckgo.com/html/?q=privacy+tools&quot;})
+
+// DuckDuckGo Bangs
+web_fetch({&quot;url&quot;: &quot;https://duckduckgo.com/html/?q=!gh+tensorflow&quot;})
+
+// Knowledge calculation
+web_fetch({&quot;url&quot;: &quot;https://www.wolframalpha.com/input?i=100+USD+to+CNY&quot;})
+</code></pre>
+<h4>Advanced Operators</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site:</code></td>
+<td><code>site:github.com python</code></td>
+<td>Search within site</td>
+</tr>
+<tr>
+<td><code>filetype:</code></td>
+<td><code>filetype:pdf report</code></td>
+<td>Specific file type</td>
+</tr>
+<tr>
+<td><code>&quot;&quot;</code></td>
+<td><code>&quot;machine learning&quot;</code></td>
+<td>Exact match</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td><code>python -snake</code></td>
+<td>Exclude term</td>
+</tr>
+<tr>
+<td><code>OR</code></td>
+<td><code>cat OR dog</code></td>
+<td>Either term</td>
+</tr>
+</tbody>
+</table>
+<h4>Time Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tbs=qdr:h</code></td>
+<td>Past hour</td>
+</tr>
+<tr>
+<td><code>tbs=qdr:d</code></td>
+<td>Past day</td>
+</tr>
+<tr>
+<td><code>tbs=qdr:w</code></td>
+<td>Past week</td>
+</tr>
+<tr>
+<td><code>tbs=qdr:m</code></td>
+<td>Past month</td>
+</tr>
+<tr>
+<td><code>tbs=qdr:y</code></td>
+<td>Past year</td>
+</tr>
+</tbody>
+</table>
+<h4>Privacy Engines</h4>
+<ul>
+<li><strong>DuckDuckGo</strong>: No tracking</li>
+<li><strong>Startpage</strong>: Google results + privacy</li>
+<li><strong>Brave</strong>: Independent index</li>
+<li><strong>Qwant</strong>: EU GDPR compliant</li>
+</ul>
+<h4>Bangs Shortcuts (DuckDuckGo)</h4>
+<table>
+<thead>
+<tr>
+<th>Bang</th>
+<th>Destination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!g</code></td>
+<td>Google</td>
+</tr>
+<tr>
+<td><code>!gh</code></td>
+<td>GitHub</td>
+</tr>
+<tr>
+<td><code>!so</code></td>
+<td>Stack Overflow</td>
+</tr>
+<tr>
+<td><code>!w</code></td>
+<td>Wikipedia</td>
+</tr>
+<tr>
+<td><code>!yt</code></td>
+<td>YouTube</td>
+</tr>
+</tbody>
+</table>
+<h4>WolframAlpha Queries</h4>
+<ul>
+<li>Math: <code>integrate x^2 dx</code></li>
+<li>Conversion: <code>100 USD to CNY</code></li>
+<li>Stocks: <code>AAPL stock</code></li>
+<li>Weather: <code>weather in Beijing</code></li>
+</ul>
+<h4>Documentation</h4>
+<ul>
+<li><code>references/advanced-search.md</code> - Domestic search guide</li>
+<li><code>references/international-search.md</code> - International search guide</li>
+<li><code>CHANGELOG.md</code> - Version history</li>
+</ul>
+<h4>License</h4>
+<p>MIT</p>
+<h4>Security &amp; Privacy Notice</h4>
+<h5>Cookie Handling</h5>
+<ul>
+<li><strong>Purpose</strong>: Cookies are used ONLY to maintain search session state when access is denied (403/429 errors)</li>
+<li><strong>Storage</strong>: Cookies are kept STRICTLY in memory during runtime - NEVER persisted to disk or config files</li>
+<li><strong>Acquisition</strong>: Cookies are acquired on-demand from search engine homepages only when search requests fail</li>
+<li><strong>Scope</strong>: Only session cookies from the specific search engine domain are captured</li>
+<li><strong>Lifecycle</strong>: Cookies are cleared immediately after the search session completes</li>
+<li><strong>No Pre-configuration</strong>: No cookies are loaded from config.json or any external file at startup</li>
+<li><strong>No API Keys</strong>: This tool uses standard web search URLs, no authentication required</li>
+</ul>
+<h5>Crawling Ethics</h5>
+<ul>
+<li><strong>Rate Limiting</strong>: Implement reasonable delays between requests (recommend 1-2 seconds)</li>
+<li><strong>Respect robots.txt</strong>: Honor search engine crawling policies</li>
+<li><strong>Terms of Service</strong>: Users are responsible for complying with search engine ToS</li>
+<li><strong>Purpose</strong>: Designed for legitimate search aggregation, not mass data scraping</li>
+</ul>
+<h5>Data Handling</h5>
+<ul>
+<li><strong>No Personal Data</strong>: Tool does not collect or transmit user personal information</li>
+<li><strong>Local Execution</strong>: All operations run locally, no external data transmission</li>
+<li><strong>Session Isolation</strong>: Cookies are session-specific and cleared after use</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

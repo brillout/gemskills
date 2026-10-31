@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web-perf · Gem Skills</title>
+    <meta name="description" content="Use it when: a site loads slowly, or you want to improve its Core Web Vitals or Lighthouse performance score. It does: records a page-load trace in Chrome, then checks the metrics, network requests, accessibility and, if available, your code. You get: a report: metrics rated good to poor, top issues ranked by impact, specific fixes and code findings. Needs: browser tools such as the Chrome DevTools MCP server; without them it says what it couldn&#039;t measure. Works on: any website: it&#039;s published by Cloudflare but isn&#039;t tied to Cloudflare&#039;s products." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=cloudflare%2Fskills">cloudflare/skills</a></p>
+      <h1>web-perf</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a site loads slowly, or you want to improve its Core Web Vitals or Lighthouse performance score</dd></div><div><dt>It does</dt><dd>records a page-load trace in Chrome, then checks the metrics, network requests, accessibility and, if available, your code</dd></div><div><dt>You get</dt><dd>a report: metrics rated good to poor, top issues ranked by impact, specific fixes and code findings</dd></div><div><dt>Needs</dt><dd>browser tools such as the Chrome DevTools MCP server; without them it says what it couldn&#39;t measure</dd></div><div><dt>Works on</dt><dd>any website: it&#39;s published by Cloudflare but isn&#39;t tied to Cloudflare&#39;s products</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It works in five phases. First, the agent loads the page and records a trace of a fresh load. Second, it reads Chrome&#39;s insights, such as what delays the main content (LCP), which elements make the layout jump (CLS) and which files block rendering, and rates each metric against good, needs-improvement and poor thresholds. Third, it lists network requests to find blocking scripts, missing preloads, weak caching, oversized bundles and unused preconnects. Fourth, it takes an accessibility snapshot to flag gaps such as low contrast or controls without accessible names. Fifth, when the codebase is at hand, it detects the framework and bundler and checks tree-shaking, unused CSS, polyfills and compression. It&#39;s told to verify before recommending, quantify savings, skip changes with no measurable gain, name exact fixes (&#34;compress hero.png (450KB) to WebP&#34;) and say so when a site is already fast.</p>
+      <p class="muted">Summarizes <a href="https://github.com/cloudflare/skills/tree/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/web-perf">the skill at 86505e4</a>. Its SKILL.md has changed by 21 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/cloudflare/skills --skill web-perf</code><button type="button" class="copy" data-copy="npx skills add https://github.com/cloudflare/skills --skill web-perf">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/cloudflare/skills/web-perf">skills.sh page</a> · <a href="https://github.com/cloudflare/skills/tree/HEAD/skills/web-perf">Source on GitHub</a> · <a href="/gemskills/?repo=cloudflare%2Fskills">All skills from cloudflare/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>77,943 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>2,876 <span class="muted">cloudflare/skills</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">6.3K</div>
+      <div class="stat-delta">+51% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 4,176; week to Aug 10: 5,911; week to Aug 17: 6,057; week to Aug 24: 6,083; week to Aug 31: 6,442; week to Sep 7: 6,529; week to Sep 14: 6,726; week to Sep 21: 6,323. Use the left and right arrow keys to read each week."
+        data-values="4176,5911,6057,6083,6442,6529,6726,6323" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,22.7 38.6,11.3 71.1,10.4 103.7,10.2 136.3,7.9 168.9,7.3 201.4,6.0 234.0,8.6" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="8.6" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>4,176</td></tr><tr><td>Aug 10</td><td>5,911</td></tr><tr><td>Aug 17</td><td>6,057</td></tr><tr><td>Aug 24</td><td>6,083</td></tr><tr><td>Aug 31</td><td>6,442</td></tr><tr><td>Sep 7</td><td>6,529</td></tr><tr><td>Sep 14</td><td>6,726</td></tr><tr><td>Sep 21</td><td>6,323</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:browser" data-facet="needs" title="Drives a real Chromium or Chrome browser." href="/gemskills/?tag=needs%3Abrowser">needs:browser</a><a class="tag" data-tag="needs:mcp" data-facet="needs" title="Needs an MCP server connected." href="/gemskills/?tag=needs%3Amcp">needs:mcp</a></div>
+          <p class="tag-meaning">Drives a real Chromium or Chrome browser.</p><p class="tag-meaning">Needs an MCP server connected.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="performance" data-facet="topic" href="/gemskills/?tag=performance">performance</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/cloudflare/skills/blob/49a31e0b3229ccdffe4944be9c61bc7481d1d432/skills/web-perf/SKILL.md">cloudflare/skills at 49a31e0</a>. Checked daily, last changed Oct 29, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: web-perf
+description: Audit, diagnose, or optimize website loading and interaction performance, Core Web Vitals, and Lighthouse performance scores.</code></pre></details>
+        <div class="markdown"><h3>Web Performance Audit</h3>
+<p>Your knowledge of web performance metrics, thresholds, and tooling APIs may be outdated. <strong>Prefer retrieval over pre-training</strong> when citing specific numbers or recommendations.</p>
+<h4>Retrieval Sources</h4>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>How to retrieve</th>
+<th>Use for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>web.dev</td>
+<td><code>https://web.dev/articles/vitals</code></td>
+<td>Core Web Vitals thresholds, definitions</td>
+</tr>
+<tr>
+<td>Chrome DevTools docs</td>
+<td><code>https://developer.chrome.com/docs/devtools/performance</code></td>
+<td>Tooling APIs, trace analysis</td>
+</tr>
+<tr>
+<td>Lighthouse scoring</td>
+<td><code>https://developer.chrome.com/docs/lighthouse/performance/performance-scoring</code></td>
+<td>Score weights, metric thresholds</td>
+</tr>
+</tbody>
+</table>
+<h4>FIRST: Verify MCP Tools Available</h4>
+<p>Discover available browser and performance tools before starting. Use the capabilities available for the requested audit. If trace tools are unavailable, continue any useful source or network analysis and state which measurements could not be collected.</p>
+<p>If the user wants Chrome DevTools MCP setup, consult its <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp#quick-start">installation guide</a> and use the latest package version. Only change MCP configuration when setup is within the user's authorized scope; otherwise ask first. For clients using <code>command</code> and <code>args</code>, an example server entry is:</p>
+<pre><code class="language-json">&quot;chrome-devtools&quot;: {
+  &quot;command&quot;: &quot;npx&quot;,
+  &quot;args&quot;: [&quot;-y&quot;, &quot;chrome-devtools-mcp@latest&quot;]
+}
+</code></pre>
+<h4>Key Guidelines</h4>
+<ul>
+<li><strong>Be assertive</strong>: Verify claims by checking network requests, DOM, or codebase—then state findings definitively.</li>
+<li><strong>Verify before recommending</strong>: Confirm something is unused before suggesting removal.</li>
+<li><strong>Quantify impact</strong>: Use estimated savings from insights. Don't prioritize changes with 0ms impact.</li>
+<li><strong>Skip non-issues</strong>: If render-blocking resources have 0ms estimated impact, note but don't recommend action.</li>
+<li><strong>Be specific</strong>: Say &quot;compress hero.png (450KB) to WebP&quot; not &quot;optimize images&quot;.</li>
+<li><strong>Prioritize ruthlessly</strong>: A site with 200ms LCP and 0 CLS is already excellent—say so.</li>
+</ul>
+<h4>Quick Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Tool Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load page</td>
+<td><code>navigate_page(url: &quot;...&quot;)</code></td>
+</tr>
+<tr>
+<td>Start trace</td>
+<td><code>performance_start_trace(autoStop: true, reload: true)</code></td>
+</tr>
+<tr>
+<td>Analyze insight</td>
+<td><code>performance_analyze_insight(insightSetId: &quot;...&quot;, insightName: &quot;...&quot;)</code></td>
+</tr>
+<tr>
+<td>List requests</td>
+<td><code>list_network_requests(resourceTypes: [&quot;Script&quot;, &quot;Stylesheet&quot;, ...])</code></td>
+</tr>
+<tr>
+<td>Request details</td>
+<td><code>get_network_request(reqid: &lt;id&gt;)</code></td>
+</tr>
+<tr>
+<td>A11y snapshot</td>
+<td><code>take_snapshot(verbose: true)</code></td>
+</tr>
+</tbody>
+</table>
+<h4>Workflow</h4>
+<p>Copy this checklist to track progress:</p>
+<pre><code>Audit Progress:
+- [ ] Phase 1: Performance trace (navigate + record)
+- [ ] Phase 2: Core Web Vitals analysis (includes CLS culprits)
+- [ ] Phase 3: Network analysis
+- [ ] Phase 4: Accessibility snapshot
+- [ ] Phase 5: Codebase analysis (skip if third-party site)
+</code></pre>
+<h5>Phase 1: Performance Trace</h5>
+<ol>
+<li>
+<p>Navigate to the target URL:</p>
+<pre><code>navigate_page(url: &quot;&lt;target-url&gt;&quot;)
+</code></pre>
+</li>
+<li>
+<p>Start a performance trace with reload to capture cold-load metrics:</p>
+<pre><code>performance_start_trace(autoStop: true, reload: true)
+</code></pre>
+</li>
+<li>
+<p>Wait for trace completion, then retrieve results.</p>
+</li>
+</ol>
+<p><strong>Troubleshooting:</strong></p>
+<ul>
+<li>If trace returns empty or fails, verify the page loaded correctly with <code>navigate_page</code> first</li>
+<li>If insight names don't match, inspect the trace response to list available insights</li>
+</ul>
+<h5>Phase 2: Core Web Vitals Analysis</h5>
+<p>Use <code>performance_analyze_insight</code> to extract key metrics.</p>
+<p><strong>Note:</strong> Insight names may vary across Chrome DevTools versions. If an insight name doesn't work, check the <code>insightSetId</code> from the trace response to discover available insights.</p>
+<p>Common insight names:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Insight Name</th>
+<th>What to Look For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LCP</td>
+<td><code>LCPBreakdown</code></td>
+<td>Time to largest contentful paint; breakdown of TTFB, resource load, render delay</td>
+</tr>
+<tr>
+<td>CLS</td>
+<td><code>CLSCulprits</code></td>
+<td>Elements causing layout shifts (images without dimensions, injected content, font swaps)</td>
+</tr>
+<tr>
+<td>Render Blocking</td>
+<td><code>RenderBlocking</code></td>
+<td>CSS/JS blocking first paint</td>
+</tr>
+<tr>
+<td>Document Latency</td>
+<td><code>DocumentLatency</code></td>
+<td>Server response time issues</td>
+</tr>
+<tr>
+<td>Network Dependencies</td>
+<td><code>NetworkRequestsDepGraph</code></td>
+<td>Request chains delaying critical resources</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code>performance_analyze_insight(insightSetId: &quot;&lt;id-from-trace&gt;&quot;, insightName: &quot;LCPBreakdown&quot;)
+</code></pre>
+<p><strong>Key thresholds (good/needs-improvement/poor):</strong></p>
+<ul>
+<li>TTFB: &lt; 800ms / &lt; 1.8s / &gt; 1.8s</li>
+<li>FCP: &lt; 1.8s / &lt; 3s / &gt; 3s</li>
+<li>LCP: &lt; 2.5s / &lt; 4s / &gt; 4s</li>
+<li>INP: &lt; 200ms / &lt; 500ms / &gt; 500ms</li>
+<li>TBT: &lt; 200ms / &lt; 600ms / &gt; 600ms</li>
+<li>CLS: &lt; 0.1 / &lt; 0.25 / &gt; 0.25</li>
+<li>Speed Index: &lt; 3.4s / &lt; 5.8s / &gt; 5.8s</li>
+</ul>
+<h5>Phase 3: Network Analysis</h5>
+<p>List all network requests to identify optimization opportunities:</p>
+<pre><code>list_network_requests(resourceTypes: [&quot;Script&quot;, &quot;Stylesheet&quot;, &quot;Document&quot;, &quot;Font&quot;, &quot;Image&quot;])
+</code></pre>
+<p><strong>Look for:</strong></p>
+<ol>
+<li><strong>Render-blocking resources</strong>: JS/CSS in <code>&lt;head&gt;</code> without <code>async</code>/<code>defer</code>/<code>media</code> attributes</li>
+<li><strong>Network chains</strong>: Resources discovered late because they depend on other resources loading first (e.g., CSS imports, JS-loaded fonts)</li>
+<li><strong>Missing preloads</strong>: Critical resources (fonts, hero images, key scripts) not preloaded</li>
+<li><strong>Caching issues</strong>: Missing or weak <code>Cache-Control</code>, <code>ETag</code>, or <code>Last-Modified</code> headers</li>
+<li><strong>Large payloads</strong>: Uncompressed or oversized JS/CSS bundles</li>
+<li><strong>Unused preconnects</strong>: If flagged, verify by checking if ANY requests went to that origin. If zero requests, it's definitively unused—recommend removal. If requests exist but loaded late, the preconnect may still be valuable.</li>
+</ol>
+<p>For detailed request info:</p>
+<pre><code>get_network_request(reqid: &lt;id&gt;)
+</code></pre>
+<h5>Phase 4: Accessibility Snapshot</h5>
+<p>Take an accessibility tree snapshot:</p>
+<pre><code>take_snapshot(verbose: true)
+</code></pre>
+<p><strong>Flag high-level gaps:</strong></p>
+<ul>
+<li>Missing or duplicate ARIA IDs</li>
+<li>Elements with poor contrast ratios (check against WCAG AA: 4.5:1 for normal text, 3:1 for large text)</li>
+<li>Focus traps or missing focus indicators</li>
+<li>Interactive elements without accessible names</li>
+</ul>
+<h4>Phase 5: Codebase Analysis</h4>
+<p><strong>Skip if auditing a third-party site without codebase access.</strong></p>
+<p>Analyze the codebase to understand where improvements can be made.</p>
+<h5>Detect Framework &amp; Bundler</h5>
+<p>Search for configuration files to identify the stack:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Config Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Webpack</td>
+<td><code>webpack.config.js</code>, <code>webpack.*.js</code></td>
+</tr>
+<tr>
+<td>Vite</td>
+<td><code>vite.config.js</code>, <code>vite.config.ts</code></td>
+</tr>
+<tr>
+<td>Rollup</td>
+<td><code>rollup.config.js</code>, <code>rollup.config.mjs</code></td>
+</tr>
+<tr>
+<td>esbuild</td>
+<td><code>esbuild.config.js</code>, build scripts with <code>esbuild</code></td>
+</tr>
+<tr>
+<td>Parcel</td>
+<td><code>.parcelrc</code>, <code>package.json</code> (parcel field)</td>
+</tr>
+<tr>
+<td>Next.js</td>
+<td><code>next.config.js</code>, <code>next.config.mjs</code></td>
+</tr>
+<tr>
+<td>Nuxt</td>
+<td><code>nuxt.config.js</code>, <code>nuxt.config.ts</code></td>
+</tr>
+<tr>
+<td>SvelteKit</td>
+<td><code>svelte.config.js</code></td>
+</tr>
+<tr>
+<td>Astro</td>
+<td><code>astro.config.mjs</code></td>
+</tr>
+</tbody>
+</table>
+<p>Also check <code>package.json</code> for framework dependencies and build scripts.</p>
+<h5>Tree-Shaking &amp; Dead Code</h5>
+<ul>
+<li><strong>Webpack</strong>: Check for <code>mode: 'production'</code>, <code>sideEffects</code> in package.json, <code>usedExports</code> optimization</li>
+<li><strong>Vite/Rollup</strong>: Tree-shaking enabled by default; check for <code>treeshake</code> options</li>
+<li><strong>Look for</strong>: Barrel files (<code>index.js</code> re-exports), large utility libraries imported wholesale (lodash, moment)</li>
+</ul>
+<h5>Unused JS/CSS</h5>
+<ul>
+<li>Check for CSS-in-JS vs. static CSS extraction</li>
+<li>Look for PurgeCSS/UnCSS configuration (Tailwind's <code>content</code> config)</li>
+<li>Identify dynamic imports vs. eager loading</li>
+</ul>
+<h5>Polyfills</h5>
+<ul>
+<li>Check for <code>@babel/preset-env</code> targets and <code>useBuiltIns</code> setting</li>
+<li>Look for <code>core-js</code> imports (often oversized)</li>
+<li>Check <code>browserslist</code> config for overly broad targeting</li>
+</ul>
+<h5>Compression &amp; Minification</h5>
+<ul>
+<li>Check for <code>terser</code>, <code>esbuild</code>, or <code>swc</code> minification</li>
+<li>Look for gzip/brotli compression in build output or server config</li>
+<li>Check for source maps in production builds (should be external or disabled)</li>
+</ul>
+<h4>Output Format</h4>
+<p>Present findings as:</p>
+<ol>
+<li><strong>Core Web Vitals Summary</strong> - Table with metric, value, and rating (good/needs-improvement/poor)</li>
+<li><strong>Top Issues</strong> - Prioritized list of problems with estimated impact (high/medium/low)</li>
+<li><strong>Recommendations</strong> - Specific, actionable fixes with code snippets or config changes</li>
+<li><strong>Codebase Findings</strong> - Framework/bundler detected, optimization opportunities (omit if no codebase access)</li>
+</ol>
+<h4>Skill feedback</h4>
+<p>If the user reports that this skill gave incorrect or outdated guidance, or is missing information, read <a href="https://github.com/cloudflare/skills/blob/49a31e0b3229ccdffe4944be9c61bc7481d1d432/skills/web-perf/references/skill-feedback.md">references/skill-feedback.md</a>.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

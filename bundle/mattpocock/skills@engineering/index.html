@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering workflow · Gem Skills</title>
+    <meta name="description" content="Use it when: you want the agent to agree with you on what to build before it codes, then build it in small tested steps. It does: interviews you about a change, writes a spec and tickets on your issue tracker, builds each ticket test-first, then reviews the diff. You get: a project glossary and decision records, a spec and ordered tickets, tested commits, a review against your standards and the spec, and ideas for next time. Needs: a code repo, and one run of the setup skill there to record your issue tracker: GitHub, GitLab, local Markdown files or another. Runs: each main step only when you type it; supporting skills, such as the test-first and review ones, the agent can also start by itself. Unlike: frameworks that own the whole process, each step is a small skill you call yourself and can edit. Also covers: triaging incoming issues, debugging hard bugs, planning work too big for one session, and finding refactors that simplify a codebase. Start with: ask-matt, a skill that maps the others and points you to the one that fits." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page bundle-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a></p>
+      <h1>Engineering workflow <span class="kind">Bundle · 22 skills</span></h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want the agent to agree with you on what to build before it codes, then build it in small tested steps</dd></div><div><dt>It does</dt><dd>interviews you about a change, writes a spec and tickets on your issue tracker, builds each ticket test-first, then reviews the diff</dd></div><div><dt>You get</dt><dd>a project glossary and decision records, a spec and ordered tickets, tested commits, a review against your standards and the spec, and ideas for next time</dd></div><div><dt>Needs</dt><dd>a code repo, and one run of the setup skill there to record your issue tracker: GitHub, GitLab, local Markdown files or another</dd></div><div><dt>Runs</dt><dd>each main step only when you type it; supporting skills, such as the test-first and review ones, the agent can also start by itself</dd></div><div><dt>Unlike</dt><dd>frameworks that own the whole process, each step is a small skill you call yourself and can edit</dd></div><div><dt>Also covers</dt><dd>triaging incoming issues, debugging hard bugs, planning work too big for one session, and finding refactors that simplify a codebase</dd></div><div><dt>Start with</dt><dd>ask-matt, a skill that maps the others and points you to the one that fits</dd></div></dl></section>
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Matt Pocock, a TypeScript teacher, built these skills to keep coding agents aligned with what you want and their code small and tested. A one-time setup skill records which issue tracker the repo uses and what its triage labels are called. The flow then starts with an interview: the agent asks about the change in numbered rounds, each question with its recommended answer, until no decision is left open, and writes the project&#39;s terms to a glossary and hard-to-reverse choices to architecture decision records as you go. Questions that talk can&#39;t answer go to a throwaway prototype or a background research agent. Next, the conversation becomes a spec on the tracker, then tickets: thin slices that each work end to end and list the tickets that must land first. The build step takes one ticket at a time, test-first, and ends with a review that checks the diff against your coding standards and, separately, against the spec; another skill builds a whole spec at once with parallel subagents. Finally, a retrospective proposes new checks, coding standards or agent instructions so the next run goes better.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2">the repo at 5beb35b</a>. Its skills have changed by 144 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <p class="install-label">Any agent, with the skills CLI</p><div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills --skill ask-matt --skill grill-with-docs --skill grill-me --skill grilling --skill domain-modeling --skill research --skill handoff --skill prototype --skill wayfinder --skill to-spec --skill to-tickets --skill triage --skill implement --skill implement-spec --skill tdd --skill codebase-design --skill code-review --skill diagnosing-bugs --skill retro --skill writing-for-agents --skill improve-codebase-architecture</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills --skill ask-matt --skill grill-with-docs --skill grill-me --skill grilling --skill domain-modeling --skill research --skill handoff --skill prototype --skill wayfinder --skill to-spec --skill to-tickets --skill triage --skill implement --skill implement-spec --skill tdd --skill codebase-design --skill code-review --skill diagnosing-bugs --skill retro --skill writing-for-agents --skill improve-codebase-architecture">Copy</button></div><p class="install-label">Claude Code plugin, with 5 more of the repo&#39;s skills</p><div class="install"><code>claude plugin install mattpocock-skills@claude-plugins-official</code><button type="button" class="copy" data-copy="claude plugin install mattpocock-skills@claude-plugins-official">Copy</button></div><p class="install-label">Codex plugin, with 5 more of the repo&#39;s skills</p><div class="install"><code>codex plugin marketplace add mattpocock/skills &#38;&#38; codex plugin add mattpocock-skills@mattpocock</code><button type="button" class="copy" data-copy="codex plugin marketplace add mattpocock/skills &#38;&#38; codex plugin add mattpocock-skills@mattpocock">Copy</button></div><p class="install-label">GitHub Copilot CLI plugin, with 5 more of the repo&#39;s skills</p><div class="install"><code>copilot plugin marketplace add mattpocock/skills &#38;&#38; copilot plugin install mattpocock-skills@mattpocock</code><button type="button" class="copy" data-copy="copilot plugin marketplace add mattpocock/skills &#38;&#38; copilot plugin install mattpocock-skills@mattpocock">Copy</button></div><p class="install-label">Gemini CLI, with 5 more of the repo&#39;s skills</p><div class="install"><code>gemini skills install https://github.com/mattpocock/skills.git --path skills/engineering &#38;&#38; gemini skills install https://github.com/mattpocock/skills.git --path skills/productivity</code><button type="button" class="copy" data-copy="gemini skills install https://github.com/mattpocock/skills.git --path skills/engineering &#38;&#38; gemini skills install https://github.com/mattpocock/skills.git --path skills/productivity">Copy</button></div>
+          <p class="links"><a href="https://github.com/mattpocock/skills">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>1,189,452 <span class="muted">of <a href="/gemskills/skill/mattpocock/skills/skills/productivity/grill-me/">grill-me</a>, its most installed skill, on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Feb 10, 2026 <span class="muted">on skills.sh, its first skill</span></dd></div></dl>
+        </div>
+      </div>
+      <section aria-labelledby="skills">
+        <h2 id="skills">Its skills, in the order they're used</h2>
+        <p class="muted">The ones marked “Only in the bundle” need the rest of it, so they're only listed here. The others also have their own entry in the skills list.</p>
+        <ol class="bundle-skills">
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/setup-matt-pocock-skills/">setup-matt-pocock-skills</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>868K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Sets up a repo for the Matt Pocock skills: issue tracker, triage labels and domain docs.</p>
+        <p class="member-note">Writes the tracker, label and domain-doc settings under docs/agents/ that the other skills read; on its own, nothing uses them.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/ask-matt/">ask-matt</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>591K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Picks the right skill or flow from the Matt Pocock bundle for your situation.</p>
+        <p class="member-note">A map of the other skills that reads each one&#39;s SKILL.md before recommending it, so it only helps once they&#39;re installed.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/grill-with-docs/">grill-with-docs</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>1M</strong> installs</span>
+        </div>
+        <p class="skill-desc">Runs the same interview and writes ADRs and a glossary as it goes.</p>
+        <p class="member-note">Its whole SKILL.md loads grilling and domain-modeling.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/productivity/grill-me/">grill-me</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>1.2M</strong> installs</span>
+        </div>
+        <p class="skill-desc">Interviews you relentlessly to sharpen a plan or design.</p>
+        <p class="member-note">Its whole SKILL.md loads grilling.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/productivity/grilling/">grilling</a></h3>
+          
+          <span class="metric"><strong>744K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Stress-tests a plan, decision or idea, one round of questions at a time.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/domain-modeling/">domain-modeling</a></h3>
+          
+          <span class="metric"><strong>672K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Builds and sharpens the project&#39;s domain model, CONTEXT.md and ADRs.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/research/">research</a></h3>
+          
+          <span class="metric"><strong>538K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Investigates a question against primary sources and saves the findings as Markdown.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/productivity/handoff/">handoff</a></h3>
+          
+          <span class="metric"><strong>842K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Compacts the conversation into a handoff document for another agent.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/prototype/">prototype</a></h3>
+          
+          <span class="metric"><strong>815K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Builds a throwaway prototype to answer a design question.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/wayfinder/">wayfinder</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>543K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Plans work too big for one session as a map of decision tickets.</p>
+        <p class="member-note">Resolves its decision tickets by loading grilling, domain-modeling, research and prototype, on the tracker that setup-matt-pocock-skills configures (local Markdown files without it).</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/to-spec/">to-spec</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>538K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Turns the conversation into a spec on the issue tracker.</p>
+        <p class="member-note">Publishes to the issue tracker, with the ready-for-agent label, that setup-matt-pocock-skills configures.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/to-tickets/">to-tickets</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>529K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Breaks a plan into tracer-bullet tickets with blocking edges.</p>
+        <p class="member-note">Publishes to the issue tracker, with the ready-for-agent label, that setup-matt-pocock-skills configures.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/triage/">triage</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>818K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Moves issues and external PRs through a triage state machine and writes agent-ready briefs.</p>
+        <p class="member-note">Needs the tracker and label mapping from setup-matt-pocock-skills, and loads grilling and domain-modeling to flesh out a request.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/implement/">implement</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>590K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Implements a piece of work from a spec or tickets.</p>
+        <p class="member-note">Builds through tdd and closes with code-review, loading both as steps.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/implement-spec/">implement-spec</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>129K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Implements a spec through its tickets, with subagents.</p>
+        <p class="member-note">Works a spec and its tickets from to-spec and to-tickets on the configured tracker, has each subagent load tdd, and ends with code-review.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/tdd/">tdd</a></h3>
+          
+          <span class="metric"><strong>939K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Guides test-first feature and bug work with a red-green-refactor loop.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/codebase-design/">codebase-design</a></h3>
+          
+          <span class="metric"><strong>651K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Gives a shared vocabulary and principles for designing deep modules.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/code-review/">code-review</a></h3>
+          
+          <span class="metric"><strong>590K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Reviews changes since a fixed point against the repo&#39;s standards and the spec.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/diagnosing-bugs/">diagnosing-bugs</a></h3>
+          
+          <span class="metric"><strong>639K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Runs a diagnosis loop for hard bugs and performance regressions.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/retro/">retro</a></h3>
+          
+          <span class="metric"><strong>116K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Runs a retrospective on a coding session and improves the agent&#39;s setup.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/productivity/writing-for-agents/">writing-for-agents</a></h3>
+          
+          <span class="metric"><strong>294K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Guides writing documents for agents: skills, AGENTS.md and CLAUDE.md.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/mattpocock/skills/skills/engineering/improve-codebase-architecture/">improve-codebase-architecture</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>967K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Scans a codebase for deepening opportunities, renders an HTML report, then grills through the one you pick.</p>
+        <p class="member-note">Loads codebase-design for its vocabulary, then grilling and domain-modeling to work through the refactor you pick.</p>
+      </li></ol>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_bundle_client.BrcZt5VM.js" type="module" async></script>
+  </body>
+</html>

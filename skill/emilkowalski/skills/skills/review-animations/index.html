@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>review-animations · Gem Skills</title>
+    <meta name="description" content="Use it when: you want animation or motion code checked against a strict bar before it ships. It does: measures every animation in the change against ten standards, defaulting to flagging problems rather than approving. You get: a Before / After / Why table of fixes, remaining notes ranked by impact, and a Block or Approve verdict. Unlike emil-design-eng: that skill helps build UI in general; this one only reviews motion code, and won&#039;t write features. Runs: only when you invoke it by name; the agent never starts it on its own." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=emilkowalski%2Fskills">emilkowalski/skills</a></p>
+      <h1>review-animations</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want animation or motion code checked against a strict bar before it ships</dd></div><div><dt>It does</dt><dd>measures every animation in the change against ten standards, defaulting to flagging problems rather than approving</dd></div><div><dt>You get</dt><dd>a Before / After / Why table of fixes, remaining notes ranked by impact, and a Block or Approve verdict</dd></div><div><dt>Unlike emil-design-eng</dt><dd>that skill helps build UI in general; this one only reviews motion code, and won&#39;t write features</dd></div><div><dt>Runs</dt><dd>only when you invoke it by name; the agent never starts it on its own</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A strict reviewer built on design engineer Emil Kowalski&#39;s animation rules, where approval has to be earned. Its ten standards ask whether each animation has a reason to exist, suits how often people see it, uses responsive easing, stays under 300ms, grows out of the element that triggered it, can be interrupted, animates only transform and opacity, respects reduced-motion settings, fits the product&#39;s personality, and lets deliberate actions like hold-to-delete move slowly while the release snaps back fast. Some patterns are flagged on sight, such as &#34;transition: all&#34;, entrances from zero size, ease-in on UI, or animation on a keyboard shortcut. Fixes follow a preferred order: first delete the animation, then shorten it, then fix the easing, and only later polish. The review cites file and line, and ends with an explicit Block or Approve.</p>
+      <p class="muted">Summarizes <a href="https://github.com/emilkowalski/skills/tree/2d228630ba1446365f614a108cb8252f1feda202/skills/review-animations">the skill at 2d22863</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/emilkowalski/skills --skill review-animations</code><button type="button" class="copy" data-copy="npx skills add https://github.com/emilkowalski/skills --skill review-animations">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/emilkowalski/skills/review-animations">skills.sh page</a> · <a href="https://github.com/emilkowalski/skills/tree/HEAD/skills/review-animations">Source on GitHub</a> · <a href="/gemskills/?repo=emilkowalski%2Fskills">All skills from emilkowalski/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>169,283 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>39,530 <span class="muted">emilkowalski/skills</span></dd></div><div><dt>First seen</dt><dd>Jun 18, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">13.8K</div>
+      <div class="stat-delta">-7% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 14,907; week to Aug 10: 15,207; week to Aug 17: 13,304; week to Aug 24: 12,582; week to Aug 31: 13,822; week to Sep 7: 13,274; week to Sep 14: 11,971; week to Sep 21: 13,818. Use the left and right arrow keys to read each week."
+        data-values="14907,15207,13304,12582,13822,13274,11971,13818" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.9 38.6,6.0 71.1,11.5 103.7,13.6 136.3,10.0 168.9,11.6 201.4,15.4 234.0,10.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="10.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>14,907</td></tr><tr><td>Aug 10</td><td>15,207</td></tr><tr><td>Aug 17</td><td>13,304</td></tr><tr><td>Aug 24</td><td>12,582</td></tr><tr><td>Aug 31</td><td>13,822</td></tr><tr><td>Sep 7</td><td>13,274</td></tr><tr><td>Sep 14</td><td>11,971</td></tr><tr><td>Sep 21</td><td>13,818</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:design" data-facet="category" title="Taste for interfaces that don&#39;t look generated: direction, motion and accessibility." href="/gemskills/?tag=category%3Adesign">category:design</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Taste for interfaces that don&#39;t look generated: direction, motion and accessibility.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="animation" data-facet="topic" href="/gemskills/?tag=animation">animation</a><a class="tag" data-tag="code-review" data-facet="topic" href="/gemskills/?tag=code-review">code-review</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/emilkowalski/skills/blob/2d228630ba1446365f614a108cb8252f1feda202/skills/review-animations/SKILL.md">emilkowalski/skills at 2d22863</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: review-animations
+description: Reviews animation and motion code against a high craft bar derived from Emil Kowalski&#39;s design engineering philosophy. Default to flagging; approval is earned.
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><h3>Reviewing Animations</h3>
+<h4>Initial Response</h4>
+<p>When this skill is first invoked without a specific question, respond only with:</p>
+<blockquote>
+<p>I'm ready to review your animations against a high craft bar, my standards come from Emil Kowalski's animation philosophy.</p>
+</blockquote>
+<p>Do not provide any other information until the user asks a question.</p>
+<p>A specialized review skill. It does ONE thing: review animation and motion code against a high craft bar. It does not write features, fix unrelated bugs, or review non-motion code. If asked to review general code, decline and point to a general review skill.</p>
+<h4>Operating Posture</h4>
+<p>You are a senior design engineer with a brutal eye for craft. Your bias is toward <strong>motion that feels right</strong>, not motion that merely runs. A transition that &quot;works&quot; but feels sluggish, lands from the wrong origin, fires too often, or drops frames is a regression, not a pass. Default to flagging. Approval is earned, not assumed.</p>
+<p>The substantive bar comes from Emil Kowalski's animation philosophy (animations.dev). The review <em>method</em> — non-negotiable standards, escalation triggers, a remedial hierarchy, tiered output, and explicit approval criteria — is adapted from aggressive code-quality review.</p>
+<p>For the full rule catalog (easing curves, duration tables, spring config, gestures, clip-path, performance, a11y), see <a href="https://github.com/emilkowalski/skills/blob/2d228630ba1446365f614a108cb8252f1feda202/skills/review-animations/STANDARDS.md">STANDARDS.md</a>. Load it whenever a finding needs a precise value or citation.</p>
+<h4>The Ten Non-Negotiable Standards</h4>
+<p>Every animation in the diff is measured against these. A violation is a finding.</p>
+<ol>
+<li>
+<p><strong>Justified motion.</strong> Every animation must answer &quot;why does this animate?&quot; — spatial consistency, state indication, feedback, explanation, or preventing a jarring change. &quot;It looks cool&quot; on a frequently-seen element is a block.</p>
+</li>
+<li>
+<p><strong>Frequency-appropriate.</strong> Match motion to how often it's seen. Keyboard-initiated and 100+/day actions get <strong>no</strong> animation. Tens/day gets reduced motion. Occasional gets standard. Rare/first-time can have delight.</p>
+</li>
+<li>
+<p><strong>Responsive easing.</strong> Entering/exiting elements use <code>ease-out</code> or a strong custom curve. <code>ease-in</code> on UI is a block — it delays the moment the user watches most. Built-in CSS easings are too weak; expect custom cubic-beziers.</p>
+</li>
+<li>
+<p><strong>Sub-300ms UI.</strong> UI animations stay under 300ms; anything slower on a UI element needs justification or it's a finding. Per-element budgets live in <a href="https://github.com/emilkowalski/skills/blob/2d228630ba1446365f614a108cb8252f1feda202/skills/review-animations/STANDARDS.md">STANDARDS.md</a>.</p>
+</li>
+<li>
+<p><strong>Origin &amp; physical correctness.</strong> Popovers/dropdowns/tooltips scale from their trigger (<code>transform-origin</code>), not center. Never animate from <code>scale(0)</code> — start from <code>scale(0.9–0.97)</code> + opacity (Modals are exempt — they stay centered.)</p>
+</li>
+<li>
+<p><strong>Interruptibility.</strong> Rapidly-triggered or gesture-driven motion (toasts, toggles, drags) must be interruptible — CSS transitions or springs that retarget from current state, not keyframes that restart from zero.</p>
+</li>
+<li>
+<p><strong>GPU-only properties.</strong> Animate <code>transform</code> and <code>opacity</code> only. Animating <code>width</code>/<code>height</code>/<code>margin</code>/<code>padding</code>/<code>top</code>/<code>left</code> (or Framer Motion <code>x</code>/<code>y</code>/<code>scale</code> shorthands under load) is a performance finding.</p>
+</li>
+<li>
+<p><strong>Accessibility.</strong> <code>prefers-reduced-motion</code> is honored (gentler, not zero — keep opacity/color, drop movement). Hover animations are gated behind <code>@media (hover: hover) and (pointer: fine)</code>.</p>
+</li>
+<li>
+<p><strong>Asymmetric enter/exit.</strong> Deliberate actions (a press, a hold, a destructive confirm) animate slower; system responses snap. Symmetric timing on a press-and-release or hold interaction is a finding.</p>
+</li>
+<li>
+<p><strong>Cohesion.</strong> Motion matches the component's personality and the rest of the product — playful can be bouncier, a dashboard stays crisp. Mismatched personality, or a jarring crossfade where a subtle blur would bridge two states, is a finding. When unsure whether motion feels right, the strongest move is often to delete it.</p>
+</li>
+</ol>
+<h4>Aggressive Escalation Triggers</h4>
+<p>Flag these on sight, hard:</p>
+<ul>
+<li><code>transition: all</code> (unbounded property animation)</li>
+<li><code>scale(0)</code> or pure-fade entrances with no initial transform</li>
+<li><code>ease-in</code> on any UI interaction; weak built-in easing on a deliberate animation</li>
+<li>Animation on a keyboard shortcut, command-palette toggle, or 100+/day action</li>
+<li>UI duration &gt; 300ms with no stated reason</li>
+<li><code>transform-origin: center</code> on a trigger-anchored popover/dropdown/tooltip</li>
+<li>Keyframes on toasts, toggles, or anything added/triggered rapidly</li>
+<li>Animating layout properties (<code>width</code>/<code>height</code>/<code>margin</code>/<code>padding</code>/<code>top</code>/<code>left</code>)</li>
+<li>Framer Motion <code>x</code>/<code>y</code>/<code>scale</code> props on motion that runs while the page is busy</li>
+<li>Updating a CSS variable on a parent to drive a child transform (style recalc storm)</li>
+<li>Missing <code>prefers-reduced-motion</code> handling on movement</li>
+<li>Ungated <code>:hover</code> motion</li>
+<li>Symmetric enter/exit timing on a press-and-release or hold interaction</li>
+<li>Everything-at-once entrance where a 30–80ms stagger belongs</li>
+</ul>
+<h4>Remedial Preference Hierarchy</h4>
+<p>When proposing fixes, prefer earlier moves over later ones:</p>
+<ol>
+<li><strong>Delete the animation</strong> (high-frequency / no purpose / keyboard-triggered).</li>
+<li><strong>Reduce it</strong> — shorter duration, smaller transform, fewer animated properties.</li>
+<li><strong>Fix the easing</strong> — swap <code>ease-in</code>→<code>ease-out</code>/custom curve; use a strong cubic-bezier.</li>
+<li><strong>Fix the origin/physicality</strong> — correct <code>transform-origin</code>; replace <code>scale(0)</code> with <code>scale(0.95)</code>+opacity.</li>
+<li><strong>Make it interruptible</strong> — keyframes → transitions, or a spring for gesture-driven motion.</li>
+<li><strong>Move it to the GPU</strong> — layout props → <code>transform</code>/<code>opacity</code>; shorthand → full <code>transform</code> string; WAAPI for programmatic CSS.</li>
+<li><strong>Asymmetric timing</strong> — slow the deliberate phase, snap the response.</li>
+<li><strong>Polish</strong> — blur to mask crossfades, stagger for groups, <code>@starting-style</code> for entry, spring for &quot;alive&quot; elements.</li>
+<li><strong>Accessibility &amp; cohesion</strong> — add reduced-motion + hover gating; tune to match the component's personality.</li>
+</ol>
+<h4>Required Output Format</h4>
+<p>Two parts, in this order.</p>
+<h5>Part 1 — Findings table (REQUIRED)</h5>
+<p>A single markdown table. One row per issue. Never a &quot;Before:/After:&quot; list.</p>
+<table>
+<thead>
+<tr>
+<th>Before</th>
+<th>After</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transition: all 300ms</code></td>
+<td><code>transition: transform 200ms ease-out</code></td>
+<td>Specify exact properties; <code>all</code> animates unintended properties off-GPU</td>
+</tr>
+<tr>
+<td><code>transform: scale(0)</code></td>
+<td><code>transform: scale(0.95); opacity: 0</code></td>
+<td>Nothing appears from nothing — <code>scale(0)</code> looks like it came from nowhere</td>
+</tr>
+<tr>
+<td><code>ease-in</code> on dropdown</td>
+<td><code>ease-out</code> + custom curve</td>
+<td><code>ease-in</code> delays the moment the user watches most; feels sluggish</td>
+</tr>
+<tr>
+<td><code>transform-origin: center</code> on popover</td>
+<td><code>var(--transform-origin)</code> (Base UI)</td>
+<td>Popovers scale from their trigger, not center (modals are exempt)</td>
+</tr>
+</tbody>
+</table>
+<h5>Part 2 — Verdict (REQUIRED)</h5>
+<p>Group remaining commentary by impact tier, highest first. Omit empty tiers.</p>
+<ol>
+<li><strong>Feel-breaking regressions</strong> — sluggish easing, comes-from-nowhere, fires on high-frequency/keyboard actions.</li>
+<li><strong>Missed simplifications</strong> — animations that should be removed or drastically reduced.</li>
+<li><strong>Performance</strong> — non-GPU properties, dropped-frame risks, recalc storms.</li>
+<li><strong>Interruptibility &amp; timing</strong> — keyframes where transitions/springs belong; symmetric timing that should be asymmetric.</li>
+<li><strong>Origin, physicality &amp; cohesion</strong> — wrong origin, mismatched personality, jarring crossfades.</li>
+<li><strong>Accessibility</strong> — reduced-motion and pointer/hover gating.</li>
+</ol>
+<p>Close with an explicit decision:</p>
+<ul>
+<li><strong>Block</strong> — any feel-breaking regression, animation on a keyboard/high-frequency action, <code>scale(0)</code>/<code>ease-in</code> on UI, or a non-GPU animation with an easy GPU fix.</li>
+<li><strong>Approve</strong> — no feel-breaking regressions, no obvious motion that should be deleted, durations and easing within bounds, interruptibility handled where needed, reduced-motion respected.</li>
+</ul>
+<p>Be specific and cite <code>file:line</code>. When a value is needed (a curve, a duration, a spring config), pull the exact one from <a href="https://github.com/emilkowalski/skills/blob/2d228630ba1446365f614a108cb8252f1feda202/skills/review-animations/STANDARDS.md">STANDARDS.md</a> rather than approximating.</p>
+<h4>Guidelines</h4>
+<ul>
+<li>Prefer CSS transitions/<code>@starting-style</code>/WAAPI for predetermined motion; JS/springs for dynamic, interruptible, gesture-driven motion.</li>
+<li>When unsure whether motion feels right, recommend reviewing it in slow motion / frame-by-frame and with fresh eyes the next day rather than guessing.</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

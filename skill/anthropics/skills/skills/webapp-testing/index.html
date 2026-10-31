@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>webapp-testing · Gem Skills</title>
+    <meta name="description" content="Use it when: you need to check a web app running on your machine: click through it, take screenshots, read console logs. It does: writes Python Playwright scripts against your app, starting your dev servers first and stopping them after. You get: a script you can rerun, and the screenshots, page content or logs it captures. Needs: Python with Playwright, which runs a headless Chromium. Unlike: browser CLIs such as agent-browser or playwright-cli, which the agent drives one command at a time; here it writes and runs whole scripts." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=anthropics%2Fskills">anthropics/skills</a></p>
+      <h1>webapp-testing</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you need to check a web app running on your machine: click through it, take screenshots, read console logs</dd></div><div><dt>It does</dt><dd>writes Python Playwright scripts against your app, starting your dev servers first and stopping them after</dd></div><div><dt>You get</dt><dd>a script you can rerun, and the screenshots, page content or logs it captures</dd></div><div><dt>Needs</dt><dd>Python with Playwright, which runs a headless Chromium</dd></div><div><dt>Unlike</dt><dd>browser CLIs such as agent-browser or playwright-cli, which the agent drives one command at a time; here it writes and runs whole scripts</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Anthropic&#39;s toolkit for testing web apps you&#39;re building. The agent writes short Python scripts with Playwright and runs them in headless Chromium. A bundled helper starts one or more servers, say a backend and a frontend, waits until their ports answer, runs the script, then shuts them down. The skill gives the agent a decision path. For a static HTML file it reads the selectors straight from the file. For a live app it first loads the page and waits for network activity to settle, then takes a screenshot or reads the rendered page to find selectors, and only then clicks and types. Examples cover finding buttons, links and inputs, automating local HTML files, and capturing console logs.</p>
+      <p class="muted">Summarizes <a href="https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/webapp-testing">the skill at dbd4588</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/anthropics/skills --skill webapp-testing</code><button type="button" class="copy" data-copy="npx skills add https://github.com/anthropics/skills --skill webapp-testing">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/anthropics/skills/webapp-testing">skills.sh page</a> · <a href="https://github.com/anthropics/skills/tree/HEAD/skills/webapp-testing">Source on GitHub</a> · <a href="/gemskills/?repo=anthropics%2Fskills">All skills from anthropics/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>160,726 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>177,318 <span class="muted">anthropics/skills</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">4.6K</div>
+      <div class="stat-delta">+16% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 3,930; week to Aug 10: 3,937; week to Aug 17: 3,968; week to Aug 24: 5,961; week to Aug 31: 6,475; week to Sep 7: 5,006; week to Sep 14: 4,740; week to Sep 21: 4,572. Use the left and right arrow keys to read each week."
+        data-values="3930,3937,3968,5961,6475,5006,4740,4572" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,23.3 38.6,23.2 71.1,23.0 103.7,9.5 136.3,6.0 168.9,16.0 201.4,17.8 234.0,18.9" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="18.9" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>3,930</td></tr><tr><td>Aug 10</td><td>3,937</td></tr><tr><td>Aug 17</td><td>3,968</td></tr><tr><td>Aug 24</td><td>5,961</td></tr><tr><td>Aug 31</td><td>6,475</td></tr><tr><td>Sep 7</td><td>5,006</td></tr><tr><td>Sep 14</td><td>4,740</td></tr><tr><td>Sep 21</td><td>4,572</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:browser" data-facet="needs" title="Drives a real Chromium or Chrome browser." href="/gemskills/?tag=needs%3Abrowser">needs:browser</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">Drives a real Chromium or Chrome browser.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="testing" data-facet="topic" href="/gemskills/?tag=testing">testing</a><a class="tag" data-tag="browser-automation" data-facet="topic" href="/gemskills/?tag=browser-automation">browser-automation</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:playwright" data-facet="stack" href="/gemskills/?tag=stack%3Aplaywright">stack:playwright</a><a class="tag" data-tag="stack:python" data-facet="stack" href="/gemskills/?tag=stack%3Apython">stack:python</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/webapp-testing/SKILL.md">anthropics/skills at dbd4588</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: webapp-testing
+description: Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.
+license: Complete terms in LICENSE.txt</code></pre></details>
+        <div class="markdown"><h3>Web Application Testing</h3>
+<p>To test local web applications, write native Python Playwright scripts.</p>
+<p><strong>Helper Scripts Available</strong>:</p>
+<ul>
+<li><code>scripts/with_server.py</code> - Manages server lifecycle (supports multiple servers)</li>
+</ul>
+<p><strong>Always run scripts with <code>--help</code> first</strong> to see usage. DO NOT read the source until you try running the script first and find that a customized solution is abslutely necessary. These scripts can be very large and thus pollute your context window. They exist to be called directly as black-box scripts rather than ingested into your context window.</p>
+<h4>Decision Tree: Choosing Your Approach</h4>
+<pre><code>User task → Is it static HTML?
+    ├─ Yes → Read HTML file directly to identify selectors
+    │         ├─ Success → Write Playwright script using selectors
+    │         └─ Fails/Incomplete → Treat as dynamic (below)
+    │
+    └─ No (dynamic webapp) → Is the server already running?
+        ├─ No → Run: python scripts/with_server.py --help
+        │        Then use the helper + write simplified Playwright script
+        │
+        └─ Yes → Reconnaissance-then-action:
+            1. Navigate and wait for networkidle
+            2. Take screenshot or inspect DOM
+            3. Identify selectors from rendered state
+            4. Execute actions with discovered selectors
+</code></pre>
+<h4>Example: Using with_server.py</h4>
+<p>To start a server, run <code>--help</code> first, then use the helper:</p>
+<p><strong>Single server:</strong></p>
+<pre><code class="language-bash">python scripts/with_server.py --server &quot;npm run dev&quot; --port 5173 -- python your_automation.py
+</code></pre>
+<p><strong>Multiple servers (e.g., backend + frontend):</strong></p>
+<pre><code class="language-bash">python scripts/with_server.py \
+  --server &quot;cd backend &amp;&amp; python server.py&quot; --port 3000 \
+  --server &quot;cd frontend &amp;&amp; npm run dev&quot; --port 5173 \
+  -- python your_automation.py
+</code></pre>
+<p>To create an automation script, include only Playwright logic (servers are managed automatically):</p>
+<pre><code class="language-python">from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True) # Always launch chromium in headless mode
+    page = browser.new_page()
+    page.goto('http://localhost:5173') # Server already running and ready
+    page.wait_for_load_state('networkidle') # CRITICAL: Wait for JS to execute
+    # ... your automation logic
+    browser.close()
+</code></pre>
+<h4>Reconnaissance-Then-Action Pattern</h4>
+<ol>
+<li>
+<p><strong>Inspect rendered DOM</strong>:</p>
+<pre><code class="language-python">page.screenshot(path='/tmp/inspect.png', full_page=True)
+content = page.content()
+page.locator('button').all()
+</code></pre>
+</li>
+<li>
+<p><strong>Identify selectors</strong> from inspection results</p>
+</li>
+<li>
+<p><strong>Execute actions</strong> using discovered selectors</p>
+</li>
+</ol>
+<h4>Common Pitfall</h4>
+<p>❌ <strong>Don't</strong> inspect the DOM before waiting for <code>networkidle</code> on dynamic apps
+✅ <strong>Do</strong> wait for <code>page.wait_for_load_state('networkidle')</code> before inspection</p>
+<h4>Best Practices</h4>
+<ul>
+<li><strong>Use bundled scripts as black boxes</strong> - To accomplish a task, consider whether one of the scripts available in <code>scripts/</code> can help. These scripts handle common, complex workflows reliably without cluttering the context window. Use <code>--help</code> to see usage, then invoke directly.</li>
+<li>Use <code>sync_playwright()</code> for synchronous scripts</li>
+<li>Always close the browser when done</li>
+<li>Use descriptive selectors: <code>text=</code>, <code>role=</code>, CSS selectors, or IDs</li>
+<li>Add appropriate waits: <code>page.wait_for_selector()</code> or <code>page.wait_for_timeout()</code></li>
+</ul>
+<h4>Reference Files</h4>
+<ul>
+<li><strong>examples/</strong> - Examples showing common patterns:
+<ul>
+<li><code>element_discovery.py</code> - Discovering buttons, links, and inputs on a page</li>
+<li><code>static_html_automation.py</code> - Using file:// URLs for local HTML</li>
+<li><code>console_logging.py</code> - Capturing console logs during automation</li>
+</ul>
+</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

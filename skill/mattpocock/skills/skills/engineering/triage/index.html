@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>triage · Gem Skills</title>
+    <meta name="description" content="Use it when: issues and outside pull requests pile up on your tracker and you want help sorting them. It does: gives each item two labels, a category (bug or enhancement) and a state such as needs-info, ready-for-agent or wontfix, and moves it along. You get: labels, comments and closed issues on your tracker, plus briefs specific enough for an agent to build from without you. Checks: whether a request is already built or was rejected before, and reproduces a bug before going further. Needs: an issue tracker and labels configured with setup-matt-pocock-skills, the author&#039;s one-time repo setup. Runs: only when you invoke it; it recommends, then waits for your decision." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>triage</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>issues and outside pull requests pile up on your tracker and you want help sorting them</dd></div><div><dt>It does</dt><dd>gives each item two labels, a category (bug or enhancement) and a state such as needs-info, ready-for-agent or wontfix, and moves it along</dd></div><div><dt>You get</dt><dd>labels, comments and closed issues on your tracker, plus briefs specific enough for an agent to build from without you</dd></div><div><dt>Checks</dt><dd>whether a request is already built or was rejected before, and reproduces a bug before going further</dd></div><div><dt>Needs</dt><dd>an issue tracker and labels configured with setup-matt-pocock-skills, the author&#39;s one-time repo setup</dd></div><div><dt>Runs</dt><dd>only when you invoke it; it recommends, then waits for your decision</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 13 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/to-tickets/">to-tickets</a> · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/implement/">implement</a></p>
+    <p class="note">Only works inside its bundle: Needs the tracker and label mapping from setup-matt-pocock-skills, and loads grilling and domain-modeling to flesh out a request. Install <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>You call /triage and say what you want in plain words: what needs my attention, look at #42, move #42 to ready-for-agent. For an overview it lists untriaged items, items under evaluation, and items whose reporter replied since the last triage notes. For one issue or outside pull request, it reads everything, searches the code for an existing implementation and the repo&#39;s .out-of-scope/ folder, where past rejections are written up, then recommends a category and state and waits for you. Before going further it checks the claim: it reproduces the bug, or runs the pull request&#39;s code. If the request is vague, it questions you round by round until it&#39;s clear. Then it acts on the state: ready-for-agent gets an agent brief, a comment with current and desired behavior, the interfaces to change and testable acceptance criteria, free of file paths so it stays valid as code moves; needs-info gets notes on what&#39;s settled and specific questions for the reporter; a rejected feature is written up in .out-of-scope/ so it isn&#39;t argued again. Every comment it posts opens with a note that AI wrote it.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/triage">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill triage</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill triage">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/triage">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/triage">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>818,146 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Apr 28, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">36.5K</div>
+      <div class="stat-delta">-19% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 45,268; week to Aug 10: 58,240; week to Aug 17: 47,409; week to Aug 24: 51,899; week to Aug 31: 46,422; week to Sep 7: 44,334; week to Sep 14: 39,158; week to Sep 21: 36,483. Use the left and right arrow keys to read each week."
+        data-values="45268,58240,47409,51899,46422,44334,39158,36483" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,15.8 38.6,6.0 71.1,14.2 103.7,10.8 136.3,14.9 168.9,16.5 201.4,20.4 234.0,22.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="22.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>45,268</td></tr><tr><td>Aug 10</td><td>58,240</td></tr><tr><td>Aug 17</td><td>47,409</td></tr><tr><td>Aug 24</td><td>51,899</td></tr><tr><td>Aug 31</td><td>46,422</td></tr><tr><td>Sep 7</td><td>44,334</td></tr><tr><td>Sep 14</td><td>39,158</td></tr><tr><td>Sep 21</td><td>36,483</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:issue-tracker" data-facet="needs" title="Reads or writes an issue tracker, GitHub Issues by default." href="/gemskills/?tag=needs%3Aissue-tracker">needs:issue-tracker</a></div>
+          <p class="tag-meaning">Reads or writes an issue tracker, GitHub Issues by default.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="issue-tracking" data-facet="topic" href="/gemskills/?tag=issue-tracking">issue-tracking</a><a class="tag" data-tag="code-review" data-facet="topic" href="/gemskills/?tag=code-review">code-review</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/triage/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: triage
+description: Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><h3>Triage</h3>
+<p>Move issues on the project issue tracker through a small state machine of triage roles.</p>
+<p>If this repo treats external pull requests as a request surface (see the issue-tracker config), triage covers them too: <strong>a PR is an issue with attached code</strong>, using the same roles, same states, and same machine, with a few deltas marked &quot;for a PR&quot; below. Resolve a bare <code>#42</code> to an issue or PR per the tracker config.</p>
+<p>Every comment or issue posted to the issue tracker during triage <strong>must</strong> start with this disclaimer:</p>
+<pre><code>&gt; *This was generated by AI during triage.*
+</code></pre>
+<h4>Reference docs</h4>
+<ul>
+<li><a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/triage/AGENT-BRIEF.md">AGENT-BRIEF.md</a>: how to write durable agent briefs</li>
+<li><a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/triage/OUT-OF-SCOPE.md">OUT-OF-SCOPE.md</a>: how the <code>.out-of-scope/</code> knowledge base works</li>
+</ul>
+<h4>Roles</h4>
+<p>Two <strong>category</strong> roles:</p>
+<ul>
+<li><code>bug</code>: something is broken</li>
+<li><code>enhancement</code>: new feature or improvement</li>
+</ul>
+<p>Five <strong>state</strong> roles:</p>
+<ul>
+<li><code>needs-triage</code>: maintainer needs to evaluate</li>
+<li><code>needs-info</code>: waiting on reporter for more information</li>
+<li><code>ready-for-agent</code>: fully specified, ready for an AFK agent</li>
+<li><code>ready-for-human</code>: needs human implementation</li>
+<li><code>wontfix</code>: will not be actioned</li>
+</ul>
+<p>For a PR, the same states read against the attached code: <code>ready-for-agent</code> means a brief is attached and an agent should take the next step on the diff; <code>ready-for-human</code> means it's ready for a human to merge.</p>
+<p>Every triaged issue should carry exactly one category role and one state role. If state roles conflict, flag it and ask the maintainer before doing anything else.</p>
+<p>These are canonical role names. The actual label strings used in the issue tracker may differ. The mapping should have been provided to you. If not, tell the user to run <code>/setup-matt-pocock-skills</code>.</p>
+<p>State transitions: an unlabeled issue normally goes to <code>needs-triage</code> first; from there it moves to <code>needs-info</code>, <code>ready-for-agent</code>, <code>ready-for-human</code>, or <code>wontfix</code>. <code>needs-info</code> returns to <code>needs-triage</code> once the reporter replies. The maintainer can override at any time; flag transitions that look unusual and ask before proceeding.</p>
+<h4>Invocation</h4>
+<p>The maintainer invokes <code>/triage</code> and describes what they want in natural language. Interpret the request and act. Examples:</p>
+<ul>
+<li>&quot;Show me anything that needs my attention&quot;</li>
+<li>&quot;Let's look at #42&quot; (issue or PR)</li>
+<li>&quot;Move #42 to ready-for-agent&quot;</li>
+<li>&quot;What's ready for agents to pick up?&quot;</li>
+</ul>
+<h4>Show what needs attention</h4>
+<p>Query the issue tracker and present three buckets, oldest first:</p>
+<ol>
+<li><strong>Unlabeled</strong>: never triaged.</li>
+<li><strong><code>needs-triage</code></strong>: evaluation in progress.</li>
+<li><strong><code>needs-info</code> with reporter activity since the last triage notes</strong>: needs re-evaluation.</li>
+</ol>
+<p>When PRs are in scope, include external PRs in these buckets and tag each line <code>[PR]</code> or <code>[issue]</code>. Discovery surfaces only <em>external</em> PRs (the tracker config defines who counts as external), so a collaborator's in-flight PR is not triage work. This filter is discovery-only; an explicitly named PR is always triaged regardless of author.</p>
+<p>Show counts and a one-line summary per item. Let the maintainer pick.</p>
+<h4>Triage a specific issue or PR</h4>
+<ol>
+<li>
+<p><strong>Gather context.</strong> Read the full issue or PR (body, comments, labels, author, dates; for a PR, the diff too). Parse any prior triage notes so you don't re-ask resolved questions. Explore the codebase using the project's domain glossary, respecting ADRs in the area. Run two checks against the codebase: (a) <strong>redundancy</strong>: search for an existing implementation of the requested behavior by domain concept (not just the request's wording), and report where you looked. If found, it's an already-implemented <code>wontfix</code> (step 5). (b) <strong>prior rejection</strong>: read <code>.out-of-scope/*.md</code> and surface any that resembles this request.</p>
+</li>
+<li>
+<p><strong>Recommend.</strong> Tell the maintainer your category and state recommendation with reasoning, plus a brief codebase summary relevant to the request (including whether it's already implemented). Wait for direction.</p>
+</li>
+<li>
+<p><strong>Verify the claim.</strong> Before any grilling, check that the claim holds up. For a bug, reproduce it from the reporter's steps. For a PR, confirm the diff does what it claims: check it out, run the relevant tests or commands. Report what happened: confirmed (with code path), failed, or insufficient detail (a strong <code>needs-info</code> signal). A confirmed verification makes a much stronger agent brief.</p>
+</li>
+<li>
+<p><strong>Grill (if needed).</strong> If the request needs fleshing out, call the Skill tool twice, for &quot;grilling&quot; and &quot;domain-modeling&quot;, and grill it into shape a round of questions at a time, sharpening domain terms and updating <code>GLOSSARY.md</code>/ADRs inline as decisions land.</p>
+</li>
+<li>
+<p><strong>Apply the outcome:</strong></p>
+<ul>
+<li><code>ready-for-agent</code>: post an agent brief comment (<a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/triage/AGENT-BRIEF.md">AGENT-BRIEF.md</a>).</li>
+<li><code>ready-for-human</code>: same structure as an agent brief, but note why it can't be delegated (judgment calls, external access, design decisions, manual testing).</li>
+<li><code>needs-info</code>: post triage notes (template below).</li>
+<li>For <code>wontfix</code>, close the issue, with the comment depending on <em>why</em>:
+<ul>
+<li><strong>Already implemented</strong>: the change already exists in the codebase. Point to where it lives; do <strong>not</strong> write to <code>.out-of-scope/</code> (that KB is for <em>rejected</em> requests, not built ones).</li>
+<li><strong>Rejected (bug)</strong>: give a polite explanation, then close.</li>
+<li><strong>Rejected (enhancement)</strong>: write to <code>.out-of-scope/</code>, link to it from a comment, then close (<a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/triage/OUT-OF-SCOPE.md">OUT-OF-SCOPE.md</a>).</li>
+</ul>
+</li>
+<li><code>needs-triage</code>: apply the role. Optional comment if there's partial progress.</li>
+</ul>
+</li>
+</ol>
+<h4>Quick state override</h4>
+<p>If the maintainer says &quot;move #42 to ready-for-agent&quot;, trust them and apply the role directly. Confirm what you're about to do (role changes, comment, close), then act. Skip grilling. If moving to <code>ready-for-agent</code> without a grilling session, ask whether they want to write an agent brief.</p>
+<h4>Needs-info template</h4>
+<pre><code class="language-markdown">## Triage Notes
+
+**What we've established so far:**
+
+- point 1
+- point 2
+
+**What we still need from you (@reporter):**
+
+- question 1
+- question 2
+</code></pre>
+<p>Capture everything resolved during grilling under &quot;established so far&quot; so the work isn't lost. Questions must be specific and actionable, not &quot;please provide more info&quot;.</p>
+<h4>Resuming a previous session</h4>
+<p>If prior triage notes exist on the issue or PR, read them, check whether the reporter has answered any outstanding questions, and present an updated picture before continuing. Don't re-ask resolved questions.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

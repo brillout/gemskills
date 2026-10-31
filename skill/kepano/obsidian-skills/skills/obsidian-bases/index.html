@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>obsidian-bases · Gem Skills</title>
+    <meta name="description" content="Creates Obsidian Bases with views, filters and formulas." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=kepano%2Fobsidian-skills">kepano/obsidian-skills</a></p>
+      <h1>obsidian-bases</h1>
+      <p class="lede">Creates Obsidian Bases with views, filters and formulas.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-bases</code><button type="button" class="copy" data-copy="npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-bases">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/kepano/obsidian-skills/obsidian-bases">skills.sh page</a> · <a href="https://github.com/kepano/obsidian-skills/tree/HEAD/skills/obsidian-bases">Source on GitHub</a> · <a href="/gemskills/?repo=kepano%2Fobsidian-skills">All skills from kepano/obsidian-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>74,568 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>48,653 <span class="muted">kepano/obsidian-skills</span></dd></div><div><dt>First seen</dt><dd>Jan 20, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">1K</div>
+      <div class="stat-delta">-71% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 3,586; week to Aug 10: 3,974; week to Aug 17: 3,752; week to Aug 24: 4,219; week to Aug 31: 2,864; week to Sep 7: 1,267; week to Sep 14: 1,040; week to Sep 21: 1,027. Use the left and right arrow keys to read each week."
+        data-values="3586,3974,3752,4219,2864,1267,1040,1027" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,12.6 38.6,8.6 71.1,10.9 103.7,6.0 136.3,20.1 168.9,36.8 201.4,39.2 234.0,39.3" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="39.3" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>3,586</td></tr><tr><td>Aug 10</td><td>3,974</td></tr><tr><td>Aug 17</td><td>3,752</td></tr><tr><td>Aug 24</td><td>4,219</td></tr><tr><td>Aug 31</td><td>2,864</td></tr><tr><td>Sep 7</td><td>1,267</td></tr><tr><td>Sep 14</td><td>1,040</td></tr><tr><td>Sep 21</td><td>1,027</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:documents" data-facet="category" title="Office files, notes and suites like Lark and Google Workspace." href="/gemskills/?tag=category%3Adocuments">category:documents</a></div>
+          <p class="tag-meaning">Office files, notes and suites like Lark and Google Workspace.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="notes" data-facet="topic" href="/gemskills/?tag=notes">notes</a><a class="tag" data-tag="databases" data-facet="topic" href="/gemskills/?tag=databases">databases</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:obsidian" data-facet="stack" href="/gemskills/?tag=stack%3Aobsidian">stack:obsidian</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/kepano/obsidian-skills/blob/3ccff5338ea700537839b21900aa5358a0402c98/skills/obsidian-bases/SKILL.md">kepano/obsidian-skills at 3ccff53</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: obsidian-bases
+description: Create and edit Obsidian Bases (.base files) with views, filters, formulas, and summaries. Use when working with .base files, creating database-like views of notes, or when the user mentions Bases, table views, card views, filters, or formulas in Obsidian.</code></pre></details>
+        <div class="markdown"><h3>Obsidian Bases Skill</h3>
+<h4>Workflow</h4>
+<ol>
+<li><strong>Create the file</strong>: Create a <code>.base</code> file in the vault with valid YAML content</li>
+<li><strong>Define scope</strong>: Add <code>filters</code> to select which notes appear (by tag, folder, property, or date)</li>
+<li><strong>Add formulas</strong> (optional): Define computed properties in the <code>formulas</code> section</li>
+<li><strong>Configure views</strong>: Add one or more views (<code>table</code>, <code>cards</code>, <code>list</code>, or <code>map</code>) with <code>order</code> specifying which properties to display</li>
+<li><strong>Validate</strong>: Verify the file is valid YAML with no syntax errors. Check that all referenced properties and formulas exist. Common issues: unquoted strings containing special YAML characters, mismatched quotes in formula expressions, referencing <code>formula.X</code> without defining <code>X</code> in <code>formulas</code></li>
+<li><strong>Test in Obsidian</strong>: Open the <code>.base</code> file in Obsidian to confirm the view renders correctly. If it shows a YAML error, check quoting rules below</li>
+</ol>
+<h4>Schema</h4>
+<p>Base files use the <code>.base</code> extension and contain valid YAML.</p>
+<pre><code class="language-yaml"># Global filters apply to ALL views in the base
+filters:
+  # Can be a single filter string
+  # OR a recursive filter object with exactly ONE key: and, or, or not
+  and:
+    - 'status == &quot;active&quot;'
+    - not:
+        - 'file.hasTag(&quot;archived&quot;)'
+
+# Define formula properties that can be used across all views
+formulas:
+  formula_name: 'expression'
+
+# Configure display names and settings for properties
+properties:
+  property_name:
+    displayName: &quot;Display Name&quot;
+  formula.formula_name:
+    displayName: &quot;Formula Display Name&quot;
+  file.ext:
+    displayName: &quot;Extension&quot;
+
+# Define custom summary formulas
+summaries:
+  custom_summary_name: 'values.mean().round(3)'
+
+# Define one or more views
+views:
+  - type: table | cards | list | map
+    name: &quot;View Name&quot;
+    limit: 10                    # Optional: limit results
+    groupBy:                     # Optional: group results
+      property: property_name
+      direction: ASC | DESC
+    filters:                     # View-specific filters follow the same rules
+      and:
+        - 'status == &quot;active&quot;'
+    order:                       # Properties to display in order
+      - file.name
+      - property_name
+      - formula.formula_name
+    summaries:                   # Map properties to summary formulas
+      property_name: Average
+</code></pre>
+<h4>Filter Syntax</h4>
+<p>Filters narrow down results. They can be applied globally or per-view.</p>
+<h5>Filter Structure</h5>
+<pre><code class="language-yaml"># Single filter
+filters: 'status == &quot;done&quot;'
+
+# AND - all conditions must be true
+filters:
+  and:
+    - 'status == &quot;done&quot;'
+    - 'priority &gt; 3'
+
+# OR - any condition can be true
+filters:
+  or:
+    - 'file.hasTag(&quot;book&quot;)'
+    - 'file.hasTag(&quot;article&quot;)'
+
+# NOT - exclude matching items
+filters:
+  not:
+    - 'file.hasTag(&quot;archived&quot;)'
+
+# Nested filters
+filters:
+  or:
+    - file.hasTag(&quot;tag&quot;)
+    - and:
+        - file.hasTag(&quot;book&quot;)
+        - file.hasLink(&quot;Textbook&quot;)
+    - not:
+        - file.hasTag(&quot;book&quot;)
+        - file.inFolder(&quot;Required Reading&quot;)
+</code></pre>
+<h5>Filter Operators</h5>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>equals</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>not equal</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>greater than</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>less than</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>greater than or equal</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>less than or equal</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>logical and</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>logical or</td>
+</tr>
+<tr>
+<td>&lt;code&gt;!&lt;/code&gt;</td>
+<td>logical not</td>
+</tr>
+</tbody>
+</table>
+<h4>Properties</h4>
+<h5>Three Types of Properties</h5>
+<ol>
+<li><strong>Note properties</strong> - From frontmatter: <code>note.author</code> or just <code>author</code></li>
+<li><strong>File properties</strong> - File metadata: <code>file.name</code>, <code>file.mtime</code>, etc.</li>
+<li><strong>Formula properties</strong> - Computed values: <code>formula.my_formula</code></li>
+</ol>
+<h5>File Properties Reference</h5>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file.name</code></td>
+<td>String</td>
+<td>File name</td>
+</tr>
+<tr>
+<td><code>file.basename</code></td>
+<td>String</td>
+<td>File name without extension</td>
+</tr>
+<tr>
+<td><code>file.path</code></td>
+<td>String</td>
+<td>Full path to file</td>
+</tr>
+<tr>
+<td><code>file.folder</code></td>
+<td>String</td>
+<td>Parent folder path</td>
+</tr>
+<tr>
+<td><code>file.ext</code></td>
+<td>String</td>
+<td>File extension</td>
+</tr>
+<tr>
+<td><code>file.size</code></td>
+<td>Number</td>
+<td>File size in bytes</td>
+</tr>
+<tr>
+<td><code>file.ctime</code></td>
+<td>Date</td>
+<td>Created time</td>
+</tr>
+<tr>
+<td><code>file.mtime</code></td>
+<td>Date</td>
+<td>Modified time</td>
+</tr>
+<tr>
+<td><code>file.tags</code></td>
+<td>List</td>
+<td>All tags in file</td>
+</tr>
+<tr>
+<td><code>file.links</code></td>
+<td>List</td>
+<td>Internal links in file</td>
+</tr>
+<tr>
+<td><code>file.backlinks</code></td>
+<td>List</td>
+<td>Files linking to this file</td>
+</tr>
+<tr>
+<td><code>file.embeds</code></td>
+<td>List</td>
+<td>Embeds in the note</td>
+</tr>
+<tr>
+<td><code>file.properties</code></td>
+<td>Object</td>
+<td>All frontmatter properties</td>
+</tr>
+</tbody>
+</table>
+<h5>The <code>this</code> Keyword</h5>
+<ul>
+<li>In main content area: refers to the base file itself</li>
+<li>When embedded: refers to the embedding file</li>
+<li>In sidebar: refers to the active file in main content</li>
+</ul>
+<h4>Formula Syntax</h4>
+<p>Formulas compute values from properties. Defined in the <code>formulas</code> section.</p>
+<pre><code class="language-yaml">formulas:
+  # Simple arithmetic
+  total: &quot;price * quantity&quot;
+
+  # Conditional logic
+  status_icon: 'if(done, &quot;✅&quot;, &quot;⏳&quot;)'
+
+  # String formatting
+  formatted_price: 'if(price, price.toFixed(2) + &quot; dollars&quot;)'
+
+  # Date formatting
+  created: 'file.ctime.format(&quot;YYYY-MM-DD&quot;)'
+
+  # Calculate days since created (use .days for Duration)
+  days_old: '(now() - file.ctime).days'
+
+  # Calculate days until due date
+  days_until_due: 'if(due_date, (date(due_date) - today()).days, &quot;&quot;)'
+</code></pre>
+<h4>Key Functions</h4>
+<p>Most commonly used functions. For the complete reference of all types (Date, String, Number, List, File, Link, Object, RegExp), see <a href="https://github.com/kepano/obsidian-skills/blob/3ccff5338ea700537839b21900aa5358a0402c98/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md">FUNCTIONS_REFERENCE.md</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date()</code></td>
+<td><code>date(string): date</code></td>
+<td>Parse string to date (<code>YYYY-MM-DD HH:mm:ss</code>)</td>
+</tr>
+<tr>
+<td><code>now()</code></td>
+<td><code>now(): date</code></td>
+<td>Current date and time</td>
+</tr>
+<tr>
+<td><code>today()</code></td>
+<td><code>today(): date</code></td>
+<td>Current date (time = 00:00:00)</td>
+</tr>
+<tr>
+<td><code>if()</code></td>
+<td><code>if(condition, trueResult, falseResult?)</code></td>
+<td>Conditional</td>
+</tr>
+<tr>
+<td><code>duration()</code></td>
+<td><code>duration(string): duration</code></td>
+<td>Parse duration string</td>
+</tr>
+<tr>
+<td><code>file()</code></td>
+<td><code>file(path): file</code></td>
+<td>Get file object</td>
+</tr>
+<tr>
+<td><code>link()</code></td>
+<td><code>link(path, display?): Link</code></td>
+<td>Create a link</td>
+</tr>
+</tbody>
+</table>
+<h5>Duration Type</h5>
+<p>When subtracting two dates, the result is a <strong>Duration</strong> type (not a number).</p>
+<p><strong>Duration Fields:</strong> <code>duration.days</code>, <code>duration.hours</code>, <code>duration.minutes</code>, <code>duration.seconds</code>, <code>duration.milliseconds</code></p>
+<p><strong>IMPORTANT:</strong> Duration does NOT support <code>.round()</code>, <code>.floor()</code>, <code>.ceil()</code> directly. Access a numeric field first (like <code>.days</code>), then apply number functions.</p>
+<pre><code class="language-yaml"># CORRECT: Calculate days between dates
+&quot;(date(due_date) - today()).days&quot;                    # Returns number of days
+&quot;(now() - file.ctime).days&quot;                          # Days since created
+&quot;(date(due_date) - today()).days.round(0)&quot;           # Rounded days
+
+# WRONG - will cause error:
+# &quot;((date(due) - today()) / 86400000).round(0)&quot;      # Duration doesn't support division then round
+</code></pre>
+<h5>Date Arithmetic</h5>
+<pre><code class="language-yaml"># Duration units: y/year/years, M/month/months, d/day/days,
+#                 w/week/weeks, h/hour/hours, m/minute/minutes, s/second/seconds
+&quot;now() + \&quot;1 day\&quot;&quot;       # Tomorrow
+&quot;today() + \&quot;7d\&quot;&quot;        # A week from today
+&quot;now() - file.ctime&quot;      # Returns Duration
+&quot;(now() - file.ctime).days&quot;  # Get days as number
+</code></pre>
+<h4>View Types</h4>
+<h5>Table View</h5>
+<pre><code class="language-yaml">views:
+  - type: table
+    name: &quot;My Table&quot;
+    order:
+      - file.name
+      - status
+      - due_date
+    summaries:
+      price: Sum
+      count: Average
+</code></pre>
+<h5>Cards View</h5>
+<pre><code class="language-yaml">views:
+  - type: cards
+    name: &quot;Gallery&quot;
+    order:
+      - file.name
+      - cover_image
+      - description
+</code></pre>
+<h5>List View</h5>
+<pre><code class="language-yaml">views:
+  - type: list
+    name: &quot;Simple List&quot;
+    order:
+      - file.name
+      - status
+</code></pre>
+<h5>Map View</h5>
+<p>Requires latitude/longitude properties and the Maps community plugin.</p>
+<pre><code class="language-yaml">views:
+  - type: map
+    name: &quot;Locations&quot;
+    # Map-specific settings for lat/lng properties
+</code></pre>
+<h4>Default Summary Formulas</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Input Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Average</code></td>
+<td>Number</td>
+<td>Mathematical mean</td>
+</tr>
+<tr>
+<td><code>Min</code></td>
+<td>Number</td>
+<td>Smallest number</td>
+</tr>
+<tr>
+<td><code>Max</code></td>
+<td>Number</td>
+<td>Largest number</td>
+</tr>
+<tr>
+<td><code>Sum</code></td>
+<td>Number</td>
+<td>Sum of all numbers</td>
+</tr>
+<tr>
+<td><code>Range</code></td>
+<td>Number</td>
+<td>Max - Min</td>
+</tr>
+<tr>
+<td><code>Median</code></td>
+<td>Number</td>
+<td>Mathematical median</td>
+</tr>
+<tr>
+<td><code>Stddev</code></td>
+<td>Number</td>
+<td>Standard deviation</td>
+</tr>
+<tr>
+<td><code>Earliest</code></td>
+<td>Date</td>
+<td>Earliest date</td>
+</tr>
+<tr>
+<td><code>Latest</code></td>
+<td>Date</td>
+<td>Latest date</td>
+</tr>
+<tr>
+<td><code>Range</code></td>
+<td>Date</td>
+<td>Latest - Earliest</td>
+</tr>
+<tr>
+<td><code>Checked</code></td>
+<td>Boolean</td>
+<td>Count of true values</td>
+</tr>
+<tr>
+<td><code>Unchecked</code></td>
+<td>Boolean</td>
+<td>Count of false values</td>
+</tr>
+<tr>
+<td><code>Empty</code></td>
+<td>Any</td>
+<td>Count of empty values</td>
+</tr>
+<tr>
+<td><code>Filled</code></td>
+<td>Any</td>
+<td>Count of non-empty values</td>
+</tr>
+<tr>
+<td><code>Unique</code></td>
+<td>Any</td>
+<td>Count of unique values</td>
+</tr>
+</tbody>
+</table>
+<h4>Complete Examples</h4>
+<h5>Task Tracker Base</h5>
+<pre><code class="language-yaml">filters:
+  and:
+    - file.hasTag(&quot;task&quot;)
+    - 'file.ext == &quot;md&quot;'
+
+formulas:
+  days_until_due: 'if(due, (date(due) - today()).days, &quot;&quot;)'
+  is_overdue: 'if(due, date(due) &lt; today() &amp;&amp; status != &quot;done&quot;, false)'
+  priority_label: 'if(priority == 1, &quot;🔴 High&quot;, if(priority == 2, &quot;🟡 Medium&quot;, &quot;🟢 Low&quot;))'
+
+properties:
+  status:
+    displayName: Status
+  formula.days_until_due:
+    displayName: &quot;Days Until Due&quot;
+  formula.priority_label:
+    displayName: Priority
+
+views:
+  - type: table
+    name: &quot;Active Tasks&quot;
+    filters:
+      and:
+        - 'status != &quot;done&quot;'
+    order:
+      - file.name
+      - status
+      - formula.priority_label
+      - due
+      - formula.days_until_due
+    groupBy:
+      property: status
+      direction: ASC
+    summaries:
+      formula.days_until_due: Average
+
+  - type: table
+    name: &quot;Completed&quot;
+    filters:
+      and:
+        - 'status == &quot;done&quot;'
+    order:
+      - file.name
+      - completed_date
+</code></pre>
+<h5>Reading List Base</h5>
+<pre><code class="language-yaml">filters:
+  or:
+    - file.hasTag(&quot;book&quot;)
+    - file.hasTag(&quot;article&quot;)
+
+formulas:
+  reading_time: 'if(pages, (pages * 2).toString() + &quot; min&quot;, &quot;&quot;)'
+  status_icon: 'if(status == &quot;reading&quot;, &quot;📖&quot;, if(status == &quot;done&quot;, &quot;✅&quot;, &quot;📚&quot;))'
+  year_read: 'if(finished_date, date(finished_date).year, &quot;&quot;)'
+
+properties:
+  author:
+    displayName: Author
+  formula.status_icon:
+    displayName: &quot;&quot;
+  formula.reading_time:
+    displayName: &quot;Est. Time&quot;
+
+views:
+  - type: cards
+    name: &quot;Library&quot;
+    order:
+      - cover
+      - file.name
+      - author
+      - formula.status_icon
+    filters:
+      not:
+        - 'status == &quot;dropped&quot;'
+
+  - type: table
+    name: &quot;Reading List&quot;
+    filters:
+      and:
+        - 'status == &quot;to-read&quot;'
+    order:
+      - file.name
+      - author
+      - pages
+      - formula.reading_time
+</code></pre>
+<h5>Daily Notes Index</h5>
+<pre><code class="language-yaml">filters:
+  and:
+    - file.inFolder(&quot;Daily Notes&quot;)
+    - '/^\d{4}-\d{2}-\d{2}$/.matches(file.basename)'
+
+formulas:
+  word_estimate: '(file.size / 5).round(0)'
+  day_of_week: 'date(file.basename).format(&quot;dddd&quot;)'
+
+properties:
+  formula.day_of_week:
+    displayName: &quot;Day&quot;
+  formula.word_estimate:
+    displayName: &quot;~Words&quot;
+
+views:
+  - type: table
+    name: &quot;Recent Notes&quot;
+    limit: 30
+    order:
+      - file.name
+      - formula.day_of_week
+      - formula.word_estimate
+      - file.mtime
+</code></pre>
+<h4>Embedding Bases</h4>
+<p>Embed in Markdown files:</p>
+<pre><code class="language-markdown">![[MyBase.base]]
+
+&lt;!-- Specific view --&gt;
+![[MyBase.base#View Name]]
+</code></pre>
+<h4>YAML Quoting Rules</h4>
+<ul>
+<li>Use single quotes for formulas containing double quotes: <code>'if(done, &quot;Yes&quot;, &quot;No&quot;)'</code></li>
+<li>Use double quotes for simple strings: <code>&quot;My View Name&quot;</code></li>
+<li>Escape nested quotes properly in complex expressions</li>
+</ul>
+<h4>Troubleshooting</h4>
+<h5>YAML Syntax Errors</h5>
+<p><strong>Unquoted special characters</strong>: Strings containing <code>:</code>, <code>{</code>, <code>}</code>, <code>[</code>, <code>]</code>, <code>,</code>, <code>&amp;</code>, <code>*</code>, <code>#</code>, <code>?</code>, <code>|</code>, <code>-</code>, <code>&lt;</code>, <code>&gt;</code>, <code>=</code>, <code>!</code>, <code>%</code>, <code>@</code>, <code>`</code> must be quoted.</p>
+<pre><code class="language-yaml"># WRONG - colon in unquoted string
+displayName: Status: Active
+
+# CORRECT
+displayName: &quot;Status: Active&quot;
+</code></pre>
+<p><strong>Mismatched quotes in formulas</strong>: When a formula contains double quotes, wrap the entire formula in single quotes.</p>
+<pre><code class="language-yaml"># WRONG - double quotes inside double quotes
+formulas:
+  label: &quot;if(done, &quot;Yes&quot;, &quot;No&quot;)&quot;
+
+# CORRECT - single quotes wrapping double quotes
+formulas:
+  label: 'if(done, &quot;Yes&quot;, &quot;No&quot;)'
+</code></pre>
+<h5>Common Formula Errors</h5>
+<p><strong>Duration math without field access</strong>: Subtracting dates returns a Duration, not a number. Always access <code>.days</code>, <code>.hours</code>, etc.</p>
+<pre><code class="language-yaml"># WRONG - Duration is not a number
+&quot;(now() - file.ctime).round(0)&quot;
+
+# CORRECT - access .days first, then round
+&quot;(now() - file.ctime).days.round(0)&quot;
+</code></pre>
+<p><strong>Missing null checks</strong>: Properties may not exist on all notes. Use <code>if()</code> to guard.</p>
+<pre><code class="language-yaml"># WRONG - crashes if due_date is empty
+&quot;(date(due_date) - today()).days&quot;
+
+# CORRECT - guard with if()
+'if(due_date, (date(due_date) - today()).days, &quot;&quot;)'
+</code></pre>
+<p><strong>Referencing undefined formulas</strong>: Ensure every <code>formula.X</code> in <code>order</code> or <code>properties</code> has a matching entry in <code>formulas</code>.</p>
+<pre><code class="language-yaml"># This will fail silently if 'total' is not defined in formulas
+order:
+  - formula.total
+
+# Fix: define it
+formulas:
+  total: &quot;price * quantity&quot;
+</code></pre>
+<h4>References</h4>
+<ul>
+<li><a href="https://help.obsidian.md/bases/syntax">Bases Syntax</a></li>
+<li><a href="https://help.obsidian.md/bases/functions">Functions</a></li>
+<li><a href="https://help.obsidian.md/bases/views">Views</a></li>
+<li><a href="https://help.obsidian.md/formulas">Formulas</a></li>
+<li><a href="https://github.com/kepano/obsidian-skills/blob/3ccff5338ea700537839b21900aa5358a0402c98/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md">Complete Functions Reference</a></li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

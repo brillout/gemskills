@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json-canvas · Gem Skills</title>
+    <meta name="description" content="Creates JSON Canvas files with nodes, edges and groups." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=kepano%2Fobsidian-skills">kepano/obsidian-skills</a></p>
+      <h1>json-canvas</h1>
+      <p class="lede">Creates JSON Canvas files with nodes, edges and groups.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/kepano/obsidian-skills --skill json-canvas</code><button type="button" class="copy" data-copy="npx skills add https://github.com/kepano/obsidian-skills --skill json-canvas">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/kepano/obsidian-skills/json-canvas">skills.sh page</a> · <a href="https://github.com/kepano/obsidian-skills/tree/HEAD/skills/json-canvas">Source on GitHub</a> · <a href="/gemskills/?repo=kepano%2Fobsidian-skills">All skills from kepano/obsidian-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>69,636 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>48,653 <span class="muted">kepano/obsidian-skills</span></dd></div><div><dt>First seen</dt><dd>Jan 20, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">948</div>
+      <div class="stat-delta">-73% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 3,499; week to Aug 10: 3,858; week to Aug 17: 3,627; week to Aug 24: 4,095; week to Aug 31: 2,760; week to Sep 7: 1,204; week to Sep 14: 1,009; week to Sep 21: 948. Use the left and right arrow keys to read each week."
+        data-values="3499,3858,3627,4095,2760,1204,1009,948" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,12.4 38.6,8.5 71.1,11.0 103.7,6.0 136.3,20.3 168.9,37.1 201.4,39.2 234.0,39.8" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="39.8" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>3,499</td></tr><tr><td>Aug 10</td><td>3,858</td></tr><tr><td>Aug 17</td><td>3,627</td></tr><tr><td>Aug 24</td><td>4,095</td></tr><tr><td>Aug 31</td><td>2,760</td></tr><tr><td>Sep 7</td><td>1,204</td></tr><tr><td>Sep 14</td><td>1,009</td></tr><tr><td>Sep 21</td><td>948</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:documents" data-facet="category" title="Office files, notes and suites like Lark and Google Workspace." href="/gemskills/?tag=category%3Adocuments">category:documents</a></div>
+          <p class="tag-meaning">Office files, notes and suites like Lark and Google Workspace.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="diagrams" data-facet="topic" href="/gemskills/?tag=diagrams">diagrams</a><a class="tag" data-tag="notes" data-facet="topic" href="/gemskills/?tag=notes">notes</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:obsidian" data-facet="stack" href="/gemskills/?tag=stack%3Aobsidian">stack:obsidian</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/kepano/obsidian-skills/blob/3ccff5338ea700537839b21900aa5358a0402c98/skills/json-canvas/SKILL.md">kepano/obsidian-skills at 3ccff53</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: json-canvas
+description: Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and connections. Use when working with .canvas files, creating visual canvases, mind maps, flowcharts, or when the user mentions Canvas files in Obsidian.</code></pre></details>
+        <div class="markdown"><h3>JSON Canvas Skill</h3>
+<h4>File Structure</h4>
+<p>A canvas file (<code>.canvas</code>) contains two top-level arrays following the <a href="https://jsoncanvas.org/spec/1.0/">JSON Canvas Spec 1.0</a>:</p>
+<pre><code class="language-json">{
+  &quot;nodes&quot;: [],
+  &quot;edges&quot;: []
+}
+</code></pre>
+<ul>
+<li><code>nodes</code> (optional): Array of node objects</li>
+<li><code>edges</code> (optional): Array of edge objects connecting nodes</li>
+</ul>
+<h4>Common Workflows</h4>
+<h5>1. Create a New Canvas</h5>
+<ol>
+<li>Create a <code>.canvas</code> file with the base structure <code>{&quot;nodes&quot;: [], &quot;edges&quot;: []}</code></li>
+<li>Generate unique 16-character hex IDs for each node (e.g., <code>&quot;6f0ad84f44ce9c17&quot;</code>)</li>
+<li>Add nodes with required fields: <code>id</code>, <code>type</code>, <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code></li>
+<li>Add edges referencing valid node IDs via <code>fromNode</code> and <code>toNode</code></li>
+<li><strong>Validate</strong>: Parse the JSON to confirm it is valid. Verify all <code>fromNode</code>/<code>toNode</code> values exist in the nodes array</li>
+</ol>
+<h5>2. Add a Node to an Existing Canvas</h5>
+<ol>
+<li>Read and parse the existing <code>.canvas</code> file</li>
+<li>Generate a unique ID that does not collide with existing node or edge IDs</li>
+<li>Choose position (<code>x</code>, <code>y</code>) that avoids overlapping existing nodes (leave 50-100px spacing)</li>
+<li>Append the new node object to the <code>nodes</code> array</li>
+<li>Optionally add edges connecting the new node to existing nodes</li>
+<li><strong>Validate</strong>: Confirm all IDs are unique and all edge references resolve to existing nodes</li>
+</ol>
+<h5>3. Connect Two Nodes</h5>
+<ol>
+<li>Identify the source and target node IDs</li>
+<li>Generate a unique edge ID</li>
+<li>Set <code>fromNode</code> and <code>toNode</code> to the source and target IDs</li>
+<li>Optionally set <code>fromSide</code>/<code>toSide</code> (top, right, bottom, left) for anchor points</li>
+<li>Optionally set <code>label</code> for descriptive text on the edge</li>
+<li>Append the edge to the <code>edges</code> array</li>
+<li><strong>Validate</strong>: Confirm both <code>fromNode</code> and <code>toNode</code> reference existing node IDs</li>
+</ol>
+<h5>4. Edit an Existing Canvas</h5>
+<ol>
+<li>Read and parse the <code>.canvas</code> file as JSON</li>
+<li>Locate the target node or edge by <code>id</code></li>
+<li>Modify the desired attributes (text, position, color, etc.)</li>
+<li>Write the updated JSON back to the file</li>
+<li><strong>Validate</strong>: Re-check all ID uniqueness and edge reference integrity after editing</li>
+</ol>
+<h4>Nodes</h4>
+<p>Nodes are objects placed on the canvas. Array order determines z-index: first node = bottom layer, last node = top layer.</p>
+<h5>Generic Node Attributes</h5>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Yes</td>
+<td>string</td>
+<td>Unique 16-char hex identifier</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Yes</td>
+<td>string</td>
+<td><code>text</code>, <code>file</code>, <code>link</code>, or <code>group</code></td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>Yes</td>
+<td>integer</td>
+<td>X position in pixels</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td>Yes</td>
+<td>integer</td>
+<td>Y position in pixels</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>Yes</td>
+<td>integer</td>
+<td>Width in pixels</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>Yes</td>
+<td>integer</td>
+<td>Height in pixels</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>No</td>
+<td>canvasColor</td>
+<td>Preset <code>&quot;1&quot;</code>-<code>&quot;6&quot;</code> or hex (e.g., <code>&quot;#FF0000&quot;</code>)</td>
+</tr>
+</tbody>
+</table>
+<h5>Text Nodes</h5>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>Yes</td>
+<td>string</td>
+<td>Plain text with Markdown syntax</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;6f0ad84f44ce9c17&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;x&quot;: 0,
+  &quot;y&quot;: 0,
+  &quot;width&quot;: 400,
+  &quot;height&quot;: 200,
+  &quot;text&quot;: &quot;# Hello World\n\nThis is **Markdown** content.&quot;
+}
+</code></pre>
+<p><strong>Newline pitfall</strong>: Use <code>\n</code> for line breaks in JSON strings. Do <strong>not</strong> use the literal <code>\\n</code> -- Obsidian renders that as the characters <code>\</code> and <code>n</code>.</p>
+<h5>File Nodes</h5>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>Yes</td>
+<td>string</td>
+<td>Path to file within the system</td>
+</tr>
+<tr>
+<td><code>subpath</code></td>
+<td>No</td>
+<td>string</td>
+<td>Link to heading or block (starts with <code>#</code>)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;a1b2c3d4e5f67890&quot;,
+  &quot;type&quot;: &quot;file&quot;,
+  &quot;x&quot;: 500,
+  &quot;y&quot;: 0,
+  &quot;width&quot;: 400,
+  &quot;height&quot;: 300,
+  &quot;file&quot;: &quot;Attachments/diagram.png&quot;
+}
+</code></pre>
+<h5>Link Nodes</h5>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>Yes</td>
+<td>string</td>
+<td>External URL</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;c3d4e5f678901234&quot;,
+  &quot;type&quot;: &quot;link&quot;,
+  &quot;x&quot;: 1000,
+  &quot;y&quot;: 0,
+  &quot;width&quot;: 400,
+  &quot;height&quot;: 200,
+  &quot;url&quot;: &quot;https://obsidian.md&quot;
+}
+</code></pre>
+<h5>Group Nodes</h5>
+<p>Groups are visual containers for organizing other nodes. Position child nodes inside the group's bounds.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>label</code></td>
+<td>No</td>
+<td>string</td>
+<td>Text label for the group</td>
+</tr>
+<tr>
+<td><code>background</code></td>
+<td>No</td>
+<td>string</td>
+<td>Path to background image</td>
+</tr>
+<tr>
+<td><code>backgroundStyle</code></td>
+<td>No</td>
+<td>string</td>
+<td><code>cover</code>, <code>ratio</code>, or <code>repeat</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;d4e5f6789012345a&quot;,
+  &quot;type&quot;: &quot;group&quot;,
+  &quot;x&quot;: -50,
+  &quot;y&quot;: -50,
+  &quot;width&quot;: 1000,
+  &quot;height&quot;: 600,
+  &quot;label&quot;: &quot;Project Overview&quot;,
+  &quot;color&quot;: &quot;4&quot;
+}
+</code></pre>
+<h4>Edges</h4>
+<p>Edges connect nodes via <code>fromNode</code> and <code>toNode</code> IDs.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Yes</td>
+<td>string</td>
+<td>-</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>fromNode</code></td>
+<td>Yes</td>
+<td>string</td>
+<td>-</td>
+<td>Source node ID</td>
+</tr>
+<tr>
+<td><code>fromSide</code></td>
+<td>No</td>
+<td>string</td>
+<td>-</td>
+<td><code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code></td>
+</tr>
+<tr>
+<td><code>fromEnd</code></td>
+<td>No</td>
+<td>string</td>
+<td><code>none</code></td>
+<td><code>none</code> or <code>arrow</code></td>
+</tr>
+<tr>
+<td><code>toNode</code></td>
+<td>Yes</td>
+<td>string</td>
+<td>-</td>
+<td>Target node ID</td>
+</tr>
+<tr>
+<td><code>toSide</code></td>
+<td>No</td>
+<td>string</td>
+<td>-</td>
+<td><code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code></td>
+</tr>
+<tr>
+<td><code>toEnd</code></td>
+<td>No</td>
+<td>string</td>
+<td><code>arrow</code></td>
+<td><code>none</code> or <code>arrow</code></td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>No</td>
+<td>canvasColor</td>
+<td>-</td>
+<td>Line color</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>No</td>
+<td>string</td>
+<td>-</td>
+<td>Text label</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;0123456789abcdef&quot;,
+  &quot;fromNode&quot;: &quot;6f0ad84f44ce9c17&quot;,
+  &quot;fromSide&quot;: &quot;right&quot;,
+  &quot;toNode&quot;: &quot;a1b2c3d4e5f67890&quot;,
+  &quot;toSide&quot;: &quot;left&quot;,
+  &quot;toEnd&quot;: &quot;arrow&quot;,
+  &quot;label&quot;: &quot;leads to&quot;
+}
+</code></pre>
+<h4>Colors</h4>
+<p>The <code>canvasColor</code> type accepts either a hex string or a preset number:</p>
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;1&quot;</code></td>
+<td>Red</td>
+</tr>
+<tr>
+<td><code>&quot;2&quot;</code></td>
+<td>Orange</td>
+</tr>
+<tr>
+<td><code>&quot;3&quot;</code></td>
+<td>Yellow</td>
+</tr>
+<tr>
+<td><code>&quot;4&quot;</code></td>
+<td>Green</td>
+</tr>
+<tr>
+<td><code>&quot;5&quot;</code></td>
+<td>Cyan</td>
+</tr>
+<tr>
+<td><code>&quot;6&quot;</code></td>
+<td>Purple</td>
+</tr>
+</tbody>
+</table>
+<p>Preset color values are intentionally undefined -- applications use their own brand colors.</p>
+<h4>ID Generation</h4>
+<p>Generate 16-character lowercase hexadecimal strings (64-bit random value):</p>
+<pre><code>&quot;6f0ad84f44ce9c17&quot;
+&quot;a3b2c1d0e9f8a7b6&quot;
+</code></pre>
+<h4>Layout Guidelines</h4>
+<ul>
+<li>Coordinates can be negative (canvas extends infinitely)</li>
+<li><code>x</code> increases right, <code>y</code> increases down; position is the top-left corner</li>
+<li>Space nodes 50-100px apart; leave 20-50px padding inside groups</li>
+<li>Align to grid (multiples of 10 or 20) for cleaner layouts</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Node Type</th>
+<th>Suggested Width</th>
+<th>Suggested Height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small text</td>
+<td>200-300</td>
+<td>80-150</td>
+</tr>
+<tr>
+<td>Medium text</td>
+<td>300-450</td>
+<td>150-300</td>
+</tr>
+<tr>
+<td>Large text</td>
+<td>400-600</td>
+<td>300-500</td>
+</tr>
+<tr>
+<td>File preview</td>
+<td>300-500</td>
+<td>200-400</td>
+</tr>
+<tr>
+<td>Link preview</td>
+<td>250-400</td>
+<td>100-200</td>
+</tr>
+</tbody>
+</table>
+<h4>Validation Checklist</h4>
+<p>After creating or editing a canvas file, verify:</p>
+<ol>
+<li>All <code>id</code> values are unique across both nodes and edges</li>
+<li>Every <code>fromNode</code> and <code>toNode</code> references an existing node ID</li>
+<li>Required fields are present for each node type (<code>text</code> for text nodes, <code>file</code> for file nodes, <code>url</code> for link nodes)</li>
+<li><code>type</code> is one of: <code>text</code>, <code>file</code>, <code>link</code>, <code>group</code></li>
+<li><code>fromSide</code>/<code>toSide</code> values are one of: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></li>
+<li><code>fromEnd</code>/<code>toEnd</code> values are one of: <code>none</code>, <code>arrow</code></li>
+<li>Color presets are <code>&quot;1&quot;</code> through <code>&quot;6&quot;</code> or valid hex (e.g., <code>&quot;#FF0000&quot;</code>)</li>
+<li>JSON is valid and parseable</li>
+</ol>
+<p>If validation fails, check for duplicate IDs, dangling edge references, or malformed JSON strings (especially unescaped newlines in text content).</p>
+<h4>Complete Examples</h4>
+<p>See <a href="https://github.com/kepano/obsidian-skills/blob/3ccff5338ea700537839b21900aa5358a0402c98/skills/json-canvas/references/EXAMPLES.md">references/EXAMPLES.md</a> for full canvas examples including mind maps, project boards, research canvases, and flowcharts.</p>
+<h4>References</h4>
+<ul>
+<li><a href="https://jsoncanvas.org/spec/1.0/">JSON Canvas Spec 1.0</a></li>
+<li><a href="https://github.com/obsidianmd/jsoncanvas">JSON Canvas GitHub</a></li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

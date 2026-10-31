@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>review-loop · Gem Skills</title>
+    <meta name="description" content="Use it when: quality matters more than speed: a feature, a spec, a design doc, or code that must be robust. It does: does the work, has a fresh critic subagent score it from 1 to 10 with specific fixes, then revises and asks again. You get: the revised work plus a log of each round&#039;s score and feedback. Defaults: at least 2 and at most 4 rounds, stopping once the score reaches 8/10; change them in your request, like &quot;quality gate 9, max 5 loops&quot;. Unlike a single review: such as one reviewer pass before a merge, it keeps revising until the score is reached, and works on specs and writing too. Needs: subagents; without them, you paste the work into a fresh chat to get the score." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=2dmurali%2Freview-loop-skill">2dmurali/review-loop-skill</a></p>
+      <h1>review-loop</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>quality matters more than speed: a feature, a spec, a design doc, or code that must be robust</dd></div><div><dt>It does</dt><dd>does the work, has a fresh critic subagent score it from 1 to 10 with specific fixes, then revises and asks again</dd></div><div><dt>You get</dt><dd>the revised work plus a log of each round&#39;s score and feedback</dd></div><div><dt>Defaults</dt><dd>at least 2 and at most 4 rounds, stopping once the score reaches 8/10; change them in your request, like &#34;quality gate 9, max 5 loops&#34;</dd></div><div><dt>Unlike a single review</dt><dd>such as one reviewer pass before a merge, it keeps revising until the score is reached, and works on specs and writing too</dd></div><div><dt>Needs</dt><dd>subagents; without them, you paste the work into a fresh chat to get the score</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The agent does the task, or reads work that already exists, then spawns a separate reviewer subagent that sees only the work, not the agent&#39;s reasoning, so it isn&#39;t swayed by what the agent meant to do. The reviewer gets criteria for this task, such as correct status codes for an API or measurable success metrics for a design doc, and replies with a score and issues, each explained, with file and line references. The agent fixes the critical and important ones, reports the round&#39;s score, and sends the work back with the earlier feedback, since the reviewer has no memory. It stops when the score reaches the gate after the minimum rounds, or at the maximum, then does a final polish. The reviewer model must be at least as capable as the worker; if scores stall for two rounds on the same feedback, it suggests a stronger model, a lower gate or smaller tasks. It never reviews its own work, inflates the score or runs past the maximum without asking. Each round costs one reviewer call.</p>
+      <p class="muted">Summarizes <a href="https://github.com/2dmurali/review-loop-skill/tree/0980fb7430997f7c8b26c694c9ff797ce7602378/review-loop">the skill at 0980fb7</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/2dmurali/review-loop-skill --skill review-loop</code><button type="button" class="copy" data-copy="npx skills add https://github.com/2dmurali/review-loop-skill --skill review-loop">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/2dmurali/review-loop-skill/review-loop">skills.sh page</a> · <a href="https://github.com/2dmurali/review-loop-skill/tree/HEAD/review-loop">Source on GitHub</a> · <a href="/gemskills/?repo=2dmurali%2Freview-loop-skill">All skills from 2dmurali/review-loop-skill</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>72,774 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>4 <span class="muted">2dmurali/review-loop-skill</span></dd></div><div><dt>First seen</dt><dd>May 8, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">9K</div>
+      <div class="stat-delta">+205% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 2,949; week to Aug 10: 14,478; week to Aug 17: 8,246; week to Aug 24: 7,673; week to Aug 31: 5,688; week to Sep 7: 15,526; week to Sep 14: 8,671; week to Sep 21: 8,997. Use the left and right arrow keys to read each week."
+        data-values="2949,14478,8246,7673,5688,15526,8671,8997" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,41.6 38.6,9.0 71.1,26.6 103.7,28.3 136.3,33.9 168.9,6.0 201.4,25.4 234.0,24.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="24.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>2,949</td></tr><tr><td>Aug 10</td><td>14,478</td></tr><tr><td>Aug 17</td><td>8,246</td></tr><tr><td>Aug 24</td><td>7,673</td></tr><tr><td>Aug 31</td><td>5,688</td></tr><tr><td>Sep 7</td><td>15,526</td></tr><tr><td>Sep 14</td><td>8,671</td></tr><tr><td>Sep 21</td><td>8,997</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:subagents" data-facet="needs" title="Relies on the agent being able to spawn subagents." href="/gemskills/?tag=needs%3Asubagents">needs:subagents</a></div>
+          <p class="tag-meaning">Relies on the agent being able to spawn subagents.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="code-review" data-facet="topic" href="/gemskills/?tag=code-review">code-review</a><a class="tag" data-tag="multi-agent" data-facet="topic" href="/gemskills/?tag=multi-agent">multi-agent</a><a class="tag" data-tag="verification" data-facet="topic" href="/gemskills/?tag=verification">verification</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/2dmurali/review-loop-skill/blob/0980fb7430997f7c8b26c694c9ff797ce7602378/review-loop/SKILL.md">2dmurali/review-loop-skill at 0980fb7</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: review-loop
+description: &#62;-
+  Iterative worker-reviewer cycle that spawns a critic subagent to score work
+  1-10 and provide actionable feedback, then revises until a quality gate is
+  met. Use when implementing features, writing specs, reviewing existing code,
+  or completing any task where quality matters more than speed. Trigger phrases:
+  &#34;use review-loop&#34;, &#34;polish this&#34;, &#34;iterate on this&#34;, &#34;/review-loop&#34;,
+  &#34;review with feedback loop&#34;.</code></pre></details>
+        <div class="markdown"><h3>Review Loop</h3>
+<p>Iterative worker-reviewer cycle within a single session. You do the work, spawn a reviewer subagent to critique it, revise based on feedback, repeat until quality gate is met.</p>
+<p><strong>Core principle:</strong> First drafts are never final. Iterative critique produces better output than a single pass.</p>
+<blockquote>
+<p><strong>Platform note:</strong> This skill works best with agents that support subagent spawning.
+On platforms without that capability, simulate the reviewer step by opening a fresh
+chat context, pasting only the work product (no prior reasoning), and asking it to
+score 1-10 with specific feedback.</p>
+</blockquote>
+<h4>Quick Start</h4>
+<ol>
+<li>Say: <code>&quot;implement X, use review-loop&quot;</code> or <code>&quot;run review-loop on the file I just wrote&quot;</code></li>
+<li>The agent does the work (or reads existing work)</li>
+<li>A separate critic subagent scores it 1-10 with specific feedback</li>
+<li>The agent revises and repeats until score &gt;= 8 (default quality gate)</li>
+<li>A loop summary is delivered with the final output</li>
+</ol>
+<hr>
+<h4>When to Use</h4>
+<ul>
+<li>User says &quot;use review-loop&quot;, &quot;polish this&quot;, &quot;iterate on this&quot;, &quot;/review-loop&quot;</li>
+<li>Complex implementations where quality matters more than speed</li>
+<li>Design docs, specs, or technical writing</li>
+<li>Code that needs to be robust (security, data pipelines, financial logic)</li>
+<li>When user wants adversarial critique baked into the process</li>
+</ul>
+<h4>When NOT to Use</h4>
+<ul>
+<li>Simple fixes, quick edits, one-liner changes</li>
+<li>Tasks where tests are the quality gate (use TDD + CI instead)</li>
+<li>When the user just wants it done fast</li>
+<li>Exploratory/spike work where the goal is learning, not shipping</li>
+<li>Tasks with no clear acceptance criteria — define those first, then use review-loop</li>
+</ul>
+<hr>
+<h4>Defaults</h4>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min loops</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Max loops</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Quality gate</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td>Worker model</td>
+<td>(your current model)</td>
+</tr>
+<tr>
+<td>Reviewer model</td>
+<td>(your current model or fast/balanced alternative)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>Model Selection</h4>
+<p>The reviewer task evaluates logic and constraints. The worker task writes and modifies code. Pick subagent capabilities accordingly.</p>
+<p><strong>CRITICAL RULE:</strong> The Reviewer must always be EQUAL TO or MORE POWERFUL than the Worker. If the reviewer is weaker than the worker, it cannot properly critique complex logic or catch subtle regressions.</p>
+<table>
+<thead>
+<tr>
+<th>Task Complexity</th>
+<th>Worker Capability</th>
+<th>Reviewer Capability</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple/mechanical (CRUD, formatting, boilerplate)</td>
+<td>Fast / Lightweight</td>
+<td>Balanced</td>
+<td>Lightweight worker is fast, balanced reviewer easily catches issues</td>
+</tr>
+<tr>
+<td>Standard (features, refactors, docs)</td>
+<td>Balanced</td>
+<td>Balanced</td>
+<td>Good mix of cost, speed, and quality</td>
+</tr>
+<tr>
+<td>Complex (multi-file, integration, design)</td>
+<td>Balanced</td>
+<td>Advanced / Reasoning</td>
+<td>Advanced reviewer catches subtle architecture issues, balanced worker can implement them</td>
+</tr>
+<tr>
+<td>Very complex (security, quant, distributed systems)</td>
+<td>Advanced / Reasoning</td>
+<td>Advanced / Reasoning</td>
+<td>Both need full context and reasoning power. Reviewer MUST match worker power.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The golden rule:</strong> The worker must be smart enough to ACT on the reviewer's feedback. If the reviewer says &quot;fix the race condition with a channel-based semaphore&quot; and the worker can't reason about concurrency, the loop won't converge.</p>
+<p><strong>Escalation signal:</strong> If score doesn't improve after 2 consecutive loops with the same feedback, the worker model is too weak. Escalate:</p>
+<ul>
+<li>Option A: Ask the user to switch to a more capable model</li>
+<li>Option B: Lower the quality gate temporarily and note the gap to the user</li>
+<li>Option C: Break the task into smaller sub-tasks and run review-loop on each</li>
+</ul>
+<p><strong>Default behavior:</strong> Since you (the main agent) ARE the worker, spawn a reviewer subagent that matches or exceeds your current capability based on the task:</p>
+<ul>
+<li>Most tasks → Standard/Balanced reviewer</li>
+<li>Specialized/hard tasks → Advanced/Reasoning reviewer</li>
+<li>Quick checks → Fast/Lightweight reviewer (only if you are also acting as a lightweight worker)</li>
+</ul>
+<hr>
+<h4>User Overrides</h4>
+<p>Users can override any default inline with their request. Parse these naturally:</p>
+<pre><code>&quot;implement X with review-loop, quality gate 9, use advanced model for review, max 5 loops&quot;
+&quot;polish this, 2 loops minimum, gate at 8&quot;
+&quot;run review-loop with fast reviewer, max 2 loops&quot;
+&quot;use review-loop, reasoning reviewer, quality gate 9, min 3 max 6&quot;
+</code></pre>
+<p><strong>Parsing rules:</strong></p>
+<ul>
+<li>&quot;quality gate N&quot; or &quot;gate N&quot; → quality_gate = N</li>
+<li>&quot;[model] reviewer&quot; or &quot;review with [model]&quot; → reviewer model override</li>
+<li>&quot;max N loops&quot; → max_loops = N</li>
+<li>&quot;min N loops&quot; → min_loops = N</li>
+<li>If user doesn't specify, use defaults</li>
+<li>If user says &quot;thorough&quot; or &quot;strict&quot; → interpret as quality_gate 8, min_loops 2</li>
+<li>If user says &quot;quick&quot; or &quot;fast&quot; → interpret as max_loops 2, quality_gate 6</li>
+</ul>
+<hr>
+<h4>The Process</h4>
+<pre><code class="language-mermaid">flowchart TD
+    A[Do the work] --&gt; B[Spawn reviewer subagent]
+    B --&gt; C{Min loops met?}
+    C -- no, always continue --&gt; E[Revise based on feedback]
+    C -- yes --&gt; D{Score &gt;= quality gate?}
+    D -- yes --&gt; F[Final polish pass]
+    D -- no --&gt; G{Max loops reached?}
+    G -- yes, stop anyway --&gt; F
+    G -- no --&gt; E
+    E --&gt; B
+    F --&gt; H([Done])
+</code></pre>
+<hr>
+<h4>Step-by-Step</h4>
+<h5>Step 1: Do the Work</h5>
+<p>Complete the task as you normally would. Write the code, create the spec, implement the feature. Don't hold back — produce your best first attempt.</p>
+<h5>Step 2: Spawn Reviewer Subagent</h5>
+<p>Use the Agent tool to dispatch a reviewer. The reviewer must:</p>
+<ul>
+<li>Be a <strong>separate subagent</strong> (fresh context, no anchoring to your reasoning)</li>
+<li>Receive only the <strong>work product</strong> (files, diffs) — not your thought process</li>
+<li>Score 1-10 with <strong>specific, actionable feedback</strong></li>
+<li>Use a balanced/standard model by default (or an advanced reasoning model for complex/specialized tasks)</li>
+</ul>
+<p><strong>Reviewer prompt template:</strong></p>
+<pre><code>You are a critical reviewer. Score the following work 1-10 and provide specific, actionable feedback.
+
+## What was done
+{brief description of the task}
+
+## Review criteria
+{task-specific criteria — what matters for THIS task}
+
+Examples of well-written criteria:
+  For a REST API endpoint:
+    - Correct HTTP status codes used
+    - Input validation present on all parameters
+    - Auth enforced; no unauthenticated access
+    - No N+1 query patterns
+
+  For a design doc:
+    - Problem statement is unambiguous
+    - Alternatives considered with trade-offs
+    - No hand-waving on implementation complexity
+    - Success metrics are measurable
+
+  For a data pipeline:
+    - Idempotent — safe to re-run
+    - Schema changes handled gracefully
+    - Failure modes documented
+    - PII handling addressed
+
+## Instructions
+1. Read the work carefully
+2. Score 1-10 where:
+   - 1-3: Fundamentally broken or missing major requirements
+   - 4-6: Works but has significant issues
+   - 7-8: Good, minor issues only
+   - 9-10: Excellent, ready to ship
+3. List specific issues with file:line references where applicable
+4. For each issue, explain WHY it matters and WHAT to fix
+5. Do NOT be polite — be honest and direct
+6. State your score clearly as &quot;Score: N/10&quot;
+
+## Files to review
+{paste file contents or list file paths with relevant excerpts}
+</code></pre>
+<h5>Step 3: Parse Feedback</h5>
+<p>From the reviewer response, extract:</p>
+<ul>
+<li><strong>Score</strong> (the number)</li>
+<li><strong>Issues</strong> (categorized as Critical / Important / Minor)</li>
+<li><strong>Specific fixes</strong> (what to change)</li>
+</ul>
+<p>Report to the user:</p>
+<pre><code>Loop {N}/{max}: Score {X}/10
+- {summary of key feedback points}
+</code></pre>
+<h5>Step 4: Check Stop Conditions</h5>
+<p>In this order:</p>
+<ol>
+<li>If loops completed &lt; min_loops → <strong>continue</strong> (always)</li>
+<li>If score &gt;= quality_gate → <strong>stop, go to final polish</strong></li>
+<li>If loops completed &gt;= max_loops → <strong>stop, go to final polish</strong></li>
+<li>Otherwise → <strong>revise and loop</strong></li>
+</ol>
+<h5>Step 5: Revise</h5>
+<p>Address the reviewer's feedback. Fix Critical and Important issues. Minor issues are optional. Then go back to Step 2.</p>
+<p><strong>Important:</strong> Each revision should be targeted. Don't rewrite everything — fix what the reviewer flagged. Maintain a mental list of ALL prior feedback to avoid regressions.</p>
+<h5>Step 6: Final Polish</h5>
+<p>Once the loop exits (quality gate met or max loops hit):</p>
+<ul>
+<li>Address any remaining minor issues if trivial</li>
+<li>Verify the final output is coherent (no artifacts from revision cycles)</li>
+<li>Report final score and loop count to user</li>
+</ul>
+<hr>
+<h4>Adapting Reviewer Criteria by Task Type</h4>
+<table>
+<thead>
+<tr>
+<th>Task Type</th>
+<th>Reviewer Should Focus On</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code</td>
+<td>Correctness, edge cases, error handling, readability, no security issues</td>
+</tr>
+<tr>
+<td>Spec/Design</td>
+<td>Completeness, feasibility, no hand-waving, implementability</td>
+</tr>
+<tr>
+<td>Refactor</td>
+<td>No behavior changes, no regressions, cleaner than before</td>
+</tr>
+<tr>
+<td>Writing</td>
+<td>Clarity, structure, audience-appropriate, no fluff</td>
+</tr>
+<tr>
+<td>Bug fix</td>
+<td>Root cause addressed, regression test exists, no side effects</td>
+</tr>
+<tr>
+<td>Infrastructure / IaC</td>
+<td>Idempotency, least privilege, no hardcoded secrets, destroy safety</td>
+</tr>
+<tr>
+<td>Database migration</td>
+<td>Reversibility, index strategy, data loss risk, performance at scale</td>
+</tr>
+<tr>
+<td>API design</td>
+<td>Backward compatibility, auth, versioning, error contract</td>
+</tr>
+<tr>
+<td>Test suite</td>
+<td>Edge case coverage, no test interdependency, meaningful assertions</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>Two Modes of Operation</h4>
+<h5>Mode A: &quot;Do and Review&quot; (full cycle)</h5>
+<p>User gives a task + says to use review-loop. You do the work AND run the review loop.</p>
+<pre><code>User: &quot;Implement the caching layer. Use review-loop, quality gate 8.&quot;
+
+You:
+1. Implement caching layer
+2. Spawn reviewer → Score 6, feedback: missing eviction, no TTL
+3. Revise: add eviction + TTL
+4. Spawn reviewer → Score 8, feedback: minor naming nit
+5. Final polish, done
+</code></pre>
+<h5>Mode B: &quot;Review Existing&quot; (review only)</h5>
+<p>User already did work or you already did work. Just run the review loop on what exists.</p>
+<pre><code>User: &quot;Run review-loop on the auth module I just wrote&quot;
+
+You:
+1. Read the auth module
+2. Spawn reviewer → Score 5, feedback: SQL injection, no rate limiting
+3. Fix: parameterize queries, add rate limiter
+4. Spawn reviewer → Score 8, approved
+5. Done
+</code></pre>
+<hr>
+<h4>Red Flags</h4>
+<p><strong>Never:</strong></p>
+<ul>
+<li>Self-review instead of spawning a subagent (anchoring bias)</li>
+<li>Skip a revision cycle because &quot;the feedback is wrong&quot; without justification</li>
+<li>Inflate your own score (&quot;I think this is actually a 9&quot;)</li>
+<li>Continue past max_loops without user consent</li>
+<li>Spawn the reviewer with your full reasoning/history (they must review the WORK, not your intent)</li>
+</ul>
+<p><strong>If reviewer is wrong:</strong></p>
+<ul>
+<li>Push back with evidence (show code/tests that disprove the feedback)</li>
+<li>Skip that specific point in revision</li>
+<li>Note it in your report to the user</li>
+<li>Do NOT lower the quality bar to compensate</li>
+</ul>
+<hr>
+<h4>Example Report Format</h4>
+<pre><code>--- Review Loop: {task name} ---
+
+Loop 1/4: Score 6/10
+  Reviewer: Missing input validation, no error handling for network timeout,
+            function too long (80 lines).
+  Action: Fixing all three issues.
+
+Loop 2/4: Score 8/10
+  Reviewer: Clean. Minor: variable name `d` could be more descriptive.
+  Action: Quality gate met (8 &gt;= 8). Final polish.
+
+Result: 8/10 in 2 loops. Done.
+</code></pre>
+<hr>
+<h4>Known Limitations</h4>
+<ul>
+<li>The reviewer subagent has no memory of prior loops — include prior feedback context explicitly in each reviewer prompt to avoid repeating resolved issues</li>
+<li>Score inflation is possible if the reviewer prompt criteria are too vague — invest time in writing specific, measurable criteria</li>
+<li>This skill does not replace human code review for security-critical or compliance-sensitive code; treat the output as a strong first pass</li>
+<li>Loop convergence is not guaranteed if the task is underspecified — define clear acceptance criteria before starting</li>
+</ul>
+<hr>
+<h4>Cost and Speed</h4>
+<ul>
+<li>Each loop = 1 reviewer subagent call</li>
+<li>Budget roughly 1–2x the time of a single implementation pass for a full 3-loop cycle</li>
+<li>This is cheap compared to shipping buggy code, vague specs, or triggering a late-stage review cycle</li>
+<li>Use your default/standard model for most reviews; only upgrade to advanced reasoning models for specialized domains (security audits, distributed systems, quant finance)</li>
+</ul>
+<hr>
+<h4>License</h4>
+<p>MIT — free to use, adapt, and redistribute with any AI tool or platform. Attribution appreciated. Contributions welcome.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

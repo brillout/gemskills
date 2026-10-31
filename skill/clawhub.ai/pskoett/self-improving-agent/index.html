@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>self-improving-agent · Gem Skills</title>
+    <meta name="description" content="Use it when: you want your OpenClaw agent to remember its errors, your corrections and missing features across sessions. It does: logs them to Markdown files in .learnings/, then turns proven lessons into short rules in the files every session loads. You get: three log files and, over time, rules in AGENTS.md, TOOLS.md or SOUL.md, each linked to its source entry. Needs: OpenClaw, an open-source personal AI agent; the author keeps a separate version for other agents. Runs: by itself when a command fails or you correct it; an optional hook adds reminders." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Fpskoett">clawhub.ai/pskoett</a></p>
+      <h1>self-improving-agent</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want your OpenClaw agent to remember its errors, your corrections and missing features across sessions</dd></div><div><dt>It does</dt><dd>logs them to Markdown files in .learnings/, then turns proven lessons into short rules in the files every session loads</dd></div><div><dt>You get</dt><dd>three log files and, over time, rules in AGENTS.md, TOOLS.md or SOUL.md, each linked to its source entry</dd></div><div><dt>Needs</dt><dd>OpenClaw, an open-source personal AI agent; the author keeps a separate version for other agents</dd></div><div><dt>Runs</dt><dd>by itself when a command fails or you correct it; an optional hook adds reminders</dd></div></dl></section>
+      
+      <p class="note">This version is built for OpenClaw only. The multi-agent original lives in pskoett/pskoett-ai-skills.</p>
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The agent creates .learnings/ with LEARNINGS.md (corrections, knowledge gaps, better approaches), ERRORS.md (failed commands and integrations) and FEATURE_REQUESTS.md, and adds an entry whenever a command fails, you say &#34;no, that&#39;s not right&#34;, or you ask for something it can&#39;t do. Repeats are spotted and counted instead of logged twice. A lesson that keeps recurring or applies broadly is checked, then rewritten as a short prevention rule in one of the files OpenClaw loads into every session: workflow rules in AGENTS.md, tool gotchas in TOOLS.md, behaviour in SOUL.md, the file that holds the agent&#39;s personality and principles. Old lessons are kept honest: each one notes why it could stop being true (the facts changed, a decision was replaced, a dependency was upgraded, or it no longer applies) and is rechecked before reuse, never deleted just for being old. It avoids logging secrets and never changes skills without your approval. The optional hook adds a reminder at session start and scans finished sessions for errors.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/pskoett/self-improving-agent.md">the skill at aca4fea</a>. Its SKILL.md has changed by 227 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @pskoett/self-improving-agent</code><button type="button" class="copy" data-copy="openclaw skills install @pskoett/self-improving-agent">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/pskoett/skills/self-improving-agent">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Fpskoett">All skills from clawhub.ai/pskoett</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>480,390 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div><div><dt>Downloads</dt><dd>1,220,832 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:agents" data-facet="category" title="Build agents, orchestrate workers and give agents memory." href="/gemskills/?tag=category%3Aagents">category:agents</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Build agents, orchestrate workers and give agents memory.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:openclaw" data-facet="needs" title="Built for the OpenClaw agent." href="/gemskills/?tag=needs%3Aopenclaw">needs:openclaw</a></div>
+          <p class="tag-meaning">Built for the OpenClaw agent.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="self-improvement" data-facet="topic" href="/gemskills/?tag=self-improvement">self-improvement</a><a class="tag" data-tag="memory" data-facet="topic" href="/gemskills/?tag=memory">memory</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/pskoett/skills/self-improving-agent">ClawHub</a>, version 4.0.5. Checked daily, last changed Oct 23, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: self-improving-agent
+description: &#34;Captures and maintains learnings, errors, and corrections. Use when a command fails, the user corrects an assumption, a capability is missing, knowledge is outdated, or a better approach is found. Review relevant saved guidance before major tasks, reuse, and promotion; revalidate it according to what could change and how quickly.&#34;
+version: &#34;4.0.5&#34;
+metadata:</code></pre></details>
+        <div class="markdown"><h3>Self-Improvement Skill</h3>
+<p>Log learnings and errors to markdown files for continuous improvement. Agents can later process these into fixes, and important learnings get promoted to workspace memory. This version of the skill is built for OpenClaw only — for other agents, see the original multi-agent version at <a href="https://github.com/pskoett/pskoett-ai-skills">https://github.com/pskoett/pskoett-ai-skills</a>.</p>
+<p>Capture, review, reuse, promotion, and maintenance are self-contained here: no companion skill, service, plugin, memory backend, or OpenClaw core change is required. The optional hook only reminds and captures possible errors; it does not enforce this workflow or revalidate claims.</p>
+<h4>First-Use Initialisation</h4>
+<p>Before logging anything, ensure the <code>.learnings/</code> directory and files exist in the project or workspace root. If any are missing, create them:</p>
+<pre><code class="language-bash">mkdir -p .learnings
+[ -f .learnings/LEARNINGS.md ] || printf &quot;# Learnings\n\nCorrections, insights, and knowledge gaps captured during development.\n\n**Categories**: correction | insight | knowledge_gap | best_practice\n\n---\n&quot; &gt; .learnings/LEARNINGS.md
+[ -f .learnings/ERRORS.md ] || printf &quot;# Errors\n\nCommand failures and integration errors.\n\n---\n&quot; &gt; .learnings/ERRORS.md
+[ -f .learnings/FEATURE_REQUESTS.md ] || printf &quot;# Feature Requests\n\nCapabilities requested by the user.\n\n---\n&quot; &gt; .learnings/FEATURE_REQUESTS.md
+</code></pre>
+<p>Never overwrite existing files. This is a no-op if <code>.learnings/</code> is already initialised.</p>
+<p>Do not log secrets, tokens, private keys, environment variables, or full source/config files unless the user explicitly asks for that level of detail. Prefer short summaries or redacted excerpts over raw command output or full transcripts.</p>
+<p>If you want automatic reminders and session-end error detection, enable the opt-in hook described in <a href="#optional-enable-hook">Optional: Enable Hook</a>.</p>
+<h4>Quick Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Command/operation fails</td>
+<td>Log to <code>.learnings/ERRORS.md</code></td>
+</tr>
+<tr>
+<td>User corrects you</td>
+<td>Log to <code>.learnings/LEARNINGS.md</code> with category <code>correction</code></td>
+</tr>
+<tr>
+<td>User wants missing feature</td>
+<td>Log to <code>.learnings/FEATURE_REQUESTS.md</code></td>
+</tr>
+<tr>
+<td>API/external tool fails</td>
+<td>Log to <code>.learnings/ERRORS.md</code> with integration details</td>
+</tr>
+<tr>
+<td>Knowledge was outdated</td>
+<td>Log to <code>.learnings/LEARNINGS.md</code> with category <code>knowledge_gap</code></td>
+</tr>
+<tr>
+<td>Found better approach</td>
+<td>Log to <code>.learnings/LEARNINGS.md</code> with category <code>best_practice</code></td>
+</tr>
+<tr>
+<td>Simplify/Harden recurring patterns</td>
+<td>Log/update <code>.learnings/LEARNINGS.md</code> with <code>Source: simplify-and-harden</code> and a stable <code>Pattern-Key</code></td>
+</tr>
+<tr>
+<td>Similar to existing entry</td>
+<td>Search by <code>Pattern-Key</code>, confirm the same claim/scope; count only a new occurrence</td>
+</tr>
+<tr>
+<td>Reusing or promoting saved knowledge</td>
+<td>Review relevant/due claims using Maintenance below, including one-off/unpromoted entries</td>
+</tr>
+<tr>
+<td>Source, decision, dependency, or task changes</td>
+<td>Revalidate affected claims; do not expire them by age</td>
+</tr>
+<tr>
+<td>Workflow improvements</td>
+<td>Promote to <code>AGENTS.md</code> (workspace)</td>
+</tr>
+<tr>
+<td>Tool gotchas</td>
+<td>Promote to <code>TOOLS.md</code> (workspace)</td>
+</tr>
+<tr>
+<td>Behavioral patterns</td>
+<td>Promote to <code>SOUL.md</code> (workspace)</td>
+</tr>
+</tbody>
+</table>
+<h4>OpenClaw Setup</h4>
+<p>OpenClaw uses workspace-based prompt injection with automatic skill loading.</p>
+<h5>Installation</h5>
+<p><strong>Via OpenClaw's built-in installer (recommended)</strong> — installs into the
+active OpenClaw workspace:</p>
+<pre><code class="language-bash">openclaw skills install @pskoett/self-improving-agent
+</code></pre>
+<p><strong>Via the ClawHub CLI</strong> (<code>npm i -g clawhub</code>) — installs into <code>./skills</code>
+under the current working directory, not the workspace:</p>
+<pre><code class="language-bash">clawhub install @pskoett/self-improving-agent
+</code></pre>
+<p><strong>Manual</strong> (the skill lives in the repo's <code>self-improving-agent/</code> subfolder;
+copy that folder, not the repo root):</p>
+<pre><code class="language-bash">git clone https://github.com/pskoett/self-improving-agent.git /tmp/self-improving-agent-repo
+cp -r /tmp/self-improving-agent-repo/self-improving-agent ~/.openclaw/skills/self-improving-agent
+</code></pre>
+<p>Remade for openclaw from original repo : <a href="https://github.com/pskoett/pskoett-ai-skills">https://github.com/pskoett/pskoett-ai-skills</a> - <a href="https://github.com/pskoett/pskoett-ai-skills/tree/main/skills/self-improvement">https://github.com/pskoett/pskoett-ai-skills/tree/main/skills/self-improvement</a></p>
+<h5>Workspace Structure</h5>
+<p>OpenClaw injects these files into every session:</p>
+<pre><code>~/.openclaw/workspace/
+├── AGENTS.md          # Multi-agent workflows, delegation patterns
+├── SOUL.md            # Behavioral guidelines, personality, principles
+├── TOOLS.md           # Tool capabilities, integration gotchas
+├── MEMORY.md          # Long-term memory (main session only)
+├── memory/            # Daily memory files
+│   └── YYYY-MM-DD.md
+└── .learnings/        # This skill's log files
+    ├── LEARNINGS.md
+    ├── ERRORS.md
+    └── FEATURE_REQUESTS.md
+</code></pre>
+<h5>Create Learning Files</h5>
+<pre><code class="language-bash">mkdir -p ~/.openclaw/workspace/.learnings
+</code></pre>
+<p>Then create the log files (or copy from <code>assets/</code>):</p>
+<ul>
+<li><code>LEARNINGS.md</code> — corrections, knowledge gaps, best practices</li>
+<li><code>ERRORS.md</code> — command failures, exceptions</li>
+<li><code>FEATURE_REQUESTS.md</code> — user-requested capabilities</li>
+</ul>
+<h5>Promotion Targets</h5>
+<p>When learnings prove broadly applicable, promote them to workspace files:</p>
+<table>
+<thead>
+<tr>
+<th>Learning Type</th>
+<th>Promote To</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Behavioral patterns</td>
+<td><code>SOUL.md</code></td>
+<td>&quot;Be concise, avoid disclaimers&quot;</td>
+</tr>
+<tr>
+<td>Workflow improvements</td>
+<td><code>AGENTS.md</code></td>
+<td>&quot;Spawn sub-agents for long tasks&quot;</td>
+</tr>
+<tr>
+<td>Tool gotchas</td>
+<td><code>TOOLS.md</code></td>
+<td>&quot;Git push needs auth configured first&quot;</td>
+</tr>
+</tbody>
+</table>
+<h5>Inter-Session Communication</h5>
+<p>OpenClaw provides tools to share learnings across sessions:</p>
+<ul>
+<li><strong>sessions_list</strong> — View active/recent sessions</li>
+<li><strong>sessions_history</strong> — Read another session's transcript</li>
+<li><strong>sessions_send</strong> — Send a learning to another session</li>
+<li><strong>sessions_spawn</strong> — Spawn a sub-agent for background work</li>
+</ul>
+<p>Use these only in trusted environments and only when the user explicitly wants cross-session sharing. Prefer sending a short sanitized summary and relevant file paths, not raw transcripts, secrets, or full command output.</p>
+<h5>Optional: Enable Hook</h5>
+<p>For automatic reminders at session start and error detection at session end,
+follow <a>Install or Upgrade the Hook</a>,
+then enable with <code>openclaw hooks enable self-improvement</code>. Select the actual
+skill/hook paths, review local patches, and preserve the old copy before replacing it.</p>
+<p>Fires on <code>agent:bootstrap</code> (injects the reminder, plus a pending-triage note
+when auto-detected errors await review) and on <code>command:new</code>/<code>command:reset</code>
+(sweeps the ended session's transcript for error patterns into
+<code>&lt;workspace&gt;/.learnings/ERRORS.md</code>; opt-in — runs only when <code>.learnings/</code>
+exists). Internal <code>HOOK.md</code> events have no per-tool-call callback, so this
+integration detects errors at session end. OpenClaw's typed plugin hooks
+separately expose <code>after_tool_call</code>. See
+<a>hook systems and limitations</a>.</p>
+<h4>Logging Format</h4>
+<p>Append an entry using the templates in <a>assets/LEARNINGS.md</a>, <a>assets/ERRORS.md</a>, or <a>assets/FEATURE_REQUESTS.md</a>. Keep the observation, context, suggested action, and metadata. See <a>examples</a> for completed entries.</p>
+<p>At capture, add the Maintenance block below for each reusable claim. If no inference is established yet, record <code>Claim: unknown — needs triage</code> rather than inventing a rule. Legacy entries remain valid log records: initialize metadata only when captured or touched in relevant review, without bulk migration.</p>
+<h4>Maintenance: Cause-Aware Context Decay</h4>
+<p>Historical observations do not expire. Maintain the reusable inference or instruction, not whether the incident happened. This applies to all three <code>.learnings/</code> files, including one-off and unpromoted entries. Truth and usefulness are separate: a true fact may be irrelevant to this task; a useful workaround may no longer be correct.</p>
+<h5>Type determines HOW to revalidate</h5>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reality</code></td>
+<td>Read the current authoritative source or inspect the current environment for the scoped fact.</td>
+</tr>
+<tr>
+<td><code>decision</code></td>
+<td>Find an authoritative, applicable superseding decision; confirm its scope and effective state. Age or a different team's choice does not supersede it.</td>
+</tr>
+<tr>
+<td><code>dependency</code></td>
+<td>Establish the relevant version/configuration, then perform representative behavioral verification in that environment. An upgrade triggers a check, not automatic retirement.</td>
+</tr>
+<tr>
+<td><code>relevance</code></td>
+<td>Assess applicability and usefulness for the current task/project. Disuse does not prove falsehood.</td>
+</tr>
+</tbody>
+</table>
+<p>Use <code>unknown</code> when the cause is not established. If a claim has multiple causes, check each or split distinct claims into named Maintenance blocks. Do not infer semantic type/rate from priority, status, recurrence, or <code>Pattern-Key</code> regex matches. Session sweeps may mix unrelated errors: classify claims during triage, preserving and linking the original sweep.</p>
+<h5>Rate determines WHEN to review</h5>
+<ul>
+<li><code>fast</code>: volatile; check near each relevant use.</li>
+<li><code>medium</code>: revisit at relevant task/project milestones during active work.</li>
+<li><code>slow</code>: stable; review occasionally at relevant major changes or milestones.</li>
+<li><code>durable</code>: expected to persist; review when authority, assumptions, or applicability is challenged.</li>
+<li><code>unknown</code>: no supported cadence yet; triage before relying on it.</li>
+</ul>
+<p>These are qualitative rates, not universal half-lives, expiry dates, or deletion rules. Record a concrete trigger for the claim. Relevant events (source updates, superseding decisions, dependency/configuration changes, project/task shifts, contradictions) override cadence, even for <code>durable</code> claims. No scheduler or autonomous background revalidation is needed.</p>
+<h5>Lightweight metadata beside the original entry</h5>
+<pre><code class="language-markdown">### Maintenance
+- Claim: reusable inference/instruction, or unknown — needs triage
+- Scope: applicable project/task/environment and limits, or unknown
+- Authority: source path/section, decision ID, environment, or unknown
+- Decay: reality | decision | dependency | relevance | unknown / fast | medium | slow | durable | unknown
+- Revalidate: event/cadence; specific check to perform
+- Validation: pending | verified | unresolved | contradicted
+- Evidence: none yet; when checked, actual date, source/version/configuration, check and result (including failures/conflicts)
+- Disposition: retain | revise | externalize | retire; reason and task applicability
+- Guidance: none, or target file + section and source-learning ID
+</code></pre>
+<p>Start with <code>Validation: pending</code>, <code>Evidence: none yet</code>, and <code>Disposition: retain — provisional, not validated</code> unless actual evidence supports more. An attempted review is not validation: unavailable or conflicting evidence stays <code>unresolved</code>, with the attempt date, blocker, and next check; do not advance a successful validation date. Keep past evidence dated and scoped when appending later results. <code>Status</code> tracks issue resolution/promotion, <code>Validation</code> tracks support for the claim, and <code>Disposition</code> tracks active guidance; none implies the others.</p>
+<h5>Review, reuse, and promotion loop</h5>
+<ol>
+<li><strong>Select</strong> entries relevant to the current task by area, files, keywords, or source IDs, plus affected/due claims at natural breakpoints. Do not audit the whole log every turn or select only pending/promoted/repeated entries.</li>
+<li><strong>Triage</strong> legacy/mixed entries: identify the reusable claim, scope, authority, type/rate, and trigger. Keep unknowns explicit. A resolved incident, successful recovery, or repeated occurrence does not prove a universally valid rule.</li>
+<li><strong>Check</strong> applicability and whether the trigger fired or evidence is due before reuse or promotion. Run the type-appropriate check when needed; record actual evidence, not an intended command. If evidence is missing/conflicting, do not present or promote the claim as verified. State uncertainty and seek the source or use an appropriately scoped fallback; do not remove safeguards while blocked.</li>
+<li><strong>Choose</strong> <code>retain</code> (supported and useful, or explicitly provisional while blocked), <code>revise</code> (correct/narrow with evidence), <code>externalize</code> (replace volatile detail with a usable retrieval instruction), or <code>retire</code> (exclude from active guidance with an evidenced reason). Externalization names where to look, what to read/test, and what to do if inaccessible/conflicting; a vague “check docs” is insufficient. Verify that the retrieval path is usable before treating it as validated.</li>
+<li><strong>Record and propagate</strong>: append a dated review note with the outcome, reason, evidence, and old → new claim when changed. Preserve original observations, resolution, promotion targets/dates, and prior reviews. Update affected promoted guidance using its source link; keep its source-learning ID beside the revised rule (or a retirement note pointing to the preserved history). Never inflate <code>Recurrence-Count</code>/<code>Last-Seen</code> just because a review ran.</li>
+</ol>
+<p>Never erase learning/promotion history or delete by age. Never change user preferences, weaken security policies, or rewrite skill assets merely because they are old or unused. Skill creation/modification requires explicit scoped approval; approval for this integration does not authorize future skill rewrites. If a needed target edit is outside granted scope, record the proposed change as pending in the source entry and report the still-active guidance rather than silently claiming it is updated.</p>
+<p>For worked review outcomes and provenance, read <a>maintenance examples</a>.
+To evaluate the maintenance instructions, use the isolated scenarios in
+<a>maintenance behavioral evaluations</a>.
+These are evaluation fixtures, not checks to run during ordinary learning capture.</p>
+<h4>ID Generation</h4>
+<p>Format: <code>TYPE-YYYYMMDD-XXX</code></p>
+<ul>
+<li>TYPE: <code>LRN</code> (learning), <code>ERR</code> (error), <code>FEAT</code> (feature)</li>
+<li>YYYYMMDD: Current date</li>
+<li>XXX: Sequential number or random 3 chars (e.g., <code>001</code>, <code>A7B</code>)</li>
+</ul>
+<p>Examples: <code>LRN-20250115-001</code>, <code>ERR-20250115-A3F</code>, <code>FEAT-20250115-002</code></p>
+<h4>Resolving Entries</h4>
+<p>When an issue is fixed, update the entry:</p>
+<ol>
+<li>Change <code>**Status**: pending</code> → <code>**Status**: resolved</code></li>
+<li>Add resolution block after Metadata:</li>
+</ol>
+<pre><code class="language-markdown">### Resolution
+- **Resolved**: 2025-01-16T09:00:00Z
+- **Commit/PR**: abc123 or #42
+- **Notes**: Brief description of what was done
+</code></pre>
+<p>Other status values:</p>
+<ul>
+<li><code>in_progress</code> - Actively being worked on</li>
+<li><code>wont_fix</code> - Decided not to address (add reason in Resolution notes)</li>
+<li><code>promoted</code> - Elevated to a workspace file (<code>SOUL.md</code>, <code>TOOLS.md</code>, <code>AGENTS.md</code>)</li>
+</ul>
+<p>Keep the Resolution block when promoting. A working fix establishes what happened in that incident; validate any reusable rule separately through Maintenance.</p>
+<h4>Promoting to Workspace Memory</h4>
+<p>When a learning is broadly applicable (not a one-off fix), promote it to a workspace file so every session inherits it.</p>
+<h5>When to Promote</h5>
+<ul>
+<li>Learning applies across multiple files/features</li>
+<li>Knowledge any contributor (human or AI) should know</li>
+<li>Prevents recurring mistakes</li>
+<li>Documents project-specific conventions</li>
+</ul>
+<h5>Promotion Targets</h5>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>What Belongs There</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SOUL.md</code></td>
+<td>Behavioral guidelines, communication style, principles</td>
+</tr>
+<tr>
+<td><code>TOOLS.md</code></td>
+<td>Tool capabilities, usage patterns, integration gotchas</td>
+</tr>
+<tr>
+<td><code>AGENTS.md</code></td>
+<td>Workflows, delegation patterns, automation rules</td>
+</tr>
+</tbody>
+</table>
+<p>When the learning is specific to a project repo you work in (not the
+workspace), promote to that project's own agent file (e.g. its <code>AGENTS.md</code>)
+instead.</p>
+<h5>How to Promote</h5>
+<ol>
+<li><strong>Review</strong> the scoped claim through Maintenance first. Promote only supported, useful guidance, not unresolved assumptions or recurrence alone.</li>
+<li><strong>Distill and add</strong> a concise scoped rule or usable retrieval instruction to the appropriate target. Include <code>Source: .learnings/&lt;file&gt;.md#&lt;entry-ID&gt;</code> beside it (use the actual relative path from the target; the ID is searchable even if the renderer's anchor differs).</li>
+<li><strong>Update</strong> the original entry: set <code>**Status**: promoted</code>, append the promotion date and target file/section, and set <code>Guidance</code> to that location. Preserve any resolution and earlier promotion history. Future revisions follow this two-way link.</li>
+</ol>
+<h5>Promotion Examples</h5>
+<p><strong>Learning</strong> (verbose):</p>
+<blockquote>
+<p>Project uses pnpm workspaces. Attempted <code>npm install</code> but failed.
+Lock file is <code>pnpm-lock.yaml</code>. Must use <code>pnpm install</code>.</p>
+</blockquote>
+<p><strong>In TOOLS.md</strong> (externalized after checking the retrieval path):</p>
+<pre><code class="language-markdown">## Build &amp; Dependencies
+- Before installing, read this repo's `package.json` `packageManager` field and lockfile. Use the declared manager; if missing or conflicting, consult the build instructions/maintainer before installing. Source: .learnings/LEARNINGS.md#LRN-20250115-002
+</code></pre>
+<p><strong>Learning</strong> (verbose):</p>
+<blockquote>
+<p>When modifying API endpoints, must regenerate TypeScript client.
+Forgetting this causes type mismatches at runtime.</p>
+</blockquote>
+<p><strong>In AGENTS.md</strong> (actionable):</p>
+<pre><code class="language-markdown">## After API Changes
+1. Regenerate client: `pnpm run generate:api`
+2. Check for type errors: `pnpm tsc --noEmit`
+Source: .learnings/LEARNINGS.md#LRN-20250116-001 (scope: this repo's current generator/configuration)
+</code></pre>
+<h4>Pattern-Key Taxonomy</h4>
+<p><code>Pattern-Key</code> is the stable dedup and recurrence key for entries in all three
+log files: keyword grep misses semantically identical but differently-worded
+entries, a shared key does not — and reliable keys are what make
+<code>Recurrence-Count</code> and the promotion rule work.</p>
+<p><strong>Format</strong>: <code>area.symptom</code> — exactly two levels, lowercase, hyphenated
+(e.g. <code>deps.module-not-found</code>). Keep symptoms generic enough to recur: no
+file names, versions, or hostnames in keys.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Scope</th>
+<th>Example Keys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api</code></td>
+<td>External API/service behavior</td>
+<td><code>api.rate-limit</code>, <code>api.schema-mismatch</code>, <code>api.missing-endpoint</code></td>
+</tr>
+<tr>
+<td><code>auth</code></td>
+<td>Credentials, tokens, scopes</td>
+<td><code>auth.token-expired</code>, <code>auth.missing-scope</code></td>
+</tr>
+<tr>
+<td><code>build</code></td>
+<td>Compilation, bundling, CI</td>
+<td><code>build.type-error</code>, <code>build.missing-artifact</code></td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>Config files, env vars, settings</td>
+<td><code>config.missing-env</code>, <code>config.invalid-json</code></td>
+</tr>
+<tr>
+<td><code>deps</code></td>
+<td>Package managers, dependencies</td>
+<td><code>deps.module-not-found</code>, <code>deps.npm-error</code>, <code>deps.version-conflict</code></td>
+</tr>
+<tr>
+<td><code>fs</code></td>
+<td>Filesystem</td>
+<td><code>fs.no-such-file</code>, <code>fs.permission-denied</code></td>
+</tr>
+<tr>
+<td><code>net</code></td>
+<td>Network connectivity</td>
+<td><code>net.connection-refused</code>, <code>net.timeout</code></td>
+</tr>
+<tr>
+<td><code>runtime</code></td>
+<td>Language/runtime errors not covered above</td>
+<td><code>runtime.type-error</code>, <code>runtime.python-exception</code></td>
+</tr>
+<tr>
+<td><code>shell</code></td>
+<td>Shell/CLI mechanics</td>
+<td><code>shell.command-not-found</code>, <code>shell.nonzero-exit</code></td>
+</tr>
+<tr>
+<td><code>vcs</code></td>
+<td>Git and other version control</td>
+<td><code>vcs.fatal-error</code>, <code>vcs.merge-conflict</code></td>
+</tr>
+<tr>
+<td><code>simplify</code> / <code>harden</code></td>
+<td>Code-quality patterns from the simplify-and-harden feed</td>
+<td><code>simplify.dead_code</code>, <code>harden.input_validation</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rules:</strong></p>
+<ol>
+<li><strong>Reuse before minting</strong>: <code>grep -rh &quot;Pattern-Key:&quot; .learnings/ | sort -u</code> —
+a near-match beats a new key.</li>
+<li><strong>One key per manual entry</strong>; auto-swept OpenClaw entries may carry
+several — triage unrelated claims separately and link to the preserved sweep.</li>
+<li><strong>Mint new areas sparingly</strong> — only when several entries would share one.</li>
+<li><strong>Generic sweep keys</strong> (<code>runtime.error</code>, <code>runtime.failure</code>) mean
+&quot;unclassified&quot; — replace with a specific key during triage.</li>
+</ol>
+<h4>Recurring Pattern Detection</h4>
+<p>If logging something similar to an existing entry:</p>
+<ol>
+<li><strong>Search by key first</strong>: <code>grep -n &quot;Pattern-Key: area.symptom&quot; .learnings/*.md</code>
+— this is the default dedup check and catches rewordings that keyword
+search misses</li>
+<li><strong>Fallback keyword search</strong>: <code>grep -ri &quot;keyword&quot; .learnings/</code> for entries
+logged without a key</li>
+<li><strong>Fold, don't duplicate</strong>: confirm the same claim and scope, not just a key
+match. For a genuinely new occurrence, bump <code>Recurrence-Count</code>, set
+<code>Last-Seen</code>, and link the evidence; review/re-reading is not recurrence</li>
+<li><strong>Bump priority</strong> if issue keeps recurring</li>
+<li><strong>Consider systemic fix</strong>: Recurring issues often indicate:
+<ul>
+<li>Missing knowledge (→ promote to <code>TOOLS.md</code> or <code>SOUL.md</code>)</li>
+<li>Missing automation (→ add to <code>AGENTS.md</code>)</li>
+<li>Architectural problem (→ create tech debt ticket)</li>
+</ul>
+</li>
+</ol>
+<h4>Simplify &amp; Harden Feed</h4>
+<p>If a task supplies simplify/harden candidates, ingest them here; no other skill
+is required. Manual capture uses the same recurrence and maintenance rules.</p>
+<h5>Ingestion Workflow</h5>
+<ol>
+<li>Read <code>simplify_and_harden.learning_loop.candidates</code> from the task summary.</li>
+<li>For each candidate, use <code>pattern_key</code> as the stable dedupe key.</li>
+<li>Search <code>.learnings/LEARNINGS.md</code> for an existing entry with that key:
+<ul>
+<li><code>grep -n &quot;Pattern-Key: &lt;pattern_key&gt;&quot; .learnings/LEARNINGS.md</code></li>
+</ul>
+</li>
+<li>If found:
+<ul>
+<li>Increment <code>Recurrence-Count</code> and update <code>Last-Seen</code> only for a new occurrence of the same scoped claim</li>
+<li>Add <code>See Also</code> links to related entries/tasks</li>
+</ul>
+</li>
+<li>If not found:
+<ul>
+<li>Create a new <code>LRN-...</code> entry</li>
+<li>Set <code>Source: simplify-and-harden</code></li>
+<li>Set <code>Pattern-Key</code>, <code>Recurrence-Count: 1</code>, and <code>First-Seen</code>/<code>Last-Seen</code></li>
+</ul>
+</li>
+</ol>
+<h5>Promotion Rule (System Prompt Feedback)</h5>
+<p>Consider recurring patterns for promotion when all are true:</p>
+<ul>
+<li><code>Recurrence-Count &gt;= 3</code></li>
+<li>Seen across at least 2 distinct tasks</li>
+<li>Occurred within a 30-day window</li>
+</ul>
+<p>These are candidate signals, not proof or expiry rules. Apply Maintenance before promotion; one-off learnings still receive maintenance without meeting these thresholds.</p>
+<p>Promotion targets: <code>SOUL.md</code>, <code>TOOLS.md</code>, or <code>AGENTS.md</code> (workspace), or the
+project's own agent file when the pattern is project-specific.</p>
+<p>Write promoted rules as short prevention rules (what to do before/while coding),
+not long incident write-ups.</p>
+<h4>Periodic Review</h4>
+<p>Review relevant/due claims using Maintenance at natural breakpoints; not the entire log every turn:</p>
+<h5>When to Review</h5>
+<ul>
+<li>Before starting a new major task</li>
+<li>After completing a feature</li>
+<li>When working in an area with past learnings</li>
+<li>Weekly during active development</li>
+</ul>
+<h5>Quick Status Check</h5>
+<pre><code class="language-bash"># Count pending items
+grep -h &quot;Status\*\*: pending&quot; .learnings/*.md | wc -l
+
+# List pending high-priority items
+grep -B5 &quot;Priority\*\*: high&quot; .learnings/*.md | grep &quot;^## \[&quot;
+
+# Find learnings for a specific area
+grep -l &quot;Area\*\*: backend&quot; .learnings/*.md
+</code></pre>
+<h5>Review Actions</h5>
+<ul>
+<li>Resolve fixed items</li>
+<li>Revalidate relevant/due claims of any status, including one-off/unpromoted learnings</li>
+<li>Retain, revise, externalize, or retire active guidance while preserving history</li>
+<li>Promote supported, applicable learnings with source links</li>
+<li>Link related entries</li>
+<li>Escalate recurring issues</li>
+</ul>
+<h4>Detection Triggers</h4>
+<p>Evaluate the event in context before logging. The phrases below are cues,
+not automatic logging commands; ordinary questions and follow-up tasks alone
+do not justify persistent entries.</p>
+<p><strong>Corrections</strong> (→ learning with <code>correction</code> category):</p>
+<ul>
+<li>&quot;No, that's not right...&quot;</li>
+<li>&quot;Actually, it should be...&quot;</li>
+<li>&quot;You're wrong about...&quot;</li>
+<li>&quot;That's outdated...&quot;</li>
+</ul>
+<p><strong>Feature Requests</strong> (→ feature request):</p>
+<ul>
+<li>Log only a requested capability shown to be missing from the relevant tool/version. Record evidence and limits.</li>
+<li>&quot;Can you also...&quot; or &quot;Is there a way to...&quot; is not evidence of a missing feature. Use existing capabilities normally; do not log ordinary follow-ups.</li>
+<li>If availability is unclear, check documentation or tool behavior, or ask. Do not create a feature request based on wording alone.</li>
+</ul>
+<p><strong>Knowledge Gaps</strong> (→ learning with <code>knowledge_gap</code> category):</p>
+<ul>
+<li>User provides information you didn't know</li>
+<li>Documentation you referenced is outdated</li>
+<li>API behavior differs from your understanding</li>
+</ul>
+<p><strong>Errors</strong> (→ error entry):</p>
+<ul>
+<li>Command returns non-zero exit code</li>
+<li>Exception or stack trace</li>
+<li>Unexpected output or behavior</li>
+<li>Timeout or connection failure</li>
+</ul>
+<h4>Priority Guidelines</h4>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>critical</code></td>
+<td>Blocks core functionality, data loss risk, security issue</td>
+</tr>
+<tr>
+<td><code>high</code></td>
+<td>Significant impact, affects common workflows, recurring issue</td>
+</tr>
+<tr>
+<td><code>medium</code></td>
+<td>Moderate impact, workaround exists</td>
+</tr>
+<tr>
+<td><code>low</code></td>
+<td>Minor inconvenience, edge case, nice-to-have</td>
+</tr>
+</tbody>
+</table>
+<h4>Area Tags</h4>
+<p>Use to filter learnings by codebase region:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>frontend</code></td>
+<td>UI, components, client-side code</td>
+</tr>
+<tr>
+<td><code>backend</code></td>
+<td>API, services, server-side code</td>
+</tr>
+<tr>
+<td><code>infra</code></td>
+<td>CI/CD, deployment, Docker, cloud</td>
+</tr>
+<tr>
+<td><code>tests</code></td>
+<td>Test files, testing utilities, coverage</td>
+</tr>
+<tr>
+<td><code>docs</code></td>
+<td>Documentation, comments, READMEs</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>Configuration files, environment, settings</td>
+</tr>
+</tbody>
+</table>
+<h4>Best Practices</h4>
+<ol>
+<li><strong>Log immediately</strong> - context is freshest right after the issue</li>
+<li><strong>Be specific</strong> - future agents need to understand quickly</li>
+<li><strong>Include reproduction steps</strong> - especially for errors</li>
+<li><strong>Link related files</strong> - makes fixes easier</li>
+<li><strong>Suggest concrete fixes</strong> - not just &quot;investigate&quot;</li>
+<li><strong>Use consistent categories</strong> - enables filtering</li>
+<li><strong>Promote supported guidance</strong> - validate scope and usefulness first; preserve provenance</li>
+<li><strong>Review by cause and rate</strong> - age alone proves neither falsehood nor uselessness</li>
+</ol>
+<h4>Gitignore Options</h4>
+<p><strong>Keep learnings local</strong> (per-developer):</p>
+<pre><code class="language-gitignore">.learnings/
+</code></pre>
+<p>This repo uses that default to avoid committing sensitive or noisy local logs by accident.</p>
+<p><strong>Track learnings in repo</strong> (team-wide):
+Don't add to .gitignore - learnings become shared knowledge.</p>
+<p><strong>Hybrid</strong> (track templates, ignore entries):</p>
+<pre><code class="language-gitignore">.learnings/*.md
+!.learnings/.gitkeep
+</code></pre>
+<h4>Upgrading &amp; Uninstalling</h4>
+<p>Read <code>CHANGELOG.md</code> before upgrading — it carries per-version notes, and
+hook changes require re-copying the hook and restarting the gateway.
+To disable or remove the skill, follow <code>references/uninstall.md</code>:
+disabling and uninstalling preserve <code>.learnings/</code> and promoted workspace rules.
+Permanent data deletion or edits to promoted guidance require separate,
+explicit authorization; they are not part of uninstalling.</p>
+<h4>Skill Extraction (Approval Required)</h4>
+<p>When a learning may justify a reusable skill, use <a>assets/SKILL-TEMPLATE.md</a>. Extracting is optional, never a dependency of maintenance. Obtain explicit scoped approval before creating or modifying skill assets.</p>
+<p>The template includes candidate criteria, helper commands, quality gates, and two-way provenance. Review the scoped claim before extraction; a resolved incident or recurrence alone is not verification. Later asset changes require their own scoped approval.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

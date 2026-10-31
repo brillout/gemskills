@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-245.7 -234.8 491.5 469.6">
+  <defs>
+    <style>.gem-p{fill:currentColor;stroke:currentColor;stroke-width:1px;stroke-linejoin:round;vector-effect:non-scaling-stroke}</style>
+    <path id="gem-f0" stroke-width="1" stroke-linejoin="round" vector-effect="non-scaling-stroke" d="M49.7 -181.5 L120.1 -190.1 L120.1 -202.2 L49.7 -210.8 L-49.7 -210.8 L-120.1 -202.2 L-120.1 -190.1 L-49.7 -181.5 Z"/>
+    <path id="gem-f1" stroke-width="1" stroke-linejoin="round" vector-effect="non-scaling-stroke" d="M-49.7 -181.5 L49.7 -181.5 L91.8 -60 L-91.8 -60 Z"/>
+    <path id="gem-f3" stroke-width="1" stroke-linejoin="round" vector-effect="non-scaling-stroke" d="M49.7 -181.5 L120.1 -190.1 L221.7 -75.8 L91.8 -60 Z"/>
+    <path id="gem-f5" stroke-width="1" stroke-linejoin="round" vector-effect="non-scaling-stroke" d="M120.1 -190.1 L120.1 -202.2 L221.7 -98.2 L221.7 -75.8 Z"/>
+    <path id="gem-f13" stroke-width="1" stroke-linejoin="round" vector-effect="non-scaling-stroke" d="M-120.1 -202.2 L-120.1 -190.1 L-221.7 -75.8 L-221.7 -98.2 Z"/>
+    <path id="gem-f15" stroke-width="1" stroke-linejoin="round" vector-effect="non-scaling-stroke" d="M-120.1 -190.1 L-49.7 -181.5 L-91.8 -60 L-221.7 -75.8 Z"/>
+    <linearGradient id="gem-gloss" x1="0.1105" y1="0.1865" x2="0.8895" y2="0.8135"><stop offset="0" stop-color="#ffd9ea"/><stop offset="1" stop-color="#ffd9ea" stop-opacity="0.35"/></linearGradient>
+  </defs>
+  <path class="gem-p" color="#bd1b61" d="M49.7 -181.5 120.1 -190.1 120.1 -202.2 80.3 -207.1 35.9 -181.5Z"/>
+  <path class="gem-p" color="#620b32" d="M35.9 -181.5 80.3 -207.1 49.7 -210.8 -49.7 -210.8 -80.3 -207.1 -35.9 -181.5Z"/>
+  <path class="gem-p" color="#e52d79" d="M-49.7 -181.5 -35.9 -181.5 -80.3 -207.1 -120.1 -202.2 -120.1 -190.1Z"/>
+  <use href="#gem-f0" fill="url(#gem-gloss)" fill-opacity="0.0525"/>
+  <path class="gem-p" color="#ffd9ea" d="M91.8 -60 68.2 -128.2 48.2 -60Z"/>
+  <path class="gem-p" color="#99124e" d="M48.2 -60 68.2 -128.2 49.7 -181.5 -49.7 -181.5 -68.2 -128.2 -48.2 -60Z"/>
+  <path class="gem-p" color="#ffd9ea" d="M-91.8 -60 -48.2 -60 -68.2 -128.2Z"/>
+  <use href="#gem-f1" fill="url(#gem-gloss)" fill-opacity="0.0077"/>
+  <path class="gem-p" color="#ff9ac3" d="M91.8 -60 59.8 -60 77.3 -17.1Z"/>
+  <path class="gem-p" color="#9f1352" d="M77.3 -17.1 59.8 -60 -59.8 -60 -77.3 -17.1 -65.3 18.4 65.3 18.4Z"/>
+  <path class="gem-p" color="#e42c78" d="M0 210.8 65.3 18.4 -65.3 18.4 0 210.8 0 210.8Z"/>
+  <path class="gem-p" color="#4d0827" d="M-77.3 -17.1 -59.8 -60 -91.8 -60Z"/>
+  <path class="gem-p" color="#ffb3d2" d="M221.7 -75.8 221.7 -75.8 221.7 -75.8 217.3 -80.7 213.4 -74.8Z"/>
+  <path class="gem-p" color="#c31d64" d="M213.4 -74.8 217.3 -80.7 155.7 -150.1 140.7 -65.9Z"/>
+  <path class="gem-p" color="#ffd9ea" d="M91.8 -60 140.7 -65.9 155.7 -150.1 120.1 -190.1 49.7 -181.5Z"/>
+  <use href="#gem-f3" fill="url(#gem-gloss)" fill-opacity="0.0721"/>
+  <path class="gem-p" color="#640b33" d="M221.7 -75.8 163.8 -68.7 180.5 -22.5Z"/>
+  <path class="gem-p" color="#ffd9ea" d="M180.5 -22.5 163.8 -68.7 91.8 -60 58.5 38.4 158 6.6Z"/>
+  <path class="gem-p" color="#ffb2d1" d="M158 6.6 58.5 38.4 0 210.8 0 210.8Z"/>
+  <path class="gem-p" color="#d6236e" d="M221.7 -75.8 221.7 -98.2 221.7 -98.2 221.7 -98.2 176.5 -144.5 213.8 -84.7Z"/>
+  <path class="gem-p" color="#ffa5c9" d="M213.8 -84.7 176.5 -144.5 120.1 -202.2 120.1 -192.3 134.1 -174.3Z"/>
+  <path class="gem-p" color="#620b32" d="M134.1 -174.3 120.1 -192.3 120.1 -190.1Z"/>
+  <use href="#gem-f5" fill="url(#gem-gloss)" fill-opacity="0.0186"/>
+  <path class="gem-p" color="#59092d" d="M-120.1 -190.1 -120.1 -192.3 -134.1 -174.3Z"/>
+  <path class="gem-p" color="#ffbdd9" d="M-134.1 -174.3 -120.1 -192.3 -120.1 -202.2 -176.5 -144.5 -213.8 -84.7Z"/>
+  <path class="gem-p" color="#ffd9ea" d="M-221.7 -75.8 -213.8 -84.7 -176.5 -144.5 -221.7 -98.2 -221.7 -98.2 -221.7 -98.2Z"/>
+  <use href="#gem-f13" fill="url(#gem-gloss)" fill-opacity="0.1115"/>
+  <path class="gem-p" color="#6b0c36" d="M-91.8 -60 -49.7 -181.5 -120.1 -190.1 -155.7 -150.1 -140.7 -65.9Z"/>
+  <path class="gem-p" color="#cd2069" d="M-140.7 -65.9 -155.7 -150.1 -217.3 -80.7 -213.4 -74.8Z"/>
+  <path class="gem-p" color="#ec3e85" d="M-213.4 -74.8 -217.3 -80.7 -221.7 -75.8 -221.7 -75.8Z"/>
+  <use href="#gem-f15" fill="url(#gem-gloss)" fill-opacity="0.0079"/>
+  <path class="gem-p" color="#bd1b61" d="M-91.8 -60 -163.8 -68.7 -180.5 -22.5 -158 6.6 -58.5 38.4Z"/>
+  <path class="gem-p" color="#f55696" d="M0 210.8 0 210.8 -58.5 38.4 -158 6.6Z"/>
+  <path class="gem-p" color="#8f1049" d="M-180.5 -22.5 -163.8 -68.7 -221.7 -75.8Z"/>
+</svg>

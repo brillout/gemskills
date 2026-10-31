@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>multi-account-isolation · Gem Skills</title>
+    <meta name="description" content="Use it when: you run several of your own accounts or test identities on one machine and want proof their browsers are kept apart. It does: checks each profile: its clock matches its proxy&#039;s country, its real IP doesn&#039;t leak, and no two profiles share a fingerprint, address or cookies. You get: a pass or fail on 11 checks, an order for tracking down failures, and the three checks worth automating in CI. Works with: profiles made with the anti-detect-browser SDK, plus public test sites such as CreepJS and browserleaks. Unlike anti-detect-browser: that SDK creates the profiles; this verifies them, and lists what no browser setting can hide." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=antibrow%2Fanti-detect-browser-skills">antibrow/anti-detect-browser-skills</a></p>
+      <h1>multi-account-isolation</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you run several of your own accounts or test identities on one machine and want proof their browsers are kept apart</dd></div><div><dt>It does</dt><dd>checks each profile: its clock matches its proxy&#39;s country, its real IP doesn&#39;t leak, and no two profiles share a fingerprint, address or cookies</dd></div><div><dt>You get</dt><dd>a pass or fail on 11 checks, an order for tracking down failures, and the three checks worth automating in CI</dd></div><div><dt>Works with</dt><dd>profiles made with the anti-detect-browser SDK, plus public test sites such as CreepJS and browserleaks</dd></div><div><dt>Unlike anti-detect-browser</dt><dd>that SDK creates the profiles; this verifies them, and lists what no browser setting can hide</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A checklist for proving, not assuming, that browser profiles share nothing. Its rule is one of everything per identity: one profile, one fingerprint (the device details a site reads to recognize a browser), one proxy, one timezone. Each profile runs through its own proxy and is checked by assertion, not by eye. Its 11 checks include: does the clock match the proxy&#39;s country, does the real IP leak past the proxy, does the fingerprint stay identical after a relaunch, and do any two profiles share an address, a fingerprint or a cookie folder. When something fails, it works from the cheapest cause up: a reused profile name, a shared IP, a wrong clock, and only then the fingerprint. Since antibrow&#39;s browser is closed-source, it also shows how to watch what it sends out, through a proxy whose logs you can read. And it says what isolation can&#39;t cover: a shared card or phone number, identical activity, ID checks, a platform&#39;s own decision. A clean result means only that the browser isn&#39;t the problem. It&#39;s meant for identities you own or are authorized to run.</p>
+      <p class="muted">Summarizes <a href="https://github.com/antibrow/anti-detect-browser-skills/tree/b800e3a54d8d4f93ae5ee23c59d13b43df5d4462/multi-account-isolation">the skill at b800e3a</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/antibrow/anti-detect-browser-skills --skill multi-account-isolation</code><button type="button" class="copy" data-copy="npx skills add https://github.com/antibrow/anti-detect-browser-skills --skill multi-account-isolation">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/antibrow/anti-detect-browser-skills/multi-account-isolation">skills.sh page</a> · <a href="https://github.com/antibrow/anti-detect-browser-skills/tree/HEAD/multi-account-isolation">Source on GitHub</a> · <a href="/gemskills/?repo=antibrow%2Fanti-detect-browser-skills">All skills from antibrow/anti-detect-browser-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>63,318 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>531 <span class="muted">antibrow/anti-detect-browser-skills</span></dd></div><div><dt>First seen</dt><dd>Aug 1, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">8.9K</div>
+      <div class="stat-delta">+1089% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 748; week to Aug 10: 9,030; week to Aug 17: 8,923; week to Aug 24: 8,894; week to Aug 31: 8,916; week to Sep 7: 8,527; week to Sep 14: 8,868; week to Sep 21: 8,896. Use the left and right arrow keys to read each week."
+        data-values="748,9030,8923,8894,8916,8527,8868,8896" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,46.4 38.6,6.0 71.1,6.5 103.7,6.7 136.3,6.6 168.9,8.5 201.4,6.8 234.0,6.7" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="6.7" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>748</td></tr><tr><td>Aug 10</td><td>9,030</td></tr><tr><td>Aug 17</td><td>8,923</td></tr><tr><td>Aug 24</td><td>8,894</td></tr><tr><td>Aug 31</td><td>8,916</td></tr><tr><td>Sep 7</td><td>8,527</td></tr><tr><td>Sep 14</td><td>8,868</td></tr><tr><td>Sep 21</td><td>8,896</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:security" data-facet="category" title="Compliance, guardrails, skill vetting and browser fingerprinting." href="/gemskills/?tag=category%3Asecurity">category:security</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Compliance, guardrails, skill vetting and browser fingerprinting.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:browser" data-facet="needs" title="Drives a real Chromium or Chrome browser." href="/gemskills/?tag=needs%3Abrowser">needs:browser</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">Drives a real Chromium or Chrome browser.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="fingerprinting" data-facet="topic" href="/gemskills/?tag=fingerprinting">fingerprinting</a><a class="tag" data-tag="privacy" data-facet="topic" href="/gemskills/?tag=privacy">privacy</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:antibrow" data-facet="stack" href="/gemskills/?tag=stack%3Aantibrow">stack:antibrow</a><a class="tag" data-tag="stack:playwright" data-facet="stack" href="/gemskills/?tag=stack%3Aplaywright">stack:playwright</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:dual-use" data-facet="flag" title="Legitimate uses exist, but the same capability can evade bot detection or investigate other people. Read the SKILL.md before installing." href="/gemskills/?tag=flag%3Adual-use">flag:dual-use</a></div>
+          <p class="tag-meaning">Legitimate uses exist, but the same capability can evade bot detection or investigate other people. Read the SKILL.md before installing.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/antibrow/anti-detect-browser-skills/blob/b800e3a54d8d4f93ae5ee23c59d13b43df5d4462/multi-account-isolation/SKILL.md">antibrow/anti-detect-browser-skills at b800e3a</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: multi-account-isolation
+description: Verify that browser profiles are actually isolated from one another instead of assuming it - confirm each profile&#39;s timezone agrees with its own exit IP, that WebRTC exposes only the proxy, that canvas and WebGL hashes stay identical across relaunches of one profile, and that no two profiles share a persona, a cookie jar, or an address. Use when several of your own accounts or test identities run from one machine and the setup needs checking, when a profile tested clean but something still looks off, when choosing which detection suites to run (CreepJS, whoer, browserleaks WebRTC, pixelscan, liarjs), when auditing what a vendor runtime does with API and proxy credentials, or when asking which layers browser isolation cannot cover at all. Also for &#39;profile isolation check&#39;, &#39;fingerprint consistency test&#39;, &#39;timezone mismatch&#39;, &#39;WebRTC leak&#39;, &#39;canvas hash unstable&#39;, &#39;account association&#39;, &#39;temporary profile&#39;, &#39;防关联&#39;, &#39;多账号&#39;, &#39;隔离自检&#39;. The SDK is anti-detect-browser; MCP is browser-mcp-agent.
+license: MIT</code></pre></details>
+        <div class="markdown"><h3>Profile Isolation - verifying it, not assuming it</h3>
+<p>A profile that <em>looks</em> isolated usually is not. The failures are boring and mechanical: a timezone that does not match the exit IP, a WebRTC candidate carrying the real address, a canvas hash that changes on every read, two profiles that ended up on the same persona. This skill is the check list for catching those before they matter.</p>
+<blockquote>
+<p><strong>Authorized use only.</strong> This is for identities you own or are authorized to operate: your own accounts, your own test fixtures, your own QA fleet, and your own anti-fraud stack. It is not for accessing systems without authorization, for accounts that are not yours, or for creating fake accounts or engagement. Comply with the terms of the sites you automate and with applicable law - see <a href="#acceptable-use">Acceptable use</a>.</p>
+</blockquote>
+<p><strong>What this does not claim.</strong> Passing every check below means the browser layer is internally consistent. It does not mean a given site will treat two profiles as unrelated: things entirely outside the browser - a shared payment instrument, a shared contact detail, identical activity patterns - are not something any browser setting reaches. Treat a clean result as &quot;the technical layer is not the problem&quot;, not as a guarantee.</p>
+<p>For the SDK that creates and launches these profiles, see the <strong>anti-detect-browser</strong> skill.</p>
+<h4>The configuration invariant</h4>
+<p>One identity gets one of everything. Any cell shared between two identities is a defect to find:</p>
+<pre><code>identity  →  profile  →  persona  →  proxy  →  timezone
+   1      :     1     :     1     :    1    :     1
+</code></pre>
+<p>Profiles are unlimited and free on every antibrow plan, so there is never a reason to reuse one. &quot;Log out and log back in as the other identity&quot; inside one profile defeats the entire setup - the cookie jar and <code>localStorage</code> are the point.</p>
+<h4>Setup under test</h4>
+<pre><code class="language-typescript">import { AntiDetectBrowser } from 'anti-detect-browser'
+
+const ab = new AntiDetectBrowser({ key: process.env.ANTI_DETECT_BROWSER_KEY })
+
+const identities = [
+  { profile: 'fixture-us-01', proxy: process.env.PROXY_US_1, tags: ['Windows 10', 'Chrome'] },
+  { profile: 'fixture-us-02', proxy: process.env.PROXY_US_2, tags: ['Apple Mac', 'Safari'] },
+  { profile: 'fixture-de-01', proxy: process.env.PROXY_DE_1, tags: ['Windows 10', 'Edge'] },
+]
+
+for (const id of identities) {
+  const { browser, page } = await ab.launch({
+    profile: id.profile,              // isolated cookies, storage, login state
+    proxy: id.proxy,                  // from the environment, one per identity
+    fingerprint: { tags: id.tags },   // drawn once, frozen, replayed after
+    label: id.profile,                // address-bar tag drawn by the kernel, unreadable from the page
+  })
+  // ... run the checks below, then ...
+  await browser.close()
+}
+</code></pre>
+<p>Python, same on-disk profile format:</p>
+<pre><code class="language-python">import os
+from antibrow import launch
+
+with launch(
+    profile=&quot;fixture-us-01&quot;,
+    proxy=os.environ[&quot;PROXY_US_1&quot;],   # from the environment, never a literal
+    geoip=True,            # timezone + WebRTC follow the proxy exit
+    label=&quot;fixture-us-01&quot;,
+) as browser:
+    page = browser.new_page()
+    print(browser.timezone, browser.public_ip)
+</code></pre>
+<h4>The checks</h4>
+<p>Run each profile <strong>through its own proxy</strong>, and assert rather than eyeball.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Check</th>
+<th>How</th>
+<th>Fails when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Timezone matches the exit IP</td>
+<td><code>browser.timezone</code> vs the country of <code>browser.public_ip</code></td>
+<td><code>geoip</code> was disabled, or <code>timezone</code> was forced to something the IP contradicts. This is the single most common defect.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>WebRTC exposes only the proxy</td>
+<td><a href="https://browserleaks.com/webrtc">browserleaks.com/webrtc</a></td>
+<td>ICE candidates still carry a local or real public address</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Canvas hash is stable across launches</td>
+<td>Read it, close, relaunch the same profile, read again</td>
+<td>The two reads differ - a value that changes every read is itself an anomaly, and it means the persona is not frozen</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Worker and main thread agree</td>
+<td><a href="https://abrahamjuliot.github.io/creepjs/">CreepJS</a></td>
+<td>UA, <code>languages</code>, <code>hardwareConcurrency</code>, timezone or GPU differ when re-read inside a Web Worker</td>
+</tr>
+<tr>
+<td>5</td>
+<td>One GPU across three interfaces</td>
+<td>CreepJS, or read WebGL / WebGL2 / WebGPU directly</td>
+<td><code>adapter.info.vendor</code> does not match the unmasked WebGL renderer family</td>
+</tr>
+<tr>
+<td>6</td>
+<td>No two profiles share a persona</td>
+<td>Diff <code>browser.persona</code> across the fleet</td>
+<td>Two profiles report the same UA, screen geometry and seeds</td>
+</tr>
+<tr>
+<td>7</td>
+<td>No two profiles share an address</td>
+<td>Collect <code>browser.public_ip</code> for the fleet</td>
+<td>Two identities came out of the same exit, or the same /24</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Cookie jars are separate</td>
+<td>Compare <code>browser.profile_dir</code> across the fleet, then inspect <code>user-data/</code> inside each</td>
+<td>Two identities resolve to one directory, or one directory holds state belonging to another identity</td>
+</tr>
+<tr>
+<td>9</td>
+<td>One identity, one profile tree</td>
+<td>Confirm every launch of a name passes the same <code>temporary</code> value</td>
+<td>A managed <code>gmail</code> and a temporary <code>gmail</code> are two different profiles with two personas and two cookie jars. A script that disagrees with itself about <code>temporary</code> is running two identities under one name and will look like a logged-out session, not like a bug</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Whole-stack coherence</td>
+<td><a href="https://whoer.net">whoer.net</a>, <a href="https://pixelscan.net">pixelscan.net</a></td>
+<td>IP, timezone and locale disagree at a glance</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Consistency rules in CI</td>
+<td><code>npx liarjs</code> (<a href="https://liarjs.dev">liarjs.dev</a>)</td>
+<td>Any of ~40 open-source cross-layer rules fail - this is the one that runs unattended</td>
+</tr>
+</tbody>
+</table>
+<p>Checks 1, 3 and 7 are the ones worth wiring into CI: they are cheap, deterministic, and they catch the defects that actually recur.</p>
+<h4>Reading a failure</h4>
+<p>Work down in this order, cheapest first - a fingerprint is almost never the actual cause:</p>
+<ol>
+<li><strong>Profile name reused?</strong> <code>list_profiles</code>, or compare <code>browser.profile_dir</code> per identity. Two identities in one directory explains everything else. Directories are named after the profile's id, not its name, so match on <code>profile.json</code> inside rather than on the folder name.</li>
+<li><strong>Same address twice?</strong> Confirm each <code>public_ip</code> is distinct.</li>
+<li><strong>Clock disagrees with the address?</strong> Print <code>browser.timezone</code> and <code>browser.public_ip</code> together.</li>
+<li><strong>Persona regenerated?</strong> If the canvas hash moved between launches, the profile is not frozen - check whether <code>profile_dir</code> or the cache directory changed under it.</li>
+<li><strong>Only then</strong> the fingerprint itself, verified with the suites above rather than assumed.</li>
+</ol>
+<h4>What the runtime touches, and how to check it</h4>
+<p>Any tool that drives logged-in sessions receives cookies and proxy credentials, so it is fair to ask what it does with them. For antibrow:</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Where it lives</th>
+<th>Who sees it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cookies, <code>localStorage</code>, login state</td>
+<td><code>~/.anti-detect-browser/profiles/&lt;id&gt;/user-data/</code> on your disk, or <code>profiles-temp/&lt;id&gt;/</code> for a temporary profile</td>
+<td>Local. Cloud sync is opt-in per profile: a launch never creates a cloud profile by itself, and <code>sync: true</code> is what puts one there. Check which profiles sync before assuming they stay on the machine</td>
+</tr>
+<tr>
+<td>Persona (<code>persona.json</code>)</td>
+<td>same profile directory, written once and frozen</td>
+<td>Local</td>
+</tr>
+<tr>
+<td>Profile identity record (<code>profile.json</code>)</td>
+<td>same profile directory; the id it holds is what names the directory</td>
+<td>Local. It is why a rename does not cost a persona, and why the folder name is not the profile name</td>
+</tr>
+<tr>
+<td>Proxy URL and its credentials</td>
+<td>passed to the kernel at launch; answered in the network stack (HTTP 407 / SOCKS5 RFC 1929) so no extension holds them</td>
+<td>The kernel process and your proxy provider</td>
+</tr>
+<tr>
+<td>API key</td>
+<td>your environment, or <code>~/.antibrow/license.key</code></td>
+<td>Exchanged with <code>antibrow.com</code> for a short-lived license token, roughly once a day</td>
+</tr>
+</tbody>
+</table>
+<p>The kernel is a closed-source Chromium build - that is the tradeoff for the spoofing living in C++ rather than in an injectable script - so verify behaviour rather than take it on faith:</p>
+<pre><code class="language-bash">python -m antibrow info          # kernels, profiles, license state, cache dir
+</code></pre>
+<pre><code class="language-python">browser.plan.redacted_args()     # exact kernel command line, secrets masked - safe to paste in a bug report
+</code></pre>
+<p>Point it at a proxy whose logs you can read, or at a local MITM proxy, and watch what leaves the machine during a launch. Pin the SDK version and check the published hash (<code>npm view anti-detect-browser@2.8.0 dist.integrity</code>) so the code you audited is the code that runs. If a deployment must not phone home at all, this is the wrong tool: license verification is compiled into the kernel and there is no offline mode.</p>
+<h4>What isolation cannot cover</h4>
+<p>Worth stating plainly, because a clean check list invites the wrong conclusion:</p>
+<ul>
+<li><strong>Anything outside the browser.</strong> A shared payment instrument, a shared contact detail, a shared payout destination - no browser setting touches these, and they are the strongest correlators that exist.</li>
+<li><strong>Activity patterns.</strong> Identical timing, identical content, identical interaction targets. Not a technical property.</li>
+<li><strong>Identity verification.</strong> A document check is not a fingerprint problem.</li>
+<li><strong>A platform's own decision.</strong> Nothing here changes how a site chooses to treat an account.</li>
+</ul>
+<p>If every check passes and something still looks wrong, the cause is in this list, not in the browser layer.</p>
+<h4>Acceptable use</h4>
+<p><strong>Intended:</strong> verifying isolation between identities you own; running client accounts with the account holder's authorization; building QA fixtures that emulate distinct devices; testing your own anti-fraud and correlation logic; auditing what a browser runtime does with your credentials.</p>
+<p><strong>Out of scope, and not supported:</strong> accessing any system without authorization; logging into accounts that are not yours; credential stuffing or account takeover; creating fake accounts, reviews or engagement; circumventing an authentication, payment or authorization control; scraping personal data in violation of applicable law; working around a platform's enforcement decision.</p>
+<p>Complying with the terms of the platforms being used, and with applicable law, is the operator's responsibility. Report abuse or a security issue via the contact at <code>https://antibrow.com</code>.</p>
+<h4>Related Skills</h4>
+<ul>
+<li><strong>anti-detect-browser</strong> - the SDK, profiles, personas, proxies and REST API that create the setup being verified here</li>
+<li><strong>browser-mcp-agent</strong> - MCP server mode, for letting an AI agent drive a single profile itself</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

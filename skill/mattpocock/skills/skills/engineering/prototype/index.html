@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prototype · Gem Skills</title>
+    <meta name="description" content="Use it when: a design question is hard to settle on paper: does this state model hold up, or what should this screen look like?. It does: builds throwaway code shaped by the question: a clickable logic demo, or several UI variants to flip between. You get: a prototype to try; once it has answered, the decision goes into the real code and the prototype onto a side branch. Runs: by itself when you ask to sanity-check some logic or explore what a UI should look like." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>prototype</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a design question is hard to settle on paper: does this state model hold up, or what should this screen look like?</dd></div><div><dt>It does</dt><dd>builds throwaway code shaped by the question: a clickable logic demo, or several UI variants to flip between</dd></div><div><dt>You get</dt><dd>a prototype to try; once it has answered, the decision goes into the real code and the prototype onto a side branch</dd></div><div><dt>Runs</dt><dd>by itself when you ask to sanity-check some logic or explore what a UI should look like</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 9 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/productivity/handoff/">handoff</a> · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/wayfinder/">wayfinder</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It first works out which kind of question it&#39;s answering. For logic, it writes one self-contained HTML file anyone can double-click, a non-developer included: the current state shown in plain domain words, a button for each action, and tabs of guided scenarios that walk through the happy path, a tricky edge case and something that should be impossible. The logic sits in a small pure module that can later move into the real code. For UI, it builds three to five structurally different versions, usually inside the existing page, switched with a ?variant= URL parameter and a floating bar that&#39;s hidden in production. Either way there are no tests, no saved data and no polish, and the full state is always on screen. Once the question is answered, the winning decision goes into the real code, the prototype is committed to a throwaway branch outside main, and the verdict is noted on the related issue or in a commit, pointing to that branch.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/prototype">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill prototype</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill prototype">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/prototype">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/prototype">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>814,884 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>May 6, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">39.1K</div>
+      <div class="stat-delta">-17% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 47,077; week to Aug 10: 60,846; week to Aug 17: 48,412; week to Aug 24: 52,775; week to Aug 31: 48,115; week to Sep 7: 45,883; week to Sep 14: 41,091; week to Sep 21: 39,061. Use the left and right arrow keys to read each week."
+        data-values="47077,60846,48412,52775,48115,45883,41091,39061" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,16.0 38.6,6.0 71.1,15.0 103.7,11.8 136.3,15.2 168.9,16.8 201.4,20.3 234.0,21.8" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="21.8" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>47,077</td></tr><tr><td>Aug 10</td><td>60,846</td></tr><tr><td>Aug 17</td><td>48,412</td></tr><tr><td>Aug 24</td><td>52,775</td></tr><tr><td>Aug 31</td><td>48,115</td></tr><tr><td>Sep 7</td><td>45,883</td></tr><tr><td>Sep 14</td><td>41,091</td></tr><tr><td>Sep 21</td><td>39,061</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:planning" data-facet="category" title="Make the agent question you and write the plan down before it writes code." href="/gemskills/?tag=category%3Aplanning">category:planning</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Make the agent question you and write the plan down before it writes code.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="prototyping" data-facet="topic" href="/gemskills/?tag=prototyping">prototyping</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/prototype/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: prototype
+description: Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.</code></pre></details>
+        <div class="markdown"><h3>Prototype</h3>
+<p>A prototype is <strong>throwaway code that answers a question</strong>. The question decides the shape.</p>
+<h4>Pick a branch</h4>
+<p>Identify which question is being answered, using the user's prompt, the surrounding code, or by asking if the user is around:</p>
+<ul>
+<li><strong>&quot;Does this logic / state model feel right?&quot;</strong> → <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/prototype/LOGIC.md">LOGIC.md</a>. Build a single shareable HTML file (free-play buttons plus tabbed guided walkthroughs) that pushes the state machine through cases that are hard to reason about on paper, and that a non-developer can drive.</li>
+<li><strong>&quot;What should this look like?&quot;</strong> → <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/prototype/UI.md">UI.md</a>. Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar.</li>
+</ul>
+<p>The two branches produce very different artifacts, so getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend module → logic; a page or component → UI) and state the assumption at the top of the prototype.</p>
+<h4>Rules that apply to both</h4>
+<ol>
+<li><strong>Throwaway from day one, and clearly marked as such.</strong> Locate the prototype code close to where it will actually be used (next to the module or page it's prototyping for) so context is obvious, but name it so a casual reader can see it's a prototype, not production. For throwaway UI routes, obey whatever routing convention the project already uses; don't invent a new top-level structure.</li>
+<li><strong>Trivial to run.</strong> A UI prototype starts from one command in the project's task runner: <code>pnpm &lt;name&gt;</code>, <code>python &lt;path&gt;</code>, <code>bun &lt;path&gt;</code>, etc. A logic demo is a single HTML file the user double-clicks. Either way, no thinking required to start it.</li>
+<li><strong>No persistence by default.</strong> State lives in memory. Persistence is the thing the prototype is <em>checking</em>, not something it should depend on. If the question explicitly involves a database, hit a scratch DB or a local file with a clear &quot;PROTOTYPE, wipe me&quot; name.</li>
+<li><strong>Skip the polish.</strong> No tests, no error handling beyond what makes the prototype <em>runnable</em>, no abstractions. The point is to learn something fast.</li>
+<li><strong>Surface the state.</strong> After every action (logic) or on every variant switch (UI), print or render the full relevant state so the user can see what changed.</li>
+<li><strong>Capture it when done.</strong> Fold any validated decision into the real code, then capture the prototype itself as a <strong>primary source</strong>: commit it to a throwaway branch, out of main, and leave a context pointer to that branch on the implementation issue. Capture the answer too (the verdict and the question it settled) in the issue or a commit. The main branch keeps only the validated decision.</li>
+</ol>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

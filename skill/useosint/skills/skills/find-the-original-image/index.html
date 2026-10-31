@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>find-the-original-image · Gem Skills</title>
+    <meta name="description" content="Use it when: you need to know where a picture came from: a profile photo, a viral image, a product shot or a frame of a video. It does: reverse-searches it on Yandex, Google Lens, Bing, TinEye and Baidu, crops and mirrors it to search again, then reads the earliest pages found. You get: the earliest known copy, with its photographer, caption and date, graded from &quot;confirmed original source&quot; down to &quot;unconfirmed&quot;. Unlike is-this-photo-real: it finds where an image was published, not whether its pixels were edited or generated. Face search: engines like PimEyes only with written authorization or a protective purpose, such as a fraud case or checking your own face, never to name a stranger." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=useosint%2Fskills">useosint/skills</a></p>
+      <h1>find-the-original-image</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you need to know where a picture came from: a profile photo, a viral image, a product shot or a frame of a video</dd></div><div><dt>It does</dt><dd>reverse-searches it on Yandex, Google Lens, Bing, TinEye and Baidu, crops and mirrors it to search again, then reads the earliest pages found</dd></div><div><dt>You get</dt><dd>the earliest known copy, with its photographer, caption and date, graded from &#34;confirmed original source&#34; down to &#34;unconfirmed&#34;</dd></div><div><dt>Unlike is-this-photo-real</dt><dd>it finds where an image was published, not whether its pixels were edited or generated</dd></div><div><dt>Face search</dt><dd>engines like PimEyes only with written authorization or a protective purpose, such as a fraud case or checking your own face, never to name a stranger</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The goal isn&#39;t a match but the earliest publication, because that page names the photographer, the date and the caption. The agent picks engines by what the picture shows: Yandex for faces and for places outside North America and Western Europe, Google Lens for products, landmarks and text in the image, Bing for searching one region of a cluttered photo, TinEye for sorting copies oldest first, Baidu for Chinese content. It runs at least three, then crops to one unusual detail such as a sign, logo or tattoo, mirrors the image, and searches each version again. For video it searches stills taken from it. It opens every hit to collect credits, captions, dates and file names, and checks a page&#39;s date against web archives. No results counts as no evidence either way, and a headshot found on many unrelated sites is flagged as a stock photo, often the sign of a fake profile. It archives each hit before it disappears, and sends suspected fakes on to is-this-photo-real.</p>
+      <p class="muted">Summarizes <a href="https://github.com/useosint/skills/tree/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/find-the-original-image">the skill at 06243a5</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/useosint/skills --skill find-the-original-image</code><button type="button" class="copy" data-copy="npx skills add https://github.com/useosint/skills --skill find-the-original-image">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/useosint/skills/find-the-original-image">skills.sh page</a> · <a href="https://github.com/useosint/skills/tree/HEAD/skills/find-the-original-image">Source on GitHub</a> · <a href="/gemskills/?repo=useosint%2Fskills">All skills from useosint/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>56,446 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>38 <span class="muted">useosint/skills</span></dd></div><div><dt>First seen</dt><dd>Aug 2, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">35</div>
+      <div class="stat-delta">-99% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 3,297; week to Aug 10: 13,562; week to Aug 17: 39,451; week to Aug 24: 22; week to Aug 31: 30; week to Sep 7: 23; week to Sep 14: 26; week to Sep 21: 35. Use the left and right arrow keys to read each week."
+        data-values="3297,13562,39451,22,30,23,26,35" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,46.3 38.6,34.9 71.1,6.0 103.7,50.0 136.3,50.0 168.9,50.0 201.4,50.0 234.0,50.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="50.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>3,297</td></tr><tr><td>Aug 10</td><td>13,562</td></tr><tr><td>Aug 17</td><td>39,451</td></tr><tr><td>Aug 24</td><td>22</td></tr><tr><td>Aug 31</td><td>30</td></tr><tr><td>Sep 7</td><td>23</td></tr><tr><td>Sep 14</td><td>26</td></tr><tr><td>Sep 21</td><td>35</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:osint" data-facet="category" title="Investigate people, images and leaks from public sources." href="/gemskills/?tag=category%3Aosint">category:osint</a></div>
+          <p class="tag-meaning">Investigate people, images and leaks from public sources.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="osint" data-facet="topic" href="/gemskills/?tag=osint">osint</a><a class="tag" data-tag="image" data-facet="topic" href="/gemskills/?tag=image">image</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:dual-use" data-facet="flag" title="Legitimate uses exist, but the same capability can evade bot detection or investigate other people. Read the SKILL.md before installing." href="/gemskills/?tag=flag%3Adual-use">flag:dual-use</a></div>
+          <p class="tag-meaning">Legitimate uses exist, but the same capability can evade bot detection or investigate other people. Read the SKILL.md before installing.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/find-the-original-image/SKILL.md">useosint/skills at 06243a5</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: find-the-original-image
+description: &#62;-
+  Reverse image search across Yandex, Google Lens, Bing Visual Search, TinEye and Baidu to
+  find where a picture came from and who published it first. Use when reverse image searching,
+  identifying a photo, face, logo, product, uniform or building, tracing a profile picture or
+  avatar, finding the oldest copy of an image, checking whether a photo is stock or a repost,
+  or reverse-searching a video by keyframes. Applies to romance and investment scam
+  investigation, fake-profile and synthetic-identity detection, disinformation and media
+  verification, counterfeit and brand-infringement work, and insurance claim review. Reference
+  at useosint.com/skills/find-the-original-image.
+</code></pre></details>
+        <div class="markdown"><h3>Find the original image</h3>
+<p>The goal is almost never &quot;find a match&quot;. It is <strong>find the earliest publication
+and read its page</strong>. A match tells you the image exists elsewhere; the earliest
+page tells you the photographer, the date, the caption, and the names — which is
+what you actually pivot on.</p>
+<p>The beginner mistake: uploading the full frame to one engine, getting nothing,
+and concluding the image is unindexed. Cropping to one distinctive object and
+re-searching finds things full-frame search cannot.</p>
+<h4>Pick your engine by what you are holding</h4>
+<table>
+<thead>
+<tr>
+<th>You have</th>
+<th>Start with</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A face</td>
+<td>Yandex</td>
+<td>Its index is built around facial similarity, so it returns different people who look alike <em>and</em> the same person in other photographs. No other general engine does this.</td>
+</tr>
+<tr>
+<td>A face, and Yandex fails</td>
+<td>A dedicated face engine (see below)</td>
+<td>Only after you have cleared the legal and consent questions.</td>
+</tr>
+<tr>
+<td>A street scene outside North America / Western Europe</td>
+<td>Yandex</td>
+<td>Deeply indexed Russian, Central Asian, Eastern European, Turkish and Chinese web content that Google under-crawls.</td>
+</tr>
+<tr>
+<td>A product, book cover, artwork, plant, animal</td>
+<td>Google Lens</td>
+<td>Object and entity recognition, tied to Shopping and Knowledge Graph.</td>
+</tr>
+<tr>
+<td>Text inside the image</td>
+<td>Google Lens</td>
+<td>It OCRs the frame and lets you search the extracted string. Often the text is the answer and the image search is irrelevant.</td>
+</tr>
+<tr>
+<td>A landmark or a well-known building</td>
+<td>Google Lens</td>
+<td>Landmark classification is its strongest single feature.</td>
+</tr>
+<tr>
+<td>A specific region of a cluttered photo</td>
+<td>Bing Visual Search</td>
+<td>Draw a box on the uploaded image and it re-searches only that region — the fastest crop-and-retry loop of any engine.</td>
+</tr>
+<tr>
+<td>A press photo, meme, or anything you suspect is old</td>
+<td>TinEye</td>
+<td>The only major engine that sorts by oldest and that reliably surfaces <em>modified</em> copies.</td>
+</tr>
+<tr>
+<td>Chinese-language or China-hosted content</td>
+<td>Baidu image search</td>
+<td>Coverage the others simply do not have.</td>
+</tr>
+</tbody>
+</table>
+<p>Run at least three. They disagree constantly, and that disagreement is
+information: TinEye finding an exact copy from years back while Lens finds only
+recent reposts is the signature of recycled media.</p>
+<h5>What each engine is actually doing</h5>
+<p><strong>Yandex</strong> matches on visual similarity with a strong face component. Its results
+page groups &quot;sites containing this image&quot; separately from &quot;similar images&quot; —
+only the first group is evidence. It tolerates crops, rotation and heavy
+recompression better than the others.</p>
+<p><strong>Google Lens</strong> has moved away from whole-image duplicate matching toward &quot;what
+is this, and what can I sell you&quot;. For provenance work use the option that lists
+pages containing the image rather than the visual-match carousel, and expect it
+to return visually similar but unrelated photos as if they were matches.</p>
+<p><strong>Bing Visual Search</strong> sits between the two. Its region-select tool is the reason
+to use it: no download, crop, re-upload cycle.</p>
+<p><strong>TinEye</strong> is crawl-based and comparatively small — plenty of images return zero
+results, and absence from TinEye proves nothing. What it does that nothing else
+does: exact and near-duplicate matching with the ability to sort by oldest, and
+detection of copies that have been cropped, colour-shifted or watermarked, which
+it will show you side by side against your input.</p>
+<h4>Method</h4>
+<ol>
+<li><strong>Fix the input.</strong> Get the highest-resolution copy you can — the file itself,
+not a screenshot of it. Screenshots add a resize and a recompression that cost
+you matches. Strip nothing yet; run <code>secrets-in-file-metadata</code> on the original
+before you start editing copies.</li>
+<li><strong>Full frame, all engines.</strong> Cheap, sometimes instant.</li>
+<li><strong>Crop and re-search.</strong> This is the highest-yield step in the whole skill. A
+full frame's fingerprint is dominated by the background; crop tightly to the
+face, the sign, the logo, the vehicle, the tattoo, the building corner, and
+search each crop separately. Reposts get cropped and re-framed, so the crop
+often matches when the frame does not.</li>
+<li><strong>Flip horizontally.</strong> Mirroring is a routine way to dodge automated matching
+and a routine artifact of screen-recording and video reposting. Flip and
+re-run the same engines.</li>
+<li><strong>Preprocess and retry</strong> on low-quality inputs — upscale, denoise, correct
+levels. See <a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/find-the-original-image/reference/preprocessing.md">reference/preprocessing.md</a>.</li>
+<li><strong>For video</strong>, extract keyframes and search them as stills. Search a frame
+from the start, the middle and the end, plus any frame containing a sign or a
+face. A keyframe hit is usually what breaks a video case.</li>
+<li><strong>Sort for oldest.</strong> On TinEye, sort by oldest. Then treat that date as a
+ceiling, not an answer, and go to step 8.</li>
+<li><strong>Read the match pages.</strong> Open them. Harvest: photographer credit, agency,
+caption, named people, on-page date, filename in the image URL (often
+<code>2019-04-city-event-03.jpg</code>), and any surrounding article text. This is where
+the selectors are.</li>
+</ol>
+<h4>Establishing first publication, not just a match</h4>
+<p>An earliest-known-copy date is a claim about your search coverage, not about the
+world. To harden it:</p>
+<ul>
+<li>Check the match page's own date against <code>read-deleted-pages</code> — the archive's
+first capture of the URL bounds when the page really existed, and the page's
+displayed date can be back- or forward-dated by its CMS.</li>
+<li>Use date-restricted search operators via <code>google-like-a-spy</code> to look for
+earlier text mentions of the same event or caption.</li>
+<li>Look for the same image at a larger resolution. The largest version is usually
+closest to the source; a wire agency's copy will be bigger than a Twitter
+repost of it. TinEye's biggest-image sort is useful here.</li>
+<li>Check the obvious stock libraries. A photo credited to three different news
+events in three countries is stock, and the &quot;original&quot; is a licensing page.</li>
+<li>Watermarks and agency slugs in the frame beat any index. Crop the watermark and
+search that alone.</li>
+</ul>
+<h4>Face-specific engines and when not to use them</h4>
+<p>PimEyes and FaceCheck.ID crawl the open web for faces and match on biometric
+similarity. They find people that no general engine will. They also carry real
+exposure:</p>
+<ul>
+<li>A facial template is <strong>biometric data</strong> under GDPR Article 9 — a special
+category needing an explicit lawful basis, not just a legitimate interest.
+Illinois BIPA and Texas CUBI create private rights of action and statutory
+damages for collecting biometric identifiers without written consent.</li>
+<li>PimEyes' own terms position it as a tool to search for <strong>your own</strong> face and
+offer an opt-out. Running a third party's face through it is against those
+terms regardless of your intent.</li>
+<li>Search4Faces indexes faces from Russian social platforms and is the practical
+option when a subject's footprint is VK or Odnoklassniki.</li>
+</ul>
+<p>Use face search when you have a documented authorization or a legitimate
+protective purpose — verifying a counterparty in a fraud case, identity
+verification with the subject's consent, missing-persons work, or checking your
+own exposure. Do not use it to identify a stranger from a photo, to attach a name
+to a face in a protest crowd, or to locate a private individual. Note in the case
+file that you ran it and why. And treat a face-engine hit as <strong>unconfirmed</strong> on
+its own — look-alike false positives are common and the engine gives you no
+reasoning to audit.</p>
+<h4>Where this goes wrong</h4>
+<ul>
+<li><strong>Similar is not same.</strong> Every engine mixes &quot;pages with this image&quot; and
+&quot;images that look like this&quot; into one visual grid. Only the first is evidence.
+Confirm a candidate by opening it and comparing pixel-level detail — a hand
+position, a fold in cloth, a reflection.</li>
+<li><strong>Absence is the default, not a finding.</strong> Non-indexed, freshly published,
+login-walled, and app-only images return nothing. &quot;No results across four
+engines&quot; means the image is not in those indexes, which is weak evidence for
+originality and no evidence at all of authenticity.</li>
+<li><strong>Stock photography poisons attribution.</strong> A &quot;CEO&quot; headshot that appears on
+forty unrelated sites is a stock model, and the entity using it is probably
+fake — that itself is a finding, and a good one.</li>
+<li><strong>AI-generated images have no origin to find.</strong> Zero matches plus generative
+tells is a distinct outcome; hand it to <code>is-this-photo-real</code> rather than
+concluding the photo is an unpublished original.</li>
+<li><strong>Engines rewrite history.</strong> Results are not reproducible: indexes drop pages,
+results reorder, and the hit you found last week may be gone. Screenshot the
+results page and archive the match URL the moment you find it.</li>
+<li><strong>Crops mislead in the other direction.</strong> A crop of grass or sky returns
+thousands of confident, meaningless matches. Crop to what is <em>unusual</em>, not
+merely present.</li>
+<li><strong>You may be leaking.</strong> Uploading a client's image to a commercial engine
+discloses it to that vendor and may deanonymise your interest. For sensitive
+material, search a crop that omits identifying detail — or don't search. See
+<code>investigate-without-getting-made</code>.</li>
+</ul>
+<h4>Confidence grading</h4>
+<ul>
+<li><strong>Confirmed original source</strong> — you have a page that pre-dates every other copy
+found, hosted by a plausible originator (the photographer, the agency, the
+subject's own account), with an on-page date corroborated by an independent
+archive capture, and no larger or earlier version exists.</li>
+<li><strong>Probable</strong> — earliest copy is consistent across engines and the host is
+plausible, but the date rests only on the page's own claim, or the archive has
+no capture from that period.</li>
+<li><strong>Match only</strong> — you can show the image appeared at a given URL by a given
+date. Say exactly that. Do not upgrade it to &quot;the original&quot;.</li>
+<li><strong>Unconfirmed</strong> — visual similarity without pixel-level verification, or a
+face-engine hit, or a single engine's result you could not reproduce.</li>
+</ul>
+<h4>Worked example</h4>
+<p>An account posts a photo captioned &quot;police raid this morning, [city]&quot;.</p>
+<p>Full frame in Lens: nothing but generic riot-police stock. Yandex: a dozen
+similar police photos, none matching. TinEye: no results — which I note as
+uninformative, since TinEye's index is small.</p>
+<p>Crop to the shoulder patch and re-search in Bing using region select. It reads as
+a municipal force from a different country than the caption claims.</p>
+<p>Crop the shop sign in the background, OCR it in Lens, and search the business
+name as text. Two hits, both a street in that other country. Dead end on the
+image search itself — but the <em>text</em> pivot lands it.</p>
+<p>Back to Yandex with the storefront crop: a news gallery from three years earlier,
+same street, same shop awning, same barrier arrangement. Photographer credited.
+Archive shows a capture of that gallery page two days after its stated date,
+which corroborates it.</p>
+<p>Conclusion: <strong>confirmed</strong> that this image was published years before the claimed
+event, in another country. Recontextualised, not fabricated. Hand the location to
+<code>geolocate-from-pixels</code> and the photographer credit to <code>find-anyone</code>.</p>
+<h4>Pivots</h4>
+<table>
+<thead>
+<tr>
+<th>What you got</th>
+<th>Send to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location, street scene, storefront</td>
+<td><code>geolocate-from-pixels</code></td>
+</tr>
+<tr>
+<td>Named people, photographer credit</td>
+<td><code>find-anyone</code></td>
+</tr>
+<tr>
+<td>Publishing site or agency domain</td>
+<td><code>who-owns-this-domain</code></td>
+</tr>
+<tr>
+<td>Match page that is gone or altered</td>
+<td><code>read-deleted-pages</code></td>
+</tr>
+<tr>
+<td>Caption text, business name, filename slug</td>
+<td><code>google-like-a-spy</code></td>
+</tr>
+<tr>
+<td>Suspected manipulation or generation</td>
+<td><code>is-this-photo-real</code></td>
+</tr>
+<tr>
+<td>Posting account, avatar reused elsewhere</td>
+<td><code>hunt-a-handle</code>, <code>pattern-of-life-from-socials</code></td>
+</tr>
+<tr>
+<td>Full photo/video geolocation case</td>
+<td><code>where-was-this-taken</code></td>
+</tr>
+</tbody>
+</table>
+<p>Engine-by-engine selection detail:
+<a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/find-the-original-image/reference/engine-matrix.md">reference/engine-matrix.md</a>.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

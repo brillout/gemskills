@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sentry-cli · Gem Skills</title>
+    <meta name="description" content="Views and manages Sentry issues and events from the command line." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=getsentry%2Fcli">getsentry/cli</a></p>
+      <h1>sentry-cli</h1>
+      <p class="lede">Views and manages Sentry issues and events from the command line.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://cli.sentry.dev</code><button type="button" class="copy" data-copy="npx skills add https://cli.sentry.dev">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/sentry/dev/sentry-cli">skills.sh page</a> · <a href="https://github.com/getsentry/cli/tree/HEAD/packages/cli/plugins/sentry-cli/skills/sentry-cli">Source on GitHub</a> · <a href="/gemskills/?repo=getsentry%2Fcli">All skills from getsentry/cli</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>145,559 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>First seen</dt><dd>Feb 28, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">3.5K</div>
+      <div class="stat-delta">-46% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 6,446; week to Aug 10: 4,195; week to Aug 17: 3,594; week to Aug 24: 3,156; week to Aug 31: 3,728; week to Sep 7: 3,544; week to Sep 14: 3,223; week to Sep 21: 3,461. Use the left and right arrow keys to read each week."
+        data-values="6446,4195,3594,3156,3728,3544,3223,3461" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,21.4 71.1,25.5 103.7,28.5 136.3,24.6 168.9,25.8 201.4,28.0 234.0,26.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="26.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>6,446</td></tr><tr><td>Aug 10</td><td>4,195</td></tr><tr><td>Aug 17</td><td>3,594</td></tr><tr><td>Aug 24</td><td>3,156</td></tr><tr><td>Aug 31</td><td>3,728</td></tr><tr><td>Sep 7</td><td>3,544</td></tr><tr><td>Sep 14</td><td>3,223</td></tr><tr><td>Sep 21</td><td>3,461</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:cloud" data-facet="category" title="Deploy, provision, observe and debug cloud apps." href="/gemskills/?tag=category%3Acloud">category:cloud</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Deploy, provision, observe and debug cloud apps.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="observability" data-facet="topic" href="/gemskills/?tag=observability">observability</a><a class="tag" data-tag="debugging" data-facet="topic" href="/gemskills/?tag=debugging">debugging</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:sentry" data-facet="stack" href="/gemskills/?tag=stack%3Asentry">stack:sentry</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/getsentry/cli/blob/3567c3c937b5cc06667d5b023bda0b2d3f472c54/packages/cli/plugins/sentry-cli/skills/sentry-cli/SKILL.md">getsentry/cli at 3567c3c</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: sentry-cli
+version: 0.46.0-dev.0
+description: Guide for using the Sentry CLI to interact with Sentry from the command line. Use when the user asks about viewing issues, events, projects, organizations, making API calls, or authenticating with Sentry via CLI.
+requires:
+  bins: [&#34;sentry&#34;]
+  auth: true</code></pre></details>
+        <div class="markdown"><h3>Sentry CLI Usage Guide</h3>
+<p>Help users interact with Sentry from the command line using the <code>sentry</code> CLI.</p>
+<blockquote>
+<p><strong>Core rule for agents: just run the command.</strong> The <code>sentry</code> CLI auto-detects your org and project (from <code>.sentryclirc</code>, DSNs in <code>.env</code>/source, and the directory name), so <strong>do not</strong> list organizations and then list their projects to work out which one this checkout maps to — that manual discovery only duplicates work the CLI already does on every command. Pass an explicit <code>&lt;org&gt;/&lt;project&gt;</code> only when the CLI reports it can't detect the target or picks the wrong one.</p>
+</blockquote>
+<h4>Agent Guidance</h4>
+<p>Best practices and operational guidance for AI coding agents using the Sentry CLI.</p>
+<h5>Key Principles</h5>
+<ul>
+<li><strong>Just run the command</strong> — the CLI handles authentication and org/project detection automatically. Don't pre-authenticate or look up org/project before running commands. The CLI prompts for login if needed.</li>
+<li><strong>Prefer CLI commands over raw API calls</strong> — the CLI has dedicated commands for most tasks. Reach for <code>sentry issue view</code>, <code>sentry issue list</code>, <code>sentry trace view</code>, etc. before constructing API calls manually or fetching external documentation.</li>
+<li><strong>Use <code>sentry docs</code> for setup questions</strong> — if you need to know how to configure a Sentry SDK or feature, run <code>sentry docs &quot;your question&quot;</code> to query the documentation directly. This is faster and more accurate than fetching docs externally.</li>
+<li><strong>Use <code>sentry schema</code> to explore the API</strong> — if you need to discover API endpoints, run <code>sentry schema</code> to browse interactively or <code>sentry schema &lt;resource&gt;</code> to search. This is faster than fetching OpenAPI specs externally.</li>
+<li><strong>Use <code>sentry issue view</code> to investigate issues</strong> — when asked about a specific issue (e.g., <code>CLI-G5</code>, <code>PROJECT-123</code>), use <code>sentry issue view</code> directly. Multiple IDs can be passed in one invocation: <code>sentry issue view A B C --json</code> returns an array of the same objects.</li>
+<li><strong>Use <code>--json</code> for machine-readable output</strong> — pipe through <code>jq</code> for filtering. Human-readable output includes formatting that is hard to parse.</li>
+<li><strong>The CLI auto-detects org/project — don't discover it yourself</strong> — most commands work without explicit targets by checking <code>.sentryclirc</code> config files, scanning for DSNs in <code>.env</code> files and source code, and matching directory names. Do <strong>not</strong> run <code>sentry org list</code> and then <code>sentry project list</code> to figure out which project this checkout belongs to — that manual fan-out just replicates the detection the CLI already runs on every command. Only specify <code>&lt;org&gt;/&lt;project&gt;</code> when the CLI reports it can't detect the target or detects the wrong one.</li>
+</ul>
+<h5>Design Principles</h5>
+<p>The <code>sentry</code> CLI follows conventions from well-known tools — if you're familiar with them, that knowledge transfers directly:</p>
+<ul>
+<li><strong><code>gh</code> (GitHub CLI) conventions</strong>: The <code>sentry</code> CLI uses the same <code>&lt;noun&gt; &lt;verb&gt;</code> command pattern (e.g., <code>sentry issue list</code>, <code>sentry org view</code>). Flags follow <code>gh</code> conventions: <code>--json</code> for machine-readable output, <code>--fields</code> to select specific fields, <code>-w</code>/<code>--web</code> to open in browser, <code>-q</code>/<code>--query</code> for filtering, <code>-n</code>/<code>--limit</code> for result count.</li>
+<li><strong><code>sentry api</code> mimics <code>curl</code></strong>: The <code>sentry api</code> command provides direct API access with a <code>curl</code>-like interface — <code>--method</code> for HTTP method, <code>--data</code> for request body, <code>--header</code> for custom headers. It handles authentication automatically. If you know how to call a REST API with <code>curl</code>, the same patterns apply.</li>
+</ul>
+<h5>Context Window Tips</h5>
+<ul>
+<li>Use <code>--json --fields</code> to select specific fields and reduce output size. Run <code>&lt;command&gt; --help</code> to see available fields. Example: <code>sentry issue list --json --fields shortId,title,priority,level,status</code></li>
+<li>Use <code>--json</code> when piping output between commands or processing programmatically</li>
+<li>Use <code>--limit</code> to cap the number of results (default is usually 10–100)</li>
+<li>Prefer <code>sentry issue view PROJECT-123</code> over listing and filtering manually</li>
+<li>Pass multiple issue IDs in one call (<code>sentry issue view A B C --json</code>) instead of looping <code>issue view</code> per ID</li>
+<li>Analyze multiple issues in one call (<code>sentry issue explain A B C --json</code>) instead of looping <code>issue explain</code> per ID</li>
+<li>Use <code>sentry api</code> for endpoints not covered by dedicated commands</li>
+</ul>
+<h5>Safety Rules</h5>
+<ul>
+<li>Always confirm with the user before running destructive commands: <code>project delete</code>, <code>trial start</code></li>
+<li>For mutations, verify the org/project context looks correct in the command output before proceeding with further changes</li>
+<li>Never store or log authentication tokens — the CLI manages credentials automatically</li>
+<li>If the CLI reports the wrong org/project, override with explicit <code>&lt;org&gt;/&lt;project&gt;</code> arguments</li>
+</ul>
+<h5>Exit Codes</h5>
+<p>The CLI uses semantic exit codes. Key ranges for agents:</p>
+<table>
+<thead>
+<tr>
+<th>Range</th>
+<th>Meaning</th>
+<th>Agent Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+<td>Proceed normally</td>
+</tr>
+<tr>
+<td>10–19</td>
+<td>Auth error</td>
+<td>Prompt user to run <code>sentry auth login</code></td>
+</tr>
+<tr>
+<td>20–29</td>
+<td>Input error</td>
+<td>Check command arguments and retry</td>
+</tr>
+<tr>
+<td>30–39</td>
+<td>API error</td>
+<td>Retry or report to user</td>
+</tr>
+<tr>
+<td>40–49</td>
+<td>Feature unavailable</td>
+<td>Inform user about plan/settings</td>
+</tr>
+<tr>
+<td>50–59</td>
+<td>Operation error</td>
+<td>Report to user</td>
+</tr>
+<tr>
+<td>60–69</td>
+<td>Command-specific</td>
+<td>Check stderr for details</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="https://github.com/getsentry/cli/blob/3567c3c937b5cc06667d5b023bda0b2d3f472c54/exit-codes/">Exit Codes</a> for the complete reference.</p>
+<h5>Workflow Patterns</h5>
+<h6>Investigate an Issue</h6>
+<pre><code class="language-bash"># 1. Find the issue (auto-detects org/project from DSN or config)
+sentry issue list --query &quot;is:unresolved&quot; --limit 5
+
+# 2. Get details. For agents, prefer --json — it includes the full issue plus
+# the latest event under `event`, so you get everything in one call.
+sentry issue view PROJECT-123 --json
+
+# 3. Get AI root cause analysis
+sentry issue explain PROJECT-123
+
+# 4. Get a fix plan
+sentry issue plan PROJECT-123
+</code></pre>
+<p><code>sentry issue view &lt;SHORT-ID&gt; --json</code> is the fastest way to get an agent up to
+speed on an issue. Select just the fields you need with <code>--fields</code> instead of
+consuming the whole payload — the latest event's <code>request</code> entry can carry live
+session data (cookies, headers, body), so extract named fields rather than
+dumping the entire object:</p>
+<pre><code class="language-bash"># Top-level issue fields
+sentry issue view PROJECT-123 --json --fields shortId,title,culprit,count,userCount,permalink
+
+# Named fields from the latest event — avoids pulling the full request/session blob
+sentry issue view PROJECT-123 --json --fields event.id,event.title,event.dateCreated
+
+# Just the request URL and method (not the whole request entry). Event data
+# lives under event.entries[], each tagged with a `type` and `data` payload.
+sentry issue view PROJECT-123 --json | jq '.event.entries[] | select(.type == &quot;request&quot;) | .data | {url, method}'
+</code></pre>
+<h6>Explore Traces and Performance</h6>
+<pre><code class="language-bash"># 1. List recent traces (auto-detects org/project)
+sentry trace list --limit 5
+
+# 2. View a specific trace with span tree
+sentry trace view abc123def456...
+
+# 3. View spans for a trace
+sentry span list abc123def456...
+
+# 4. View logs associated with a trace
+sentry trace logs abc123def456...
+</code></pre>
+<h6>Stream Logs</h6>
+<pre><code class="language-bash"># Stream logs in real-time (auto-detects org/project)
+sentry log list --follow
+
+# Filter logs by severity
+sentry log list --query &quot;severity:error&quot;
+</code></pre>
+<h6>Capture Events Locally (Spotlight)</h6>
+<pre><code class="language-bash"># Run the app with the local server auto-enabled; tail errors/traces/logs.
+# No DSN needed — with no DSN, events go ONLY to the local server (nothing
+# reaches the user's Sentry org, no production quota). With a DSN set, the
+# SDK sends to both.
+sentry local run -- npm run dev          # or: python manage.py runserver, etc.
+
+# From a CLI source checkout, run the Local UI in a second terminal, then open it.
+pnpm --filter local dev
+sentry local run --open -- npm run dev
+
+# Watch only AI/agent (gen_ai, mcp) spans while iterating on an agent.
+sentry local -f ai
+
+# Server-side SDKs read SENTRY_SPOTLIGHT automatically. The CLI also injects
+# the URL under every framework client prefix (NEXT_PUBLIC_, VITE_, PUBLIC_,
+# NUXT_PUBLIC_, REACT_APP_, VUE_APP_, GATSBY_). Until the browser SDK reads
+# these automatically (getsentry/sentry-javascript#18198), reference the var
+# matching your framework in the client config:
+# Sentry.init({ spotlight: process.env.NEXT_PUBLIC_SENTRY_SPOTLIGHT ?? false })
+</code></pre>
+<h6>Query Sentry Documentation</h6>
+<pre><code class="language-bash"># Ask a documentation question
+sentry docs &quot;How do I configure tracing in Next.js?&quot;
+
+# Search the documentation index
+sentry docs list &quot;source maps&quot;
+</code></pre>
+<h6>Check Sentry Service Status</h6>
+<pre><code class="language-bash"># Show current status of Sentry services
+sentry status
+
+# Machine-readable status
+sentry status --json
+</code></pre>
+<h6>Explore the API Schema</h6>
+<pre><code class="language-bash"># Browse all API resource categories
+sentry schema
+
+# Search for endpoints related to a resource
+sentry schema issues
+
+# Get details about a specific endpoint
+sentry schema &quot;GET /api/0/organizations/{organization_id_or_slug}/issues/&quot;
+</code></pre>
+<h6>Manage Releases</h6>
+<pre><code class="language-bash"># Create a release — version must match Sentry.init({ release }) exactly
+sentry release create my-org/1.0.0 --project my-project
+
+# Associate commits via repository integration (needs local git checkout)
+sentry release set-commits my-org/1.0.0 --auto
+
+# Or read commits from local git history (no integration needed)
+sentry release set-commits my-org/1.0.0 --local
+
+# Mark the release as finalized
+sentry release finalize my-org/1.0.0
+
+# Record a production deploy
+sentry release deploy my-org/1.0.0 production
+</code></pre>
+<p><strong>Key details:</strong></p>
+<ul>
+<li>The positional is <code>&lt;org-slug&gt;/&lt;version&gt;</code>. In <code>sentry release create sentry/1.0.0</code>, <code>sentry</code> is the org and <code>1.0.0</code> is the version — the slash separates org from version, it is not part of the version string.</li>
+<li>The <strong>version</strong> must match the <code>release</code> value in <code>Sentry.init()</code>. If your SDK uses <code>&quot;1.0.0&quot;</code>, the command must use <code>org/1.0.0</code>.</li>
+<li><code>--auto</code> requires a Sentry repository integration (GitHub/GitLab/Bitbucket) <strong>and</strong> a local git checkout. It matches your <code>origin</code> remote against Sentry's repo list. Without a checkout, use <code>--local</code>.</li>
+<li>With no flag, <code>set-commits</code> tries <code>--auto</code> first and falls back to <code>--local</code> on failure.</li>
+</ul>
+<h6>View Agent Conversations</h6>
+<pre><code class="language-bash"># List recent agent conversations (org auto-detected)
+sentry agent-conversation list
+
+# Explicit org, last 24 hours
+sentry agent-conversation list my-org --period 24h
+
+# View a conversation transcript
+sentry agent-conversation view my-org/conv-123
+
+# JSON output for programmatic access
+sentry agent-conversation view conv-123 --json
+</code></pre>
+<h6>Process WebAssembly Modules</h6>
+<pre><code class="language-bash"># Add a build id to a wasm module (no auth required)
+sentry wasm-split app.wasm
+
+# Capture the build id for a later debug-files upload
+BUILD_ID=$(sentry wasm-split app.wasm)
+
+# Split debug data into a companion and strip the shipped binary
+sentry wasm-split app.wasm --debug-out app.debug.wasm --strip
+</code></pre>
+<h6>Arbitrary API Access</h6>
+<pre><code class="language-bash"># GET request (default)
+sentry api /api/0/organizations/my-org/
+
+# POST request with data
+sentry api /api/0/organizations/my-org/projects/ --method POST --data '{&quot;name&quot;:&quot;new-project&quot;,&quot;platform&quot;:&quot;python&quot;}'
+</code></pre>
+<h5>Dashboard Layout</h5>
+<p>Sentry dashboards use a <strong>6-column grid</strong>. When adding widgets, aim to fill complete rows (widths should sum to 6).</p>
+<p>Display types with default sizes:</p>
+<table>
+<thead>
+<tr>
+<th>Display Type</th>
+<th>Width</th>
+<th>Height</th>
+<th>Category</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>big_number</code></td>
+<td>2</td>
+<td>1</td>
+<td>common</td>
+<td>Compact KPI — place 3 per row (2+2+2=6)</td>
+</tr>
+<tr>
+<td><code>line</code></td>
+<td>3</td>
+<td>2</td>
+<td>common</td>
+<td>Half-width chart — place 2 per row (3+3=6)</td>
+</tr>
+<tr>
+<td><code>area</code></td>
+<td>3</td>
+<td>2</td>
+<td>common</td>
+<td>Half-width chart — place 2 per row</td>
+</tr>
+<tr>
+<td><code>bar</code></td>
+<td>3</td>
+<td>2</td>
+<td>common</td>
+<td>Half-width chart — place 2 per row</td>
+</tr>
+<tr>
+<td><code>table</code></td>
+<td>6</td>
+<td>2</td>
+<td>common</td>
+<td>Full-width — always takes its own row</td>
+</tr>
+<tr>
+<td><code>stacked_area</code></td>
+<td>3</td>
+<td>2</td>
+<td>specialized</td>
+<td>Stacked area chart</td>
+</tr>
+<tr>
+<td><code>top_n</code></td>
+<td>3</td>
+<td>2</td>
+<td>specialized</td>
+<td>Top N ranked list</td>
+</tr>
+<tr>
+<td><code>categorical_bar</code></td>
+<td>3</td>
+<td>2</td>
+<td>specialized</td>
+<td>Categorical bar chart</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>3</td>
+<td>2</td>
+<td>specialized</td>
+<td>Static text/markdown widget</td>
+</tr>
+<tr>
+<td><code>details</code></td>
+<td>3</td>
+<td>2</td>
+<td>internal</td>
+<td>Detail view</td>
+</tr>
+<tr>
+<td><code>wheel</code></td>
+<td>3</td>
+<td>2</td>
+<td>internal</td>
+<td>Pie/wheel chart</td>
+</tr>
+<tr>
+<td><code>rage_and_dead_clicks</code></td>
+<td>3</td>
+<td>2</td>
+<td>internal</td>
+<td>Rage/dead click visualization</td>
+</tr>
+<tr>
+<td><code>server_tree</code></td>
+<td>3</td>
+<td>2</td>
+<td>internal</td>
+<td>Hierarchical tree display</td>
+</tr>
+<tr>
+<td><code>agents_traces_table</code></td>
+<td>3</td>
+<td>2</td>
+<td>internal</td>
+<td>Agents traces table</td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong>common</strong> types for general dashboards. Use <strong>specialized</strong> only when specifically requested. Avoid <strong>internal</strong> types unless the user explicitly asks.</p>
+<p>Available datasets: <code>spans</code> (default), <code>errors</code>, <code>metrics</code>, <code>issue</code>, <code>logs</code>. Run <code>sentry dashboard widget --help</code> for dataset descriptions, query formats, and examples.</p>
+<p><strong>Row-filling examples:</strong></p>
+<pre><code class="language-bash"># 3 KPIs filling one row (2+2+2 = 6)
+sentry dashboard widget add &lt;dashboard&gt; &quot;Error Count&quot; --display big_number --query count
+sentry dashboard widget add &lt;dashboard&gt; &quot;P95 Duration&quot; --display big_number --query p95:span.duration
+sentry dashboard widget add &lt;dashboard&gt; &quot;Throughput&quot; --display big_number --query epm
+
+# 2 charts filling one row (3+3 = 6)
+sentry dashboard widget add &lt;dashboard&gt; &quot;Errors Over Time&quot; --display line --query count
+sentry dashboard widget add &lt;dashboard&gt; &quot;Latency Over Time&quot; --display line --query p95:span.duration
+
+# Full-width table (6 = 6)
+sentry dashboard widget add &lt;dashboard&gt; &quot;Top Endpoints&quot; --display table \
+  --query count --query p95:span.duration \
+  --group-by transaction --sort -count --limit 10
+</code></pre>
+<h5>Quick Reference</h5>
+<h6>Time filtering</h6>
+<p>Use <code>--period</code> (alias: <code>-t</code>) to filter by time window:</p>
+<pre><code class="language-bash">sentry trace list --period 1h
+sentry span list --period 24h
+sentry span list -t 7d
+</code></pre>
+<h6>Scoping to an org or project</h6>
+<p>Org and project are positional arguments following <code>gh</code> CLI conventions:</p>
+<pre><code class="language-bash">sentry trace list my-org/my-project
+sentry issue list my-org/my-project
+sentry span list my-org/my-project/abc123def456...
+</code></pre>
+<h6>Listing spans in a trace</h6>
+<p>Pass the trace ID as a positional argument to <code>span list</code>:</p>
+<pre><code class="language-bash">sentry span list abc123def456...
+sentry span list my-org/my-project/abc123def456...
+</code></pre>
+<h6>Dataset names for the Events API</h6>
+<p>When querying the Events API (directly or via <code>sentry api</code>), valid dataset values are: <code>spans</code>, <code>logs</code>, <code>errors</code>, <code>tracemetrics</code>, <code>profile_functions</code>, and <code>uptime_results</code>.</p>
+<h5>Common Mistakes</h5>
+<ul>
+<li><strong>Wrong issue ID format</strong>: Use <code>PROJECT-123</code> (short ID), not the numeric ID <code>123456789</code>. The short ID includes the project prefix.</li>
+<li><strong>Pre-authenticating unnecessarily</strong>: Don't run <code>sentry auth login</code> before every command. The CLI detects missing/expired auth and prompts automatically. Only run <code>sentry auth login</code> if you need to switch accounts.</li>
+<li><strong>Missing <code>--json</code> for piping</strong>: Human-readable output includes formatting. Use <code>--json</code> when parsing output programmatically.</li>
+<li><strong>Specifying org/project when not needed</strong>: Auto-detection resolves org/project from <code>.sentryclirc</code> config files, DSNs, env vars, and directory names. Let it work first — only add <code>&lt;org&gt;/&lt;project&gt;</code> if the CLI says it can't detect the target or detects the wrong one.</li>
+<li><strong>Manually discovering the project before running a command</strong>: Don't list the orgs you belong to, then list every project in each, to match the local checkout to a project — the CLI already does exactly this resolution internally on each command. Skip the fan-out and run the command directly; correct the target afterwards only if the output shows the wrong org/project.</li>
+<li><strong>Confusing <code>--query</code> syntax</strong>: The <code>--query</code> flag uses Sentry search syntax (e.g., <code>is:unresolved</code>, <code>assigned:me</code>), not free text search.</li>
+<li><strong>Not using <code>--web</code></strong>: View commands support <code>-w</code>/<code>--web</code> to open the resource in the browser — useful for sharing links.</li>
+<li><strong>Fetching API schemas instead of using the CLI</strong>: Prefer <code>sentry schema</code> to browse the API and <code>sentry api</code> to make requests — the CLI handles authentication and endpoint resolution, so there's rarely a need to download OpenAPI specs separately.</li>
+<li><strong>Fetching Sentry docs externally</strong>: Use <code>sentry docs &quot;your question&quot;</code> to query Sentry's documentation from the CLI — this returns concise answers with source links, without needing to fetch or parse documentation pages.</li>
+<li><strong>Release version mismatch</strong>: The <code>org/version</code> positional is <code>&lt;org-slug&gt;/&lt;version&gt;</code>, where <code>org/</code> is the org, not part of the version. <code>sentry release create sentry/1.0.0</code> creates version <code>1.0.0</code> in org <code>sentry</code>. If your <code>Sentry.init()</code> uses <code>release: &quot;1.0.0&quot;</code>, this is correct. Don't double-prefix like <code>sentry/myapp/1.0.0</code>.</li>
+<li><strong>Running <code>set-commits --auto</code> without a git checkout</strong>: <code>--auto</code> needs a local git repo to discover the origin remote URL and HEAD commit. In CI, ensure <code>actions/checkout</code> with <code>fetch-depth: 0</code> runs before <code>set-commits --auto</code>.</li>
+<li><strong>Using <code>sentry api</code> when CLI commands suffice</strong>: <code>sentry issue list --json</code> and <code>sentry issue view --json</code> already include <code>shortId</code>, <code>title</code>, <code>count</code>, <code>userCount</code>, <code>priority</code>, <code>level</code>, <code>status</code>, <code>permalink</code>, and other fields at the top level. When using <code>--fields</code> to select specific fields like <code>count</code> or <code>userCount</code>, the CLI automatically ensures these fields are present in the API response. Use <code>--fields</code> to select specific fields and <code>--help</code> to see all available fields. Only fall back to <code>sentry api</code> for data the CLI doesn't expose.</li>
+</ul>
+<h4>Prerequisites</h4>
+<p>The CLI must be installed and authenticated before use.</p>
+<h5>Installation</h5>
+<pre><code class="language-bash">curl https://cli.sentry.dev/install -fsS | bash
+curl https://cli.sentry.dev/install -fsS | bash -s -- --version nightly
+
+# Or install via npm/pnpm/bun
+npm install -g sentry
+</code></pre>
+<h5>Authentication</h5>
+<pre><code class="language-bash">sentry auth
+sentry auth --token YOUR_SENTRY_API_TOKEN
+sentry auth status
+sentry auth logout
+</code></pre>
+<h4>Command Reference</h4>
+<h5>Auth</h5>
+<p>Authenticate with Sentry</p>
+<ul>
+<li><code>sentry auth login</code> — Authenticate with Sentry</li>
+<li><code>sentry auth logout</code> — Log out of Sentry</li>
+<li><code>sentry auth refresh</code> — Refresh your OAuth access token</li>
+<li><code>sentry auth status</code> — View authentication status</li>
+<li><code>sentry auth token</code> — Print the stored authentication token</li>
+<li><code>sentry auth whoami</code> — Show the currently authenticated identity</li>
+</ul>
+<p>→ Full flags and examples: <code>references/auth.md</code></p>
+<h5>Org</h5>
+<p>Work with Sentry organizations</p>
+<ul>
+<li><code>sentry org list</code> — List organizations</li>
+<li><code>sentry org view &lt;org&gt;</code> — View details of an organization</li>
+</ul>
+<p>→ Full flags and examples: <code>references/org.md</code></p>
+<h5>Project</h5>
+<p>Work with Sentry projects</p>
+<ul>
+<li><code>sentry project create [&lt;org&gt;/]&lt;name&gt;:&lt;platform&gt;...</code> — Create one or more projects</li>
+<li><code>sentry project delete &lt;org/project&gt;</code> — Delete a project</li>
+<li><code>sentry project list &lt;org/project&gt;</code> — List projects</li>
+<li><code>sentry project view &lt;org/project&gt;</code> — View details of a project</li>
+</ul>
+<p>→ Full flags and examples: <code>references/project.md</code></p>
+<h5>Issue</h5>
+<p>Manage Sentry issues</p>
+<ul>
+<li><code>sentry issue list &lt;org/project&gt;</code> — List issues in a project</li>
+<li><code>sentry issue events &lt;issue&gt;</code> — List events for a specific issue</li>
+<li><code>sentry issue explain &lt;issue...&gt;</code> — Analyze one or more issues using Seer AI</li>
+<li><code>sentry issue plan &lt;issue&gt;</code> — Generate a solution plan using Seer AI</li>
+<li><code>sentry issue view &lt;issue...&gt;</code> — View details of one or more issues</li>
+<li><code>sentry issue resolve &lt;issue&gt;</code> — Mark an issue as resolved</li>
+<li><code>sentry issue unresolve &lt;issue&gt;</code> — Reopen a resolved issue</li>
+<li><code>sentry issue archive &lt;issue&gt;</code> — Archive (ignore) an issue</li>
+<li><code>sentry issue merge &lt;issue...&gt;</code> — Merge 2+ issues into a single canonical group</li>
+</ul>
+<p>→ Full flags and examples: <code>references/issue.md</code></p>
+<h5>Event</h5>
+<p>View, list, and send Sentry events</p>
+<ul>
+<li><code>sentry event view &lt;org/project/event-id...&gt;</code> — View details of one or more events</li>
+<li><code>sentry event list &lt;issue&gt;</code> — List events for an issue</li>
+<li><code>sentry event send &lt;target-or-file...&gt;</code> — Send a Sentry event</li>
+</ul>
+<p>→ Full flags and examples: <code>references/event.md</code></p>
+<h5>API</h5>
+<p>Make an authenticated API request</p>
+<ul>
+<li><code>sentry api &lt;endpoint&gt;</code> — Make an authenticated API request</li>
+</ul>
+<p>→ Full flags and examples: <code>references/api.md</code></p>
+<h5>Alert</h5>
+<p>Manage Sentry alert rules</p>
+<ul>
+<li><code>sentry alert issues list &lt;org/project&gt;</code> — List issue alert rules</li>
+<li><code>sentry alert issues view &lt;org/project/rule-id-or-name&gt;</code> — View an issue alert rule</li>
+<li><code>sentry alert issues create &lt;target&gt;</code> — Create an issue alert rule</li>
+<li><code>sentry alert issues delete &lt;org/project/rule-id-or-name&gt;</code> — Delete an issue alert rule</li>
+<li><code>sentry alert issues edit &lt;org/project/rule-id-or-name&gt;</code> — Edit an issue alert rule</li>
+<li><code>sentry alert metrics list &lt;target&gt;</code> — List metric alert rules</li>
+<li><code>sentry alert metrics view &lt;org/rule-id-or-name&gt;</code> — View a metric alert rule</li>
+<li><code>sentry alert metrics create &lt;target&gt;</code> — Create a metric alert rule</li>
+<li><code>sentry alert metrics delete &lt;org/rule-id-or-name&gt;</code> — Delete a metric alert rule</li>
+<li><code>sentry alert metrics edit &lt;org/rule-id-or-name&gt;</code> — Edit a metric alert rule</li>
+</ul>
+<p>→ Full flags and examples: <code>references/alert.md</code></p>
+<h5>Build</h5>
+<p>Manage mobile build artifacts</p>
+<ul>
+<li><code>sentry build upload &lt;path...&gt;</code> — Upload builds to a project</li>
+<li><code>sentry build download &lt;build-id&gt;</code> — Download a build artifact</li>
+</ul>
+<p>→ Full flags and examples: <code>references/build.md</code></p>
+<h5>CLI</h5>
+<p>CLI-related commands</p>
+<ul>
+<li><code>sentry cli completion &lt;shell&gt;</code> — Print the shell completion script</li>
+<li><code>sentry cli defaults &lt;key value...&gt;</code> — View and manage default settings</li>
+<li><code>sentry cli feedback &lt;message...&gt;</code> — Send feedback about the CLI</li>
+<li><code>sentry cli fix</code> — Diagnose and repair CLI database issues</li>
+<li><code>sentry cli import</code> — Import settings from legacy .sentryclirc files</li>
+<li><code>sentry cli setup</code> — Configure shell integration</li>
+<li><code>sentry cli uninstall</code> — Uninstall Sentry CLI</li>
+<li><code>sentry cli upgrade &lt;version&gt;</code> — Update the Sentry CLI to the latest version</li>
+</ul>
+<p>→ Full flags and examples: <code>references/cli.md</code></p>
+<h5>Code-mappings</h5>
+<p>Manage code mappings for stack trace linking</p>
+<ul>
+<li><code>sentry code-mappings upload &lt;path&gt;</code> — Upload code mappings for stack trace linking</li>
+</ul>
+<p>→ Full flags and examples: <code>references/code-mappings.md</code></p>
+<h5>Agent-conversation</h5>
+<p>List and view agent conversations</p>
+<ul>
+<li><code>sentry agent-conversation list &lt;org/project&gt;</code> — List recent agent conversations</li>
+<li><code>sentry agent-conversation view &lt;org/conversation-id&gt;</code> — View an agent conversation transcript</li>
+</ul>
+<p>→ Full flags and examples: <code>references/agent-conversation.md</code></p>
+<h5>Dart-symbol-map</h5>
+<p>Work with Dart/Flutter symbol maps</p>
+<ul>
+<li><code>sentry dart-symbol-map upload &lt;path&gt;</code> — Upload a Dart/Flutter symbol map to Sentry</li>
+</ul>
+<p>→ Full flags and examples: <code>references/dart-symbol-map.md</code></p>
+<h5>Debug-files</h5>
+<p>Work with debug information files</p>
+<ul>
+<li><code>sentry debug-files check &lt;path&gt;</code> — Inspect a debug information file</li>
+<li><code>sentry debug-files find &lt;id...&gt;</code> — Locate debug files for given debug identifiers</li>
+<li><code>sentry debug-files upload &lt;path...&gt;</code> — Upload debug information files to Sentry</li>
+<li><code>sentry debug-files print-sources &lt;path&gt;</code> — List the source files a debug file references</li>
+<li><code>sentry debug-files bundle-sources &lt;path&gt;</code> — Bundle a debug file's source files for source context</li>
+<li><code>sentry debug-files bundle-jvm &lt;path&gt;</code> — Create a JVM source bundle for source context</li>
+</ul>
+<p>→ Full flags and examples: <code>references/debug-files.md</code></p>
+<h5>Dashboard</h5>
+<p>Manage Sentry dashboards</p>
+<ul>
+<li><code>sentry dashboard list &lt;org/title-filter...&gt;</code> — List dashboards</li>
+<li><code>sentry dashboard view &lt;org/project/dashboard...&gt;</code> — View a dashboard</li>
+<li><code>sentry dashboard create &lt;org/project/title...&gt;</code> — Create a dashboard</li>
+<li><code>sentry dashboard widget add &lt;org/project/dashboard/title...&gt;</code> — Add a widget to a dashboard</li>
+<li><code>sentry dashboard widget edit &lt;org/project/dashboard...&gt;</code> — Edit a widget in a dashboard</li>
+<li><code>sentry dashboard widget delete &lt;org/project/dashboard...&gt;</code> — Delete a widget from a dashboard</li>
+<li><code>sentry dashboard revisions &lt;org/dashboard...&gt;</code> — List dashboard revisions</li>
+<li><code>sentry dashboard restore &lt;org/dashboard...&gt;</code> — Restore a dashboard revision</li>
+</ul>
+<p>→ Full flags and examples: <code>references/dashboard.md</code></p>
+<h5>Docs</h5>
+<p>Search and query current Sentry documentation</p>
+<ul>
+<li><code>sentry docs list &lt;keywords...&gt;</code> — Find Sentry documentation pages by keyword</li>
+<li><code>sentry docs query &lt;question...&gt;</code> — Ask a cited question about Sentry documentation</li>
+</ul>
+<p>→ Full flags and examples: <code>references/docs.md</code></p>
+<h5>Platform</h5>
+<p>List valid Sentry platform identifiers</p>
+<ul>
+<li><code>sentry platform list</code> — List all valid Sentry platform identifiers</li>
+</ul>
+<p>→ Full flags and examples: <code>references/platform.md</code></p>
+<h5>Proguard</h5>
+<p>Work with ProGuard/R8 mapping files</p>
+<ul>
+<li><code>sentry proguard upload &lt;path...&gt;</code> — Upload ProGuard/R8 mapping files to Sentry</li>
+<li><code>sentry proguard uuid &lt;path&gt;</code> — Compute the UUID for a ProGuard mapping file</li>
+</ul>
+<p>→ Full flags and examples: <code>references/proguard.md</code></p>
+<h5>React-native</h5>
+<p>Upload React Native sourcemaps from build steps</p>
+<ul>
+<li><code>sentry react-native gradle</code> — Upload a React Native bundle + sourcemap (Gradle build step)</li>
+<li><code>sentry react-native xcode &lt;script-arg...&gt;</code> — Upload React Native sourcemaps (Xcode build step)</li>
+</ul>
+<p>→ Full flags and examples: <code>references/react-native.md</code></p>
+<h5>Replay</h5>
+<p>Search and inspect Session Replays</p>
+<ul>
+<li><code>sentry replay list &lt;org/project&gt;</code> — List recent Session Replays</li>
+<li><code>sentry replay view &lt;replay-id-or-url...&gt;</code> — View a Session Replay</li>
+</ul>
+<p>→ Full flags and examples: <code>references/replay.md</code></p>
+<h5>Release</h5>
+<p>Work with Sentry releases</p>
+<ul>
+<li><code>sentry release list &lt;org/project&gt;</code> — List releases with adoption and health metrics</li>
+<li><code>sentry release view &lt;org/version&gt;</code> — View release details with health metrics</li>
+<li><code>sentry release create &lt;org/version&gt;</code> — Create a release</li>
+<li><code>sentry release finalize &lt;org/version&gt;</code> — Finalize a release</li>
+<li><code>sentry release delete &lt;org/version&gt;</code> — Delete a release</li>
+<li><code>sentry release archive &lt;org/version&gt;</code> — Archive a release</li>
+<li><code>sentry release restore &lt;org/version&gt;</code> — Restore an archived release</li>
+<li><code>sentry release deploy &lt;org/version&gt; &lt;environment&gt; &lt;name&gt;</code> — Create a deploy for a release</li>
+<li><code>sentry release deploys &lt;org/version&gt;</code> — List deploys for a release</li>
+<li><code>sentry release set-commits &lt;org/version&gt;</code> — Set commits for a release</li>
+<li><code>sentry release propose-version</code> — Propose a release version</li>
+</ul>
+<p>→ Full flags and examples: <code>references/release.md</code></p>
+<h5>Repo</h5>
+<p>Work with Sentry repositories</p>
+<ul>
+<li><code>sentry repo list &lt;org/project&gt;</code> — List repositories</li>
+</ul>
+<p>→ Full flags and examples: <code>references/repo.md</code></p>
+<h5>Team</h5>
+<p>Work with Sentry teams</p>
+<ul>
+<li><code>sentry team list &lt;org/project&gt;</code> — List teams</li>
+</ul>
+<p>→ Full flags and examples: <code>references/team.md</code></p>
+<h5>Explore</h5>
+<p>Query aggregate event data (Explore)</p>
+<ul>
+<li><code>sentry explore &lt;target&gt;</code> — Query aggregate event data (Explore)</li>
+</ul>
+<p>→ Full flags and examples: <code>references/explore.md</code></p>
+<h5>Feedback</h5>
+<p>Search and inspect User Feedback</p>
+<ul>
+<li><code>sentry feedback list &lt;org/project&gt;</code> — List and search User Feedback</li>
+<li><code>sentry feedback view &lt;feedback&gt;</code> — View a User Feedback item</li>
+</ul>
+<p>→ Full flags and examples: <code>references/feedback.md</code></p>
+<h5>Log</h5>
+<p>View Sentry logs</p>
+<ul>
+<li><code>sentry log list &lt;org/project-or-trace-id...&gt;</code> — List logs from a project</li>
+<li><code>sentry log view &lt;org/project/log-id...&gt;</code> — View details of one or more log entries</li>
+</ul>
+<p>→ Full flags and examples: <code>references/log.md</code></p>
+<h5>Monitor</h5>
+<p>Work with Sentry cron monitors</p>
+<ul>
+<li><code>sentry monitor run &lt;monitor-slug command...&gt;</code> — Wrap a command with cron monitor check-ins</li>
+<li><code>sentry monitor list &lt;org/project&gt;</code> — List cron monitors</li>
+</ul>
+<p>→ Full flags and examples: <code>references/monitor.md</code></p>
+<h5>Snapshots</h5>
+<p>Manage and compare snapshots</p>
+<ul>
+<li><code>sentry snapshots diff &lt;base-dir&gt; &lt;head-dir&gt;</code> — Compare two directories of snapshot images</li>
+<li><code>sentry snapshots download</code> — Download baseline snapshot images</li>
+<li><code>sentry snapshots upload &lt;path&gt;</code> — Upload snapshots to a project</li>
+</ul>
+<p>→ Full flags and examples: <code>references/snapshots.md</code></p>
+<h5>Sourcemap</h5>
+<p>Manage sourcemaps</p>
+<ul>
+<li><code>sentry sourcemap inject &lt;directory&gt;</code> — Inject debug IDs into JavaScript files and sourcemaps</li>
+<li><code>sentry sourcemap upload &lt;directory&gt;</code> — Upload sourcemaps to Sentry</li>
+<li><code>sentry sourcemap resolve &lt;directory&gt;</code> — Resolve and report sourcemap linkage for JavaScript files</li>
+</ul>
+<p>→ Full flags and examples: <code>references/sourcemap.md</code></p>
+<h5>Span</h5>
+<p>List and view spans in projects or traces</p>
+<ul>
+<li><code>sentry span list &lt;org/project/trace-id...&gt;</code> — List spans in a project or trace</li>
+<li><code>sentry span view &lt;trace-id/span-id...&gt;</code> — View details of specific spans</li>
+</ul>
+<p>→ Full flags and examples: <code>references/span.md</code></p>
+<h5>Status</h5>
+<p>Check Sentry service status</p>
+<ul>
+<li><code>sentry status show</code> — Show Sentry service status</li>
+</ul>
+<p>→ Full flags and examples: <code>references/status.md</code></p>
+<h5>Trace</h5>
+<p>View distributed traces</p>
+<ul>
+<li><code>sentry trace list &lt;org/project&gt;</code> — List recent traces in a project</li>
+<li><code>sentry trace view &lt;org/project/trace-id...&gt;</code> — View details of a specific trace</li>
+<li><code>sentry trace logs &lt;org/project/trace-id...&gt;</code> — View logs associated with a trace</li>
+</ul>
+<p>→ Full flags and examples: <code>references/trace.md</code></p>
+<h5>Trial</h5>
+<p>Manage product trials</p>
+<ul>
+<li><code>sentry trial list &lt;org&gt;</code> — List product trials</li>
+<li><code>sentry trial start &lt;name&gt; &lt;org&gt;</code> — Start a product trial</li>
+</ul>
+<p>→ Full flags and examples: <code>references/trial.md</code></p>
+<h5>Init</h5>
+<p>Initialize Sentry in your project (experimental)</p>
+<ul>
+<li><code>sentry init &lt;target&gt; &lt;directory&gt;</code> — Initialize Sentry in your project (experimental)</li>
+</ul>
+<p>→ Full flags and examples: <code>references/init.md</code></p>
+<h5>Info</h5>
+<p>Print configuration and verify authentication</p>
+<ul>
+<li><code>sentry info</code> — Print configuration and verify authentication</li>
+</ul>
+<p>→ Full flags and examples: <code>references/info.md</code></p>
+<h5>Local</h5>
+<p>Sentry for local development</p>
+<ul>
+<li><code>sentry local serve</code> — Start the local dev server and tail events</li>
+<li><code>sentry local run &lt;command...&gt;</code> — Run a command with the local dev server enabled</li>
+</ul>
+<p>→ Full flags and examples: <code>references/local.md</code></p>
+<h5>Schema</h5>
+<p>Browse the Sentry API schema</p>
+<ul>
+<li><code>sentry schema &lt;resource...&gt;</code> — Browse the Sentry API schema</li>
+</ul>
+<p>→ Full flags and examples: <code>references/schema.md</code></p>
+<h5>Wasm-split</h5>
+<p>Add build ids to WebAssembly modules and split out debug data</p>
+<ul>
+<li><code>sentry wasm-split &lt;input&gt;</code> — Add build ids to WebAssembly modules and split out debug data</li>
+</ul>
+<p>→ Full flags and examples: <code>references/wasm-split.md</code></p>
+<h4>Global Options</h4>
+<p>All commands support the following global options:</p>
+<ul>
+<li><code>--help</code> - Show help for the command</li>
+<li><code>--version</code> - Show CLI version</li>
+<li><code>--log-level &lt;level&gt;</code> - Set log verbosity (<code>error</code>, <code>warn</code>, <code>log</code>, <code>info</code>, <code>debug</code>, <code>trace</code>). Overrides <code>SENTRY_LOG_LEVEL</code></li>
+<li><code>--verbose</code> - Shorthand for <code>--log-level debug</code></li>
+</ul>
+<h4>Output Formats</h4>
+<h5>JSON Output</h5>
+<p>Most list and view commands support <code>--json</code> flag for JSON output, making it easy to integrate with other tools:</p>
+<pre><code class="language-bash">sentry org list --json | jq '.[] | .slug'
+</code></pre>
+<h5>Opening in Browser</h5>
+<p>View commands support <code>-w</code> or <code>--web</code> flag to open the resource in your browser:</p>
+<pre><code class="language-bash">sentry issue view PROJ-123 -w
+</code></pre>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

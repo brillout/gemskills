@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superpowers · Gem Skills</title>
+    <meta name="description" content="Use it when: you want the agent to follow a full development process instead of jumping straight to code. It does: chains its skills into one workflow: brainstorm, plan, build test-first on its own branch, review, then merge. You get: an approved design, a written plan, tested commits and a review before anything merges. Runs: by itself: before every reply, the agent checks which of its skills applies. Works with: Claude Code, Codex, Cursor, Gemini CLI, OpenCode and more, each installed separately." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page bundle-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a></p>
+      <h1>Superpowers <span class="kind">Bundle · 14 skills</span></h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want the agent to follow a full development process instead of jumping straight to code</dd></div><div><dt>It does</dt><dd>chains its skills into one workflow: brainstorm, plan, build test-first on its own branch, review, then merge</dd></div><div><dt>You get</dt><dd>an approved design, a written plan, tested commits and a review before anything merges</dd></div><div><dt>Runs</dt><dd>by itself: before every reply, the agent checks which of its skills applies</dd></div><div><dt>Works with</dt><dd>Claude Code, Codex, Cursor, Gemini CLI, OpenCode and more, each installed separately</dd></div></dl></section>
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Superpowers makes its skills fire on their own: using-superpowers, loaded at the start of each session, has the agent check for a matching skill before every reply. Building something then follows one path. brainstorming asks what you actually want and ends with a design you approve, in chat for small changes or as a document for projects. using-git-worktrees sets up an isolated branch with a clean test baseline, and writing-plans breaks the design into small tasks, each with exact files, code and checks. The plan runs either through subagent-driven-development, a fresh subagent per task with a review after each, or through executing-plans, inline with one review at the end. Throughout, test-driven-development makes every change start from a failing test, and finishing-a-development-branch verifies the tests, then merges, opens a PR, keeps or discards the branch. Other skills step in when needed: systematic-debugging for bugs, verification-before-completion before claiming anything works, requesting-code-review and receiving-code-review around reviews, dispatching-parallel-agents for independent tasks, and writing-skills for writing new skills test-first.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/b739a8af570e10a95898f2bdf6cec97467fa6c12">the repo at b739a8a</a>. Its skills have changed by 5,222 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <p class="install-label">Any agent, with the skills CLI</p><div class="install"><code>npx skills add https://github.com/obra/superpowers --skill &#39;*&#39;</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill &#39;*&#39;">Copy</button></div><p class="install-label">Claude Code plugin</p><div class="install"><code>/plugin install superpowers@claude-plugins-official</code><button type="button" class="copy" data-copy="/plugin install superpowers@claude-plugins-official">Copy</button></div>
+          <p class="links"><a href="https://github.com/obra/superpowers">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>370,462 <span class="muted">of <a href="/gemskills/skill/obra/superpowers/skills/brainstorming/">brainstorming</a>, its most installed skill, on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh, its first skill</span></dd></div></dl>
+        </div>
+      </div>
+      <section aria-labelledby="skills">
+        <h2 id="skills">Its skills, in the order they're used</h2>
+        <p class="muted">The ones marked “Only in the bundle” need the rest of it, so they're only listed here. The others also have their own entry in the skills list.</p>
+        <ol class="bundle-skills">
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/using-superpowers/">using-superpowers</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>249K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Makes the agent look for and invoke a matching skill before every response.</p>
+        <p class="member-note">Makes the agent load the other Superpowers skills before it replies; alone, it has nothing to load.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/brainstorming/">brainstorming</a></h3>
+          
+          <span class="metric"><strong>370K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Explores what you actually want before any creative work starts.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/using-git-worktrees/">using-git-worktrees</a></h3>
+          
+          <span class="metric"><strong>195K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Isolates feature work in a git worktree.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/writing-plans/">writing-plans</a></h3>
+          
+          <span class="metric"><strong>255K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Writes an implementation plan from a spec before touching code.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/subagent-driven-development/">subagent-driven-development</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>210K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Executes a plan with one fresh subagent per task and a review after each.</p>
+        <p class="member-note">Executes a plan such as writing-plans writes, and has its final reviewer use the prompt that ships with requesting-code-review.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/executing-plans/">executing-plans</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>217K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Executes an implementation plan inline in the current session.</p>
+        <p class="member-note">Runs scripts that ship with subagent-driven-development, and loads test-driven-development and verification-before-completion.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/test-driven-development/">test-driven-development</a></h3>
+          
+          <span class="metric"><strong>232K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Writes the failing test first, then the code.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/requesting-code-review/">requesting-code-review</a></h3>
+          
+          <span class="metric"><strong>234K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Sends finished work to a reviewer subagent before merging.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/receiving-code-review/">receiving-code-review</a></h3>
+          
+          <span class="metric"><strong>198K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Evaluates review feedback technically before implementing it.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/finishing-a-development-branch/">finishing-a-development-branch</a></h3>
+          
+          <span class="metric"><strong>192K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Verifies tests, then merges, opens a PR or cleans up a finished branch.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/systematic-debugging/">systematic-debugging</a></h3>
+          
+          <span class="metric"><strong>266K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Finds the root cause before proposing any fix.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/verification-before-completion/">verification-before-completion</a></h3>
+          
+          <span class="metric"><strong>217K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Requires running verification commands before claiming work is done.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/dispatching-parallel-agents/">dispatching-parallel-agents</a></h3>
+          
+          <span class="metric"><strong>196K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Splits independent tasks across parallel agents.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/obra/superpowers/skills/writing-skills/">writing-skills</a></h3>
+          
+          <span class="metric"><strong>195K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Writes skills test-first: pressure-test with subagents, then document.</p>
+        
+      </li></ol>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_bundle_client.BrcZt5VM.js" type="module" async></script>
+  </body>
+</html>

@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>systematic-debugging · Gem Skills</title>
+    <meta name="description" content="Use it when: a bug, failing test or odd behavior shows up, especially when a quick fix is tempting. It does: forbids any fix until the root cause is found, through four phases in order. You get: a fix for the cause, backed by a failing test that now passes. Stops: guess-and-retry loops: after three failed fixes, it questions the design with you." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>systematic-debugging</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a bug, failing test or odd behavior shows up, especially when a quick fix is tempting</dd></div><div><dt>It does</dt><dd>forbids any fix until the root cause is found, through four phases in order</dd></div><div><dt>You get</dt><dd>a fix for the cause, backed by a failing test that now passes</dd></div><div><dt>Stops</dt><dd>guess-and-retry loops: after three failed fixes, it questions the design with you</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 11 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · Before it: <a href="/gemskills/skill/obra/superpowers/skills/finishing-a-development-branch/">finishing-a-development-branch</a> · After it: <a href="/gemskills/skill/obra/superpowers/skills/verification-before-completion/">verification-before-completion</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Its rule is &#34;no fixes without root cause investigation first&#34;. The agent works through four phases in order. First it investigates: it reads the error in full, reproduces it, checks recent changes and, in a system with several parts, logs what enters and leaves each one to find where it breaks. Then it compares the broken code with similar code that works, forms one hypothesis and tests it with the smallest possible change. Only then does it fix: it writes a failing test, makes one change and verifies it. If three fixes have failed, it stops and discusses the architecture with you instead of trying a fourth.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/systematic-debugging">the skill at bb92a77</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill systematic-debugging</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill systematic-debugging">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/systematic-debugging">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/systematic-debugging">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>265,958 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">7.9K</div>
+      <div class="stat-delta">-7% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 8,547; week to Aug 10: 8,663; week to Aug 17: 7,721; week to Aug 24: 8,000; week to Aug 31: 7,653; week to Sep 7: 7,675; week to Sep 14: 7,739; week to Sep 21: 7,926. Use the left and right arrow keys to read each week."
+        data-values="8547,8663,7721,8000,7653,7675,7739,7926" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.6 38.6,6.0 71.1,10.8 103.7,9.4 136.3,11.1 168.9,11.0 201.4,10.7 234.0,9.7" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="9.7" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>8,547</td></tr><tr><td>Aug 10</td><td>8,663</td></tr><tr><td>Aug 17</td><td>7,721</td></tr><tr><td>Aug 24</td><td>8,000</td></tr><tr><td>Aug 31</td><td>7,653</td></tr><tr><td>Sep 7</td><td>7,675</td></tr><tr><td>Sep 14</td><td>7,739</td></tr><tr><td>Sep 21</td><td>7,926</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="debugging" data-facet="topic" href="/gemskills/?tag=debugging">debugging</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/systematic-debugging/SKILL.md">obra/superpowers at bb92a77</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: systematic-debugging
+description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes</code></pre></details>
+        <div class="markdown"><h3>Systematic Debugging</h3>
+<h4>Overview</h4>
+<p><strong>Core principle:</strong> ALWAYS find root cause before attempting fixes. Symptom fixes are failure.</p>
+<p><strong>Violating the letter of this process is violating the spirit of debugging.</strong></p>
+<h4>The Iron Law</h4>
+<pre><code>NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST
+</code></pre>
+<p>If you haven't completed Phase 1, you cannot propose fixes.</p>
+<h4>When to Use</h4>
+<p>Use for ANY technical issue:</p>
+<ul>
+<li>Test failures</li>
+<li>Bugs in production</li>
+<li>Unexpected behavior</li>
+<li>Performance problems</li>
+<li>Build failures</li>
+<li>Integration issues</li>
+</ul>
+<p><strong>Use this ESPECIALLY when:</strong></p>
+<ul>
+<li>Under time pressure (emergencies make guessing tempting)</li>
+<li>&quot;Just one quick fix&quot; seems obvious</li>
+<li>You've already tried multiple fixes</li>
+<li>Previous fix didn't work</li>
+<li>You don't fully understand the issue</li>
+</ul>
+<p><strong>Don't skip when:</strong></p>
+<ul>
+<li>Issue seems simple (simple bugs have root causes too)</li>
+<li>You're in a hurry (rushing guarantees rework)</li>
+<li>Manager wants it fixed NOW (systematic is faster than thrashing)</li>
+</ul>
+<h4>The Four Phases</h4>
+<p>You MUST complete each phase before proceeding to the next.</p>
+<h5>Phase 1: Root Cause Investigation</h5>
+<p><strong>BEFORE attempting ANY fix:</strong></p>
+<ol>
+<li>
+<p><strong>Read Error Messages Carefully</strong></p>
+<ul>
+<li>Don't skip past errors or warnings</li>
+<li>They often contain the exact solution</li>
+<li>Read stack traces completely</li>
+<li>Note line numbers, file paths, error codes</li>
+</ul>
+</li>
+<li>
+<p><strong>Reproduce Consistently</strong></p>
+<ul>
+<li>Can you trigger it reliably?</li>
+<li>What are the exact steps?</li>
+<li>Does it happen every time?</li>
+<li>If not reproducible → gather more data, don't guess</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Recent Changes</strong></p>
+<ul>
+<li>What changed that could cause this?</li>
+<li>Git diff, recent commits</li>
+<li>New dependencies, config changes</li>
+<li>Environmental differences</li>
+</ul>
+</li>
+<li>
+<p><strong>Gather Evidence in Multi-Component Systems</strong></p>
+<p><strong>WHEN system has multiple components (CI → build → signing, API → service → database):</strong></p>
+<p><strong>BEFORE proposing fixes, add diagnostic instrumentation:</strong></p>
+<pre><code>For EACH component boundary:
+  - Log what data enters component
+  - Log what data exits component
+  - Verify environment/config propagation
+  - Check state at each layer
+
+Run once to gather evidence showing WHERE it breaks
+THEN analyze evidence to identify failing component
+THEN investigate that specific component
+</code></pre>
+<p><strong>Example (multi-layer system):</strong></p>
+<pre><code class="language-bash"># Layer 1: Workflow
+echo &quot;=== Secrets available in workflow: ===&quot;
+echo &quot;IDENTITY: $([ -n &quot;${IDENTITY:-}&quot; ] &amp;&amp; echo SET || echo UNSET)&quot;
+
+# Layer 2: Build script
+echo &quot;=== Env vars in build script: ===&quot;
+printenv IDENTITY &gt;/dev/null 2&gt;&amp;1 &amp;&amp; echo &quot;IDENTITY in environment&quot; || echo &quot;IDENTITY not in environment&quot;
+
+# Layer 3: Signing script
+echo &quot;=== Keychain state: ===&quot;
+security list-keychains
+security find-identity -v
+
+# Layer 4: Actual signing
+codesign --sign &quot;$IDENTITY&quot; --verbose=4 &quot;$APP&quot;
+</code></pre>
+<p><strong>This reveals:</strong> Which layer fails (secrets → workflow ✓, workflow → build ✗)</p>
+</li>
+<li>
+<p><strong>Trace Data Flow</strong></p>
+<p><strong>WHEN error is deep in call stack:</strong></p>
+<p>See <code>root-cause-tracing.md</code> in this directory for the complete backward tracing technique.</p>
+<p><strong>Quick version:</strong></p>
+<ul>
+<li>Where does bad value originate?</li>
+<li>What called this with bad value?</li>
+<li>Keep tracing up until you find the source</li>
+<li>Fix at source, not at symptom</li>
+</ul>
+</li>
+</ol>
+<h5>Phase 2: Pattern Analysis</h5>
+<p><strong>Find the pattern before fixing:</strong></p>
+<ol>
+<li>
+<p><strong>Find Working Examples</strong></p>
+<ul>
+<li>Locate similar working code in same codebase</li>
+<li>What works that's similar to what's broken?</li>
+</ul>
+</li>
+<li>
+<p><strong>Compare Against References</strong></p>
+<ul>
+<li>If implementing pattern, read reference implementation COMPLETELY</li>
+<li>Don't skim - read every line</li>
+<li>Understand the pattern fully before applying</li>
+</ul>
+</li>
+<li>
+<p><strong>Identify Differences</strong></p>
+<ul>
+<li>What's different between working and broken?</li>
+<li>List every difference, however small</li>
+<li>Don't assume &quot;that can't matter&quot;</li>
+</ul>
+</li>
+<li>
+<p><strong>Understand Dependencies</strong></p>
+<ul>
+<li>What other components does this need?</li>
+<li>What settings, config, environment?</li>
+<li>What assumptions does it make?</li>
+</ul>
+</li>
+</ol>
+<h5>Phase 3: Hypothesis and Testing</h5>
+<p><strong>Scientific method:</strong></p>
+<ol>
+<li>
+<p><strong>Form Single Hypothesis</strong></p>
+<ul>
+<li>State clearly: &quot;I think X is the root cause because Y&quot;</li>
+<li>Write it down</li>
+<li>Be specific, not vague</li>
+</ul>
+</li>
+<li>
+<p><strong>Test Minimally</strong></p>
+<ul>
+<li>Make the SMALLEST possible change to test hypothesis</li>
+<li>One variable at a time</li>
+<li>Don't fix multiple things at once</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify Before Continuing</strong></p>
+<ul>
+<li>Did it work? Yes → Phase 4</li>
+<li>Didn't work? Form NEW hypothesis</li>
+<li>DON'T add more fixes on top</li>
+</ul>
+</li>
+<li>
+<p><strong>When You Don't Know</strong></p>
+<ul>
+<li>Say &quot;I don't understand X&quot;</li>
+<li>Don't pretend to know</li>
+<li>Ask for help</li>
+<li>Research more</li>
+</ul>
+</li>
+</ol>
+<h5>Phase 4: Implementation</h5>
+<p><strong>Fix the root cause, not the symptom:</strong></p>
+<ol>
+<li>
+<p><strong>Create Failing Test Case</strong></p>
+<ul>
+<li>Simplest possible reproduction</li>
+<li>Automated test if possible</li>
+<li>One-off test script if no framework</li>
+<li>MUST have before fixing</li>
+<li>Use the <code>superpowers:test-driven-development</code> skill for writing proper failing tests</li>
+</ul>
+</li>
+<li>
+<p><strong>Implement Single Fix</strong></p>
+<ul>
+<li>Address the root cause identified</li>
+<li>ONE change at a time</li>
+<li>No &quot;while I'm here&quot; improvements</li>
+<li>No bundled refactoring</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify Fix</strong></p>
+<ul>
+<li>Test passes now?</li>
+<li>No other tests broken?</li>
+<li>Issue actually resolved?</li>
+<li>Use the <code>superpowers:verification-before-completion</code> skill before claiming success</li>
+</ul>
+</li>
+<li>
+<p><strong>If Fix Doesn't Work</strong></p>
+<ul>
+<li>STOP</li>
+<li>Count: How many fixes have you tried?</li>
+<li>If &lt; 3: Return to Phase 1, re-analyze with new information</li>
+<li><strong>If ≥ 3: STOP and question the architecture (step 5 below)</strong></li>
+<li>DON'T attempt Fix #4 without architectural discussion</li>
+</ul>
+</li>
+<li>
+<p><strong>If 3+ Fixes Failed: Question Architecture</strong></p>
+<p><strong>Pattern indicating architectural problem:</strong></p>
+<ul>
+<li>Each fix reveals new shared state/coupling/problem in different place</li>
+<li>Fixes require &quot;massive refactoring&quot; to implement</li>
+<li>Each fix creates new symptoms elsewhere</li>
+</ul>
+<p><strong>STOP and question fundamentals:</strong></p>
+<ul>
+<li>Is this pattern fundamentally sound?</li>
+<li>Are we &quot;sticking with it through sheer inertia&quot;?</li>
+<li>Should we refactor architecture vs. continue fixing symptoms?</li>
+</ul>
+<p><strong>Discuss with your human partner before attempting more fixes</strong></p>
+<p>This is NOT a failed hypothesis - this is a wrong architecture.</p>
+</li>
+</ol>
+<h4>Red Flags - STOP and Follow Process</h4>
+<p>If you catch yourself thinking:</p>
+<ul>
+<li>&quot;Quick fix for now, investigate later&quot;</li>
+<li>&quot;Just try changing X and see if it works&quot;</li>
+<li>&quot;Add multiple changes, run tests&quot;</li>
+<li>&quot;Skip the test, I'll manually verify&quot;</li>
+<li>&quot;It's probably X, let me fix that&quot;</li>
+<li>&quot;I don't fully understand but this might work&quot;</li>
+<li>&quot;Pattern says X but I'll adapt it differently&quot;</li>
+<li>&quot;Here are the main problems: [lists fixes without investigation]&quot;</li>
+<li>Proposing solutions before tracing data flow</li>
+<li><strong>&quot;One more fix attempt&quot; (when already tried 2+)</strong></li>
+<li><strong>Each fix reveals new problem in different place</strong></li>
+</ul>
+<p><strong>ALL of these mean: STOP. Return to Phase 1.</strong></p>
+<p><strong>If 3+ fixes failed:</strong> Question the architecture (see Phase 4.5)</p>
+<h4>your human partner's Signals You're Doing It Wrong</h4>
+<p><strong>Watch for these redirections:</strong></p>
+<ul>
+<li>&quot;Is that not happening?&quot; - You assumed without verifying</li>
+<li>&quot;Will it show us...?&quot; - You should have added evidence gathering</li>
+<li>&quot;Stop guessing&quot; - You're proposing fixes without understanding</li>
+<li>&quot;Ultra-think this&quot; - Question fundamentals, not just symptoms</li>
+<li>&quot;We're stuck?&quot; (frustrated) - Your approach isn't working</li>
+</ul>
+<p><strong>When you see these:</strong> STOP. Return to Phase 1.</p>
+<h4>Common Rationalizations</h4>
+<table>
+<thead>
+<tr>
+<th>Excuse</th>
+<th>Reality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Issue is simple, don't need process&quot;</td>
+<td>Simple issues have root causes too. Process is fast for simple bugs.</td>
+</tr>
+<tr>
+<td>&quot;Emergency, no time for process&quot;</td>
+<td>Systematic debugging is FASTER than guess-and-check thrashing.</td>
+</tr>
+<tr>
+<td>&quot;Just try this first, then investigate&quot;</td>
+<td>First fix sets the pattern. Do it right from the start.</td>
+</tr>
+<tr>
+<td>&quot;I'll write test after confirming fix works&quot;</td>
+<td>Untested fixes don't stick. Test first proves it.</td>
+</tr>
+<tr>
+<td>&quot;Multiple fixes at once saves time&quot;</td>
+<td>Can't isolate what worked. Causes new bugs.</td>
+</tr>
+<tr>
+<td>&quot;Reference too long, I'll adapt the pattern&quot;</td>
+<td>Partial understanding guarantees bugs. Read it completely.</td>
+</tr>
+<tr>
+<td>&quot;I see the problem, let me fix it&quot;</td>
+<td>Seeing symptoms ≠ understanding root cause.</td>
+</tr>
+<tr>
+<td>&quot;One more fix attempt&quot; (after 2+ failures)</td>
+<td>3+ failures = architectural problem. Question pattern, don't fix again.</td>
+</tr>
+</tbody>
+</table>
+<h4>Quick Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Key Activities</th>
+<th>Success Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Root Cause</strong></td>
+<td>Read errors, reproduce, check changes, gather evidence</td>
+<td>Understand WHAT and WHY</td>
+</tr>
+<tr>
+<td><strong>2. Pattern</strong></td>
+<td>Find working examples, compare</td>
+<td>Identify differences</td>
+</tr>
+<tr>
+<td><strong>3. Hypothesis</strong></td>
+<td>Form theory, test minimally</td>
+<td>Confirmed or new hypothesis</td>
+</tr>
+<tr>
+<td><strong>4. Implementation</strong></td>
+<td>Create test, fix, verify</td>
+<td>Bug resolved, tests pass</td>
+</tr>
+</tbody>
+</table>
+<h4>When Process Reveals &quot;No Root Cause&quot;</h4>
+<p>If systematic investigation reveals issue is truly environmental, timing-dependent, or external:</p>
+<ol>
+<li>You've completed the process</li>
+<li>Document what you investigated</li>
+<li>Implement appropriate handling (retry, timeout, error message)</li>
+<li>Add monitoring/logging for future investigation</li>
+</ol>
+<p><strong>But:</strong> 95% of &quot;no root cause&quot; cases are incomplete investigation.</p>
+<h4>Supporting Techniques</h4>
+<p>These techniques are part of systematic debugging and available in this directory:</p>
+<ul>
+<li><strong><code>root-cause-tracing.md</code></strong> - Trace bugs backward through call stack to find original trigger</li>
+<li><strong><code>defense-in-depth.md</code></strong> - Add validation at multiple layers after finding root cause</li>
+<li><strong><code>condition-based-waiting.md</code></strong> - Replace arbitrary timeouts with condition polling</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

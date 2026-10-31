@@ -1,0 +1,1 @@
+function e(){document.addEventListener(`click`,e=>{let t=e.target.closest(`[data-copy]`);t?.dataset.copy&&navigator.clipboard?.writeText(t.dataset.copy).then(()=>{t.textContent=`Copied`,setTimeout(()=>t.textContent=`Copy`,1500)})})}export{e as t};

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stripe-best-practices · Gem Skills</title>
+    <meta name="description" content="Guides Stripe integration choices, sandboxes and API selection." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=stripe%2Fai">stripe/ai</a></p>
+      <h1>stripe-best-practices</h1>
+      <p class="lede">Guides Stripe integration choices, sandboxes and API selection.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/stripe/ai --skill stripe-best-practices</code><button type="button" class="copy" data-copy="npx skills add https://github.com/stripe/ai --skill stripe-best-practices">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/stripe/ai/stripe-best-practices">skills.sh page</a> · <a href="https://github.com/stripe/ai/tree/HEAD/skills/stripe-best-practices">Source on GitHub</a> · <a href="/gemskills/?repo=stripe%2Fai">All skills from stripe/ai</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>87,197 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>1,830 <span class="muted">stripe/ai</span></dd></div><div><dt>First seen</dt><dd>Jan 21, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">2.4K</div>
+      <div class="stat-delta">-22% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 3,099; week to Aug 10: 3,467; week to Aug 17: 3,234; week to Aug 24: 3,345; week to Aug 31: 2,843; week to Sep 7: 2,688; week to Sep 14: 2,485; week to Sep 21: 2,406. Use the left and right arrow keys to read each week."
+        data-values="3099,3467,3234,3345,2843,2688,2485,2406" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,10.7 38.6,6.0 71.1,9.0 103.7,7.5 136.3,13.9 168.9,15.9 201.4,18.5 234.0,19.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="19.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>3,099</td></tr><tr><td>Aug 10</td><td>3,467</td></tr><tr><td>Aug 17</td><td>3,234</td></tr><tr><td>Aug 24</td><td>3,345</td></tr><tr><td>Aug 31</td><td>2,843</td></tr><tr><td>Sep 7</td><td>2,688</td></tr><tr><td>Sep 14</td><td>2,485</td></tr><tr><td>Sep 21</td><td>2,406</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:frameworks" data-facet="category" title="Guides for frameworks, databases and SDKs, mostly from their vendors." href="/gemskills/?tag=category%3Aframeworks">category:frameworks</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Guides for frameworks, databases and SDKs, mostly from their vendors.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="payments" data-facet="topic" href="/gemskills/?tag=payments">payments</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:stripe" data-facet="stack" href="/gemskills/?tag=stack%3Astripe">stack:stripe</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/stripe/ai/blob/579b067ffb461b82afc845c47b17fc8e8910488c/skills/stripe-best-practices/SKILL.md">stripe/ai at 579b067</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: stripe-best-practices
+description: &#62;-
+  Guides Stripe integration decisions across development and test environment
+  planning (separate sandboxes vs the shared test mode sandbox), API selection
+  (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2,
+  controller properties), billing/subscriptions, tax and registrations (Stripe
+  Tax, automatic_tax, product tax codes), Treasury financial accounts,
+  integration options (Checkout, Payment Element), migrating from deprecated
+  Stripe APIs, and security best practices (API key management, API key
+  permissions, webhooks, OAuth). Use when planning, building, modifying,
+  testing, or reviewing any Stripe integration, including choosing a development
+  environment, accepting payments, building marketplaces, integrating Stripe,
+  processing payments, setting up subscriptions, collecting sales tax, VAT, or
+  GST, creating connected accounts, or implementing secure key handling.
+</code></pre></details>
+        <div class="markdown"><p>Latest Stripe API version: <strong>2026-09-30.endive</strong>. Always use the latest API version and SDK unless the user specifies otherwise.</p>
+<p>Development and testing environment default: For new integration development, use separate <a href="https://docs.stripe.com/sandboxes.md">sandboxes</a> instead of the account’s shared test mode sandbox. Sandboxes isolate settings and test data from live mode. Use separate sandboxes for local development and CI. When stronger isolation is useful, dedicate sandboxes to development teams or testing scenarios. Use the shared test mode sandbox only for an existing integration that depends on it or when a required feature doesn’t support general sandboxes.</p>
+<p>Latest SDK versions:</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Latest version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ruby</td>
+<td>20.0.0</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>16.0.0</td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td>23.0.0</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>22.0.0</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>34.0.0</td>
+</tr>
+<tr>
+<td>Go</td>
+<td>87.0.0</td>
+</tr>
+<tr>
+<td>.NET</td>
+<td>53.0.0</td>
+</tr>
+</tbody>
+</table>
+<p>If you don’t have a Stripe account, you can use the CLI to generate a sandbox test account with no registration required. Install the Stripe CLI (<code>npm i -g @stripe/cli</code>) and run the command <code>stripe sandbox create</code>, which creates test API keys for you. When you recommend this, explain that <a href="https://docs.stripe.com/sandboxes.md">a sandbox is a Stripe test environment</a>.</p>
+<p>If <code>stripe sandbox create</code> is used, don’t use MCP.</p>
+<p>If you try to use MCP after running sandbox creation, first make sure <code>stripe sandbox claim</code> is run. Use <code>stripe whoami --format json</code> for CLI auth checks; do not run <code>stripe config --list</code>.</p>
+<p>API key default: Always recommend a <a href="https://docs.stripe.com/keys.md#manage-your-api-keys">restricted API key (RAK)</a> (<code>rk_</code> prefix) over a secret key (<code>sk_</code> prefix).</p>
+<h4>Integration routing</h4>
+<table>
+<thead>
+<tr>
+<th>Building…</th>
+<th>Recommended API</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One-time payments</td>
+<td>Checkout Sessions</td>
+<td>&lt;references/payments.md&gt;</td>
+</tr>
+<tr>
+<td>Custom payment form with embedded UI</td>
+<td>Checkout Sessions + Payment Element</td>
+<td>&lt;references/payments.md&gt;</td>
+</tr>
+<tr>
+<td>Saving a payment method for later</td>
+<td>Setup Intents</td>
+<td>&lt;references/payments.md&gt;</td>
+</tr>
+<tr>
+<td>Connect platform or marketplace</td>
+<td>Accounts v2 (<code>/v2/core/accounts</code>)</td>
+<td>&lt;references/connect.md&gt;</td>
+</tr>
+<tr>
+<td>Usage-based billing (new integration)</td>
+<td>Metronome</td>
+<td>&lt;references/billing.md&gt;</td>
+</tr>
+<tr>
+<td>Subscriptions or recurring billing</td>
+<td>Billing APIs + Checkout Sessions</td>
+<td>&lt;references/billing.md&gt;</td>
+</tr>
+<tr>
+<td>Sales tax, VAT, or GST compliance</td>
+<td>Stripe Tax + Registrations API</td>
+<td>&lt;references/tax.md&gt;</td>
+</tr>
+<tr>
+<td>Embedded financial accounts / banking</td>
+<td>v2 Financial Accounts</td>
+<td>&lt;references/treasury.md&gt;</td>
+</tr>
+<tr>
+<td>Security (key management, RAKs, webhooks, OAuth, 2FA, Connect liability)</td>
+<td>See security reference</td>
+<td>&lt;references/security.md&gt;</td>
+</tr>
+</tbody>
+</table>
+<p>Read the relevant reference file before answering any integration question or writing code.</p>
+<h4>Critical rules</h4>
+<ul>
+<li>
+<p><em>Before enabling <code>automatic_tax: { enabled: true }</code></em> (or calculating tax for a custom PaymentIntent), read the <a href="https://github.com/stripe/ai/blob/579b067ffb461b82afc845c47b17fc8e8910488c/skills/stripe-best-practices/references/tax.md">tax reference</a> and confirm the user has an active registration. Without one, Stripe calculates and collects no tax while the user believes tax is on (the most common Stripe Tax mistake).</p>
+</li>
+<li>
+<p><em>Never include <code>payment_method_types</code> in any Stripe API call</em>, with one exception: Terminal (in-person payments) integrations must pass <code>payment_method_types: ['card_present']</code> on the PaymentIntent. For all other integrations, omit this parameter entirely to enable dynamic payment methods, which enables you to configure payment method settings from the Dashboard and dynamically display the most relevant eligible payment methods to each customer to maximize conversion. To customize which payment methods you accept, use <a href="https://docs.stripe.com/payments/payment-method-configurations.md">payment_method_configurations</a> or <code>excluded_payment_method_types</code> instead of <code>payment_method_types</code>.</p>
+</li>
+<li>
+<p>When a PaymentIntent or SetupIntent integration requires an explicit allowlist, use <code>allowed_payment_method_types</code> instead of <code>payment_method_types</code>.</p>
+</li>
+<li>
+<p><em>Never present webhooks as optional.</em> We recommend webhooks for every payment integration and they’re required for subscriptions and asynchronous payment methods. Fulfillment belongs in a handler for both <code>checkout.session.completed</code> and <code>checkout.session.async_payment_succeeded</code> (gated on <code>payment_status</code>), not the success page. See &lt;references/payments.md&gt;.</p>
+</li>
+<li>
+<p>On API version <code>2026-03-25.dahlia</code> or later, pass the parameter <code>integration_identifier</code> to <code>checkout.sessions.create</code> to tag sessions with a custom label for tracking and comparing checkout flows in the Dashboard. The label should include a suffix of 8 random letters.</p>
+</li>
+<li>
+<p><em>Always instantiate a <code>StripeClient</code> and call methods on that instance.</em> Do <strong>not</strong> use the deprecated global/module-level API key pattern (<code>stripe.api_key = …</code>, <code>Stripe.setApiKey</code>, <code>stripe.Key = …</code>, <code>StripeConfiguration.ApiKey = …</code>). The global pattern is deprecated in all current SDKs.</p>
+</li>
+</ul>
+<h4>Key documentation</h4>
+<p>When the user’s request does not clearly fit a single domain above, consult:</p>
+<ul>
+<li><a href="https://docs.stripe.com/payments/payment-methods/integration-options.md">Integration Options</a> — Start here when designing any integration.</li>
+<li><a href="https://docs.stripe.com/payments-api/tour.md">API Tour</a> — Overview of Stripe’s API surface.</li>
+<li><a href="https://docs.stripe.com/get-started/checklist/go-live.md">Go Live Checklist</a> — Review before launching.</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

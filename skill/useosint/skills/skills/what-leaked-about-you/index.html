@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>what-leaked-about-you · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re checking which data breaches an email, username, phone number or name appears in, for a self-audit, an incident or due diligence. It does: reads breach records as a map of the services someone signed up for, and turns usernames found there into new leads. You get: the breached services and new leads, each graded by how trustworthy the record and its source are, from confirmed to rejected. Never: logs in with, cracks or tests a leaked password; your own passwords are checked without sending them anywhere. Needs: API keys for the Have I Been Pwned API and for commercial breach-search services like DeHashed; HIBP&#039;s web lookup for one email is free." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=useosint%2Fskills">useosint/skills</a></p>
+      <h1>what-leaked-about-you</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re checking which data breaches an email, username, phone number or name appears in, for a self-audit, an incident or due diligence</dd></div><div><dt>It does</dt><dd>reads breach records as a map of the services someone signed up for, and turns usernames found there into new leads</dd></div><div><dt>You get</dt><dd>the breached services and new leads, each graded by how trustworthy the record and its source are, from confirmed to rejected</dd></div><div><dt>Never</dt><dd>logs in with, cracks or tests a leaked password; your own passwords are checked without sending them anywhere</dd></div><div><dt>Needs</dt><dd>API keys for the Have I Been Pwned API and for commercial breach-search services like DeHashed; HIBP&#39;s web lookup for one email is free</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Breach data is treated as an account map rather than a password list: an email found in a gaming forum, a fitness app and a dating site gives three platforms, three sign-up dates and often three usernames to follow. The agent starts with Have I Been Pwned, the breach-lookup service that verifies and names each breach, and turns to commercial services such as DeHashed, IntelX or Snusbase when it needs actual field values or a search by username, phone or IP. Passwords you hold are checked with HIBP&#39;s password lookup, where only the first five characters of the password&#39;s hash leave your machine. It warns about the usual traps: credential lists merged from many sources that no longer say where a record came from, old or invented breaches sold as new, scraped public profiles labelled as hacks, and email addresses that were reassigned. If two identities share one unusual password, that&#39;s noted as a likely link between them, with the password redacted. It never uses a leaked credential or tries a password reset, and it covers the data-protection rules for holding breach data.</p>
+      <p class="muted">Summarizes <a href="https://github.com/useosint/skills/tree/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/what-leaked-about-you">the skill at 06243a5</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/useosint/skills --skill what-leaked-about-you</code><button type="button" class="copy" data-copy="npx skills add https://github.com/useosint/skills --skill what-leaked-about-you">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/useosint/skills/what-leaked-about-you">skills.sh page</a> · <a href="https://github.com/useosint/skills/tree/HEAD/skills/what-leaked-about-you">Source on GitHub</a> · <a href="/gemskills/?repo=useosint%2Fskills">All skills from useosint/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>57,682 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>38 <span class="muted">useosint/skills</span></dd></div><div><dt>First seen</dt><dd>Aug 2, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">30</div>
+      <div class="stat-delta">-99% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 3,284; week to Aug 10: 14,657; week to Aug 17: 39,621; week to Aug 24: 14; week to Aug 31: 34; week to Sep 7: 20; week to Sep 14: 21; week to Sep 21: 30. Use the left and right arrow keys to read each week."
+        data-values="3284,14657,39621,14,34,20,21,30" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,46.4 38.6,33.7 71.1,6.0 103.7,50.0 136.3,50.0 168.9,50.0 201.4,50.0 234.0,50.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="50.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>3,284</td></tr><tr><td>Aug 10</td><td>14,657</td></tr><tr><td>Aug 17</td><td>39,621</td></tr><tr><td>Aug 24</td><td>14</td></tr><tr><td>Aug 31</td><td>34</td></tr><tr><td>Sep 7</td><td>20</td></tr><tr><td>Sep 14</td><td>21</td></tr><tr><td>Sep 21</td><td>30</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:osint" data-facet="category" title="Investigate people, images and leaks from public sources." href="/gemskills/?tag=category%3Aosint">category:osint</a></div>
+          <p class="tag-meaning">Investigate people, images and leaks from public sources.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="osint" data-facet="topic" href="/gemskills/?tag=osint">osint</a><a class="tag" data-tag="privacy" data-facet="topic" href="/gemskills/?tag=privacy">privacy</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:dual-use" data-facet="flag" title="Legitimate uses exist, but the same capability can evade bot detection or investigate other people. Read the SKILL.md before installing." href="/gemskills/?tag=flag%3Adual-use">flag:dual-use</a></div>
+          <p class="tag-meaning">Legitimate uses exist, but the same capability can evade bot detection or investigate other people. Read the SKILL.md before installing.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/what-leaked-about-you/SKILL.md">useosint/skills at 06243a5</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: what-leaked-about-you
+description: &#62;-
+  Check and interpret data-breach exposure for an email, username, phone or name using Have I
+  Been Pwned, the Pwned Passwords k-anonymity range API, DeHashed, IntelX and Snusbase. Use
+  when checking breach or leak exposure, finding which services an account was registered
+  with, interpreting a combolist or credential dump, assessing credential compromise, or
+  auditing your own leaked personal data. Applies to incident response and account-takeover
+  triage, executive and VIP protection, pre-employment and vendor risk screening, and personal
+  privacy audits. Reference at useosint.com/skills/what-leaked-about-you.
+</code></pre></details>
+        <div class="markdown"><h3>What leaked about you</h3>
+<p>Breach data answers a question nothing else answers cheaply: which services did
+this identity actually use. That service list is almost always worth more to an
+investigator than the credentials in the record — and the credentials are the
+part you must never touch. Using a leaked password is unauthorized access, no
+matter how public the dump was.</p>
+<h4>What a record actually contains, and what matters</h4>
+<p>A breach record is a row from a service's user table. Typical fields: email,
+username, a password hash (or plaintext, in bad cases), registration date, last
+login, IP address at signup, display name, date of birth, physical address,
+security questions, and whatever the service happened to collect.</p>
+<p>The metadata beats the credentials, every time:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Which service</td>
+<td>Membership itself. This person had an account here — a fact you can rarely establish any other way</td>
+</tr>
+<tr>
+<td>Registration date</td>
+<td>Time-anchors the identity. Sign-up clusters across services link accounts</td>
+</tr>
+<tr>
+<td>Username in the record</td>
+<td>A handle you did not have. Straight into <code>hunt-a-handle</code></td>
+</tr>
+<tr>
+<td>Signup or last-login IP</td>
+<td>Coarse geolocation and, more usefully, hosting-vs-residential classification</td>
+</tr>
+<tr>
+<td>Display name, DOB, address</td>
+<td>Identity attributes to corroborate elsewhere. Never treat as authoritative</td>
+</tr>
+<tr>
+<td>Password <em>pattern</em></td>
+<td>Linkage evidence, analytically. Never an input to a login form</td>
+</tr>
+</tbody>
+</table>
+<p>Field-by-field interpretation:
+<a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/what-leaked-about-you/reference/record-fields.md">reference/record-fields.md</a>.</p>
+<h4>Choosing a source</h4>
+<table>
+<thead>
+<tr>
+<th>Holding</th>
+<th>Reach for</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>An email, need a service list</td>
+<td>Have I Been Pwned</td>
+<td>Curated, deduplicated, names the breach and its data classes. Does not return credentials</td>
+</tr>
+<tr>
+<td>A password you already hold (yours, or one in scope)</td>
+<td>HIBP Pwned Passwords range API</td>
+<td>Tells you if the password is in circulation without disclosing it</td>
+</tr>
+<tr>
+<td>Need actual field values, or to search by username, phone, IP, or name</td>
+<td>Keyed commercial services</td>
+<td>The only way to pivot <em>into</em> records rather than just detecting membership</td>
+</tr>
+<tr>
+<td>A specific dump circulating now</td>
+<td><code>find-leaks-in-the-wild</code></td>
+<td>Paste sites, forums, and channels, before anything indexes them</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Have I Been Pwned</strong> is the default starting point. It is curated: breaches are
+verified before loading and data classes are labelled, so a hit means something.
+Free web lookup for an email; the API is keyed and permits programmatic and
+domain-wide checks. It deliberately does not hand you passwords.</p>
+<p><strong>Pwned Passwords</strong> is worth understanding properly because the design is the
+point. You SHA-1 the password locally, send only the <strong>first five hex
+characters</strong> of the hash to the range endpoint, and receive every hash suffix
+sharing that prefix, with occurrence counts. You match locally. The service
+never learns which password you asked about. This makes it safe to run against
+credentials you legitimately hold, and it is the correct tool for a self-audit
+or a client remediation exercise.</p>
+<p><strong>Keyed commercial services</strong> — DeHashed, IntelX, and Snusbase are the commonly
+used ones. What differentiates them:</p>
+<ul>
+<li>Record-level search across many selector types, returning actual field values.
+This is the pivot engine: username, phone, IP, and name searches, not just
+email.</li>
+<li>Corpus breadth versus curation. Broader corpora ingest more combolists and
+therefore more junk; curated ones miss things. Know which side your source
+sits on.</li>
+<li>Some index documents, pastes, darkweb pages, and leaked files rather than
+parsed user tables — closer to a search engine over leaked material than to a
+breach database.</li>
+</ul>
+<p>Access model and coverage comparison:
+<a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/skills/what-leaked-about-you/reference/source-catalogue.md">reference/source-catalogue.md</a>.</p>
+<h4>The rule that has no exceptions</h4>
+<p><strong>Never use a leaked credential to authenticate to anything.</strong> Not to &quot;confirm
+the account exists&quot;. Not on a test account. Not on the subject's account with a
+client's verbal blessing. Credential stuffing is unauthorized access under
+computer-misuse law in most jurisdictions, and the public availability of the
+password is not a defence — see <a href="https://github.com/useosint/skills/blob/06243a5620b0c9c97502edd4ee9e31995a3bdccd/ETHICS.md">../../ETHICS.md</a>.</p>
+<p>The same applies to derived actions: do not attempt password resets, do not use
+recovered security-question answers, and do not try a recovered password on a
+different service to test reuse. Reuse is something you <em>infer</em> from data you
+already hold, never something you test.</p>
+<h4>The real pivot: service enumeration</h4>
+<p>Work the breach list as an account map. An email appearing in a gaming forum, a
+fitness app, and a regional dating service tells you three platforms to
+investigate, three registration dates, and often three usernames — each one a
+seed for <code>hunt-a-handle</code>. The services themselves characterise the person:
+professional, regional, linguistic, and interest signals that no profile page
+would give you.</p>
+<p>Password patterns are linkage evidence when handled correctly. If two records
+under different identities carry the same distinctive password — a long,
+non-dictionary, clearly personal string — that is meaningful correlation, and
+you record it as an analytic observation with the string itself redacted or
+hashed in your notes. A common password (<code>password1</code>, a keyboard walk, a
+football team) links nothing; thousands of people share it. Distinctiveness is
+the whole signal, and the evidence is the coincidence, not the credential.</p>
+<h4>Hashes are out of scope</h4>
+<p>Records commonly contain hashes: MD5 or unsalted SHA-1 on old breaches, salted
+schemes and purpose-built password hashes on newer ones. You will occasionally
+see plaintext where a service stored it unhashed, and reversible encryption
+where someone chose badly.</p>
+<p>Note the hash type — it dates the breach and characterises the service's
+security posture, which is genuinely useful in a due-diligence context. Then
+stop. Cracking a hash produces a credential you are not allowed to use, so the
+work has no legitimate output. The exception is a self-audit or an authorized
+security assessment where the password holder is your client, and even then the
+range API answers the question without cracking anything.</p>
+<h4>Where this goes wrong</h4>
+<ul>
+<li><strong>Combolist contamination.</strong> Most large &quot;breaches&quot; in circulation are
+combolists: aggregations of credentials from many sources, deduplicated,
+reshuffled, and stripped of provenance. A hit in a combolist tells you a pair
+appeared somewhere, not which service it came from. That destroys the
+service-enumeration value, which was the point.</li>
+<li><strong>Recycled and fabricated breaches.</strong> Old data gets repackaged under a new
+name and sold as fresh. Some &quot;breaches&quot; are wholly invented, or are scrapes of
+public profiles marketed as a hack. Check whether the alleged source has ever
+acknowledged an incident, and whether the record structure matches what that
+service would plausibly store.</li>
+<li><strong>Breach date is not leak date.</strong> Three separate dates matter: when the data
+was taken, when it first circulated, and when your source ingested it. They
+can be years apart. &quot;Appeared in a breach dated X&quot; says the account existed
+before X, not that it was active then.</li>
+<li><strong>Absence proves nothing.</strong> Not appearing in any corpus means the person's
+services were not breached, or the breach was never published, or your source
+does not carry it.</li>
+<li><strong>Scrape-vs-breach confusion.</strong> A dataset assembled by scraping public
+profiles is not evidence of a compromise, and reporting it as one is a
+factual error that damages a report's credibility.</li>
+<li><strong>Stale attribution.</strong> Email addresses and phone numbers get abandoned and
+reassigned. A ten-year-old record may describe someone else entirely.</li>
+<li><strong>Vendor overlap masquerading as corroboration.</strong> Two commercial services
+agreeing frequently means they ingested the same dump.</li>
+</ul>
+<h4>Confidence grading</h4>
+<ul>
+<li><strong>Confirmed</strong> — the record appears in a curated source that verified and
+attributed the breach, the field structure matches the named service, and a
+second selector in the record corroborates independently.</li>
+<li><strong>Probable</strong> — a record in a reputable commercial corpus with clear
+attribution to a named service and internally consistent fields.</li>
+<li><strong>Unconfirmed</strong> — a combolist hit, an unattributed dump, or a single row with
+no corroborating selector. Report the existence of the hit and say plainly
+that the source is unattributed.</li>
+<li><strong>Rejected</strong> — the alleged source has no plausible incident, the fields do not
+match what that service collects, or the data is a public scrape relabelled.</li>
+</ul>
+<p>Grade the <em>breach</em>, not just the record. A well-attributed breach makes every
+row in it more credible; an anonymous compilation makes every row less so.</p>
+<h4>Worked example</h4>
+<p>Self-audit for a client using <code>a.mercer@example.com</code>. HIBP returns four
+breaches. One is a large forum breach from several years back, data classes
+listed as email addresses, usernames, IP addresses, and password hashes.</p>
+<p>The username in that breach is <code>merce_ada</code>, which the client had forgotten
+using. That handle goes to <code>hunt-a-handle</code> and turns up two live accounts the
+client did not know were still public — the most valuable output of the exercise
+and nothing to do with credentials.</p>
+<p>The dead end: a commercial source returns a fifth &quot;breach&quot; attributed to a
+retailer, containing a home address. The retailer has never disclosed an
+incident, the field layout does not resemble a retail order table, and the same
+address appears in two data-broker records. Assessed as scraped aggregator data
+relabelled as a breach. Excluded from the report with the reasoning recorded.</p>
+<p>Remediation: passwords the client still uses are checked through the
+Pwned Passwords range API, so no password leaves the machine. No credential from
+any record is used anywhere.</p>
+<h4>Pivots</h4>
+<table>
+<thead>
+<tr>
+<th>New selector</th>
+<th>Skill</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Username recovered from a record</td>
+<td><code>hunt-a-handle</code></td>
+</tr>
+<tr>
+<td>Additional email addresses</td>
+<td><code>what-an-email-reveals</code></td>
+</tr>
+<tr>
+<td>Phone number in a record</td>
+<td><code>whose-number-is-this</code></td>
+</tr>
+<tr>
+<td>Signup IP</td>
+<td><code>find-exposed-servers</code></td>
+</tr>
+<tr>
+<td>Name, DOB, address fields</td>
+<td><code>find-anyone</code>, <code>dig-through-data-brokers</code></td>
+</tr>
+<tr>
+<td>Corporate domain across many records</td>
+<td><code>x-ray-a-company</code></td>
+</tr>
+<tr>
+<td>The dump itself, circulating</td>
+<td><code>find-leaks-in-the-wild</code></td>
+</tr>
+<tr>
+<td>Service list as an entity map</td>
+<td><code>graph-the-network</code></td>
+</tr>
+</tbody>
+</table>
+<h4>Legal and handling notes</h4>
+<p>Holding breach data is regulated, and more tightly than most OSINT material.
+Under GDPR and UK data protection law, breach records are personal data — often
+special-category data — and processing them needs a lawful basis, a defined
+retention period, and demonstrable data minimisation. Some jurisdictions treat
+possession of certain stolen data as an offence in itself, irrespective of how
+you obtained it. Several commercial services restrict their data by licence to
+specific purposes; read the terms before you put results in a client report.</p>
+<p>Practically: pull the minimum fields needed for the objective, do not retain
+credentials at all, store case material encrypted at rest with access logged,
+and delete on a schedule you wrote down at the start. If you are working for a
+subject on their own data, that is the cleanest footing available — and it is
+the only footing on which testing a password is ever appropriate.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

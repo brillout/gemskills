@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>caveman-compress · Gem Skills</title>
+    <meta name="description" content="Use it when: a file the agent reads every session, such as CLAUDE.md or a todo list, costs too many input tokens. It does: rewrites the file&#039;s prose as terse fragments, dropping articles and filler, while code, commands, paths, URLs and headings stay exactly as they were. You get: the compressed file in place of the original, with a readable backup kept outside the project. Sends: the whole file to a model provider: the claude CLI, the Anthropic API or an OpenAI-compatible endpoint; names that look like secrets are refused. Needs: Python, and a file path from you; it won&#039;t compress pasted text." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">juliusbrussee/caveman</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a></p>
+      <h1>caveman-compress</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a file the agent reads every session, such as CLAUDE.md or a todo list, costs too many input tokens</dd></div><div><dt>It does</dt><dd>rewrites the file&#39;s prose as terse fragments, dropping articles and filler, while code, commands, paths, URLs and headings stay exactly as they were</dd></div><div><dt>You get</dt><dd>the compressed file in place of the original, with a readable backup kept outside the project</dd></div><div><dt>Sends</dt><dd>the whole file to a model provider: the claude CLI, the Anthropic API or an OpenAI-compatible endpoint; names that look like secrets are refused</dd></div><div><dt>Needs</dt><dd>Python, and a file path from you; it won&#39;t compress pasted text</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 4 of 12 in the <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a> bundle · Before it: <a href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-review/">caveman-review</a> · After it: <a href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-stats/">caveman-stats</a></p>
+    
+      <p class="note">Sends the file&#39;s full text to a model provider to compress it.</p>
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Caveman is a skill set whose main mode makes the agent reply in short, plain fragments to save tokens. This skill applies the same style to files the agent reads, rather than the replies it writes. You run /caveman-compress with a file path; a bundled Python script sends the file to your configured model, checks the output, has the model fix only what failed, up to twice, and leaves the original untouched if it still fails. Compression drops articles, filler, pleasantries, hedging and connecting words, uses short synonyms and fragments, and merges bullets that repeat each other. Code blocks, inline code, URLs, paths, commands, names, numbers and the markdown structure stay exact. It only compresses prose files such as .md or .txt, never code or config, and only the prose parts of mixed files. The original is saved as FILE.original.md in a caveman-compress folder in your user data directory, not next to the file, so the agent doesn&#39;t load it again.</p>
+      <p class="muted">Summarizes <a href="https://github.com/juliusbrussee/caveman/tree/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman-compress">the skill at bad48a0</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/juliusbrussee/caveman --skill caveman-compress</code><button type="button" class="copy" data-copy="npx skills add https://github.com/juliusbrussee/caveman --skill caveman-compress">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/juliusbrussee/caveman/caveman-compress">skills.sh page</a> · <a href="https://github.com/juliusbrussee/caveman/tree/HEAD/skills/caveman-compress">Source on GitHub</a> · <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">All skills from juliusbrussee/caveman</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>364,482 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>106,976 <span class="muted">juliusbrussee/caveman</span></dd></div><div><dt>First seen</dt><dd>Apr 6, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">14.4K</div>
+      <div class="stat-delta">-4% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 15,015; week to Aug 10: 15,570; week to Aug 17: 10,610; week to Aug 24: 10,143; week to Aug 31: 10,034; week to Sep 7: 12,303; week to Sep 14: 13,546; week to Sep 21: 14,374. Use the left and right arrow keys to read each week."
+        data-values="15015,15570,10610,10143,10034,12303,13546,14374" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,7.6 38.6,6.0 71.1,20.0 103.7,21.3 136.3,21.6 168.9,15.2 201.4,11.7 234.0,9.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="9.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>15,015</td></tr><tr><td>Aug 10</td><td>15,570</td></tr><tr><td>Aug 17</td><td>10,610</td></tr><tr><td>Aug 24</td><td>10,143</td></tr><tr><td>Aug 31</td><td>10,034</td></tr><tr><td>Sep 7</td><td>12,303</td></tr><tr><td>Sep 14</td><td>13,546</td></tr><tr><td>Sep 21</td><td>14,374</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:output-style" data-facet="category" title="Change how the agent replies: shorter, clearer, fewer tokens." href="/gemskills/?tag=category%3Aoutput-style">category:output-style</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Change how the agent replies: shorter, clearer, fewer tokens.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:command" data-facet="type" title="A one-shot action you invoke by name, such as turning the conversation into a PRD." href="/gemskills/?tag=type%3Acommand">type:command</a></div>
+          <p class="tag-meaning">A one-shot action you invoke by name, such as turning the conversation into a PRD.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="token-saving" data-facet="topic" href="/gemskills/?tag=token-saving">token-saving</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/juliusbrussee/caveman/blob/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman-compress/SKILL.md">juliusbrussee/caveman at bad48a0</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: caveman-compress
+description: &#62;
+  Compress a memory file such as CLAUDE.md or a todo list into caveman format
+  to save input tokens, keeping a readable backup. Sends the file&#39;s text to the
+  configured model provider. Trigger: /caveman-compress.</code></pre></details>
+        <div class="markdown"><h3>Caveman Compress</h3>
+<h4>Purpose</h4>
+<blockquote>
+<p><strong>Data leaves the machine.</strong> Compression sends the file's full text to the model provider that <code>scripts/compress.py</code> is configured for: the <code>claude</code> CLI, the Anthropic API, or an OpenAI-compatible endpoint. Files whose names look like secrets (<code>.env</code>, <code>credentials</code>, <code>secrets</code>, <code>.netrc</code>, …) are refused before they are read. Don't compress a file the provider shouldn't see.</p>
+</blockquote>
+<p>Compress natural language files (CLAUDE.md, todos, preferences) into caveman-speak to reduce input tokens. Compressed version overwrites original. Human-readable backup saved as <code>&lt;filename&gt;.original.md</code>, but NOT beside the source file — it lives in an out-of-tree data dir (<code>$XDG_DATA_HOME/caveman-compress/backups/&lt;parent-dir-name&gt;/</code>, or <code>%LOCALAPPDATA%\caveman-compress\backups\&lt;parent-dir-name&gt;\</code> on Windows) so skill auto-loaders don't re-ingest it as a live file.</p>
+<h4>Trigger</h4>
+<p><code>/caveman-compress &lt;filepath&gt;</code> or when user asks to compress a memory file.</p>
+<p><strong>Requires an explicit filepath.</strong> If the user pastes raw text instead of naming a file, do NOT improvise an inline compression — ask them for the filepath to compress, or offer to save the pasted text to a file first. Writing your own reasoning/commentary about the request into the compressed output (e.g. &quot;User passed text directly, not a filepath...&quot;) is the exact failure this guards against — never let that leak into a saved file.</p>
+<h4>Process</h4>
+<ol>
+<li>
+<p>The compression scripts live in <code>scripts/</code> (adjacent to this SKILL.md). If the path is not immediately available, search for <code>scripts/__main__.py</code> next to this SKILL.md.</p>
+</li>
+<li>
+<p>From the directory containing this SKILL.md, run:</p>
+</li>
+</ol>
+<p>python3 -m scripts &lt;absolute_filepath&gt;</p>
+<ol start="3">
+<li>The CLI will:</li>
+</ol>
+<ul>
+<li>detect file type (no tokens)</li>
+<li>call Claude to compress</li>
+<li>validate output (no tokens)</li>
+<li>if errors: cherry-pick fix with Claude (targeted fixes only, no recompression)</li>
+<li>retry up to 2 times</li>
+<li>if still failing after 2 retries: report error to user, leave original file untouched</li>
+</ul>
+<ol start="4">
+<li>Return result to user</li>
+</ol>
+<h4>Compression Rules</h4>
+<h5>Remove</h5>
+<ul>
+<li>Articles: a, an, the</li>
+<li>Filler: just, really, basically, actually, simply, essentially, generally</li>
+<li>Pleasantries: &quot;sure&quot;, &quot;certainly&quot;, &quot;of course&quot;, &quot;happy to&quot;, &quot;I'd recommend&quot;</li>
+<li>Hedging: &quot;it might be worth&quot;, &quot;you could consider&quot;, &quot;it would be good to&quot;</li>
+<li>Redundant phrasing: &quot;in order to&quot; → &quot;to&quot;, &quot;make sure to&quot; → &quot;ensure&quot;, &quot;the reason is because&quot; → &quot;because&quot;</li>
+<li>Connective fluff: &quot;however&quot;, &quot;furthermore&quot;, &quot;additionally&quot;, &quot;in addition&quot;</li>
+</ul>
+<h5>Preserve EXACTLY (never modify)</h5>
+<ul>
+<li>Code blocks (fenced ``` and indented)</li>
+<li>Inline code (<code>backtick content</code>)</li>
+<li>URLs and links (full URLs, markdown links)</li>
+<li>File paths (<code>/src/components/...</code>, <code>./config.yaml</code>)</li>
+<li>Commands (<code>npm install</code>, <code>git commit</code>, <code>docker build</code>)</li>
+<li>Technical terms (library names, API names, protocols, algorithms)</li>
+<li>Proper nouns (project names, people, companies)</li>
+<li>Dates, version numbers, numeric values</li>
+<li>Environment variables (<code>$HOME</code>, <code>NODE_ENV</code>)</li>
+</ul>
+<h5>Preserve Structure</h5>
+<ul>
+<li>All markdown headings (keep exact heading text, compress body below)</li>
+<li>Bullet point hierarchy (keep nesting level)</li>
+<li>Numbered lists (keep numbering)</li>
+<li>Tables (compress cell text, keep structure)</li>
+<li>Frontmatter/YAML headers in markdown files</li>
+</ul>
+<h5>Compress</h5>
+<ul>
+<li>Use short synonyms: &quot;big&quot; not &quot;extensive&quot;, &quot;fix&quot; not &quot;implement a solution for&quot;, &quot;use&quot; not &quot;utilize&quot;</li>
+<li>Fragments OK: &quot;Run tests before commit&quot; not &quot;You should always run tests before committing&quot;</li>
+<li>Drop &quot;you should&quot;, &quot;make sure to&quot;, &quot;remember to&quot; — just state the action</li>
+<li>Merge redundant bullets that say the same thing differently</li>
+<li>Keep one example where multiple examples show the same pattern</li>
+</ul>
+<p>CRITICAL RULE:
+Anything inside <code>...</code> must be copied EXACTLY.
+Do not:</p>
+<ul>
+<li>remove comments</li>
+<li>remove spacing</li>
+<li>reorder lines</li>
+<li>shorten commands</li>
+<li>simplify anything</li>
+</ul>
+<p>Inline code (<code>...</code>) must be preserved EXACTLY.
+Do not modify anything inside backticks.</p>
+<p>If file contains code blocks:</p>
+<ul>
+<li>Treat code blocks as read-only regions</li>
+<li>Only compress text outside them</li>
+<li>Do not merge sections around code</li>
+</ul>
+<h4>Pattern</h4>
+<p>Original:</p>
+<blockquote>
+<p>You should always make sure to run the test suite before pushing any changes to the main branch. This is important because it helps catch bugs early and prevents broken builds from being deployed to production.</p>
+</blockquote>
+<p>Compressed:</p>
+<blockquote>
+<p>Run tests before push to main. Catch bugs early, prevent broken prod deploys.</p>
+</blockquote>
+<p>Original:</p>
+<blockquote>
+<p>The application uses a microservices architecture with the following components. The API gateway handles all incoming requests and routes them to the appropriate service. The authentication service is responsible for managing user sessions and JWT tokens.</p>
+</blockquote>
+<p>Compressed:</p>
+<blockquote>
+<p>Microservices architecture. API gateway route all requests to services. Auth service manage user sessions + JWT tokens.</p>
+</blockquote>
+<h4>Boundaries</h4>
+<ul>
+<li>ONLY compress natural language files (.md, .txt, .typ, .typst, .tex, extensionless)</li>
+<li>NEVER modify: .py, .js, .ts, .json, .yaml, .yml, .toml, .env, .lock, .css, .html, .xml, .sql, .sh</li>
+<li>If file has mixed content (prose + code), compress ONLY the prose sections</li>
+<li>If unsure whether something is code or prose, leave it unchanged</li>
+<li>Original file is backed up as FILE.original.md before overwriting — in the out-of-tree backup data dir (see Purpose), not beside the source file</li>
+<li>Never compress FILE.original.md (skip it)</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>make-interfaces-feel-better · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re building or reviewing UI that works but feels slightly off. It does: applies 19 small rules, such as matching corner curves on nested boxes, centering icons by eye, shadows over borders, and subtle press animations. You get: polished UI code, or a review: findings with severity, file, before and after, then a verdict. Review modes: quick, at most 5 high or medium findings on the main user path; full, up to 15 across typography, surfaces, animation, icons and performance. Unlike frontend-design: which sets a visual direction, it fixes details within the styling you already use. Runs: when the agent builds or reviews UI, or when you ask." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=jakubkrehel%2Fmake-interfaces-feel-better">jakubkrehel/make-interfaces-feel-better</a></p>
+      <h1>make-interfaces-feel-better</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re building or reviewing UI that works but feels slightly off</dd></div><div><dt>It does</dt><dd>applies 19 small rules, such as matching corner curves on nested boxes, centering icons by eye, shadows over borders, and subtle press animations</dd></div><div><dt>You get</dt><dd>polished UI code, or a review: findings with severity, file, before and after, then a verdict</dd></div><div><dt>Review modes</dt><dd>quick, at most 5 high or medium findings on the main user path; full, up to 15 across typography, surfaces, animation, icons and performance</dd></div><div><dt>Unlike frontend-design</dt><dd>which sets a visual direction, it fixes details within the styling you already use</dd></div><div><dt>Runs</dt><dd>when the agent builds or reviews UI, or when you ask</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A checklist of the small details that, added up, make an interface feel finished. Some are exact: the outer corner radius equals the inner radius plus the padding; buttons shrink to 0.96 when pressed, never below 0.95; numbers that change use fixed-width digits so the layout doesn&#39;t jump; icons swap with a set scale, fade and blur; images get a faint 1px outline in pure black or white. Others are judgement: shadows for depth, borders for structure; exits softer than entrances; no custom animation on actions people repeat constantly; clickable areas of at least 44 by 44 pixels on touch screens. Every fix is written in the project&#39;s existing styling, whether Tailwind, CSS or CSS-in-JS. In a review it checks every state, such as hover, focus and loading, watches animations slowed to 10% in the browser&#39;s dev tools, cites the file and line of each finding, lists candidates it considered and rejected, and ends with Block, Needs changes or Approve.</p>
+      <p class="muted">Summarizes <a href="https://github.com/jakubkrehel/make-interfaces-feel-better/tree/35545ea1512ad59fa463e6b1f95ca9c052981fe6/skills/make-interfaces-feel-better">the skill at 35545ea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/jakubkrehel/make-interfaces-feel-better --skill make-interfaces-feel-better</code><button type="button" class="copy" data-copy="npx skills add https://github.com/jakubkrehel/make-interfaces-feel-better --skill make-interfaces-feel-better">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/jakubkrehel/make-interfaces-feel-better/make-interfaces-feel-better">skills.sh page</a> · <a href="https://github.com/jakubkrehel/make-interfaces-feel-better/tree/HEAD/skills/make-interfaces-feel-better">Source on GitHub</a> · <a href="/gemskills/?repo=jakubkrehel%2Fmake-interfaces-feel-better">All skills from jakubkrehel/make-interfaces-feel-better</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>57,629 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>3,481 <span class="muted">jakubkrehel/make-interfaces-feel-better</span></dd></div><div><dt>First seen</dt><dd>Mar 13, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">1.4K</div>
+      <div class="stat-delta">-24% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 1,850; week to Aug 10: 1,836; week to Aug 17: 1,627; week to Aug 24: 1,002; week to Aug 31: 924; week to Sep 7: 1,104; week to Sep 14: 1,197; week to Sep 21: 1,403. Use the left and right arrow keys to read each week."
+        data-values="1850,1836,1627,1002,924,1104,1197,1403" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,6.3 71.1,11.3 103.7,26.2 136.3,28.0 168.9,23.7 201.4,21.5 234.0,16.6" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="16.6" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>1,850</td></tr><tr><td>Aug 10</td><td>1,836</td></tr><tr><td>Aug 17</td><td>1,627</td></tr><tr><td>Aug 24</td><td>1,002</td></tr><tr><td>Aug 31</td><td>924</td></tr><tr><td>Sep 7</td><td>1,104</td></tr><tr><td>Sep 14</td><td>1,197</td></tr><tr><td>Sep 21</td><td>1,403</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:design" data-facet="category" title="Taste for interfaces that don&#39;t look generated: direction, motion and accessibility." href="/gemskills/?tag=category%3Adesign">category:design</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Taste for interfaces that don&#39;t look generated: direction, motion and accessibility.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="design" data-facet="topic" href="/gemskills/?tag=design">design</a><a class="tag" data-tag="animation" data-facet="topic" href="/gemskills/?tag=animation">animation</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/jakubkrehel/make-interfaces-feel-better/blob/35545ea1512ad59fa463e6b1f95ca9c052981fe6/skills/make-interfaces-feel-better/SKILL.md">jakubkrehel/make-interfaces-feel-better at 35545ea</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: make-interfaces-feel-better
+description: &#62;-
+  Design engineering principles for making interfaces feel polished. Use when building UI components, reviewing frontend code, implementing animations, hover states, shadows, borders, typography, icons, micro-interactions, enter/exit animations, or any visual detail work. Supports quick and full review modes. Triggers on UI polish, design details, &#34;make it feel better&#34;, &#34;feels off&#34;, stagger animations, border radius, optical alignment, font smoothing, tabular numbers, image outlines, box shadows, icons, icon stroke weight, icon states, motion restraint.</code></pre></details>
+        <div class="markdown"><h3>Details that make interfaces feel better</h3>
+<p>Great interfaces rarely come from a single thing. It's usually a collection of small details that compound into a great experience. Apply these principles when building or reviewing UI code. Before suggesting or writing a fix, identify the project's existing styling system and express the change in that system: Tailwind in a Tailwind project, plain CSS in a CSS project, or the established CSS-in-JS approach. Never introduce a second styling system just to apply a polish fix.</p>
+<p>When reviewing, slow the interface down: replay motion at 10% speed in the browser's Animations panel and walk every state: hover, focus, active, loading, empty. What feels off at 10% speed is what's subtly wrong at full speed.</p>
+<h4>Quick Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/jakubkrehel/make-interfaces-feel-better/blob/35545ea1512ad59fa463e6b1f95ca9c052981fe6/skills/make-interfaces-feel-better/typography.md">Typography</a></td>
+<td>Text wrapping, font smoothing, tabular numbers</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jakubkrehel/make-interfaces-feel-better/blob/35545ea1512ad59fa463e6b1f95ca9c052981fe6/skills/make-interfaces-feel-better/surfaces.md">Surfaces</a></td>
+<td>Border radius, optical alignment, shadows, image outlines, hit areas</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jakubkrehel/make-interfaces-feel-better/blob/35545ea1512ad59fa463e6b1f95ca9c052981fe6/skills/make-interfaces-feel-better/animations.md">Animations</a></td>
+<td>Interruptible animations, enter/exit transitions, icon animations, scale on press, motion restraint</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jakubkrehel/make-interfaces-feel-better/blob/35545ea1512ad59fa463e6b1f95ca9c052981fe6/skills/make-interfaces-feel-better/icons.md">Icons</a></td>
+<td>Icon stroke weight, states via <code>currentColor</code>, outline vs fill, sizing, RTL flipping</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jakubkrehel/make-interfaces-feel-better/blob/35545ea1512ad59fa463e6b1f95ca9c052981fe6/skills/make-interfaces-feel-better/performance.md">Performance</a></td>
+<td>Transition specificity, <code>will-change</code> usage</td>
+</tr>
+</tbody>
+</table>
+<h4>Core Principles</h4>
+<h5>1. Concentric Border Radius</h5>
+<p>Outer radius = inner radius + padding. Mismatched radii on nested elements is the most common thing that makes interfaces feel off.</p>
+<h5>2. Optical Over Geometric Alignment</h5>
+<p>When geometric centering looks off, align optically. Buttons with icons, play triangles, and asymmetric icons all need manual adjustment.</p>
+<h5>3. Shadows for Elevation, Borders for Structure</h5>
+<p>For buttons, cards, and containers whose border exists only to create depth, prefer layered transparent <code>box-shadow</code> values. Keep borders that communicate structure or state: dividers, layout separators, and selected or focus states.</p>
+<h5>4. Interruptible Animations</h5>
+<p>Use CSS transitions for interactive state changes — they can be interrupted mid-animation. Reserve keyframes for staged sequences that run once.</p>
+<h5>5. Split and Stagger Enter Animations</h5>
+<p>For an infrequent staged entrance where sequence helps communicate hierarchy, break content into semantic chunks and stagger them by ~100ms instead of animating one container. Do not stagger routine, high-frequency interactions.</p>
+<h5>6. Subtle Exit Animations</h5>
+<p>Use a small fixed <code>translateY</code> instead of full height. Exits should be softer than enters. Use <code>ease-out</code> for both enter and exit transitions.</p>
+<h5>7. Contextual Icon Animations</h5>
+<p>Animate icons with <code>opacity</code>, <code>scale</code>, and <code>blur</code> instead of toggling visibility. Use exactly these values: scale from <code>0.25</code> to <code>1</code>, opacity from <code>0</code> to <code>1</code>, blur from <code>4px</code> to <code>0px</code>. If the project has <code>motion</code> or <code>framer-motion</code> in <code>package.json</code>, match that package's import path (or the established nearby imports when both exist) and use <code>transition: { type: &quot;spring&quot;, duration: 0.3, bounce: 0 }</code> — bounce must always be <code>0</code>. If no motion library is installed, keep both icons in the DOM (one absolute-positioned) and cross-fade with CSS transitions using <code>cubic-bezier(0.2, 0, 0, 1)</code> — this gives both enter and exit animations without any dependency.</p>
+<h5>8. Font Smoothing</h5>
+<p>Apply <code>-webkit-font-smoothing: antialiased</code> to the root layout on macOS for crisper text.</p>
+<h5>9. Tabular Numbers</h5>
+<p>Use <code>font-variant-numeric: tabular-nums</code> for any dynamically updating numbers to prevent layout shift.</p>
+<h5>10. Text Wrapping</h5>
+<p>Use <code>text-wrap: balance</code> on headings. Use <code>text-wrap: pretty</code> for body text to avoid orphans.</p>
+<h5>11. Image Outlines</h5>
+<p>Add a subtle <code>1px</code> outline with low opacity to images for consistent depth. The color must be pure black in light mode (<code>oklch(0 0 0 / 0.1)</code>) and pure white in dark mode (<code>oklch(1 0 0 / 0.1)</code>), never a near-black like slate, zinc, or any tinted neutral. A tinted outline picks up the surface color underneath it and reads as dirt on the image edge.</p>
+<h5>12. Scale on Press</h5>
+<p>A subtle <code>scale(0.96)</code> on click gives buttons tactile feedback. Always use <code>0.96</code>. Never use a value smaller than <code>0.95</code> — anything below feels exaggerated. Add a <code>static</code> prop to disable it when motion would be distracting.</p>
+<h5>13. Skip Animation on Page Load</h5>
+<p>Use <code>initial={false}</code> on <code>AnimatePresence</code> to prevent enter animations on first render. Verify it doesn't break intentional entrance animations.</p>
+<h5>14. Never Use <code>transition: all</code></h5>
+<p>Always specify exact properties: <code>transition-property: scale, opacity</code>. Tailwind's <code>transition-transform</code> covers <code>transform, translate, scale, rotate</code>.</p>
+<h5>15. Use <code>will-change</code> Sparingly</h5>
+<p>Only for <code>transform</code>, <code>opacity</code>, <code>filter</code> — properties the GPU can composite. Never use <code>will-change: all</code>. Only add when you notice first-frame stutter.</p>
+<h5>16. Minimum Hit Area</h5>
+<p>Interactive elements should prefer a 44×44px hit area for touch or mobile contexts. In dense desktop interfaces, use at least 40×40px. Extend with a pseudo-element if the visible element is smaller. Never let hit areas of two elements overlap.</p>
+<h5>17. Match Icon Stroke to Text Weight</h5>
+<p>An icon next to text carries the text's optical weight: <code>1.5px</code> stroke beside regular (400) text, <code>2px</code> beside semibold (600). One stroke weight per icon set; never mix libraries on one surface.</p>
+<h5>18. One SVG, Recolored per State</h5>
+<p>Icons use <code>currentColor</code> and get their states (hover, selected, disabled) from CSS color and opacity, never from separate assets. Outline variant is the default; fill variant marks the active state.</p>
+<h5>19. Motion Restraint</h5>
+<p>No custom animation on high-frequency interactions: the attention cost repeats on every trigger. Motion is never the only feedback channel; every animated state change also needs a static cue such as color, icon, or label.</p>
+<h4>Common Mistakes</h4>
+<table>
+<thead>
+<tr>
+<th>Mistake</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Same border radius on parent and child</td>
+<td>Calculate <code>outerRadius = innerRadius + padding</code></td>
+</tr>
+<tr>
+<td>Icons look off-center</td>
+<td>Adjust optically with padding or fix SVG directly</td>
+</tr>
+<tr>
+<td>Border used only to fake elevation</td>
+<td>Use layered <code>box-shadow</code> with transparency; keep structural and state borders</td>
+</tr>
+<tr>
+<td>Jarring staged entrance or contextual exit</td>
+<td>Stagger infrequent entrances and keep context-preserving exits subtle</td>
+</tr>
+<tr>
+<td>Numbers cause layout shift</td>
+<td>Apply <code>tabular-nums</code></td>
+</tr>
+<tr>
+<td>Heavy text on macOS</td>
+<td>Apply <code>antialiased</code> to root</td>
+</tr>
+<tr>
+<td>Animation plays on page load</td>
+<td>Add <code>initial={false}</code> to <code>AnimatePresence</code></td>
+</tr>
+<tr>
+<td><code>transition: all</code> on elements</td>
+<td>Specify exact properties</td>
+</tr>
+<tr>
+<td>First-frame animation stutter</td>
+<td>Add <code>will-change: transform</code> (sparingly)</td>
+</tr>
+<tr>
+<td>Tiny hit areas on small controls</td>
+<td>Extend with a pseudo-element to 44×44px for touch/mobile, or at least 40×40px in dense desktop UI</td>
+</tr>
+<tr>
+<td>Hairline icon beside bold text</td>
+<td>Match the stroke width to the text weight</td>
+</tr>
+<tr>
+<td>Separate icon assets per state</td>
+<td>One <code>currentColor</code> SVG, states via CSS</td>
+</tr>
+<tr>
+<td>Filled icons everywhere</td>
+<td>Outline as default, fill only for the active state</td>
+</tr>
+<tr>
+<td>Entrance animation on every hover or keystroke</td>
+<td>Instant feedback or ≤150ms opacity/color transition</td>
+</tr>
+</tbody>
+</table>
+<h4>Review Output Format</h4>
+<p>Use <code>full</code> when no review mode is supplied.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Coverage</th>
+<th>Finding cap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>quick</code></td>
+<td>Primary user path and highest-traffic states; report only <code>HIGH</code> and <code>MEDIUM</code> issues</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>full</code></td>
+<td>Entire requested scope across typography, surfaces, animations, icons, and performance</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<h5>Scope and Coverage</h5>
+<p>State the mode, exact scope, framework, styling conventions, and any review boundary. Show what was actually inspected:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Evidence inspected</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Typography</td>
+<td>Files, components, states, or checks</td>
+<td>Findings count, <code>Clear</code>, or <code>Not reviewed</code> with a reason</td>
+</tr>
+</tbody>
+</table>
+<p>Include all five Quick Reference categories. Never imply an uninspected surface was reviewed.</p>
+<h5>Findings</h5>
+<p>Group findings by principle. Use a markdown table with <strong>Severity</strong>, <strong>Location</strong>, <strong>Before</strong>, <strong>After</strong>, and <strong>Why</strong> columns. Include every change made or proposed, not a subset. Never use separate &quot;Before:&quot; / &quot;After:&quot; lines.</p>
+<ul>
+<li><strong>Severity</strong>: <code>HIGH</code> makes an interaction inaccessible, misleading, unreadable, or repeatedly disruptive; <code>MEDIUM</code> creates a noticeable usability or consistency problem; <code>LOW</code> is isolated polish and appears only in <code>full</code> mode.</li>
+<li><strong>Location</strong>: cite <code>path/to/file:line</code>. If the artifact has no source files, cite the exact screen and component instead.</li>
+<li><strong>Before / After</strong>: show the current implementation and an actionable replacement.</li>
+<li><strong>Why</strong>: name the violated principle and explain its user impact.</li>
+</ul>
+<p>Consolidate a repeated systemic issue into one row and list every affected location. Omit principles with no findings and never pad the report to reach the cap.</p>
+<h5>Example</h5>
+<h6>Concentric border radius</h6>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Location</th>
+<th>Before</th>
+<th>After</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOW</td>
+<td><code>src/Card.tsx:28</code></td>
+<td><code>rounded-xl</code> on card + <code>rounded-xl</code> on inner button (<code>p-2</code>)</td>
+<td><code>rounded-2xl</code> on card (<code>8 + 8 = 16</code>), <code>rounded-lg</code> on inner button</td>
+<td>Nested corners should be concentric</td>
+</tr>
+<tr>
+<td>LOW</td>
+<td><code>src/card.css:11</code></td>
+<td><code>border-radius: 16px</code> on both nested surfaces</td>
+<td>Outer <code>24px</code>, inner <code>16px</code> with <code>8px</code> padding</td>
+<td>Equal nested radii make the inner surface look pinched</td>
+</tr>
+</tbody>
+</table>
+<h6>Tabular numbers</h6>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Location</th>
+<th>Before</th>
+<th>After</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MEDIUM</td>
+<td><code>src/Counter.tsx:17</code></td>
+<td><code>&lt;span&gt;{count}&lt;/span&gt;</code></td>
+<td><code>&lt;span className=&quot;tabular-nums&quot;&gt;{count}&lt;/span&gt;</code></td>
+<td>Proportional digits cause changing values to shift</td>
+</tr>
+<tr>
+<td>LOW</td>
+<td><code>src/timer.css:8</code></td>
+<td>Default numerals on a timer</td>
+<td>Add <code>font-variant-numeric: tabular-nums</code> to the timer</td>
+<td>Equal-width digits keep the timer stable</td>
+</tr>
+</tbody>
+</table>
+<h6>Scale on press</h6>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Location</th>
+<th>Before</th>
+<th>After</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOW</td>
+<td><code>src/Button.tsx:19</code></td>
+<td><code>&lt;button className=&quot;...&quot;&gt;</code></td>
+<td>Add <code>active:scale-[0.96] transition-transform</code></td>
+<td>Press feedback makes the control feel responsive</td>
+</tr>
+<tr>
+<td>MEDIUM</td>
+<td><code>src/button.css:24</code></td>
+<td><code>scale(0.9)</code> on press</td>
+<td>Raise to <code>scale(0.96)</code></td>
+<td>Anything below <code>0.95</code> feels exaggerated</td>
+</tr>
+</tbody>
+</table>
+<h5>Considered but Rejected</h5>
+<p>Include 1–3 real candidates in <code>quick</code> mode and 2–5 in <code>full</code> mode:</p>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th>Candidate</th>
+<th>Rejected because</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/Card.tsx:28</code></td>
+<td>Increase the shadow</td>
+<td>Existing depth matches the shared surface token; changing one card would reduce consistency</td>
+</tr>
+</tbody>
+</table>
+<p>Do not invent filler. If the scope contains fewer borderline candidates, include the ones that exist and say so.</p>
+<h5>Verification and Verdict</h5>
+<p>After the findings:</p>
+<ol>
+<li><strong>Verification</strong>: list the exact commands or interactions run and their observed results. Walk every relevant state and inspect motion at 10% speed when animation is involved. If a check was not run, label it <strong>Not verified</strong> and state what remains.</li>
+<li><strong>Verdict</strong>: <code>Block</code> if any <code>HIGH</code> finding remains, <code>Needs changes</code> if only <code>MEDIUM</code> or <code>LOW</code> findings remain, and <code>Approve</code> only when no actionable findings remain. List every unverified check beside the verdict.</li>
+</ol>
+<p>When there are no findings, omit the findings table, state &quot;No actionable interface-polish findings&quot;, report verification and rejected candidates, and end with <code>Approve</code>.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

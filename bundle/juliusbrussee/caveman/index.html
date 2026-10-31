@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caveman · Gem Skills</title>
+    <meta name="description" content="Use it when: you want shorter agent replies and fewer tokens spent, beyond chat too. It does: makes the agent answer tersely, and adds terse commits, one-line reviews and compressed memory files. Keeps: code, commands, errors and numbers exact, and full sentences for warnings and irreversible actions. Also has: five short work patterns, such as investigate-first and lean-build, that keep code changes small. Needs: the Caveman plugin for caveman-stats and for cavecrew&#039;s subagents." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page bundle-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">juliusbrussee/caveman</a></p>
+      <h1>Caveman <span class="kind">Bundle · 12 skills</span></h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want shorter agent replies and fewer tokens spent, beyond chat too</dd></div><div><dt>It does</dt><dd>makes the agent answer tersely, and adds terse commits, one-line reviews and compressed memory files</dd></div><div><dt>Keeps</dt><dd>code, commands, errors and numbers exact, and full sentences for warnings and irreversible actions</dd></div><div><dt>Also has</dt><dd>five short work patterns, such as investigate-first and lean-build, that keep code changes small</dd></div><div><dt>Needs</dt><dd>the Caveman plugin for caveman-stats and for cavecrew&#39;s subagents</dd></div></dl></section>
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Its core is caveman, a mode that makes the agent lead with the answer in short plain sentences, with no greetings, hedging or recaps, until you say &#34;stop caveman&#34;; ultracave and megacave, two more skills in the repo, cut further. The other skills carry the idea beyond chat. caveman-commit writes Conventional Commits messages with a subject of 50 characters when possible, caveman-review writes one line per review finding, and caveman-compress rewrites a memory file such as CLAUDE.md in caveman style to save input tokens, backing up the original. cavecrew delegates searches, small edits and reviews to three subagents whose reports come back compressed, so the main context lasts longer. caveman-stats shows the session&#39;s recorded token usage, and caveman-help lists every mode and command. Five short skills are work patterns the agent picks up when a task fits: investigate-first diagnoses before editing, lean-build builds only what&#39;s asked, surgical-patch fixes at the narrowest layer, safe-refactor keeps behavior unchanged and migration keeps changes reversible. The repo also ships a CLI and a proxy that shrink what the agent reads; this bundle covers its skills.</p>
+      <p class="muted">Summarizes <a href="https://github.com/juliusbrussee/caveman/tree/bad48a0e1df55e05e3f52249afa35ecc1909ee76">the repo at bad48a0</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <p class="install-label">Any agent, with the skills CLI</p><div class="install"><code>npx skills add https://github.com/juliusbrussee/caveman --skill &#39;*&#39;</code><button type="button" class="copy" data-copy="npx skills add https://github.com/juliusbrussee/caveman --skill &#39;*&#39;">Copy</button></div><p class="install-label">Claude Code plugin</p><div class="install"><code>claude plugin marketplace add JuliusBrussee/caveman &#38;&#38; claude plugin install caveman@caveman</code><button type="button" class="copy" data-copy="claude plugin marketplace add JuliusBrussee/caveman &#38;&#38; claude plugin install caveman@caveman">Copy</button></div>
+          <p class="links"><a href="https://github.com/juliusbrussee/caveman">Source on GitHub</a> · <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">All skills from juliusbrussee/caveman</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>526,347 <span class="muted">of <a href="/gemskills/skill/juliusbrussee/caveman/skills/caveman/">caveman</a>, its most installed skill, on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>106,976 <span class="muted">juliusbrussee/caveman</span></dd></div><div><dt>First seen</dt><dd>Apr 4, 2026 <span class="muted">on skills.sh, its first skill</span></dd></div></dl>
+        </div>
+      </div>
+      <section aria-labelledby="skills">
+        <h2 id="skills">Its skills, in the order they're used</h2>
+        <p class="muted">The ones marked “Only in the bundle” need the rest of it, so they're only listed here. The others also have their own entry in the skills list.</p>
+        <ol class="bundle-skills">
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/caveman/">caveman</a></h3>
+          
+          <span class="metric"><strong>526K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Switches to ultra-compressed answers that keep technical accuracy.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-commit/">caveman-commit</a></h3>
+          
+          <span class="metric"><strong>370K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Writes Conventional Commits messages compressed to intent only.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-review/">caveman-review</a></h3>
+          
+          <span class="metric"><strong>366K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Writes terse code review comments, one line per finding.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-compress/">caveman-compress</a></h3>
+          
+          <span class="metric"><strong>364K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Compresses CLAUDE.md or todo files into caveman format to save input tokens.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-stats/">caveman-stats</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>313K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Shows token usage and mode attribution for the Claude Code session.</p>
+        <p class="member-note">Prints the token report of hooks that only the Caveman plugin installs, in Claude Code.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-help/">caveman-help</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>357K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Shows a quick-reference card for caveman modes.</p>
+        <p class="member-note">A reference card for the bundle&#39;s modes and skills, so it only helps once they&#39;re installed.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/cavecrew/">cavecrew</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>314K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Delegates work to terse investigator, builder and reviewer subagents.</p>
+        <p class="member-note">Delegates to three subagents that come with the Caveman plugin, not with the skill.</p>
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/investigate-first/">investigate-first</a></h3>
+          
+          <span class="metric"><strong>62K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Diagnoses ambiguous failures before editing.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/lean-build/">lean-build</a></h3>
+          
+          <span class="metric"><strong>61.4K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Builds features with strict scope to avoid overbuilding.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/surgical-patch/">surgical-patch</a></h3>
+          
+          <span class="metric"><strong>61.7K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Fixes bugs at the narrowest layer that owns the wrong behavior.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/safe-refactor/">safe-refactor</a></h3>
+          
+          <span class="metric"><strong>62K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Restructures code while preserving behavior, with verification around each edit.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/juliusbrussee/caveman/skills/migration/">migration</a></h3>
+          
+          <span class="metric"><strong>61.1K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Implements reversible migrations of schemas, data, APIs and dependencies.</p>
+        
+      </li></ol>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_bundle_client.BrcZt5VM.js" type="module" async></script>
+  </body>
+</html>

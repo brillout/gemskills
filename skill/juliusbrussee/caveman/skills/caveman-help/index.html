@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>caveman-help · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;ve installed Caveman, a skill set that makes agents reply tersely to save tokens, and want a reminder of its modes and commands. It does: prints one reference card, itself in caveman style, without changing the mode or saving anything. Lists: the three modes, the commit, review and compress commands, how to stop caveman, and how to change the default mode. Runs: when you type /caveman-help or ask for caveman help." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">juliusbrussee/caveman</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a></p>
+      <h1>caveman-help</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;ve installed Caveman, a skill set that makes agents reply tersely to save tokens, and want a reminder of its modes and commands</dd></div><div><dt>It does</dt><dd>prints one reference card, itself in caveman style, without changing the mode or saving anything</dd></div><div><dt>Lists</dt><dd>the three modes, the commit, review and compress commands, how to stop caveman, and how to change the default mode</dd></div><div><dt>Runs</dt><dd>when you type /caveman-help or ask for caveman help</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 6 of 12 in the <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a> bundle · Before it: <a href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-stats/">caveman-stats</a> · After it: <a href="/gemskills/skill/juliusbrussee/caveman/skills/cavecrew/">cavecrew</a></p>
+    <p class="note">Only works inside its bundle: A reference card for the bundle&#39;s modes and skills, so it only helps once they&#39;re installed. Install <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A one-shot cheat sheet for the Caveman skills. It shows the three modes: caveman, which answers first and drops fluff; ultracave, which strips grammar down to fragments; and megacave, which replies in classical Chinese, using far fewer characters, with technical terms kept as they are. It lists /caveman-commit, /caveman-review and /caveman-compress, reminds you that &#34;stop caveman&#34; or &#34;normal mode&#34; turns it off, and notes that replies stay in your language. It also explains how to set the default mode with the CAVEMAN_DEFAULT_MODE variable or ~/.config/caveman/config.json, including &#34;manual&#34;, which starts sessions with caveman off until you type /caveman. It&#39;s only useful once the other Caveman skills are installed.</p>
+      <p class="muted">Summarizes <a href="https://github.com/juliusbrussee/caveman/tree/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman-help">the skill at bad48a0</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/juliusbrussee/caveman --skill caveman-help</code><button type="button" class="copy" data-copy="npx skills add https://github.com/juliusbrussee/caveman --skill caveman-help">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/juliusbrussee/caveman/caveman-help">skills.sh page</a> · <a href="https://github.com/juliusbrussee/caveman/tree/HEAD/skills/caveman-help">Source on GitHub</a> · <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">All skills from juliusbrussee/caveman</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>356,673 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>106,976 <span class="muted">juliusbrussee/caveman</span></dd></div><div><dt>First seen</dt><dd>Apr 11, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">14.1K</div>
+      <div class="stat-delta">-5% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 14,879; week to Aug 10: 15,551; week to Aug 17: 10,444; week to Aug 24: 9,602; week to Aug 31: 9,705; week to Sep 7: 11,969; week to Sep 14: 13,112; week to Sep 21: 14,128. Use the left and right arrow keys to read each week."
+        data-values="14879,15551,10444,9602,9705,11969,13112,14128" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,7.9 38.6,6.0 71.1,20.4 103.7,22.8 136.3,22.5 168.9,16.1 201.4,12.9 234.0,10.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="10.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>14,879</td></tr><tr><td>Aug 10</td><td>15,551</td></tr><tr><td>Aug 17</td><td>10,444</td></tr><tr><td>Aug 24</td><td>9,602</td></tr><tr><td>Aug 31</td><td>9,705</td></tr><tr><td>Sep 7</td><td>11,969</td></tr><tr><td>Sep 14</td><td>13,112</td></tr><tr><td>Sep 21</td><td>14,128</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:output-style" data-facet="category" title="Change how the agent replies: shorter, clearer, fewer tokens." href="/gemskills/?tag=category%3Aoutput-style">category:output-style</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Change how the agent replies: shorter, clearer, fewer tokens.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:command" data-facet="type" title="A one-shot action you invoke by name, such as turning the conversation into a PRD." href="/gemskills/?tag=type%3Acommand">type:command</a></div>
+          <p class="tag-meaning">A one-shot action you invoke by name, such as turning the conversation into a PRD.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="output-style" data-facet="topic" href="/gemskills/?tag=output-style">output-style</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/juliusbrussee/caveman/blob/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman-help/SKILL.md">juliusbrussee/caveman at bad48a0</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: caveman-help
+description: &#62;
+  Quick-reference card for the three caveman skills and their commands.
+  Trigger: /caveman-help or &#34;caveman help&#34;.</code></pre></details>
+        <div class="markdown"><h3>Caveman Help</h3>
+<p>Display this reference card when invoked. One-shot — do NOT change mode, write flag files, or persist anything. Output in caveman style.</p>
+<h4>Modes</h4>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Trigger</th>
+<th>What change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>caveman</strong></td>
+<td><code>/caveman</code></td>
+<td>The voice. Answer first, no fluff, every fact kept. Default.</td>
+</tr>
+<tr>
+<td><strong>ultracave</strong></td>
+<td><code>/ultracave</code> (alias <code>/caveman ultra</code>)</td>
+<td>Grammar stripped. Fragments, one word when enough, each fact once.</td>
+</tr>
+<tr>
+<td><strong>megacave</strong></td>
+<td><code>/megacave</code> (alias <code>/caveman wenyan</code>)</td>
+<td>Classical Chinese 文言文. Far fewer characters, technical terms verbatim.</td>
+</tr>
+</tbody>
+</table>
+<p>Mode stick until changed or session end.
+<code>/caveman status</code> reports current mode without changing it. Claude Code and the standalone OpenCode plugin read stored state; other hosts answer from the conversation and mark it <code>(not tracked by this host)</code>.</p>
+<h4>Skills</h4>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Trigger</th>
+<th>What it do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>caveman-commit</strong></td>
+<td><code>/caveman-commit</code></td>
+<td>Terse commit messages. Conventional Commits. ≤50 char subject.</td>
+</tr>
+<tr>
+<td><strong>caveman-review</strong></td>
+<td><code>/caveman-review</code></td>
+<td>One-line PR comments: <code>L42: bug: user null. Add guard.</code></td>
+</tr>
+<tr>
+<td><strong>caveman-compress</strong></td>
+<td><code>/caveman-compress &lt;file&gt;</code></td>
+<td>Compress .md files to caveman prose. 33.2% fewer tokens on the repo's five test files.</td>
+</tr>
+<tr>
+<td><strong>caveman-help</strong></td>
+<td><code>/caveman-help</code></td>
+<td>This card.</td>
+</tr>
+</tbody>
+</table>
+<h4>Deactivate</h4>
+<p>Say &quot;stop caveman&quot; or &quot;normal mode&quot;. Resume anytime with <code>/caveman</code>.</p>
+<h4>Language</h4>
+<p>Keep user's language by default — reply in the language user writes, never switch regardless of example text or multilingual context elsewhere. Compress the style, not the language. Technical terms, code, commands, commit types, and exact error strings stay verbatim unless user ask for translation.</p>
+<h4>Configure Default Mode</h4>
+<p>Default mode = <code>caveman</code>. Change it:</p>
+<p><strong>Environment variable</strong> (highest priority):</p>
+<pre><code class="language-bash">export CAVEMAN_DEFAULT_MODE=ultracave
+</code></pre>
+<p><strong>Config file</strong> (<code>~/.config/caveman/config.json</code>):</p>
+<pre><code class="language-json">{ &quot;defaultMode&quot;: &quot;ultracave&quot; }
+</code></pre>
+<p>For opt-in activation in Claude Code, set <code>defaultMode</code> to <code>manual</code>. Sessions start off; <code>/caveman</code> or <code>talk like caveman</code> activates caveman. <code>off</code> also disables bare-command activation. <code>manual</code> is a startup policy, not a mode. OpenCode still starts in caveman mode because its installer also supplies static activation rules.</p>
+<p>Set <code>&quot;off&quot;</code> to suppress automatic and bare-command activation. Use <code>&quot;manual&quot;</code> when bare <code>/caveman</code> should activate.</p>
+<p>Resolution: env var &gt; repo config &gt; user config &gt; <code>caveman</code>. Legacy values <code>lite</code>, <code>full</code>, <code>ultra</code>, <code>wenyan*</code> still resolve.</p>
+<h4>More</h4>
+<p>Full docs: <a href="https://github.com/JuliusBrussee/caveman">https://github.com/JuliusBrussee/caveman</a></p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

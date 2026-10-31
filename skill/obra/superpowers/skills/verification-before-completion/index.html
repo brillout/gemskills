@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>verification-before-completion · Gem Skills</title>
+    <meta name="description" content="Use it when: the agent is about to say work is done, fixed or passing, or to commit, open a PR or move on. It does: makes it run the command that proves the claim, read the full output, and only then report what it shows. Forbids: &quot;should work now&quot;, &quot;looks correct&quot; and an early &quot;Done!&quot; or &quot;Perfect!&quot; without fresh evidence. Also covers: subagents: when one reports success, the agent checks the actual diff before believing it." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>verification-before-completion</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>the agent is about to say work is done, fixed or passing, or to commit, open a PR or move on</dd></div><div><dt>It does</dt><dd>makes it run the command that proves the claim, read the full output, and only then report what it shows</dd></div><div><dt>Forbids</dt><dd>&#34;should work now&#34;, &#34;looks correct&#34; and an early &#34;Done!&#34; or &#34;Perfect!&#34; without fresh evidence</dd></div><div><dt>Also covers</dt><dd>subagents: when one reports success, the agent checks the actual diff before believing it</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 12 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · Before it: <a href="/gemskills/skill/obra/superpowers/skills/systematic-debugging/">systematic-debugging</a> · After it: <a href="/gemskills/skill/obra/superpowers/skills/dispatching-parallel-agents/">dispatching-parallel-agents</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Its rule is &#34;no completion claims without fresh verification evidence&#34;. Before any claim of success, or even a pleased &#34;Great!&#34;, the agent names the command that would prove it, runs it in full, reads the output and exit code, and then states the result with the evidence, or the real status if it falls short. A run from earlier in the session doesn&#39;t count. It spells out what each claim needs: zero failures in the test output for &#34;tests pass&#34;, a build that exits cleanly for &#34;build succeeds&#34; (a passing linter isn&#39;t enough), the original symptom retested for &#34;bug fixed&#34;, and a line-by-line check against the plan for &#34;requirements met&#34;. A new regression test only counts once it&#39;s been seen to fail with the fix undone. It lists the usual excuses (I&#39;m confident, just this once, I&#39;m tired), and tells the agent to treat words like &#34;should&#34; and &#34;probably&#34; as a sign to stop and run the check.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/verification-before-completion">the skill at bb92a77</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill verification-before-completion</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill verification-before-completion">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/verification-before-completion">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/verification-before-completion">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>216,670 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">7.1K</div>
+      <div class="stat-delta">-4% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 7,401; week to Aug 10: 7,587; week to Aug 17: 7,030; week to Aug 24: 8,295; week to Aug 31: 7,178; week to Sep 7: 7,254; week to Sep 14: 7,274; week to Sep 21: 7,096. Use the left and right arrow keys to read each week."
+        data-values="7401,7587,7030,8295,7178,7254,7274,7096" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,10.7 38.6,9.8 71.1,12.7 103.7,6.0 136.3,11.9 168.9,11.5 201.4,11.4 234.0,12.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="12.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>7,401</td></tr><tr><td>Aug 10</td><td>7,587</td></tr><tr><td>Aug 17</td><td>7,030</td></tr><tr><td>Aug 24</td><td>8,295</td></tr><tr><td>Aug 31</td><td>7,178</td></tr><tr><td>Sep 7</td><td>7,254</td></tr><tr><td>Sep 14</td><td>7,274</td></tr><tr><td>Sep 21</td><td>7,096</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="verification" data-facet="topic" href="/gemskills/?tag=verification">verification</a><a class="tag" data-tag="testing" data-facet="topic" href="/gemskills/?tag=testing">testing</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/verification-before-completion/SKILL.md">obra/superpowers at bb92a77</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: verification-before-completion
+description: Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always</code></pre></details>
+        <div class="markdown"><h3>Verification Before Completion</h3>
+<h4>Overview</h4>
+<p><strong>Core principle:</strong> Evidence before claims, always.</p>
+<p><strong>Violating the letter of this rule is violating the spirit of this rule.</strong></p>
+<h4>The Iron Law</h4>
+<pre><code>NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE
+</code></pre>
+<p>If you haven't run the verification command in this message, you cannot claim it passes.</p>
+<h4>The Gate Function</h4>
+<pre><code>BEFORE claiming any status or expressing satisfaction:
+
+1. IDENTIFY: What command proves this claim?
+2. RUN: Execute the FULL command (fresh, complete)
+3. READ: Full output, check exit code, count failures
+4. VERIFY: Does output confirm the claim?
+   - If NO: State actual status with evidence
+   - If YES: State claim WITH evidence
+5. ONLY THEN: Make the claim
+
+Skip any step = lying, not verifying
+</code></pre>
+<h4>Common Failures</h4>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Requires</th>
+<th>Not Sufficient</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tests pass</td>
+<td>Test command output: 0 failures</td>
+<td>Previous run, &quot;should pass&quot;</td>
+</tr>
+<tr>
+<td>Linter clean</td>
+<td>Linter output: 0 errors</td>
+<td>Partial check, extrapolation</td>
+</tr>
+<tr>
+<td>Build succeeds</td>
+<td>Build command: exit 0</td>
+<td>Linter passing, logs look good</td>
+</tr>
+<tr>
+<td>Bug fixed</td>
+<td>Test original symptom: passes</td>
+<td>Code changed, assumed fixed</td>
+</tr>
+<tr>
+<td>Regression test works</td>
+<td>Red-green cycle verified</td>
+<td>Test passes once</td>
+</tr>
+<tr>
+<td>Agent completed</td>
+<td>VCS diff shows changes</td>
+<td>Agent reports &quot;success&quot;</td>
+</tr>
+<tr>
+<td>Requirements met</td>
+<td>Line-by-line checklist</td>
+<td>Tests passing</td>
+</tr>
+</tbody>
+</table>
+<h4>Red Flags - STOP</h4>
+<ul>
+<li>Using &quot;should&quot;, &quot;probably&quot;, &quot;seems to&quot;</li>
+<li>Expressing satisfaction before verification (&quot;Great!&quot;, &quot;Perfect!&quot;, &quot;Done!&quot;, etc.)</li>
+<li>About to commit/push/PR without verification</li>
+<li>Trusting agent success reports</li>
+<li>Relying on partial verification</li>
+<li>Thinking &quot;just this once&quot;</li>
+<li>Tired and wanting work over</li>
+<li><strong>ANY wording implying success without having run verification</strong></li>
+</ul>
+<h4>Rationalization Prevention</h4>
+<table>
+<thead>
+<tr>
+<th>Excuse</th>
+<th>Reality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Should work now&quot;</td>
+<td>RUN the verification</td>
+</tr>
+<tr>
+<td>&quot;I'm confident&quot;</td>
+<td>Confidence ≠ evidence</td>
+</tr>
+<tr>
+<td>&quot;Just this once&quot;</td>
+<td>No exceptions</td>
+</tr>
+<tr>
+<td>&quot;Linter passed&quot;</td>
+<td>Linter ≠ compiler</td>
+</tr>
+<tr>
+<td>&quot;Agent said success&quot;</td>
+<td>Verify independently</td>
+</tr>
+<tr>
+<td>&quot;I'm tired&quot;</td>
+<td>Exhaustion ≠ excuse</td>
+</tr>
+<tr>
+<td>&quot;Partial check is enough&quot;</td>
+<td>Partial proves nothing</td>
+</tr>
+<tr>
+<td>&quot;Different words so rule doesn't apply&quot;</td>
+<td>Spirit over letter</td>
+</tr>
+</tbody>
+</table>
+<h4>Key Patterns</h4>
+<p><strong>Tests:</strong></p>
+<pre><code>✅ [Run test command] [See: 34/34 pass] &quot;All tests pass&quot;
+❌ &quot;Should pass now&quot; / &quot;Looks correct&quot;
+</code></pre>
+<p><strong>Regression tests (TDD Red-Green):</strong></p>
+<pre><code>✅ Write → Run (pass) → Revert fix → Run (MUST FAIL) → Restore → Run (pass)
+❌ &quot;I've written a regression test&quot; (without red-green verification)
+</code></pre>
+<p><strong>Build:</strong></p>
+<pre><code>✅ [Run build] [See: exit 0] &quot;Build passes&quot;
+❌ &quot;Linter passed&quot; (linter doesn't check compilation)
+</code></pre>
+<p><strong>Requirements:</strong></p>
+<pre><code>✅ Re-read plan → Create checklist → Verify each → Report gaps or completion
+❌ &quot;Tests pass, phase complete&quot;
+</code></pre>
+<p><strong>Agent delegation:</strong></p>
+<pre><code>✅ Agent reports success → Check VCS diff → Verify changes → Report actual state
+❌ Trust agent report
+</code></pre>
+<h4>When To Apply</h4>
+<p><strong>ALWAYS before:</strong></p>
+<ul>
+<li>ANY variation of success/completion claims</li>
+<li>ANY expression of satisfaction</li>
+<li>ANY positive statement about work state</li>
+<li>Committing, PR creation, task completion</li>
+<li>Moving to next task</li>
+<li>Delegating to agents</li>
+</ul>
+<p><strong>Rule applies to:</strong></p>
+<ul>
+<li>Exact phrases</li>
+<li>Paraphrases and synonyms</li>
+<li>Implications of success</li>
+<li>ANY communication suggesting completion/correctness</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

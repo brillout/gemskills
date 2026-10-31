@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrowserAct · Gem Skills</title>
+    <meta name="description" content="Use it when: you want the agent to use real browsers on logged-in or bot-protected sites, or to turn a repeated scrape into a reusable skill. It does: browser-act drives your Chrome or BrowserAct&#039;s stealth browsers from its CLI; browser-act-skill-forge explores a site once and writes a skill that repeats the extraction. You get: pages read, clicked through and screenshotted on demand, and tested skill packages (SKILL.md plus Python scripts) for sites you scrape often. Needs: the browser-act CLI (Python 3.12+, uv). Your own Chrome needs no account; stealth browsers, CAPTCHA solving and browser-act-skill-forge need a free BrowserAct account. Asks first: before creating or deleting browsers, logging in, submitting forms or uploading files." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page bundle-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=browser-act%2Fskills">browser-act/skills</a></p>
+      <h1>BrowserAct <span class="kind">Bundle · 2 skills</span></h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want the agent to use real browsers on logged-in or bot-protected sites, or to turn a repeated scrape into a reusable skill</dd></div><div><dt>It does</dt><dd>browser-act drives your Chrome or BrowserAct&#39;s stealth browsers from its CLI; browser-act-skill-forge explores a site once and writes a skill that repeats the extraction</dd></div><div><dt>You get</dt><dd>pages read, clicked through and screenshotted on demand, and tested skill packages (SKILL.md plus Python scripts) for sites you scrape often</dd></div><div><dt>Needs</dt><dd>the browser-act CLI (Python 3.12+, uv). Your own Chrome needs no account; stealth browsers, CAPTCHA solving and browser-act-skill-forge need a free BrowserAct account</dd></div><div><dt>Asks first</dt><dd>before creating or deleting browsers, logging in, submitting forms or uploading files</dd></div></dl></section>
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>BrowserAct is a browser-automation service for AI agents, and these skills use its local CLI rather than its cloud product. browser-act lets the agent open pages in your own Chrome, reusing your logins, or in BrowserAct&#39;s stealth browsers, which each present their own device fingerprint so sites see separate, ordinary visitors rather than a bot. The agent reads a numbered list of page elements and clicks or types by number, takes screenshots, captures network responses, and can send you a live link to take over when it gets stuck. browser-act-skill-forge builds on browser-act, which it loads first. You describe the data you want from a site and confirm a plan; it works out how the site loads that data, preferring the site&#39;s own data APIs over scraping its HTML, then generates a skill of SKILL.md plus Python scripts, has a subagent test it, fixes what fails and installs it. Later runs call that skill without exploring again, which suits bulk jobs such as hundreds of listings. Beyond the free account, only managed proxies and more than five stealth browsers cost money.</p>
+      <p class="muted">Summarizes <a href="https://github.com/browser-act/skills/tree/11c057b03f92101642cadc9f840564574120d184">the repo at 11c057b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <p class="install-label">Any agent, with the skills CLI</p><div class="install"><code>npx skills add https://github.com/browser-act/skills --skill browser-act --skill browser-act-skill-forge</code><button type="button" class="copy" data-copy="npx skills add https://github.com/browser-act/skills --skill browser-act --skill browser-act-skill-forge">Copy</button></div>
+          <p class="links"><a href="https://github.com/browser-act/skills">Source on GitHub</a> · <a href="/gemskills/?repo=browser-act%2Fskills">All skills from browser-act/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>108,070 <span class="muted">of <a href="/gemskills/skill/browser-act/skills/browser-act/">browser-act</a>, its most installed skill, on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>5,963 <span class="muted">browser-act/skills</span></dd></div><div><dt>First seen</dt><dd>Mar 31, 2026 <span class="muted">on skills.sh, its first skill</span></dd></div></dl>
+        </div>
+      </div>
+      <section aria-labelledby="skills">
+        <h2 id="skills">Its skills, in the order they're used</h2>
+        <p class="muted">The ones marked “Only in the bundle” need the rest of it, so they're only listed here. The others also have their own entry in the skills list.</p>
+        <ol class="bundle-skills">
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/browser-act/skills/browser-act/">browser-act</a></h3>
+          
+          <span class="metric"><strong>108K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Automates a full browser for agents: navigation, extraction and forms.</p>
+        
+      </li>
+      <li>
+        <div class="skill-head">
+          <h3><a class="skill-name" href="/gemskills/skill/browser-act/skills/browser-act-skill-forge/">browser-act-skill-forge</a></h3>
+          <span class="kind">Only in the bundle</span>
+          <span class="metric"><strong>85.1K</strong> installs</span>
+        </div>
+        <p class="skill-desc">Turns a browser exploration of a website into a reusable skill.</p>
+        <p class="member-note">Loads the browser-act skill in its first step and explores every site through it, so it needs that skill and its CLI installed.</p>
+      </li></ol>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_bundle_client.BrcZt5VM.js" type="module" async></script>
+  </body>
+</html>

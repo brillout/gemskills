@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>using-superpowers · Gem Skills</title>
+    <meta name="description" content="Use it when: you install the Superpowers bundle: it&#039;s the bundle&#039;s entry point. It does: makes the agent check for a matching skill before every reply, even before a clarifying question. Priority: process skills such as brainstorming and systematic-debugging come before implementation skills. Needs: the rest of Superpowers to be useful." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>using-superpowers</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you install the Superpowers bundle: it&#39;s the bundle&#39;s entry point</dd></div><div><dt>It does</dt><dd>makes the agent check for a matching skill before every reply, even before a clarifying question</dd></div><div><dt>Priority</dt><dd>process skills such as brainstorming and systematic-debugging come before implementation skills</dd></div><div><dt>Needs</dt><dd>the rest of Superpowers to be useful</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 1 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · After it: <a href="/gemskills/skill/obra/superpowers/skills/brainstorming/">brainstorming</a></p>
+    <p class="note">Only works inside its bundle: Makes the agent load the other Superpowers skills before it replies; alone, it has nothing to load. Install <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It&#39;s the rule that makes the other Superpowers skills fire. Loaded at the start of a session, it tells the agent that if there&#39;s even a 1% chance a skill applies, it must load it before responding, including before asking a question or exploring the code, and announce which skill it&#39;s using. When several apply, process skills come first: brainstorming before building, systematic-debugging before fixing. It lists the excuses agents use to skip skills and answers each one, adapts to harnesses such as Claude Code and Codex, and gives way to your own instructions in CLAUDE.md or AGENTS.md. Subagents ignore it.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/using-superpowers">the skill at bb92a77</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill using-superpowers</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill using-superpowers">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/using-superpowers">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/using-superpowers">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>248,737 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">6K</div>
+      <div class="stat-delta">-20% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 7,424; week to Aug 10: 6,980; week to Aug 17: 6,699; week to Aug 24: 6,880; week to Aug 31: 6,174; week to Sep 7: 6,071; week to Sep 14: 5,621; week to Sep 21: 5,962. Use the left and right arrow keys to read each week."
+        data-values="7424,6980,6699,6880,6174,6071,5621,5962" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,8.6 71.1,10.3 103.7,9.2 136.3,13.4 168.9,14.0 201.4,16.7 234.0,14.7" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="14.7" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>7,424</td></tr><tr><td>Aug 10</td><td>6,980</td></tr><tr><td>Aug 17</td><td>6,699</td></tr><tr><td>Aug 24</td><td>6,880</td></tr><tr><td>Aug 31</td><td>6,174</td></tr><tr><td>Sep 7</td><td>6,071</td></tr><tr><td>Sep 14</td><td>5,621</td></tr><tr><td>Sep 21</td><td>5,962</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:skill-tools" data-facet="category" title="Find, write, vet and route to other skills." href="/gemskills/?tag=category%3Askill-tools">category:skill-tools</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find, write, vet and route to other skills.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:router" data-facet="type" title="An entry point that picks and loads other skills. Retired skills that only redirect count as routers." href="/gemskills/?tag=type%3Arouter">type:router</a></div>
+          <p class="tag-meaning">An entry point that picks and loads other skills. Retired skills that only redirect count as routers.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="skill-discovery" data-facet="topic" href="/gemskills/?tag=skill-discovery">skill-discovery</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/using-superpowers/SKILL.md">obra/superpowers at bb92a77</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: using-superpowers
+description: Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions</code></pre></details>
+        <div class="markdown"><p>&lt;SUBAGENT-STOP&gt;
+If you were dispatched as a subagent to execute a specific task, ignore this skill.
+&lt;/SUBAGENT-STOP&gt;</p>
+<p>&lt;EXTREMELY-IMPORTANT&gt;
+If you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.</p>
+<p>IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.</p>
+<p>This is not negotiable. You cannot rationalize your way out of this.
+&lt;/EXTREMELY-IMPORTANT&gt;</p>
+<h4>The Rule</h4>
+<p><strong>Invoke relevant or requested skills BEFORE any response or action</strong> — including clarifying questions, exploring the codebase, or checking files. If it turns out wrong for the situation, you don't have to use it.</p>
+<p><strong>Before entering plan mode:</strong> if you haven't already brainstormed, invoke the brainstorming skill first.</p>
+<p>Then announce &quot;Using [skill] to [purpose]&quot; and follow the skill exactly. If it has a checklist, create a todo per item.</p>
+<h4>Skill Priority</h4>
+<p>When multiple skills apply, process skills come first — they set the approach, then implementation skills (frontend-design, etc.) carry it out. Brainstorming and systematic-debugging are Superpowers' most common process skills, but the rule holds for any of them.</p>
+<ul>
+<li>&quot;Let's build X&quot; → superpowers:brainstorming first, then implementation skills.</li>
+<li>&quot;Fix this bug&quot; → superpowers:systematic-debugging first, then domain skills.</li>
+</ul>
+<h4>Red Flags</h4>
+<p>These thoughts mean STOP—you're rationalizing:</p>
+<table>
+<thead>
+<tr>
+<th>Thought</th>
+<th>Reality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;This is just a simple question&quot;</td>
+<td>Questions are tasks. Check for skills.</td>
+</tr>
+<tr>
+<td>&quot;I need more context first&quot;</td>
+<td>Skill check comes BEFORE clarifying questions.</td>
+</tr>
+<tr>
+<td>&quot;Let me explore the codebase first&quot;</td>
+<td>Skills tell you HOW to explore. Check first.</td>
+</tr>
+<tr>
+<td>&quot;I can check git/files quickly&quot;</td>
+<td>Files lack conversation context. Check for skills.</td>
+</tr>
+<tr>
+<td>&quot;Let me gather information first&quot;</td>
+<td>Skills tell you HOW to gather information.</td>
+</tr>
+<tr>
+<td>&quot;This doesn't need a formal skill&quot;</td>
+<td>If a skill exists, use it.</td>
+</tr>
+<tr>
+<td>&quot;I remember this skill&quot;</td>
+<td>Skills evolve. Read current version.</td>
+</tr>
+<tr>
+<td>&quot;This doesn't count as a task&quot;</td>
+<td>Action = task. Check for skills.</td>
+</tr>
+<tr>
+<td>&quot;The skill is overkill&quot;</td>
+<td>Simple things become complex. Use it.</td>
+</tr>
+<tr>
+<td>&quot;I'll just do this one thing first&quot;</td>
+<td>Check BEFORE doing anything.</td>
+</tr>
+<tr>
+<td>&quot;This feels productive&quot;</td>
+<td>Undisciplined action wastes time. Skills prevent this.</td>
+</tr>
+<tr>
+<td>&quot;I know what that means&quot;</td>
+<td>Knowing the concept ≠ using the skill. Invoke it.</td>
+</tr>
+</tbody>
+</table>
+<h4>Platform Adaptation</h4>
+<p>If your harness appears here, read its reference file for special instructions:</p>
+<ul>
+<li>Claude Code: <code>references/claude-code-tools.md</code></li>
+<li>Codex: <code>references/codex-tools.md</code></li>
+<li>Pi: <code>references/pi-tools.md</code></li>
+<li>Antigravity: <code>references/antigravity-tools.md</code></li>
+<li>Hermes Agent: <code>references/hermes-tools.md</code></li>
+<li>Muse: <code>references/muse-tools.md</code></li>
+</ul>
+<h4>User Instructions</h4>
+<p>User instructions (CLAUDE.md, AGENTS.md, GEMINI.md, etc, direct requests) take precedence over skills, which in turn override default behavior. Only skip skill workflows or instructions when your human partner has explicitly told you to.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

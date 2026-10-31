@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>codebase-design · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re designing or reshaping a module&#039;s interface, deciding where code can be swapped out, or making it easier to test. It does: gives the agent fixed terms and rules for deep modules: a lot of behaviour behind an interface that&#039;s quick to learn. You get: design discussions in one shared vocabulary, judged by how much callers get for what they must learn. Runs: by itself in design talk, or when another skill of the bundle needs the vocabulary." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>codebase-design</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re designing or reshaping a module&#39;s interface, deciding where code can be swapped out, or making it easier to test</dd></div><div><dt>It does</dt><dd>gives the agent fixed terms and rules for deep modules: a lot of behaviour behind an interface that&#39;s quick to learn</dd></div><div><dt>You get</dt><dd>design discussions in one shared vocabulary, judged by how much callers get for what they must learn</dd></div><div><dt>Runs</dt><dd>by itself in design talk, or when another skill of the bundle needs the vocabulary</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 17 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/tdd/">tdd</a> · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/code-review/">code-review</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The agent sticks to a small glossary instead of looser words like &#34;component&#34; or &#34;service&#34;. A module is anything with an interface, from one function to a whole slice of the app. Its interface is everything a caller must know, including ordering rules, errors and performance, not just the type signature. A module is deep when callers get a lot of behaviour from an interface they can learn quickly, and shallow when the interface is nearly as complex as the code behind it. A seam is a place where behaviour can be swapped without editing the code there, and an adapter is what plugs in, such as a Postgres repository or an in-memory fake. Rules of thumb follow: if deleting a module would spread its complexity across its callers, it was earning its keep; tests go through the same interface callers use; add a seam only once two adapters actually need it. For testability: pass dependencies in, return results instead of changing things on the side. An extra file has several subagents each design a very different interface, to compare before choosing.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/codebase-design">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill codebase-design</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill codebase-design">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/codebase-design">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/codebase-design">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>651,254 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Jun 4, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">41.9K</div>
+      <div class="stat-delta">-12% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 47,700; week to Aug 10: 60,375; week to Aug 17: 50,766; week to Aug 24: 55,338; week to Aug 31: 50,419; week to Sep 7: 48,646; week to Sep 14: 44,300; week to Sep 21: 41,900. Use the left and right arrow keys to read each week."
+        data-values="47700,60375,50766,55338,50419,48646,44300,41900" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,15.2 38.6,6.0 71.1,13.0 103.7,9.7 136.3,13.3 168.9,14.5 201.4,17.7 234.0,19.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="19.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>47,700</td></tr><tr><td>Aug 10</td><td>60,375</td></tr><tr><td>Aug 17</td><td>50,766</td></tr><tr><td>Aug 24</td><td>55,338</td></tr><tr><td>Aug 31</td><td>50,419</td></tr><tr><td>Sep 7</td><td>48,646</td></tr><tr><td>Sep 14</td><td>44,300</td></tr><tr><td>Sep 21</td><td>41,900</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:planning" data-facet="category" title="Make the agent question you and write the plan down before it writes code." href="/gemskills/?tag=category%3Aplanning">category:planning</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Make the agent question you and write the plan down before it writes code.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="architecture" data-facet="topic" href="/gemskills/?tag=architecture">architecture</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/codebase-design/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: codebase-design
+description: Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module&#39;s interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.</code></pre></details>
+        <div class="markdown"><h3>Codebase Design</h3>
+<p>Design <strong>deep modules</strong>: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface. Use this language and these principles wherever code is being designed or restructured. The aim is leverage for callers, locality for maintainers, and testability for everyone.</p>
+<h4>Glossary</h4>
+<p>Use these terms exactly: don't substitute &quot;component,&quot; &quot;service,&quot; &quot;API,&quot; or &quot;boundary.&quot; Consistent language is the whole point.</p>
+<p><strong>Module</strong>: anything with an interface and an implementation. Deliberately scale-agnostic: a function, class, package, or tier-spanning slice. <em>Avoid</em>: unit, component, service.</p>
+<p><strong>Interface</strong>: everything a caller must know to use the module correctly: the type signature, but also invariants, ordering constraints, error modes, required configuration, and performance characteristics. <em>Avoid</em>: API, signature (too narrow, they refer only to the type-level surface).</p>
+<p><strong>Implementation</strong>: what's inside a module, its body of code. Distinct from <strong>Adapter</strong>: a thing can be a small adapter with a large implementation (a Postgres repo) or a large adapter with a small implementation (an in-memory fake). Reach for &quot;adapter&quot; when the seam is the topic; &quot;implementation&quot; otherwise.</p>
+<p><strong>Depth</strong>: leverage at the interface. The amount of behaviour a caller (or test) can exercise per unit of interface they have to learn. A module is <strong>deep</strong> when a large amount of behaviour sits behind a small interface, <strong>shallow</strong> when the interface is nearly as complex as the implementation.</p>
+<p><strong>Seam</strong> <em>(Michael Feathers)</em>: a place where you can alter behaviour without editing in that place; the <em>location</em> at which a module's interface lives. Where to put the seam is its own design decision, distinct from what goes behind it. <em>Avoid</em>: boundary (overloaded with DDD's bounded context).</p>
+<p><strong>Adapter</strong>: a concrete thing that satisfies an interface at a seam. Describes <em>role</em> (what slot it fills), not substance (what's inside).</p>
+<p><strong>Leverage</strong>: what callers get from depth. More capability per unit of interface they learn. One implementation pays back across N call sites and M tests.</p>
+<p><strong>Locality</strong>: what maintainers get from depth. Change, bugs, knowledge, and verification concentrate in one place rather than spreading across callers. Fix once, fixed everywhere.</p>
+<h4>Deep vs shallow</h4>
+<p><strong>Deep module</strong> = small interface + lots of implementation:</p>
+<pre><code>┌─────────────────────┐
+│   Small Interface   │  ← Few methods, simple params
+├─────────────────────┤
+│                     │
+│  Deep Implementation│  ← Complex logic hidden
+│                     │
+└─────────────────────┘
+</code></pre>
+<p><strong>Shallow module</strong> = large interface + little implementation (avoid):</p>
+<pre><code>┌─────────────────────────────────┐
+│       Large Interface           │  ← Many methods, complex params
+├─────────────────────────────────┤
+│  Thin Implementation            │  ← Just passes through
+└─────────────────────────────────┘
+</code></pre>
+<p>When designing an interface, ask:</p>
+<ul>
+<li>Can I reduce the number of methods?</li>
+<li>Can I simplify the parameters?</li>
+<li>Can I hide more complexity inside?</li>
+</ul>
+<h4>Principles</h4>
+<ul>
+<li><strong>Depth is a property of the interface, not the implementation.</strong> A deep module can be internally composed of small, mockable, swappable parts; they just aren't part of the interface. A module can have <strong>internal seams</strong> (private to its implementation, used by its own tests) as well as the <strong>external seam</strong> at its interface.</li>
+<li><strong>The deletion test.</strong> Imagine deleting the module. If complexity vanishes, it was a pass-through. If complexity reappears across N callers, it was earning its keep.</li>
+<li><strong>The interface is the test surface.</strong> Callers and tests cross the same seam. If you want to test <em>past</em> the interface, the module is probably the wrong shape.</li>
+<li><strong>One adapter means a hypothetical seam. Two adapters means a real one.</strong> Don't introduce a seam unless something actually varies across it.</li>
+</ul>
+<h4>Designing for testability</h4>
+<p>Good interfaces make testing natural:</p>
+<ol>
+<li>
+<p><strong>Accept dependencies, don't create them.</strong></p>
+<pre><code class="language-typescript">// Testable
+function processOrder(order, paymentGateway) {}
+
+// Hard to test
+function processOrder(order) {
+  const gateway = new StripeGateway();
+}
+</code></pre>
+</li>
+<li>
+<p><strong>Return results, don't produce side effects.</strong></p>
+<pre><code class="language-typescript">// Testable
+function calculateDiscount(cart): Discount {}
+
+// Hard to test
+function applyDiscount(cart): void {
+  cart.total -= discount;
+}
+</code></pre>
+</li>
+<li>
+<p><strong>Small surface area.</strong> Fewer methods = fewer tests needed. Fewer params = simpler test setup.</p>
+</li>
+</ol>
+<h4>Relationships</h4>
+<ul>
+<li>A <strong>Module</strong> has exactly one <strong>Interface</strong> (the surface it presents to callers and tests).</li>
+<li><strong>Depth</strong> is a property of a <strong>Module</strong>, measured against its <strong>Interface</strong>.</li>
+<li>A <strong>Seam</strong> is where a <strong>Module</strong>'s <strong>Interface</strong> lives.</li>
+<li>An <strong>Adapter</strong> sits at a <strong>Seam</strong> and satisfies the <strong>Interface</strong>.</li>
+<li><strong>Depth</strong> produces <strong>Leverage</strong> for callers and <strong>Locality</strong> for maintainers.</li>
+</ul>
+<h4>Rejected framings</h4>
+<ul>
+<li><strong>Depth as ratio of implementation-lines to interface-lines</strong> (Ousterhout): rewards padding the implementation. We use depth-as-leverage instead.</li>
+<li><strong>&quot;Interface&quot; as the TypeScript <code>interface</code> keyword or a class's public methods</strong>: too narrow: interface here includes every fact a caller must know.</li>
+<li><strong>&quot;Boundary&quot;</strong>: overloaded with DDD's bounded context. Say <strong>seam</strong> or <strong>interface</strong>.</li>
+</ul>
+<h4>Going deeper</h4>
+<ul>
+<li><strong>Deepening a cluster given its dependencies</strong>, see <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/codebase-design/DEEPENING.md">DEEPENING.md</a>: dependency categories, seam discipline, and replace-don't-layer testing.</li>
+<li><strong>Exploring alternative interfaces</strong>, see <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/codebase-design/DESIGN-IT-TWICE.md">DESIGN-IT-TWICE.md</a>: spin up parallel sub-agents to design the interface several radically different ways, then compare on depth, locality, and seam placement.</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

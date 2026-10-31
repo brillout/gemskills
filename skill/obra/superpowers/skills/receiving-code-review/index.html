@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>receiving-code-review · Gem Skills</title>
+    <meta name="description" content="Use it when: you get review feedback, from a person or a reviewer agent, especially if it seems unclear or wrong. It does: makes the agent check each suggestion against the code before changing anything, and push back with reasons when it&#039;s wrong. Forbids: &quot;You&#039;re absolutely right!&quot;, &quot;Great point!&quot; and any thanks: it states the fix, or just makes it. Asks first: about every unclear item before implementing any of them, since items may be related." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>receiving-code-review</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you get review feedback, from a person or a reviewer agent, especially if it seems unclear or wrong</dd></div><div><dt>It does</dt><dd>makes the agent check each suggestion against the code before changing anything, and push back with reasons when it&#39;s wrong</dd></div><div><dt>Forbids</dt><dd>&#34;You&#39;re absolutely right!&#34;, &#34;Great point!&#34; and any thanks: it states the fix, or just makes it</dd></div><div><dt>Asks first</dt><dd>about every unclear item before implementing any of them, since items may be related</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 9 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · Before it: <a href="/gemskills/skill/obra/superpowers/skills/requesting-code-review/">requesting-code-review</a> · After it: <a href="/gemskills/skill/obra/superpowers/skills/finishing-a-development-branch/">finishing-a-development-branch</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Its stance is technical correctness over social comfort. The agent reads all the feedback, restates each point in its own words or asks about it, checks it against the code, and decides whether it&#39;s right for this codebase. Feedback from you, the user, is trusted once understood. An outside reviewer&#39;s is checked: does it break something, is there a reason for the current code, does the reviewer have the full context? When a reviewer asks for a fuller implementation of something, it checks whether anything uses it and suggests removing it if nothing does. Once every item is clear, fixes go in one at a time, blocking issues first, each tested. If a suggestion conflicts with decisions you made, it stops and asks you. When its pushback turns out wrong, it says so in a sentence and moves on. On GitHub, it answers inline comments in their own thread.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/receiving-code-review">the skill at bb92a77</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill receiving-code-review</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill receiving-code-review">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/receiving-code-review">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/receiving-code-review">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>198,239 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">5.8K</div>
+      <div class="stat-delta">-11% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 6,502; week to Aug 10: 6,062; week to Aug 17: 5,689; week to Aug 24: 6,830; week to Aug 31: 5,627; week to Sep 7: 5,823; week to Sep 14: 5,810; week to Sep 21: 5,819. Use the left and right arrow keys to read each week."
+        data-values="6502,6062,5689,6830,5627,5823,5810,5819" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,8.1 38.6,10.9 71.1,13.4 103.7,6.0 136.3,13.7 168.9,12.5 201.4,12.6 234.0,12.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="12.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>6,502</td></tr><tr><td>Aug 10</td><td>6,062</td></tr><tr><td>Aug 17</td><td>5,689</td></tr><tr><td>Aug 24</td><td>6,830</td></tr><tr><td>Aug 31</td><td>5,627</td></tr><tr><td>Sep 7</td><td>5,823</td></tr><tr><td>Sep 14</td><td>5,810</td></tr><tr><td>Sep 21</td><td>5,819</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="code-review" data-facet="topic" href="/gemskills/?tag=code-review">code-review</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/receiving-code-review/SKILL.md">obra/superpowers at bb92a77</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: receiving-code-review
+description: Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation</code></pre></details>
+        <div class="markdown"><h3>Code Review Reception</h3>
+<h4>Overview</h4>
+<p>Code review requires technical evaluation, not emotional performance.</p>
+<p><strong>Core principle:</strong> Verify before implementing. Ask before assuming. Technical correctness over social comfort.</p>
+<h4>The Response Pattern</h4>
+<pre><code>WHEN receiving code review feedback:
+
+1. READ: Complete feedback without reacting
+2. UNDERSTAND: Restate requirement in own words (or ask)
+3. VERIFY: Check against codebase reality
+4. EVALUATE: Technically sound for THIS codebase?
+5. RESPOND: Technical acknowledgment or reasoned pushback
+6. IMPLEMENT: One item at a time, test each
+</code></pre>
+<h4>Forbidden Responses</h4>
+<p><strong>NEVER:</strong></p>
+<ul>
+<li>&quot;You're absolutely right!&quot; (explicit instruction-file violation)</li>
+<li>&quot;Great point!&quot; / &quot;Excellent feedback!&quot; (performative)</li>
+<li>&quot;Let me implement that now&quot; (before verification)</li>
+</ul>
+<p><strong>INSTEAD:</strong></p>
+<ul>
+<li>Restate the technical requirement</li>
+<li>Ask clarifying questions</li>
+<li>Push back with technical reasoning if wrong</li>
+<li>Just start working (actions &gt; words)</li>
+</ul>
+<h4>Handling Unclear Feedback</h4>
+<pre><code>IF any item is unclear:
+  STOP - do not implement anything yet
+  ASK for clarification on unclear items
+
+WHY: Items may be related. Partial understanding = wrong implementation.
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>your human partner: &quot;Fix 1-6&quot;
+You understand 1,2,3,6. Unclear on 4,5.
+
+❌ WRONG: Implement 1,2,3,6 now, ask about 4,5 later
+✅ RIGHT: &quot;I understand items 1,2,3,6. Need clarification on 4 and 5 before proceeding.&quot;
+</code></pre>
+<h4>Source-Specific Handling</h4>
+<h5>From your human partner</h5>
+<ul>
+<li><strong>Trusted</strong> - implement after understanding</li>
+<li><strong>Still ask</strong> if scope unclear</li>
+<li><strong>No performative agreement</strong></li>
+<li><strong>Skip to action</strong> or technical acknowledgment</li>
+</ul>
+<h5>From External Reviewers</h5>
+<pre><code>BEFORE implementing:
+  1. Check: Technically correct for THIS codebase?
+  2. Check: Breaks existing functionality?
+  3. Check: Reason for current implementation?
+  4. Check: Works on all platforms/versions?
+  5. Check: Does reviewer understand full context?
+
+IF suggestion seems wrong:
+  Push back with technical reasoning
+
+IF can't easily verify:
+  Say so: &quot;I can't verify this without [X]. Should I [investigate/ask/proceed]?&quot;
+
+IF conflicts with your human partner's prior decisions:
+  Stop and discuss with your human partner first
+</code></pre>
+<p><strong>your human partner's rule:</strong> &quot;External feedback - be skeptical, but check carefully&quot;</p>
+<h4>YAGNI Check for &quot;Professional&quot; Features</h4>
+<pre><code>IF reviewer suggests &quot;implementing properly&quot;:
+  grep codebase for actual usage
+
+  IF unused: &quot;This endpoint isn't called. Remove it (YAGNI)?&quot;
+  IF used: Then implement properly
+</code></pre>
+<p><strong>your human partner's rule:</strong> &quot;You and reviewer both report to me. If we don't need this feature, don't add it.&quot;</p>
+<h4>Implementation Order</h4>
+<pre><code>FOR multi-item feedback:
+  1. Clarify anything unclear FIRST
+  2. Then implement in this order:
+     - Blocking issues (breaks, security)
+     - Simple fixes (typos, imports)
+     - Complex fixes (refactoring, logic)
+  3. Test each fix individually
+  4. Verify no regressions
+</code></pre>
+<h4>When To Push Back</h4>
+<p>Push back when:</p>
+<ul>
+<li>Suggestion breaks existing functionality</li>
+<li>Reviewer lacks full context</li>
+<li>Violates YAGNI (unused feature)</li>
+<li>Technically incorrect for this stack</li>
+<li>Legacy/compatibility reasons exist</li>
+<li>Conflicts with your human partner's architectural decisions</li>
+</ul>
+<p><strong>How to push back:</strong></p>
+<ul>
+<li>Use technical reasoning, not defensiveness</li>
+<li>Ask specific questions</li>
+<li>Reference working tests/code</li>
+<li>Involve your human partner if architectural</li>
+</ul>
+<p><strong>If you're uncomfortable pushing back out loud:</strong> Name that tension, then tell your partner about the issue you've seen. They'll appreciate your honesty.</p>
+<h4>Acknowledging Correct Feedback</h4>
+<p>When feedback IS correct:</p>
+<pre><code>✅ &quot;Fixed. [Brief description of what changed]&quot;
+✅ &quot;Good catch - [specific issue]. Fixed in [location].&quot;
+✅ [Just fix it and show in the code]
+
+❌ &quot;You're absolutely right!&quot;
+❌ &quot;Great point!&quot;
+❌ &quot;Thanks for catching that!&quot;
+❌ &quot;Thanks for [anything]&quot;
+❌ ANY gratitude expression
+</code></pre>
+<p><strong>Why no thanks:</strong> Actions speak. Just fix it. The code itself shows you heard the feedback.</p>
+<p><strong>If you catch yourself about to write &quot;Thanks&quot;:</strong> DELETE IT. State the fix instead.</p>
+<h4>Gracefully Correcting Your Pushback</h4>
+<p>If you pushed back and were wrong:</p>
+<pre><code>✅ &quot;You were right - I checked [X] and it does [Y]. Implementing now.&quot;
+✅ &quot;Verified this and you're correct. My initial understanding was wrong because [reason]. Fixing.&quot;
+
+❌ Long apology
+❌ Defending why you pushed back
+❌ Over-explaining
+</code></pre>
+<p>State the correction factually and move on.</p>
+<h4>Common Mistakes</h4>
+<table>
+<thead>
+<tr>
+<th>Mistake</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Performative agreement</td>
+<td>State requirement or just act</td>
+</tr>
+<tr>
+<td>Blind implementation</td>
+<td>Verify against codebase first</td>
+</tr>
+<tr>
+<td>Batch without testing</td>
+<td>One at a time, test each</td>
+</tr>
+<tr>
+<td>Assuming reviewer is right</td>
+<td>Check if breaks things</td>
+</tr>
+<tr>
+<td>Avoiding pushback</td>
+<td>Technical correctness &gt; comfort</td>
+</tr>
+<tr>
+<td>Partial implementation</td>
+<td>Clarify all items first</td>
+</tr>
+<tr>
+<td>Can't verify, proceed anyway</td>
+<td>State limitation, ask for direction</td>
+</tr>
+</tbody>
+</table>
+<h4>Real Examples</h4>
+<p><strong>Performative Agreement (Bad):</strong></p>
+<pre><code>Reviewer: &quot;Remove legacy code&quot;
+❌ &quot;You're absolutely right! Let me remove that...&quot;
+</code></pre>
+<p><strong>Technical Verification (Good):</strong></p>
+<pre><code>Reviewer: &quot;Remove legacy code&quot;
+✅ &quot;Checking... build target is 10.15+, this API needs 13+. Need legacy for backward compat. Current impl has wrong bundle ID - fix it or drop pre-13 support?&quot;
+</code></pre>
+<p><strong>YAGNI (Good):</strong></p>
+<pre><code>Reviewer: &quot;Implement proper metrics tracking with database, date filters, CSV export&quot;
+✅ &quot;Grepped codebase - nothing calls this endpoint. Remove it (YAGNI)? Or is there usage I'm missing?&quot;
+</code></pre>
+<p><strong>Unclear Item (Good):</strong></p>
+<pre><code>your human partner: &quot;Fix items 1-6&quot;
+You understand 1,2,3,6. Unclear on 4,5.
+✅ &quot;Understand 1,2,3,6. Need clarification on 4 and 5 before implementing.&quot;
+</code></pre>
+<h4>GitHub Thread Replies</h4>
+<p>When replying to inline review comments on GitHub, reply in the comment thread (<code>gh api repos/{owner}/{repo}/pulls/{pr}/comments/{id}/replies</code>), not as a top-level PR comment.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

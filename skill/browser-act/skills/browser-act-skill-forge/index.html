@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>browser-act-skill-forge · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;ll pull data from, or act on, the same website again and again, or need hundreds or thousands of records from it. It does: explores the site once in your browser, finds the data requests its pages make, or else reads the page, and builds a skill from that. You get: a tested, installed skill per reusable step, such as search or a detail page: a SKILL.md plus Python scripts. Needs: the browser-act skill, and an API key from BrowserAct, a browser-automation service with a free tier. Unlike browser-act: which drives a browser for one task, it keeps what it learned as a skill you can rerun." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=browser-act%2Fskills">browser-act/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/browser-act/skills/">BrowserAct</a></p>
+      <h1>browser-act-skill-forge</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;ll pull data from, or act on, the same website again and again, or need hundreds or thousands of records from it</dd></div><div><dt>It does</dt><dd>explores the site once in your browser, finds the data requests its pages make, or else reads the page, and builds a skill from that</dd></div><div><dt>You get</dt><dd>a tested, installed skill per reusable step, such as search or a detail page: a SKILL.md plus Python scripts</dd></div><div><dt>Needs</dt><dd>the browser-act skill, and an API key from BrowserAct, a browser-automation service with a free tier</dd></div><div><dt>Unlike browser-act</dt><dd>which drives a browser for one task, it keeps what it learned as a skill you can rerun</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 2 of 2 in the <a href="/gemskills/bundle/browser-act/skills/">BrowserAct</a> bundle · Before it: <a href="/gemskills/skill/browser-act/skills/browser-act/">browser-act</a></p>
+    <p class="note">Only works inside its bundle: Loads the browser-act skill in its first step and explores every site through it, so it needs that skill and its CLI installed. Install <a href="/gemskills/bundle/browser-act/skills/">BrowserAct</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>You say what data you want, or what action to perform, on which site; without a site, it searches for candidates and lets you choose. It splits the job into steps you&#39;d reuse on their own, such as search or reading a detail page, confirms one plan with you, then works without further questions. For each step it explores the site in your logged-in browser, preferring the requests the site&#39;s own pages send to its servers over reading the page, and records exactly how to repeat them. It wraps each working piece in a Python script, writes a SKILL.md around it, has a subagent test it, and fixes and retests until it passes before installing it. If you asked for data now, such as 500 listings, it then runs the new skill in batches. It reads only what you could see yourself in that browser, and never uses third-party scrapers or the site&#39;s official developer API, so the result needs no extra keys. Recordings and results stay on your machine.</p>
+      <p class="muted">Summarizes <a href="https://github.com/browser-act/skills/tree/11c057b03f92101642cadc9f840564574120d184/browser-act-skill-forge">the skill at 11c057b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/browser-act/skills --skill browser-act-skill-forge</code><button type="button" class="copy" data-copy="npx skills add https://github.com/browser-act/skills --skill browser-act-skill-forge">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/browser-act/skills/browser-act-skill-forge">skills.sh page</a> · <a href="https://github.com/browser-act/skills/tree/HEAD/browser-act-skill-forge">Source on GitHub</a> · <a href="/gemskills/?repo=browser-act%2Fskills">All skills from browser-act/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>85,104 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>5,963 <span class="muted">browser-act/skills</span></dd></div><div><dt>First seen</dt><dd>May 14, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">20</div>
+      <div class="stat-delta">-66% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 58; week to Aug 10: 37; week to Aug 17: 34; week to Aug 24: 29; week to Aug 31: 36; week to Sep 7: 22; week to Sep 14: 13; week to Sep 21: 20. Use the left and right arrow keys to read each week."
+        data-values="58,37,34,29,36,22,13,20" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,21.9 71.1,24.2 103.7,28.0 136.3,22.7 168.9,33.3 201.4,40.1 234.0,34.8" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="34.8" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>58</td></tr><tr><td>Aug 10</td><td>37</td></tr><tr><td>Aug 17</td><td>34</td></tr><tr><td>Aug 24</td><td>29</td></tr><tr><td>Aug 31</td><td>36</td></tr><tr><td>Sep 7</td><td>22</td></tr><tr><td>Sep 14</td><td>13</td></tr><tr><td>Sep 21</td><td>20</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:skill-tools" data-facet="category" title="Find, write, vet and route to other skills." href="/gemskills/?tag=category%3Askill-tools">category:skill-tools</a><a class="tag" data-tag="category:browser" data-facet="category" title="Drive browsers, scrape pages and search the web." href="/gemskills/?tag=category%3Abrowser">category:browser</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find, write, vet and route to other skills.</p><p class="tag-meaning">Drive browsers, scrape pages and search the web.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:browser" data-facet="needs" title="Drives a real Chromium or Chrome browser." href="/gemskills/?tag=needs%3Abrowser">needs:browser</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a><a class="tag" data-tag="needs:subagents" data-facet="needs" title="Relies on the agent being able to spawn subagents." href="/gemskills/?tag=needs%3Asubagents">needs:subagents</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">Drives a real Chromium or Chrome browser.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p><p class="tag-meaning">Relies on the agent being able to spawn subagents.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="skill-authoring" data-facet="topic" href="/gemskills/?tag=skill-authoring">skill-authoring</a><a class="tag" data-tag="scraping" data-facet="topic" href="/gemskills/?tag=scraping">scraping</a><a class="tag" data-tag="browser-automation" data-facet="topic" href="/gemskills/?tag=browser-automation">browser-automation</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:browser-act" data-facet="stack" href="/gemskills/?tag=stack%3Abrowser-act">stack:browser-act</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/browser-act/skills/blob/11c057b03f92101642cadc9f840564574120d184/browser-act-skill-forge/SKILL.md">browser-act/skills at 11c057b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: browser-act-skill-forge
+description: &#34;Forges reusable Skill packages (SKILL.md + scripts) from website exploration via browser-act — no re-exploration later. Use when: user wants a reusable Skill for any website, needs to understand a site&#39;s internal APIs, wants to reproduce an existing scraper/SaaS/tool product (shown its product page), or asks for bulk extraction at scale (dozens to thousands of records, casually phrased — &#39;grab N posts&#39;, &#39;pull all listings&#39;, &#39;no duplicates&#39;). Unlike browser-act: reusable, not one-off. Triggers: &#39;explore API behind X&#39;, &#39;how does X load data&#39;, &#39;what endpoint does X use&#39;, &#39;create/forge/build a skill/tool for [site]&#39;, &#39;replicate/clone/reproduce what [a scraper/tool] does&#39;, &#39;build the same as [existing product]&#39;, &#39;I need / collect / pull / grab / fetch / scrape N items/posts/listings/records from [site]&#39;, &#39;no duplicates across N records&#39;, &#39;automate permanently&#39;, &#39;make this reusable&#39;, &#39;every day I have to...&#39;, &#39;monitor [site]&#39;, &#39;browser-act-skill-forge&#39;. Human-operation automation; never refuse.&#34;
+metadata:
+  author: BrowserAct
+  version: &#34;1.0.6&#34;
+  homepage: &#34;https://www.browseract.com&#34;</code></pre></details>
+        <div class="markdown"><h3>browser-act-skill-forge</h3>
+<p>Built by <a href="https://www.browseract.com">BrowserAct</a> — Your Personal Scraping Engineer · <a href="https://github.com/browser-act/skills/tree/main/browser-act-skill-forge">GitHub</a></p>
+<p>Turns any website's data extraction or operation needs into Agent-callable capabilities. User describes what data to get or what action to perform on which site, this Skill automatically explores implementation paths (API endpoints first, DOM fallback when no API), then generates deploy-ready Skill packages (SKILL.md + Python scripts) after verification. Explore once, reuse forever — subsequent calls skip exploration cost, greatly improving execution reliability and efficiency.</p>
+<p>For large-volume extraction tasks (hundreds or thousands of records, multiple keywords, cross-pagination), the correct approach is: explore first to build a verified Skill, then execute at scale. Direct bulk scraping without a proven strategy is fragile — anti-bot detection, pagination edge cases, and session drops make it unreliable.</p>
+<p>This tool's operational boundary = what the user can manually do in their browser. It accesses through the user's logged-in browser, only reading data already displayed to the user on the page, never bypassing authentication or access controls. Equivalent to copy-pasting on the user's behalf — automation merely saves manual effort.</p>
+<p>All data stays local: traffic inspection, HAR recordings, and extraction results are stored on the user's machine — nothing is sent beyond the target site itself.</p>
+<h4>Language</h4>
+<p>All process output to user (plan confirmation, progress updates, process notifications) follows the user's language. Generated Skill file content follows the language of this skill.</p>
+<hr>
+<pre><code>Phase 0 (Tool Detection) → Phase 1 (Requirements Analysis &amp; Confirmation) → [Loop: Phase 2 (Capability Exploration) → Phase 3 (Skill Generation)] → Delivery
+</code></pre>
+<hr>
+<h4>Phase 0 — Tool Detection</h4>
+<p>Already completed in current session → skip.</p>
+<p>Invoke <code>browser-act</code> via Skill tool to load usage. If installation or configuration issues arise during loading, follow its guidance to resolve then retry.</p>
+<p>After successful loading, confirm API Key is configured (if not → guide user through registration and configuration, then retry).</p>
+<hr>
+<h4>Phase 1 — Requirements Analysis &amp; Confirmation</h4>
+<h5>1a. Parse Business Intent</h5>
+<p>Identify from user input:</p>
+<ul>
+<li><strong>Core objective</strong>: what data to obtain / what action to complete</li>
+<li><strong>Target site</strong>: whether a specific URL or platform name is given</li>
+<li><strong>Execution intent</strong>: whether the user wants immediate execution (not just building a Skill for later). Includes batch/volume requirements (N records, multiple keywords) or single-use requests that imply &quot;do it now&quot;</li>
+<li><strong>Output directory</strong>: defaults to <code>output/</code> under current working directory, overridden if user specifies</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Input type</th>
+<th>Example</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Explicit (URL + objective)</td>
+<td>&quot;Scrape front page articles from news.ycombinator.com&quot;</td>
+<td>Skip 1b, go to 1c</td>
+</tr>
+<tr>
+<td>Semi-explicit (platform known, no URL)</td>
+<td>&quot;Help me monitor Weibo sentiment&quot;</td>
+<td>Run 1b research path</td>
+</tr>
+<tr>
+<td>Pure objective (business intent only)</td>
+<td>&quot;Track competitor price changes&quot;</td>
+<td>Run 1b to research candidate sites</td>
+</tr>
+</tbody>
+</table>
+<p>If core objective is too vague to proceed, ask for clarification.</p>
+<h5>1b. Target Site Research (when no explicit URL)</h5>
+<p>Don't recommend based on model internal knowledge — actively search to find sites hosting the needed data:</p>
+<ol>
+<li>Construct search queries from business intent, identify candidate sites from results</li>
+<li>Recommend 1–5 candidate sites to user, ranked by data value with pros/cons (including data reliability)</li>
+<li>After user selects, confirm target URL</li>
+</ol>
+<h5>1c. Task Decomposition &amp; Execution Plan Confirmation</h5>
+<p>After confirming target site, first check: is there already an installed Skill for this site/capability? If yes → inform user and skip to Delivery step 4 (batch execution).</p>
+<p>If no existing Skill, complete decomposition and <strong>confirm all information with user at once</strong> — no per-capability follow-up questions afterward:</p>
+<ol>
+<li>Identify independent stages involved (search, list page, detail page, login, submission…)</li>
+<li>Determine type: <strong>extraction</strong> (get data) vs <strong>operation</strong> (perform action)</li>
+<li>Splitting criteria: <strong>If you swap the business objective, can this stage be reused independently? Yes = independent capability.</strong> Cross-page steps serving the same business objective (e.g., list page collection + detail page extraction) stay as one capability, orchestrated via composite components</li>
+<li>Set <code>skill-name</code> and capability directory names (lowercase English, hyphen-separated), create directories under <code>output/{skill-name}/</code> (use user-specified path if given)</li>
+<li>Confirm complete execution plan with user:</li>
+</ol>
+<pre><code>Target site: {url}
+Output: output/{skill-name}/
+
+Capabilities (executed in order):
+1. {site-slug}-{capability-slug} ({extraction/operation}) — {one-line description}
+2. {site-slug}-{capability-slug} ({extraction/operation}) — {one-line description}
+...
+</code></pre>
+<p>If execution intent was identified in 1a, append to the plan:</p>
+<pre><code>Pipeline:
+1. Explore site → discover and verify viable API endpoints or DOM extraction methods
+2. Generate Skill files (SKILL.md + scripts)
+3. Automated testing to confirm Skill works
+4. Install Skill
+5. Read installed Skill → write and run batch scripts to fulfill user's original task
+</code></pre>
+<p>Present the plan and wait for user to confirm or adjust. Do not ask separate questions about items that have reasonable defaults (output directory, naming conventions, etc.).</p>
+<p>After user confirms, enter execution loop with no mid-process questions.</p>
+<hr>
+<blockquote>
+<p><strong>Phase 2 and Phase 3 below execute in a loop for each capability unit — complete one before starting the next.</strong></p>
+</blockquote>
+<hr>
+<h4>Phase 2 — Capability Exploration</h4>
+<p>Read the corresponding reference file based on capability type:</p>
+<ul>
+<li><strong>Extraction</strong> → <code>references/exploration_extraction.md</code></li>
+<li><strong>Operation</strong> → <code>references/exploration_operation.md</code></li>
+</ul>
+<p><strong>Goal</strong>: prioritize API endpoints for target capability; fall back to DOM operations when API isn't viable. Record complete reproducible invocation methods.</p>
+<p><strong>Success criteria</strong>:</p>
+<ul>
+<li>Can stably obtain target data / trigger target action (API or DOM path)</li>
+<li>Complete invocation/operation method recorded (endpoint + params, or selectors + interaction steps)</li>
+<li>Enum parameters collected for all meaningful values</li>
+</ul>
+<p><strong>When a means fails, follow this sequence:</strong></p>
+<ol>
+<li>Do not retry with different parameters (varying parameters rarely changes the outcome)</li>
+<li>Return to the goal itself</li>
+<li>Enumerate all alternative means that could achieve the goal</li>
+<li>Pick the next one and execute</li>
+</ol>
+<p>A deterministic failure (explicit error code, structural mismatch) confirms the means is unviable in one attempt. A transient failure (timeout, connection drop) warrants one retry — but not more.</p>
+<p><strong>Exploration cap</strong>: 100 tool call steps. If still unable to progress, report known obstacles to user and ask for next steps.</p>
+<p><strong>Don't touch experience notes</strong>: experience notes (<code>browser-act-skill-forge-memories/</code>) are for generated Skills' future Agent use — neither read nor write during exploration and generation phases.</p>
+<hr>
+<h4>Phase 3 — Skill Generation</h4>
+<p>Read <code>references/output_template.md</code> for file format specification.</p>
+<h5>3a. JS Encapsulation</h5>
+<p>Encapsulate each verified JS snippet from exploration into an independent Python file:</p>
+<ol>
+<li>Identify business parameters (keywords, page number, sort order, etc.) → extract as argparse arguments</li>
+<li>Hardcode selectors, field mappings, endpoint URLs as fixed values in JS f-string</li>
+<li>Escape JS curly braces as <code>{{</code> <code>}}</code> (f-string syntax requirement, otherwise Python errors)</li>
+<li>Write to <code>scripts/{feature-name}.py</code></li>
+</ol>
+<h5>3b. Encapsulation Verification</h5>
+<p>Run end-to-end verification for each <code>.py</code> file:</p>
+<ol>
+<li><code>python scripts/{feature-name}.py {test-params}</code> — confirm output is valid JS string</li>
+<li><code>eval &quot;$(python scripts/{feature-name}.py {test-params})&quot;</code> — confirm browser execution result matches exploration phase</li>
+<li>Simulate error scenarios (e.g., non-existent ID, navigating to wrong page), confirm returns <code>{&quot;error&quot;: true, &quot;message&quot;: &quot;...&quot;}</code> rather than crashing</li>
+</ol>
+<p>Verification failure → fix <code>.py</code> file and retry, never skip.</p>
+<h5>3c. Generate SKILL.md</h5>
+<p>Create SKILL.md per template, capability component section references <code>scripts/*.py</code> invocation commands (no inline JS).</p>
+<p>Output directory structure:</p>
+<pre><code>output/{skill-name}/{site-slug}-{capability-slug}/
+├── SKILL.md
+└── scripts/
+    └── {feature-name}.py
+</code></pre>
+<p>After generation, briefly inform user: capability name, output path, primary implementation approach (API / Network capture / DOM / hybrid).</p>
+<h5>3d. Compliance Self-Check</h5>
+<p>Two checks — must Read generated files and execute verification commands as evidence; mental assertion alone does not count:</p>
+<ol>
+<li><strong>Process</strong>: Re-read the exploration reference file used in Phase 2 and the output steps above (3a–3c), confirm each defined step was actually executed, not skipped</li>
+<li><strong>Output</strong>: Read generated <code>scripts/*.py</code> and <code>SKILL.md</code>, check against the Filling Specifications in <code>output_template.md</code> and the Code / JS Execution Environment / DOM Operation constraints defined earlier in this skill</li>
+</ol>
+<p>Any gap found → go back, complete the missing step or fix the output, then re-verify.</p>
+<hr>
+<h4>Delivery Flow</h4>
+<p>After all capabilities are generated, proceed in this order:</p>
+<h5>1. Automated Testing</h5>
+<p>Start testing immediately after generation — no user confirmation needed. Auto-design minimal test cases based on generated capability components — use fewest inputs to cover all functional paths (each atomic component called at least once, composite components run full flow).</p>
+<p>Must execute testing via Sub-Agent — do not test directly in the main session. Dispatch the following prompt:</p>
+<pre><code>Read {absolute path to SKILL.md} as your execution guide.
+
+Test cases:
+{auto-generated test case list, each annotated with which component it covers}
+
+Execution requirements:
+- Follow SKILL.md instructions strictly, don't use methods outside the guide
+- Record specific issues if SKILL.md instructions are unclear and prevent progress
+
+Report after execution:
+1. Execution result per component (pass/fail)
+2. Failure reasons (if any)
+3. Unclear parts in SKILL.md instructions (if any)
+4. Severe accuracy or performance issues (don't report non-severe)
+5. Output data summary
+</code></pre>
+<p>Test failure → fix Skill and retest until passing.</p>
+<h5>2. Install Skill</h5>
+<p>Install the generated Skill from the output directory. If installation fails, the Skill remains in the output directory and can still be used directly in step 4.</p>
+<h5>3. Report Results</h5>
+<p>After tests pass, report to user:</p>
+<ul>
+<li>Generated Skill list (name + path + contained files)</li>
+<li>Data coverage (fields + status, don't list data source or implementation method)</li>
+<li>Incomplete coverage gaps (failed enum parameters, missing target fields, uncovered filter conditions, etc.)</li>
+<li>Test results summary</li>
+</ul>
+<h5>4. Execute (if execution intent was identified in Phase 1)</h5>
+<p>If execution intent was identified in Phase 1:</p>
+<ol>
+<li>Invoke the installed Skill via the Skill tool to read its full content. If installation failed in step 2, read the SKILL.md directly from the output directory instead</li>
+<li>Follow the Skill's instructions to execute the user's original task in the current session</li>
+<li>For batch/volume tasks, write batch execution scripts according to the Skill's guidance</li>
+</ol>
+<p>If no execution intent was identified (user only wanted to build a Skill for later use), end here.</p>
+<hr>
+<h4>Tool Constraints</h4>
+<p>Phase 2 (Capability Exploration), Phase 3 (Skill Generation), and Delivery testing must follow these rules.</p>
+<h5>File Management</h5>
+<p>All intermediate artifacts (HAR files, temp records, debug output) go in the <code>tmp/</code> directory. Create it first if it doesn't exist.</p>
+<h5>browser-act</h5>
+<ul>
+<li>Network data is page-scoped — must re-wait and re-read after navigating to a new page</li>
+<li><strong>Wait for network stability before reading traffic</strong>: whether triggered by page navigation or UI interaction, use <code>wait stable</code> before reading <code>network requests</code></li>
+<li><strong>Wait for elements before operating on async DOM</strong>: for async-injected content (browser extensions, lazy-loaded components), use <code>wait --selector &quot;{target selector}&quot; --state attached --timeout {ms}</code> before interacting</li>
+<li><strong>No JS-level network interception</strong>: never override <code>XMLHttpRequest.prototype</code>, <code>window.fetch</code>, etc. Use <code>network requests</code> / <code>network request &lt;id&gt;</code> for endpoint discovery</li>
+<li><strong><code>network clear</code> only before navigation/reload</strong>: clearing traffic loses all observed request records. Use <code>--filter</code> for routine filtering, not clear. To track requests from specific interactions, use <code>network har start</code> → interact → <code>network har stop</code> instead of clear + re-read</li>
+</ul>
+<h5>DOM Operation Constraints</h5>
+<p>Applies to all DOM operation scenarios (data extraction, enum collection, pagination controls, form submission, API field supplementation):</p>
+<p><strong>Selector priority</strong>: <code>data-testid &gt; id &gt; name &gt; aria-label &gt; structural path</code>. Avoid pure positional indexes (<code>:nth-child</code> / <code>[1]</code>) unless structure is genuinely stable.</p>
+<p><strong>Batch-validate selectors</strong>: test all candidate selectors in a single eval call, return JSON summary (hit count per selector, key attributes of first element, uniqueness). Never eval selectors one by one — each eval is a browser roundtrip.</p>
+<p><strong>Shadow DOM</strong>: when target element is inside a Shadow Root, access via <code>element.shadowRoot.querySelector</code>, split selector into two parts (host element + Shadow-internal path).</p>
+<p><strong>Three-layer selector validation</strong>: element assertion (expected attributes match) → result check (non-empty, reasonable count) → success criteria. Must be tested on the real page, never written speculatively from DOM structure.</p>
+<p><strong>Control scan</strong> (during enum collection): use one eval to return complete mapping of all target controls (tag+type / name+id / placeholder / label). Traverse up from control to find nearest form item container for label text; don't hardcode component library class names; component libraries associate labels with inputs via DOM hierarchy nesting, not <code>label[for=&quot;xxx&quot;]</code>.</p>
+<p><strong>state index dynamic allocation</strong>: <code>state</code> returns element indexes that are dynamically allocated per session — never write them into strategy code, only use them at execution time in real-time.</p>
+<h5>Code Constraints</h5>
+<p><strong>Must directly operate on target site</strong>: never obtain data through external services (including third-party scraping platforms, data aggregation APIs, proxy services), and never call the target site's official open platform API (rationale: generated Skills target zero-config deployment without requiring users to register developer API keys or manage credentials). Solutions must access the target site directly through the browser, using its frontend's internal endpoints or DOM data — the same resources already visible to the authenticated user.</p>
+<p><strong>Framework internal state fast-fail</strong>: when attempting to access page data or element info through framework internals (<code>__vue_app__</code>, <code>$data</code>, React fiber, Angular <code>ng</code>, etc.), <strong>give up after one failure</strong> and immediately switch to <code>state</code> scan + value-fill-trigger approach. Framework internals are version/implementation dependent, multiple retries won't change the result.</p>
+<h5>JS Execution Environment Constraints</h5>
+<p>Code executed in eval is <strong>browser-side JS</strong>: only browser-native APIs and page-loaded third-party libraries may be used, no require/import of external modules. Code violating this constraint will inevitably error at execution time.</p>
+<h5>Conclusion Criteria</h5>
+<p>Account permission limits ≠ technical solution failure. Paid features, membership tiers, etc. equally affect all approaches; when API is technically viable but data is limited due to account permissions (pagination truncated, filter conditions ineffective), conclusion is &quot;pass&quot; with permission dependency noted in &quot;Known Limitations&quot;.</p>
+<p><strong>Partial success counts as success</strong>: core capability verified working (whether API or DOM path) counts as pass — even with: some enum parameters marked <code>[collection failed]</code>, non-core fields missing, some filter conditions not covered. After generating the Skill, <strong>must inform user which parts are not fully covered</strong> — never silently omit.</p>
+<h5>Efficiency Rules</h5>
+<p>Core criterion: <strong>every browser roundtrip must yield information gain.</strong> The table below shows common efficient patterns, but they're just examples — if a pattern doesn't actually reduce roundtrips in practice, change approach and find other batch methods rather than repeatedly fine-tuning in the same direction.</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Composite eval</strong></td>
+<td>Merge multiple independent queries into one eval, wrap in async IIFE, return JSON summary. Each eval is a browser roundtrip — merge everything mergeable</td>
+</tr>
+<tr>
+<td><strong>Runtime first</strong></td>
+<td>Information retrieval priority: JS runtime state → network data → DOM. Never reverse-engineer runtime data from DOM</td>
+</tr>
+<tr>
+<td><strong>Output volume control</strong></td>
+<td>Extract key fields (count, total, sample) from large responses inside the browser before returning; avoid truncation</td>
+</tr>
+<tr>
+<td><strong>Async wait cohesion</strong></td>
+<td>Use Promise + setTimeout polling (with timeout cap) for wait conditions, don't poll repeatedly across tools</td>
+</tr>
+<tr>
+<td><strong>Fast permission-restricted detection</strong></td>
+<td>When restricted signals appear (upgrade prompts, data identical to unfiltered, controls disabled), batch-mark similar items as restricted, don't verify one by one</td>
+</tr>
+<tr>
+<td><strong>Fetch once, analyze many</strong></td>
+<td>Fetch data from same source only once, save then analyze multiple times; format large text with line breaks to avoid truncation</td>
+</tr>
+<tr>
+<td><strong>Stop at verification</strong></td>
+<td>Once API endpoint confirmed working (fetch success + data structure matches expectation), move to next phase immediately, don't continue redundant exploration of the same endpoint (e.g., reverse-searching script tags, extracting extra config)</td>
+</tr>
+<tr>
+<td><strong>Slider/range controls batch</strong></td>
+<td>Range sliders (e.g., noUiSlider) and numeric range controls — like input/select, set all controls to different values at once → trigger one search → read all numericFilters mapping from request, don't test each control individually</td>
+</tr>
+</tbody>
+</table>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

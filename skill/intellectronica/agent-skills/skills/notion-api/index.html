@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>notion-api · Gem Skills</title>
+    <meta name="description" content="Manages Notion pages, databases and blocks over the REST API." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=intellectronica%2Fagent-skills">intellectronica/agent-skills</a></p>
+      <h1>notion-api</h1>
+      <p class="lede">Manages Notion pages, databases and blocks over the REST API.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/intellectronica/agent-skills --skill notion-api</code><button type="button" class="copy" data-copy="npx skills add https://github.com/intellectronica/agent-skills --skill notion-api">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/intellectronica/agent-skills/notion-api">skills.sh page</a> · <a href="https://github.com/intellectronica/agent-skills/tree/HEAD/skills/notion-api">Source on GitHub</a> · <a href="/gemskills/?repo=intellectronica%2Fagent-skills">All skills from intellectronica/agent-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>77,359 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>293 <span class="muted">intellectronica/agent-skills</span></dd></div><div><dt>First seen</dt><dd>Jan 28, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">2K</div>
+      <div class="stat-delta">-29% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 2,759; week to Aug 10: 1,865; week to Aug 17: 2,028; week to Aug 24: 1,861; week to Aug 31: 2,374; week to Sep 7: 2,336; week to Sep 14: 2,141; week to Sep 21: 1,954. Use the left and right arrow keys to read each week."
+        data-values="2759,1865,2028,1861,2374,2336,2141,1954" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,20.3 71.1,17.7 103.7,20.3 136.3,12.1 168.9,12.7 201.4,15.9 234.0,18.8" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="18.8" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>2,759</td></tr><tr><td>Aug 10</td><td>1,865</td></tr><tr><td>Aug 17</td><td>2,028</td></tr><tr><td>Aug 24</td><td>1,861</td></tr><tr><td>Aug 31</td><td>2,374</td></tr><tr><td>Sep 7</td><td>2,336</td></tr><tr><td>Sep 14</td><td>2,141</td></tr><tr><td>Sep 21</td><td>1,954</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:documents" data-facet="category" title="Office files, notes and suites like Lark and Google Workspace." href="/gemskills/?tag=category%3Adocuments">category:documents</a></div>
+          <p class="tag-meaning">Office files, notes and suites like Lark and Google Workspace.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="notes" data-facet="topic" href="/gemskills/?tag=notes">notes</a><a class="tag" data-tag="documents" data-facet="topic" href="/gemskills/?tag=documents">documents</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:notion" data-facet="stack" href="/gemskills/?tag=stack%3Anotion">stack:notion</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/intellectronica/agent-skills/blob/9b0e00ad1b941165e2506545bbfddafa34cf2cb8/skills/notion-api/SKILL.md">intellectronica/agent-skills at 9b0e00a</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: notion-api
+description: &#62;
+  This skill provides comprehensive instructions for interacting with the Notion API via REST calls.
+  This skill should be used whenever the user asks to interact with Notion, including reading, creating,
+  updating, or deleting pages, databases, blocks, comments, or any other Notion content. The skill
+  covers authentication, all available endpoints, pagination, error handling, and best practices.</code></pre></details>
+        <div class="markdown"><h3>Notion API Skill</h3>
+<p>This skill enables interaction with Notion workspaces through the Notion REST API. Use <code>curl</code> and <code>jq</code> for direct REST calls, or write ad-hoc scripts as appropriate for the task.</p>
+<h4>Authentication</h4>
+<h5>API Key Handling</h5>
+<ol>
+<li><strong>Environment Variable</strong>: Check if <code>NOTION_API_TOKEN</code> is available in the environment</li>
+<li><strong>User-Provided Key</strong>: If the user provides an API key in context, use that instead</li>
+<li><strong>No Key Available</strong>: If neither is available, use AskUserQuestion (or equivalent) to request the API key from the user</li>
+</ol>
+<p><strong>IMPORTANT</strong>: Never display, log, or send <code>NOTION_API_TOKEN</code> anywhere except in the <code>Authorization</code> header. Confirm its existence, ask if missing, use it in requests—but never echo or expose it.</p>
+<h5>Request Headers</h5>
+<p>All requests require these headers:</p>
+<pre><code class="language-bash">-H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+-H &quot;Notion-Version: 2025-09-03&quot; \
+-H &quot;Content-Type: application/json&quot;
+</code></pre>
+<h5>Verifying Authentication</h5>
+<p>Test the API key by retrieving the bot user:</p>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/users/me&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<h4>Base URL and Conventions</h4>
+<ul>
+<li><strong>Base URL</strong>: <code>https://api.notion.com</code></li>
+<li><strong>API Version</strong>: <code>2025-09-03</code> (required header)</li>
+<li><strong>Data Format</strong>: JSON for all request/response bodies</li>
+<li><strong>IDs</strong>: UUIDv4 format (dashes optional in requests)</li>
+<li><strong>Timestamps</strong>: ISO 8601 format (<code>2020-08-12T02:12:33.231Z</code>)</li>
+<li><strong>Property Names</strong>: <code>snake_case</code></li>
+<li><strong>Empty Values</strong>: Use <code>null</code> instead of empty strings</li>
+</ul>
+<h4>Rate Limits</h4>
+<ul>
+<li><strong>Average</strong>: 3 requests per second per integration</li>
+<li><strong>Bursts</strong>: Brief bursts above this limit are allowed</li>
+<li><strong>Rate Limited Response</strong>: HTTP 429 with <code>Retry-After</code> header</li>
+<li><strong>Strategy</strong>: Implement exponential backoff when receiving 429 responses</li>
+</ul>
+<h4>Request Size Limits</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum block elements per payload</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>Maximum payload size</td>
+<td>500KB</td>
+</tr>
+<tr>
+<td>Rich text content</td>
+<td>2000 characters</td>
+</tr>
+<tr>
+<td>URLs</td>
+<td>2000 characters</td>
+</tr>
+<tr>
+<td>Equations</td>
+<td>1000 characters</td>
+</tr>
+<tr>
+<td>Email addresses</td>
+<td>200 characters</td>
+</tr>
+<tr>
+<td>Phone numbers</td>
+<td>200 characters</td>
+</tr>
+<tr>
+<td>Multi-select options</td>
+<td>100 items</td>
+</tr>
+<tr>
+<td>Relations</td>
+<td>100 related pages</td>
+</tr>
+<tr>
+<td>People mentions</td>
+<td>100 users</td>
+</tr>
+<tr>
+<td>Block arrays per request</td>
+<td>100 elements</td>
+</tr>
+</tbody>
+</table>
+<h4>Confirmation for Destructive Operations</h4>
+<p><strong>IMPORTANT</strong>: Before executing any operation that modifies or deletes data, ask the user for confirmation. This includes:</p>
+<ul>
+<li>Updating pages or blocks</li>
+<li>Deleting/archiving pages or blocks</li>
+<li>Modifying database schemas</li>
+<li>Creating pages (if multiple or in batch)</li>
+<li>Any bulk operations</li>
+</ul>
+<p>For a logical group of related operations, a single confirmation is sufficient.</p>
+<h4>Core API Endpoints</h4>
+<h5>Search</h5>
+<p>Search across all accessible pages and databases:</p>
+<pre><code class="language-bash">curl -s -X POST &quot;https://api.notion.com/v1/search&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;query&quot;: &quot;search term&quot;,
+    &quot;filter&quot;: {&quot;property&quot;: &quot;object&quot;, &quot;value&quot;: &quot;page&quot;},
+    &quot;sort&quot;: {&quot;direction&quot;: &quot;descending&quot;, &quot;timestamp&quot;: &quot;last_edited_time&quot;},
+    &quot;page_size&quot;: 100
+  }' | jq
+</code></pre>
+<p>Filter values: <code>&quot;page&quot;</code> or <code>&quot;data_source&quot;</code> (or omit for both)</p>
+<h5>Pages</h5>
+<h6>Retrieve a Page</h6>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/pages/{page_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<p><strong>Note</strong>: This returns page properties, not content. For content, use &quot;Retrieve block children&quot; with the page ID.</p>
+<h6>Create a Page</h6>
+<pre><code class="language-bash">curl -s -X POST &quot;https://api.notion.com/v1/pages&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;parent&quot;: {&quot;page_id&quot;: &quot;parent-page-id&quot;},
+    &quot;properties&quot;: {
+      &quot;title&quot;: {
+        &quot;title&quot;: [{&quot;text&quot;: {&quot;content&quot;: &quot;Page Title&quot;}}]
+      }
+    },
+    &quot;children&quot;: [
+      {
+        &quot;object&quot;: &quot;block&quot;,
+        &quot;type&quot;: &quot;paragraph&quot;,
+        &quot;paragraph&quot;: {
+          &quot;rich_text&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: {&quot;content&quot;: &quot;Paragraph content&quot;}}]
+        }
+      }
+    ]
+  }' | jq
+</code></pre>
+<p>Parent options:</p>
+<ul>
+<li><code>{&quot;page_id&quot;: &quot;...&quot;}</code> - Create under a page</li>
+<li><code>{&quot;database_id&quot;: &quot;...&quot;}</code> - Create in a database (legacy)</li>
+<li><code>{&quot;data_source_id&quot;: &quot;...&quot;}</code> - Create in a data source (API v2025-09-03+)</li>
+</ul>
+<h6>Update a Page</h6>
+<pre><code class="language-bash">curl -s -X PATCH &quot;https://api.notion.com/v1/pages/{page_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;properties&quot;: {
+      &quot;title&quot;: {&quot;title&quot;: [{&quot;text&quot;: {&quot;content&quot;: &quot;Updated Title&quot;}}]}
+    },
+    &quot;icon&quot;: {&quot;type&quot;: &quot;emoji&quot;, &quot;emoji&quot;: &quot;📝&quot;},
+    &quot;archived&quot;: false
+  }' | jq
+</code></pre>
+<p>Additional update options: <code>cover</code>, <code>is_locked</code>, <code>in_trash</code></p>
+<h6>Archive (Delete) a Page</h6>
+<pre><code class="language-bash">curl -s -X PATCH &quot;https://api.notion.com/v1/pages/{page_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;archived&quot;: true}' | jq
+</code></pre>
+<h6>Retrieve a Page Property Item</h6>
+<p>For properties with more than 25 references:</p>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/pages/{page_id}/properties/{property_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<h5>Blocks (Page Content)</h5>
+<h6>Retrieve Block Children</h6>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/blocks/{block_id}/children?page_size=100&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<p>Use the page ID as <code>block_id</code> to get page content. Check <code>has_children</code> on each block for nested content.</p>
+<h6>Append Block Children</h6>
+<pre><code class="language-bash">curl -s -X PATCH &quot;https://api.notion.com/v1/blocks/{block_id}/children&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;children&quot;: [
+      {
+        &quot;object&quot;: &quot;block&quot;,
+        &quot;type&quot;: &quot;heading_2&quot;,
+        &quot;heading_2&quot;: {
+          &quot;rich_text&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: {&quot;content&quot;: &quot;New Section&quot;}}]
+        }
+      },
+      {
+        &quot;object&quot;: &quot;block&quot;,
+        &quot;type&quot;: &quot;paragraph&quot;,
+        &quot;paragraph&quot;: {
+          &quot;rich_text&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: {&quot;content&quot;: &quot;Content here&quot;}}]
+        }
+      }
+    ]
+  }' | jq
+</code></pre>
+<p>Maximum 100 blocks per request, up to 2 levels of nesting.</p>
+<p>Position options in request body:</p>
+<ul>
+<li>Default: appends to end</li>
+<li><code>&quot;position&quot;: {&quot;type&quot;: &quot;start&quot;}</code> - Insert at beginning</li>
+<li><code>&quot;position&quot;: {&quot;type&quot;: &quot;after_block&quot;, &quot;after_block&quot;: {&quot;id&quot;: &quot;block-id&quot;}}</code> - Insert after specific block</li>
+</ul>
+<h6>Retrieve a Block</h6>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/blocks/{block_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<h6>Update a Block</h6>
+<pre><code class="language-bash">curl -s -X PATCH &quot;https://api.notion.com/v1/blocks/{block_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;paragraph&quot;: {
+      &quot;rich_text&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: {&quot;content&quot;: &quot;Updated content&quot;}}]
+    }
+  }' | jq
+</code></pre>
+<p>The update replaces the entire value for the specified field.</p>
+<h6>Delete a Block</h6>
+<pre><code class="language-bash">curl -s -X DELETE &quot;https://api.notion.com/v1/blocks/{block_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<p>Moves block to trash (can be restored).</p>
+<h5>Databases</h5>
+<h6>Retrieve a Database</h6>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/databases/{database_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<p>Returns database structure including data sources and properties.</p>
+<h6>Query a Database</h6>
+<pre><code class="language-bash">curl -s -X POST &quot;https://api.notion.com/v1/databases/{database_id}/query&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;filter&quot;: {
+      &quot;property&quot;: &quot;Status&quot;,
+      &quot;select&quot;: {&quot;equals&quot;: &quot;Done&quot;}
+    },
+    &quot;sorts&quot;: [
+      {&quot;property&quot;: &quot;Created&quot;, &quot;direction&quot;: &quot;descending&quot;}
+    ],
+    &quot;page_size&quot;: 100
+  }' | jq
+</code></pre>
+<p>See <code>references/filters-and-sorts.md</code> for comprehensive filter and sort documentation.</p>
+<h6>Create a Database</h6>
+<pre><code class="language-bash">curl -s -X POST &quot;https://api.notion.com/v1/databases&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;parent&quot;: {&quot;page_id&quot;: &quot;parent-page-id&quot;},
+    &quot;title&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: {&quot;content&quot;: &quot;My Database&quot;}}],
+    &quot;is_inline&quot;: true,
+    &quot;initial_data_source&quot;: {
+      &quot;properties&quot;: {
+        &quot;Name&quot;: {&quot;title&quot;: {}},
+        &quot;Status&quot;: {
+          &quot;select&quot;: {
+            &quot;options&quot;: [
+              {&quot;name&quot;: &quot;To Do&quot;, &quot;color&quot;: &quot;red&quot;},
+              {&quot;name&quot;: &quot;In Progress&quot;, &quot;color&quot;: &quot;yellow&quot;},
+              {&quot;name&quot;: &quot;Done&quot;, &quot;color&quot;: &quot;green&quot;}
+            ]
+          }
+        },
+        &quot;Due Date&quot;: {&quot;date&quot;: {}}
+      }
+    }
+  }' | jq
+</code></pre>
+<h6>Update a Database</h6>
+<pre><code class="language-bash">curl -s -X PATCH &quot;https://api.notion.com/v1/databases/{database_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;title&quot;: [{&quot;text&quot;: {&quot;content&quot;: &quot;Updated Title&quot;}}],
+    &quot;description&quot;: [{&quot;text&quot;: {&quot;content&quot;: &quot;Database description&quot;}}]
+  }' | jq
+</code></pre>
+<h5>Data Sources (API v2025-09-03+)</h5>
+<p>Data sources are individual tables within a database. As of API version 2025-09-03, databases can contain multiple data sources.</p>
+<h6>Create a Data Source</h6>
+<pre><code class="language-bash">curl -s -X POST &quot;https://api.notion.com/v1/data_sources&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;parent&quot;: {&quot;type&quot;: &quot;database_id&quot;, &quot;database_id&quot;: &quot;database-id&quot;},
+    &quot;title&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: {&quot;content&quot;: &quot;New Data Source&quot;}}],
+    &quot;properties&quot;: {
+      &quot;Name&quot;: {&quot;title&quot;: {}},
+      &quot;Description&quot;: {&quot;rich_text&quot;: {}}
+    }
+  }' | jq
+</code></pre>
+<h5>Users</h5>
+<h6>List All Users</h6>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/users?page_size=100&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<h6>Retrieve a User</h6>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/users/{user_id}&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<h6>Retrieve Bot User (Self)</h6>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/users/me&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<h5>Comments</h5>
+<h6>Retrieve Comments</h6>
+<pre><code class="language-bash">curl -s &quot;https://api.notion.com/v1/comments?block_id={block_id}&amp;page_size=100&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; | jq
+</code></pre>
+<p>Use a page ID as <code>block_id</code> for page-level comments.</p>
+<h6>Create a Comment</h6>
+<p>On a page:</p>
+<pre><code class="language-bash">curl -s -X POST &quot;https://api.notion.com/v1/comments&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;parent&quot;: {&quot;page_id&quot;: &quot;page-id&quot;},
+    &quot;rich_text&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: {&quot;content&quot;: &quot;Comment content&quot;}}]
+  }' | jq
+</code></pre>
+<p>Reply to a discussion:</p>
+<pre><code class="language-bash">curl -s -X POST &quot;https://api.notion.com/v1/comments&quot; \
+  -H &quot;Authorization: Bearer $NOTION_API_TOKEN&quot; \
+  -H &quot;Notion-Version: 2025-09-03&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;discussion_id&quot;: &quot;discussion-id&quot;,
+    &quot;rich_text&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: {&quot;content&quot;: &quot;Reply content&quot;}}]
+  }' | jq
+</code></pre>
+<p><strong>Note</strong>: The API cannot start new inline discussion threads or edit/delete existing comments.</p>
+<h4>Pagination</h4>
+<p>Paginated endpoints return:</p>
+<ul>
+<li><code>has_more</code>: Boolean indicating more results exist</li>
+<li><code>next_cursor</code>: Cursor for the next page</li>
+<li><code>results</code>: Array of items</li>
+</ul>
+<p>To iterate through all results:</p>
+<ol>
+<li>Make the initial request (omit <code>start_cursor</code>)</li>
+<li>Check <code>has_more</code> in the response</li>
+<li>If <code>true</code>, extract <code>next_cursor</code> and include it as <code>start_cursor</code> in the next request</li>
+<li>Repeat until <code>has_more</code> is <code>false</code></li>
+</ol>
+<p>Example request with cursor:</p>
+<pre><code class="language-json">{
+  &quot;page_size&quot;: 100,
+  &quot;start_cursor&quot;: &quot;v1%7C...&quot;
+}
+</code></pre>
+<h4>Error Handling</h4>
+<table>
+<thead>
+<tr>
+<th>HTTP Status</th>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td><code>invalid_json</code></td>
+<td>Request body is not valid JSON</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>invalid_request_url</code></td>
+<td>URL is malformed</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>invalid_request</code></td>
+<td>Request is not supported</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>validation_error</code></td>
+<td>Request body doesn't match expected schema</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>missing_version</code></td>
+<td>Missing Notion-Version header</td>
+</tr>
+<tr>
+<td>401</td>
+<td><code>unauthorized</code></td>
+<td>Invalid bearer token</td>
+</tr>
+<tr>
+<td>403</td>
+<td><code>restricted_resource</code></td>
+<td>Token lacks permission</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>object_not_found</code></td>
+<td>Resource doesn't exist or not shared with integration</td>
+</tr>
+<tr>
+<td>409</td>
+<td><code>conflict_error</code></td>
+<td>Data collision during transaction</td>
+</tr>
+<tr>
+<td>429</td>
+<td><code>rate_limited</code></td>
+<td>Rate limit exceeded (check Retry-After header)</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>internal_server_error</code></td>
+<td>Unexpected server error</td>
+</tr>
+<tr>
+<td>503</td>
+<td><code>service_unavailable</code></td>
+<td>Notion unavailable or 60s timeout exceeded</td>
+</tr>
+<tr>
+<td>503</td>
+<td><code>database_connection_unavailable</code></td>
+<td>Database unresponsive</td>
+</tr>
+<tr>
+<td>504</td>
+<td><code>gateway_timeout</code></td>
+<td>Request timeout</td>
+</tr>
+</tbody>
+</table>
+<h4>Best Practices</h4>
+<ol>
+<li><strong>Store IDs</strong>: When creating pages/databases, store the returned IDs for future updates</li>
+<li><strong>Use Property IDs</strong>: Reference properties by ID rather than name for stability</li>
+<li><strong>Batch Operations</strong>: Aggregate multiple small operations into fewer requests</li>
+<li><strong>Respect Rate Limits</strong>: Implement exponential backoff for 429 responses</li>
+<li><strong>Check <code>has_more</code></strong>: Always handle pagination for list endpoints</li>
+<li><strong>Validate Before Updates</strong>: Retrieve current state before making updates</li>
+<li><strong>Use Environment Variables</strong>: Never hardcode API keys</li>
+<li><strong>Handle Errors Gracefully</strong>: Check response status codes and error messages</li>
+<li><strong>Schema Size</strong>: Keep database schemas under 50KB for optimal performance</li>
+<li><strong>Properties Limit</strong>: Properties with &gt;25 page references require separate retrieval</li>
+</ol>
+<h4>References</h4>
+<p>For detailed documentation on specific topics, see:</p>
+<ul>
+<li><code>references/block-types.md</code> - All supported block types and their structures</li>
+<li><code>references/property-types.md</code> - Database property types and value formats</li>
+<li><code>references/filters-and-sorts.md</code> - Database query filter and sort syntax</li>
+<li><code>references/rich-text.md</code> - Rich text object structure and annotations</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

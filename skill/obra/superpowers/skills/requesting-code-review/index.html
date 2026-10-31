@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>requesting-code-review · Gem Skills</title>
+    <meta name="description" content="Use it when: a task or feature is done, before merging, or when you&#039;re stuck and want fresh eyes. It does: sends a reviewer subagent the commit range and the plan, with none of the session&#039;s history. You get: strengths, issues graded Critical, Important or Minor with file and line, and a verdict on whether it&#039;s ready to merge. Then: the agent fixes Critical issues at once and Important ones before going on, notes Minor ones, and argues back with code or tests when the reviewer is wrong. Unlike receiving-code-review: which covers how to act on feedback you&#039;ve been given; this one asks for the review." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>requesting-code-review</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a task or feature is done, before merging, or when you&#39;re stuck and want fresh eyes</dd></div><div><dt>It does</dt><dd>sends a reviewer subagent the commit range and the plan, with none of the session&#39;s history</dd></div><div><dt>You get</dt><dd>strengths, issues graded Critical, Important or Minor with file and line, and a verdict on whether it&#39;s ready to merge</dd></div><div><dt>Then</dt><dd>the agent fixes Critical issues at once and Important ones before going on, notes Minor ones, and argues back with code or tests when the reviewer is wrong</dd></div><div><dt>Unlike receiving-code-review</dt><dd>which covers how to act on feedback you&#39;ve been given; this one asks for the review</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 8 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · Before it: <a href="/gemskills/skill/obra/superpowers/skills/test-driven-development/">test-driven-development</a> · After it: <a href="/gemskills/skill/obra/superpowers/skills/receiving-code-review/">receiving-code-review</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The agent fills the reviewer prompt that ships with the skill with what was built, what it was meant to do, and the first and last commits of the work, then starts a subagent with it. The reviewer reads the diff without changing the checkout or starting reviewers of its own. It checks that the code matches the plan, then its quality, architecture, tests and readiness for production. Where the spec says nothing, it judges by what a reasonable user would expect. It also names anything it decided was out of scope, so the agent can rule on it rather than lose it. subagent-driven-development and executing-plans use the same reviewer prompt for their final review of the whole branch.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/requesting-code-review">the skill at bb92a77</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill requesting-code-review</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill requesting-code-review">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/requesting-code-review">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/requesting-code-review">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>233,838 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">6.4K</div>
+      <div class="stat-delta">-12% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 7,311; week to Aug 10: 6,787; week to Aug 17: 6,711; week to Aug 24: 6,840; week to Aug 31: 6,184; week to Sep 7: 6,650; week to Sep 14: 6,141; week to Sep 21: 6,414. Use the left and right arrow keys to read each week."
+        data-values="7311,6787,6711,6840,6184,6650,6141,6414" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,9.2 71.1,9.6 103.7,8.8 136.3,12.8 168.9,10.0 201.4,13.0 234.0,11.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="11.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>7,311</td></tr><tr><td>Aug 10</td><td>6,787</td></tr><tr><td>Aug 17</td><td>6,711</td></tr><tr><td>Aug 24</td><td>6,840</td></tr><tr><td>Aug 31</td><td>6,184</td></tr><tr><td>Sep 7</td><td>6,650</td></tr><tr><td>Sep 14</td><td>6,141</td></tr><tr><td>Sep 21</td><td>6,414</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:subagents" data-facet="needs" title="Relies on the agent being able to spawn subagents." href="/gemskills/?tag=needs%3Asubagents">needs:subagents</a></div>
+          <p class="tag-meaning">Relies on the agent being able to spawn subagents.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="code-review" data-facet="topic" href="/gemskills/?tag=code-review">code-review</a><a class="tag" data-tag="multi-agent" data-facet="topic" href="/gemskills/?tag=multi-agent">multi-agent</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/requesting-code-review/SKILL.md">obra/superpowers at bb92a77</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: requesting-code-review
+description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements</code></pre></details>
+        <div class="markdown"><h3>Requesting Code Review</h3>
+<p>Dispatch a code reviewer subagent to catch issues before they cascade. The reviewer gets precisely crafted context for evaluation — never your session's history.</p>
+<p><strong>Core principle:</strong> Review early, review often.</p>
+<h4>When to Request Review</h4>
+<p><strong>Mandatory:</strong></p>
+<ul>
+<li>After each task in subagent-driven development</li>
+<li>After completing major feature</li>
+<li>Before merge to main</li>
+</ul>
+<p><strong>Optional but valuable:</strong></p>
+<ul>
+<li>When stuck (fresh perspective)</li>
+<li>Before refactoring (baseline check)</li>
+<li>After fixing complex bug</li>
+</ul>
+<h4>How to Request</h4>
+<p><strong>1. Get git SHAs:</strong></p>
+<pre><code class="language-bash">BASE_SHA=$(git rev-parse HEAD~1)  # or: git merge-base origin/main HEAD
+HEAD_SHA=$(git rev-parse HEAD)
+</code></pre>
+<p><strong>2. Dispatch code reviewer subagent:</strong></p>
+<p>Dispatch a <code>general-purpose</code> subagent, filling the template at <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/requesting-code-review/code-reviewer.md">code-reviewer.md</a></p>
+<p><strong>Placeholders:</strong></p>
+<ul>
+<li><code>{DESCRIPTION}</code> - Brief summary of what you built</li>
+<li><code>{PLAN_OR_REQUIREMENTS}</code> - What it should do</li>
+<li><code>{BASE_SHA}</code> - Starting commit</li>
+<li><code>{HEAD_SHA}</code> - Ending commit</li>
+</ul>
+<p><strong>3. Act on feedback:</strong></p>
+<ul>
+<li>Fix Critical issues immediately</li>
+<li>Fix Important issues before proceeding</li>
+<li>Note Minor issues for later</li>
+<li>Push back if reviewer is wrong (with reasoning)</li>
+</ul>
+<h4>Example</h4>
+<pre><code>[Just completed Task 2: Add verification function]
+
+You: Let me request code review before proceeding.
+
+BASE_SHA=$(git log --oneline | grep &quot;Task 1&quot; | head -1 | cut -d' ' -f1)
+HEAD_SHA=$(git rev-parse HEAD)
+
+[Dispatch code reviewer subagent]
+  DESCRIPTION: Added verifyIndex() and repairIndex() with 4 issue types
+  PLAN_OR_REQUIREMENTS: Task 2 from docs/superpowers/plans/deployment-plan.md
+  BASE_SHA: a7981ec
+  HEAD_SHA: 3df7661
+
+[Subagent returns]:
+  Strengths: Clean architecture, real tests
+  Issues:
+    Important: Missing progress indicators
+    Minor: Magic number (100) for reporting interval
+  Assessment: Ready to proceed
+
+You: [Fix progress indicators]
+[Continue to Task 3]
+</code></pre>
+<h4>Common Rationalizations</h4>
+<table>
+<thead>
+<tr>
+<th>Excuse</th>
+<th>Reality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;I'll just review the diff myself instead of dispatching a reviewer&quot;</td>
+<td>You're the coordinator — reviewing the diff inline burns the context window you need to keep driving the work. Dispatch a reviewer subagent: the diff and the evaluation live in its context, and only the findings come back to you.</td>
+</tr>
+<tr>
+<td>&quot;The reviewer needs my whole session history to understand the change&quot;</td>
+<td>Hand it precisely crafted context, never your session's history. That keeps the reviewer on the work product, not your thought process.</td>
+</tr>
+</tbody>
+</table>
+<h4>Red Flags</h4>
+<p><strong>Never:</strong></p>
+<ul>
+<li>Skip review because &quot;it's simple&quot;</li>
+<li>Ignore Critical issues</li>
+<li>Proceed with unfixed Important issues</li>
+<li>Argue with valid technical feedback</li>
+</ul>
+<p><strong>If reviewer wrong:</strong></p>
+<ul>
+<li>Push back with technical reasoning</li>
+<li>Show code/tests that prove it works</li>
+<li>Request clarification</li>
+</ul>
+<p>See template at: <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/requesting-code-review/code-reviewer.md">code-reviewer.md</a></p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

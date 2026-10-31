@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ai-video-generation · Gem Skills</title>
+    <meta name="description" content="Use it when: you want an AI-generated video clip from a prompt or a picture, or need to edit, upscale or add sound to a clip. It does: runs Veo, Seedance, Wan, Grok and dozens of other video models through belt, the command line of the inference.sh model platform. You get: generated clips, and also talking portraits, upscaled video, added sound effects or clips merged with transitions. Needs: the belt CLI and an inference.sh account. Unlike ai-avatar-video: talking portraits are a few rows here; that skill covers them in depth, with voices and dubbing." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=101-skills%2Fsuperpowers">101-skills/superpowers</a></p>
+      <h1>ai-video-generation</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want an AI-generated video clip from a prompt or a picture, or need to edit, upscale or add sound to a clip</dd></div><div><dt>It does</dt><dd>runs Veo, Seedance, Wan, Grok and dozens of other video models through belt, the command line of the inference.sh model platform</dd></div><div><dt>You get</dt><dd>generated clips, and also talking portraits, upscaled video, added sound effects or clips merged with transitions</dd></div><div><dt>Needs</dt><dd>the belt CLI and an inference.sh account</dd></div><div><dt>Unlike ai-avatar-video</dt><dd>talking portraits are a few rows here; that skill covers them in depth, with voices and dubbing</dd></div></dl></section>
+      
+      <p class="note">Copy of a skill from inference.sh&#39;s own repo, inference-sh/skills, republished under six org names that are all called superpowers. On 2026-10-19 the original had 14 installs and this copy had 810.0K.</p>
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>inference.sh hosts AI models as apps you run from its belt command line, each with a JSON input. This skill is a catalog of its video apps, with what each is best at and a ready command. Text-to-video models include Google&#39;s Veo, ByteDance&#39;s Seedance, xAI&#39;s Grok, models from Alibaba and cheaper options, several of which also generate sound. Image-to-video models animate a still picture, and some keep a person&#39;s look from a reference photo. Beyond generation it covers making a portrait speak from an audio file, editing a clip from a text instruction, upscaling, adding sound effects and joining clips with transitions. It lists options rather than walking a process: the agent picks the model that fits, and belt app list --category video shows the rest. It gives no prices.</p>
+      <p class="muted">Summarizes <a href="https://github.com/101-skills/superpowers/tree/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation">the skill at becc256</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/101-skills/superpowers --skill ai-video-generation</code><button type="button" class="copy" data-copy="npx skills add https://github.com/101-skills/superpowers --skill ai-video-generation">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/101-skills/superpowers/ai-video-generation">skills.sh page</a> · <a href="https://github.com/101-skills/superpowers/tree/HEAD/tools/video/ai-video-generation">Source on GitHub</a> · <a href="/gemskills/?repo=101-skills%2Fsuperpowers">All skills from 101-skills/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>301,174 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>4 <span class="muted">101-skills/superpowers</span></dd></div><div><dt>First seen</dt><dd>Aug 31, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">213K</div>
+      <div class="stat-delta">week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 0; week to Aug 10: 0; week to Aug 17: 0; week to Aug 24: 0; week to Aug 31: 0; week to Sep 7: 13,241; week to Sep 14: 64,317; week to Sep 21: 213,120. Use the left and right arrow keys to read each week."
+        data-values="0,0,0,0,0,13241,64317,213120" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,50.0 38.6,50.0 71.1,50.0 103.7,50.0 136.3,50.0 168.9,47.3 201.4,36.7 234.0,6.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="6.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>0</td></tr><tr><td>Aug 10</td><td>0</td></tr><tr><td>Aug 17</td><td>0</td></tr><tr><td>Aug 24</td><td>0</td></tr><tr><td>Aug 31</td><td>0</td></tr><tr><td>Sep 7</td><td>13,241</td></tr><tr><td>Sep 14</td><td>64,317</td></tr><tr><td>Sep 21</td><td>213,120</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:media" data-facet="category" title="Generate and edit video, images and audio." href="/gemskills/?tag=category%3Amedia">category:media</a></div>
+          <p class="tag-meaning">Generate and edit video, images and audio.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="video" data-facet="topic" href="/gemskills/?tag=video">video</a><a class="tag" data-tag="ai-generation" data-facet="topic" href="/gemskills/?tag=ai-generation">ai-generation</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:inference-sh" data-facet="stack" href="/gemskills/?tag=stack%3Ainference-sh">stack:inference-sh</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:republished" data-facet="flag" title="A copy of another publisher&#39;s skill under a different org. Each copy found had hundreds of thousands of installs while its original had fewer than twenty, so treat its ranking with caution." href="/gemskills/?tag=flag%3Arepublished">flag:republished</a></div>
+          <p class="tag-meaning">A copy of another publisher&#39;s skill under a different org. Each copy found had hundreds of thousands of installs while its original had fewer than twenty, so treat its ranking with caution.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/101-skills/superpowers/blob/becc25649700d5457772a00e5143e28ccf9e5afa/tools/video/ai-video-generation/SKILL.md">101-skills/superpowers at becc256</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: ai-video-generation
+description: &#34;Generate AI videos with Google Veo, Seedance 2.0, HappyHorse, Wan, Grok and 40+ models via inference.sh CLI. Models: Veo 3.1, Veo 3, Seedance 2.0, HappyHorse 1.0, Wan 2.5, Grok Imagine Video, OmniHuman, Fabric, HunyuanVideo. Capabilities: text-to-video, image-to-video, reference-to-video, video editing, lipsync, avatar animation, video upscaling, foley sound. Use for: social media videos, marketing content, explainer videos, product demos, AI avatars. Triggers: video generation, ai video, text to video, image to video, veo, animate image, video from image, ai animation, video generator, generate video, t2v, i2v, ai video maker, create video with ai, runway alternative, pika alternative, sora alternative, kling alternative, seedance, happyhorse&#34;
+allowed-tools: Bash(belt *)</code></pre></details>
+        <div class="markdown"><blockquote>
+<p><strong>Install the belt CLI skill:</strong> <code>npx skills add belt-sh/cli</code></p>
+</blockquote>
+<h3>AI Video Generation</h3>
+<p>Generate videos with 40+ AI models via <a href="https://inference.sh">inference.sh</a> CLI.</p>
+<p><img src="https://cloud.inference.sh/app/files/u/4mg21r6ta37mpaz6ktzwtt8krr/01kg2c0egyg243mnyth4y6g51q.jpeg" alt="AI Video Generation"></p>
+<h4>Quick Start</h4>
+<blockquote>
+<p>Requires inference.sh CLI (<code>belt</code>). <a href="https://raw.githubusercontent.com/inference-sh/skills/refs/heads/main/cli-install.md">Install instructions</a></p>
+</blockquote>
+<pre><code class="language-bash">belt login
+
+# Generate a video with Veo
+belt app run google/veo-3-1-fast --input '{&quot;prompt&quot;: &quot;drone shot flying over a forest&quot;}'
+</code></pre>
+<h4>Available Models</h4>
+<h5>Text-to-Video</h5>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>App ID</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Veo 3.1 Fast</td>
+<td><code>google/veo-3-1-fast</code></td>
+<td>Fast, with optional audio</td>
+</tr>
+<tr>
+<td>Veo 3.1</td>
+<td><code>google/veo-3-1</code></td>
+<td>Best quality, frame interpolation</td>
+</tr>
+<tr>
+<td>Veo 3</td>
+<td><code>google/veo-3</code></td>
+<td>High quality with audio</td>
+</tr>
+<tr>
+<td>Veo 3 Fast</td>
+<td><code>google/veo-3-fast</code></td>
+<td>Fast with audio</td>
+</tr>
+<tr>
+<td>Veo 2</td>
+<td><code>google/veo-2</code></td>
+<td>Realistic videos</td>
+</tr>
+<tr>
+<td><strong>P-Video</strong></td>
+<td><code>pruna/p-video</code></td>
+<td>Fast, economical, with audio support</td>
+</tr>
+<tr>
+<td><strong>WAN-T2V</strong></td>
+<td><code>pruna/wan-t2v</code></td>
+<td>Economical 480p/720p</td>
+</tr>
+<tr>
+<td>Grok Video</td>
+<td><code>xai/grok-imagine-video</code></td>
+<td>xAI, configurable duration</td>
+</tr>
+<tr>
+<td><strong>Seedance 2.0</strong></td>
+<td><code>bytedance/seedance-2-0</code></td>
+<td>Text/image/ref-to-video with sync audio, up to 1080p</td>
+</tr>
+<tr>
+<td><strong>Seedance 2.0 Fast</strong></td>
+<td><code>bytedance/seedance-2-0-fast</code></td>
+<td>Fast variant, same capabilities</td>
+</tr>
+<tr>
+<td><strong>HappyHorse T2V</strong></td>
+<td><code>alibaba/happyhorse-1-0-t2v</code></td>
+<td>Physically realistic, up to 15s</td>
+</tr>
+</tbody>
+</table>
+<h5>Image-to-Video</h5>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>App ID</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wan 2.5</td>
+<td><code>falai/wan-2-5</code></td>
+<td>Animate any image</td>
+</tr>
+<tr>
+<td>Wan 2.5 I2V</td>
+<td><code>falai/wan-2-5-i2v</code></td>
+<td>High quality i2v</td>
+</tr>
+<tr>
+<td><strong>WAN-I2V</strong></td>
+<td><code>pruna/wan-i2v</code></td>
+<td>Economical 480p/720p</td>
+</tr>
+<tr>
+<td><strong>P-Video</strong></td>
+<td><code>pruna/p-video</code></td>
+<td>Fast i2v with audio</td>
+</tr>
+<tr>
+<td><strong>Seedance 2.0</strong></td>
+<td><code>bytedance/seedance-2-0</code></td>
+<td>Animate images with sync audio, up to 1080p</td>
+</tr>
+<tr>
+<td><strong>Seedance 2.0 Fast</strong></td>
+<td><code>bytedance/seedance-2-0-fast</code></td>
+<td>Fast variant, same capabilities</td>
+</tr>
+<tr>
+<td><strong>HappyHorse I2V</strong></td>
+<td><code>alibaba/happyhorse-1-0-i2v</code></td>
+<td>Animate images, up to 1080P/15s</td>
+</tr>
+<tr>
+<td><strong>HappyHorse R2V</strong></td>
+<td><code>alibaba/happyhorse-1-0-r2v</code></td>
+<td>Character-preserving from references</td>
+</tr>
+</tbody>
+</table>
+<h5>Avatar / Lipsync</h5>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>App ID</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OmniHuman 1.5</td>
+<td><code>bytedance/omnihuman-1-5</code></td>
+<td>Multi-character</td>
+</tr>
+<tr>
+<td>OmniHuman 1.0</td>
+<td><code>bytedance/omnihuman-1-0</code></td>
+<td>Single character</td>
+</tr>
+<tr>
+<td>Fabric 1.0</td>
+<td><code>falai/fabric-1-0</code></td>
+<td>Image talks with lipsync</td>
+</tr>
+<tr>
+<td>PixVerse Lipsync</td>
+<td><code>falai/pixverse-lipsync</code></td>
+<td>Realistic lipsync</td>
+</tr>
+</tbody>
+</table>
+<h5>Video Editing</h5>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>App ID</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HappyHorse Edit</td>
+<td><code>alibaba/happyhorse-1-0-video-edit</code></td>
+<td>Natural language video editing</td>
+</tr>
+</tbody>
+</table>
+<h5>Utilities</h5>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>App ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HunyuanVideo Foley</td>
+<td><code>infsh/hunyuanvideo-foley</code></td>
+<td>Add sound effects to video</td>
+</tr>
+<tr>
+<td>Topaz Upscaler</td>
+<td><code>falai/topaz-video-upscaler</code></td>
+<td>Upscale video quality</td>
+</tr>
+<tr>
+<td>Media Merger</td>
+<td><code>infsh/media-merger</code></td>
+<td>Merge videos with transitions</td>
+</tr>
+</tbody>
+</table>
+<h4>Browse All Video Apps</h4>
+<pre><code class="language-bash">belt app list --category video
+</code></pre>
+<h4>Examples</h4>
+<h5>Text-to-Video with Veo</h5>
+<pre><code class="language-bash">belt app run google/veo-3-1-fast --input '{
+  &quot;prompt&quot;: &quot;A timelapse of a flower blooming in a garden&quot;
+}'
+</code></pre>
+<h5>Grok Video</h5>
+<pre><code class="language-bash">belt app run xai/grok-imagine-video --input '{
+  &quot;prompt&quot;: &quot;Waves crashing on a beach at sunset&quot;,
+  &quot;duration&quot;: 5
+}'
+</code></pre>
+<h5>Image-to-Video with Wan 2.5</h5>
+<pre><code class="language-bash">belt app run falai/wan-2-5 --input '{
+  &quot;image_url&quot;: &quot;https://your-image.jpg&quot;
+}'
+</code></pre>
+<h5>AI Avatar / Talking Head</h5>
+<pre><code class="language-bash">belt app run bytedance/omnihuman-1-5 --input '{
+  &quot;image_url&quot;: &quot;https://portrait.jpg&quot;,
+  &quot;audio_url&quot;: &quot;https://speech.mp3&quot;
+}'
+</code></pre>
+<h5>Fabric Lipsync</h5>
+<pre><code class="language-bash">belt app run falai/fabric-1-0 --input '{
+  &quot;image_url&quot;: &quot;https://face.jpg&quot;,
+  &quot;audio_url&quot;: &quot;https://audio.mp3&quot;
+}'
+</code></pre>
+<h5>Seedance 2.0 Text-to-Video with Audio</h5>
+<pre><code class="language-bash">belt app run bytedance/seedance-2-0 --input '{
+  &quot;prompt&quot;: &quot;a jazz band performing in a dimly lit club&quot;,
+  &quot;generate_audio&quot;: true,
+  &quot;duration&quot;: 10
+}'
+</code></pre>
+<h5>Seedance 2.0 Image-to-Video</h5>
+<pre><code class="language-bash">belt app run bytedance/seedance-2-0 --input '{
+  &quot;image&quot;: &quot;https://your-image.jpg&quot;,
+  &quot;prompt&quot;: &quot;gentle camera movement, leaves rustling in the wind&quot;,
+  &quot;generate_audio&quot;: true
+}'
+</code></pre>
+<h5>Seedance 2.0 Reference-to-Video</h5>
+<pre><code class="language-bash">belt app run bytedance/seedance-2-0 --input '{
+  &quot;prompt&quot;: &quot;A person who looks like the reference walking through a garden&quot;,
+  &quot;reference_image&quot;: &quot;https://portrait.jpg&quot;,
+  &quot;generate_audio&quot;: true
+}'
+</code></pre>
+<h5>HappyHorse Text-to-Video</h5>
+<pre><code class="language-bash">belt app run alibaba/happyhorse-1-0-t2v --input '{
+  &quot;prompt&quot;: &quot;a golden retriever running through autumn leaves, slow motion&quot;,
+  &quot;duration&quot;: 10,
+  &quot;resolution&quot;: &quot;1080P&quot;
+}'
+</code></pre>
+<h5>HappyHorse Video Editing</h5>
+<pre><code class="language-bash">belt app run alibaba/happyhorse-1-0-video-edit --input '{
+  &quot;video&quot;: &quot;https://your-video.mp4&quot;,
+  &quot;prompt&quot;: &quot;change the background to a snowy mountain landscape&quot;
+}'
+</code></pre>
+<h5>PixVerse Lipsync</h5>
+<pre><code class="language-bash">belt app run falai/pixverse-lipsync --input '{
+  &quot;image_url&quot;: &quot;https://portrait.jpg&quot;,
+  &quot;audio_url&quot;: &quot;https://speech.mp3&quot;
+}'
+</code></pre>
+<h5>Video Upscaling</h5>
+<pre><code class="language-bash">belt app run falai/topaz-video-upscaler --input '{&quot;video_url&quot;: &quot;https://...&quot;}'
+</code></pre>
+<h5>Add Sound Effects (Foley)</h5>
+<pre><code class="language-bash">belt app run infsh/hunyuanvideo-foley --input '{
+  &quot;video_url&quot;: &quot;https://silent-video.mp4&quot;,
+  &quot;prompt&quot;: &quot;footsteps on gravel, birds chirping&quot;
+}'
+</code></pre>
+<h5>Merge Videos</h5>
+<pre><code class="language-bash">belt app run infsh/media-merger --input '{
+  &quot;videos&quot;: [&quot;https://clip1.mp4&quot;, &quot;https://clip2.mp4&quot;],
+  &quot;transition&quot;: &quot;fade&quot;
+}'
+</code></pre>
+<h4>Related Skills</h4>
+<pre><code class="language-bash"># Full platform skill (all apps)
+npx skills add inference-sh/skills@infsh-cli
+
+# Pruna P-Video (fast &amp; economical)
+npx skills add inference-sh/skills@p-video
+
+# Google Veo specific
+npx skills add inference-sh/skills@google-veo
+
+# Seedance 2.0
+npx skills add inference-sh/skills@seedance
+
+# HappyHorse 1.0
+npx skills add inference-sh/skills@happyhorse
+
+# AI avatars &amp; lipsync
+npx skills add inference-sh/skills@ai-avatar-video
+
+# Text-to-speech (for video narration)
+npx skills add inference-sh/skills@text-to-speech
+
+# Image generation (for image-to-video)
+npx skills add inference-sh/skills@ai-image-generation
+
+# Twitter (post videos)
+npx skills add inference-sh/skills@twitter-automation
+</code></pre>
+<p>Browse all apps: <code>belt app list</code></p>
+<h4>Documentation</h4>
+<ul>
+<li><a href="https://inference.sh/docs/apps/running">Running Apps</a> - How to run apps via CLI</li>
+<li><a href="https://inference.sh/docs/api/sdk/streaming">Streaming Results</a> - Real-time progress updates</li>
+<li><a href="https://inference.sh/docs/examples/content-pipeline">Content Pipeline Example</a> - Building media workflows</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

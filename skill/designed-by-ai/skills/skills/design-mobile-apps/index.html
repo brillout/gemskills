@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>design-mobile-apps · Gem Skills</title>
+    <meta name="description" content="Use it when: you want mobile app screens designed from a description, and perhaps built in React Native or HTML. It does: sends your brief to Sleek, an AI mobile design tool, through its API, then shows you screenshots of each screen. You get: screens in a Sleek project you can watch being designed live, screenshots in your project folder, and code if you ask. Needs: a Sleek account and API key; free trial credits cover about one design run, and regular use needs its Pro plan or higher." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=designed-by-ai%2Fskills">designed-by-ai/skills</a></p>
+      <h1>design-mobile-apps</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want mobile app screens designed from a description, and perhaps built in React Native or HTML</dd></div><div><dt>It does</dt><dd>sends your brief to Sleek, an AI mobile design tool, through its API, then shows you screenshots of each screen</dd></div><div><dt>You get</dt><dd>screens in a Sleek project you can watch being designed live, screenshots in your project folder, and code if you ask</dd></div><div><dt>Needs</dt><dd>a Sleek account and API key; free trial credits cover about one design run, and regular use needs its Pro plan or higher</dd></div></dl></section>
+      
+      <p class="note">Copy of Sleek&#39;s own skill, sleekdotdesign/agent-skills/sleek-design-mobile-apps. On 2026-10-19 the original had 13 installs and this copy had 909.2K.</p>
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Without a key, the agent gets one for you: you approve a code in your browser and never handle the key yourself. To design, it sends your whole request as one message. When you&#39;ve given it reference apps or adjectives, it adds a paragraph on the look it&#39;s after: mood, how colors are used, type, layout and the style of buttons and cards. It can also start from one of Sleek&#39;s ready-made styles. It waits up to ten minutes for Sleek to finish, then screenshots every new or changed screen to show you, plus full-length shots to check its own work. To build the design, it fetches each screen&#39;s HTML: saved as is for an HTML prototype, or ported to React Native with Expo. Layout, colors, icons and fonts are copied exactly from the HTML, while the sample names, numbers and copy are replaced with your app&#39;s real data. Tab bars and headers, drawn into every screen of the design, are built once in the app&#39;s navigation.</p>
+      <p class="muted">Summarizes <a href="https://github.com/designed-by-ai/skills/tree/03c20aec6dcedb5fabfb03dc37982eb52ef19ed6/skills/design-mobile-apps">the skill at 03c20ae</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/designed-by-ai/skills --skill design-mobile-apps</code><button type="button" class="copy" data-copy="npx skills add https://github.com/designed-by-ai/skills --skill design-mobile-apps">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/designed-by-ai/skills/design-mobile-apps">skills.sh page</a> · <a href="https://github.com/designed-by-ai/skills/tree/HEAD/skills/design-mobile-apps">Source on GitHub</a> · <a href="/gemskills/?repo=designed-by-ai%2Fskills">All skills from designed-by-ai/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>334,065 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>6 <span class="muted">designed-by-ai/skills</span></dd></div><div><dt>First seen</dt><dd>Sep 4, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">138K</div>
+      <div class="stat-delta">week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 0; week to Aug 10: 0; week to Aug 17: 0; week to Aug 24: 0; week to Aug 31: 0; week to Sep 7: 53,048; week to Sep 14: 140,177; week to Sep 21: 138,479. Use the left and right arrow keys to read each week."
+        data-values="0,0,0,0,0,53048,140177,138479" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,50.0 38.6,50.0 71.1,50.0 103.7,50.0 136.3,50.0 168.9,33.3 201.4,6.0 234.0,6.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="6.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>0</td></tr><tr><td>Aug 10</td><td>0</td></tr><tr><td>Aug 17</td><td>0</td></tr><tr><td>Aug 24</td><td>0</td></tr><tr><td>Aug 31</td><td>0</td></tr><tr><td>Sep 7</td><td>53,048</td></tr><tr><td>Sep 14</td><td>140,177</td></tr><tr><td>Sep 21</td><td>138,479</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:design" data-facet="category" title="Taste for interfaces that don&#39;t look generated: direction, motion and accessibility." href="/gemskills/?tag=category%3Adesign">category:design</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Taste for interfaces that don&#39;t look generated: direction, motion and accessibility.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="design" data-facet="topic" href="/gemskills/?tag=design">design</a><a class="tag" data-tag="mobile" data-facet="topic" href="/gemskills/?tag=mobile">mobile</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:sleek" data-facet="stack" href="/gemskills/?tag=stack%3Asleek">stack:sleek</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:republished" data-facet="flag" title="A copy of another publisher&#39;s skill under a different org. Each copy found had hundreds of thousands of installs while its original had fewer than twenty, so treat its ranking with caution." href="/gemskills/?tag=flag%3Arepublished">flag:republished</a></div>
+          <p class="tag-meaning">A copy of another publisher&#39;s skill under a different org. Each copy found had hundreds of thousands of installs while its original had fewer than twenty, so treat its ranking with caution.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/designed-by-ai/skills/blob/03c20aec6dcedb5fabfb03dc37982eb52ef19ed6/skills/design-mobile-apps/SKILL.md">designed-by-ai/skills at 03c20ae</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: design-mobile-apps
+description: Design mobile app screens with Sleek, edit Sleek projects, and implement their designs in React Native or HTML.
+metadata:
+  requires-env: SLEEK_API_KEY</code></pre></details>
+        <div class="markdown"><h3>Designing with Sleek</h3>
+<p><a href="https://sleek.design"><img src="https://raw.githubusercontent.com/sleekdotdesign/agent-skills/main/assets/hero.png" alt="Design mobile apps in minutes"></a></p>
+<h4>Overview</h4>
+<p><a href="https://sleek.design">sleek.design</a> provides a REST API at <code>/api/v1/*</code> to create projects, design screens from a brief, and fetch their HTML and renders.</p>
+<p><strong>Base URL</strong>: <code>https://sleek.design</code>
+<strong>Auth</strong>: <code>Authorization: Bearer $SLEEK_API_KEY</code>, except the public device start/poll endpoints
+<strong>Content-Type</strong>: send <code>application/json</code> for JSON request bodies.
+<strong>CORS</strong>: Enabled on all <code>/api/v1/*</code> endpoints
+<strong>Envelope</strong>: check HTTP status first. Successful JSON wraps its payload in <code>data</code>; lists also include sibling <code>pagination</code>. Errors use top-level <code>code</code>, <code>status</code> and <code>message</code>, with optional <code>data.url</code>. Successful screenshots and share cards return image bytes; <code>204</code> has no body.
+<strong>Ids</strong>: opaque 11-character tokens like <code>V1StGXR8Z5j</code>, with no type prefix. Nothing about an id says whether it names a project, screen, component, version or theme, so track each one by the response field it arrived in.
+<strong>Parsing responses</strong>: write the body to a file (<code>curl -o run.json</code>) and parse the file. Piping JSON through <code>echo</code> corrupts it: zsh expands the escaped <code>\n</code> inside string values into real newlines, which makes the body invalid JSON.
+<strong>API docs</strong>: OpenAPI spec at <code>https://sleek.design/api/v1/spec.json</code>; browsable docs at <code>https://sleek.design/api/v1/docs</code>. Fetch the spec for any contract detail not covered here.</p>
+<hr>
+<h4>Designing or implementing</h4>
+<p>A single run can take both directions — &quot;design me a fitness app and build it in Expo&quot; is a design pass followed by an implementation pass. Gate each pointer on the artefact in front of you rather than on a one-time reading of the request:</p>
+<p><strong>Designing</strong> — you are about to send a chat message to Sleek. Read <a href="https://github.com/designed-by-ai/skills/blob/03c20aec6dcedb5fabfb03dc37982eb52ef19ed6/skills/design-mobile-apps/designing.md">designing.md</a> first; it carries the create → chat → screenshot loop, how to author a style direction, and when to seed one from a reference instead.</p>
+<p><strong>Implementing.</strong> Before writing code from a Sleek design, read <a href="https://github.com/designed-by-ai/skills/blob/03c20aec6dcedb5fabfb03dc37982eb52ef19ed6/skills/design-mobile-apps/implementing.md">implementing.md</a> for version selection, native conversion, working features, and acceptance checks.</p>
+<h4>User shot and review shot</h4>
+<p>Screenshots come in two framings, and each file below asks for one by name:</p>
+<ul>
+<li>A <strong>user shot</strong> is the default render: viewport height, phone-shaped. This is the one you show the user.</li>
+<li>A <strong>review shot</strong> adds <code>fullHeight: true</code>, one component per request. This is the one you judge your own work against.</li>
+</ul>
+<hr>
+<h4>Prerequisites: API Key</h4>
+<p>If <code>SLEEK_API_KEY</code> is not set, use the device flow so the user never handles the raw key:</p>
+<ol>
+<li><code>POST https://sleek.design/api/v1/device/start</code> (no auth) with body <code>{&quot;source&quot;: &quot;your-tool-slug&quot;}</code>. The response contains a <code>verificationUrl</code>, a human-checkable <code>userCode</code>, a secret <code>deviceCode</code>, and a poll <code>interval</code> in seconds.</li>
+<li>Show the user the <code>verificationUrl</code> and the <code>userCode</code>, and tell them to confirm the code matches before approving.</li>
+<li>Poll <code>POST https://sleek.design/api/v1/device/poll</code> with <code>{&quot;deviceCode&quot;: &quot;...&quot;}</code> every <code>interval</code> seconds. On <code>pending</code>, keep waiting. On <code>approved</code>, store <code>data.key</code> privately as <code>SLEEK_API_KEY</code> on that first read: the key is handed over once. On <code>expired</code> or <code>404 NOT_FOUND</code>, start a new flow. See <a href="https://github.com/designed-by-ai/skills/blob/03c20aec6dcedb5fabfb03dc37982eb52ef19ed6/skills/design-mobile-apps/endpoints.md#device-poll">Device: Poll</a> for the response contract.</li>
+</ol>
+<p>Fallback: send the user to <strong><a href="https://sleek.design/agents/setup">https://sleek.design/agents/setup</a></strong>, which handles sign-in, plan upgrade, and key creation in one place, and ask them to paste the key back to you. Keys can also be managed at <strong><a href="https://sleek.design/dashboard/api-keys">https://sleek.design/dashboard/api-keys</a></strong>. The full key value is shown only once at creation, and a free account holds one active key at a time.</p>
+<p><strong>Plans</strong>: free accounts can try the API with their one-time trial credits (about one design run), so a new user can see their first design before any payment decision. Sustained use requires the Pro plan or higher. This file carries no figures on purpose — read the current price, billing periods and credit allowance from <strong><a href="https://sleek.design/agents.md">https://sleek.design/agents.md</a></strong>, which is generated from Sleek's live pricing, and quote them from there. When cost becomes relevant (the user asks, an upgrade is needed to continue, or you're about to send them to a payment page), state that pricing plainly, including the yearly option, so the user sees a payment step coming before they reach it.</p>
+<hr>
+<h4>Quick Reference: All Endpoints</h4>
+<p>Every endpoint the API exposes:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/projects</code></td>
+<td><code>projects:read</code></td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/projects</code></td>
+<td><code>projects:write</code></td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/projects/:id</code></td>
+<td><code>projects:read</code></td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><code>/api/v1/projects/:id</code></td>
+<td><code>projects:write</code></td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/projects/:id/components</code></td>
+<td><code>components:read</code></td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/projects/:id/components/:componentId</code></td>
+<td><code>components:read</code></td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/references</code></td>
+<td>any valid key</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/projects/:id/chat/messages</code></td>
+<td><code>chats:write</code></td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/projects/:id/chat/runs/:runId</code></td>
+<td><code>chats:read</code></td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/projects/:id/chat/runs/:runId/cancel</code></td>
+<td><code>chats:write</code></td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/screenshots</code></td>
+<td><code>screenshots</code></td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/share-cards</code></td>
+<td><code>screenshots</code></td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/device/start</code></td>
+<td>public, no auth</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/device/poll</code></td>
+<td>public, no auth</td>
+</tr>
+</tbody>
+</table>
+<p>Create a key holding only the scopes the task uses.</p>
+<p>Every row above is specified in full — request body, response shape, field defaults, status codes — in <a href="https://github.com/designed-by-ai/skills/blob/03c20aec6dcedb5fabfb03dc37982eb52ef19ed6/skills/design-mobile-apps/endpoints.md">endpoints.md</a>. This table is enough to pick an endpoint; read the reference when you need a contract detail it doesn't carry.</p>
+<hr>
+<h4>Error Shapes</h4>
+<pre><code class="language-json">{
+  &quot;defined&quot;: true,
+  &quot;code&quot;: &quot;FORBIDDEN&quot;,
+  &quot;status&quot;: 403,
+  &quot;message&quot;: &quot;...&quot;,
+  &quot;data&quot;: { &quot;url&quot;: &quot;https://sleek.design/...&quot; }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>HTTP</th>
+<th>Code</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>401</td>
+<td><code>UNAUTHORIZED</code></td>
+<td>Missing/invalid/expired API key</td>
+</tr>
+<tr>
+<td>403</td>
+<td><code>FORBIDDEN</code></td>
+<td>Valid key, wrong scope or plan</td>
+</tr>
+<tr>
+<td>404</td>
+<td><code>NOT_FOUND</code></td>
+<td>Resource doesn't exist</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>BAD_REQUEST</code></td>
+<td>Validation failure</td>
+</tr>
+<tr>
+<td>409</td>
+<td><code>CONFLICT</code></td>
+<td>Another run is active for this project</td>
+</tr>
+<tr>
+<td>429</td>
+<td><code>TOO_MANY_REQUESTS</code></td>
+<td>Render cap: 1000 screenshots + share cards per hour per org, counted on API-key requests only</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>INTERNAL_SERVER_ERROR</code></td>
+<td>Server error</td>
+</tr>
+</tbody>
+</table>
+<p><code>401</code>, <code>403</code> and <code>429</code> bodies may include <code>data.url</code>: a page where the user can fix the condition (create a key, upgrade the plan). Share it as-is.</p>
+<p>Chat run-level errors (inside <code>data.error</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>out_of_credits</code></td>
+<td>Organization has no credits left</td>
+</tr>
+<tr>
+<td><code>execution_failed</code></td>
+<td>AI execution error</td>
+</tr>
+<tr>
+<td><code>cancelled</code></td>
+<td>Run cancelled via the cancel endpoint</td>
+</tr>
+<tr>
+<td><code>request_message_persist_failed</code></td>
+<td>The run failed before reaching the AI; the message was never stored</td>
+</tr>
+</tbody>
+</table>
+<p>For <code>out_of_credits</code>, relay <code>error.url</code> and wait for the user to resolve it. Follow <a href="https://github.com/designed-by-ai/skills/blob/03c20aec6dcedb5fabfb03dc37982eb52ef19ed6/skills/design-mobile-apps/designing.md#2-send-a-chat-message">Safe retries</a> for replay versus a new attempt after either recoverable failure.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

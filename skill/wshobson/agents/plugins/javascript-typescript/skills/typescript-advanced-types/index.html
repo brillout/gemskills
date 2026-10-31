@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>typescript-advanced-types · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re writing complex TypeScript types: reusable generic helpers, type-safe API clients, typed config, forms or state. It does: gives the agent a reference of generics, conditional, mapped and template-literal types, with short examples. You get: types written along its patterns and best practices; it adds no steps or files of its own. Also covers: built-in utility types, testing types, common pitfalls and keeping the compiler fast." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=wshobson%2Fagents">wshobson/agents</a></p>
+      <h1>typescript-advanced-types</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re writing complex TypeScript types: reusable generic helpers, type-safe API clients, typed config, forms or state</dd></div><div><dt>It does</dt><dd>gives the agent a reference of generics, conditional, mapped and template-literal types, with short examples</dd></div><div><dt>You get</dt><dd>types written along its patterns and best practices; it adds no steps or files of its own</dd></div><div><dt>Also covers</dt><dd>built-in utility types, testing types, common pitfalls and keeping the compiler fast</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It&#39;s a reference, not a workflow. Each core feature gets its purpose and a few examples: generics with constraints, conditional types (including extracting a function&#39;s return type and distributing over unions), mapped types that rename or filter keys, template literal types that build string types such as dotted config paths, and built-in utilities like Partial, Pick, Omit and Record. A separate file holds worked patterns: a type-safe event emitter, API client and builder, deep readonly and partial types, form validation, discriminated unions, plus the infer keyword, type guards and assertion functions. Its best practices include unknown over any, interface for object shapes and type for unions, type guards over type assertions, and strict mode; it also shows how to write tests that check types at compile time. It lists common pitfalls and warns that deeply nested or recursive types slow the compiler.</p>
+      <p class="muted">Summarizes <a href="https://github.com/wshobson/agents/tree/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/javascript-typescript/skills/typescript-advanced-types">the skill at 0874a27</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/wshobson/agents --skill typescript-advanced-types</code><button type="button" class="copy" data-copy="npx skills add https://github.com/wshobson/agents --skill typescript-advanced-types">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/wshobson/agents/typescript-advanced-types">skills.sh page</a> · <a href="https://github.com/wshobson/agents/tree/HEAD/plugins/javascript-typescript/skills/typescript-advanced-types">Source on GitHub</a> · <a href="/gemskills/?repo=wshobson%2Fagents">All skills from wshobson/agents</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>77,787 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>39,835 <span class="muted">wshobson/agents</span></dd></div><div><dt>First seen</dt><dd>Jan 20, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">3K</div>
+      <div class="stat-delta">+90% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 1,561; week to Aug 10: 1,887; week to Aug 17: 1,608; week to Aug 24: 3,529; week to Aug 31: 4,233; week to Sep 7: 2,891; week to Sep 14: 3,127; week to Sep 21: 2,973. Use the left and right arrow keys to read each week."
+        data-values="1561,1887,1608,3529,4233,2891,3127,2973" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,33.8 38.6,30.4 71.1,33.3 103.7,13.3 136.3,6.0 168.9,19.9 201.4,17.5 234.0,19.1" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="19.1" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>1,561</td></tr><tr><td>Aug 10</td><td>1,887</td></tr><tr><td>Aug 17</td><td>1,608</td></tr><tr><td>Aug 24</td><td>3,529</td></tr><tr><td>Aug 31</td><td>4,233</td></tr><tr><td>Sep 7</td><td>2,891</td></tr><tr><td>Sep 14</td><td>3,127</td></tr><tr><td>Sep 21</td><td>2,973</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="code-quality" data-facet="topic" href="/gemskills/?tag=code-quality">code-quality</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:typescript" data-facet="stack" href="/gemskills/?tag=stack%3Atypescript">stack:typescript</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/wshobson/agents/blob/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/javascript-typescript/skills/typescript-advanced-types/SKILL.md">wshobson/agents at 0874a27</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: typescript-advanced-types
+description: Master TypeScript&#39;s advanced type system including generics, conditional types, mapped types, template literals, and utility types for building type-safe applications. Use when implementing complex type logic, creating reusable type utilities, or ensuring compile-time type safety in TypeScript projects.</code></pre></details>
+        <div class="markdown"><h3>TypeScript Advanced Types</h3>
+<p>Comprehensive guidance for mastering TypeScript's advanced type system including generics, conditional types, mapped types, template literal types, and utility types for building robust, type-safe applications.</p>
+<h4>When to Use This Skill</h4>
+<ul>
+<li>Building type-safe libraries or frameworks</li>
+<li>Creating reusable generic components</li>
+<li>Implementing complex type inference logic</li>
+<li>Designing type-safe API clients</li>
+<li>Building form validation systems</li>
+<li>Creating strongly-typed configuration objects</li>
+<li>Implementing type-safe state management</li>
+<li>Migrating JavaScript codebases to TypeScript</li>
+</ul>
+<h4>Core Concepts</h4>
+<h5>1. Generics</h5>
+<p><strong>Purpose:</strong> Create reusable, type-flexible components while maintaining type safety.</p>
+<p><strong>Basic Generic Function:</strong></p>
+<pre><code class="language-typescript">function identity&lt;T&gt;(value: T): T {
+  return value;
+}
+
+const num = identity&lt;number&gt;(42); // Type: number
+const str = identity&lt;string&gt;(&quot;hello&quot;); // Type: string
+const auto = identity(true); // Type inferred: boolean
+</code></pre>
+<p><strong>Generic Constraints:</strong></p>
+<pre><code class="language-typescript">interface HasLength {
+  length: number;
+}
+
+function logLength&lt;T extends HasLength&gt;(item: T): T {
+  console.log(item.length);
+  return item;
+}
+
+logLength(&quot;hello&quot;); // OK: string has length
+logLength([1, 2, 3]); // OK: array has length
+logLength({ length: 10 }); // OK: object has length
+// logLength(42);             // Error: number has no length
+</code></pre>
+<p><strong>Multiple Type Parameters:</strong></p>
+<pre><code class="language-typescript">function merge&lt;T, U&gt;(obj1: T, obj2: U): T &amp; U {
+  return { ...obj1, ...obj2 };
+}
+
+const merged = merge({ name: &quot;John&quot; }, { age: 30 });
+// Type: { name: string } &amp; { age: number }
+</code></pre>
+<h5>2. Conditional Types</h5>
+<p><strong>Purpose:</strong> Create types that depend on conditions, enabling sophisticated type logic.</p>
+<p><strong>Basic Conditional Type:</strong></p>
+<pre><code class="language-typescript">type IsString&lt;T&gt; = T extends string ? true : false;
+
+type A = IsString&lt;string&gt;; // true
+type B = IsString&lt;number&gt;; // false
+</code></pre>
+<p><strong>Extracting Return Types:</strong></p>
+<pre><code class="language-typescript">type ReturnType&lt;T&gt; = T extends (...args: any[]) =&gt; infer R ? R : never;
+
+function getUser() {
+  return { id: 1, name: &quot;John&quot; };
+}
+
+type User = ReturnType&lt;typeof getUser&gt;;
+// Type: { id: number; name: string; }
+</code></pre>
+<p><strong>Distributive Conditional Types:</strong></p>
+<pre><code class="language-typescript">type ToArray&lt;T&gt; = T extends any ? T[] : never;
+
+type StrOrNumArray = ToArray&lt;string | number&gt;;
+// Type: string[] | number[]
+</code></pre>
+<p><strong>Nested Conditions:</strong></p>
+<pre><code class="language-typescript">type TypeName&lt;T&gt; = T extends string
+  ? &quot;string&quot;
+  : T extends number
+    ? &quot;number&quot;
+    : T extends boolean
+      ? &quot;boolean&quot;
+      : T extends undefined
+        ? &quot;undefined&quot;
+        : T extends Function
+          ? &quot;function&quot;
+          : &quot;object&quot;;
+
+type T1 = TypeName&lt;string&gt;; // &quot;string&quot;
+type T2 = TypeName&lt;() =&gt; void&gt;; // &quot;function&quot;
+</code></pre>
+<h5>3. Mapped Types</h5>
+<p><strong>Purpose:</strong> Transform existing types by iterating over their properties.</p>
+<p><strong>Basic Mapped Type:</strong></p>
+<pre><code class="language-typescript">type Readonly&lt;T&gt; = {
+  readonly [P in keyof T]: T[P];
+};
+
+interface User {
+  id: number;
+  name: string;
+}
+
+type ReadonlyUser = Readonly&lt;User&gt;;
+// Type: { readonly id: number; readonly name: string; }
+</code></pre>
+<p><strong>Optional Properties:</strong></p>
+<pre><code class="language-typescript">type Partial&lt;T&gt; = {
+  [P in keyof T]?: T[P];
+};
+
+type PartialUser = Partial&lt;User&gt;;
+// Type: { id?: number; name?: string; }
+</code></pre>
+<p><strong>Key Remapping:</strong></p>
+<pre><code class="language-typescript">type Getters&lt;T&gt; = {
+  [K in keyof T as `get${Capitalize&lt;string &amp; K&gt;}`]: () =&gt; T[K];
+};
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+type PersonGetters = Getters&lt;Person&gt;;
+// Type: { getName: () =&gt; string; getAge: () =&gt; number; }
+</code></pre>
+<p><strong>Filtering Properties:</strong></p>
+<pre><code class="language-typescript">type PickByType&lt;T, U&gt; = {
+  [K in keyof T as T[K] extends U ? K : never]: T[K];
+};
+
+interface Mixed {
+  id: number;
+  name: string;
+  age: number;
+  active: boolean;
+}
+
+type OnlyNumbers = PickByType&lt;Mixed, number&gt;;
+// Type: { id: number; age: number; }
+</code></pre>
+<h5>4. Template Literal Types</h5>
+<p><strong>Purpose:</strong> Create string-based types with pattern matching and transformation.</p>
+<p><strong>Basic Template Literal:</strong></p>
+<pre><code class="language-typescript">type EventName = &quot;click&quot; | &quot;focus&quot; | &quot;blur&quot;;
+type EventHandler = `on${Capitalize&lt;EventName&gt;}`;
+// Type: &quot;onClick&quot; | &quot;onFocus&quot; | &quot;onBlur&quot;
+</code></pre>
+<p><strong>String Manipulation:</strong></p>
+<pre><code class="language-typescript">type UppercaseGreeting = Uppercase&lt;&quot;hello&quot;&gt;; // &quot;HELLO&quot;
+type LowercaseGreeting = Lowercase&lt;&quot;HELLO&quot;&gt;; // &quot;hello&quot;
+type CapitalizedName = Capitalize&lt;&quot;john&quot;&gt;; // &quot;John&quot;
+type UncapitalizedName = Uncapitalize&lt;&quot;John&quot;&gt;; // &quot;john&quot;
+</code></pre>
+<p><strong>Path Building:</strong></p>
+<pre><code class="language-typescript">type Path&lt;T&gt; = T extends object
+  ? {
+      [K in keyof T]: K extends string ? `${K}` | `${K}.${Path&lt;T[K]&gt;}` : never;
+    }[keyof T]
+  : never;
+
+interface Config {
+  server: {
+    host: string;
+    port: number;
+  };
+  database: {
+    url: string;
+  };
+}
+
+type ConfigPath = Path&lt;Config&gt;;
+// Type: &quot;server&quot; | &quot;database&quot; | &quot;server.host&quot; | &quot;server.port&quot; | &quot;database.url&quot;
+</code></pre>
+<h5>5. Utility Types</h5>
+<p><strong>Built-in Utility Types:</strong></p>
+<pre><code class="language-typescript">// Partial&lt;T&gt; - Make all properties optional
+type PartialUser = Partial&lt;User&gt;;
+
+// Required&lt;T&gt; - Make all properties required
+type RequiredUser = Required&lt;PartialUser&gt;;
+
+// Readonly&lt;T&gt; - Make all properties readonly
+type ReadonlyUser = Readonly&lt;User&gt;;
+
+// Pick&lt;T, K&gt; - Select specific properties
+type UserName = Pick&lt;User, &quot;name&quot; | &quot;email&quot;&gt;;
+
+// Omit&lt;T, K&gt; - Remove specific properties
+type UserWithoutPassword = Omit&lt;User, &quot;password&quot;&gt;;
+
+// Exclude&lt;T, U&gt; - Exclude types from union
+type T1 = Exclude&lt;&quot;a&quot; | &quot;b&quot; | &quot;c&quot;, &quot;a&quot;&gt;; // &quot;b&quot; | &quot;c&quot;
+
+// Extract&lt;T, U&gt; - Extract types from union
+type T2 = Extract&lt;&quot;a&quot; | &quot;b&quot; | &quot;c&quot;, &quot;a&quot; | &quot;b&quot;&gt;; // &quot;a&quot; | &quot;b&quot;
+
+// NonNullable&lt;T&gt; - Exclude null and undefined
+type T3 = NonNullable&lt;string | null | undefined&gt;; // string
+
+// Record&lt;K, T&gt; - Create object type with keys K and values T
+type PageInfo = Record&lt;&quot;home&quot; | &quot;about&quot;, { title: string }&gt;;
+</code></pre>
+<h4>Detailed worked examples and patterns</h4>
+<p>Detailed sections (starting with <code>## Advanced Patterns</code>) live in <code>references/details.md</code>. Read that file when the navigation summary above is insufficient.</p>
+<h4>Best Practices</h4>
+<ol>
+<li><strong>Use <code>unknown</code> over <code>any</code></strong>: Enforce type checking</li>
+<li><strong>Prefer <code>interface</code> for object shapes</strong>: Better error messages</li>
+<li><strong>Use <code>type</code> for unions and complex types</strong>: More flexible</li>
+<li><strong>Leverage type inference</strong>: Let TypeScript infer when possible</li>
+<li><strong>Create helper types</strong>: Build reusable type utilities</li>
+<li><strong>Use const assertions</strong>: Preserve literal types</li>
+<li><strong>Avoid type assertions</strong>: Use type guards instead</li>
+<li><strong>Document complex types</strong>: Add JSDoc comments</li>
+<li><strong>Use strict mode</strong>: Enable all strict compiler options</li>
+<li><strong>Test your types</strong>: Use type tests to verify type behavior</li>
+</ol>
+<h4>Type Testing</h4>
+<pre><code class="language-typescript">// Type assertion tests
+type AssertEqual&lt;T, U&gt; = [T] extends [U]
+  ? [U] extends [T]
+    ? true
+    : false
+  : false;
+
+type Test1 = AssertEqual&lt;string, string&gt;; // true
+type Test2 = AssertEqual&lt;string, number&gt;; // false
+type Test3 = AssertEqual&lt;string | number, string&gt;; // false
+
+// Expect error helper
+type ExpectError&lt;T extends never&gt; = T;
+
+// Example usage
+type ShouldError = ExpectError&lt;AssertEqual&lt;string, number&gt;&gt;;
+</code></pre>
+<h4>Common Pitfalls</h4>
+<ol>
+<li><strong>Over-using <code>any</code></strong>: Defeats the purpose of TypeScript</li>
+<li><strong>Ignoring strict null checks</strong>: Can lead to runtime errors</li>
+<li><strong>Too complex types</strong>: Can slow down compilation</li>
+<li><strong>Not using discriminated unions</strong>: Misses type narrowing opportunities</li>
+<li><strong>Forgetting readonly modifiers</strong>: Allows unintended mutations</li>
+<li><strong>Circular type references</strong>: Can cause compiler errors</li>
+<li><strong>Not handling edge cases</strong>: Like empty arrays or null values</li>
+</ol>
+<h4>Performance Considerations</h4>
+<ul>
+<li>Avoid deeply nested conditional types</li>
+<li>Use simple types when possible</li>
+<li>Cache complex type computations</li>
+<li>Limit recursion depth in recursive types</li>
+<li>Use build tools to skip type checking in production</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

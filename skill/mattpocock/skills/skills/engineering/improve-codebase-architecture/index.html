@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>improve-codebase-architecture · Gem Skills</title>
+    <meta name="description" content="Use it when: a codebase has grown hard to change, test or find your way around, and you want to know where to restructure first. It does: finds places where thin, tangled modules could become one deep module (lots of behavior behind a small interface), then designs the one you pick with you. You get: an HTML report of rated candidates with before/after diagrams, then a design worked out question by question. Needs: three skills by the same author: codebase-design for the design terms, grilling for the questioning, domain-modeling for the glossary and decision records. Runs: only when you invoke it; the agent won&#039;t start it on its own." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>improve-codebase-architecture</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a codebase has grown hard to change, test or find your way around, and you want to know where to restructure first</dd></div><div><dt>It does</dt><dd>finds places where thin, tangled modules could become one deep module (lots of behavior behind a small interface), then designs the one you pick with you</dd></div><div><dt>You get</dt><dd>an HTML report of rated candidates with before/after diagrams, then a design worked out question by question</dd></div><div><dt>Needs</dt><dd>three skills by the same author: codebase-design for the design terms, grilling for the questioning, domain-modeling for the glossary and decision records</dd></div><div><dt>Runs</dt><dd>only when you invoke it; the agent won&#39;t start it on its own</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 22 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/productivity/writing-for-agents/">writing-for-agents</a></p>
+    <p class="note">Only works inside its bundle: Loads codebase-design for its vocabulary, then grilling and domain-modeling to work through the refactor you pick. Install <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A deep module hides a lot of behavior behind a small interface; a shallow one has an interface nearly as complex as its code. This skill hunts for chances to deepen, for code that&#39;s easier to test and for agents to navigate. Unless you name an area, it starts where git history shows the most change. It reads the project&#39;s glossary and its architecture decision records (ADRs), then has a subagent explore and note friction: one idea spread over many small files, functions pulled out only so they can be tested, modules leaking into each other, untested code. For each suspect it asks whether deleting it would concentrate complexity or just move it. The candidates go into an HTML page in your temp folder, which it opens: per candidate, the files, the problem, the fix, the gains for tests, a before/after diagram and how strongly it recommends it, plus a top pick. It proposes no interfaces until you choose. Then it questions you through the design round by round, adds new terms to GLOSSARY.md, and offers to record an ADR when you reject a candidate for a reason future reviews should know.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/improve-codebase-architecture">the skill at 5beb35b</a>. Its SKILL.md has changed by 5 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill improve-codebase-architecture</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill improve-codebase-architecture">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/improve-codebase-architecture">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/improve-codebase-architecture">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>967,088 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Mar 13, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">41.3K</div>
+      <div class="stat-delta">-19% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 50,835; week to Aug 10: 63,780; week to Aug 17: 54,240; week to Aug 24: 59,606; week to Aug 31: 52,645; week to Sep 7: 50,293; week to Sep 14: 44,253; week to Sep 21: 41,316. Use the left and right arrow keys to read each week."
+        data-values="50835,63780,54240,59606,52645,50293,44253,41316" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,14.9 38.6,6.0 71.1,12.6 103.7,8.9 136.3,13.7 168.9,15.3 201.4,19.5 234.0,21.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="21.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>50,835</td></tr><tr><td>Aug 10</td><td>63,780</td></tr><tr><td>Aug 17</td><td>54,240</td></tr><tr><td>Aug 24</td><td>59,606</td></tr><tr><td>Aug 31</td><td>52,645</td></tr><tr><td>Sep 7</td><td>50,293</td></tr><tr><td>Sep 14</td><td>44,253</td></tr><tr><td>Sep 21</td><td>41,316</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:subagents" data-facet="needs" title="Relies on the agent being able to spawn subagents." href="/gemskills/?tag=needs%3Asubagents">needs:subagents</a></div>
+          <p class="tag-meaning">Relies on the agent being able to spawn subagents.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="architecture" data-facet="topic" href="/gemskills/?tag=architecture">architecture</a><a class="tag" data-tag="refactoring" data-facet="topic" href="/gemskills/?tag=refactoring">refactoring</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/a496f5513d4a4cf889bc48e189e579f4b0bdf6aa/skills/engineering/improve-codebase-architecture/SKILL.md">mattpocock/skills at a496f55</a>. Checked daily, last changed Oct 30, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: improve-codebase-architecture
+description: Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><h3>Improve Codebase Architecture</h3>
+<p>Surface architectural friction and propose <strong>deepening opportunities</strong>: refactors that turn shallow modules into deep ones. The aim is testability and AI-navigability.</p>
+<p>This command is <em>informed</em> by the project's domain model and built on a shared design vocabulary:</p>
+<ul>
+<li>Call the Skill tool with &quot;codebase-design&quot; for the architecture vocabulary (<strong>module</strong>, <strong>interface</strong>, <strong>depth</strong>, <strong>seam</strong>, <strong>adapter</strong>, <strong>leverage</strong>, <strong>locality</strong>) and its principles (the deletion test, &quot;the interface is the test surface&quot;, &quot;one adapter = hypothetical seam, two = real&quot;). Use these terms exactly in every suggestion, and don't drift into &quot;component,&quot; &quot;service,&quot; &quot;API,&quot; or &quot;boundary.&quot;</li>
+<li>The domain language in <code>GLOSSARY.md</code> gives names to good seams; ADRs in <code>docs/adr/</code> record decisions this command should not re-litigate.</li>
+</ul>
+<h4>Process</h4>
+<h5>1. Explore</h5>
+<p><strong>Scope before you scan: YAGNI.</strong> Deepening a module pays off by making future changes to it easier, so put extra weight on the parts of the codebase that have recently changed. Decide <em>where</em> to look before you look:</p>
+<ul>
+<li>If the user named a direction (a module, a subsystem, a pain point), take it, and skip the inference below.</li>
+<li>Otherwise, walk back a good stretch of the commit history (<code>git log --oneline</code>) to find the codebase's hot spots, the files and areas that keep coming up, and let those paths pull your attention first. If the changes are scattered with no clear hot spot, widen the net.</li>
+</ul>
+<p>Read the project's domain glossary (<code>GLOSSARY.md</code>) and any ADRs in the area you're touching first.</p>
+<p>Then spawn a sub-agent with a fresh context window to walk the codebase. Don't follow rigid heuristics; explore organically and note where you experience friction:</p>
+<ul>
+<li>Where does understanding one concept require bouncing between many small modules?</li>
+<li>Where are modules <strong>shallow</strong>, with an interface nearly as complex as the implementation?</li>
+<li>Where have pure functions been extracted just for testability, but the real bugs hide in how they're called (no <strong>locality</strong>)?</li>
+<li>Where do tightly-coupled modules leak across their seams?</li>
+<li>Which parts of the codebase are untested, or hard to test through their current interface?</li>
+</ul>
+<p>Apply the <strong>deletion test</strong> to anything you suspect is shallow: would deleting it concentrate complexity, or just move it? A &quot;yes, concentrates&quot; is the signal you want.</p>
+<h5>2. Present candidates as an HTML report</h5>
+<p>Write a self-contained HTML file to the OS temp directory so nothing lands in the repo. Resolve the temp dir from <code>$TMPDIR</code>, falling back to <code>/tmp</code> (or <code>%TEMP%</code> on Windows), and write to <code>&lt;tmpdir&gt;/architecture-review-&lt;timestamp&gt;.html</code> so each run gets a fresh file. Open it for the user (<code>xdg-open &lt;path&gt;</code> on Linux, <code>open &lt;path&gt;</code> on macOS, <code>start &lt;path&gt;</code> on Windows) and tell them the absolute path.</p>
+<p>The report uses <strong>Tailwind via CDN</strong> for layout and styling, and <strong>Mermaid via CDN</strong> for diagrams where a graph/flow/sequence reliably communicates the structure. Mix Mermaid with hand-crafted CSS/SVG visuals: use Mermaid when relationships are graph-shaped (call graphs, dependencies, sequences), and hand-built divs/SVG when you want something more editorial (mass diagrams, cross-sections, collapse animations). Each candidate gets a <strong>before/after visualisation</strong>. Be visual.</p>
+<p>For each candidate, render a card with:</p>
+<ul>
+<li><strong>Files</strong>: which files/modules are involved</li>
+<li><strong>Problem</strong>: why the current architecture is causing friction</li>
+<li><strong>Solution</strong>: plain English description of what would change</li>
+<li><strong>Benefits</strong>: explained in terms of locality and leverage, and how tests would improve</li>
+<li><strong>Before / After diagram</strong>: side-by-side, custom-drawn, illustrating the shallowness and the deepening</li>
+<li><strong>Recommendation strength</strong>: one of <code>Strong</code>, <code>Worth exploring</code>, <code>Speculative</code>, rendered as a badge</li>
+</ul>
+<p>End the report with a <strong>Top recommendation</strong> section: which candidate you'd tackle first and why.</p>
+<p><strong>Use GLOSSARY.md vocabulary for the domain, and the <code>/codebase-design</code> vocabulary for the architecture.</strong> If <code>GLOSSARY.md</code> defines &quot;Order,&quot; talk about &quot;the Order intake module,&quot; not &quot;the FooBarHandler,&quot; and not &quot;the Order service.&quot;</p>
+<p><strong>ADR conflicts</strong>: if a candidate contradicts an existing ADR, only surface it when the friction is real enough to warrant revisiting the ADR. Mark it clearly in the card (e.g. a warning callout: <em>&quot;contradicts ADR-0007, but worth reopening because…&quot;</em>). Don't list every theoretical refactor an ADR forbids.</p>
+<p>See <a href="https://github.com/mattpocock/skills/blob/a496f5513d4a4cf889bc48e189e579f4b0bdf6aa/skills/engineering/improve-codebase-architecture/HTML-REPORT.md">HTML-REPORT.md</a> for the full HTML scaffold, diagram patterns, and styling guidance.</p>
+<p>Do NOT propose interfaces yet. After the file is written, ask the user: &quot;Which of these would you like to explore?&quot;</p>
+<h5>3. Grilling loop</h5>
+<p>Once the user picks a candidate, call the Skill tool with &quot;grilling&quot; to walk the decision tree with them: constraints, dependencies, the shape of the deepened module, what sits behind the seam, what tests survive.</p>
+<p>Side effects happen inline as decisions crystallize; call the Skill tool with &quot;domain-modeling&quot; to keep the domain model current as you go:</p>
+<ul>
+<li><strong>Naming a deepened module after a concept not in <code>GLOSSARY.md</code>?</strong> Add the term to <code>GLOSSARY.md</code>. Create the file lazily if it doesn't exist.</li>
+<li><strong>Sharpening a fuzzy term during the conversation?</strong> Update <code>GLOSSARY.md</code> right there.</li>
+<li><strong>User rejects the candidate with a load-bearing reason?</strong> Offer an ADR, framed as: <em>&quot;Want me to record this as an ADR so future architecture reviews don't re-suggest it?&quot;</em> Only offer when the reason would actually be needed by a future explorer to avoid re-suggesting the same thing; skip ephemeral reasons (&quot;not worth it right now&quot;) and self-evident ones.</li>
+<li><strong>Want to explore alternative interfaces for the deepened module?</strong> Call the Skill tool with &quot;codebase-design&quot; and use its design-it-twice parallel sub-agent pattern.</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

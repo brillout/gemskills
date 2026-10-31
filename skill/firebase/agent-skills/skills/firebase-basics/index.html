@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>firebase-basics · Gem Skills</title>
+    <meta name="description" content="Sets up the Firebase CLI, login and project basics." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=firebase%2Fagent-skills">firebase/agent-skills</a></p>
+      <h1>firebase-basics</h1>
+      <p class="lede">Sets up the Firebase CLI, login and project basics.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/firebase/agent-skills --skill firebase-basics</code><button type="button" class="copy" data-copy="npx skills add https://github.com/firebase/agent-skills --skill firebase-basics">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/firebase/agent-skills/firebase-basics">skills.sh page</a> · <a href="https://github.com/firebase/agent-skills/tree/HEAD/skills/firebase-basics">Source on GitHub</a> · <a href="/gemskills/?repo=firebase%2Fagent-skills">All skills from firebase/agent-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>156,210 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>448 <span class="muted">firebase/agent-skills</span></dd></div><div><dt>First seen</dt><dd>Feb 11, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">4.2K</div>
+      <div class="stat-delta">-16% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 5,040; week to Aug 10: 4,991; week to Aug 17: 5,262; week to Aug 24: 5,222; week to Aug 31: 4,964; week to Sep 7: 5,081; week to Sep 14: 4,775; week to Sep 21: 4,226. Use the left and right arrow keys to read each week."
+        data-values="5040,4991,5262,5222,4964,5081,4775,4226" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,7.9 38.6,8.3 71.1,6.0 103.7,6.3 136.3,8.5 168.9,7.5 201.4,10.1 234.0,14.7" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="14.7" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>5,040</td></tr><tr><td>Aug 10</td><td>4,991</td></tr><tr><td>Aug 17</td><td>5,262</td></tr><tr><td>Aug 24</td><td>5,222</td></tr><tr><td>Aug 31</td><td>4,964</td></tr><tr><td>Sep 7</td><td>5,081</td></tr><tr><td>Sep 14</td><td>4,775</td></tr><tr><td>Sep 21</td><td>4,226</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:cloud" data-facet="category" title="Deploy, provision, observe and debug cloud apps." href="/gemskills/?tag=category%3Acloud">category:cloud</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Deploy, provision, observe and debug cloud apps.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:setup" data-facet="type" title="One-time configuration or scaffolding of a project, account or tool." href="/gemskills/?tag=type%3Asetup">type:setup</a></div>
+          <p class="tag-meaning">One-time configuration or scaffolding of a project, account or tool.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="backend" data-facet="topic" href="/gemskills/?tag=backend">backend</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:firebase" data-facet="stack" href="/gemskills/?tag=stack%3Afirebase">stack:firebase</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/SKILL.md">firebase/agent-skills at 306cc18</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: firebase-basics
+description: &#62;-
+  Provides foundational Firebase CLI setup, CLI installation, version checks (`firebase-tools@latest --version`), CLI login (including --no-localhost), project creation, project selection (`firebase use`), and app config file downloads (`google-services.json`, `GoogleService-Info.plist`). Use ONLY for CLI login, project creation/switching, or downloading app config files. Don&#39;t use for Firebase Hosting deploy, Firestore, Auth, App Hosting, Data Connect, Crashlytics, or Remote Config.
+metadata:
+  author: Google LLC
+  category: CloudInfrastructureAndServices
+  version: &#34;1.0.0&#34;</code></pre></details>
+        <div class="markdown"><h3>Prerequisites</h3>
+<p>Complete these setup steps before proceeding:</p>
+<ol>
+<li>
+<p><strong>Local Environment Setup:</strong> Verify the environment is properly set up so we
+can use Firebase tools:</p>
+<ul>
+<li>Run <code>npx -y firebase-tools@latest --version</code> to check if the Firebase CLI
+is installed.</li>
+<li>Verify if the Firebase MCP server is installed using your existing tools.</li>
+<li><strong>CRITICAL</strong>: Before configuring any extensions or agent environments
+below, you MUST read
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/local-env-setup.md">references/local-env-setup.md</a>.</li>
+<li><strong>DO NOT SKIP</strong> this step: if 'firebase-basics' is the only Firebase skill
+available to you, you must follow the reference for your agent environment
+to set up the full suite of Firebase skills:
+<ul>
+<li><strong>Gemini CLI</strong>: Review
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/setup/gemini_cli.md">references/setup/gemini_cli.md</a></li>
+<li><strong>Antigravity</strong>: Review
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/setup/antigravity.md">references/setup/antigravity.md</a></li>
+<li><strong>Android Studio</strong>: Review
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/setup/android_studio.md">references/setup/android_studio.md</a></li>
+<li><strong>Claude Code</strong>: Review
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/setup/claude_code.md">references/setup/claude_code.md</a></li>
+<li><strong>Cursor</strong>: Review
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/setup/cursor.md">references/setup/cursor.md</a></li>
+<li><strong>GitHub Copilot</strong>: Review
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/setup/github_copilot.md">references/setup/github_copilot.md</a></li>
+<li><strong>Other Agents</strong>: Review
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/setup/other_agents.md">references/setup/other_agents.md</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Authentication:</strong> Ensure you are logged in to Firebase so that commands
+have the correct permissions. Run <code>npx -y firebase-tools@latest login</code>. For
+environments without a browser (e.g., remote shells), use
+<code>npx -y firebase-tools@latest login --no-localhost</code>.</p>
+<ul>
+<li>The command should output the current user.</li>
+<li>If you are not logged in, follow the interactive instructions from this
+command to authenticate.</li>
+</ul>
+</li>
+<li>
+<p><strong>Active Project:</strong> Most Firebase tasks require an active project context.</p>
+<blockquote>
+<p>[!IMPORTANT] <strong>For Agents:</strong> Before proceeding with project configuration,
+you MUST pause and ask the developer if they prefer to:</p>
+<ol>
+<li><strong>Provide an existing Firebase Project ID</strong>, or</li>
+<li><strong>Create a new Firebase project</strong>.</li>
+</ol>
+</blockquote>
+<ul>
+<li>
+<p><strong>If using an existing Project ID:</strong></p>
+<ol>
+<li>
+<p>Check the current project by running <code>npx -y firebase-tools@latest use</code>.</p>
+</li>
+<li>
+<p>If the command outputs <code>Active Project: &lt;project-id&gt;</code>, confirm with the
+user if this is the intended project.</p>
+</li>
+<li>
+<p>If not, or if no project is active, set the project provided by the
+user:</p>
+<pre><code class="language-bash">npx -y firebase-tools@latest use &lt;PROJECT_ID&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>If creating a new project:</strong> Run the following command to create it:</p>
+<pre><code class="language-bash">npx -y firebase-tools@latest projects:create &lt;project-id&gt; --display-name &quot;&lt;display-name&gt;&quot;
+</code></pre>
+<p><em>Note: The <code>&lt;project-id&gt;</code> must be 6-30 characters, lowercase, and can
+contain digits and hyphens. It must be globally unique.</em></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3>Firebase Usage Principles</h3>
+<p>Adhere to these principles:</p>
+<ol>
+<li><strong>Use npx for CLI commands:</strong> To ensure you always use the latest version of
+the Firebase CLI, always prepend commands with <code>npx -y firebase-tools@latest</code>
+instead of just <code>firebase</code>. For example, use
+<code>npx -y firebase-tools@latest --version</code>. NEVER suggest the naked <code>firebase</code>
+command as an alternative.</li>
+<li><strong>Prioritize official knowledge:</strong> For any Firebase-related knowledge,
+consult the <code>developerknowledge_search_documents</code> MCP tool before falling
+back to Google Search or your internal knowledge base. Including &quot;Firebase&quot;
+in your search query significantly improves relevance.</li>
+<li><strong>Follow Agent Skills for implementation guidance:</strong> Skills provide
+opinionated workflows (CUJs), security rules, and best practices. Always
+consult them to understand <em>how</em> to implement Firebase features correctly
+instead of relying on general knowledge.</li>
+<li><strong>Use Firebase MCP Server tools instead of direct API calls:</strong> Whenever you
+need to interact with remote Firebase APIs (such as fetching Crashlytics logs
+or executing Data Connect queries), use the tools provided by the Firebase
+MCP Server instead of attempting manual API calls.</li>
+<li><strong>Keep Plugin / Agent Skills updated:</strong> Since Firebase best practices evolve
+quickly, regularly check for and install updates to their Firebase plugin or
+Agent Skills. Similarly, if you encounter issues with outdated tools or
+commands, follow the steps below based on your agent environment:
+<ul>
+<li><strong>Antigravity</strong>: Follow
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/refresh/antigravity.md">references/refresh/antigravity.md</a></li>
+<li><strong>Gemini CLI</strong>: Follow
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/refresh/gemini-cli.md">references/refresh/gemini-cli.md</a></li>
+<li><strong>Claude Code</strong>: Follow
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/refresh/claude.md">references/refresh/claude.md</a></li>
+<li><strong>Cursor</strong>: Follow
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/refresh/other-agents.md">references/refresh/other-agents.md</a></li>
+<li><strong>Android Studio</strong>: Follow
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/refresh/android_studio.md">references/refresh/android_studio.md</a></li>
+<li><strong>Others</strong>: Follow
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/refresh/other-agents.md">references/refresh/other-agents.md</a></li>
+</ul>
+</li>
+<li><strong>Automate Config File Retrieval:</strong> When setting up iOS or Android apps, do
+NOT direct users to the Firebase Console to download <code>google-services.json</code>
+or <code>GoogleService-Info.plist</code>. Instead, use the Firebase CLI to fetch the
+config programmatically:
+<ul>
+<li>For Android:
+<code>npx -y firebase-tools@latest apps:sdkconfig ANDROID &lt;APP_ID&gt; --project &lt;PROJECT_ID&gt;</code></li>
+<li>For iOS:
+<code>npx -y firebase-tools@latest apps:sdkconfig IOS &lt;APP_ID&gt; --project &lt;PROJECT_ID&gt;</code>
+Save the output to the appropriate location (e.g.,
+<code>app/google-services.json</code> for Android, or a path to be linked by
+<code>xcode-project-setup</code> for iOS).</li>
+</ul>
+</li>
+</ol>
+<h3>References</h3>
+<ul>
+<li><strong>Initialize Firebase:</strong> See
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/firebase-service-init.md">references/firebase-service-init.md</a>
+when you need to initialize new Firebase services using the CLI.</li>
+<li><strong>Exploring Commands:</strong> See
+<a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/firebase-cli-guide.md">references/firebase-cli-guide.md</a> to
+discover and understand CLI functionality.</li>
+<li><strong>SDK Setup:</strong> For detailed guides on adding Firebase to your app:
+<ul>
+<li><strong>Web</strong>: See <a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/web_setup.md">references/web_setup.md</a></li>
+<li><strong>Android</strong>: See <a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/android_setup.md">references/android_setup.md</a></li>
+<li><strong>iOS</strong>: See <a href="https://github.com/firebase/agent-skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-basics/references/ios_setup.md">references/ios_setup.md</a></li>
+</ul>
+</li>
+</ul>
+<h3>Common Issues</h3>
+<ul>
+<li>
+<p><strong>Login Issues:</strong> If the browser fails to open during the login step, use
+<code>npx -y firebase-tools@latest login --no-localhost</code> instead.</p>
+</li>
+<li>
+<p><strong>Genkit:</strong> If using Genkit, install the skills:</p>
+<pre><code class="language-bash">npx skills add genkit-ai/skills
+</code></pre>
+</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

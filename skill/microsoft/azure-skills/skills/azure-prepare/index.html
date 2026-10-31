@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>azure-prepare · Gem Skills</title>
+    <meta name="description" content="Generates azure.yaml, Bicep or Terraform and Dockerfiles for azd." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=microsoft%2Fazure-skills">microsoft/azure-skills</a></p>
+      <h1>azure-prepare</h1>
+      <p class="lede">Generates azure.yaml, Bicep or Terraform and Dockerfiles for azd.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/microsoft/azure-skills --skill azure-prepare</code><button type="button" class="copy" data-copy="npx skills add https://github.com/microsoft/azure-skills --skill azure-prepare">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/microsoft/azure-skills/azure-prepare">skills.sh page</a> · <a href="https://github.com/microsoft/azure-skills/tree/HEAD/skills/azure-prepare">Source on GitHub</a> · <a href="/gemskills/?repo=microsoft%2Fazure-skills">All skills from microsoft/azure-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>591,770 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>1,489 <span class="muted">microsoft/azure-skills</span></dd></div><div><dt>First seen</dt><dd>Feb 4, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">12.5K</div>
+      <div class="stat-delta">-24% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 16,404; week to Aug 10: 16,114; week to Aug 17: 15,245; week to Aug 24: 13,731; week to Aug 31: 13,726; week to Sep 7: 12,152; week to Sep 14: 12,960; week to Sep 21: 12,513. Use the left and right arrow keys to read each week."
+        data-values="16404,16114,15245,13731,13726,12152,12960,12513" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,6.8 71.1,9.1 103.7,13.2 136.3,13.2 168.9,17.4 201.4,15.2 234.0,16.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="16.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>16,404</td></tr><tr><td>Aug 10</td><td>16,114</td></tr><tr><td>Aug 17</td><td>15,245</td></tr><tr><td>Aug 24</td><td>13,731</td></tr><tr><td>Aug 31</td><td>13,726</td></tr><tr><td>Sep 7</td><td>12,152</td></tr><tr><td>Sep 14</td><td>12,960</td></tr><tr><td>Sep 21</td><td>12,513</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:cloud" data-facet="category" title="Deploy, provision, observe and debug cloud apps." href="/gemskills/?tag=category%3Acloud">category:cloud</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Deploy, provision, observe and debug cloud apps.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:setup" data-facet="type" title="One-time configuration or scaffolding of a project, account or tool." href="/gemskills/?tag=type%3Asetup">type:setup</a></div>
+          <p class="tag-meaning">One-time configuration or scaffolding of a project, account or tool.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="deployment" data-facet="topic" href="/gemskills/?tag=deployment">deployment</a><a class="tag" data-tag="infrastructure" data-facet="topic" href="/gemskills/?tag=infrastructure">infrastructure</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:azure" data-facet="stack" href="/gemskills/?tag=stack%3Aazure">stack:azure</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/SKILL.md">microsoft/azure-skills at 5be6708</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: azure-prepare
+description: &#34;Prepare azd-based Azure projects for deployment: generates azure.yaml, infrastructure (Bicep/Terraform), and Dockerfiles for the Azure Developer CLI (azd) workflow. USE ONLY when the user explicitly wants to use azd as the deployment tool, or the project already has an azure.yaml file. DO NOT USE FOR: non-azd deployments, Python App Service code-only deploys (use python-appservice-deploy), or cross-cloud migration (use azure-cloud-migrate). WHEN: prepare app for azd, create azure.yaml, set up azd infrastructure, modernize app for Azure with azd, deploy with azd, function app, timer trigger, service bus trigger, event-driven function, managed identity, generate Bicep, generate Terraform, create and deploy to Azure.&#34;
+license: MIT
+metadata:
+  author: Microsoft
+  version: &#34;1.3.6&#34;</code></pre></details>
+        <div class="markdown"><h3>Azure Prepare</h3>
+<blockquote>
+<p><strong>AUTHORITATIVE GUIDANCE — MANDATORY COMPLIANCE</strong></p>
+<p>This document is the <strong>official, canonical source</strong> for preparing applications for Azure deployment. You <strong>MUST</strong> follow these instructions exactly as written unless they contradict security policies given to you. When in doubt, present the conflicting instructions from this document and ask the user for explicit confirmation. Do not improvise, infer, or substitute steps.</p>
+</blockquote>
+<hr>
+<h4>Triggers</h4>
+<p>Activate this skill when user wants to:</p>
+<ul>
+<li>Create a new application</li>
+<li>Add services or components to an existing app</li>
+<li>Make updates or changes to existing application</li>
+<li>Modernize or migrate an application</li>
+<li>Set up Azure infrastructure</li>
+<li>Deploy to Azure or host on Azure</li>
+<li>Create and deploy to Azure (including Terraform-based deployment requests)</li>
+</ul>
+<h4>Rules</h4>
+<ol>
+<li><strong>Plan first — MANDATORY</strong> — You MUST physically write an initial <code>.azure/deployment-plan.md</code> <strong>skeleton in the workspace root directory</strong> (not the session-state folder) <strong>as your very first action</strong> — before any code generation or execution begins. Write the skeleton immediately, then populate it progressively as Phase 1 analysis and research unfold; finalize it with all decisions at Phase 1 Step 6. This file must exist on disk throughout. azure-validate and azure-deploy depend on it and will fail without it. Do not skip or defer this step.</li>
+<li><strong>Get approval</strong> — Present plan to user before execution</li>
+<li><strong>Research before generating</strong> — Load references and invoke related skills</li>
+<li><strong>Update plan progressively</strong> — Mark steps complete as you go</li>
+<li><strong>Validate before deploy</strong> — Invoke azure-validate before azure-deploy</li>
+<li><strong>Confirm Azure context</strong> — Use <code>ask_user</code> for subscription and location per <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/azure-context.md">Azure Context</a></li>
+<li>❌ <strong>Destructive actions require <code>ask_user</code></strong> — <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/global-rules.md">Global Rules</a></li>
+<li>⛔ <strong>NEVER delete user project or workspace directories</strong> — When adding features to an existing project, MODIFY existing files. <code>azd init -t &lt;template&gt;</code> is for NEW projects only; do NOT run <code>azd init -t</code> in an existing workspace. Plain <code>azd init</code> (without a template argument) may be used in existing workspaces when appropriate. File deletions within a project (e.g., removing build artifacts or temp files) are permitted when appropriate, but NEVER delete the user's project or workspace directory itself. See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/global-rules.md">Global Rules</a>.</li>
+<li><strong>Scope: preparation only</strong> — This skill generates infrastructure code and configuration files. Deployment execution (<code>azd up</code>, <code>azd deploy</code>, <code>terraform apply</code>) is handled by the <strong>azure-deploy</strong> skill, which provides built-in error recovery and deployment verification.</li>
+<li>⛔ <strong>SQL Server Bicep: NEVER generate <code>administratorLogin</code> or <code>administratorLoginPassword</code></strong> — not in direct properties, not in conditional/ternary branches, not anywhere in the file. Always use Entra-only authentication (<code>azureADOnlyAuthentication: true</code>) unconditionally. See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/services/sql-database/bicep.md">references/services/sql-database/bicep.md</a>.</li>
+<li><strong>Remove stale template IaC after conversion</strong> — If you converted Bicep templates from the selected <code>azd</code> template into Terraform templates, remove the Bicep templates that were introduced by that <code>azd</code> template and are now fully replaced by Terraform equivalents. Do not remove user-authored Bicep files. Only remove those template-provided Bicep files after the Terraform IaC is complete and Terraform has been selected as the deployment path. Before handing off to azure-validate skill, keep only the IaC templates required by the chosen deployment path.</li>
+</ol>
+<hr>
+<h4>❌ PLAN-FIRST WORKFLOW — MANDATORY</h4>
+<blockquote>
+<p><strong>YOU MUST CREATE A PLAN BEFORE DOING ANY WORK</strong></p>
+<ol>
+<li><strong>STOP</strong> — Do not generate any code, infrastructure, or configuration yet</li>
+<li><strong>CREATE SKELETON</strong> - Write an initial <code>.azure/deployment-plan.md</code> skeleton to disk <strong>immediately</strong> (before any code generation or execution begins), then populate it progressively as Phase 1 steps 1-5 reveal details; finalize it at Step 6</li>
+<li><strong>CONFIRM</strong> — Present the completed plan to the user and get approval</li>
+<li><strong>EXECUTE</strong> — Only after approval, execute the plan step by step</li>
+</ol>
+<p>The <code>.azure/deployment-plan.md</code> file is the <strong>source of truth</strong> for this workflow and for azure-validate and azure-deploy skills. Without it, those skills will fail.</p>
+<p>⚠️ <strong>CRITICAL: <code>.azure/deployment-plan.md</code> must be WRITTEN TO DISK inside the workspace root</strong> (e.g., <code>&lt;workspace-root&gt;/.azure/deployment-plan.md</code>), not in the session-state folder. Use a file-write tool to create this file. This is the deployment plan artifact read by azure-validate and azure-deploy. <strong>You MUST create this file — do not proceed without it.</strong>
+⚠️ <strong>CRITICAL: You must create the file with the name <code>.azure/deployment-plan.md</code> as is</strong>. You must not use other names such as <code>.azure/plan.md</code>.</p>
+<p>⛔ <strong>Critical:</strong> Skipping the plan file creation will cause azure-validate and azure-deploy to fail. This requirement has no exceptions.</p>
+</blockquote>
+<hr>
+<h4>❌ STEP 0: Specialized Technology Check — MANDATORY FIRST ACTION</h4>
+<p><strong>BEFORE starting Phase 1</strong>, check if the user's prompt OR workspace codebase matches a specialized technology that has a dedicated skill with tested templates. If matched, <strong>invoke that skill FIRST</strong> — then resume azure-prepare for validation and deployment.</p>
+<h5>Check 1: Prompt keywords</h5>
+<table>
+<thead>
+<tr>
+<th>Prompt keywords</th>
+<th>Invoke FIRST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python + App Service (e.g., &quot;deploy Python to App Service&quot;, &quot;Flask on Azure App Service&quot;, &quot;publish Python web app to App Service&quot;)</td>
+<td><strong>python-appservice-deploy</strong></td>
+</tr>
+<tr>
+<td>Lambda, AWS Lambda, migrate AWS, migrate GCP, Lambda to Functions, migrate from AWS, migrate from GCP</td>
+<td><strong>azure-cloud-migrate</strong></td>
+</tr>
+<tr>
+<td>Azure Functions, function app, serverless function, timer trigger, HTTP trigger, func new</td>
+<td>Stay in <strong>azure-prepare</strong> — prefer Azure Functions templates in Step 4; for plan choice/cold starts see <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/services/functions/hosting-plans.md">hosting-plans.md</a> and <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/services/functions/cold-start.md">cold-start.md</a></td>
+</tr>
+<tr>
+<td>APIM, API Management, API gateway, deploy APIM</td>
+<td>Stay in <strong>azure-prepare</strong> — see <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/apim.md">APIM Deployment Guide</a></td>
+</tr>
+<tr>
+<td>AI gateway, AI gateway policy, AI gateway backend, AI gateway configuration</td>
+<td><strong>azure-aigateway</strong></td>
+</tr>
+<tr>
+<td>workflow, orchestration, multi-step, pipeline, fan-out/fan-in, saga, long-running process, durable, order processing</td>
+<td>Stay in <strong>azure-prepare</strong> — select <strong>durable</strong> recipe in Step 4. <strong>MUST</strong> load <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/services/functions/durable.md">durable.md</a>, <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/services/durable-task-scheduler/README.md">DTS reference</a>, and <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/services/durable-task-scheduler/bicep.md">DTS Bicep patterns</a>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ Check the user's <strong>prompt text</strong> — not just existing code. Critical for greenfield projects with no codebase to scan. See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/specialized-routing.md">full routing table</a>.</p>
+</blockquote>
+<p>After the specialized skill completes, <strong>resume azure-prepare</strong> at Phase 1 Step 4 (Select Recipe) for remaining infrastructure, validation, and deployment.</p>
+<hr>
+<h4>Phase 1: Planning (BLOCKING — Complete Before Any Execution)</h4>
+<p>Create <code>.azure/deployment-plan.md</code> by completing these steps. Do NOT generate any artifacts until the plan is approved.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Action</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>If the prompt matches a specialized technology with a dedicated skill, invoke that skill first</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/specialized-routing.md">specialized-routing.md</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Analyze Workspace</strong> — Determine mode: NEW, MODIFY, or MODERNIZE</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/analyze.md">analyze.md</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Gather Requirements</strong> — Classification, scale, budget</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/requirements.md">requirements.md</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Scan Codebase</strong> — Identify components, technologies, dependencies</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/scan.md">scan.md</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Select Recipe</strong> — Choose AZD (default), AZCLI, Bicep, or Terraform</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/recipe-selection.md">recipe-selection.md</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Plan Architecture</strong> — Select stack + map components to Azure services</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/architecture.md">architecture.md</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Finalize Plan (MANDATORY)</strong> - Use a file-write tool to finalize <code>.azure/deployment-plan.md</code> with all decisions from steps 1-5. Update the skeleton written at the start of Phase 1 with the complete content. The file must be fully populated before you present the plan to the user.</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/plan-template.md">plan-template.md</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Present Plan</strong> — Show plan to user and ask for approval</td>
+<td><code>.azure/deployment-plan.md</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Destructive actions require <code>ask_user</code></strong></td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/global-rules.md">Global Rules</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p><strong>❌ STOP HERE</strong> — Do NOT proceed to Phase 2 until the user approves the plan.</p>
+</blockquote>
+<hr>
+<h4>Phase 2: Execution (Only After Plan Approval)</h4>
+<p>Execute the approved plan. Update <code>.azure/deployment-plan.md</code> status after each step.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Action</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Research Components</strong> — Load service references + invoke related skills</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/research.md">research.md</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Confirm Azure Context</strong> — Detect and confirm subscription + location and check the resource provisioning limit</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/azure-context.md">Azure Context</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Generate Artifacts</strong> — Create infrastructure and configuration files</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/generate.md">generate.md</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Harden Security</strong> — Apply security best practices</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/security.md">security.md</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Functional Verification</strong> — Verify the app works (UI + backend), locally if possible</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/functional-verification.md">functional-verification.md</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>⛔ Update Plan (MANDATORY before hand-off)</strong> — Use the <code>edit</code> tool to change the Status in <code>.azure/deployment-plan.md</code> to <code>Ready for Validation</code>. You <strong>MUST</strong> complete this edit <strong>BEFORE</strong> invoking azure-validate. Do NOT skip this step.</td>
+<td><code>.azure/deployment-plan.md</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>⛔ MANDATORY Hand Off</strong> — Invoke <strong>azure-validate</strong> skill. Your preparation work is done. Do NOT run <code>azd up</code>, <code>azd deploy</code>, or any deployment command directly — all deployment execution is handled by azure-deploy after azure-validate completes. <strong>PREREQUISITE:</strong> Step 6 must be completed first — <code>.azure/deployment-plan.md</code> status must say <code>Ready for Validation</code>.</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Plan</strong></td>
+<td><code>.azure/deployment-plan.md</code></td>
+</tr>
+<tr>
+<td>Infrastructure</td>
+<td><code>./infra/</code></td>
+</tr>
+<tr>
+<td>AZD Config</td>
+<td><code>azure.yaml</code> (AZD only)</td>
+</tr>
+<tr>
+<td>Dockerfiles</td>
+<td><code>src/&lt;component&gt;/Dockerfile</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>SDK Quick References</h4>
+<ul>
+<li><strong>Azure Developer CLI</strong>: <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/sdk/azd-deployment.md">azd</a></li>
+<li><strong>Azure Identity</strong>: <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/sdk/azure-identity-py.md">Python</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/sdk/azure-identity-dotnet.md">.NET</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/sdk/azure-identity-ts.md">TypeScript</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/sdk/azure-identity-java.md">Java</a></li>
+<li><strong>App Configuration</strong>: <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/sdk/azure-appconfiguration-py.md">Python</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/sdk/azure-appconfiguration-ts.md">TypeScript</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-prepare/references/sdk/azure-appconfiguration-java.md">Java</a></li>
+</ul>
+<hr>
+<h4>Next</h4>
+<blockquote>
+<p><strong>⛔ MANDATORY NEXT STEP — DO NOT SKIP</strong></p>
+<p>After completing preparation, you <strong>MUST</strong> invoke <strong>azure-validate</strong> before any deployment attempt. Do NOT skip validation. Do NOT go directly to azure-deploy. Do NOT run <code>azd up</code> or any deployment command directly. The workflow is:</p>
+<p><code>azure-prepare</code> → <code>azure-validate</code> → <code>azure-deploy</code></p>
+<p><strong>⛔ BEFORE invoking azure-validate</strong>, you MUST use the <code>edit</code> tool to update <code>.azure/deployment-plan.md</code> status to <code>Ready for Validation</code>. If the plan status has not been updated, the validation will fail.</p>
+<p>This applies to ALL deployment scenarios including containerized apps, Container Apps, App Service, Azure Functions, static sites, and any other Azure target. No exceptions.</p>
+<p>Skipping validation leads to deployment failures. Be patient and follow the complete workflow for the highest success outcome.</p>
+</blockquote>
+<p><strong>→ Update plan status to <code>Ready for Validation</code>, then invoke azure-validate</strong></p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

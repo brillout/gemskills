@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>agent-browser-clawdbot · Gem Skills</title>
+    <meta name="description" content="Use it when: your OpenClaw assistant has to work through a website in several steps: logging in, filling forms, using a web app. It does: drives a headless Chromium with Vercel&#039;s agent-browser CLI, acting on elements by short labels from snapshots of the page. You get: clicks, typing and navigation done for you, plus extracted text, attributes, screenshots or PDFs. Needs: the agent-browser CLI, installed from npm, and the Chromium it downloads. Unlike: Vercel&#039;s official agent-browser skill, which loads its instructions from the installed CLI; this is a community member&#039;s fixed command list." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Fmatrixy">clawhub.ai/matrixy</a></p>
+      <h1>agent-browser-clawdbot</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>your OpenClaw assistant has to work through a website in several steps: logging in, filling forms, using a web app</dd></div><div><dt>It does</dt><dd>drives a headless Chromium with Vercel&#39;s agent-browser CLI, acting on elements by short labels from snapshots of the page</dd></div><div><dt>You get</dt><dd>clicks, typing and navigation done for you, plus extracted text, attributes, screenshots or PDFs</dd></div><div><dt>Needs</dt><dd>the agent-browser CLI, installed from npm, and the Chromium it downloads</dd></div><div><dt>Unlike</dt><dd>Vercel&#39;s official agent-browser skill, which loads its instructions from the installed CLI; this is a community member&#39;s fixed command list</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>OpenClaw, once called Clawdbot, is an open-source AI assistant you run yourself, and this community skill for it, by Yossi Elkrief, teaches it Vercel Labs&#39; agent-browser CLI. The agent opens a page and takes a snapshot of its interactive elements as JSON, where each button or field gets a short label such as @e2. It then clicks, fills or reads by label, and takes a new snapshot whenever the page changes. The command list covers navigation, waiting (for an element, some text, a URL, the network to go quiet, or a JavaScript condition), checking whether elements are visible or checked, tabs and iframes, cookies and local storage, blocking or faking network requests, and screenshots and PDFs. Named sessions run isolated browsers side by side, say an admin and a regular user at once, and saved login state skips signing in again. The skill recommends it over the assistant&#39;s built-in browser for multi-step workflows and complex web apps, and the built-in one for visual inspection or browser extensions.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/matrixy/agent-browser-clawdbot.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @matrixy/agent-browser-clawdbot</code><button type="button" class="copy" data-copy="openclaw skills install @matrixy/agent-browser-clawdbot">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/matrixy/skills/agent-browser-clawdbot">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Fmatrixy">All skills from clawhub.ai/matrixy</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>156,494 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div><div><dt>Downloads</dt><dd>163,005 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:browser" data-facet="category" title="Drive browsers, scrape pages and search the web." href="/gemskills/?tag=category%3Abrowser">category:browser</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Drive browsers, scrape pages and search the web.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:browser" data-facet="needs" title="Drives a real Chromium or Chrome browser." href="/gemskills/?tag=needs%3Abrowser">needs:browser</a><a class="tag" data-tag="needs:openclaw" data-facet="needs" title="Built for the OpenClaw agent." href="/gemskills/?tag=needs%3Aopenclaw">needs:openclaw</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">Drives a real Chromium or Chrome browser.</p><p class="tag-meaning">Built for the OpenClaw agent.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="browser-automation" data-facet="topic" href="/gemskills/?tag=browser-automation">browser-automation</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:agent-browser" data-facet="stack" href="/gemskills/?tag=stack%3Aagent-browser">stack:agent-browser</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/matrixy/skills/agent-browser-clawdbot">ClawHub</a>, version 0.1.0. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: agent-browser
+description: Headless browser automation CLI optimized for AI agents with accessibility tree snapshots and ref-based element selection
+metadata: {&#34;clawdbot&#34;:{&#34;emoji&#34;:&#34;🌐&#34;,&#34;requires&#34;:{&#34;commands&#34;:[&#34;agent-browser&#34;]},&#34;homepage&#34;:&#34;https://github.com/vercel-labs/agent-browser&#34;}}</code></pre></details>
+        <div class="markdown"><h3>Agent Browser Skill</h3>
+<p>Fast browser automation using accessibility tree snapshots with refs for deterministic element selection.</p>
+<h4>Why Use This Over Built-in Browser Tool</h4>
+<p><strong>Use agent-browser when:</strong></p>
+<ul>
+<li>Automating multi-step workflows</li>
+<li>Need deterministic element selection</li>
+<li>Performance is critical</li>
+<li>Working with complex SPAs</li>
+<li>Need session isolation</li>
+</ul>
+<p><strong>Use built-in browser tool when:</strong></p>
+<ul>
+<li>Need screenshots/PDFs for analysis</li>
+<li>Visual inspection required</li>
+<li>Browser extension integration needed</li>
+</ul>
+<h4>Core Workflow</h4>
+<pre><code class="language-bash"># 1. Navigate and snapshot
+agent-browser open https://example.com
+agent-browser snapshot -i --json
+
+# 2. Parse refs from JSON, then interact
+agent-browser click @e2
+agent-browser fill @e3 &quot;text&quot;
+
+# 3. Re-snapshot after page changes
+agent-browser snapshot -i --json
+</code></pre>
+<h4>Key Commands</h4>
+<h5>Navigation</h5>
+<pre><code class="language-bash">agent-browser open &lt;url&gt;
+agent-browser back | forward | reload | close
+</code></pre>
+<h5>Snapshot (Always use -i --json)</h5>
+<pre><code class="language-bash">agent-browser snapshot -i --json          # Interactive elements, JSON output
+agent-browser snapshot -i -c -d 5 --json  # + compact, depth limit
+agent-browser snapshot -s &quot;#main&quot; -i      # Scope to selector
+</code></pre>
+<h5>Interactions (Ref-based)</h5>
+<pre><code class="language-bash">agent-browser click @e2
+agent-browser fill @e3 &quot;text&quot;
+agent-browser type @e3 &quot;text&quot;
+agent-browser hover @e4
+agent-browser check @e5 | uncheck @e5
+agent-browser select @e6 &quot;value&quot;
+agent-browser press &quot;Enter&quot;
+agent-browser scroll down 500
+agent-browser drag @e7 @e8
+</code></pre>
+<h5>Get Information</h5>
+<pre><code class="language-bash">agent-browser get text @e1 --json
+agent-browser get html @e2 --json
+agent-browser get value @e3 --json
+agent-browser get attr @e4 &quot;href&quot; --json
+agent-browser get title --json
+agent-browser get url --json
+agent-browser get count &quot;.item&quot; --json
+</code></pre>
+<h5>Check State</h5>
+<pre><code class="language-bash">agent-browser is visible @e2 --json
+agent-browser is enabled @e3 --json
+agent-browser is checked @e4 --json
+</code></pre>
+<h5>Wait</h5>
+<pre><code class="language-bash">agent-browser wait @e2                    # Wait for element
+agent-browser wait 1000                   # Wait ms
+agent-browser wait --text &quot;Welcome&quot;       # Wait for text
+agent-browser wait --url &quot;**/dashboard&quot;   # Wait for URL
+agent-browser wait --load networkidle     # Wait for network
+agent-browser wait --fn &quot;window.ready === true&quot;
+</code></pre>
+<h5>Sessions (Isolated Browsers)</h5>
+<pre><code class="language-bash">agent-browser --session admin open site.com
+agent-browser --session user open site.com
+agent-browser session list
+# Or via env: AGENT_BROWSER_SESSION=admin agent-browser ...
+</code></pre>
+<h5>State Persistence</h5>
+<pre><code class="language-bash">agent-browser state save auth.json        # Save cookies/storage
+agent-browser state load auth.json        # Load (skip login)
+</code></pre>
+<h5>Screenshots &amp; PDFs</h5>
+<pre><code class="language-bash">agent-browser screenshot page.png
+agent-browser screenshot --full page.png
+agent-browser pdf page.pdf
+</code></pre>
+<h5>Network Control</h5>
+<pre><code class="language-bash">agent-browser network route &quot;**/ads/*&quot; --abort           # Block
+agent-browser network route &quot;**/api/*&quot; --body '{&quot;x&quot;:1}'  # Mock
+agent-browser network requests --filter api              # View
+</code></pre>
+<h5>Cookies &amp; Storage</h5>
+<pre><code class="language-bash">agent-browser cookies                     # Get all
+agent-browser cookies set name value
+agent-browser storage local key           # Get localStorage
+agent-browser storage local set key val
+</code></pre>
+<h5>Tabs &amp; Frames</h5>
+<pre><code class="language-bash">agent-browser tab new https://example.com
+agent-browser tab 2                       # Switch to tab
+agent-browser frame @e5                   # Switch to iframe
+agent-browser frame main                  # Back to main
+</code></pre>
+<h4>Snapshot Output Format</h4>
+<pre><code class="language-json">{
+  &quot;success&quot;: true,
+  &quot;data&quot;: {
+    &quot;snapshot&quot;: &quot;...&quot;,
+    &quot;refs&quot;: {
+      &quot;e1&quot;: {&quot;role&quot;: &quot;heading&quot;, &quot;name&quot;: &quot;Example Domain&quot;},
+      &quot;e2&quot;: {&quot;role&quot;: &quot;button&quot;, &quot;name&quot;: &quot;Submit&quot;},
+      &quot;e3&quot;: {&quot;role&quot;: &quot;textbox&quot;, &quot;name&quot;: &quot;Email&quot;}
+    }
+  }
+}
+</code></pre>
+<h4>Best Practices</h4>
+<ol>
+<li><strong>Always use <code>-i</code> flag</strong> - Focus on interactive elements</li>
+<li><strong>Always use <code>--json</code></strong> - Easier to parse</li>
+<li><strong>Wait for stability</strong> - <code>agent-browser wait --load networkidle</code></li>
+<li><strong>Save auth state</strong> - Skip login flows with <code>state save/load</code></li>
+<li><strong>Use sessions</strong> - Isolate different browser contexts</li>
+<li><strong>Use <code>--headed</code> for debugging</strong> - See what's happening</li>
+</ol>
+<h4>Example: Search and Extract</h4>
+<pre><code class="language-bash">agent-browser open https://www.google.com
+agent-browser snapshot -i --json
+# AI identifies search box @e1
+agent-browser fill @e1 &quot;AI agents&quot;
+agent-browser press Enter
+agent-browser wait --load networkidle
+agent-browser snapshot -i --json
+# AI identifies result refs
+agent-browser get text @e3 --json
+agent-browser get attr @e4 &quot;href&quot; --json
+</code></pre>
+<h4>Example: Multi-Session Testing</h4>
+<pre><code class="language-bash"># Admin session
+agent-browser --session admin open app.com
+agent-browser --session admin state load admin-auth.json
+agent-browser --session admin snapshot -i --json
+
+# User session (simultaneous)
+agent-browser --session user open app.com
+agent-browser --session user state load user-auth.json
+agent-browser --session user snapshot -i --json
+</code></pre>
+<h4>Installation</h4>
+<pre><code class="language-bash">npm install -g agent-browser
+agent-browser install                     # Download Chromium
+agent-browser install --with-deps         # Linux: + system deps
+</code></pre>
+<h4>Credits</h4>
+<p>Skill created by Yossi Elkrief (<a href="https://github.com/MaTriXy">@MaTriXy</a>)</p>
+<p>agent-browser CLI by <a href="https://github.com/vercel-labs/agent-browser">Vercel Labs</a></p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

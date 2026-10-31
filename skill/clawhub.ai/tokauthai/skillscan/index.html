@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skillscan · Gem Skills</title>
+    <meta name="description" content="Use it when: you install skills from hubs or repos and want each one checked for malicious code before use. It does: uploads each new skill to an online scanner run by its maker, TokAuth, and acts on the risk verdict. Blocks: high and critical risk skills, offering to delete them; low and medium ones need your OK; safe ones, and ones without a verdict, go ahead. Sends: with each scan, a client ID, your operating system and your machine&#039;s MAC address when it can read it. Runs: by itself whenever a skill is installed, loaded or questioned; on first load it offers to scan every installed skill. Updates: itself from TokAuth&#039;s server once a day, without asking. Unlike skill-vetter: which has the agent read the skill&#039;s code for red flags; here the analysis happens on a remote server." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Ftokauthai">clawhub.ai/tokauthai</a></p>
+      <h1>skillscan</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you install skills from hubs or repos and want each one checked for malicious code before use</dd></div><div><dt>It does</dt><dd>uploads each new skill to an online scanner run by its maker, TokAuth, and acts on the risk verdict</dd></div><div><dt>Blocks</dt><dd>high and critical risk skills, offering to delete them; low and medium ones need your OK; safe ones, and ones without a verdict, go ahead</dd></div><div><dt>Sends</dt><dd>with each scan, a client ID, your operating system and your machine&#39;s MAC address when it can read it</dd></div><div><dt>Runs</dt><dd>by itself whenever a skill is installed, loaded or questioned; on first load it offers to scan every installed skill</dd></div><div><dt>Updates</dt><dd>itself from TokAuth&#39;s server once a day, without asking</dd></div><div><dt>Unlike skill-vetter</dt><dd>which has the agent read the skill&#39;s code for red flags; here the analysis happens on a remote server</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>SkillScan sets itself up as a gate: whenever a skill arrives, however it comes (a .zip, a git clone, npx skills add, a skill hub), the agent runs its Python scanner on it. A .zip is scanned before it&#39;s installed, anything else right after its files land. The scanner hashes the skill&#39;s folder and asks TokAuth&#39;s server whether that exact content has been scanned before; if not, it uploads the skill as a zip and waits up to three minutes for the verdict. Skills with no verdict, because the scan came back unknown, are let through like safe ones. It needs Python and network access to skillscan.tokauth.com.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/tokauthai/skillscan.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @tokauthai/skillscan</code><button type="button" class="copy" data-copy="openclaw skills install @tokauthai/skillscan">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/tokauthai/skills/skillscan">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Ftokauthai">All skills from clawhub.ai/tokauthai</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>181,973 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:skill-tools" data-facet="category" title="Find, write, vet and route to other skills." href="/gemskills/?tag=category%3Askill-tools">category:skill-tools</a><a class="tag" data-tag="category:security" data-facet="category" title="Compliance, guardrails, skill vetting and browser fingerprinting." href="/gemskills/?tag=category%3Asecurity">category:security</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find, write, vet and route to other skills.</p><p class="tag-meaning">Compliance, guardrails, skill vetting and browser fingerprinting.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="skill-security" data-facet="topic" href="/gemskills/?tag=skill-security">skill-security</a><a class="tag" data-tag="security" data-facet="topic" href="/gemskills/?tag=security">security</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/tokauthai/skills/skillscan">ClawHub</a>, version 1.1.6. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: SkillScan
+metadata:
+  version: &#34;1.1.6&#34;
+description: &#62;
+  Security gate for skills. Every new skill MUST pass SkillScan before use.
+  Activate on any install, load, add, evaluate, or safety question about a skill.
+  On first load, run first-run to scan all existing skills.
+  Blocks HIGH/CRITICAL skills. No exceptions.</code></pre></details>
+        <div class="markdown"><h3>SkillScan v1.1.6</h3>
+<p>Security check for skill packages. Every new skill must pass this scan before use.</p>
+<p>Implemented in <code>scripts/scanner.py</code>. Supports Windows / macOS / Linux.</p>
+<p>Do NOT generate report files inside the skill directory.</p>
+<hr>
+<h4>When to Activate</h4>
+<p>Run SkillScan whenever a skill is installed, loaded, added, evaluated, or questioned for safety — regardless of method or phrasing.</p>
+<p>Trigger examples: install, load, add, use, set up, &quot;is this safe&quot;, upload .zip/.skill, paste SKILL.md, mention unknown skill name, install from hub/store.</p>
+<hr>
+<h4>First Load</h4>
+<p>Check <code>scripts/.first_run_done</code>:</p>
+<ul>
+<li>
+<p><strong>Not found</strong> → <strong>Tell user</strong> SkillScan is installed, ask to scan all existing skills:</p>
+<pre><code class="language-bash">python &lt;skill_scanner_dir&gt;/scripts/scanner.py first-run
+</code></pre>
+<p><code>.first_run_done</code> is created automatically after completion.</p>
+</li>
+<li>
+<p><strong>Found</strong> → Skip, operate normally.</p>
+</li>
+</ul>
+<hr>
+<h4>Commands</h4>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scanner.py scan &lt;path&gt;</code></td>
+<td>Scan a single skill (.zip or directory)</td>
+</tr>
+<tr>
+<td><code>scanner.py scan-all</code></td>
+<td>Scan all installed skills</td>
+</tr>
+<tr>
+<td><code>scanner.py first-run</code></td>
+<td>First-time full scan</td>
+</tr>
+<tr>
+<td><code>scanner.py upgrade</code></td>
+<td>Manual upgrade</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>Scan Rules</h4>
+<ul>
+<li><strong>.zip files</strong> → Scan BEFORE installation. Block if fails.</li>
+<li><strong>Directory installs</strong> (cp, mv, git clone, ln -s, any method) → Scan AFTER files land on disk.</li>
+<li><strong>Remote installs</strong> (clawhub, skillhub, npx skills add, etc.) → Scan immediately after install.</li>
+<li><strong>Unknown skills</strong> → If user mentions a skill you haven't seen, scan it.</li>
+</ul>
+<hr>
+<h4>Exit Codes</h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Verdict</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>UNKNOWN / SAFE</td>
+<td>Proceed</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>LOW / MEDIUM</td>
+<td>Warn user, ask to confirm</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>HIGH / CRITICAL</td>
+<td>Block, show details</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Scan failed</td>
+<td>Explain, offer retry</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>Auto Update</h4>
+<p>Checks for updates every day automatically. Silent, no user action needed. Manual: <code>scanner.py upgrade</code>.</p>
+<hr>
+<h4>Environment Variables</h4>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SKILL_SCANNER_UPDATE_URL</code></td>
+<td>Custom update source (optional)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>API</h4>
+<p>Base URL: <code>https://skillscan.tokauth.com</code></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Method</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① Cache lookup</td>
+<td>GET</td>
+<td><code>/oapi/v1/skill-scan/search?dir_sha256=&lt;dir_sha256&gt;</code></td>
+</tr>
+<tr>
+<td>② Upload</td>
+<td>POST</td>
+<td><code>/oapi/v1/skill-scan/upload</code></td>
+</tr>
+<tr>
+<td>③ Poll result</td>
+<td>GET</td>
+<td><code>/oapi/v1/skill-scan/result?task_no=&lt;task_no&gt;</code> (poll every 20s, max 180s)</td>
+</tr>
+</tbody>
+</table>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

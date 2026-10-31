@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>self-improving · Gem Skills</title>
+    <meta name="description" content="Use it when: you keep correcting the agent on the same things and want lessons to stick across sessions. It does: logs your corrections and its own reflections after big tasks, and turns lessons repeated three times into rules. Keeps: a memory folder in your home directory: a short file loaded every time, files per project and topic, and an archive. Setup: creates that folder and adds a few lines to your agent&#039;s instruction files, without removing what&#039;s there. Runs: on its own, when you correct it, a command fails or it finishes significant work. Unlike: skills that log lessons to a folder inside each project, its memory is shared across projects and sorted by how often each rule is used." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Fivangdavila">clawhub.ai/ivangdavila</a></p>
+      <h1>self-improving</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you keep correcting the agent on the same things and want lessons to stick across sessions</dd></div><div><dt>It does</dt><dd>logs your corrections and its own reflections after big tasks, and turns lessons repeated three times into rules</dd></div><div><dt>Keeps</dt><dd>a memory folder in your home directory: a short file loaded every time, files per project and topic, and an archive</dd></div><div><dt>Setup</dt><dd>creates that folder and adds a few lines to your agent&#39;s instruction files, without removing what&#39;s there</dd></div><div><dt>Runs</dt><dd>on its own, when you correct it, a command fails or it finishes significant work</dd></div><div><dt>Unlike</dt><dd>skills that log lessons to a folder inside each project, its memory is shared across projects and sorted by how often each rule is used</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It makes the agent learn from mistakes. Explicit corrections (&#34;no, that&#39;s wrong&#34;, &#34;I prefer X&#34;, &#34;stop doing Y&#34;) go to a corrections log, and after significant work the agent notes what could have gone better. A lesson seen three times becomes a candidate rule, confirmed with you, and moves into memory.md, a file of at most 100 lines loaded before every non-trivial task. Lessons for one project or topic, such as code or writing, get their own files, loaded only when relevant. A rule unused for 30 days leaves the always-loaded file, and after 90 days goes to an archive; nothing is deleted without asking. When rules conflict, the most specific wins, and the agent cites which file a choice came from. You can ask what it has learned, export everything or have it forget something. It never stores credentials or health data and makes no network requests. Setup assumes a workspace like OpenClaw&#39;s (an open-source personal AI agent): it adds lines to AGENTS.md, SOUL.md and HEARTBEAT.md, and a periodic check keeps the memory tidy. Setup also offers a separate Proactivity skill, installed only if you agree.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/ivangdavila/self-improving.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @ivangdavila/self-improving</code><button type="button" class="copy" data-copy="openclaw skills install @ivangdavila/self-improving">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/ivangdavila/skills/self-improving">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Fivangdavila">All skills from clawhub.ai/ivangdavila</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>209,818 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div><div><dt>Downloads</dt><dd>409,437 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:agents" data-facet="category" title="Build agents, orchestrate workers and give agents memory." href="/gemskills/?tag=category%3Aagents">category:agents</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Build agents, orchestrate workers and give agents memory.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="self-improvement" data-facet="topic" href="/gemskills/?tag=self-improvement">self-improvement</a><a class="tag" data-tag="memory" data-facet="topic" href="/gemskills/?tag=memory">memory</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/ivangdavila/skills/self-improving">ClawHub</a>, version 1.2.16. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: Self-Improving + Proactive Agent
+slug: self-improving
+version: 1.2.16
+homepage: https://clawic.com/skills/self-improving
+description: &#34;Self-reflection + Self-criticism + Self-learning + Self-organizing memory. Agent evaluates its own work, catches mistakes, and improves permanently. Use when (1) a command, tool, API, or operation fails; (2) the user corrects you or rejects your work; (3) you realize your knowledge is outdated or incorrect; (4) you discover a better approach; (5) the user explicitly installs or references the skill for the current task.&#34;
+changelog: &#34;Clarifies the setup flow for proactive follow-through and safer installation behavior.&#34;
+metadata: {&#34;clawdbot&#34;:{&#34;emoji&#34;:&#34;🧠&#34;,&#34;requires&#34;:{&#34;bins&#34;:[]},&#34;os&#34;:[&#34;linux&#34;,&#34;darwin&#34;,&#34;win32&#34;],&#34;configPaths&#34;:[&#34;~/self-improving/&#34;],&#34;configPaths.optional&#34;:[&#34;./AGENTS.md&#34;,&#34;./SOUL.md&#34;,&#34;./HEARTBEAT.md&#34;]}}</code></pre></details>
+        <div class="markdown"><h4>When to Use</h4>
+<p>User corrects you or points out mistakes. You complete significant work and want to evaluate the outcome. You notice something in your own output that could be better. Knowledge should compound over time without manual maintenance.</p>
+<h4>Architecture</h4>
+<p>Memory lives in <code>~/self-improving/</code> with tiered structure. If <code>~/self-improving/</code> does not exist, run <code>setup.md</code>.
+Workspace setup should add the standard self-improving steering to the workspace AGENTS, SOUL, and <code>HEARTBEAT.md</code> files, with recurring maintenance routed through <code>heartbeat-rules.md</code>.</p>
+<pre><code>~/self-improving/
+├── memory.md          # HOT: ≤100 lines, always loaded
+├── index.md           # Topic index with line counts
+├── heartbeat-state.md # Heartbeat state: last run, reviewed change, action notes
+├── projects/          # Per-project learnings
+├── domains/           # Domain-specific (code, writing, comms)
+├── archive/           # COLD: decayed patterns
+└── corrections.md     # Last 50 corrections log
+</code></pre>
+<h4>Quick Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setup guide</td>
+<td><code>setup.md</code></td>
+</tr>
+<tr>
+<td>Heartbeat state template</td>
+<td><code>heartbeat-state.md</code></td>
+</tr>
+<tr>
+<td>Memory template</td>
+<td><code>memory-template.md</code></td>
+</tr>
+<tr>
+<td>Workspace heartbeat snippet</td>
+<td><code>HEARTBEAT.md</code></td>
+</tr>
+<tr>
+<td>Heartbeat rules</td>
+<td><code>heartbeat-rules.md</code></td>
+</tr>
+<tr>
+<td>Learning mechanics</td>
+<td><code>learning.md</code></td>
+</tr>
+<tr>
+<td>Security boundaries</td>
+<td><code>boundaries.md</code></td>
+</tr>
+<tr>
+<td>Scaling rules</td>
+<td><code>scaling.md</code></td>
+</tr>
+<tr>
+<td>Memory operations</td>
+<td><code>operations.md</code></td>
+</tr>
+<tr>
+<td>Self-reflection log</td>
+<td><code>reflections.md</code></td>
+</tr>
+<tr>
+<td>OpenClaw HEARTBEAT seed</td>
+<td><code>openclaw-heartbeat.md</code></td>
+</tr>
+</tbody>
+</table>
+<h4>Requirements</h4>
+<ul>
+<li>No credentials required</li>
+<li>No extra binaries required</li>
+<li>Optional installation of the <code>Proactivity</code> skill may require network access</li>
+</ul>
+<h4>Learning Signals</h4>
+<p>Log automatically when you notice these patterns:</p>
+<p><strong>Corrections</strong> → add to <code>corrections.md</code>, evaluate for <code>memory.md</code>:</p>
+<ul>
+<li>&quot;No, that's not right...&quot;</li>
+<li>&quot;Actually, it should be...&quot;</li>
+<li>&quot;You're wrong about...&quot;</li>
+<li>&quot;I prefer X, not Y&quot;</li>
+<li>&quot;Remember that I always...&quot;</li>
+<li>&quot;I told you before...&quot;</li>
+<li>&quot;Stop doing X&quot;</li>
+<li>&quot;Why do you keep...&quot;</li>
+</ul>
+<p><strong>Preference signals</strong> → add to <code>memory.md</code> if explicit:</p>
+<ul>
+<li>&quot;I like when you...&quot;</li>
+<li>&quot;Always do X for me&quot;</li>
+<li>&quot;Never do Y&quot;</li>
+<li>&quot;My style is...&quot;</li>
+<li>&quot;For [project], use...&quot;</li>
+</ul>
+<p><strong>Pattern candidates</strong> → track, promote after 3x:</p>
+<ul>
+<li>Same instruction repeated 3+ times</li>
+<li>Workflow that works well repeatedly</li>
+<li>User praises specific approach</li>
+</ul>
+<p><strong>Ignore</strong> (don't log):</p>
+<ul>
+<li>One-time instructions (&quot;do X now&quot;)</li>
+<li>Context-specific (&quot;in this file...&quot;)</li>
+<li>Hypotheticals (&quot;what if...&quot;)</li>
+</ul>
+<h4>Self-Reflection</h4>
+<p>After completing significant work, pause and evaluate:</p>
+<ol>
+<li><strong>Did it meet expectations?</strong> — Compare outcome vs intent</li>
+<li><strong>What could be better?</strong> — Identify improvements for next time</li>
+<li><strong>Is this a pattern?</strong> — If yes, log to <code>corrections.md</code></li>
+</ol>
+<p><strong>When to self-reflect:</strong></p>
+<ul>
+<li>After completing a multi-step task</li>
+<li>After receiving feedback (positive or negative)</li>
+<li>After fixing a bug or mistake</li>
+<li>When you notice your output could be better</li>
+</ul>
+<p><strong>Log format:</strong></p>
+<pre><code>CONTEXT: [type of task]
+REFLECTION: [what I noticed]
+LESSON: [what to do differently]
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>CONTEXT: Building Flutter UI
+REFLECTION: Spacing looked off, had to redo
+LESSON: Check visual spacing before showing user
+</code></pre>
+<p>Self-reflection entries follow the same promotion rules: 3x applied successfully → promote to HOT.</p>
+<h4>Quick Queries</h4>
+<table>
+<thead>
+<tr>
+<th>User says</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;What do you know about X?&quot;</td>
+<td>Search all tiers for X</td>
+</tr>
+<tr>
+<td>&quot;What have you learned?&quot;</td>
+<td>Show last 10 from <code>corrections.md</code></td>
+</tr>
+<tr>
+<td>&quot;Show my patterns&quot;</td>
+<td>List <code>memory.md</code> (HOT)</td>
+</tr>
+<tr>
+<td>&quot;Show [project] patterns&quot;</td>
+<td>Load <code>projects/{name}.md</code></td>
+</tr>
+<tr>
+<td>&quot;What's in warm storage?&quot;</td>
+<td>List files in <code>projects/</code> + <code>domains/</code></td>
+</tr>
+<tr>
+<td>&quot;Memory stats&quot;</td>
+<td>Show counts per tier</td>
+</tr>
+<tr>
+<td>&quot;Forget X&quot;</td>
+<td>Remove from all tiers (confirm first)</td>
+</tr>
+<tr>
+<td>&quot;Export memory&quot;</td>
+<td>ZIP all files</td>
+</tr>
+</tbody>
+</table>
+<h4>Memory Stats</h4>
+<p>On &quot;memory stats&quot; request, report:</p>
+<pre><code>📊 Self-Improving Memory
+
+HOT (always loaded):
+  memory.md: X entries
+
+WARM (load on demand):
+  projects/: X files
+  domains/: X files
+
+COLD (archived):
+  archive/: X files
+
+Recent activity (7 days):
+  Corrections logged: X
+  Promotions to HOT: X
+  Demotions to WARM: X
+</code></pre>
+<h4>Common Traps</h4>
+<table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>Why It Fails</th>
+<th>Better Move</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learning from silence</td>
+<td>Creates false rules</td>
+<td>Wait for explicit correction or repeated evidence</td>
+</tr>
+<tr>
+<td>Promoting too fast</td>
+<td>Pollutes HOT memory</td>
+<td>Keep new lessons tentative until repeated</td>
+</tr>
+<tr>
+<td>Reading every namespace</td>
+<td>Wastes context</td>
+<td>Load only HOT plus the smallest matching files</td>
+</tr>
+<tr>
+<td>Compaction by deletion</td>
+<td>Loses trust and history</td>
+<td>Merge, summarize, or demote instead</td>
+</tr>
+</tbody>
+</table>
+<h4>Core Rules</h4>
+<h5>1. Learn from Corrections and Self-Reflection</h5>
+<ul>
+<li>Log when user explicitly corrects you</li>
+<li>Log when you identify improvements in your own work</li>
+<li>Never infer from silence alone</li>
+<li>After 3 identical lessons → ask to confirm as rule</li>
+</ul>
+<h5>2. Tiered Storage</h5>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Location</th>
+<th>Size Limit</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HOT</td>
+<td>memory.md</td>
+<td>≤100 lines</td>
+<td>Always loaded</td>
+</tr>
+<tr>
+<td>WARM</td>
+<td>projects/, domains/</td>
+<td>≤200 lines each</td>
+<td>Load on context match</td>
+</tr>
+<tr>
+<td>COLD</td>
+<td>archive/</td>
+<td>Unlimited</td>
+<td>Load on explicit query</td>
+</tr>
+</tbody>
+</table>
+<h5>3. Automatic Promotion/Demotion</h5>
+<ul>
+<li>Pattern used 3x in 7 days → promote to HOT</li>
+<li>Pattern unused 30 days → demote to WARM</li>
+<li>Pattern unused 90 days → archive to COLD</li>
+<li>Never delete without asking</li>
+</ul>
+<h5>4. Namespace Isolation</h5>
+<ul>
+<li>Project patterns stay in <code>projects/{name}.md</code></li>
+<li>Global preferences in HOT tier (memory.md)</li>
+<li>Domain patterns (code, writing) in <code>domains/</code></li>
+<li>Cross-namespace inheritance: global → domain → project</li>
+</ul>
+<h5>5. Conflict Resolution</h5>
+<p>When patterns contradict:</p>
+<ol>
+<li>Most specific wins (project &gt; domain &gt; global)</li>
+<li>Most recent wins (same level)</li>
+<li>If ambiguous → ask user</li>
+</ol>
+<h5>6. Compaction</h5>
+<p>When file exceeds limit:</p>
+<ol>
+<li>Merge similar corrections into single rule</li>
+<li>Archive unused patterns</li>
+<li>Summarize verbose entries</li>
+<li>Never lose confirmed preferences</li>
+</ol>
+<h5>7. Transparency</h5>
+<ul>
+<li>Every action from memory → cite source: &quot;Using X (from projects/foo.md:12)&quot;</li>
+<li>Weekly digest available: patterns learned, demoted, archived</li>
+<li>Full export on demand: all files as ZIP</li>
+</ul>
+<h5>8. Security Boundaries</h5>
+<p>See <code>boundaries.md</code> — never store credentials, health data, third-party info.</p>
+<h5>9. Graceful Degradation</h5>
+<p>If context limit hit:</p>
+<ol>
+<li>Load only memory.md (HOT)</li>
+<li>Load relevant namespace on demand</li>
+<li>Never fail silently — tell user what's not loaded</li>
+</ol>
+<h4>Scope</h4>
+<p>This skill ONLY:</p>
+<ul>
+<li>Learns from user corrections and self-reflection</li>
+<li>Stores preferences in local files (<code>~/self-improving/</code>)</li>
+<li>Maintains heartbeat state in <code>~/self-improving/heartbeat-state.md</code> when the workspace integrates heartbeat</li>
+<li>Reads its own memory files on activation</li>
+</ul>
+<p>This skill NEVER:</p>
+<ul>
+<li>Accesses calendar, email, or contacts</li>
+<li>Makes network requests</li>
+<li>Reads files outside <code>~/self-improving/</code></li>
+<li>Infers preferences from silence or observation</li>
+<li>Deletes or blindly rewrites self-improving memory during heartbeat cleanup</li>
+<li>Modifies its own SKILL.md</li>
+</ul>
+<h4>Data Storage</h4>
+<p>Local state lives in <code>~/self-improving/</code>:</p>
+<ul>
+<li><code>memory.md</code> for HOT rules and confirmed preferences</li>
+<li><code>corrections.md</code> for explicit corrections and reusable lessons</li>
+<li><code>projects/</code> and <code>domains/</code> for scoped patterns</li>
+<li><code>archive/</code> for decayed or inactive patterns</li>
+<li><code>heartbeat-state.md</code> for recurring maintenance markers</li>
+</ul>
+<h4>Related Skills</h4>
+<p>Install with <code>clawhub install &lt;slug&gt;</code> if user confirms:</p>
+<ul>
+<li><code>memory</code> — Long-term memory patterns for agents</li>
+<li><code>learning</code> — Adaptive teaching and explanation</li>
+<li><code>decide</code> — Auto-learn decision patterns</li>
+<li><code>escalate</code> — Know when to ask vs act autonomously</li>
+</ul>
+<h4>Feedback</h4>
+<ul>
+<li>If useful: <code>clawhub star self-improving</code></li>
+<li>Stay updated: <code>clawhub sync</code></li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

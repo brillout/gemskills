@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather · Gem Skills</title>
+    <meta name="description" content="Use it when: you ask about the current weather or the forecast somewhere. It does: queries wttr.in with curl, and falls back to Open-Meteo&#039;s JSON API by coordinates. You get: an answer in the chat: a one-line summary, a line with humidity and wind, or a full forecast. Needs: curl only, with no API key or account." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Fsteipete">clawhub.ai/steipete</a></p>
+      <h1>weather</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you ask about the current weather or the forecast somewhere</dd></div><div><dt>It does</dt><dd>queries wttr.in with curl, and falls back to Open-Meteo&#39;s JSON API by coordinates</dd></div><div><dt>You get</dt><dd>an answer in the chat: a one-line summary, a line with humidity and wind, or a full forecast</dd></div><div><dt>Needs</dt><dd>curl only, with no API key or account</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A small skill built on two free weather services. wttr.in is the main one: a single curl call returns a one-line summary, a custom line built from codes for condition, temperature, humidity, wind and moon phase, or a full forecast. It takes city names or airport codes, metric or US units, today only or current conditions only, and can save the forecast as a PNG image. Open-Meteo is the fallback for programmatic use: the agent finds the city&#39;s coordinates, then gets JSON with temperature, wind speed and a weather code.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/steipete/weather.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @steipete/weather</code><button type="button" class="copy" data-copy="openclaw skills install @steipete/weather">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/steipete/skills/weather">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Fsteipete">All skills from clawhub.ai/steipete</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>169,956 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div><div><dt>Downloads</dt><dd>254,664 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:personal" data-facet="category" title="Learning and everyday help outside work." href="/gemskills/?tag=category%3Apersonal">category:personal</a></div>
+          <p class="tag-meaning">Learning and everyday help outside work.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="personal" data-facet="topic" href="/gemskills/?tag=personal">personal</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/steipete/skills/weather">ClawHub</a>, version 1.0.0. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: weather
+description: Get current weather and forecasts (no API key required).
+homepage: https://wttr.in/:help
+metadata: {&#34;clawdbot&#34;:{&#34;emoji&#34;:&#34;🌤️&#34;,&#34;requires&#34;:{&#34;bins&#34;:[&#34;curl&#34;]}}}</code></pre></details>
+        <div class="markdown"><h3>Weather</h3>
+<p>Two free services, no API keys needed.</p>
+<h4>wttr.in (primary)</h4>
+<p>Quick one-liner:</p>
+<pre><code class="language-bash">curl -s &quot;wttr.in/London?format=3&quot;
+# Output: London: ⛅️ +8°C
+</code></pre>
+<p>Compact format:</p>
+<pre><code class="language-bash">curl -s &quot;wttr.in/London?format=%l:+%c+%t+%h+%w&quot;
+# Output: London: ⛅️ +8°C 71% ↙5km/h
+</code></pre>
+<p>Full forecast:</p>
+<pre><code class="language-bash">curl -s &quot;wttr.in/London?T&quot;
+</code></pre>
+<p>Format codes: <code>%c</code> condition · <code>%t</code> temp · <code>%h</code> humidity · <code>%w</code> wind · <code>%l</code> location · <code>%m</code> moon</p>
+<p>Tips:</p>
+<ul>
+<li>URL-encode spaces: <code>wttr.in/New+York</code></li>
+<li>Airport codes: <code>wttr.in/JFK</code></li>
+<li>Units: <code>?m</code> (metric) <code>?u</code> (USCS)</li>
+<li>Today only: <code>?1</code> · Current only: <code>?0</code></li>
+<li>PNG: <code>curl -s &quot;wttr.in/Berlin.png&quot; -o /tmp/weather.png</code></li>
+</ul>
+<h4>Open-Meteo (fallback, JSON)</h4>
+<p>Free, no key, good for programmatic use:</p>
+<pre><code class="language-bash">curl -s &quot;https://api.open-meteo.com/v1/forecast?latitude=51.5&amp;longitude=-0.12&amp;current_weather=true&quot;
+</code></pre>
+<p>Find coordinates for a city, then query. Returns JSON with temp, windspeed, weathercode.</p>
+<p>Docs: <a href="https://open-meteo.com/en/docs">https://open-meteo.com/en/docs</a></p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

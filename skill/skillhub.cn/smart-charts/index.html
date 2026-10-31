@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>smart-charts · Gem Skills</title>
+    <meta name="description" content="Turns CSV, Excel or JSON data into interactive ECharts HTML charts." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=skillhub.cn">skillhub.cn</a></p>
+      <h1>smart-charts</h1>
+      <p class="lede">Turns CSV, Excel or JSON data into interactive ECharts HTML charts.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <p class="muted">No install command known for this registry.</p>
+          <p class="links"><a href="/gemskills/?repo=skillhub.cn">All skills from skillhub.cn</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>360,740 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:science" data-facet="category" title="Research reproduction, financial data, charts and diagrams." href="/gemskills/?tag=category%3Ascience">category:science</a></div>
+          <p class="tag-meaning">Research reproduction, financial data, charts and diagrams.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="charts" data-facet="topic" href="/gemskills/?tag=charts">charts</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:python" data-facet="stack" href="/gemskills/?tag=stack%3Apython">stack:python</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Language</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="lang:zh" data-facet="lang" title="The SKILL.md is written in Chinese." href="/gemskills/?tag=lang%3Azh">lang:zh</a></div>
+          <p class="tag-meaning">The SKILL.md is written in Chinese.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From Tencent SkillHub, version 8.4.0. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: smart-charts
+version: 8.4.0
+display_name: 智能图表
+display_name_en: Smart Charts
+
+description: &#34;将数据文件（CSV/TSV/TXT/XLSX/XLS/JSON）转化为独立交互式 ECharts HTML 图表——32 类图表、3 套主题，全离线无需 CDN。出图前可先取数据画像（--profile：每列 dtype/基数/缺失/样本/统计、实体粒度、候选洞察信号、疑似非数据行），让 agent 在用户没说想看什么时自己读懂数据并决定出什么图——哪列是 ID、哪列是维度、出什么图，全部由 agent 从画像的客观事实自行判断，技能不代笔；每张图内置事实卡（plot_stats + data_preview），其数值是解读时唯一可引用的数字。本技能负责出图与算事实，不产出书面报告或叙事文档。触发：用户提供或指向表格数据文件并要求出图；提到「画图/出图/可视化/生成图表/generate a chart/make a graph」；想把表格渲染成交互式 HTML 图表。不触发：要的是书面报告、叙事分析或幻灯片；没有数据文件；需要后端的仪表盘；图片/音频/视频等非表格内容。&#34;
+description_en: &#34;Turn a data file (CSV/TSV/TXT/XLSX/XLS/JSON) into standalone interactive ECharts HTML charts - 32 chart types, 3 themes, fully offline with no CDN. A data profile (--profile: per-column dtype, cardinality, missingness, samples, statistics, entity grain, candidate insight signals, suspected non-data rows) lets the agent read the data itself and decide what to plot when the user has no stated intent - the agent decides which column is an ID, a dimension, or a measure, and which chart to draw, from the profile&#39;s objective facts; each chart ships with an embedded fact sheet (plot_stats plus data_preview) whose numbers are the only values an agent may quote in its caption. This skill produces charts and facts, not written reports or narrative documents. TRIGGER: user supplies or points to a tabular data file and wants a chart; asks to 画图/出图/可视化/生成图表/generate a chart/make a graph; wants a table rendered as an interactive HTML chart. DO-NOT-TRIGGER: wants a written report, narrative analysis or slide deck; no data file is supplied; dashboards needing a backend; images, audio, video or other non-tabular content.&#34;
+license: MIT
+compatibility: &#34;Python 3.11+; requires pandas&#62;=3.0.1,&#60;4, numpy&#62;=2.4.3,&#60;3, openpyxl&#62;=3.1.5,&#60;4, xlrd&#62;=2.0.1,&#60;3; no network access needed (ECharts JS bundled offline); install with: pip install -r requirements.txt; verify with: python scripts/cli.py --doctor&#34;
+metadata:
+  author: smart-charts
+  input_formats: [&#34;csv&#34;, &#34;tsv&#34;, &#34;txt&#34;, &#34;xlsx&#34;, &#34;xls&#34;, &#34;json&#34;]
+  output_format: html
+  sandbox: &#34;LLM-generated transform code runs in a restricted sandbox (keyword blacklist + AST whitelist + safe builtins); file and network I/O are blocked at the attribute and module-path level. No user confirmation required.&#34;</code></pre></details>
+        <div class="markdown"><h3>Smart Charts</h3>
+<blockquote>
+<p>将数据文件（CSV/Excel/JSON）转化为交互式 ECharts HTML。支持 32 种图表类型、3 套主题预设（default/classic/dark）、多文件合并、LLM 数据转换代码（沙箱执行）。
+CLI 全参数、flags 语义、多图/多文件细节、能力边界、错误码表、交付解读完整规范、FAQ 见 <a>REFERENCE.md</a>。</p>
+</blockquote>
+<hr>
+<h4>Activation Triggers</h4>
+<p><strong>TRIGGER</strong></p>
+<ul>
+<li>用户提供 / 指向一个表格数据文件，要求出图、可视化、生成图表</li>
+<li>用户提到「画图」「出图」「生成图表」「数据可视化」「chart」「visualization」</li>
+</ul>
+<p><strong>DO-NOT-TRIGGER</strong>（命中任一条请改推其他技能，不要硬接）</p>
+<ul>
+<li>要的是带结论叙事的报告/周报/复盘/汇报文档 → 用报告类技能（本技能出图 + 可溯源事实 + 候选洞察信号，不写叙事文档）</li>
+<li>没有数据文件（纯文字描述、口头想法）</li>
+<li>需要后端的 dashboard、图片/音频/视频等非表格内容</li>
+<li>地图渲染：内置中国省级（<code>china</code>，含港澳台）与世界国家级（<code>world</code>，英文国名精确匹配）；市级/区县级等更细区域需用户自备 GeoJSON 文件（<code>--geo-path</code>），本技能不代为下载</li>
+</ul>
+<hr>
+<h4>工作流（先画像，后选型）</h4>
+<p><code>chart_type</code> 是 CLI 必填参数，而选型的依据（基数、分布、粒度、实体 vs 明细）本来只在选完型之后的 <code>plot_stats</code> 里才有——先决策、后取证会让选型变成瞎猜。所以按用户有没有说清意图分两条路：</p>
+<p><strong>A. 用户意图明确</strong>（&quot;对比各地区销售额&quot;&quot;看月度趋势&quot;&quot;占比构成&quot;）
+→ 直接按选型表挑图型 + 轴 + 聚合口径，出图。<strong>不要</strong>为了走流程去跑 profile。若数据撑不起该意图（要趋势却没有时间列、要占比却全是明细行），如实说明并给出可行替代（例如把&quot;趋势&quot;换成按类别对比），不要硬画。</p>
+<p><strong>B. 用户只给了数据，没说想看什么</strong>（最高频）→ 两条命令：</p>
+<ol>
+<li><code>python {skill_base}/scripts/cli.py &lt;file&gt; --profile</code>（一条命令；只读不渲染不落盘），拿到：每列的 dtype/基数/缺失率/样本/统计、实体粒度（<code>grain</code>）、候选洞察信号（<code>signals</code>）、疑似非数据行（<code>row_quality</code>）。</li>
+<li><strong>由你决定</strong>出哪 1~3 张图：读 <code>columns</code> 的 dtype/样本/基数自行判断哪列是 ID、哪列是维度、哪列是度量，结合 <code>signals</code> 挑出值得讲的发现，据此定图型 + 轴 + 聚合口径，直接出图（<code>--transform-code</code> 聚合/透视 + <code>--title</code> 结论 + <code>--annotation</code> 解读）。交付时说明&quot;为什么是这几张&quot;。</li>
+</ol>
+<blockquote>
+<p><code>signals</code> 里最值得优先出图的是 <code>divergent_category</code>（某类别逆势变化）与 <code>trend</code>：它们最容易被整体均值掩盖，也正是&quot;用户自己没想到但一看就懂&quot;的发现。</p>
+</blockquote>
+<blockquote>
+<p><strong>MUST NOT</strong> 把选型责任推回给用户（&quot;你想看趋势、对比还是占比？&quot;）——哪列是 ID、哪列是维度、出什么图，是 agent 从画像客观事实自行判断的活，不是菜单让用户挑。</p>
+</blockquote>
+<hr>
+<h4>契约（8 条，MUST）</h4>
+<ol>
+<li>列名解析后会被规范化：转小写、特殊字符→<code>_</code>（如 <code>总学时</code>→<code>总_学时</code>），中文保留；<code>--x-axis</code>/<code>--y-axis</code>/transform 必须引用规范化后的列名</li>
+<li>transform 沙箱：可用变量仅 <code>df</code>/<code>pd</code>/<code>np</code>（<code>np.select</code>/<code>np.where</code> 可用），支持多语句（<code>;</code> 或换行分隔），必须产出名为 <code>result</code> 的 DataFrame；禁止 import/open/try/类定义（黑名单 + AST 白名单强制校验，违规返回带 <code>suggestion</code> 的错误）</li>
+<li>pie/bar/treemap/funnel 等按「1 个分类列 + 1 个数值列」读数据（文档里的 <code>name</code>/<code>value</code> 指<strong>角色</strong>，不是要求列名叫这个——保留原列名可读性好，也不必多写一次 rename）；分类频次图先用 transform 聚合成这两列，再用 <code>--x-axis &lt;分类列&gt; --y-axis &lt;数值列&gt;</code> 指定</li>
+<li>成功时 stdout：<code>success</code>/<code>html_path</code>/<code>chart_type</code>/<code>title</code>/<code>source_rows</code>/<code>plotted_rows</code>/<code>unique_entities</code>/<code>data_rows</code>/<code>data_preview</code>（绘图数据前 10 行，口径校对用）/<code>annotation_source</code>/<code>plot_stats</code>（绘图数据完整统计摘要，写解读用；32 类全覆盖）；<code>assumptions</code>（CLI 代做的自动选择）与 <code>advisories</code>（口径提醒）仅在非空时出现——<strong>没有该字段表示&quot;本次无自动选择/无提醒&quot;</strong>，不是缺失</li>
+<li><strong>校对口径直接读 stdout 的 <code>data_preview</code> + <code>data_rows</code>，不要打开 HTML 去搜数据</strong>——<code>data_preview</code> 是渲染帧中 <strong>x/y 列的前 10 行</strong>（与渲染同源同帧，但不含未参与绘图的辅助列）；<code>data_rows</code> 是实际绘图行数。需要核对 transform 产出的辅助列时，用 transform 内 <code>print(df.columns)</code>/<code>print(df.head())</code>（走 stderr、不污染 stdout）或另行 <code>--dry-run</code></li>
+<li><strong>聚合口径对账读 <code>source_rows</code> / <code>plotted_rows</code> / <code>unique_entities</code></strong>：<code>source_rows</code>=transform 前原始行数，<code>plotted_rows</code>=实际绘图行数，<code>unique_entities</code>=去重实体数（有 <code>--label-col</code> 取该列，否则取 x 列）。<strong>注意</strong>：<code>plotted_rows == source_rows</code> 只说明&quot;没有聚合&quot;，而散点/箱线等以行为单位的图本来就不该聚合——判据要配合图型语义使用，别把它当通用错误信号。真正的机械判据是 <code>advisories</code> 里的「疑似未聚合」：x 轴取值数 &lt; 行数且该图型要求&quot;一个 x 对应一个 y&quot;，此时 <code>plot_stats</code> 的 max/min/mean 是行级而非该维度整体</li>
+<li><strong>意图不明确时 MUST 先跑 <code>--profile</code></strong>（<code>python {skill_base}/scripts/cli.py &lt;file&gt; --profile</code>，不需要图表类型）。它返回每列的 dtype/基数/缺失率/样本/统计、<code>grain</code>、<code>signals</code>、<code>row_quality</code>——这些是<strong>客观事实</strong>，是选型的依据；哪列是 ID、哪列是维度、出什么图，由你从这些事实自行判断，profile 不代笔（不产出 role 归类或图型建议）</li>
+<li><strong>交付前 MUST 读 <code>assumptions</code> + <code>advisories</code></strong>：<code>assumptions</code> 是 CLI 替你做的自动选择（x/y 自动取值等），<code>advisories</code> 是&quot;生成成功但你可能想要另一种口径&quot;的提醒（疑似未聚合、饼图类别过多、数值列部分降级…）。两者都要在交付语里呼应——用户不同意的假设，一句话就能重生成</li>
+</ol>
+<hr>
+<h4>黄金示例（模板，复制改列名）</h4>
+<p><strong>1 分类频次 → pie/bar</strong>（最高频场景）：</p>
+<pre><code class="language-bash">python {skill_base}/scripts/cli.py data.xlsx bar --title &quot;标题&quot; --output-dir ./out \
+  --x-axis name --y-axis value \
+  --transform-code &quot;result = df['类别列'].fillna('未标注').value_counts().rename_axis('name').reset_index(name='value')&quot;
+</code></pre>
+<p>（gauge/liquid 想出&quot;达成率&quot;时必须补 <code>--target &lt;目标值&gt;</code>；缺它 <code>plot_stats.achievement</code> 为 <code>null</code>。环境自查用 <code>python {skill_base}/scripts/cli.py --doctor</code>。）</p>
+<p><strong>2 多图批量 + 防转义坑</strong>（≥2 张图 MUST 批量；transform 含中文/引号时不要直接在 shell 传 <code>--charts</code>，写进 JSON 文件用 <code>--charts-file</code>）：</p>
+<pre><code class="language-bash">python {skill_base}/scripts/cli.py data.xlsx --sheet &quot;Sheet1&quot; \
+  --charts-file charts.json --output-dir ./out
+</code></pre>
+<p><code>charts.json</code> 每项：<code>type</code>（必填）+ <code>title</code>/<code>x_axis</code>/<code>y_axis</code>（字符串或数组）/<code>transform_code</code>（单图级）/<code>label_col</code>/<code>color_by</code>/<code>annotation</code>。配置由 <strong>agent 自己写</strong>——根据 <code>--profile</code> 的客观事实（dtype/基数/样本/signals）决定出什么图、配什么轴。</p>
+<p><strong>3 分组聚合 → bar</strong>：</p>
+<pre><code class="language-bash">python {skill_base}/scripts/cli.py data.xlsx bar --title &quot;标题&quot; --output-dir ./out \
+  --x-axis 分组列 --y-axis 数值列 \
+  --transform-code &quot;result = df.groupby('分组列')['数值列'].sum().reset_index()&quot;
+</code></pre>
+<p>（<code>reset_index()</code> 后列名仍是「分组列/数值列」，轴直接引用即可；改成 <code>rename_axis('name')+reset_index(name='value')</code> 也可以，但轴要跟着改成 <code>name</code>/<code>value</code>——二者必须一致。）</p>
+<p><strong>口径陷阱</strong>：聚合前想清楚「按数据行 vs 按去重实体」——统计实体属性（如每门课程的学时结构）先 <code>drop_duplicates</code>；生成后对照 <code>data_preview</code> 检查（若各行 value 之和等于原始行数而非实体数，就是忘了去重）。</p>
+<hr>
+<h4>Hard Constraints (MUST follow)</h4>
+<ol>
+<li><strong>MUST 走 CLI 工作流</strong>（<code>data_parser.py</code> → <code>cli.py</code>），不要自写脚本替代。</li>
+<li><strong>脏表头 MUST 用 CLI flags</strong>（<code>--skiprows N</code> / <code>--header-row N</code> / <code>--drop-rows 0,1</code> / <code>--sheet</code>，语义见 REFERENCE.md），N 由实际数据决定（先无 flags 跑一次看原始布局），不得拍脑袋固定。<strong>注</strong>：<code>--skiprows N</code> 与 <code>--header-row N</code> 是同一行为（都是&quot;第 N 行作表头、其上行丢弃&quot;），二选一即可，不要把 N 想成两个不同的决策；推荐统一用 <code>--header-row</code>。
+<ul>
+<li><strong>两行表头 + 分值行/子表头行</strong>（<code>--header-row N</code> 只能选「哪一行作列名」，无法既保留主表头又合并子表头）走<strong>三段式</strong>：① 跑 <code>--profile</code>，读 <code>row_quality.suspicious_non_data_rows</code>（或 <code>advisories</code>）定位残留的非数据行位置；② 用 <code>--drop-rows 0,1</code>（位置由 profile 给出，不要拍脑袋）或 <code>--transform-code &quot;result = df.drop(index=[0,1])&quot;</code> 丢行；③ <strong>重跑 <code>--profile</code> 确认干净</strong>（<code>rows</code> 变少、<code>row_quality</code> 零命中）再出图。</li>
+</ul>
+</li>
+<li><strong>列重命名/重塑/聚合 MUST 用 <code>--transform-code</code></strong>。解析层只解决&quot;哪行是表头&quot;，其余清洗归 transform。</li>
+<li><strong>轴名/系列名要改显示名，MUST 用 <code>--x-name</code>/<code>--y-name</code>/<code>--series-name(s)</code>，不要靠改列名</strong>。改列名会同时改轴名和系列名（两者都绑定列名），且原本写死默认文本的图（heatmap「热力图」/gauge「仪表盘」/sankey「桑基图」等）改列名也改不了系列名。显示名才是唯一干净的入口：<code>--x-name</code> 改 x 轴、<code>--y-name</code> 改 y 轴、<code>--series-name</code>（单）或 <code>--series-names</code>（多，按可见系列顺序）改系列名。</li>
+<li><strong>MUST report unsupported scenarios</strong>: CLI 确实不支持的（如嵌套 JSON 超过 1 层），先向用户说明并给建议，不得静默绕过。</li>
+<li><strong>MUST NOT</strong> 在生成代码中硬编码绝对路径；运行时解析路径。</li>
+<li><strong>不要主动传 <code>--lang</code></strong>；CLI 自动跟随数据语言。仅当用户明确要求某种语言时才传。</li>
+<li><strong>MUST 附解读交付</strong>：交付图表时必须附由 LLM 写的文字解读，并通过 <code>--annotation</code> 注入 HTML（见下方「交付解读规范」），不得只交付裸图。成功输出里的 <code>annotation_source</code> 会标明解读来源：<code>'user'</code>=你传的，<code>'default'</code>=代码用模板填充的（此时输出还会挂 advisory）——<strong>交付前确认它是 <code>user'</code></strong>。</li>
+<li><strong>MUST 显式传 <code>--output-dir</code></strong>，指向用户可见的目录（如 <code>./out</code>、桌面目录、当前工作目录下的显式子目录）。默认值 <code>./smart_charts_output</code> 会随当前工作目录落盘，用户不易发现产物。</li>
+<li><strong><code>{skill_base}</code> = 技能根目录</strong>（含 <code>SKILL.md</code>）。若当前宿主不替换该占位符，先定位一次再改成绝对路径使用：<code>SKILL_DIR=$(dirname &quot;$(find &quot;$HOME&quot; -maxdepth 6 -type f -path &quot;*smart-charts/scripts/cli.py&quot; | head -1)&quot;)/..</code>，后续用 <code>$SKILL_DIR/scripts/cli.py</code>。不要凭印象拼路径。</li>
+</ol>
+<hr>
+<h4>默认策略（不向用户确认）</h4>
+<p>生成图表是廉价可逆动作（重生成 1-10s，零外部副作用）。图表类型、多文件合并策略、取值口径均由 agent 内部决定，不打断用户——<strong>依据</strong>是：用户明确意图（A 分支）或 <code>--profile</code> 给出的客观事实（dtype/基数/样本/signals，B 分支）。</p>
+<p><strong>事后审阅代替事前确认</strong>：交付语中显式列出本次关键假设（如&quot;选了 line，因 month 是时间序列列&quot;&quot;多文件按列名完全相同走纵向拼接，已注入 source_file 列&quot;&quot;销量按金额口径&quot;）。用户不同意任一假设，可一句话要求换口径/换类型/换合并方式重生成。</p>
+<p><strong>唯一必须的用户介入点</strong>：见 Exit Criteria 的&quot;仍失败&quot;分支。</p>
+<hr>
+<h4>Exit Criteria（机械可判定）</h4>
+<ul>
+<li>✅ <strong>成功</strong>: stdout 为 <code>{&quot;chart&quot;: {&quot;success&quot;: true, ...}}</code>（多图模式为 <code>{&quot;charts&quot;: [...], &quot;summary&quot;: ...}</code>），且 <code>html_path</code> 指向的文件存在且非空 → 用同一 stdout 的 <code>data_preview</code>/<code>data_rows</code>/<code>plotted_rows</code>/<code>unique_entities</code> 校对聚合口径（按行 vs 按去重实体），确认无误后附文字解读交付。</li>
+<li>ℹ️ <code>--dry-run</code> 不算交付：<code>html_path</code> 为 null、不落盘，仅用于试错列名或试聚合脚本。<strong>写解读不需要先跑它</strong>——正式输出已带 <code>plot_stats</code>。</li>
+<li>❌ <strong>失败</strong>: <code>success: false</code> 或 exit code 1 → 读 <code>error.details.suggestion</code>，修正后重试；<strong>同一环节最多重试 2 次</strong>。</li>
+<li>🛑 <strong>仍失败（唯一必须的用户介入点）</strong>: 把 <code>code_name</code>、<code>suggestion</code>、已尝试的修复如实报告用户并给出建议，等待用户决策。<strong>不得</strong>静默改用自写脚本兜底（违反约束 1/4）。</li>
+</ul>
+<hr>
+<h4>Chart Types 选型表</h4>
+<p>选型前核对 Required Format；不匹配则用 transform 代码适配。</p>
+<blockquote>
+<p><strong>量纲提示</strong>：heatmap / boxplot / radar 等多列图表，若各列量纲差异大（如满分 10 与满分 100 混合），需先用 transform 代码归一化，否则小量纲列会被大量纲列主导。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Best For</th>
+<th>Trigger Keywords</th>
+<th style="text-align:center">y_axis</th>
+<th>Required DataFrame Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>line</code></td>
+<td>Time-series trends</td>
+<td>trend, change, over time, 趋势, 变化, 走势</td>
+<td style="text-align:center">1~N</td>
+<td>1 category/time + 1~N numeric</td>
+</tr>
+<tr>
+<td><code>bar</code></td>
+<td>Category comparison</td>
+<td>compare, rank, difference, 对比, 比较, 排名, 差异</td>
+<td style="text-align:center">1~N</td>
+<td>1 category + 1~N numeric</td>
+</tr>
+<tr>
+<td><code>area</code></td>
+<td>Cumulative change</td>
+<td>cumulative, change, 累计, 变化</td>
+<td style="text-align:center">1~N</td>
+<td>1 category/time + 1~N numeric</td>
+</tr>
+<tr>
+<td><code>pie</code></td>
+<td>Composition/share</td>
+<td>share, composition, proportion, 占比, 构成, 比例</td>
+<td style="text-align:center">1</td>
+<td>1 name + 1 value</td>
+</tr>
+<tr>
+<td><code>scatter</code></td>
+<td>Correlation</td>
+<td>correlation, relationship, scatter, 相关, 关系, 散点</td>
+<td style="text-align:center">1</td>
+<td>2 numeric, or 1 category + 1 numeric</td>
+</tr>
+<tr>
+<td><code>radar</code></td>
+<td>Multi-dimension comparison</td>
+<td>multi-dimension, comprehensive, radar, 多维, 综合, 雷达</td>
+<td style="text-align:center">N</td>
+<td>1 indicator + N numeric</td>
+</tr>
+<tr>
+<td><code>heatmap</code></td>
+<td>Density/cross-tab</td>
+<td>density, cross, matrix, heatmap, 密度, 交叉, 矩阵, 热力</td>
+<td style="text-align:center">1~N</td>
+<td>1 category + 1~N numeric（每列是一&quot;列&quot;矩阵；交叉表先用 pivot_table 摊成列）</td>
+</tr>
+<tr>
+<td><code>treemap</code></td>
+<td>Hierarchical proportion</td>
+<td>hierarchy, proportion, nested, 层级, 占比, 嵌套</td>
+<td style="text-align:center">1</td>
+<td>1 name + 1 value</td>
+</tr>
+<tr>
+<td><code>graph</code></td>
+<td>Entity relationships</td>
+<td>relationship, network, topology, 关系, 网络, 拓扑</td>
+<td style="text-align:center">special</td>
+<td>source + target (+ value)</td>
+</tr>
+<tr>
+<td><code>boxplot</code></td>
+<td>Distribution/outliers</td>
+<td>distribution, outlier, quartile, 分布, 离群, 四分位</td>
+<td style="text-align:center">N</td>
+<td>N numeric</td>
+</tr>
+<tr>
+<td><code>waterfall</code></td>
+<td>Incremental change</td>
+<td>increment, change, waterfall, 增量, 变化, 瀑布</td>
+<td style="text-align:center">1</td>
+<td>1 category + 1 numeric (increments)</td>
+</tr>
+<tr>
+<td><code>gauge</code></td>
+<td>KPI progress</td>
+<td>progress, kpi, achievement, 进度, KPI, 达成</td>
+<td style="text-align:center">1</td>
+<td>1 numeric (mean used)</td>
+</tr>
+<tr>
+<td><code>sankey</code></td>
+<td>Flow transfer</td>
+<td>flow, transfer, sankey, 流向, 流量, 转移</td>
+<td style="text-align:center">special</td>
+<td>source + target + value</td>
+</tr>
+<tr>
+<td><code>funnel</code></td>
+<td>Conversion rate</td>
+<td>conversion, funnel, churn, 转化, 漏斗, 流失</td>
+<td style="text-align:center">1</td>
+<td>1 name + 1 value</td>
+</tr>
+<tr>
+<td><code>sunburst</code></td>
+<td>Single-level proportion</td>
+<td>proportion, sunburst, 占比, 比例</td>
+<td style="text-align:center">1</td>
+<td>1 name + 1 value</td>
+</tr>
+<tr>
+<td><code>wordcloud</code></td>
+<td>Frequency/keywords</td>
+<td>word frequency, keywords, text, 词频, 关键词, 词云</td>
+<td style="text-align:center">1</td>
+<td>1 name + 1 value</td>
+</tr>
+<tr>
+<td><code>histogram</code></td>
+<td>Distribution shape</td>
+<td>distribution, histogram, 分布, 直方图</td>
+<td style="text-align:center">1</td>
+<td>1 numeric column（<code>--x-axis</code> 或 <code>--y-axis</code> 均可，数值型 <code>--x-axis</code> 优先）</td>
+</tr>
+<tr>
+<td><code>stacked_bar</code></td>
+<td>Composition over categories</td>
+<td>composition, stacked, 堆叠, 构成</td>
+<td style="text-align:center">1~N</td>
+<td>1 category + 1~N numeric</td>
+</tr>
+<tr>
+<td><code>bubble</code></td>
+<td>3-variable correlation</td>
+<td>bubble, 3-variable, 气泡, 三变量</td>
+<td style="text-align:center">2</td>
+<td>2 numeric + 1 size</td>
+</tr>
+<tr>
+<td><code>pareto</code></td>
+<td>80/20 analysis</td>
+<td>pareto, 80/20, 帕累托, 二八</td>
+<td style="text-align:center">1</td>
+<td>1 category + 1 numeric</td>
+</tr>
+<tr>
+<td><code>combo</code></td>
+<td>Dual-axis comparison</td>
+<td>dual-axis, combo, 双轴, 组合</td>
+<td style="text-align:center">1~N</td>
+<td>1 category + 1 bar + 1~N line</td>
+</tr>
+<tr>
+<td><code>venn</code></td>
+<td>Set overlap (2~3 sets)</td>
+<td>overlap, intersection, venn, 交集, 重叠, 韦恩</td>
+<td style="text-align:center">1</td>
+<td>1 name + 1 value；交集行命名为 <code>A∩B</code>（分隔符：∩ &amp; + × 与）</td>
+</tr>
+<tr>
+<td><code>mindmap</code></td>
+<td>Hierarchical ideas</td>
+<td>mind map, outline, 思维导图, 脑图, 大纲</td>
+<td style="text-align:center">1</td>
+<td>1 parent + 1 child（分类列）</td>
+</tr>
+<tr>
+<td><code>orgchart</code></td>
+<td>Organization structure</td>
+<td>org chart, hierarchy, 组织架构, 汇报关系, 层级</td>
+<td style="text-align:center">1</td>
+<td>1 parent + 1 child（分类列）</td>
+</tr>
+<tr>
+<td><code>liquid</code></td>
+<td>Percentage/progress</td>
+<td>liquid, progress, percent, 水波, 进度, 百分比, 完成率</td>
+<td style="text-align:center">1</td>
+<td>1 numeric (mean used)</td>
+</tr>
+<tr>
+<td><code>spreadsheet</code></td>
+<td>Raw table / pivot display</td>
+<td>table, detail, spreadsheet, 表格, 明细, 清单</td>
+<td style="text-align:center">N</td>
+<td>任意列（x/y 可选地筛选显示列；聚合用 transform）</td>
+</tr>
+<tr>
+<td><code>map</code></td>
+<td>Geo choropleth</td>
+<td>map, region, province, geo, 地图, 地区, 省份, 地域</td>
+<td style="text-align:center">1</td>
+<td>1 region name + 1 numeric（默认中国省级；<code>--geo</code>/<code>--geo-path</code> 换任意区域）</td>
+</tr>
+<tr>
+<td><code>lines</code></td>
+<td>Route/migration on map</td>
+<td>route, migration, flow map, 航线, 迁徙, 流向地图</td>
+<td style="text-align:center">special</td>
+<td>source + target (+ value)（默认省级名称；<code>--geo</code>/<code>--geo-path</code> 换任意区域）</td>
+</tr>
+<tr>
+<td><code>effect_scatter</code></td>
+<td>Animated scatter highlights</td>
+<td>ripple, highlight, scatter animation, 涟漪散点, 动态散点</td>
+<td style="text-align:center">1</td>
+<td>2 numeric, or 1 category + 1 numeric</td>
+</tr>
+<tr>
+<td><code>calendar</code></td>
+<td>Daily heatmap (GitHub-style)</td>
+<td>calendar heatmap, daily activity, 日历热力, 每日活跃</td>
+<td style="text-align:center">1</td>
+<td>1 date + 1 numeric</td>
+</tr>
+<tr>
+<td><code>pictorial_bar</code></td>
+<td>Symbolic/iconic bars</td>
+<td>pictorial, icon bar, symbol bar, 象形柱, 图标柱</td>
+<td style="text-align:center">1~N</td>
+<td>1 category + 1~N numeric</td>
+</tr>
+<tr>
+<td><code>theme_river</code></td>
+<td>Theme evolution over time</td>
+<td>theme river, event evolution, 主题河流, 事件演化</td>
+<td style="text-align:center">1~N</td>
+<td>1 date + 1~N numeric</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong><code>gauge</code>/<code>liquid</code> 要出&quot;达成率&quot;必须传 <code>--target &lt;目标值&gt;</code></strong>：<code>achievement</code> = mean ÷ target。不传时该字段为 <code>null</code>（自动推断的量程不是业务目标，比值无业务含义），且输出会挂 advisory。</p>
+</blockquote>
+<p><strong>y_axis cardinality key</strong>: <code>1</code> = only first column used; <code>1~N</code> = each column becomes a series; <code>N</code> = multiple columns expected; <code>2</code> = exactly 2 numeric columns required; <code>special</code> = 关系图（graph/sankey/lines）由 <code>--x-axis</code>（source）+ <code>--y-axis</code>（target，可选 value）<strong>显式指定</strong>，不做列名词表自动检测。scatter/bubble/boxplot 的身份列由 <code>--label-col</code> 显式指定，不传则不显示身份（tooltip 只显示坐标值）。</p>
+<hr>
+<h4>Transform Code Contract</h4>
+<p>契约（由沙箱强制，违反会收到带 <code>suggestion</code> 的错误，按提示修正即可）：</p>
+<ul>
+<li>可用变量只有 <code>df</code>, <code>pd</code>, <code>np</code>；必须产出名为 <code>result</code> 的 <code>pd.DataFrame</code></li>
+<li>不要原地修改 <code>df</code>（用 <code>df.copy()</code> 或链式操作）</li>
+<li>原始数据已匹配目标格式时，不传 <code>--transform-code</code></li>
+</ul>
+<p><strong>Common transform patterns:</strong></p>
+<ul>
+<li>Long→multi-series: <code>result = df.pivot_table(index='&lt;time&gt;', columns='&lt;category&gt;', values='&lt;value&gt;', aggfunc='sum').reset_index()</code></li>
+<li>Long→pie (filter): <code>result = df[df['metric']=='revenue'][['category','value']].rename(columns={'category':'name'})</code></li>
+<li>Wide→long: <code>result = df.melt(id_vars=['date'], var_name='name', value_name='value')</code></li>
+<li>Aggregate→bar: <code>result = df.groupby('&lt;category&gt;')['&lt;value&gt;'].sum().reset_index()</code></li>
+<li>Rename columns: <code>result = df.rename(columns={'来源':'source','去向':'target','金额':'value'})</code></li>
+<li>Compute delta→waterfall: <code>tmp = df.copy(); tmp['delta'] = tmp['profit'].diff().fillna(tmp['profit'].iloc[0]); result = tmp[['month','delta']]</code></li>
+<li>Rename messy/uninformative column names (after <code>--header-row</code> leaves columns like <code>score_a</code>, <code>unnamed_3</code>): <code>result = df.rename(columns={'unnamed_0':'student_id','unnamed_1':'name','score_a':'homework_score','score_b':'exam_score'})</code></li>
+<li>Forward-fill merged cells (when only the first row of a group is populated): <code>result = df.ffill()</code></li>
+<li>Drop non-data rows (位置由 <code>--profile</code> 的 <code>row_quality.suspicious_non_data_rows</code> 给出，不要拍脑袋；等价于出图前用 <code>--drop-rows</code> 落盘，但 transform 里更直观): <code>result = df.drop(index=[0,1])</code></li>
+<li>Combine sub-headers into a single column name (when <code>--header-row N</code> flattens one row but loses context): <code>result = df.rename(columns={c: f'{c}_score' for c in df.columns if c not in ['student_id','name']})</code></li>
+</ul>
+<blockquote>
+<p><strong>核对清洗结果的常规动作</strong>：transform 里的 <code>print(df.head())</code> / <code>print(df.columns)</code> 会被重定向到 <strong>stderr</strong>，不污染 stdout 的 JSON 契约——所以可以直接在 transform 里 <code>print</code> 检查丢行/聚合/重命名后的结果，把它当成清洗后的常规核对手段（不必只在报错时才用）。</p>
+</blockquote>
+<hr>
+<h4>交付解读规范（Delivery Annotation）</h4>
+<p>交付每张图表时，必须附一段<strong>由 LLM 写的文字解读</strong>（不是模板文字），再用 <code>--annotation</code> 注入 HTML（图表下方「图表说明」区块）。</p>
+<p><strong>解读要回答的是「这份数据里最值得注意的发现是什么」，不是复述图上有什么。</strong> 技能负责算事实，判断哪个发现值得说、并把它说清楚，是 agent 的活——所以解读的结构是「结论 → 证据 → 边界」，不是「图是什么 → 最大值是多少」。</p>
+<p><strong>可引用的事实源（三处）</strong>：</p>
+<ul>
+<li><code>profile.signals</code> —— 出图前的候选洞察（趋势方向与涨跌幅、头部集中度、逆势类别、离群值、强相关对）</li>
+<li><code>plot_stats</code> / <code>data_preview</code> —— 该图<strong>实际绘制数据</strong>的统计（最终口径以此为准）</li>
+<li><code>assumptions</code> / <code>advisories</code> —— CLI 替你做的自动选择与口径提醒</li>
+</ul>
+<p><strong>标准流程</strong>：</p>
+<ol>
+<li>意图不明确时先 <code>--profile</code>，从 <code>signals</code> 里挑出要讲的发现，据此定图型与聚合口径（见「工作流」B 分支）。</li>
+<li>带 <code>--annotation &quot;解读文字&quot;</code> 正式生成一次。<strong>正式输出本身已包含 <code>plot_stats</code> 与 <code>data_preview</code></strong>，无需先跑 <code>--dry-run</code> 取数。</li>
+<li>读该次 <code>plot_stats</code> 校对自己要讲的数字；<strong>解读写完再回看</strong>：若发现需要换口径/换图，才重新生成第二次——重生成是廉价可逆动作（1~10s）。</li>
+</ol>
+<blockquote>
+<p><code>--dry-run</code> 只在&quot;想先看数、明确不落盘&quot;时才用（如试错列名、试聚合脚本）。把它当成写解读的前置必选步骤会让调用量翻倍且毫无收益。</p>
+</blockquote>
+<p><strong>解读最小结构（2~4 句，结论先行）</strong>：</p>
+<ol>
+<li><strong>发现</strong>：一句话给结论。写「华南 4 月起销售额腰斩，其余三地同期仍增长」，不写「本图展示各地区月度销售额」。</li>
+<li><strong>证据</strong>：1~2 个具体数值 + 对应标签 + 出处（来自 <code>plot_stats</code> 还是 <code>profile.signals</code>）。</li>
+<li><strong>边界</strong>：一句话交代口径（聚合方式、覆盖范围、样本量），并呼应 <code>assumptions</code>/<code>advisories</code> 里的假设——用户不同意任一假设，一句话就能重生成。</li>
+</ol>
+<p><strong>标题写结论，副标题补口径</strong>：<code>--title</code> 用结论式短语（主谓宾+数值，如「营收同比增长 23%」），数字直接取自 <code>plot_stats</code>，不用名词短语（「各月营收」）；时间范围/筛选条件/数据来源等上下文放 <code>--subtitle</code>，不塞进标题。</p>
+<p><strong>硬边界</strong>：</p>
+<ul>
+<li>解读的每个数字都必须能在 <code>plot_stats</code>/<code>data_preview</code>/<code>profile.signals</code> 里找到出处——不得凭印象编造；<code>x_cardinality</code> 是去重个数，按 x 列语义表述（x 是「姓名」则说「59 名学生」而非「59 个类别」）。</li>
+<li>只陈述证据能支撑的事实；&quot;为什么/怎么办&quot;可结合上下文发挥，但必须标注为推测，不能混进事实。</li>
+<li><strong><code>advisories</code> 出现「疑似未聚合」时，先按提示聚合再写解读</strong>——否则你引用的极值/均值是行级值，不是该维度的整体，结论会错（实测：月×地区明细画折线，<code>plot_stats</code> 报的&quot;6月最高 156&quot;其实只是华东一地）。</li>
+</ul>
+<p>完整规范与示例见 REFERENCE.md。</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

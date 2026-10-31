@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>momentic-test · Gem Skills</title>
+    <meta name="description" content="Use it when: your project tests its web app with Momentic and you want the agent to write, run or fix those tests. It does: edits the test YAML for known changes, or steps through the live app over Momentic&#039;s MCP tools when the UI is unfamiliar. You get: new or updated .test.yaml and .module.yaml files, checked by running the changed steps. Needs: a project set up with Momentic, its CLI and its MCP tools. Asks first: before running steps that submit, buy, delete or send, editing a shared module, or running a long full test." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=momentic-ai%2Fskills">momentic-ai/skills</a></p>
+      <h1>momentic-test</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>your project tests its web app with Momentic and you want the agent to write, run or fix those tests</dd></div><div><dt>It does</dt><dd>edits the test YAML for known changes, or steps through the live app over Momentic&#39;s MCP tools when the UI is unfamiliar</dd></div><div><dt>You get</dt><dd>new or updated .test.yaml and .module.yaml files, checked by running the changed steps</dd></div><div><dt>Needs</dt><dd>a project set up with Momentic, its CLI and its MCP tools</dd></div><div><dt>Asks first</dt><dd>before running steps that submit, buy, delete or send, editing a shared module, or running a long full test</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Momentic is an end-to-end testing tool built on Playwright: test steps are plain-language instructions, such as clicking the &#34;Sign up&#34; button, that AI turns into actions in a real browser. For a known change to a test in the current v2 format, which is written to be edited by hand, it edits the YAML, lints it and runs the affected steps. For an old v1 file, which it never edits directly, an unfamiliar screen or a new flow, it opens a browser session, tries a few steps at a time up to a stable point such as &#34;logged in&#34;, saves the ones that work into the test, and reruns them. It prefers describing elements to CSS selectors, few assertions, AI Actions for new tests (a single step that states a goal, which the agent plays out and Momentic caches for replay), and shared modules for flows of four or more steps. It avoids fixed sleeps, clicking through browser JavaScript, and weakening a test to hide a broken app. After about three failed attempts at the same problem, it stops and asks you. Unlike general Playwright testing skills, it only applies to projects that use Momentic.</p>
+      <p class="muted">Summarizes <a href="https://github.com/momentic-ai/skills/tree/44c78ed54c4dd0595ee3f3566386c97c5d0c77a6/skills/momentic-test">the skill at 44c78ed</a>. Its SKILL.md has changed by 43 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/momentic-ai/skills --skill momentic-test</code><button type="button" class="copy" data-copy="npx skills add https://github.com/momentic-ai/skills --skill momentic-test">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/momentic-ai/skills/momentic-test">skills.sh page</a> · <a href="https://github.com/momentic-ai/skills/tree/HEAD/skills/momentic-test">Source on GitHub</a> · <a href="/gemskills/?repo=momentic-ai%2Fskills">All skills from momentic-ai/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>52,864 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>14 <span class="muted">momentic-ai/skills</span></dd></div><div><dt>First seen</dt><dd>Apr 8, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">2K</div>
+      <div class="stat-delta">+17% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 1,688; week to Aug 10: 2,079; week to Aug 17: 2,464; week to Aug 24: 2,446; week to Aug 31: 1,888; week to Sep 7: 1,841; week to Sep 14: 2,659; week to Sep 21: 1,972. Use the left and right arrow keys to read each week."
+        data-values="1688,2079,2464,2446,1888,1841,2659,1972" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,22.1 38.6,15.6 71.1,9.2 103.7,9.5 136.3,18.8 168.9,19.5 201.4,6.0 234.0,17.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="17.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>1,688</td></tr><tr><td>Aug 10</td><td>2,079</td></tr><tr><td>Aug 17</td><td>2,464</td></tr><tr><td>Aug 24</td><td>2,446</td></tr><tr><td>Aug 31</td><td>1,888</td></tr><tr><td>Sep 7</td><td>1,841</td></tr><tr><td>Sep 14</td><td>2,659</td></tr><tr><td>Sep 21</td><td>1,972</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a><a class="tag" data-tag="needs:browser" data-facet="needs" title="Drives a real Chromium or Chrome browser." href="/gemskills/?tag=needs%3Abrowser">needs:browser</a><a class="tag" data-tag="needs:mcp" data-facet="needs" title="Needs an MCP server connected." href="/gemskills/?tag=needs%3Amcp">needs:mcp</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p><p class="tag-meaning">Drives a real Chromium or Chrome browser.</p><p class="tag-meaning">Needs an MCP server connected.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="testing" data-facet="topic" href="/gemskills/?tag=testing">testing</a><a class="tag" data-tag="browser-automation" data-facet="topic" href="/gemskills/?tag=browser-automation">browser-automation</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:momentic" data-facet="stack" href="/gemskills/?tag=stack%3Amomentic">stack:momentic</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/momentic-ai/skills/blob/d9f6435fe94ae877d4673e320b8e50f68a84a49b/skills/momentic-test/SKILL.md">momentic-ai/skills at d9f6435</a>. Checked daily, last changed Oct 23, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: momentic-test
+description: Create, run, and maintain Momentic browser E2E tests and modules stored as *.test.yaml and *.module.yaml files.</code></pre></details>
+        <div class="markdown"><h3>Momentic model</h3>
+<p>Momentic turns structured natural language into browser automation using forked
+Playwright, CDP, and custom agents. Interactive steps resolve natural-language
+targets, assertions can use multimodal models, and AI actions can complete
+broader goals.</p>
+<h3>Project files and formats</h3>
+<p>Tests use <code>*.test.yaml</code>; reusable modules use <code>*.module.yaml</code>. Test IDs live in
+the test file's <code>id</code> field. Check <code>momentic.config.yaml</code> and test-level metadata
+before assuming project defaults apply.</p>
+<p><code>fileType: momentic/test/v2</code> and <code>fileType: momentic/module/v2</code> identify v2
+files. Treat missing or different <code>fileType</code> as deprecated v1. Never edit v1
+YAML directly; persist changes through <code>momentic_test_splice_steps</code>.</p>
+<p>A v2 test selects its environment with <code>defaultEnv</code>, and <code>--env &lt;name&gt;</code>
+overrides it. There is no fallback to the only environment in the config. The
+base URL comes from <code>--url-override</code>, then the test's own <code>url</code>, then
+<code>env.BASE_URL</code>, so a test that sets <code>url</code> keeps it in every environment. With
+no base URL the run fails: &quot;Cannot run test with no base URL and no BASE_URL
+variable defined in its environment&quot;.</p>
+<p>V2 can reference modules, JavaScript, and auth state with relative paths. Paths
+resolve from the YAML file containing the reference. Use <code>./...</code> or <code>../...</code>,
+never absolute paths or <code>~</code>. Before moving, renaming, or deleting a referenced
+file, grep its path and update or remove every reference. Do not add internal or
+generated fields to v2 YAML.</p>
+<h3>Choose the workflow</h3>
+<p>Prefer these compact workflows unless the user requests something else:</p>
+<ul>
+<li><strong>Known v2 change:</strong> inspect nearby patterns -&gt; edit YAML -&gt; lint when syntax
+or references are uncertain -&gt; reload or restart if validating -&gt; run the
+relevant range. This is fastest and produces the clearest reviewable diff.</li>
+<li><strong>V1, unknown UI, or interactive validation:</strong> start MCP session -&gt; run any
+prerequisites -&gt; preview a logical checkpoint -&gt; splice it -&gt; validate the
+saved range -&gt; terminate. This grounds each edit in the live app without
+repeatedly running the whole test.</li>
+<li><strong>New test:</strong> create with <code>momentic_test_create</code> -&gt; author a known v2 sequence
+in one YAML edit, or use MCP step-by-step when discovery is needed.
+<code>momentic_session_start</code> only opens an existing test.</li>
+</ul>
+<p>Use MCP as the default interactive interface: it returns structured results,
+screenshots, artifacts, step refs, and pollable execution. Preview and run tools
+wait 30 seconds by default, then return a <code>stepRunnerId</code> while work continues.
+Leave <code>timeoutSeconds</code> unset for most calls, especially single preset steps.
+Set it below 30 seconds only when the coding agent's tool-call timeout is
+shorter. Raise it only to wait longer within a larger tool-call timeout; poll
+returned handles with <code>momentic_poll_runner</code>.</p>
+<p>Polling has a separate <code>timeoutSeconds</code> (default 0, maximum 30). Pass the
+returned <code>stepRunnerId</code> and use a nonzero wait within the coding agent's
+tool-call timeout instead of repeatedly polling without a wait.</p>
+<h3>Before editing</h3>
+<p>Confirm the test goal, user-visible success criteria, start environment, auth,
+and env requirements. Ask before previewing or running any step or AI Action
+that may submit, purchase, delete, send, create, or cause another non-idempotent
+side effect. If approved, execute it at most once. Also ask before editing a
+shared module, restarting a long flow, or running an expensive full test.</p>
+<h3>Authoring rules</h3>
+<ul>
+<li>Prefer natural-language targets. Use selectors or coordinates only when the
+AI cannot see the target or the user requires selector-level precision.</li>
+<li>Use native Momentic steps for browser actions and checks. See <strong>JavaScript</strong>
+under <strong>Test execution behavior</strong> for the exceptions.</li>
+<li>Do not add initial navigation; a session starts at the test's base URL.</li>
+<li>Keep assertions minimal and user-driven. After navigation or a material state
+change, validate the contract before dependent actions.</li>
+<li>Prefer <code>waitForUrl</code> for URL contracts, page/element checks for stable text or
+structure, and AI assertions for semantic visual state.</li>
+<li>Prefer AI Action V3 for new tests. Use granular steps when checkpoints need
+individual control; for rapid sequences, see <strong>Time-sensitive interactions</strong>.</li>
+<li>Do not add optional or default-valued fields unless correctness requires them.</li>
+<li>Keep changes narrow. Preserve unrelated values, comments, ordering, and step
+style. Do not weaken a test to hide a broken app or service.</li>
+<li>Preserve the existing <code>before</code> / <code>steps</code> / <code>after</code> structure unless the test
+intent requires a change.</li>
+</ul>
+<h4>AI Action V3</h4>
+<p>AI Action V3 takes a natural-language goal and determines the browser steps.</p>
+<ul>
+<li><strong>Cached by default:</strong> save and replay a successful flow, self-healing failed
+replay steps. Use for repeatable flows.</li>
+<li><strong>Uncached:</strong> run the agent fresh each time. Set <code>cache: false</code> in v2 or use
+<code>--disable-cache</code> with <code>AI_ACTION_DYNAMIC</code>. Prefer this for chats, agentic
+workflows, exploratory tests, and other dynamic or nondeterministic behavior.</li>
+</ul>
+<p>Treat “make sure you can do X” as goal-based testing unless the user specifies a
+route. Use granular steps when controls, intermediate assertions,
+deterministic replay, or a risky side effect needs individual control. Keep
+existing granular tests granular unless asked to change strategy.</p>
+<h5>Time-sensitive interactions</h5>
+<p>For rapid sequences such as back-to-back sends or interrupting during startup,
+prefer one focused AI Action with explicit ordering and instructions not to wait
+between interactions. Separate targeting steps can outlast the window being
+tested. Keep prerequisite setup and stable final checks outside that action;
+pair it with video-backed run assertions for transient UI states.</p>
+<p>AI Action does not guarantee timing. Inspect action timestamps and recorded
+evidence to verify the intended state was actually exercised. A successful final
+result, or an assertion that infers a transient state without observing it, is
+not proof of coverage. If the exact race window matters and cannot be reliably
+exercised, use deterministic tests or controlled test fixtures rather than
+claiming coverage from a passing end state.</p>
+<h3>Test execution behavior</h3>
+<h4>Cache and memory</h4>
+<p>Momentic caches resolved selectors, text, coordinates, and other metadata so
+most runs avoid repeated AI calls. AI assertions may also reuse past-result
+memory. Stale cache or memory can explain a fast wrong-element match or a
+repeated borderline verdict.</p>
+<p>Cache is scoped by git metadata, including branch. Protected branches read cache
+but do not write it unless <code>--save-cache</code> is used or <code>CI</code> is set.</p>
+<ul>
+<li>Change a granular step description when its intent changes. In general, do not
+add <code>DANGEROUS_FORCE_DYNAMIC</code> or <code>--disable-cache</code> to locator steps; built-in
+cache validation handles changing content. Disabling the cache is not a
+substitute for clarifying a vague description or fixing a timing or race
+condition. Add it only when told to, or when a cached locator already caused a
+failure that neither fix resolves.</li>
+<li>Carry a successful preview's <code>CacheId</code> into the exact step being spliced.</li>
+<li>Reword an assertion when old memory no longer matches its intended condition.</li>
+<li>For AI Action V3 cache behavior, see <strong>AI Action V3</strong> above.</li>
+</ul>
+<h4>Readiness and timing</h4>
+<p>Smart waiting runs before targeting steps and defaults to five seconds. Within
+that window, do not add sleeps. For longer or semantic readiness, wait for a URL
+or use a page, element, or AI check that describes the required positive state.
+Checks retry until their timeout; increase that timeout instead of polling the
+UI with JavaScript. See the
+<a href="https://momentic.ai/docs/configuration/browser">browser configuration</a> for
+project-wide timing settings.</p>
+<h4>Test context</h4>
+<p>Each run has a test-scoped <code>env</code> that persists across steps and modules.</p>
+<ul>
+<li>In v2, save returned values with <code>saveAs</code>; in MCP step strings, use
+<code>--env-key</code>. Use <code>setVariable(name, value)</code> in JavaScript when saving several
+values.</li>
+<li>Use <code>env.NAME</code> in JavaScript and module input expressions. Use
+<code>{{ env.NAME }}</code> in string fields, but not inside JavaScript source.</li>
+<li>Module inputs are JavaScript fragments stored as strings. Quote literal
+strings and use <code>env.X</code> for variables.</li>
+</ul>
+<h4>JavaScript</h4>
+<p>Use native click, type, hover, wait, and check steps for browser behavior. They
+retain Momentic's smart waiting, cache, traces, and retries. Do not use browser
+JavaScript to click or type, and do not poll the UI when a check can retry until
+its timeout.</p>
+<p>Use Node JavaScript for test setup, data generation, APIs, databases,
+OTP/email/SMS, and Momentic helpers. Use Browser JavaScript to access
+<code>window</code>, <code>document</code>, client-side state, or inject page scripts when no native
+step expresses the operation. Keep one-off code short and follow nearby project
+conventions for reusable v2 scripts. See the
+<a href="https://momentic.ai/docs/integrations/javascript">JavaScript guide</a> for runtime
+APIs and timeout details.</p>
+<p>Playwright <code>evaluate</code> callbacks run in the browser and cannot close over Node
+values. Pass values as callback arguments or use <code>customWindow._momentic</code>.</p>
+<h3>Working with v2 YAML</h3>
+<p>V2 is human-editable. Tests use <code>before</code>, <code>steps</code>, and <code>after</code>; modules use
+<code>steps</code>. Each step has one command key, with options nested beneath it. Durations
+are milliseconds, and step IDs are not stored in YAML.</p>
+<p>Make the smallest edit and match nearby syntax. If syntax is unclear, consult
+the generated v2 format reference at
+<code>infra/scripts/v2-json-schema/build/v2-format-reference.md</code> when working in the
+Momentic monorepo, or <a href="https://static.momentic.ai/v2-format-reference.md">https://static.momentic.ai/v2-format-reference.md</a> in an
+installed skill. Run <code>npx momentic lint</code> when
+schema or file-reference risk warrants it; <code>momentic app</code> and <code>momentic run</code>
+also lint automatically.</p>
+<p>After a disk edit, reload the active MCP test if the tool is available;
+otherwise terminate and restart the session. <code>momentic_test_get</code> reads persisted
+state but does not refresh an active session unless its description says so.</p>
+<h3>MCP browser workflow</h3>
+<p>Use the tool descriptions and the Step Authoring Guide returned by session start
+for current arguments and step syntax. Do not duplicate that reference material
+from this skill.</p>
+<h4>Start and fetch context</h4>
+<p>Do not call context tools as session-start boilerplate. Use them on demand and
+follow their descriptions, especially when they offer filters or return large
+project data.</p>
+<ul>
+<li>If the test ID is known, start <code>momentic_session_start</code> by itself. Its Test
+Content provides the active steps and runnable IDs.</li>
+<li>Use <code>momentic_get_artifacts</code> only to discover project paths, tests, modules, or
+environments that are not already known. Avoid redundant refreshes.</li>
+<li>Use <code>momentic_test_get</code> to inspect persisted state before starting, or to read
+a different test. Prefer active session and splice responses afterward.</li>
+<li>Use filtered <code>momentic_get_environment_variables</code> only when a step needs env
+data that is not already known.</li>
+<li>Use <code>momentic_module_recommend</code> -&gt; <code>momentic_module_get</code> only when evaluating
+reuse; recommendation invokes AI and is not required to start a session.</li>
+</ul>
+<p>V2 YAML has no runnable step IDs. Use IDs returned by session start or later
+splice responses.</p>
+<p>Only one browser operation may run per session. Do not issue concurrent preview,
+run, state, or splice operations against the same session.</p>
+<h4>Preview -&gt; splice -&gt; validate</h4>
+<ol>
+<li>For mid-test work, run through the preceding step once and keep the same
+session. This avoids authoring against the wrong page state.</li>
+<li>Preview forward in logical checkpoints such as login complete, form ready,
+or submission complete. Checkpoints make the browser state reusable and keep
+persistence calls reviewable.</li>
+<li>Use <code>momentic_preview_steps</code> for adjacent steps. It supports the same preset,
+AI Action, and module steps as <code>momentic_preview_step</code>.</li>
+<li>Treat preview and run screenshots as the primary result. Request browser
+state only when the screenshot or locator result is insufficient; request it
+again once if the page may still be settling.</li>
+<li>Splice the successful checkpoint. Attach each returned <code>CacheId</code> only to its
+exact step; cacheless steps are normal. Read the splice response immediately
+for the active step refs.</li>
+<li>Run the next dependent saved step or range. If any preview or run returns a
+<code>stepRunnerId</code>, poll it instead of starting another browser operation.</li>
+<li>Before finishing, when safe, run the smallest saved range covering the
+prerequisites, changed step, and next dependent contract. Reset first when
+accumulated state could mask a failure.</li>
+<li>Terminate the session when finished.</li>
+</ol>
+<p>Batch obvious low-risk fields. Preview uncertain locators individually. For
+submit, purchase, delete, send, or other non-idempotent actions, preview setup,
+splice the checkpoint, then run the approved saved action at most once.</p>
+<p>Do not reset between routine edits. For nested steps, use the parent chain
+returned by the active session or splice response.</p>
+<h3>Modules</h3>
+<p>For a logical flow of roughly four or more reusable steps, check
+<code>momentic_module_recommend</code> -&gt; <code>momentic_module_get</code> -&gt; reuse or inline. Reuse
+reduces duplicated setup and keeps tests focused on their unique contract.</p>
+<p>Modules cannot contain modules. Ask before changing a shared module. Respect its
+declared parameters, defaults, and enum values; module inputs are JavaScript
+fragments, not <code>{{ }}</code> templates.</p>
+<h3>Troubleshooting</h3>
+<h4>Page state and timing</h4>
+<ul>
+<li>Wrong or stale page: inspect the latest screenshot or session state; retry
+state capture once if the page is settling.</li>
+<li>Slow readiness at one checkpoint: add the narrowest page, element, or AI check,
+or increase the existing check's timeout. Checks already retry; do not poll
+with JavaScript.</li>
+<li>Broadly slow targeting across the project: consider increasing
+<code>browser.smartWaitingTimeoutMs</code>. Do not use it to mask one slow assertion.</li>
+<li>Long jobs or uploads: check for a stable positive result with an appropriate
+timeout, not a sleep.</li>
+<li>Drifted session: rerun the required saved range with <code>resetSession: true</code>.</li>
+</ul>
+<h4>Browser and host resource pressure</h4>
+<p>Retry or reset once after a browser, CDP, page-load, screenshot, or snapshot
+timeout. If it persists or affects several browser tools, stop changing the
+test. Do not hide resource pressure with waits, weaker assertions, cache flags,
+or repeated browser calls.</p>
+<p>Signals include an unresponsive page, document-tree or page-execution timeout,
+empty HTML snapshot, browser or inspector crash, and <code>data-momentic-id</code> timeout.
+A page-load timeout alone may instead indicate the app or network.</p>
+<p>Inspect CPU, memory, and top processes with available host tools. Check the
+browser, Momentic, app server, compiler/bundler, database, and unrelated
+workloads. For completed runs, correlate with
+<code>attempts/&lt;n&gt;/assets/resource-usage.ndjson</code> when present.</p>
+<p>Report the error, step, URL, retry result, resource pressure, largest consumers,
+and supported cause. If evidence cannot distinguish the host, app, services, or
+Momentic, say so.</p>
+<h4>Targeting and assertions</h4>
+<ul>
+<li>Element absent: debug the prerequisite. Element visible but not found: use a
+stable description based on visible text, role, and nearby context.</li>
+<li>Fast wrong-element match: consider stale cache, then correct the description.</li>
+<li>In normal mode, errors that an element is hidden, disabled, detached, covered,
+moving, or outside the viewport originate in Playwright's actionability
+enforcement, which Momentic surfaces; they are not failures in Momentic's
+locator AI. Fix the page state or prerequisite. Use force only when bypassing
+actionability is part of the intended behavior.</li>
+<li>For controls that intentionally cannot satisfy Playwright actionability, such
+as some rich-text editors, <code>browser.visualActions: true</code> uses coordinate-based
+actions instead. It avoids those checks but also gives up their stability
+guarantees. See <a href="https://momentic.ai/docs/configuration/browser#browser-visualactions">Visual actions</a>.</li>
+<li>Use quoted text only when the exact text must appear; otherwise describe
+meaning. Make assertions concrete about region, object, count, or state.</li>
+<li>Use <code>assertVisually</code> when the condition is visual and fully inside the
+current viewport, e.g. an event block sitting in the 11:30–12:00 row of a
+calendar grid, or a detail inside a video frame or canvas drawing. Scroll the
+target into view if necessary before calling it; otherwise use <code>assert</code>.</li>
+<li>Assert stable final state with step assertions. For brief toasts or
+change-over-time comparisons, use video-backed
+<a href="https://momentic.ai/docs/core-concepts/writing-assertions#run-assertions">run assertions</a>.</li>
+</ul>
+<h4>Format and data</h4>
+<ul>
+<li>V2 load failure: lint the file and check relative references.</li>
+<li>Module failure: re-check parameters, defaults, enums, and input expressions.</li>
+<li>Missing env value: verify the producing save and <code>env.X</code> versus
+<code>{{ env.X }}</code> at the consumer.</li>
+<li>JavaScript failure: verify Node versus Browser context.</li>
+</ul>
+<p>After about three attempts at the same failure, stop and ask the user for
+direction.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

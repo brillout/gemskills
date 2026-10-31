@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wayfinder · Gem Skills</title>
+    <meta name="description" content="Use it when: an effort is too big and unclear for one session, like a new project or a huge feature. It does: lists the open decisions as tickets on your issue tracker, then settles one ticket per session. You get: a parent issue recording every decision made, ready to turn into a spec: decisions, not code. Needs: an issue tracker set up by setup-matt-pocock-skills, or it falls back to local Markdown files. Unlike grill-with-docs: which sharpens an idea in one interview, it spreads the decisions over many sessions. Runs: only when you call it." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>wayfinder</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>an effort is too big and unclear for one session, like a new project or a huge feature</dd></div><div><dt>It does</dt><dd>lists the open decisions as tickets on your issue tracker, then settles one ticket per session</dd></div><div><dt>You get</dt><dd>a parent issue recording every decision made, ready to turn into a spec: decisions, not code</dd></div><div><dt>Needs</dt><dd>an issue tracker set up by setup-matt-pocock-skills, or it falls back to local Markdown files</dd></div><div><dt>Unlike grill-with-docs</dt><dd>which sharpens an idea in one interview, it spreads the decisions over many sessions</dd></div><div><dt>Runs</dt><dd>only when you call it</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 10 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/prototype/">prototype</a> · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/to-spec/">to-spec</a></p>
+    <p class="note">Only works inside its bundle: Resolves its decision tickets by loading grilling, domain-modeling, research and prototype, on the tracker that setup-matt-pocock-skills configures (local Markdown files without it). Install <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The first session asks you what the end point is: a spec, a decision, or a change such as a data migration. Then it questions you across the whole effort to find the decisions still open. It creates one parent issue as the map, listing the end point, decisions so far, questions still too vague to ticket, and what&#39;s out of scope. Each question sharp enough to state becomes a child ticket, sized for one session, linked by what blocks what, and typed: research (reading docs or APIs, done by subagents right away), prototype (something rough to react to), grilling (an interview with you) or task (manual work a decision waits on). Each later session takes the first unblocked ticket, assigns it to you so parallel sessions skip it, and resolves it, then posts the answer, closes the ticket, adds a line to the map, and turns questions that have become clear into new tickets. When nothing is left to decide, it stops; to-spec, from the same bundle, turns the result into a buildable spec.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/wayfinder">the skill at 5beb35b</a>. Its SKILL.md has changed by 5 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill wayfinder</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill wayfinder">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/wayfinder">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/wayfinder">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>543,187 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Jul 1, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">37.6K</div>
+      <div class="stat-delta">-20% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 47,117; week to Aug 10: 60,412; week to Aug 17: 48,729; week to Aug 24: 52,979; week to Aug 31: 47,738; week to Sep 7: 45,905; week to Sep 14: 40,683; week to Sep 21: 37,626. Use the left and right arrow keys to read each week."
+        data-values="47117,60412,48729,52979,47738,45905,40683,37626" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,15.7 38.6,6.0 71.1,14.5 103.7,11.4 136.3,15.2 168.9,16.6 201.4,20.4 234.0,22.6" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="22.6" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>47,117</td></tr><tr><td>Aug 10</td><td>60,412</td></tr><tr><td>Aug 17</td><td>48,729</td></tr><tr><td>Aug 24</td><td>52,979</td></tr><tr><td>Aug 31</td><td>47,738</td></tr><tr><td>Sep 7</td><td>45,905</td></tr><tr><td>Sep 14</td><td>40,683</td></tr><tr><td>Sep 21</td><td>37,626</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:planning" data-facet="category" title="Make the agent question you and write the plan down before it writes code." href="/gemskills/?tag=category%3Aplanning">category:planning</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Make the agent question you and write the plan down before it writes code.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:issue-tracker" data-facet="needs" title="Reads or writes an issue tracker, GitHub Issues by default." href="/gemskills/?tag=needs%3Aissue-tracker">needs:issue-tracker</a><a class="tag" data-tag="needs:subagents" data-facet="needs" title="Relies on the agent being able to spawn subagents." href="/gemskills/?tag=needs%3Asubagents">needs:subagents</a></div>
+          <p class="tag-meaning">Reads or writes an issue tracker, GitHub Issues by default.</p><p class="tag-meaning">Relies on the agent being able to spawn subagents.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="planning" data-facet="topic" href="/gemskills/?tag=planning">planning</a><a class="tag" data-tag="issue-tracking" data-facet="topic" href="/gemskills/?tag=issue-tracking">issue-tracking</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/a496f5513d4a4cf889bc48e189e579f4b0bdf6aa/skills/engineering/wayfinder/SKILL.md">mattpocock/skills at a496f55</a>. Checked daily, last changed Oct 30, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: wayfinder
+description: Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><p>A loose idea has arrived, too big for one agent session, and wrapped in fog: the way from here to the <strong>destination</strong> isn't visible yet. Wayfinding is about finding that way, not charging at the destination. This skill charts the way as a <strong>shared map</strong> on the repo's issue tracker, then works its <strong>decision tickets</strong> (questions whose resolution is a decision, not slices of a build to execute) one at a time until the route is clear.</p>
+<p>The destination varies per effort, and naming it is the first act of charting: it shapes every ticket. It might be a spec to hand off and iterate on, a decision to lock before planning starts, or a change made in place like a data-structure migration. The map is domain-agnostic: engineering work, course content, whatever fits the shape.</p>
+<h4>Plan, don't do</h4>
+<p>Wayfinder is <strong>planning</strong> by default: each ticket resolves a decision, and the map is done when the way is clear, with nothing left to decide before someone goes and does the thing. The pull to just do the work is usually the signal you've reached the edge of the map and it's time to hand off. An effort can override this in its <strong>Notes</strong>, carrying execution into the map itself, but absent that, produce decisions, not deliverables.</p>
+<h4>Refer by name</h4>
+<p>Every map and ticket is an issue, so it has a <strong>name</strong>: its title. In everything the human reads (narration, the map's Decisions-so-far), refer to it by that name, never by a bare id, number, or slug. A wall of <code>#42, #43, #44</code> is illegible; names read at a glance. The id and URL don't vanish; a name wraps its link, but they ride <em>inside</em> the name, never stand in for it.</p>
+<h4>The Map</h4>
+<p>The map is a single issue on this repo's issue tracker, labelled <code>wayfinder:map</code>, the canonical artifact. Its tickets are child issues of the map.</p>
+<p>The map is an <strong>index</strong>, not a store. It lists the decisions made and points at the tickets that hold their detail; a decision lives in exactly one place, its ticket, so the map never restates it, only gists it and links.</p>
+<p><strong>Where the map, its child tickets, blocking, and frontier queries physically live is tracker-specific.</strong> The issue tracker should have been provided to you. If not, tell the user to run <code>/setup-matt-pocock-skills</code>. Consult the tracker doc's &quot;Wayfinding operations&quot; section for how <em>this</em> repo expresses them. If no tracker has been provided, default to the local-markdown tracker.</p>
+<h5>The map body</h5>
+<p>The whole map at low resolution, loaded once per session. Open tickets are <strong>not</strong> listed: they are open child issues, found by query.</p>
+<pre><code class="language-markdown">## Destination
+
+&lt;what reaching the end of this map looks like: the spec, decision, or change this effort is finding its way to. One or two lines; every session orients to it before choosing a ticket.&gt;
+
+## Notes
+
+&lt;domain; skills every session should consult; standing preferences for this effort&gt;
+
+## Decisions so far
+
+&lt;!-- the index: one line per closed ticket, enough to judge relevance, then zoom the link for the detail the ticket holds --&gt;
+
+- [&lt;closed ticket title&gt;](link): &lt;one-line gist of the answer&gt;
+
+## Not yet specified
+
+&lt;!-- see &quot;Fog of war&quot;: in-scope fog you can't ticket yet; graduates as the frontier advances --&gt;
+
+## Out of scope
+
+&lt;!-- see &quot;Out of scope&quot;: work ruled beyond the destination; closed, never graduates --&gt;
+</code></pre>
+<h5>Tickets</h5>
+<p>Each ticket is a <strong>child issue</strong> of the map; the tracker's issue id is its identity. Its body is the question, sized to one 100K token agent session:</p>
+<pre><code class="language-markdown">## Question
+
+&lt;the decision or investigation this ticket resolves&gt;
+</code></pre>
+<p>Each ticket carries a <code>wayfinder:&lt;type&gt;</code> label, one of <code>research</code>, <code>prototype</code>, <code>grilling</code>, <code>task</code> (see <a href="#ticket-types">Ticket Types</a>). <code>wayfinder:</code> labels are the only labels a map and its tickets carry, never a triage label like <code>ready-for-agent</code>: they are decisions, not implementation work.</p>
+<p>A session <strong>claims</strong> a ticket by assigning it to the dev driving the map, <strong>first</strong>, before any work, so concurrent sessions skip it. That assignee <em>is</em> the claim: an open, unassigned ticket is unclaimed.</p>
+<p>Blocking uses the tracker's <strong>native</strong> dependency relationship: essential because it renders the frontier <em>visually</em> in the tracker's own UI, so the human sees what's takeable without opening the map. Only a tracker that lacks native blocking falls back to a body convention. A ticket is <strong>unblocked</strong> when every ticket blocking it is closed; the <strong>frontier</strong> is the open, unblocked, unclaimed children, the edge of the known.</p>
+<p>The answer isn't part of the body; it's recorded on resolution (see <a href="#work-through-the-map">Work through the map</a>). Assets created while resolving a ticket are linked from the issue, not pasted in.</p>
+<h4>Ticket Types</h4>
+<p>Every ticket is either <strong>HITL</strong> (human in the loop, worked <em>with</em> a human who speaks for themselves) or <strong>AFK</strong>, driven by the agent alone. A HITL ticket only resolves through that live exchange; the agent never stands in for the human's side of it (a grilling agent that answers its own questions has broken this).</p>
+<ul>
+<li><strong>Research</strong> (AFK): Reading documentation, third-party APIs, or local resources like knowledge bases to surface a fact a decision waits on. Resolved by a subagent that calls the Skill tool with &quot;research&quot;. Use when knowledge outside the current working directory is required.</li>
+<li><strong>Prototype</strong> (HITL): Raise the fidelity of the discussion by making a cheap, rough, concrete artifact to react to (an outline, a rough take, a stub, or UI/logic code) by calling the Skill tool with &quot;prototype&quot;. Links the prototype as an asset. Use when &quot;how should it look&quot; or &quot;how should it behave&quot; is the key question.</li>
+<li><strong>Grilling</strong> (HITL): Conversation. The default case. Always call the Skill tool twice, for &quot;grilling&quot; and &quot;domain-modeling&quot;.</li>
+<li><strong>Task</strong> (HITL or AFK): Manual work that must happen before a <em>decision</em> can be made: nothing to decide, prototype, or research, but the discussion is blocked until it's done. Signing up for a service so its API can be judged, provisioning access, moving data so its shape can be seen. This is the one type that <em>does</em> rather than decides, and it earns its place by unblocking a decision, not by delivering the destination. The agent drives it alone where it can (AFK); otherwise it hands the human a precise checklist (HITL). Resolved when the work is done; the answer records what was done and any resulting facts (credentials location, new URLs, row counts) later tickets depend on.</li>
+</ul>
+<h4>Fog of war</h4>
+<p>The map is <em>deliberately</em> incomplete: don't chart what you can't yet see. Beyond the live tickets lies the <strong>fog of war</strong>: the dim view of decisions and investigations you can tell are coming but can't yet pin down, because they hang on questions still open. Resolving a ticket clears the fog ahead of it, graduating whatever's now specifiable into fresh tickets, one at a time, until the way to the destination is clear and no tickets remain.</p>
+<p>The map's <strong>Not yet specified</strong> section is where that dim view is written down: the suspected question, the area to revisit later. It's the undiscovered frontier <em>toward</em> the destination: everything here is in scope, just not sharp enough to ticket. Write as loosely or as fully as the view allows; it doubles as a signpost for collaborators reading where the effort is headed.</p>
+<p><strong>Fog or ticket?</strong> The test is whether you can state the question precisely now, <em>not</em> whether you can answer it now.</p>
+<ul>
+<li><strong>Ticket when</strong> the question is already sharp, even if it's blocked and you can't act on it yet.</li>
+<li><strong>Not yet specified when</strong> you can't yet phrase it that sharply. Don't pre-slice the fog into ticket-sized pieces: it's coarser than a ticket, and one patch may graduate into several tickets, or none, once the frontier reaches it.</li>
+</ul>
+<p><strong>Not yet specified</strong> excludes what's already decided (Decisions so far), what's already a live ticket, and what's out of scope (the next section).</p>
+<h4>Out of scope</h4>
+<p>Fog only ever gathers <em>toward</em> the destination. The destination fixes the scope, so work beyond it is <strong>out of scope</strong>: it isn't fog, and it doesn't belong in <strong>Not yet specified</strong>. It gets its own <strong>Out of scope</strong> section on the map: work you've consciously ruled out of <em>this</em> effort. Scope, not sharpness, lands it here.</p>
+<p>Out-of-scope work never graduates (the frontier stops at the destination), so it returns only if the destination is redrawn, and then as a fresh effort, not a resumption.</p>
+<p>Ruling something out of scope is a scoping act, not a step on the route. When a ticket that already exists turns out to sit past the destination (mis-scoped in while charting, or exposed by a resolution), <strong>close it</strong> (a closed ticket is unambiguously off the frontier) and leave one line in the <strong>Out of scope</strong> section: the gist plus why it's out of scope, linking the closed ticket. It stays out of <strong>Decisions so far</strong>, which records the route actually walked; a scope boundary isn't a step on it.</p>
+<h4>Invocation</h4>
+<p>Two modes. Either way, <strong>never resolve more than one ticket per session</strong>, with the exception of research tickets.</p>
+<h5>Chart the map</h5>
+<p>User invokes with a loose idea.</p>
+<ol>
+<li><strong>Name the destination.</strong> Call the Skill tool twice, for &quot;grilling&quot; and &quot;domain-modeling&quot;, to pin down what this map is finding its way to: the spec, decision, or change. The destination fixes the scope, so it's settled first.</li>
+<li><strong>Map the frontier.</strong> Grill again, <strong>breadth-first</strong> this time: fan out across the whole space rather than deep on any one thread, surfacing the open decisions and the first steps takeable now. <strong>If this surfaces no fog</strong> (the way to the destination is already clear, the whole journey small enough for one session), you don't need a map. Stop and ask the user how they'd like to proceed.</li>
+<li><strong>Create the map</strong> (label <code>wayfinder:map</code>): Destination and Notes filled in, Decisions-so-far empty, the fog sketched into <strong>Not yet specified</strong>.</li>
+<li><strong>Create the tickets you can specify now</strong> as child issues of the map, then wire blocking edges in a <strong>second pass</strong> (issues need ids before they can reference each other). Write cross-references in that pass too, with real ids: a placeholder <code>#&lt;n&gt;</code> auto-links to an unrelated issue. Wiring sorts them into the frontier and the blocked; everything you can't yet specify stays in the fog: the <strong>Not yet specified</strong> section.</li>
+<li><strong>Fire the research subagents.</strong> For each <code>research</code> ticket you just created, spin up a subagent with a fresh context window that calls the Skill tool with &quot;research&quot; to resolve it in parallel, capturing its findings on a throwaway <code>research/&lt;name&gt;</code> branch with a context pointer from the ticket. Push the branch but open no PR: it is never merged.</li>
+<li>Stop: charting is one session's work; it hand-resolves nothing.</li>
+</ol>
+<h5>Work through the map</h5>
+<p>User invokes with a map (URL or number). A ticket is <strong>optional</strong>: without one, you pick the next decision, not the user.</p>
+<ol>
+<li>Load the <strong>map</strong>: the low-res view, not every ticket body.</li>
+<li>Choose the ticket. If the user named one, use it. Otherwise take the first frontier ticket in order. <strong>Claim it</strong>: assign it to yourself before any work.</li>
+<li>Resolve it as the type its <code>wayfinder:&lt;type&gt;</code> label names (see <a href="#ticket-types">Ticket Types</a>). Read the label, not just the body: the body never states the type. <strong>Zoom as needed</strong>: fetch the full body of any related or closed ticket on demand; call the Skill tool for whichever skills the <code>## Notes</code> block names. If in doubt, call the Skill tool twice, for &quot;grilling&quot; and &quot;domain-modeling&quot;.</li>
+<li>Record the resolution: post the answer as a <strong>resolution comment</strong>, <strong>close</strong> the issue, and <strong>append a context pointer</strong> to the map's Decisions-so-far.</li>
+<li>Add newly-surfaced tickets (create-then-wire); graduate any fog the answer has made specifiable, clearing each graduated patch from <strong>Not yet specified</strong> so it lives only as its new ticket. If the answer reveals that a ticket (this one or another) sits beyond the destination, <strong>rule it out of scope</strong> rather than resolving it on the route. If the decision invalidates other parts of the map, update or delete those tickets.</li>
+</ol>
+<p>The user may run unblocked tickets in parallel, so expect other sessions to be editing the tracker concurrently.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>finishing-a-development-branch · Gem Skills</title>
+    <meta name="description" content="Use it when: the work on a branch is done and you need to decide how to integrate it. It does: runs the full test suite, then offers three choices: merge locally, push and open a PR, or keep the branch. Waits: for your choice: it never merges, pushes or deletes on its own. Discards: the work only if you ask for that yourself, and only after you type &quot;discard&quot;. Cleans up: worktrees it created under .worktrees/ or worktrees/, never ones your coding agent created." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>finishing-a-development-branch</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>the work on a branch is done and you need to decide how to integrate it</dd></div><div><dt>It does</dt><dd>runs the full test suite, then offers three choices: merge locally, push and open a PR, or keep the branch</dd></div><div><dt>Waits</dt><dd>for your choice: it never merges, pushes or deletes on its own</dd></div><div><dt>Discards</dt><dd>the work only if you ask for that yourself, and only after you type &#34;discard&#34;</dd></div><div><dt>Cleans up</dt><dd>worktrees it created under .worktrees/ or worktrees/, never ones your coding agent created</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 10 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · Before it: <a href="/gemskills/skill/obra/superpowers/skills/receiving-code-review/">receiving-code-review</a> · After it: <a href="/gemskills/skill/obra/superpowers/skills/systematic-debugging/">systematic-debugging</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It&#39;s the last step after a plan has been carried out, for instance by executing-plans or subagent-driven-development. If the tests fail, it shows the failures and stops: the choices only come after a passing suite. It confirms which base branch to merge into, since merging into the wrong one is costly to undo. A local merge is followed by a test run on the merged result; if that fails, it stops with the branch and worktree intact. A PR is opened with the hosting service&#39;s CLI when there is one, following the repo&#39;s PR template, and the worktree is kept for review fixes. On a detached HEAD, merging isn&#39;t offered. When git refuses to remove a worktree because of uncommitted files, it shows them and asks whether to commit, move or delete them, never forcing the removal. It won&#39;t force-push after a rejected push unless you ask.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/finishing-a-development-branch">the skill at bb92a77</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill finishing-a-development-branch</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill finishing-a-development-branch">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/finishing-a-development-branch">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/finishing-a-development-branch">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>191,782 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">5.8K</div>
+      <div class="stat-delta">-10% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 6,430; week to Aug 10: 5,957; week to Aug 17: 5,874; week to Aug 24: 6,274; week to Aug 31: 5,647; week to Sep 7: 5,843; week to Sep 14: 5,804; week to Sep 21: 5,788. Use the left and right arrow keys to read each week."
+        data-values="6430,5957,5874,6274,5647,5843,5804,5788" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,9.2 71.1,9.8 103.7,7.1 136.3,11.4 168.9,10.0 201.4,10.3 234.0,10.4" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="10.4" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>6,430</td></tr><tr><td>Aug 10</td><td>5,957</td></tr><tr><td>Aug 17</td><td>5,874</td></tr><tr><td>Aug 24</td><td>6,274</td></tr><tr><td>Aug 31</td><td>5,647</td></tr><tr><td>Sep 7</td><td>5,843</td></tr><tr><td>Sep 14</td><td>5,804</td></tr><tr><td>Sep 21</td><td>5,788</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="git" data-facet="topic" href="/gemskills/?tag=git">git</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:git" data-facet="stack" href="/gemskills/?tag=stack%3Agit">stack:git</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/finishing-a-development-branch/SKILL.md">obra/superpowers at bb92a77</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: finishing-a-development-branch
+description: Use when implementation is complete, all tests pass, and you need to decide how to integrate the work</code></pre></details>
+        <div class="markdown"><h3>Finishing a Development Branch</h3>
+<h4>Overview</h4>
+<p><strong>Core principle:</strong> Verify tests → Detect environment → Present options → Execute choice → Clean up.</p>
+<p><strong>Announce at start:</strong> &quot;I'm using the finishing-a-development-branch skill to complete this work.&quot;</p>
+<h4>Step 1: Verify Tests</h4>
+<p>Run the project's full test suite (<code>npm test</code> / <code>cargo test</code> / <code>pytest</code> / <code>go test ./...</code>).</p>
+<p><strong>If tests fail</strong>, report the failures and stop — the menu comes after a green suite:</p>
+<pre><code>Tests failing (&lt;N&gt; failures). Must fix before completing:
+
+[Show failures]
+</code></pre>
+<p><strong>If tests pass:</strong> continue to Step 2.</p>
+<h4>Step 2: Detect Environment</h4>
+<pre><code class="language-bash">GIT_DIR=$(cd &quot;$(git rev-parse --git-dir)&quot; 2&gt;/dev/null &amp;&amp; pwd -P)
+GIT_COMMON=$(cd &quot;$(git rev-parse --git-common-dir)&quot; 2&gt;/dev/null &amp;&amp; pwd -P)
+# Capture now, while still inside the workspace — Step 5 changes directory
+# before cleanup (Step 6) needs this value
+WORKTREE_PATH=$(git rev-parse --show-toplevel)
+</code></pre>
+<p>This determines which menu to show and how cleanup works:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Menu</th>
+<th>Cleanup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GIT_DIR == GIT_COMMON</code> (normal repo)</td>
+<td>Standard 3 options</td>
+<td>No worktree to clean up</td>
+</tr>
+<tr>
+<td><code>GIT_DIR != GIT_COMMON</code>, named branch</td>
+<td>Standard 3 options</td>
+<td>Provenance-based (see Step 6)</td>
+</tr>
+<tr>
+<td><code>GIT_DIR != GIT_COMMON</code>, detached HEAD</td>
+<td>Reduced 2 options (no merge)</td>
+<td>Externally managed — leave in place</td>
+</tr>
+</tbody>
+</table>
+<h4>Step 3: Determine Base Branch</h4>
+<p>The base branch is whatever this work forked from — usually named in the
+plan, the conversation, or the branch's upstream. If it is not already
+known, ask: &quot;This branch split from &lt;your best guess&gt; - is that correct?&quot;
+Confirm before merging: merging into the wrong base is expensive to undo.</p>
+<h4>Step 4: Present Options</h4>
+<p><strong>Normal repo and named-branch worktree — present exactly these 3 options:</strong></p>
+<pre><code>Implementation complete. What would you like to do?
+
+1. Merge back to &lt;base-branch&gt; locally
+2. Push and create a Pull Request
+3. Keep the branch as-is (I'll handle it later)
+
+Which option?
+</code></pre>
+<p><strong>Detached HEAD — present exactly these 2 options:</strong></p>
+<pre><code>Implementation complete. You're on a detached HEAD (externally managed workspace).
+
+1. Push as new branch and create a Pull Request
+2. Keep as-is (I'll handle it later)
+
+Which option?
+</code></pre>
+<p>Present the menu exactly as written — concise, with every option coming
+from the list above. Discarding the work happens only in response to your
+human partner explicitly asking for it (see &quot;If your human partner asks to
+discard the work&quot; below). Wait for their answer; the integration decision
+is theirs.</p>
+<h4>Step 5: Execute Choice</h4>
+<h5>Option 1: Merge Locally</h5>
+<pre><code class="language-bash"># Get main repo root for CWD safety
+MAIN_ROOT=$(git -C &quot;$(git rev-parse --git-common-dir)/..&quot; rev-parse --show-toplevel)
+cd &quot;$MAIN_ROOT&quot;
+
+# Merge first — verify success before removing anything
+git checkout &lt;base-branch&gt;
+git pull
+git merge &lt;feature-branch&gt;
+
+# Verify tests on merged result
+&lt;test command&gt;
+</code></pre>
+<p>If tests fail on the merged result: stop, leave the worktree and branch in
+place, and investigate — nothing has been pushed, so the merge is local
+and recoverable.</p>
+<p>Once the merged result is green: clean up the worktree (Step 6), then
+delete the branch:</p>
+<pre><code class="language-bash">git branch -d &lt;feature-branch&gt;
+</code></pre>
+<h5>Option 2: Push and Create PR</h5>
+<pre><code class="language-bash">git push -u origin &lt;feature-branch&gt;
+# From a detached HEAD, name the new branch on the remote:
+# git push origin HEAD:refs/heads/&lt;new-branch&gt;
+</code></pre>
+<p>Then create the pull/merge request against &lt;base-branch&gt; with the forge's
+tooling — its CLI if one is available, or the creation URL most forges
+print when you push — following the repo's PR template and conventions if
+present, and report the URL to your human partner.</p>
+<p>Keep the worktree — your human partner iterates on PR feedback there.</p>
+<h5>Option 3: Keep As-Is</h5>
+<p>Report: &quot;Keeping branch &lt;name&gt;. Worktree preserved at &lt;path&gt;.&quot;</p>
+<h5>If your human partner asks to discard the work</h5>
+<p>This path exists only as a response to an explicit request to throw the
+work away. Confirm first:</p>
+<pre><code>This will permanently delete:
+- Branch &lt;name&gt;
+- All commits: &lt;commit-list&gt;
+- Worktree at &lt;path&gt;
+
+Type 'discard' to confirm.
+</code></pre>
+<p>Wait for that exact confirmation. When it arrives:</p>
+<pre><code class="language-bash">MAIN_ROOT=$(git -C &quot;$(git rev-parse --git-common-dir)/..&quot; rev-parse --show-toplevel)
+cd &quot;$MAIN_ROOT&quot;
+</code></pre>
+<p>Then clean up the worktree (Step 6) and force-delete the branch:</p>
+<pre><code class="language-bash">git branch -D &lt;feature-branch&gt;
+</code></pre>
+<h4>Step 6: Cleanup Workspace</h4>
+<p><strong>Runs for Option 1 and confirmed discards.</strong> Options 2 and 3 always
+preserve the worktree. Both callers have already changed directory to the
+main repo root — worktree removal must run from outside the worktree —
+and use the <code>GIT_DIR</code>/<code>GIT_COMMON</code>/<code>WORKTREE_PATH</code> values captured in
+Step 2, from before that directory change.</p>
+<p><strong>If <code>GIT_DIR == GIT_COMMON</code>:</strong> Normal repo, no worktree to clean up. Done.</p>
+<p><strong>If <code>WORKTREE_PATH</code> is under <code>.worktrees/</code> or <code>worktrees/</code>:</strong> Superpowers
+created this worktree — we own cleanup:</p>
+<pre><code class="language-bash">git worktree remove &quot;$WORKTREE_PATH&quot;
+git worktree prune  # Self-healing: clean up any stale registrations
+</code></pre>
+<p><strong>If removal is refused</strong> (<code>contains modified or untracked files</code>): the
+worktree holds files that exist nowhere else — uncommitted plans, notes,
+or scratch work. Never <code>--force</code> on your own initiative. Show your human
+partner what is at stake and ask:</p>
+<pre><code class="language-bash">git -C &quot;$WORKTREE_PATH&quot; status --porcelain -uall
+</code></pre>
+<pre><code>Worktree removal refused — these files were never committed:
+
+&lt;file list&gt;
+
+1. Commit them to &lt;branch&gt; before cleanup
+2. Move them into &lt;main repo root&gt;
+3. Delete them (unrecoverable)
+
+Which?
+</code></pre>
+<p>Carry out the choice, then remove the worktree.</p>
+<p><strong>Otherwise:</strong> The host environment owns this workspace — leave it in
+place. If your platform provides a workspace-exit tool, use it.</p>
+<h4>Quick Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Merge</th>
+<th>Push</th>
+<th>Keep Worktree</th>
+<th>Cleanup Branch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Merge locally</td>
+<td>yes</td>
+<td>-</td>
+<td>-</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>2. Create PR</td>
+<td>-</td>
+<td>yes</td>
+<td>yes</td>
+<td>-</td>
+</tr>
+<tr>
+<td>3. Keep as-is</td>
+<td>-</td>
+<td>-</td>
+<td>yes</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Discard (explicit request only)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>yes (force)</td>
+</tr>
+</tbody>
+</table>
+<h4>Common Rationalizations</h4>
+<table>
+<thead>
+<tr>
+<th>Excuse</th>
+<th>Reality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Tests passed earlier this session&quot;</td>
+<td>Run the suite on the tree you are about to integrate. A green run only proves the tree it ran on.</td>
+</tr>
+<tr>
+<td>&quot;They obviously want it merged&quot;</td>
+<td>Integration is your human partner's decision. Present the menu and wait.</td>
+</tr>
+<tr>
+<td>&quot;They seem done with this feature — I'll offer to discard it&quot;</td>
+<td>The menu is complete as written. Discard happens only when your human partner asks for it in so many words.</td>
+</tr>
+<tr>
+<td>&quot;'Yeah, get rid of it' counts as confirmation&quot;</td>
+<td>Only the typed word <code>discard</code> authorizes deletion.</td>
+</tr>
+<tr>
+<td>&quot;The PR is up, so the worktree is clutter now&quot;</td>
+<td>PR feedback gets fixed in that worktree. It stays until the work lands.</td>
+</tr>
+<tr>
+<td>&quot;This other worktree looks stale — I'll clean it too&quot;</td>
+<td>Clean up only worktrees under <code>.worktrees/</code> or <code>worktrees/</code>. Everything else belongs to the host.</td>
+</tr>
+<tr>
+<td>&quot;Removal refused — <code>--force</code> is just finishing the cleanup&quot;</td>
+<td>The refusal means files exist only in that worktree. <code>--force</code> destroys them permanently. Show your human partner and ask.</td>
+</tr>
+<tr>
+<td>&quot;The merged-result failure is probably flaky&quot;</td>
+<td>A failing merged result stops everything. Branch and worktree stay put while you investigate.</td>
+</tr>
+<tr>
+<td>&quot;The base branch is obviously main&quot;</td>
+<td>Confirm the fork point or ask. Merging into the wrong base is expensive to undo.</td>
+</tr>
+<tr>
+<td>&quot;The push was rejected — force-push will fix it&quot;</td>
+<td>A rejected push means the remote moved. Investigate; force-push only on your human partner's explicit request.</td>
+</tr>
+</tbody>
+</table>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

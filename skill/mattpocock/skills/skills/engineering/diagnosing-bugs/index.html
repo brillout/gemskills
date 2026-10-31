@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>diagnosing-bugs · Gem Skills</title>
+    <meta name="description" content="Use it when: a bug is hard to pin down, or something got slower, and guessing at fixes isn&#039;t working. It does: first builds one fast command that fails on this exact bug, and forms no theory until that command exists. Phases: build that command, shrink the repro, rank guesses, test one variable at a time, fix with a test, clean up. You get: a fix with a regression test, debug logs removed, and the confirmed cause written in the commit message." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>diagnosing-bugs</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a bug is hard to pin down, or something got slower, and guessing at fixes isn&#39;t working</dd></div><div><dt>It does</dt><dd>first builds one fast command that fails on this exact bug, and forms no theory until that command exists</dd></div><div><dt>Phases</dt><dd>build that command, shrink the repro, rank guesses, test one variable at a time, fix with a test, clean up</dd></div><div><dt>You get</dt><dd>a fix with a regression test, debug logs removed, and the confirmed cause written in the commit message</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 19 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/code-review/">code-review</a> · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/retro/">retro</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Its premise is that a hard bug gets easy once you have a feedback loop: one command that fails on this exact bug and passes once it&#39;s fixed. So the agent puts most of its effort there, trying a failing test, a curl script, a headless browser, a replayed request, a fuzz loop or a git bisect script, then making it faster and deterministic. When only a person can trigger the bug, a bundled script walks you through the clicks and records what you saw. If no loop can be built, it stops and asks you for access or a captured log. Next it shrinks the repro to the smallest case that still fails, shows you three to five ranked guesses at the cause, each with a prediction that could prove it wrong, and tests them one variable at a time, using debug logs with a unique tag so they&#39;re easy to remove, or measurements for slowdowns. The regression test comes before the fix, but only where a test can reproduce the real pattern; if none can, that&#39;s reported as a finding. Secrets are redacted from anything it shows.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/diagnosing-bugs">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill diagnosing-bugs</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill diagnosing-bugs">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/diagnosing-bugs">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/diagnosing-bugs">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>638,771 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Jun 4, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">40.7K</div>
+      <div class="stat-delta">-13% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 46,765; week to Aug 10: 59,214; week to Aug 17: 49,914; week to Aug 24: 54,939; week to Aug 31: 49,004; week to Sep 7: 47,088; week to Sep 14: 42,585; week to Sep 21: 40,737. Use the left and right arrow keys to read each week."
+        data-values="46765,59214,49914,54939,49004,47088,42585,40737" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,15.3 38.6,6.0 71.1,12.9 103.7,9.2 136.3,13.6 168.9,15.0 201.4,18.4 234.0,19.7" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="19.7" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>46,765</td></tr><tr><td>Aug 10</td><td>59,214</td></tr><tr><td>Aug 17</td><td>49,914</td></tr><tr><td>Aug 24</td><td>54,939</td></tr><tr><td>Aug 31</td><td>49,004</td></tr><tr><td>Sep 7</td><td>47,088</td></tr><tr><td>Sep 14</td><td>42,585</td></tr><tr><td>Sep 21</td><td>40,737</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="debugging" data-facet="topic" href="/gemskills/?tag=debugging">debugging</a><a class="tag" data-tag="performance" data-facet="topic" href="/gemskills/?tag=performance">performance</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/diagnosing-bugs/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: diagnosing-bugs
+description: Diagnosis loop for hard bugs and performance regressions. Use when the user says &#34;diagnose&#34;/&#34;debug this&#34;, or reports something broken/throwing/failing/slow.</code></pre></details>
+        <div class="markdown"><h3>Diagnosing Bugs</h3>
+<p>A discipline for hard bugs. Skip phases only when explicitly justified.</p>
+<p>When exploring the codebase, read <code>GLOSSARY.md</code> (if it exists) to get a clear mental model of the relevant modules, and check ADRs in the area you're touching.</p>
+<h4>Redact</h4>
+<p>This skill has you show commands, outputs and captured artifacts. <strong>Redact every secret first</strong>: write <code>&lt;REDACTED&gt;</code> in its place. Build loops against env vars, so the credential stays in the environment rather than in what you show. Captured artifacts carry auth headers: quote only the lines that carry the signal.</p>
+<p>If the redacted output is not enough to diagnose the bug, say so and ask the user.</p>
+<h4>Phase 1: Build a feedback loop</h4>
+<p><strong>This is the skill.</strong> Everything else is mechanical. If you have a <strong>tight</strong> pass/fail signal for the bug (one that goes red on <em>this</em> bug), you will find the cause; bisection, hypothesis-testing, and instrumentation all just consume it. If you don't have one, no amount of staring at code will save you.</p>
+<p>Spend disproportionate effort here. <strong>Be aggressive. Be creative. Refuse to give up.</strong></p>
+<h5>Ways to construct one, in roughly this order</h5>
+<ol>
+<li><strong>Failing test</strong> at whatever seam reaches the bug: unit, integration, e2e.</li>
+<li><strong>Curl / HTTP script</strong> against a running dev server.</li>
+<li><strong>CLI invocation</strong> with a fixture input, diffing stdout against a known-good snapshot.</li>
+<li><strong>Headless browser script</strong> (Playwright / Puppeteer) that drives the UI and asserts on DOM/console/network.</li>
+<li><strong>Replay a captured trace.</strong> Save a real network request / payload / event log to disk; replay it through the code path in isolation.</li>
+<li><strong>Throwaway harness.</strong> Spin up a minimal subset of the system (one service, mocked deps) that exercises the bug code path with a single function call.</li>
+<li><strong>Property / fuzz loop.</strong> If the bug is &quot;sometimes wrong output&quot;, run 1000 random inputs and look for the failure mode.</li>
+<li><strong>Bisection harness.</strong> If the bug appeared between two known states (commit, dataset, version), automate &quot;boot at state X, check, repeat&quot; so you can <code>git bisect run</code> it.</li>
+<li><strong>Differential loop.</strong> Run the same input through old-version vs new-version (or two configs) and diff outputs.</li>
+<li><strong>HITL bash script.</strong> Last resort. If a human must click, drive <em>them</em> with <code>scripts/hitl-loop.template.sh</code> so the loop is still structured. Captured output feeds back to you.</li>
+</ol>
+<p>Build the right feedback loop, and the bug is 90% fixed.</p>
+<h5>Tighten the loop</h5>
+<p>Treat the loop as a product. Once you have <em>a</em> loop, <strong>tighten</strong> it:</p>
+<ul>
+<li>Can I make it faster? (Cache setup, skip unrelated init, narrow the test scope.)</li>
+<li>Can I make the signal sharper? (Assert on the specific symptom, not &quot;didn't crash&quot;.)</li>
+<li>Can I make it more deterministic? (Pin time, seed RNG, isolate filesystem, freeze network.)</li>
+</ul>
+<p>A 30-second flaky loop is barely better than no loop; a 2-second deterministic one is tight, a debugging superpower.</p>
+<h5>Non-deterministic bugs</h5>
+<p>The goal is not a clean repro but a <strong>higher reproduction rate</strong>. Loop the trigger 100×, parallelise, add stress, narrow timing windows, inject sleeps. A 50%-flake bug is debuggable; 1% is not, so keep raising the rate until it's debuggable.</p>
+<h5>When you genuinely cannot build a loop</h5>
+<p>Stop and say so explicitly. List what you tried. Ask the user for: (a) access to whatever environment reproduces it, (b) a redacted captured artifact (HAR file, log dump, core dump, screen recording with timestamps), or (c) permission to add temporary production instrumentation. Do <strong>not</strong> proceed to hypothesise without a loop.</p>
+<h5>Completion criterion: a tight loop that goes red</h5>
+<p>Phase 1 is done when the loop is <strong>tight</strong> and <strong>red-capable</strong>: you can name <strong>one command</strong> (a script path, a test invocation, a curl) that you have <strong>already run at least once</strong> (show the invocation and its output, redacted), and that is:</p>
+<ul>
+<li>[ ] <strong>Red-capable</strong>: it drives the actual bug code path and asserts the <strong>user's exact symptom</strong>, so it can go red on this bug and green once fixed. Not &quot;runs without erroring&quot;; it must be able to <em>catch this specific bug</em>.</li>
+<li>[ ] <strong>Deterministic</strong>: same verdict every run (flaky bugs: a pinned, high reproduction rate, per above).</li>
+<li>[ ] <strong>Fast</strong>: seconds, not minutes.</li>
+<li>[ ] <strong>Agent-runnable</strong>: you can run it unattended; a human in the loop only via <code>scripts/hitl-loop.template.sh</code>.</li>
+</ul>
+<p>If you catch yourself reading code to build a theory before this command exists, <strong>stop: jumping straight to a hypothesis is the exact failure this skill prevents.</strong> No red-capable command, no Phase 2.</p>
+<h4>Phase 2: Reproduce + minimise</h4>
+<p>Run the loop. Watch it go red as the bug appears.</p>
+<p>Confirm:</p>
+<ul>
+<li>[ ] The loop produces the failure mode the <strong>user</strong> described, not a different failure that happens to be nearby. Wrong bug = wrong fix.</li>
+<li>[ ] The failure is reproducible across multiple runs (or, for non-deterministic bugs, reproducible at a high enough rate to debug against).</li>
+<li>[ ] You have captured the exact symptom (error message, wrong output, slow timing) so later phases can verify the fix actually addresses it.</li>
+</ul>
+<h5>Minimise</h5>
+<p>Once it's red, shrink the repro to the <strong>smallest scenario that still goes red</strong>. Cut inputs, callers, config, data, and steps <strong>one at a time</strong>, re-running the loop after each cut, and keep only what's load-bearing for the failure.</p>
+<p>Why bother: a minimal repro shrinks the hypothesis space in Phase 3 (fewer moving parts left to suspect) and becomes the clean regression test in Phase 5.</p>
+<p>Done when <strong>every remaining element is load-bearing</strong>: removing any one of them makes the loop go green.</p>
+<p>Do not proceed until you have reproduced <strong>and</strong> minimised.</p>
+<h4>Phase 3: Hypothesise</h4>
+<p>Generate <strong>3–5 ranked hypotheses</strong> before testing any of them. Single-hypothesis generation anchors on the first plausible idea.</p>
+<p>Each hypothesis must be <strong>falsifiable</strong>: state the prediction it makes.</p>
+<blockquote>
+<p>Format: &quot;If &lt;X&gt; is the cause, then &lt;changing Y&gt; will make the bug disappear / &lt;changing Z&gt; will make it worse.&quot;</p>
+</blockquote>
+<p>If you cannot state the prediction, the hypothesis is a vibe: discard or sharpen it.</p>
+<p><strong>Show the ranked list to the user before testing.</strong> They often have domain knowledge that re-ranks instantly (&quot;we just deployed a change to #3&quot;), or know hypotheses they've already ruled out. Cheap checkpoint, big time saver. Don't block on it; proceed with your ranking if the user is AFK.</p>
+<h4>Phase 4: Instrument</h4>
+<p>Each probe must map to a specific prediction from Phase 3. <strong>Change one variable at a time.</strong></p>
+<p>Tool preference:</p>
+<ol>
+<li><strong>Debugger / REPL inspection</strong> if the env supports it. One breakpoint beats ten logs.</li>
+<li><strong>Targeted logs</strong> at the boundaries that distinguish hypotheses.</li>
+<li>Never &quot;log everything and grep&quot;.</li>
+</ol>
+<p><strong>Tag every debug log</strong> with a unique prefix, e.g. <code>[DEBUG-a4f2]</code>. Cleanup at the end becomes a single grep. Untagged logs survive; tagged logs die.</p>
+<p><strong>Perf branch.</strong> For performance regressions, logs are usually wrong. Instead: establish a baseline measurement (timing harness, <code>performance.now()</code>, profiler, query plan), then bisect. Measure first, fix second.</p>
+<h4>Phase 5: Fix + regression test</h4>
+<p>Write the regression test <strong>before the fix</strong>, but only if there is a <strong>correct seam</strong> for it.</p>
+<p>A correct seam is one where the test exercises the <strong>real bug pattern</strong> as it occurs at the call site. If the only available seam is too shallow (single-caller test when the bug needs multiple callers, unit test that can't replicate the chain that triggered the bug), a regression test there gives false confidence.</p>
+<p><strong>If no correct seam exists, that itself is the finding.</strong> Note it. The codebase architecture is preventing the bug from being locked down. Flag this for the next phase.</p>
+<p>If a correct seam exists:</p>
+<ol>
+<li>Turn the minimised repro into a failing test at that seam.</li>
+<li>Watch it fail. If you forced the red by mutating code or a fixture, <code>diff</code> against a pristine copy to prove the mutation landed before you trust it.</li>
+<li>Apply the fix.</li>
+<li>Watch it pass.</li>
+<li>Re-run the Phase 1 feedback loop against the original (un-minimised) scenario.</li>
+</ol>
+<h4>Phase 6: Cleanup</h4>
+<p>Required before declaring done:</p>
+<ul>
+<li>[ ] Original repro no longer reproduces (re-run the Phase 1 loop)</li>
+<li>[ ] Regression test passes (or absence of seam is documented)</li>
+<li>[ ] All <code>[DEBUG-...]</code> instrumentation removed (<code>grep</code> the prefix)</li>
+<li>[ ] Throwaway prototypes deleted (or moved to a clearly-marked debug location)</li>
+<li>[ ] The hypothesis that turned out correct is stated in the commit / PR message, so the next debugger learns</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

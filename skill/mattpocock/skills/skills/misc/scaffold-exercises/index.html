@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scaffold-exercises · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re adding a section or exercises to a course repo laid out like the author&#039;s AI Hero courses. It does: turns a plan into numbered section and exercise folders, each with problem, solution or explainer subfolders. You get: the folders, each with a placeholder readme, passing the course linter and committed with git. Needs: a repo linted with ai-hero-cli, the author&#039;s course tool, through pnpm." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a></p>
+      <h1>scaffold-exercises</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re adding a section or exercises to a course repo laid out like the author&#39;s AI Hero courses</dd></div><div><dt>It does</dt><dd>turns a plan into numbered section and exercise folders, each with problem, solution or explainer subfolders</dd></div><div><dt>You get</dt><dd>the folders, each with a placeholder readme, passing the course linter and committed with git</dd></div><div><dt>Needs</dt><dd>a repo linted with ai-hero-cli, the author&#39;s course tool, through pnpm</dd></div></dl></section>
+      
+      <p class="note">Built for the author&#39;s course repos: it lints with ai-hero-cli and commits.</p>
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Built for the author&#39;s course repos, where exercises live under exercises/ in numbered folders: a section such as 05-memory-skill-building holds exercises such as 05.02-short-term-memory. Each exercise has at least one of problem/ (the student&#39;s workspace, with TODOs), solution/ (the reference code) or explainer/ (concepts only), and each needs a readme.md with real content. You give it a plan, a list of sections and exercises with the parts each needs, and it creates the folders, writes a readme with a title and a description in each, using explainer/ when the plan doesn&#39;t say, then runs the course linter, fixes errors until it passes, and commits. It also renumbers or moves exercises. It lays out the structure; writing the exercises is left to you.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/misc/scaffold-exercises">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill scaffold-exercises</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill scaffold-exercises">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/scaffold-exercises">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/misc/scaffold-exercises">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>366,969 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Mar 13, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">26.4K</div>
+      <div class="stat-delta">+33% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 19,887; week to Aug 10: 21,716; week to Aug 17: 18,807; week to Aug 24: 28,028; week to Aug 31: 31,259; week to Sep 7: 30,893; week to Sep 14: 28,268; week to Sep 21: 26,423. Use the left and right arrow keys to read each week."
+        data-values="19887,21716,18807,28028,31259,30893,28268,26423" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,22.0 38.6,19.4 71.1,23.5 103.7,10.5 136.3,6.0 168.9,6.5 201.4,10.2 234.0,12.8" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="12.8" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>19,887</td></tr><tr><td>Aug 10</td><td>21,716</td></tr><tr><td>Aug 17</td><td>18,807</td></tr><tr><td>Aug 24</td><td>28,028</td></tr><tr><td>Aug 31</td><td>31,259</td></tr><tr><td>Sep 7</td><td>30,893</td></tr><tr><td>Sep 14</td><td>28,268</td></tr><tr><td>Sep 21</td><td>26,423</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:writing" data-facet="category" title="Articles, docs, internal comms, research write-ups and prose that doesn&#39;t read as generated." href="/gemskills/?tag=category%3Awriting">category:writing</a></div>
+          <p class="tag-meaning">Articles, docs, internal comms, research write-ups and prose that doesn&#39;t read as generated.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="learning" data-facet="topic" href="/gemskills/?tag=learning">learning</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/misc/scaffold-exercises/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: scaffold-exercises
+description: Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course section.</code></pre></details>
+        <div class="markdown"><h3>Scaffold Exercises</h3>
+<p>Create exercise directory structures that pass <code>pnpm ai-hero-cli internal lint</code>, then commit with <code>git commit</code>.</p>
+<h4>Directory naming</h4>
+<ul>
+<li><strong>Sections</strong>: <code>XX-section-name/</code> inside <code>exercises/</code> (e.g., <code>01-retrieval-skill-building</code>)</li>
+<li><strong>Exercises</strong>: <code>XX.YY-exercise-name/</code> inside a section (e.g., <code>01.03-retrieval-with-bm25</code>)</li>
+<li>Section number = <code>XX</code>, exercise number = <code>XX.YY</code></li>
+<li>Names are dash-case (lowercase, hyphens)</li>
+</ul>
+<h4>Exercise variants</h4>
+<p>Each exercise needs at least one of these subfolders:</p>
+<ul>
+<li><code>problem/</code> - student workspace with TODOs</li>
+<li><code>solution/</code> - reference implementation</li>
+<li><code>explainer/</code> - conceptual material, no TODOs</li>
+</ul>
+<p>When stubbing, default to <code>explainer/</code> unless the plan specifies otherwise.</p>
+<h4>Required files</h4>
+<p>Each subfolder (<code>problem/</code>, <code>solution/</code>, <code>explainer/</code>) needs a <code>readme.md</code> that:</p>
+<ul>
+<li>Is <strong>not empty</strong> (must have real content, even a single title line works)</li>
+<li>Has no broken links</li>
+</ul>
+<p>When stubbing, create a minimal readme with a title and a description:</p>
+<pre><code class="language-md"># Exercise Title
+
+Description here
+</code></pre>
+<p>If the subfolder has code, it also needs a <code>main.ts</code> (&gt;1 line). But for stubs, a readme-only exercise is fine.</p>
+<h4>Workflow</h4>
+<ol>
+<li><strong>Parse the plan</strong> - extract section names, exercise names, and variant types</li>
+<li><strong>Create directories</strong> - <code>mkdir -p</code> for each path</li>
+<li><strong>Create stub readmes</strong> - one <code>readme.md</code> per variant folder with a title</li>
+<li><strong>Run lint</strong> - <code>pnpm ai-hero-cli internal lint</code> to validate</li>
+<li><strong>Fix any errors</strong> - iterate until lint passes</li>
+</ol>
+<h4>Lint rules summary</h4>
+<p>The linter (<code>pnpm ai-hero-cli internal lint</code>) checks:</p>
+<ul>
+<li>Each exercise has subfolders (<code>problem/</code>, <code>solution/</code>, <code>explainer/</code>)</li>
+<li>At least one of <code>problem/</code>, <code>explainer/</code>, or <code>explainer.1/</code> exists</li>
+<li><code>readme.md</code> exists and is non-empty in the primary subfolder</li>
+<li>No <code>.gitkeep</code> files</li>
+<li>No <code>speaker-notes.md</code> files</li>
+<li>No broken links in readmes</li>
+<li>No <code>pnpm run exercise</code> commands in readmes</li>
+<li><code>main.ts</code> required per subfolder unless it's readme-only</li>
+</ul>
+<h4>Moving/renaming exercises</h4>
+<p>When renumbering or moving exercises:</p>
+<ol>
+<li>Use <code>git mv</code> (not <code>mv</code>) to rename directories - preserves git history</li>
+<li>Update the numeric prefix to maintain order</li>
+<li>Re-run lint after moves</li>
+</ol>
+<p>Example:</p>
+<pre><code class="language-bash">git mv exercises/01-retrieval/01.03-embeddings exercises/01-retrieval/01.04-embeddings
+</code></pre>
+<h4>Example: stubbing from a plan</h4>
+<p>Given a plan like:</p>
+<pre><code>Section 05: Memory Skill Building
+- 05.01 Introduction to Memory
+- 05.02 Short-term Memory (explainer + problem + solution)
+- 05.03 Long-term Memory
+</code></pre>
+<p>Create:</p>
+<pre><code class="language-bash">mkdir -p exercises/05-memory-skill-building/05.01-introduction-to-memory/explainer
+mkdir -p exercises/05-memory-skill-building/05.02-short-term-memory/{explainer,problem,solution}
+mkdir -p exercises/05-memory-skill-building/05.03-long-term-memory/explainer
+</code></pre>
+<p>Then create readme stubs:</p>
+<pre><code>exercises/05-memory-skill-building/05.01-introduction-to-memory/explainer/readme.md -&gt; &quot;# Introduction to Memory&quot;
+exercises/05-memory-skill-building/05.02-short-term-memory/explainer/readme.md -&gt; &quot;# Short-term Memory&quot;
+exercises/05-memory-skill-building/05.02-short-term-memory/problem/readme.md -&gt; &quot;# Short-term Memory&quot;
+exercises/05-memory-skill-building/05.02-short-term-memory/solution/readme.md -&gt; &quot;# Short-term Memory&quot;
+exercises/05-memory-skill-building/05.03-long-term-memory/explainer/readme.md -&gt; &quot;# Long-term Memory&quot;
+</code></pre>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

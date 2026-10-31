@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nano-banana-pro · Gem Skills</title>
+    <meta name="description" content="Use it when: you want an image made from a description, or an existing image changed with an instruction. It does: runs a bundled script that calls Google&#039;s Gemini 3 Pro Image model, also called Nano Banana Pro. You get: a PNG with a timestamped name in your working folder, at about 1024, 2048 or 4096 pixels (1K, 2K or 4K). Workflow: drafts at the smallest size while the prompt changes, and renders the largest only once it&#039;s settled. Needs: uv and a Gemini API key; the commands point at Codex&#039;s skills folder, so other agents need the path adjusted." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Fsteipete">clawhub.ai/steipete</a></p>
+      <h1>nano-banana-pro</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want an image made from a description, or an existing image changed with an instruction</dd></div><div><dt>It does</dt><dd>runs a bundled script that calls Google&#39;s Gemini 3 Pro Image model, also called Nano Banana Pro</dd></div><div><dt>You get</dt><dd>a PNG with a timestamped name in your working folder, at about 1024, 2048 or 4096 pixels (1K, 2K or 4K)</dd></div><div><dt>Workflow</dt><dd>drafts at the smallest size while the prompt changes, and renders the largest only once it&#39;s settled</dd></div><div><dt>Needs</dt><dd>uv and a Gemini API key; the commands point at Codex&#39;s skills folder, so other agents need the path adjusted</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The agent runs one Python script with uv, passing your description as the prompt, or an edit instruction plus an input image to change a picture you have: remove a person, make the sky stormier, turn it into a watercolor. It passes your words through as they are unless they&#39;re clearly too thin, and has templates for vague requests and for precise edits that say &#34;change only this, keep everything else identical&#34;. Size follows what you say: nothing or &#34;1080p&#34; gives the smallest, &#34;medium&#34; the middle one, &#34;high-res&#34; or &#34;4K&#34; the largest. Files are named by date, time and a few descriptive words and saved where you&#39;re working, and the agent tells you the path rather than opening the image. It also lists quick fixes for a missing key, a wrong image path and quota errors.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/steipete/nano-banana-pro.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @steipete/nano-banana-pro</code><button type="button" class="copy" data-copy="openclaw skills install @steipete/nano-banana-pro">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/steipete/skills/nano-banana-pro">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Fsteipete">All skills from clawhub.ai/steipete</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>106,938 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div><div><dt>Downloads</dt><dd>132,765 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:media" data-facet="category" title="Generate and edit video, images and audio." href="/gemskills/?tag=category%3Amedia">category:media</a></div>
+          <p class="tag-meaning">Generate and edit video, images and audio.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="image" data-facet="topic" href="/gemskills/?tag=image">image</a><a class="tag" data-tag="ai-generation" data-facet="topic" href="/gemskills/?tag=ai-generation">ai-generation</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:gemini" data-facet="stack" href="/gemskills/?tag=stack%3Agemini">stack:gemini</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/steipete/skills/nano-banana-pro">ClawHub</a>, version 1.0.1. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: nano-banana-pro
+description: Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modify requests incl. edits. Supports text-to-image + image-to-image; 1K/2K/4K; use --input-image.</code></pre></details>
+        <div class="markdown"><h3>Nano Banana Pro Image Generation &amp; Editing</h3>
+<p>Generate new images or edit existing ones using Google's Nano Banana Pro API (Gemini 3 Pro Image).</p>
+<h4>Usage</h4>
+<p>Run the script using absolute path (do NOT cd to skill directory first):</p>
+<p><strong>Generate new image:</strong></p>
+<pre><code class="language-bash">uv run ~/.codex/skills/nano-banana-pro/scripts/generate_image.py --prompt &quot;your image description&quot; --filename &quot;output-name.png&quot; [--resolution 1K|2K|4K] [--api-key KEY]
+</code></pre>
+<p><strong>Edit existing image:</strong></p>
+<pre><code class="language-bash">uv run ~/.codex/skills/nano-banana-pro/scripts/generate_image.py --prompt &quot;editing instructions&quot; --filename &quot;output-name.png&quot; --input-image &quot;path/to/input.png&quot; [--resolution 1K|2K|4K] [--api-key KEY]
+</code></pre>
+<p><strong>Important:</strong> Always run from the user's current working directory so images are saved where the user is working, not in the skill directory.</p>
+<h4>Default Workflow (draft → iterate → final)</h4>
+<p>Goal: fast iteration without burning time on 4K until the prompt is correct.</p>
+<ul>
+<li>Draft (1K): quick feedback loop
+<ul>
+<li><code>uv run ~/.codex/skills/nano-banana-pro/scripts/generate_image.py --prompt &quot;&lt;draft prompt&gt;&quot; --filename &quot;yyyy-mm-dd-hh-mm-ss-draft.png&quot; --resolution 1K</code></li>
+</ul>
+</li>
+<li>Iterate: adjust prompt in small diffs; keep filename new per run
+<ul>
+<li>If editing: keep the same <code>--input-image</code> for every iteration until you’re happy.</li>
+</ul>
+</li>
+<li>Final (4K): only when prompt is locked
+<ul>
+<li><code>uv run ~/.codex/skills/nano-banana-pro/scripts/generate_image.py --prompt &quot;&lt;final prompt&gt;&quot; --filename &quot;yyyy-mm-dd-hh-mm-ss-final.png&quot; --resolution 4K</code></li>
+</ul>
+</li>
+</ul>
+<h4>Resolution Options</h4>
+<p>The Gemini 3 Pro Image API supports three resolutions (uppercase K required):</p>
+<ul>
+<li><strong>1K</strong> (default) - ~1024px resolution</li>
+<li><strong>2K</strong> - ~2048px resolution</li>
+<li><strong>4K</strong> - ~4096px resolution</li>
+</ul>
+<p>Map user requests to API parameters:</p>
+<ul>
+<li>No mention of resolution → <code>1K</code></li>
+<li>&quot;low resolution&quot;, &quot;1080&quot;, &quot;1080p&quot;, &quot;1K&quot; → <code>1K</code></li>
+<li>&quot;2K&quot;, &quot;2048&quot;, &quot;normal&quot;, &quot;medium resolution&quot; → <code>2K</code></li>
+<li>&quot;high resolution&quot;, &quot;high-res&quot;, &quot;hi-res&quot;, &quot;4K&quot;, &quot;ultra&quot; → <code>4K</code></li>
+</ul>
+<h4>API Key</h4>
+<p>The script checks for API key in this order:</p>
+<ol>
+<li><code>--api-key</code> argument (use if user provided key in chat)</li>
+<li><code>GEMINI_API_KEY</code> environment variable</li>
+</ol>
+<p>If neither is available, the script exits with an error message.</p>
+<h4>Preflight + Common Failures (fast fixes)</h4>
+<ul>
+<li>
+<p>Preflight:</p>
+<ul>
+<li><code>command -v uv</code> (must exist)</li>
+<li><code>test -n \&quot;$GEMINI_API_KEY\&quot;</code> (or pass <code>--api-key</code>)</li>
+<li>If editing: <code>test -f \&quot;path/to/input.png\&quot;</code></li>
+</ul>
+</li>
+<li>
+<p>Common failures:</p>
+<ul>
+<li><code>Error: No API key provided.</code> → set <code>GEMINI_API_KEY</code> or pass <code>--api-key</code></li>
+<li><code>Error loading input image:</code> → wrong path / unreadable file; verify <code>--input-image</code> points to a real image</li>
+<li>“quota/permission/403” style API errors → wrong key, no access, or quota exceeded; try a different key/account</li>
+</ul>
+</li>
+</ul>
+<h4>Filename Generation</h4>
+<p>Generate filenames with the pattern: <code>yyyy-mm-dd-hh-mm-ss-name.png</code></p>
+<p><strong>Format:</strong> <code>{timestamp}-{descriptive-name}.png</code></p>
+<ul>
+<li>Timestamp: Current date/time in format <code>yyyy-mm-dd-hh-mm-ss</code> (24-hour format)</li>
+<li>Name: Descriptive lowercase text with hyphens</li>
+<li>Keep the descriptive part concise (1-5 words typically)</li>
+<li>Use context from user's prompt or conversation</li>
+<li>If unclear, use random identifier (e.g., <code>x9k2</code>, <code>a7b3</code>)</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Prompt &quot;A serene Japanese garden&quot; → <code>2025-11-23-14-23-05-japanese-garden.png</code></li>
+<li>Prompt &quot;sunset over mountains&quot; → <code>2025-11-23-15-30-12-sunset-mountains.png</code></li>
+<li>Prompt &quot;create an image of a robot&quot; → <code>2025-11-23-16-45-33-robot.png</code></li>
+<li>Unclear context → <code>2025-11-23-17-12-48-x9k2.png</code></li>
+</ul>
+<h4>Image Editing</h4>
+<p>When the user wants to modify an existing image:</p>
+<ol>
+<li>Check if they provide an image path or reference an image in the current directory</li>
+<li>Use <code>--input-image</code> parameter with the path to the image</li>
+<li>The prompt should contain editing instructions (e.g., &quot;make the sky more dramatic&quot;, &quot;remove the person&quot;, &quot;change to cartoon style&quot;)</li>
+<li>Common editing tasks: add/remove elements, change style, adjust colors, blur background, etc.</li>
+</ol>
+<h4>Prompt Handling</h4>
+<p><strong>For generation:</strong> Pass user's image description as-is to <code>--prompt</code>. Only rework if clearly insufficient.</p>
+<p><strong>For editing:</strong> Pass editing instructions in <code>--prompt</code> (e.g., &quot;add a rainbow in the sky&quot;, &quot;make it look like a watercolor painting&quot;)</p>
+<p>Preserve user's creative intent in both cases.</p>
+<h4>Prompt Templates (high hit-rate)</h4>
+<p>Use templates when the user is vague or when edits must be precise.</p>
+<ul>
+<li>
+<p>Generation template:</p>
+<ul>
+<li>“Create an image of: &lt;subject&gt;. Style: &lt;style&gt;. Composition: &lt;camera/shot&gt;. Lighting: &lt;lighting&gt;. Background: &lt;background&gt;. Color palette: &lt;palette&gt;. Avoid: &lt;list&gt;.”</li>
+</ul>
+</li>
+<li>
+<p>Editing template (preserve everything else):</p>
+<ul>
+<li>“Change ONLY: &lt;single change&gt;. Keep identical: subject, composition/crop, pose, lighting, color palette, background, text, and overall style. Do not add new objects. If text exists, keep it unchanged.”</li>
+</ul>
+</li>
+</ul>
+<h4>Output</h4>
+<ul>
+<li>Saves PNG to current directory (or specified path if filename includes directory)</li>
+<li>Script outputs the full path to the generated image</li>
+<li><strong>Do not read the image back</strong> - just inform the user of the saved path</li>
+</ul>
+<h4>Examples</h4>
+<p><strong>Generate new image:</strong></p>
+<pre><code class="language-bash">uv run ~/.codex/skills/nano-banana-pro/scripts/generate_image.py --prompt &quot;A serene Japanese garden with cherry blossoms&quot; --filename &quot;2025-11-23-14-23-05-japanese-garden.png&quot; --resolution 4K
+</code></pre>
+<p><strong>Edit existing image:</strong></p>
+<pre><code class="language-bash">uv run ~/.codex/skills/nano-banana-pro/scripts/generate_image.py --prompt &quot;make the sky more dramatic with storm clouds&quot; --filename &quot;2025-11-23-14-25-30-dramatic-sky.png&quot; --input-image &quot;original-photo.jpg&quot; --resolution 2K
+</code></pre>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

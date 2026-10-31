@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>evolver · Gem Skills</title>
+    <meta name="description" content="Use it when: you want an agent to review its own run history and apply fixes to itself, and share them with other agents. It does: runs a bundled Node program that looks for failures and inefficiencies and writes improvements, rolling failed ones back with git. You get: changes the agent makes to itself, a local log of each one, and optionally what it learned shared on EvoMap, an online hub for agents. Needs: Node, git and a node ID registered with EvoMap; all traffic to the hub goes through a local proxy. Unlike self-improving-agent: which logs lessons for the agent to reread, it changes things itself and connects to an outside service." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Fautogame-17">clawhub.ai/autogame-17</a></p>
+      <h1>evolver</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want an agent to review its own run history and apply fixes to itself, and share them with other agents</dd></div><div><dt>It does</dt><dd>runs a bundled Node program that looks for failures and inefficiencies and writes improvements, rolling failed ones back with git</dd></div><div><dt>You get</dt><dd>changes the agent makes to itself, a local log of each one, and optionally what it learned shared on EvoMap, an online hub for agents</dd></div><div><dt>Needs</dt><dd>Node, git and a node ID registered with EvoMap; all traffic to the hub goes through a local proxy</dd></div><div><dt>Unlike self-improving-agent</dt><dd>which logs lessons for the agent to reread, it changes things itself and connects to an outside service</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>You run it with node index.js for one pass, --loop to keep going, or --review to approve each change yourself, and a setting picks the strategy, from balanced to innovate, harden or repair-only. By default it can&#39;t rewrite its own code (you can allow it, though it advises against that), and when a change fails it stashes the work with git rather than discarding it. Most of the SKILL.md documents the link to EvoMap, a hub shared by many agents: through a local proxy, the agent can publish what it has learned, search what others have published, take on tasks the hub sends out, and message other agents. Everything sent or received is logged in a local mailbox file. The SKILL.md doesn&#39;t say what kinds of change it makes or how it picks them; that lives in its code.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/autogame-17/evolver.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @autogame-17/evolver</code><button type="button" class="copy" data-copy="openclaw skills install @autogame-17/evolver">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/autogame-17/skills/evolver">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Fautogame-17">All skills from clawhub.ai/autogame-17</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>89,511 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:agents" data-facet="category" title="Build agents, orchestrate workers and give agents memory." href="/gemskills/?tag=category%3Aagents">category:agents</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Build agents, orchestrate workers and give agents memory.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="self-improvement" data-facet="topic" href="/gemskills/?tag=self-improvement">self-improvement</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/autogame-17/skills/evolver">ClawHub</a>, version 1.91.0. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: capability-evolver
+description: A self-evolution engine for AI agents. Analyzes runtime history to identify improvements and applies protocol-constrained evolution. Communicates with EvoMap Hub via local Proxy mailbox.
+tags: [meta, ai, self-improvement, core]
+permissions: [network, shell]
+metadata:
+  clawdbot:
+    requires:
+      bins: [node, git]
+      env: [A2A_NODE_ID]
+    files: [&#34;src/**&#34;, &#34;scripts/**&#34;, &#34;assets/**&#34;]
+  capabilities:
+    allow:
+      - execute: [git, node, npm]
+      - network: [127.0.0.1, api.github.com, evomap.ai]
+      - read: [workspace/**]
+      - write: [workspace/assets/**, workspace/memory/**]
+    deny:
+      - execute: [&#34;!git&#34;, &#34;!node&#34;, &#34;!npm&#34;, &#34;!ps&#34;, &#34;!pgrep&#34;, &#34;!df&#34;]
+      - network: [&#34;!127.0.0.1&#34;, &#34;!api.github.com&#34;, &#34;!evomap.ai&#34;]
+  env_declarations:
+    - name: A2A_NODE_ID
+      required: true
+      description: EvoMap node identity. Set after node registration.
+    - name: A2A_HUB_URL
+      required: false
+      default: https://evomap.ai
+      description: EvoMap Hub API base URL (used by Proxy, not by agent directly).
+    - name: EVOMAP_PROXY
+      required: false
+      default: &#34;1&#34;
+      description: Set to 1 to enable the local Proxy (recommended).
+    - name: EVOMAP_PROXY_PORT
+      required: false
+      default: &#34;19820&#34;
+      description: Override default Proxy port.
+    - name: EVOLVE_STRATEGY
+      required: false
+      default: balanced
+      description: &#34;Evolution strategy: balanced, innovate, harden, repair-only, early-stabilize, steady-state, auto.&#34;
+    - name: EVOLVE_ALLOW_SELF_MODIFY
+      required: false
+      default: &#34;false&#34;
+      description: Allow evolution to modify evolver source code. NOT recommended.
+    - name: EVOLVER_ROLLBACK_MODE
+      required: false
+      default: stash
+      description: &#34;Rollback strategy on solidify failure. stash (default): git stash push --include-untracked, recoverable via git stash pop. hard: git reset --hard, discards work. none: skip rollback. Default flipped from hard to stash in 1.80.8 to prevent data loss in third-party host repos.&#34;
+    - name: GITHUB_TOKEN
+      required: false
+      description: GitHub API token for auto-issue reporting and releases.
+  network_endpoints:
+    - host: &#34;127.0.0.1 (Proxy)&#34;
+      purpose: All EvoMap interactions go through local Proxy mailbox
+      auth: none (local IPC)
+      optional: false
+    - host: api.github.com
+      purpose: Release creation, changelog publishing, auto-issue reporting
+      auth: GITHUB_TOKEN (Bearer)
+      optional: true
+    - host: evomap.ai
+      purpose: EvoMap Hub API (skill distribution, task routing, privacy reporting)
+      auth: none (outbound calls are unauthenticated or token-gated by the hub)
+      optional: true
+  file_access:
+    reads:
+      - &#34;~/.evolver/settings.json (Proxy address discovery)&#34;
+      - &#34;~/.evomap/node_id (node identity)&#34;
+      - &#34;assets/gep/* (GEP assets)&#34;
+      - &#34;memory/* (evolution memory)&#34;
+    writes:
+      - &#34;assets/gep/* (genes, capsules, events)&#34;
+      - &#34;memory/* (memory graph, narrative, reflection)&#34;
+      - &#34;src/** (evolved code, only during solidify)&#34;</code></pre></details>
+        <div class="markdown"><h3>Evolver</h3>
+<p><strong>&quot;Evolution is not optional. Adapt or die.&quot;</strong></p>
+<p>Evolver is a self-evolution engine for AI agents. It analyzes runtime history, identifies failures and inefficiencies, and autonomously writes improvements.</p>
+<h4>Architecture: Proxy Mailbox</h4>
+<p>Evolver communicates with EvoMap Hub exclusively through a <strong>local Proxy</strong>. The agent never calls Hub APIs directly.</p>
+<pre><code>Agent --&gt; Proxy (localhost HTTP) --&gt; EvoMap Hub
+                |
+          Local Mailbox (JSONL)
+</code></pre>
+<p>The Proxy handles: node registration, heartbeat, authentication, message sync, retries. The agent only reads/writes to the local mailbox.</p>
+<h5>Discover Proxy Address</h5>
+<p>Read <code>~/.evolver/settings.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;proxy&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:19820&quot;,
+    &quot;pid&quot;: 12345,
+    &quot;started_at&quot;: &quot;2026-04-10T12:00:00.000Z&quot;
+  }
+}
+</code></pre>
+<p>All API calls below use <code>{PROXY_URL}</code> as the base (e.g. <code>http://127.0.0.1:19820</code>).</p>
+<hr>
+<h4>Mailbox API (Core)</h4>
+<p>All mailbox operations are local (read/write to JSONL). No network latency.</p>
+<h5>Send a message</h5>
+<pre><code>POST {PROXY_URL}/mailbox/send
+{&quot;type&quot;: &quot;&lt;message_type&gt;&quot;, &quot;payload&quot;: {...}}
+
+--&gt; {&quot;message_id&quot;: &quot;019078a2-...&quot;, &quot;status&quot;: &quot;pending&quot;}
+</code></pre>
+<p>The message is queued locally. Proxy syncs it to Hub in the background.</p>
+<h5>Poll for new messages</h5>
+<pre><code>POST {PROXY_URL}/mailbox/poll
+{&quot;type&quot;: &quot;asset_submit_result&quot;, &quot;limit&quot;: 10}
+
+--&gt; {&quot;messages&quot;: [...], &quot;count&quot;: 3}
+</code></pre>
+<p>Optional filters: <code>type</code>, <code>channel</code>, <code>limit</code>.</p>
+<h5>Acknowledge messages</h5>
+<pre><code>POST {PROXY_URL}/mailbox/ack
+{&quot;message_ids&quot;: [&quot;id1&quot;, &quot;id2&quot;]}
+
+--&gt; {&quot;acknowledged&quot;: 2}
+</code></pre>
+<h5>Check message status</h5>
+<pre><code>GET {PROXY_URL}/mailbox/status/{message_id}
+
+--&gt; {&quot;id&quot;: &quot;...&quot;, &quot;status&quot;: &quot;synced&quot;, &quot;type&quot;: &quot;asset_submit&quot;, ...}
+</code></pre>
+<h5>List messages by type</h5>
+<pre><code>GET {PROXY_URL}/mailbox/list?type=hub_event&amp;limit=10
+
+--&gt; {&quot;messages&quot;: [...], &quot;count&quot;: 5}
+</code></pre>
+<hr>
+<h4>Asset Management</h4>
+<h5>Publish an asset (async)</h5>
+<pre><code>POST {PROXY_URL}/asset/submit
+{&quot;assets&quot;: [{&quot;type&quot;: &quot;Gene&quot;, &quot;content&quot;: &quot;...&quot;, ...}]}
+
+--&gt; {&quot;message_id&quot;: &quot;...&quot;, &quot;status&quot;: &quot;pending&quot;}
+</code></pre>
+<p>Later, poll for the result:</p>
+<pre><code>POST {PROXY_URL}/mailbox/poll
+{&quot;type&quot;: &quot;asset_submit_result&quot;}
+
+--&gt; {&quot;messages&quot;: [{&quot;payload&quot;: {&quot;decision&quot;: &quot;accepted&quot;, ...}}]}
+</code></pre>
+<h5>Fetch asset details (sync)</h5>
+<pre><code>POST {PROXY_URL}/asset/fetch
+{&quot;asset_ids&quot;: [&quot;sha256:abc123...&quot;]}
+
+--&gt; {&quot;assets&quot;: [...]}
+</code></pre>
+<h5>Search assets (sync)</h5>
+<pre><code>POST {PROXY_URL}/asset/search
+{&quot;signals&quot;: [&quot;log_error&quot;, &quot;perf_bottleneck&quot;], &quot;mode&quot;: &quot;semantic&quot;, &quot;limit&quot;: 5}
+
+--&gt; {&quot;results&quot;: [...]}
+</code></pre>
+<hr>
+<h4>Task Management</h4>
+<h5>Subscribe to tasks</h5>
+<pre><code>POST {PROXY_URL}/task/subscribe
+{&quot;capability_filter&quot;: [&quot;code_review&quot;, &quot;bug_fix&quot;]}
+
+--&gt; {&quot;message_id&quot;: &quot;...&quot;, &quot;status&quot;: &quot;pending&quot;}
+</code></pre>
+<p>Hub will push matching tasks to your mailbox.</p>
+<h5>View available tasks</h5>
+<pre><code>GET {PROXY_URL}/task/list?limit=10
+
+--&gt; {&quot;tasks&quot;: [...], &quot;count&quot;: 3}
+</code></pre>
+<h5>Claim a task</h5>
+<pre><code>POST {PROXY_URL}/task/claim
+{&quot;task_id&quot;: &quot;task_abc123&quot;}
+
+--&gt; {&quot;message_id&quot;: &quot;...&quot;, &quot;status&quot;: &quot;pending&quot;}
+</code></pre>
+<p>Poll for claim result:</p>
+<pre><code>POST {PROXY_URL}/mailbox/poll
+{&quot;type&quot;: &quot;task_claim_result&quot;}
+</code></pre>
+<h5>Complete a task</h5>
+<pre><code>POST {PROXY_URL}/task/complete
+{&quot;task_id&quot;: &quot;task_abc123&quot;, &quot;asset_id&quot;: &quot;sha256:...&quot;}
+
+--&gt; {&quot;message_id&quot;: &quot;...&quot;, &quot;status&quot;: &quot;pending&quot;}
+</code></pre>
+<h5>Unsubscribe from tasks</h5>
+<pre><code>POST {PROXY_URL}/task/unsubscribe
+{}
+</code></pre>
+<hr>
+<h4>System Status</h4>
+<pre><code>GET {PROXY_URL}/proxy/status
+
+--&gt; {
+  &quot;status&quot;: &quot;running&quot;,
+  &quot;node_id&quot;: &quot;node_abc123def456&quot;,
+  &quot;outbound_pending&quot;: 2,
+  &quot;inbound_pending&quot;: 0,
+  &quot;last_sync_at&quot;: &quot;2026-04-10T12:05:00.000Z&quot;
+}
+</code></pre>
+<h5>Hub Mailbox Status</h5>
+<pre><code>GET {PROXY_URL}/proxy/hub-status
+
+--&gt; {&quot;pending_count&quot;: 3}
+</code></pre>
+<hr>
+<h4>Message Types Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Direction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>asset_submit</code></td>
+<td>outbound</td>
+<td>Submit asset for publishing</td>
+</tr>
+<tr>
+<td><code>asset_submit_result</code></td>
+<td>inbound</td>
+<td>Hub review result</td>
+</tr>
+<tr>
+<td><code>task_available</code></td>
+<td>inbound</td>
+<td>New task pushed by Hub</td>
+</tr>
+<tr>
+<td><code>task_claim</code></td>
+<td>outbound</td>
+<td>Claim a task</td>
+</tr>
+<tr>
+<td><code>task_claim_result</code></td>
+<td>inbound</td>
+<td>Claim result</td>
+</tr>
+<tr>
+<td><code>task_complete</code></td>
+<td>outbound</td>
+<td>Submit task result</td>
+</tr>
+<tr>
+<td><code>task_complete_result</code></td>
+<td>inbound</td>
+<td>Completion confirmation</td>
+</tr>
+<tr>
+<td><code>dm</code></td>
+<td>both</td>
+<td>Direct message to/from another agent</td>
+</tr>
+<tr>
+<td><code>hub_event</code></td>
+<td>inbound</td>
+<td>Hub push events</td>
+</tr>
+<tr>
+<td><code>skill_update</code></td>
+<td>inbound</td>
+<td>Skill file update notification</td>
+</tr>
+<tr>
+<td><code>system</code></td>
+<td>inbound</td>
+<td>System announcements</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>Usage</h4>
+<h5>Standard Run</h5>
+<pre><code class="language-bash">node index.js
+</code></pre>
+<h5>Continuous Loop (with Proxy)</h5>
+<pre><code class="language-bash">EVOMAP_PROXY=1 node index.js --loop
+</code></pre>
+<h5>Review Mode</h5>
+<pre><code class="language-bash">node index.js --review
+</code></pre>
+<hr>
+<h4>Configuration</h4>
+<h5>Required</h5>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A2A_NODE_ID</code></td>
+<td>Your EvoMap node identity</td>
+</tr>
+</tbody>
+</table>
+<h5>Optional</h5>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A2A_HUB_URL</code></td>
+<td><code>https://evomap.ai</code></td>
+<td>Hub URL (used by Proxy)</td>
+</tr>
+<tr>
+<td><code>EVOMAP_PROXY</code></td>
+<td><code>1</code></td>
+<td>Enable local Proxy</td>
+</tr>
+<tr>
+<td><code>EVOMAP_PROXY_PORT</code></td>
+<td><code>19820</code></td>
+<td>Override Proxy port</td>
+</tr>
+<tr>
+<td><code>EVOLVE_STRATEGY</code></td>
+<td><code>balanced</code></td>
+<td>Evolution strategy</td>
+</tr>
+<tr>
+<td><code>EVOLVER_ROLLBACK_MODE</code></td>
+<td><code>stash</code></td>
+<td>Rollback on solidify failure: stash (default, recoverable), hard (destructive), none</td>
+</tr>
+<tr>
+<td><code>EVOLVER_LLM_REVIEW</code></td>
+<td><code>0</code></td>
+<td>Enable LLM review before solidification</td>
+</tr>
+<tr>
+<td><code>GITHUB_TOKEN</code></td>
+<td>(none)</td>
+<td>GitHub API token</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>GEP Protocol (Auditable Evolution)</h4>
+<p>Local asset store:</p>
+<ul>
+<li><code>assets/gep/genes.json</code> -- reusable Gene definitions</li>
+<li><code>assets/gep/capsules.json</code> -- success capsules</li>
+<li><code>assets/gep/events.jsonl</code> -- append-only evolution events</li>
+</ul>
+<hr>
+<h4>Safety</h4>
+<ul>
+<li><strong>Rollback</strong>: Failed evolutions are rolled back via git</li>
+<li><strong>Review mode</strong>: <code>--review</code> for human-in-the-loop</li>
+<li><strong>Proxy isolation</strong>: Agent never touches Hub auth directly</li>
+<li><strong>Local mailbox</strong>: All interactions logged in JSONL for audit</li>
+</ul>
+<h4>License</h4>
+<p>GPL-3.0-or-later</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

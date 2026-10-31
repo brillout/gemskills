@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>caveman-stats · Gem Skills</title>
+    <meta name="description" content="Use it when: you want to see how many tokens your Claude Code session has used, and in which Caveman mode. It does: prints a usage report from Caveman&#039;s hooks, unchanged: output and cache-read tokens, response counts and the mode behind them. Reports: only measured usage; it doesn&#039;t estimate savings, since nothing measured the same work without Caveman. Needs: Claude Code with the Caveman plugin&#039;s hooks; in Gemini CLI it points you to /stats instead." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">juliusbrussee/caveman</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a></p>
+      <h1>caveman-stats</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want to see how many tokens your Claude Code session has used, and in which Caveman mode</dd></div><div><dt>It does</dt><dd>prints a usage report from Caveman&#39;s hooks, unchanged: output and cache-read tokens, response counts and the mode behind them</dd></div><div><dt>Reports</dt><dd>only measured usage; it doesn&#39;t estimate savings, since nothing measured the same work without Caveman</dd></div><div><dt>Needs</dt><dd>Claude Code with the Caveman plugin&#39;s hooks; in Gemini CLI it points you to /stats instead</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 5 of 12 in the <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a> bundle · Before it: <a href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-compress/">caveman-compress</a> · After it: <a href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-help/">caveman-help</a></p>
+    <p class="note">Only works inside its bundle: Prints the token report of hooks that only the Caveman plugin installs, in Claude Code. Install <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Caveman is a plugin and skill set that makes agents reply tersely to save tokens. When you run /caveman-stats, a hook installed by the plugin builds a usage report, and the agent prints it as is in a code block, without recomputing or rounding anything. The report shows output and cache-read tokens, response counts and which Caveman mode was active, and it can also total past sessions. It never estimates tokens, percentages or dollars saved, because there&#39;s no measured run of the same work without Caveman to compare against. Outside Claude Code it can&#39;t read live usage: in Gemini CLI it sends you to /stats model or /stats session, and elsewhere it uses the host&#39;s own report or says usage is unavailable.</p>
+      <p class="muted">Summarizes <a href="https://github.com/juliusbrussee/caveman/tree/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman-stats">the skill at bad48a0</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/juliusbrussee/caveman --skill caveman-stats</code><button type="button" class="copy" data-copy="npx skills add https://github.com/juliusbrussee/caveman --skill caveman-stats">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/juliusbrussee/caveman/caveman-stats">skills.sh page</a> · <a href="https://github.com/juliusbrussee/caveman/tree/HEAD/skills/caveman-stats">Source on GitHub</a> · <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">All skills from juliusbrussee/caveman</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>313,086 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>106,976 <span class="muted">juliusbrussee/caveman</span></dd></div><div><dt>First seen</dt><dd>Apr 30, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">13.8K</div>
+      <div class="stat-delta">-7% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 14,834; week to Aug 10: 15,408; week to Aug 17: 10,189; week to Aug 24: 9,476; week to Aug 31: 9,666; week to Sep 7: 11,825; week to Sep 14: 13,003; week to Sep 21: 13,817. Use the left and right arrow keys to read each week."
+        data-values="14834,15408,10189,9476,9666,11825,13003,13817" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,7.6 38.6,6.0 71.1,20.9 103.7,22.9 136.3,22.4 168.9,16.2 201.4,12.9 234.0,10.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="10.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>14,834</td></tr><tr><td>Aug 10</td><td>15,408</td></tr><tr><td>Aug 17</td><td>10,189</td></tr><tr><td>Aug 24</td><td>9,476</td></tr><tr><td>Aug 31</td><td>9,666</td></tr><tr><td>Sep 7</td><td>11,825</td></tr><tr><td>Sep 14</td><td>13,003</td></tr><tr><td>Sep 21</td><td>13,817</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:output-style" data-facet="category" title="Change how the agent replies: shorter, clearer, fewer tokens." href="/gemskills/?tag=category%3Aoutput-style">category:output-style</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Change how the agent replies: shorter, clearer, fewer tokens.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:command" data-facet="type" title="A one-shot action you invoke by name, such as turning the conversation into a PRD." href="/gemskills/?tag=type%3Acommand">type:command</a></div>
+          <p class="tag-meaning">A one-shot action you invoke by name, such as turning the conversation into a PRD.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:claude-code" data-facet="needs" title="Uses Claude Code features such as hooks or background agents." href="/gemskills/?tag=needs%3Aclaude-code">needs:claude-code</a></div>
+          <p class="tag-meaning">Uses Claude Code features such as hooks or background agents.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="token-saving" data-facet="topic" href="/gemskills/?tag=token-saving">token-saving</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/juliusbrussee/caveman/blob/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman-stats/SKILL.md">juliusbrussee/caveman at bad48a0</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: caveman-stats
+description: &#62;
+  Show recorded output and cache-read token usage and mode attribution for
+  the current Claude Code session, or locate the host&#39;s native usage report.
+  Trigger: /caveman-stats.</code></pre></details>
+        <div class="markdown"><p>In Claude Code, <code>src/hooks/caveman-mode-tracker.js</code> resolves <code>src/hooks/caveman-stats.js</code> next to itself and runs it on <code>/caveman-stats</code>. The hook does not block the prompt: it supplies the report through <code>hookSpecificOutput.additionalContext</code> with an instruction to print it verbatim inside a fenced code block. Do exactly that, and do not calculate, recompute or re-round the numbers yourself.</p>
+<p>In Gemini CLI, direct the user to <code>/stats model</code> for current session token usage or <code>/stats session</code> for session statistics. Gemini custom commands are prompts; they cannot invoke the built-in command or read its live session metrics. Never read Claude Code transcripts as Gemini usage. In other hosts, use a native usage report if one is available; otherwise say that current session usage is unavailable. The Claude reader and its lifetime history apply only to Claude Code. Savings remain unknown in every host without a measured comparison.</p>
+<p>The report shows recorded output and cache-read tokens, response counts, and mode attribution where available. Savings are unknown: the transcript has no measured comparison without Caveman. Do not infer saved tokens, percentages, dollars, rule overhead, or a net result from output counts or the current mode.</p>
+<p><code>--all</code> and <code>--since 7d</code> aggregate the latest recorded output count per session. <code>--share</code> reports observed usage with savings unknown. Historical <code>est_saved_*</code> fields are ignored; their original history rows remain on disk. The statusline shows the active mode without the retired savings badge.</p>
+<p>Original/current memory-file pairs are reported by their measured byte sizes. Those file-size differences do not establish provider token or billing savings. See <code>docs/HONEST-NUMBERS.md</code>.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skill-creator · Gem Skills</title>
+    <meta name="description" content="Use it when: you want to write a new skill, or find out whether an existing one actually helps. It does: drafts the skill with you, runs test prompts with and without it, and lets you review the outputs side by side. You get: a SKILL.md revised over rounds of tests, with a benchmark of pass rate, time and tokens. Also tunes: the description agents read to decide whether to load the skill, so it&#039;s picked up when it should be and not otherwise. Unlike: simpler skill-writing skills such as write-a-skill, it runs the skill on test prompts and measures the difference. Works best in: Claude Code; claude.ai skips the comparison runs, the benchmark and description tuning." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=anthropics%2Fskills">anthropics/skills</a></p>
+      <h1>skill-creator</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want to write a new skill, or find out whether an existing one actually helps</dd></div><div><dt>It does</dt><dd>drafts the skill with you, runs test prompts with and without it, and lets you review the outputs side by side</dd></div><div><dt>You get</dt><dd>a SKILL.md revised over rounds of tests, with a benchmark of pass rate, time and tokens</dd></div><div><dt>Also tunes</dt><dd>the description agents read to decide whether to load the skill, so it&#39;s picked up when it should be and not otherwise</dd></div><div><dt>Unlike</dt><dd>simpler skill-writing skills such as write-a-skill, it runs the skill on test prompts and measures the difference</dd></div><div><dt>Works best in</dt><dd>Claude Code; claude.ai skips the comparison runs, the benchmark and description tuning</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Anthropic&#39;s own skill for making skills. It starts wherever you are: an idea, a workflow you just did in the conversation (&#34;turn this into a skill&#34;), or a draft. It asks what the skill should do, when it should be used and what it should produce, then writes the SKILL.md. Next it writes two or three test prompts and runs each twice in parallel subagents, once with the skill and once without it, or with the old version. While they run it drafts pass-or-fail checks for the outputs, then grades them, totals pass rate, time and tokens into a benchmark, and opens a viewer in your browser where you click through each output and leave comments. It rewrites the skill from your feedback, preferring general fixes over ones tailored to the tests, and repeats until you&#39;re happy. Finally it can tune the description: you approve 20 sample requests, some that should load the skill and some that look similar but shouldn&#39;t, and a script tries up to five rewrites, keeping the one that scores best on requests it didn&#39;t learn from. To compare two versions, it can also have an agent judge their outputs without knowing which is which.</p>
+      <p class="muted">Summarizes <a href="https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/skill-creator">the skill at dbd4588</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/anthropics/skills --skill skill-creator</code><button type="button" class="copy" data-copy="npx skills add https://github.com/anthropics/skills --skill skill-creator">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/anthropics/skills/skill-creator">skills.sh page</a> · <a href="https://github.com/anthropics/skills/tree/HEAD/skills/skill-creator">Source on GitHub</a> · <a href="/gemskills/?repo=anthropics%2Fskills">All skills from anthropics/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>386,784 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>177,318 <span class="muted">anthropics/skills</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">6.3K</div>
+      <div class="stat-delta">-26% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 8,627; week to Aug 10: 8,460; week to Aug 17: 7,468; week to Aug 24: 6,875; week to Aug 31: 6,880; week to Sep 7: 6,908; week to Sep 14: 6,006; week to Sep 21: 6,341. Use the left and right arrow keys to read each week."
+        data-values="8627,8460,7468,6875,6880,6908,6006,6341" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,6.9 71.1,11.9 103.7,14.9 136.3,14.9 168.9,14.8 201.4,19.4 234.0,17.7" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="17.7" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>8,627</td></tr><tr><td>Aug 10</td><td>8,460</td></tr><tr><td>Aug 17</td><td>7,468</td></tr><tr><td>Aug 24</td><td>6,875</td></tr><tr><td>Aug 31</td><td>6,880</td></tr><tr><td>Sep 7</td><td>6,908</td></tr><tr><td>Sep 14</td><td>6,006</td></tr><tr><td>Sep 21</td><td>6,341</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:skill-tools" data-facet="category" title="Find, write, vet and route to other skills." href="/gemskills/?tag=category%3Askill-tools">category:skill-tools</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find, write, vet and route to other skills.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:subagents" data-facet="needs" title="Relies on the agent being able to spawn subagents." href="/gemskills/?tag=needs%3Asubagents">needs:subagents</a></div>
+          <p class="tag-meaning">Relies on the agent being able to spawn subagents.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="skill-authoring" data-facet="topic" href="/gemskills/?tag=skill-authoring">skill-authoring</a><a class="tag" data-tag="testing" data-facet="topic" href="/gemskills/?tag=testing">testing</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/skill-creator/SKILL.md">anthropics/skills at dbd4588</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: skill-creator
+description: Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill&#39;s description for better triggering accuracy.</code></pre></details>
+        <div class="markdown"><h3>Skill Creator</h3>
+<p>A skill for creating new skills and iteratively improving them.</p>
+<p>At a high level, the process of creating a skill goes like this:</p>
+<ul>
+<li>Decide what you want the skill to do and roughly how it should do it</li>
+<li>Write a draft of the skill</li>
+<li>Create a few test prompts and run claude-with-access-to-the-skill on them</li>
+<li>Help the user evaluate the results both qualitatively and quantitatively
+<ul>
+<li>While the runs happen in the background, draft some quantitative evals if there aren't any (if there are some, you can either use as is or modify if you feel something needs to change about them). Then explain them to the user (or if they already existed, explain the ones that already exist)</li>
+<li>Use the <code>eval-viewer/generate_review.py</code> script to show the user the results for them to look at, and also let them look at the quantitative metrics</li>
+</ul>
+</li>
+<li>Rewrite the skill based on feedback from the user's evaluation of the results (and also if there are any glaring flaws that become apparent from the quantitative benchmarks)</li>
+<li>Repeat until you're satisfied</li>
+<li>Expand the test set and try again at larger scale</li>
+</ul>
+<p>Your job when using this skill is to figure out where the user is in this process and then jump in and help them progress through these stages. So for instance, maybe they're like &quot;I want to make a skill for X&quot;. You can help narrow down what they mean, write a draft, write the test cases, figure out how they want to evaluate, run all the prompts, and repeat.</p>
+<p>On the other hand, maybe they already have a draft of the skill. In this case you can go straight to the eval/iterate part of the loop.</p>
+<p>Of course, you should always be flexible and if the user is like &quot;I don't need to run a bunch of evaluations, just vibe with me&quot;, you can do that instead.</p>
+<p>Then after the skill is done (but again, the order is flexible), you can also run the skill description improver, which we have a whole separate script for, to optimize the triggering of the skill.</p>
+<p>Cool? Cool.</p>
+<h4>Communicating with the user</h4>
+<p>The skill creator is liable to be used by people across a wide range of familiarity with coding jargon. If you haven't heard (and how could you, it's only very recently that it started), there's a trend now where the power of Claude is inspiring plumbers to open up their terminals, parents and grandparents to google &quot;how to install npm&quot;. On the other hand, the bulk of users are probably fairly computer-literate.</p>
+<p>So please pay attention to context cues to understand how to phrase your communication! In the default case, just to give you some idea:</p>
+<ul>
+<li>&quot;evaluation&quot; and &quot;benchmark&quot; are borderline, but OK</li>
+<li>for &quot;JSON&quot; and &quot;assertion&quot; you want to see serious cues from the user that they know what those things are before using them without explaining them</li>
+</ul>
+<p>It's OK to briefly explain terms if you're in doubt, and feel free to clarify terms with a short definition if you're unsure if the user will get it.</p>
+<hr>
+<h4>Creating a skill</h4>
+<h5>Capture Intent</h5>
+<p>Start by understanding the user's intent. The current conversation might already contain a workflow the user wants to capture (e.g., they say &quot;turn this into a skill&quot;). If so, extract answers from the conversation history first — the tools used, the sequence of steps, corrections the user made, input/output formats observed. The user may need to fill the gaps, and should confirm before proceeding to the next step.</p>
+<ol>
+<li>What should this skill enable Claude to do?</li>
+<li>When should this skill trigger? (what user phrases/contexts)</li>
+<li>What's the expected output format?</li>
+<li>Should we set up test cases to verify the skill works? Skills with objectively verifiable outputs (file transforms, data extraction, code generation, fixed workflow steps) benefit from test cases. Skills with subjective outputs (writing style, art) often don't need them. Suggest the appropriate default based on the skill type, but let the user decide.</li>
+</ol>
+<h5>Interview and Research</h5>
+<p>Proactively ask questions about edge cases, input/output formats, example files, success criteria, and dependencies. Wait to write test prompts until you've got this part ironed out.</p>
+<p>Check available MCPs - if useful for research (searching docs, finding similar skills, looking up best practices), research in parallel via subagents if available, otherwise inline. Come prepared with context to reduce burden on the user.</p>
+<h5>Write the SKILL.md</h5>
+<p>Based on the user interview, fill in these components:</p>
+<ul>
+<li><strong>name</strong>: Skill identifier</li>
+<li><strong>description</strong>: When to trigger, what it does. This is the primary triggering mechanism - include both what the skill does AND specific contexts for when to use it. All &quot;when to use&quot; info goes here, not in the body. Note: currently Claude has a tendency to &quot;undertrigger&quot; skills -- to not use them when they'd be useful. To combat this, please make the skill descriptions a little bit &quot;pushy&quot;. So for instance, instead of &quot;How to build a simple fast dashboard to display internal Anthropic data.&quot;, you might write &quot;How to build a simple fast dashboard to display internal Anthropic data. Make sure to use this skill whenever the user mentions dashboards, data visualization, internal metrics, or wants to display any kind of company data, even if they don't explicitly ask for a 'dashboard.'&quot;</li>
+<li><strong>compatibility</strong>: Required tools, dependencies (optional, rarely needed)</li>
+<li><strong>the rest of the skill :)</strong></li>
+</ul>
+<h5>Skill Writing Guide</h5>
+<h6>Anatomy of a Skill</h6>
+<pre><code>skill-name/
+├── SKILL.md (required)
+│   ├── YAML frontmatter (name, description required)
+│   └── Markdown instructions
+└── Bundled Resources (optional)
+    ├── scripts/    - Executable code for deterministic/repetitive tasks
+    ├── references/ - Docs loaded into context as needed
+    └── assets/     - Files used in output (templates, icons, fonts)
+</code></pre>
+<h6>Progressive Disclosure</h6>
+<p>Skills use a three-level loading system:</p>
+<ol>
+<li><strong>Metadata</strong> (name + description) - Always in context (~100 words)</li>
+<li><strong>SKILL.md body</strong> - In context whenever skill triggers (&lt;500 lines ideal)</li>
+<li><strong>Bundled resources</strong> - As needed (unlimited, scripts can execute without loading)</li>
+</ol>
+<p>These word counts are approximate and you can feel free to go longer if needed.</p>
+<p><strong>Key patterns:</strong></p>
+<ul>
+<li>Keep SKILL.md under 500 lines; if you're approaching this limit, add an additional layer of hierarchy along with clear pointers about where the model using the skill should go next to follow up.</li>
+<li>Reference files clearly from SKILL.md with guidance on when to read them</li>
+<li>For large reference files (&gt;300 lines), include a table of contents</li>
+</ul>
+<p><strong>Domain organization</strong>: When a skill supports multiple domains/frameworks, organize by variant:</p>
+<pre><code>cloud-deploy/
+├── SKILL.md (workflow + selection)
+└── references/
+    ├── aws.md
+    ├── gcp.md
+    └── azure.md
+</code></pre>
+<p>Claude reads only the relevant reference file.</p>
+<h6>Principle of Lack of Surprise</h6>
+<p>This goes without saying, but skills must not contain malware, exploit code, or any content that could compromise system security. A skill's contents should not surprise the user in their intent if described. Don't go along with requests to create misleading skills or skills designed to facilitate unauthorized access, data exfiltration, or other malicious activities. Things like a &quot;roleplay as an XYZ&quot; are OK though.</p>
+<h6>Writing Patterns</h6>
+<p>Prefer using the imperative form in instructions.</p>
+<p><strong>Defining output formats</strong> - You can do it like this:</p>
+<pre><code class="language-markdown">## Report structure
+ALWAYS use this exact template:
+# [Title]
+## Executive summary
+## Key findings
+## Recommendations
+</code></pre>
+<p><strong>Examples pattern</strong> - It's useful to include examples. You can format them like this (but if &quot;Input&quot; and &quot;Output&quot; are in the examples you might want to deviate a little):</p>
+<pre><code class="language-markdown">## Commit message format
+**Example 1:**
+Input: Added user authentication with JWT tokens
+Output: feat(auth): implement JWT-based authentication
+</code></pre>
+<h5>Writing Style</h5>
+<p>Try to explain to the model why things are important in lieu of heavy-handed musty MUSTs. Use theory of mind and try to make the skill general and not super-narrow to specific examples. Start by writing a draft and then look at it with fresh eyes and improve it.</p>
+<h5>Test Cases</h5>
+<p>After writing the skill draft, come up with 2-3 realistic test prompts — the kind of thing a real user would actually say. Share them with the user: [you don't have to use this exact language] &quot;Here are a few test cases I'd like to try. Do these look right, or do you want to add more?&quot; Then run them.</p>
+<p>Save test cases to <code>evals/evals.json</code>. Don't write assertions yet — just the prompts. You'll draft assertions in the next step while the runs are in progress.</p>
+<pre><code class="language-json">{
+  &quot;skill_name&quot;: &quot;example-skill&quot;,
+  &quot;evals&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;prompt&quot;: &quot;User's task prompt&quot;,
+      &quot;expected_output&quot;: &quot;Description of expected result&quot;,
+      &quot;files&quot;: []
+    }
+  ]
+}
+</code></pre>
+<p>See <code>references/schemas.md</code> for the full schema (including the <code>assertions</code> field, which you'll add later).</p>
+<h4>Running and evaluating test cases</h4>
+<p>This section is one continuous sequence — don't stop partway through. Do NOT use <code>/skill-test</code> or any other testing skill.</p>
+<p>Put results in <code>&lt;skill-name&gt;-workspace/</code> as a sibling to the skill directory. Within the workspace, organize results by iteration (<code>iteration-1/</code>, <code>iteration-2/</code>, etc.) and within that, each test case gets a directory (<code>eval-0/</code>, <code>eval-1/</code>, etc.). Don't create all of this upfront — just create directories as you go.</p>
+<h5>Step 1: Spawn all runs (with-skill AND baseline) in the same turn</h5>
+<p>For each test case, spawn two subagents in the same turn — one with the skill, one without. This is important: don't spawn the with-skill runs first and then come back for baselines later. Launch everything at once so it all finishes around the same time.</p>
+<p><strong>With-skill run:</strong></p>
+<pre><code>Execute this task:
+- Skill path: &lt;path-to-skill&gt;
+- Task: &lt;eval prompt&gt;
+- Input files: &lt;eval files if any, or &quot;none&quot;&gt;
+- Save outputs to: &lt;workspace&gt;/iteration-&lt;N&gt;/eval-&lt;ID&gt;/with_skill/outputs/
+- Outputs to save: &lt;what the user cares about — e.g., &quot;the .docx file&quot;, &quot;the final CSV&quot;&gt;
+</code></pre>
+<p><strong>Baseline run</strong> (same prompt, but the baseline depends on context):</p>
+<ul>
+<li><strong>Creating a new skill</strong>: no skill at all. Same prompt, no skill path, save to <code>without_skill/outputs/</code>.</li>
+<li><strong>Improving an existing skill</strong>: the old version. Before editing, snapshot the skill (<code>cp -r &lt;skill-path&gt; &lt;workspace&gt;/skill-snapshot/</code>), then point the baseline subagent at the snapshot. Save to <code>old_skill/outputs/</code>.</li>
+</ul>
+<p>Write an <code>eval_metadata.json</code> for each test case (assertions can be empty for now). Give each eval a descriptive name based on what it's testing — not just &quot;eval-0&quot;. Use this name for the directory too. If this iteration uses new or modified eval prompts, create these files for each new eval directory — don't assume they carry over from previous iterations.</p>
+<pre><code class="language-json">{
+  &quot;eval_id&quot;: 0,
+  &quot;eval_name&quot;: &quot;descriptive-name-here&quot;,
+  &quot;prompt&quot;: &quot;The user's task prompt&quot;,
+  &quot;assertions&quot;: []
+}
+</code></pre>
+<h5>Step 2: While runs are in progress, draft assertions</h5>
+<p>Don't just wait for the runs to finish — you can use this time productively. Draft quantitative assertions for each test case and explain them to the user. If assertions already exist in <code>evals/evals.json</code>, review them and explain what they check.</p>
+<p>Good assertions are objectively verifiable and have descriptive names — they should read clearly in the benchmark viewer so someone glancing at the results immediately understands what each one checks. Subjective skills (writing style, design quality) are better evaluated qualitatively — don't force assertions onto things that need human judgment.</p>
+<p>Update the <code>eval_metadata.json</code> files and <code>evals/evals.json</code> with the assertions once drafted. Also explain to the user what they'll see in the viewer — both the qualitative outputs and the quantitative benchmark.</p>
+<h5>Step 3: As runs complete, capture timing data</h5>
+<p>When each subagent task completes, you receive a notification containing <code>total_tokens</code> and <code>duration_ms</code>. Save this data immediately to <code>timing.json</code> in the run directory:</p>
+<pre><code class="language-json">{
+  &quot;total_tokens&quot;: 84852,
+  &quot;duration_ms&quot;: 23332,
+  &quot;total_duration_seconds&quot;: 23.3
+}
+</code></pre>
+<p>This is the only opportunity to capture this data — it comes through the task notification and isn't persisted elsewhere. Process each notification as it arrives rather than trying to batch them.</p>
+<h5>Step 4: Grade, aggregate, and launch the viewer</h5>
+<p>Once all runs are done:</p>
+<ol>
+<li>
+<p><strong>Grade each run</strong> — spawn a grader subagent (or grade inline) that reads <code>agents/grader.md</code> and evaluates each assertion against the outputs. Save results to <code>grading.json</code> in each run directory. The grading.json expectations array must use the fields <code>text</code>, <code>passed</code>, and <code>evidence</code> (not <code>name</code>/<code>met</code>/<code>details</code> or other variants) — the viewer depends on these exact field names. For assertions that can be checked programmatically, write and run a script rather than eyeballing it — scripts are faster, more reliable, and can be reused across iterations.</p>
+</li>
+<li>
+<p><strong>Aggregate into benchmark</strong> — run the aggregation script from the skill-creator directory:</p>
+<pre><code class="language-bash">python -m scripts.aggregate_benchmark &lt;workspace&gt;/iteration-N --skill-name &lt;name&gt;
+</code></pre>
+<p>This produces <code>benchmark.json</code> and <code>benchmark.md</code> with pass_rate, time, and tokens for each configuration, with mean ± stddev and the delta. If generating benchmark.json manually, see <code>references/schemas.md</code> for the exact schema the viewer expects.
+Put each with_skill version before its baseline counterpart.</p>
+</li>
+<li>
+<p><strong>Do an analyst pass</strong> — read the benchmark data and surface patterns the aggregate stats might hide. See <code>agents/analyzer.md</code> (the &quot;Analyzing Benchmark Results&quot; section) for what to look for — things like assertions that always pass regardless of skill (non-discriminating), high-variance evals (possibly flaky), and time/token tradeoffs.</p>
+</li>
+<li>
+<p><strong>Launch the viewer</strong> with both qualitative outputs and quantitative data:</p>
+<pre><code class="language-bash">nohup python &lt;skill-creator-path&gt;/eval-viewer/generate_review.py \
+  &lt;workspace&gt;/iteration-N \
+  --skill-name &quot;my-skill&quot; \
+  --benchmark &lt;workspace&gt;/iteration-N/benchmark.json \
+  &gt; /dev/null 2&gt;&amp;1 &amp;
+VIEWER_PID=$!
+</code></pre>
+<p>For iteration 2+, also pass <code>--previous-workspace &lt;workspace&gt;/iteration-&lt;N-1&gt;</code>.</p>
+<p><strong>Cowork / headless environments:</strong> If <code>webbrowser.open()</code> is not available or the environment has no display, use <code>--static &lt;output_path&gt;</code> to write a standalone HTML file instead of starting a server. Feedback will be downloaded as a <code>feedback.json</code> file when the user clicks &quot;Submit All Reviews&quot;. After download, copy <code>feedback.json</code> into the workspace directory for the next iteration to pick up.</p>
+</li>
+</ol>
+<p>Note: please use generate_review.py to create the viewer; there's no need to write custom HTML.</p>
+<ol start="5">
+<li><strong>Tell the user</strong> something like: &quot;I've opened the results in your browser. There are two tabs — 'Outputs' lets you click through each test case and leave feedback, 'Benchmark' shows the quantitative comparison. When you're done, come back here and let me know.&quot;</li>
+</ol>
+<h5>What the user sees in the viewer</h5>
+<p>The &quot;Outputs&quot; tab shows one test case at a time:</p>
+<ul>
+<li><strong>Prompt</strong>: the task that was given</li>
+<li><strong>Output</strong>: the files the skill produced, rendered inline where possible</li>
+<li><strong>Previous Output</strong> (iteration 2+): collapsed section showing last iteration's output</li>
+<li><strong>Formal Grades</strong> (if grading was run): collapsed section showing assertion pass/fail</li>
+<li><strong>Feedback</strong>: a textbox that auto-saves as they type</li>
+<li><strong>Previous Feedback</strong> (iteration 2+): their comments from last time, shown below the textbox</li>
+</ul>
+<p>The &quot;Benchmark&quot; tab shows the stats summary: pass rates, timing, and token usage for each configuration, with per-eval breakdowns and analyst observations.</p>
+<p>Navigation is via prev/next buttons or arrow keys. When done, they click &quot;Submit All Reviews&quot; which saves all feedback to <code>feedback.json</code>.</p>
+<h5>Step 5: Read the feedback</h5>
+<p>When the user tells you they're done, read <code>feedback.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;reviews&quot;: [
+    {&quot;run_id&quot;: &quot;eval-0-with_skill&quot;, &quot;feedback&quot;: &quot;the chart is missing axis labels&quot;, &quot;timestamp&quot;: &quot;...&quot;},
+    {&quot;run_id&quot;: &quot;eval-1-with_skill&quot;, &quot;feedback&quot;: &quot;&quot;, &quot;timestamp&quot;: &quot;...&quot;},
+    {&quot;run_id&quot;: &quot;eval-2-with_skill&quot;, &quot;feedback&quot;: &quot;perfect, love this&quot;, &quot;timestamp&quot;: &quot;...&quot;}
+  ],
+  &quot;status&quot;: &quot;complete&quot;
+}
+</code></pre>
+<p>Empty feedback means the user thought it was fine. Focus your improvements on the test cases where the user had specific complaints.</p>
+<p>Kill the viewer server when you're done with it:</p>
+<pre><code class="language-bash">kill $VIEWER_PID 2&gt;/dev/null
+</code></pre>
+<hr>
+<h4>Improving the skill</h4>
+<p>This is the heart of the loop. You've run the test cases, the user has reviewed the results, and now you need to make the skill better based on their feedback.</p>
+<h5>How to think about improvements</h5>
+<ol>
+<li>
+<p><strong>Generalize from the feedback.</strong> The big picture thing that's happening here is that we're trying to create skills that can be used a million times (maybe literally, maybe even more who knows) across many different prompts. Here you and the user are iterating on only a few examples over and over again because it helps move faster. The user knows these examples in and out and it's quick for them to assess new outputs. But if the skill you and the user are codeveloping works only for those examples, it's useless. Rather than put in fiddly overfitty changes, or oppressively constrictive MUSTs, if there's some stubborn issue, you might try branching out and using different metaphors, or recommending different patterns of working. It's relatively cheap to try and maybe you'll land on something great.</p>
+</li>
+<li>
+<p><strong>Keep the prompt lean.</strong> Remove things that aren't pulling their weight. Make sure to read the transcripts, not just the final outputs — if it looks like the skill is making the model waste a bunch of time doing things that are unproductive, you can try getting rid of the parts of the skill that are making it do that and seeing what happens.</p>
+</li>
+<li>
+<p><strong>Explain the why.</strong> Try hard to explain the <strong>why</strong> behind everything you're asking the model to do. Today's LLMs are <em>smart</em>. They have good theory of mind and when given a good harness can go beyond rote instructions and really make things happen. Even if the feedback from the user is terse or frustrated, try to actually understand the task and why the user is writing what they wrote, and what they actually wrote, and then transmit this understanding into the instructions. If you find yourself writing ALWAYS or NEVER in all caps, or using super rigid structures, that's a yellow flag — if possible, reframe and explain the reasoning so that the model understands why the thing you're asking for is important. That's a more humane, powerful, and effective approach.</p>
+</li>
+<li>
+<p><strong>Look for repeated work across test cases.</strong> Read the transcripts from the test runs and notice if the subagents all independently wrote similar helper scripts or took the same multi-step approach to something. If all 3 test cases resulted in the subagent writing a <code>create_docx.py</code> or a <code>build_chart.py</code>, that's a strong signal the skill should bundle that script. Write it once, put it in <code>scripts/</code>, and tell the skill to use it. This saves every future invocation from reinventing the wheel.</p>
+</li>
+</ol>
+<p>This task is pretty important (we are trying to create billions a year in economic value here!) and your thinking time is not the blocker; take your time and really mull things over. I'd suggest writing a draft revision and then looking at it anew and making improvements. Really do your best to get into the head of the user and understand what they want and need.</p>
+<h5>The iteration loop</h5>
+<p>After improving the skill:</p>
+<ol>
+<li>Apply your improvements to the skill</li>
+<li>Rerun all test cases into a new <code>iteration-&lt;N+1&gt;/</code> directory, including baseline runs. If you're creating a new skill, the baseline is always <code>without_skill</code> (no skill) — that stays the same across iterations. If you're improving an existing skill, use your judgment on what makes sense as the baseline: the original version the user came in with, or the previous iteration.</li>
+<li>Launch the reviewer with <code>--previous-workspace</code> pointing at the previous iteration</li>
+<li>Wait for the user to review and tell you they're done</li>
+<li>Read the new feedback, improve again, repeat</li>
+</ol>
+<p>Keep going until:</p>
+<ul>
+<li>The user says they're happy</li>
+<li>The feedback is all empty (everything looks good)</li>
+<li>You're not making meaningful progress</li>
+</ul>
+<hr>
+<h4>Advanced: Blind comparison</h4>
+<p>For situations where you want a more rigorous comparison between two versions of a skill (e.g., the user asks &quot;is the new version actually better?&quot;), there's a blind comparison system. Read <code>agents/comparator.md</code> and <code>agents/analyzer.md</code> for the details. The basic idea is: give two outputs to an independent agent without telling it which is which, and let it judge quality. Then analyze why the winner won.</p>
+<p>This is optional, requires subagents, and most users won't need it. The human review loop is usually sufficient.</p>
+<hr>
+<h4>Description Optimization</h4>
+<p>The description field in SKILL.md frontmatter is the primary mechanism that determines whether Claude invokes a skill. After creating or improving a skill, offer to optimize the description for better triggering accuracy.</p>
+<h5>Step 1: Generate trigger eval queries</h5>
+<p>Create 20 eval queries — a mix of should-trigger and should-not-trigger. Save as JSON:</p>
+<pre><code class="language-json">[
+  {&quot;query&quot;: &quot;the user prompt&quot;, &quot;should_trigger&quot;: true},
+  {&quot;query&quot;: &quot;another prompt&quot;, &quot;should_trigger&quot;: false}
+]
+</code></pre>
+<p>The queries must be realistic and something a Claude Code or Claude.ai user would actually type. Not abstract requests, but requests that are concrete and specific and have a good amount of detail. For instance, file paths, personal context about the user's job or situation, column names and values, company names, URLs. A little bit of backstory. Some might be in lowercase or contain abbreviations or typos or casual speech. Use a mix of different lengths, and focus on edge cases rather than making them clear-cut (the user will get a chance to sign off on them).</p>
+<p>Bad: <code>&quot;Format this data&quot;</code>, <code>&quot;Extract text from PDF&quot;</code>, <code>&quot;Create a chart&quot;</code></p>
+<p>Good: <code>&quot;ok so my boss just sent me this xlsx file (its in my downloads, called something like 'Q4 sales final FINAL v2.xlsx') and she wants me to add a column that shows the profit margin as a percentage. The revenue is in column C and costs are in column D i think&quot;</code></p>
+<p>For the <strong>should-trigger</strong> queries (8-10), think about coverage. You want different phrasings of the same intent — some formal, some casual. Include cases where the user doesn't explicitly name the skill or file type but clearly needs it. Throw in some uncommon use cases and cases where this skill competes with another but should win.</p>
+<p>For the <strong>should-not-trigger</strong> queries (8-10), the most valuable ones are the near-misses — queries that share keywords or concepts with the skill but actually need something different. Think adjacent domains, ambiguous phrasing where a naive keyword match would trigger but shouldn't, and cases where the query touches on something the skill does but in a context where another tool is more appropriate.</p>
+<p>The key thing to avoid: don't make should-not-trigger queries obviously irrelevant. &quot;Write a fibonacci function&quot; as a negative test for a PDF skill is too easy — it doesn't test anything. The negative cases should be genuinely tricky.</p>
+<h5>Step 2: Review with user</h5>
+<p>Present the eval set to the user for review using the HTML template:</p>
+<ol>
+<li>Read the template from <code>assets/eval_review.html</code></li>
+<li>Replace the placeholders:
+<ul>
+<li><code>__EVAL_DATA_PLACEHOLDER__</code> → the JSON array of eval items (no quotes around it — it's a JS variable assignment)</li>
+<li><code>__SKILL_NAME_PLACEHOLDER__</code> → the skill's name</li>
+<li><code>__SKILL_DESCRIPTION_PLACEHOLDER__</code> → the skill's current description</li>
+</ul>
+</li>
+<li>Write to a temp file (e.g., <code>/tmp/eval_review_&lt;skill-name&gt;.html</code>) and open it: <code>open /tmp/eval_review_&lt;skill-name&gt;.html</code></li>
+<li>The user can edit queries, toggle should-trigger, add/remove entries, then click &quot;Export Eval Set&quot;</li>
+<li>The file downloads to <code>~/Downloads/eval_set.json</code> — check the Downloads folder for the most recent version in case there are multiple (e.g., <code>eval_set (1).json</code>)</li>
+</ol>
+<p>This step matters — bad eval queries lead to bad descriptions.</p>
+<h5>Step 3: Run the optimization loop</h5>
+<p>Tell the user: &quot;This will take some time — I'll run the optimization loop in the background and check on it periodically.&quot;</p>
+<p>Save the eval set to the workspace, then run in the background:</p>
+<pre><code class="language-bash">python -m scripts.run_loop \
+  --eval-set &lt;path-to-trigger-eval.json&gt; \
+  --skill-path &lt;path-to-skill&gt; \
+  --model &lt;model-id-powering-this-session&gt; \
+  --max-iterations 5 \
+  --verbose
+</code></pre>
+<p>Use the model ID from your system prompt (the one powering the current session) so the triggering test matches what the user actually experiences.</p>
+<p>While it runs, periodically tail the output to give the user updates on which iteration it's on and what the scores look like.</p>
+<p>This handles the full optimization loop automatically. It splits the eval set into 60% train and 40% held-out test, evaluates the current description (running each query 3 times to get a reliable trigger rate), then calls Claude to propose improvements based on what failed. It re-evaluates each new description on both train and test, iterating up to 5 times. When it's done, it opens an HTML report in the browser showing the results per iteration and returns JSON with <code>best_description</code> — selected by test score rather than train score to avoid overfitting.</p>
+<h5>How skill triggering works</h5>
+<p>Understanding the triggering mechanism helps design better eval queries. Skills appear in Claude's <code>available_skills</code> list with their name + description, and Claude decides whether to consult a skill based on that description. The important thing to know is that Claude only consults skills for tasks it can't easily handle on its own — simple, one-step queries like &quot;read this PDF&quot; may not trigger a skill even if the description matches perfectly, because Claude can handle them directly with basic tools. Complex, multi-step, or specialized queries reliably trigger skills when the description matches.</p>
+<p>This means your eval queries should be substantive enough that Claude would actually benefit from consulting a skill. Simple queries like &quot;read file X&quot; are poor test cases — they won't trigger skills regardless of description quality.</p>
+<h5>Step 4: Apply the result</h5>
+<p>Take <code>best_description</code> from the JSON output and update the skill's SKILL.md frontmatter. Show the user before/after and report the scores.</p>
+<hr>
+<h5>Package and Present (only if <code>present_files</code> tool is available)</h5>
+<p>Check whether you have access to the <code>present_files</code> tool. If you don't, skip this step. If you do, package the skill and present the .skill file to the user:</p>
+<pre><code class="language-bash">python -m scripts.package_skill &lt;path/to/skill-folder&gt;
+</code></pre>
+<p>After packaging, direct the user to the resulting <code>.skill</code> file path so they can install it.</p>
+<hr>
+<h4>Claude.ai-specific instructions</h4>
+<p>In Claude.ai, the core workflow is the same (draft → test → review → improve → repeat), but because Claude.ai doesn't have subagents, some mechanics change. Here's what to adapt:</p>
+<p><strong>Running test cases</strong>: No subagents means no parallel execution. For each test case, read the skill's SKILL.md, then follow its instructions to accomplish the test prompt yourself. Do them one at a time. This is less rigorous than independent subagents (you wrote the skill and you're also running it, so you have full context), but it's a useful sanity check — and the human review step compensates. Skip the baseline runs — just use the skill to complete the task as requested.</p>
+<p><strong>Reviewing results</strong>: If you can't open a browser (e.g., Claude.ai's VM has no display, or you're on a remote server), skip the browser reviewer entirely. Instead, present results directly in the conversation. For each test case, show the prompt and the output. If the output is a file the user needs to see (like a .docx or .xlsx), save it to the filesystem and tell them where it is so they can download and inspect it. Ask for feedback inline: &quot;How does this look? Anything you'd change?&quot;</p>
+<p><strong>Benchmarking</strong>: Skip the quantitative benchmarking — it relies on baseline comparisons which aren't meaningful without subagents. Focus on qualitative feedback from the user.</p>
+<p><strong>The iteration loop</strong>: Same as before — improve the skill, rerun the test cases, ask for feedback — just without the browser reviewer in the middle. You can still organize results into iteration directories on the filesystem if you have one.</p>
+<p><strong>Description optimization</strong>: This section requires the <code>claude</code> CLI tool (specifically <code>claude -p</code>) which is only available in Claude Code. Skip it if you're on Claude.ai.</p>
+<p><strong>Blind comparison</strong>: Requires subagents. Skip it.</p>
+<p><strong>Packaging</strong>: The <code>package_skill.py</code> script works anywhere with Python and a filesystem. On Claude.ai, you can run it and the user can download the resulting <code>.skill</code> file.</p>
+<p><strong>Updating an existing skill</strong>: The user might be asking you to update an existing skill, not create a new one. In this case:</p>
+<ul>
+<li><strong>Preserve the original name.</strong> Note the skill's directory name and <code>name</code> frontmatter field -- use them unchanged. E.g., if the installed skill is <code>research-helper</code>, output <code>research-helper.skill</code> (not <code>research-helper-v2</code>).</li>
+<li><strong>Copy to a writeable location before editing.</strong> The installed skill path may be read-only. Copy to <code>/tmp/skill-name/</code>, edit there, and package from the copy.</li>
+<li><strong>If packaging manually, stage in <code>/tmp/</code> first</strong>, then copy to the output directory -- direct writes may fail due to permissions.</li>
+</ul>
+<hr>
+<h4>Cowork-Specific Instructions</h4>
+<p>If you're in Cowork, the main things to know are:</p>
+<ul>
+<li>You have subagents, so the main workflow (spawn test cases in parallel, run baselines, grade, etc.) all works. (However, if you run into severe problems with timeouts, it's OK to run the test prompts in series rather than parallel.)</li>
+<li>You don't have a browser or display, so when generating the eval viewer, use <code>--static &lt;output_path&gt;</code> to write a standalone HTML file instead of starting a server. Then proffer a link that the user can click to open the HTML in their browser.</li>
+<li>For whatever reason, the Cowork setup seems to disincline Claude from generating the eval viewer after running the tests, so just to reiterate: whether you're in Cowork or in Claude Code, after running tests, you should always generate the eval viewer for the human to look at examples before revising the skill yourself and trying to make corrections, using <code>generate_review.py</code> (not writing your own boutique html code). Sorry in advance but I'm gonna go all caps here: GENERATE THE EVAL VIEWER <em>BEFORE</em> evaluating inputs yourself. You want to get them in front of the human ASAP!</li>
+<li>Feedback works differently: since there's no running server, the viewer's &quot;Submit All Reviews&quot; button will download <code>feedback.json</code> as a file. You can then read it from there (you may have to request access first).</li>
+<li>Packaging works — <code>package_skill.py</code> just needs Python and a filesystem.</li>
+<li>Description optimization (<code>run_loop.py</code> / <code>run_eval.py</code>) should work in Cowork just fine since it uses <code>claude -p</code> via subprocess, not a browser, but please save it until you've fully finished making the skill and the user agrees it's in good shape.</li>
+<li><strong>Updating an existing skill</strong>: The user might be asking you to update an existing skill, not create a new one. Follow the update guidance in the claude.ai section above.</li>
+</ul>
+<hr>
+<h4>Reference files</h4>
+<p>The agents/ directory contains instructions for specialized subagents. Read them when you need to spawn the relevant subagent.</p>
+<ul>
+<li><code>agents/grader.md</code> — How to evaluate assertions against outputs</li>
+<li><code>agents/comparator.md</code> — How to do blind A/B comparison between two outputs</li>
+<li><code>agents/analyzer.md</code> — How to analyze why one version beat another</li>
+</ul>
+<p>The references/ directory has additional documentation:</p>
+<ul>
+<li><code>references/schemas.md</code> — JSON structures for evals.json, grading.json, etc.</li>
+</ul>
+<hr>
+<p>Repeating one more time the core loop here for emphasis:</p>
+<ul>
+<li>Figure out what the skill is about</li>
+<li>Draft or edit the skill</li>
+<li>Run claude-with-access-to-the-skill on test prompts</li>
+<li>With the user, evaluate the outputs:
+<ul>
+<li>Create benchmark.json and run <code>eval-viewer/generate_review.py</code> to help the user review them</li>
+<li>Run quantitative evals</li>
+</ul>
+</li>
+<li>Repeat until you and the user are satisfied</li>
+<li>Package the final skill and return it to the user.</li>
+</ul>
+<p>Please add steps to your TodoList, if you have such a thing, to make sure you don't forget. If you're in Cowork, please specifically put &quot;Create evals JSON and run <code>eval-viewer/generate_review.py</code> so human can review test cases&quot; in your TodoList to make sure it happens.</p>
+<p>Good luck!</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

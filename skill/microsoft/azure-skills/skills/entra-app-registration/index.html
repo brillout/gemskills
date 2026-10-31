@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>entra-app-registration · Gem Skills</title>
+    <meta name="description" content="Registers Microsoft Entra ID apps and sets up OAuth and MSAL." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=microsoft%2Fazure-skills">microsoft/azure-skills</a></p>
+      <h1>entra-app-registration</h1>
+      <p class="lede">Registers Microsoft Entra ID apps and sets up OAuth and MSAL.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/microsoft/azure-skills --skill entra-app-registration</code><button type="button" class="copy" data-copy="npx skills add https://github.com/microsoft/azure-skills --skill entra-app-registration">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/microsoft/azure-skills/entra-app-registration">skills.sh page</a> · <a href="https://github.com/microsoft/azure-skills/tree/HEAD/skills/entra-app-registration">Source on GitHub</a> · <a href="/gemskills/?repo=microsoft%2Fazure-skills">All skills from microsoft/azure-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>590,098 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>1,489 <span class="muted">microsoft/azure-skills</span></dd></div><div><dt>First seen</dt><dd>Feb 4, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">12.5K</div>
+      <div class="stat-delta">-24% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 16,403; week to Aug 10: 16,119; week to Aug 17: 14,985; week to Aug 24: 13,440; week to Aug 31: 13,622; week to Sep 7: 12,123; week to Sep 14: 12,813; week to Sep 21: 12,458. Use the left and right arrow keys to read each week."
+        data-values="16403,16119,14985,13440,13622,12123,12813,12458" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,6.8 71.1,9.8 103.7,13.9 136.3,13.5 168.9,17.5 201.4,15.6 234.0,16.6" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="16.6" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>16,403</td></tr><tr><td>Aug 10</td><td>16,119</td></tr><tr><td>Aug 17</td><td>14,985</td></tr><tr><td>Aug 24</td><td>13,440</td></tr><tr><td>Aug 31</td><td>13,622</td></tr><tr><td>Sep 7</td><td>12,123</td></tr><tr><td>Sep 14</td><td>12,813</td></tr><tr><td>Sep 21</td><td>12,458</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:security" data-facet="category" title="Compliance, guardrails, skill vetting and browser fingerprinting." href="/gemskills/?tag=category%3Asecurity">category:security</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Compliance, guardrails, skill vetting and browser fingerprinting.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="auth" data-facet="topic" href="/gemskills/?tag=auth">auth</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:azure" data-facet="stack" href="/gemskills/?tag=stack%3Aazure">stack:azure</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/SKILL.md">microsoft/azure-skills at 5be6708</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: entra-app-registration
+description: &#34;Guides Microsoft Entra ID app registration, OAuth 2.0 authentication, and MSAL integration. USE FOR: create app registration, register Azure AD app, configure OAuth, set up authentication, add API permissions, generate service principal, MSAL example, console app auth, Entra ID setup, Azure AD authentication. DO NOT USE FOR: Key Vault secrets (use azure-keyvault-expiration-audit), general Azure resource security guidance.&#34;
+license: MIT
+metadata:
+  author: Microsoft
+  version: &#34;1.2.1&#34;</code></pre></details>
+        <div class="markdown"><h4>Overview</h4>
+<p>Microsoft Entra ID (formerly Azure Active Directory) is Microsoft's cloud-based identity and access management service. App registrations allow applications to authenticate users and access Azure resources securely.</p>
+<h5>Key Concepts</h5>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>App Registration</strong></td>
+<td>Configuration that allows an app to use Microsoft identity platform</td>
+</tr>
+<tr>
+<td><strong>Application (Client) ID</strong></td>
+<td>Unique identifier for your application</td>
+</tr>
+<tr>
+<td><strong>Tenant ID</strong></td>
+<td>Unique identifier for your Azure AD tenant/directory</td>
+</tr>
+<tr>
+<td><strong>Client Secret</strong></td>
+<td>Password for the application (confidential clients only)</td>
+</tr>
+<tr>
+<td><strong>Redirect URI</strong></td>
+<td>URL where authentication responses are sent</td>
+</tr>
+<tr>
+<td><strong>API Permissions</strong></td>
+<td>Access scopes your app requests</td>
+</tr>
+<tr>
+<td><strong>Service Principal</strong></td>
+<td>Identity created in your tenant when you register an app</td>
+</tr>
+</tbody>
+</table>
+<h5>Application Types</h5>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Web Application</strong></td>
+<td>Server-side apps, APIs</td>
+</tr>
+<tr>
+<td><strong>Single Page App (SPA)</strong></td>
+<td>JavaScript/React/Angular apps</td>
+</tr>
+<tr>
+<td><strong>Mobile/Native App</strong></td>
+<td>Desktop, mobile apps</td>
+</tr>
+<tr>
+<td><strong>Daemon/Service</strong></td>
+<td>Background services, APIs</td>
+</tr>
+</tbody>
+</table>
+<h4>Core Workflow</h4>
+<h5>Step 1: Register the Application</h5>
+<p>Create an app registration in the Azure portal or using Azure CLI.</p>
+<p><strong>Portal Method:</strong></p>
+<ol>
+<li>Navigate to Azure Portal → Microsoft Entra ID → App registrations</li>
+<li>Click &quot;New registration&quot;</li>
+<li>Provide name, supported account types, and redirect URI</li>
+<li>Click &quot;Register&quot;</li>
+</ol>
+<p><strong>CLI Method:</strong> See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/cli-commands.md">references/cli-commands.md</a>
+<strong>IaC Method:</strong> See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/BICEP-EXAMPLE.bicep">references/BICEP-EXAMPLE.bicep</a></p>
+<p>It's highly recommended to use the IaC to manage Entra app registration if you already use IaC in your project, need a scalable solution for managing lots of app registrations or need fine-grained audit history of the configuration changes.</p>
+<h5>Step 2: Configure Authentication</h5>
+<p>Set up authentication settings based on your application type.</p>
+<ul>
+<li><strong>Web Apps</strong>: Add redirect URIs, enable ID tokens if needed</li>
+<li><strong>SPAs</strong>: Add redirect URIs, enable implicit grant flow if necessary</li>
+<li><strong>Mobile/Desktop</strong>: Use <code>http://localhost</code> or custom URI scheme</li>
+<li><strong>Services</strong>: No redirect URI needed for client credentials flow</li>
+</ul>
+<h5>Step 3: Configure API Permissions</h5>
+<p>Grant your application permission to access Microsoft APIs or your own APIs.</p>
+<p><strong>Common Microsoft Graph Permissions:</strong></p>
+<ul>
+<li><code>User.Read</code> - Read user profile</li>
+<li><code>User.ReadWrite.All</code> - Read and write all users</li>
+<li><code>Directory.Read.All</code> - Read directory data</li>
+<li><code>Mail.Send</code> - Send mail as a user</li>
+</ul>
+<p><strong>Details:</strong> See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/api-permissions.md">references/api-permissions.md</a></p>
+<h5>Step 4: Create Client Credentials (if needed)</h5>
+<p>For confidential client applications (web apps, services), create a client secret, certificate or federated identity credential.</p>
+<p><strong>Client Secret:</strong></p>
+<ul>
+<li>Navigate to &quot;Certificates &amp; secrets&quot;</li>
+<li>Create new client secret</li>
+<li>Copy the value immediately (only shown once)</li>
+<li>Store securely (Key Vault recommended)</li>
+</ul>
+<p><strong>Certificate:</strong> For production environments, use certificates instead of secrets for enhanced security. Upload certificate via &quot;Certificates &amp; secrets&quot; section.</p>
+<p><strong>Federated Identity Credential:</strong> For dynamically authenticating the confidential client to Entra platform.</p>
+<h5>Step 5: Implement OAuth Flow</h5>
+<p>Integrate the OAuth flow into your application code.</p>
+<p><strong>See:</strong></p>
+<ul>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/oauth-flows.md">references/oauth-flows.md</a> - OAuth 2.0 flow details</li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/console-app-example.md">references/console-app-example.md</a> - Console app implementation</li>
+</ul>
+<h4>Common Patterns</h4>
+<h5>Pattern 1: First-Time App Registration</h5>
+<p>Walk user through their first app registration step-by-step.</p>
+<p><strong>Required Information:</strong></p>
+<ul>
+<li>Application name</li>
+<li>Application type (web, SPA, mobile, service)</li>
+<li>Redirect URIs (if applicable)</li>
+<li>Required permissions</li>
+</ul>
+<p><strong>Script:</strong> See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/first-app-registration.md">references/first-app-registration.md</a></p>
+<h5>Pattern 2: Console Application with User Authentication</h5>
+<p>Create a .NET/Python/Node.js console app that authenticates users.</p>
+<p><strong>Required Information:</strong></p>
+<ul>
+<li>Programming language (C#, Python, JavaScript, etc.)</li>
+<li>Authentication library (MSAL recommended)</li>
+<li>Required permissions</li>
+</ul>
+<p><strong>Example:</strong> See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/console-app-example.md">references/console-app-example.md</a></p>
+<h5>Pattern 3: Service-to-Service Authentication</h5>
+<p>Set up daemon/service authentication without user interaction.</p>
+<p><strong>Required Information:</strong></p>
+<ul>
+<li>Service/app name</li>
+<li>Target API/resource</li>
+<li>Whether to use secret or certificate</li>
+</ul>
+<p><strong>Implementation:</strong> Use Client Credentials flow (see <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/oauth-flows.md#client-credentials-flow">references/oauth-flows.md#client-credentials-flow</a>)</p>
+<h4>MCP Tools and CLI</h4>
+<h5>Azure CLI Commands</h5>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>az ad app create</code></td>
+<td>Create new app registration</td>
+</tr>
+<tr>
+<td><code>az ad app list</code></td>
+<td>List app registrations</td>
+</tr>
+<tr>
+<td><code>az ad app show</code></td>
+<td>Show app details</td>
+</tr>
+<tr>
+<td><code>az ad app permission add</code></td>
+<td>Add API permission</td>
+</tr>
+<tr>
+<td><code>az ad app credential reset</code></td>
+<td>Generate new client secret</td>
+</tr>
+<tr>
+<td><code>az ad sp create</code></td>
+<td>Create service principal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Complete reference:</strong> See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/cli-commands.md">references/cli-commands.md</a></p>
+<h5>Microsoft Authentication Library (MSAL)</h5>
+<p>MSAL is the recommended library for integrating Microsoft identity platform.</p>
+<p><strong>Supported Languages:</strong></p>
+<ul>
+<li>.NET/C# - <code>Microsoft.Identity.Client</code></li>
+<li>JavaScript/TypeScript - <code>@azure/msal-browser</code>, <code>@azure/msal-node</code></li>
+<li>Python - <code>msal</code></li>
+</ul>
+<p><strong>Examples:</strong> See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/console-app-example.md">references/console-app-example.md</a></p>
+<h4>Security Best Practices</h4>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Never hardcode secrets</strong></td>
+<td>Use environment variables, Azure Key Vault, or managed identity</td>
+</tr>
+<tr>
+<td><strong>Rotate secrets regularly</strong></td>
+<td>Set expiration, automate rotation</td>
+</tr>
+<tr>
+<td><strong>Use certificates over secrets</strong></td>
+<td>More secure for production</td>
+</tr>
+<tr>
+<td><strong>Least privilege permissions</strong></td>
+<td>Request only required API permissions</td>
+</tr>
+<tr>
+<td><strong>Enable MFA</strong></td>
+<td>Require multi-factor authentication for users</td>
+</tr>
+<tr>
+<td><strong>Use managed identity</strong></td>
+<td>For Azure-hosted apps, avoid secrets entirely</td>
+</tr>
+<tr>
+<td><strong>Validate tokens</strong></td>
+<td>Always validate issuer, audience, expiration</td>
+</tr>
+<tr>
+<td><strong>Use HTTPS only</strong></td>
+<td>All redirect URIs must use HTTPS (except localhost)</td>
+</tr>
+<tr>
+<td><strong>Monitor sign-ins</strong></td>
+<td>Use Entra ID sign-in logs for anomaly detection</td>
+</tr>
+</tbody>
+</table>
+<h4>SDK Quick References</h4>
+<ul>
+<li><strong>Azure Identity</strong>: <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/sdk/azure-identity-py.md">Python</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/sdk/azure-identity-dotnet.md">.NET</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/sdk/azure-identity-ts.md">TypeScript</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/sdk/azure-identity-java.md">Java</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/sdk/azure-identity-rust.md">Rust</a></li>
+<li><strong>Key Vault (secrets)</strong>: <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/sdk/azure-keyvault-py.md">Python</a> | <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/sdk/azure-keyvault-secrets-ts.md">TypeScript</a></li>
+<li><strong>Auth Events</strong>: <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/sdk/microsoft-azure-webjobs-extensions-authentication-events-dotnet.md">.NET</a></li>
+</ul>
+<h4>References</h4>
+<ul>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/oauth-flows.md">OAuth Flows</a> - Detailed OAuth 2.0 flow explanations</li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/cli-commands.md">CLI Commands</a> - Azure CLI reference for app registrations</li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/console-app-example.md">Console App Example</a> - Complete working examples</li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/first-app-registration.md">First App Registration</a> - Step-by-step guide for beginners</li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/api-permissions.md">API Permissions</a> - Understanding and configuring permissions</li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/entra-app-registration/references/troubleshooting.md">Troubleshooting</a> - Common issues and solutions</li>
+</ul>
+<h4>External Resources</h4>
+<ul>
+<li><a href="https://learn.microsoft.com/entra/identity-platform/">Microsoft Identity Platform Documentation</a></li>
+<li><a href="https://learn.microsoft.com/entra/identity-platform/v2-protocols">OAuth 2.0 and OpenID Connect protocols</a></li>
+<li><a href="https://learn.microsoft.com/entra/msal/">MSAL Documentation</a></li>
+<li><a href="https://learn.microsoft.com/graph/">Microsoft Graph API</a></li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

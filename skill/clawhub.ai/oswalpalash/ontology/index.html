@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ontology · Gem Skills</title>
+    <meta name="description" content="Use it when: you want the agent to remember people, projects, tasks and events as linked records, or several skills to share that data. It does: stores each person, project, task or event as a typed record linked to others, in a local file, checked against rules you can set. You get: a knowledge graph in memory/ontology/graph.jsonl, read and edited with a bundled Python script. Triggers on: phrases like &quot;remember that…&quot;, &quot;what do I know about X?&quot; or &quot;link X to Y&quot;. Needs: Python 3, for the bundled script. Unlike note-based memory: it keeps structured records with fixed fields and links, not free-text notes." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Foswalpalash">clawhub.ai/oswalpalash</a></p>
+      <h1>ontology</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want the agent to remember people, projects, tasks and events as linked records, or several skills to share that data</dd></div><div><dt>It does</dt><dd>stores each person, project, task or event as a typed record linked to others, in a local file, checked against rules you can set</dd></div><div><dt>You get</dt><dd>a knowledge graph in memory/ontology/graph.jsonl, read and edited with a bundled Python script</dd></div><div><dt>Triggers on</dt><dd>phrases like &#34;remember that…&#34;, &#34;what do I know about X?&#34; or &#34;link X to Y&#34;</dd></div><div><dt>Needs</dt><dd>Python 3, for the bundled script</dd></div><div><dt>Unlike note-based memory</dt><dd>it keeps structured records with fixed fields and links, not free-text notes</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Everything the agent remembers becomes a record with a type, fields and links: a Task that belongs to a Project owned by a Person. It ships types for people, organizations, projects, tasks, goals, events, documents, messages and accounts; passwords and tokens are never stored, only a pointer to where they&#39;re kept. In memory/ontology/schema.yaml you can set rules: required fields, allowed statuses, which types a link may join, and no circular blockers between tasks. The validate command checks those, and the skill warns that rules beyond them may be guidance only. Changes are appended rather than overwriting history. It also suggests writing a multi-step plan as a list of records to create and link, and lets other skills declare which types they read and write, so they can share the same data.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/oswalpalash/ontology.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @oswalpalash/ontology</code><button type="button" class="copy" data-copy="openclaw skills install @oswalpalash/ontology">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/oswalpalash/skills/ontology">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Foswalpalash">All skills from clawhub.ai/oswalpalash</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>198,915 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div><div><dt>Downloads</dt><dd>275,063 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:agents" data-facet="category" title="Build agents, orchestrate workers and give agents memory." href="/gemskills/?tag=category%3Aagents">category:agents</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Build agents, orchestrate workers and give agents memory.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="memory" data-facet="topic" href="/gemskills/?tag=memory">memory</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/oswalpalash/skills/ontology">ClawHub</a>, version 1.0.4. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: ontology
+description: Typed knowledge graph for structured agent memory and composable skills. Use when creating/querying entities (Person, Project, Task, Event, Document), linking related objects, enforcing constraints, planning multi-step actions as graph transformations, or when skills need to share state. Trigger on &#34;remember&#34;, &#34;what do I know about&#34;, &#34;link X to Y&#34;, &#34;show dependencies&#34;, entity CRUD, or cross-skill data access.</code></pre></details>
+        <div class="markdown"><h3>Ontology</h3>
+<p>A typed vocabulary + constraint system for representing knowledge as a verifiable graph.</p>
+<h4>Core Concept</h4>
+<p>Everything is an <strong>entity</strong> with a <strong>type</strong>, <strong>properties</strong>, and <strong>relations</strong> to other entities. Every mutation is validated against type constraints before committing.</p>
+<pre><code>Entity: { id, type, properties, relations, created, updated }
+Relation: { from_id, relation_type, to_id, properties }
+</code></pre>
+<h4>When to Use</h4>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Remember that...&quot;</td>
+<td>Create/update entity</td>
+</tr>
+<tr>
+<td>&quot;What do I know about X?&quot;</td>
+<td>Query graph</td>
+</tr>
+<tr>
+<td>&quot;Link X to Y&quot;</td>
+<td>Create relation</td>
+</tr>
+<tr>
+<td>&quot;Show all tasks for project Z&quot;</td>
+<td>Graph traversal</td>
+</tr>
+<tr>
+<td>&quot;What depends on X?&quot;</td>
+<td>Dependency query</td>
+</tr>
+<tr>
+<td>Planning multi-step work</td>
+<td>Model as graph transformations</td>
+</tr>
+<tr>
+<td>Skill needs shared state</td>
+<td>Read/write ontology objects</td>
+</tr>
+</tbody>
+</table>
+<h4>Core Types</h4>
+<pre><code class="language-yaml"># Agents &amp; People
+Person: { name, email?, phone?, notes? }
+Organization: { name, type?, members[] }
+
+# Work
+Project: { name, status, goals[], owner? }
+Task: { title, status, due?, priority?, assignee?, blockers[] }
+Goal: { description, target_date?, metrics[] }
+
+# Time &amp; Place
+Event: { title, start, end?, location?, attendees[], recurrence? }
+Location: { name, address?, coordinates? }
+
+# Information
+Document: { title, path?, url?, summary? }
+Message: { content, sender, recipients[], thread? }
+Thread: { subject, participants[], messages[] }
+Note: { content, tags[], refs[] }
+
+# Resources
+Account: { service, username, credential_ref? }
+Device: { name, type, identifiers[] }
+Credential: { service, secret_ref }  # Never store secrets directly
+
+# Meta
+Action: { type, target, timestamp, outcome? }
+Policy: { scope, rule, enforcement }
+</code></pre>
+<h4>Storage</h4>
+<p>Default: <code>memory/ontology/graph.jsonl</code></p>
+<pre><code class="language-jsonl">{&quot;op&quot;:&quot;create&quot;,&quot;entity&quot;:{&quot;id&quot;:&quot;p_001&quot;,&quot;type&quot;:&quot;Person&quot;,&quot;properties&quot;:{&quot;name&quot;:&quot;Alice&quot;}}}
+{&quot;op&quot;:&quot;create&quot;,&quot;entity&quot;:{&quot;id&quot;:&quot;proj_001&quot;,&quot;type&quot;:&quot;Project&quot;,&quot;properties&quot;:{&quot;name&quot;:&quot;Website Redesign&quot;,&quot;status&quot;:&quot;active&quot;}}}
+{&quot;op&quot;:&quot;relate&quot;,&quot;from&quot;:&quot;proj_001&quot;,&quot;rel&quot;:&quot;has_owner&quot;,&quot;to&quot;:&quot;p_001&quot;}
+</code></pre>
+<p>Query via scripts or direct file ops. For complex graphs, migrate to SQLite.</p>
+<h5>Append-Only Rule</h5>
+<p>When working with existing ontology data or schema, <strong>append/merge</strong> changes instead of overwriting files. This preserves history and avoids clobbering prior definitions.</p>
+<h4>Workflows</h4>
+<h5>Create Entity</h5>
+<pre><code class="language-bash">python3 scripts/ontology.py create --type Person --props '{&quot;name&quot;:&quot;Alice&quot;,&quot;email&quot;:&quot;alice@example.com&quot;}'
+</code></pre>
+<h5>Query</h5>
+<pre><code class="language-bash">python3 scripts/ontology.py query --type Task --where '{&quot;status&quot;:&quot;open&quot;}'
+python3 scripts/ontology.py get --id task_001
+python3 scripts/ontology.py related --id proj_001 --rel has_task
+</code></pre>
+<h5>Link Entities</h5>
+<pre><code class="language-bash">python3 scripts/ontology.py relate --from proj_001 --rel has_task --to task_001
+</code></pre>
+<h5>Validate</h5>
+<pre><code class="language-bash">python3 scripts/ontology.py validate  # Check all constraints
+</code></pre>
+<h4>Constraints</h4>
+<p>Define in <code>memory/ontology/schema.yaml</code>:</p>
+<pre><code class="language-yaml">types:
+  Task:
+    required: [title, status]
+    status_enum: [open, in_progress, blocked, done]
+  
+  Event:
+    required: [title, start]
+    validate: &quot;end &gt;= start if end exists&quot;
+
+  Credential:
+    required: [service, secret_ref]
+    forbidden_properties: [password, secret, token]  # Force indirection
+
+relations:
+  has_owner:
+    from_types: [Project, Task]
+    to_types: [Person]
+    cardinality: many_to_one
+  
+  blocks:
+    from_types: [Task]
+    to_types: [Task]
+    acyclic: true  # No circular dependencies
+</code></pre>
+<h4>Skill Contract</h4>
+<p>Skills that use ontology should declare:</p>
+<pre><code class="language-yaml"># In SKILL.md frontmatter or header
+ontology:
+  reads: [Task, Project, Person]
+  writes: [Task, Action]
+  preconditions:
+    - &quot;Task.assignee must exist&quot;
+  postconditions:
+    - &quot;Created Task has status=open&quot;
+</code></pre>
+<h4>Planning as Graph Transformation</h4>
+<p>Model multi-step plans as a sequence of graph operations:</p>
+<pre><code>Plan: &quot;Schedule team meeting and create follow-up tasks&quot;
+
+1. CREATE Event { title: &quot;Team Sync&quot;, attendees: [p_001, p_002] }
+2. RELATE Event -&gt; has_project -&gt; proj_001
+3. CREATE Task { title: &quot;Prepare agenda&quot;, assignee: p_001 }
+4. RELATE Task -&gt; for_event -&gt; event_001
+5. CREATE Task { title: &quot;Send summary&quot;, assignee: p_001, blockers: [task_001] }
+</code></pre>
+<p>Each step is validated before execution. Rollback on constraint violation.</p>
+<h4>Integration Patterns</h4>
+<h5>With Causal Inference</h5>
+<p>Log ontology mutations as causal actions:</p>
+<pre><code class="language-python"># When creating/updating entities, also log to causal action log
+action = {
+    &quot;action&quot;: &quot;create_entity&quot;,
+    &quot;domain&quot;: &quot;ontology&quot;, 
+    &quot;context&quot;: {&quot;type&quot;: &quot;Task&quot;, &quot;project&quot;: &quot;proj_001&quot;},
+    &quot;outcome&quot;: &quot;created&quot;
+}
+</code></pre>
+<h5>Cross-Skill Communication</h5>
+<pre><code class="language-python"># Email skill creates commitment
+commitment = ontology.create(&quot;Commitment&quot;, {
+    &quot;source_message&quot;: msg_id,
+    &quot;description&quot;: &quot;Send report by Friday&quot;,
+    &quot;due&quot;: &quot;2026-01-31&quot;
+})
+
+# Task skill picks it up
+tasks = ontology.query(&quot;Commitment&quot;, {&quot;status&quot;: &quot;pending&quot;})
+for c in tasks:
+    ontology.create(&quot;Task&quot;, {
+        &quot;title&quot;: c.description,
+        &quot;due&quot;: c.due,
+        &quot;source&quot;: c.id
+    })
+</code></pre>
+<h4>Quick Start</h4>
+<pre><code class="language-bash"># Initialize ontology storage
+mkdir -p memory/ontology
+touch memory/ontology/graph.jsonl
+
+# Create schema (optional but recommended)
+python3 scripts/ontology.py schema-append --data '{
+  &quot;types&quot;: {
+    &quot;Task&quot;: { &quot;required&quot;: [&quot;title&quot;, &quot;status&quot;] },
+    &quot;Project&quot;: { &quot;required&quot;: [&quot;name&quot;] },
+    &quot;Person&quot;: { &quot;required&quot;: [&quot;name&quot;] }
+  }
+}'
+
+# Start using
+python3 scripts/ontology.py create --type Person --props '{&quot;name&quot;:&quot;Alice&quot;}'
+python3 scripts/ontology.py list --type Person
+</code></pre>
+<h4>References</h4>
+<ul>
+<li><code>references/schema.md</code> — Full type definitions and constraint patterns</li>
+<li><code>references/queries.md</code> — Query language and traversal examples</li>
+</ul>
+<h4>Instruction Scope</h4>
+<p>Runtime instructions operate on local files (<code>memory/ontology/graph.jsonl</code> and <code>memory/ontology/schema.yaml</code>) and provide CLI usage for create/query/relate/validate; this is within scope. The skill reads/writes workspace files and will create the <code>memory/ontology</code> directory when used. Validation includes property/enum/forbidden checks, relation type/cardinality validation, acyclicity for relations marked <code>acyclic: true</code>, and Event <code>end &gt;= start</code> checks; other higher-level constraints may still be documentation-only unless implemented in code.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to-questionnaire · Gem Skills</title>
+    <meta name="description" content="Use it when: a decision hinges on knowledge someone else has, and you need to get it out of them. It does: asks you who the recipient is and what you need back, then writes the questions for them. You get: a Markdown questionnaire in the current folder, to send for written answers or to fill in together in a meeting. Unlike grilling: that skill questions you about your own plan; this one asks you only about the recipient and what you need. Runs: only when you invoke it; the agent won&#039;t start it on its own." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a></p>
+      <h1>to-questionnaire</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a decision hinges on knowledge someone else has, and you need to get it out of them</dd></div><div><dt>It does</dt><dd>asks you who the recipient is and what you need back, then writes the questions for them</dd></div><div><dt>You get</dt><dd>a Markdown questionnaire in the current folder, to send for written answers or to fill in together in a meeting</dd></div><div><dt>Unlike grilling</dt><dd>that skill questions you about your own plan; this one asks you only about the recipient and what you need</dd></div><div><dt>Runs</dt><dd>only when you invoke it; the agent won&#39;t start it on its own</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It doesn&#39;t question you about the subject, since that&#39;s the part you can&#39;t answer. It asks two things, each in one go: who the questionnaire is for (their role, what they know, how they relate to you) and which decisions or facts you need back from them. The questions then aim at the gap between the two. It writes to-questionnaire-&#60;topic&#62;.md: the purpose and the decision riding on it, who it&#39;s from and to and how the answers will be used, one paragraph of context, a deadline and a note that &#34;I don&#39;t know&#34; is a useful answer, then the questions grouped by theme. They come most important first, since a written reply may come only once. Each asks one thing, leaves room for the answer right below, and adds a one-line &#34;why this matters&#34; where it could be misread. It ends with an &#34;anything else?&#34; catch-all, and the agent checks that everything you said you need is covered.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/productivity/to-questionnaire">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill to-questionnaire</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill to-questionnaire">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/to-questionnaire">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/productivity/to-questionnaire">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>339,881 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Jul 14, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">36K</div>
+      <div class="stat-delta">+84% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 19,562; week to Aug 10: 41,844; week to Aug 17: 40,766; week to Aug 24: 43,485; week to Aug 31: 41,660; week to Sep 7: 41,136; week to Sep 14: 37,599; week to Sep 21: 35,977. Use the left and right arrow keys to read each week."
+        data-values="19562,41844,40766,43485,41660,41136,37599,35977" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,30.2 38.6,7.7 71.1,8.8 103.7,6.0 136.3,7.8 168.9,8.4 201.4,12.0 234.0,13.6" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="13.6" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>19,562</td></tr><tr><td>Aug 10</td><td>41,844</td></tr><tr><td>Aug 17</td><td>40,766</td></tr><tr><td>Aug 24</td><td>43,485</td></tr><tr><td>Aug 31</td><td>41,660</td></tr><tr><td>Sep 7</td><td>41,136</td></tr><tr><td>Sep 14</td><td>37,599</td></tr><tr><td>Sep 21</td><td>35,977</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:planning" data-facet="category" title="Make the agent question you and write the plan down before it writes code." href="/gemskills/?tag=category%3Aplanning">category:planning</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Make the agent question you and write the plan down before it writes code.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:command" data-facet="type" title="A one-shot action you invoke by name, such as turning the conversation into a PRD." href="/gemskills/?tag=type%3Acommand">type:command</a></div>
+          <p class="tag-meaning">A one-shot action you invoke by name, such as turning the conversation into a PRD.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="requirements" data-facet="topic" href="/gemskills/?tag=requirements">requirements</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/productivity/to-questionnaire/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: to-questionnaire
+description: Turn a decision you can&#39;t fully answer into a questionnaire for someone else to fill in.
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><p>Turn something the user can't answer alone into a <strong>questionnaire</strong>: a Markdown document they hand to one person to fill in async, or fill out together over a meeting. The recipient holds knowledge the user lacks; the questionnaire pulls it out of them.</p>
+<p><strong>Grill the send, not the subject.</strong> Interview the user only about the <em>send</em>, which they can always answer: who it goes to, and what they need back. The questions in the document then target the <strong>gap</strong> between what the recipient knows and what the user needs.</p>
+<ol>
+<li>
+<p><strong>Who is it going to?</strong> Ask, in one exchange, the recipient's role, expertise, and relationship to the user. This fixes the questionnaire's tone and how much context it must carry. Done when you know who the recipient is and what they know that the user doesn't.</p>
+</li>
+<li>
+<p><strong>What do you need back?</strong> Ask, in one exchange, the specific decisions or facts the user can't resolve alone and needs from this person. Done when you have a concrete list of what the user must walk away able to do or decide.</p>
+</li>
+<li>
+<p><strong>Write the questionnaire.</strong> Draft questions aimed at the gap from steps 1–2, following the Document structure below. Write it to <code>to-questionnaire-&lt;slug&gt;.md</code> in the current directory (slug from the topic) and report the path. Done when the file exists and every item the user named in step 2 is covered by a question.</p>
+</li>
+</ol>
+<h4>Document structure</h4>
+<p>Frame the document as a <strong>discovery questionnaire</strong>: the user lacks context, the recipient holds it. Order questions most-important-first, since async means you may only get one pass, and group them under <code>##</code> headings by theme once there are more than a handful. Write it using the template below.</p>
+<p>&lt;questionnaire-template&gt;</p>
+<h3>&lt;Questionnaire title&gt;</h3>
+<p><strong>Purpose:</strong> why this questionnaire exists and the decision riding on it.</p>
+<p><strong>From:</strong> &lt;the user&gt;, <strong>To:</strong> &lt;the recipient&gt;, <strong>How your answers will be used:</strong> &lt;where they go&gt;</p>
+<h4>Context</h4>
+<p>One paragraph orienting a recipient who wasn't in the user's head. Enough to answer well, not a page.</p>
+<h4>How to answer</h4>
+<p>Deadline and rough effort. Partial answers and &quot;I don't know&quot; are useful: flag anything you're unsure of rather than skipping it.</p>
+<h4>&lt;Theme heading&gt;</h4>
+<p>One <code>##</code> section per theme. Under each, its questions, most-important-first. Every question is one idea, never compound, with an answer stub directly beneath, and a one-line <em>why this matters</em> only where the question could be misread or invite a throwaway answer.</p>
+<p>&lt;question-example&gt;</p>
+<h5>What load is the system expected to handle at launch?</h5>
+<p><em>Why this matters: it decides whether we provision for burst traffic now or defer it.</em></p>
+<blockquote></blockquote>
+<p>&lt;/question-example&gt;</p>
+<h4>Anything else?</h4>
+<p>A closing catch-all: anything we didn't ask that we should know?</p>
+<p>&lt;/questionnaire-template&gt;</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

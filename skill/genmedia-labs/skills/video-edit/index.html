@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>video-edit · Gem Skills</title>
+    <meta name="description" content="Use it when: you want to change a video you already have: restyle it, swap its background or an outfit, or copy the movement of another clip. It does: picks one of three video-edit models on RunComfy, a hosted AI-model service, and writes the prompt following that model&#039;s documented tips. You get: the edited video, downloaded to a folder on your machine. Needs: the RunComfy CLI from npm, a RunComfy account, and the source video at a public URL the service can fetch. Unlike ai-video-generation: it edits existing footage instead of making a new clip from a prompt or a still." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=genmedia-labs%2Fskills">genmedia-labs/skills</a></p>
+      <h1>video-edit</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want to change a video you already have: restyle it, swap its background or an outfit, or copy the movement of another clip</dd></div><div><dt>It does</dt><dd>picks one of three video-edit models on RunComfy, a hosted AI-model service, and writes the prompt following that model&#39;s documented tips</dd></div><div><dt>You get</dt><dd>the edited video, downloaded to a folder on your machine</dd></div><div><dt>Needs</dt><dd>the RunComfy CLI from npm, a RunComfy account, and the source video at a public URL the service can fetch</dd></div><div><dt>Unlike ai-video-generation</dt><dd>it edits existing footage instead of making a new clip from a prompt or a still</dd></div></dl></section>
+      
+      <p class="note">Copy of RunComfy&#39;s skill from agentspace-so/runcomfy-skills, also republished as prime-skills/runcomfy-agent-skills. skills.sh had reset this copy&#39;s install count to 13 by 2026-10-19.</p>
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The agent sorts your request into one of three routes. The default, Wan 2.7 Edit-Video, restyles a clip of 2 to 10 seconds, swaps its background or a product&#39;s packaging, or gives it a new color look, up to 1080p, while keeping faces, lip movement and camera moves, and optionally the original sound. Kling 2.6 Pro Motion Control takes the movement from a reference clip, such as a dance, and applies it to a character from an image, for up to 30 seconds. Lucy Edit Restyle makes lighter, local changes, such as an outfit or the lighting, at 720p. Prompts follow each model&#39;s tips: say what must stay the same first, then ask for one change per call. It uses one model per call and doesn&#39;t combine them.</p>
+      <p class="muted">Summarizes <a href="https://github.com/genmedia-labs/skills/tree/c163a9fd3ab3c36193f634445592586df5b64f1e/video-edit">the skill at c163a9f</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/genmedia-labs/skills --skill video-edit</code><button type="button" class="copy" data-copy="npx skills add https://github.com/genmedia-labs/skills --skill video-edit">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/genmedia-labs/skills/video-edit">skills.sh page</a> · <a href="https://github.com/genmedia-labs/skills/tree/HEAD/video-edit">Source on GitHub</a> · <a href="/gemskills/?repo=genmedia-labs%2Fskills">All skills from genmedia-labs/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>594,055 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>13 <span class="muted">genmedia-labs/skills</span></dd></div><div><dt>First seen</dt><dd>Aug 12, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">113K</div>
+      <div class="stat-delta">week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 0; week to Aug 10: 0; week to Aug 17: 30,348; week to Aug 24: 105,081; week to Aug 31: 115,940; week to Sep 7: 113,373; week to Sep 14: 108,975; week to Sep 21: 113,312. Use the left and right arrow keys to read each week."
+        data-values="0,0,30348,105081,115940,113373,108975,113312" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,50.0 38.6,50.0 71.1,38.5 103.7,10.1 136.3,6.0 168.9,7.0 201.4,8.6 234.0,7.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="7.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>0</td></tr><tr><td>Aug 10</td><td>0</td></tr><tr><td>Aug 17</td><td>30,348</td></tr><tr><td>Aug 24</td><td>105,081</td></tr><tr><td>Aug 31</td><td>115,940</td></tr><tr><td>Sep 7</td><td>113,373</td></tr><tr><td>Sep 14</td><td>108,975</td></tr><tr><td>Sep 21</td><td>113,312</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:media" data-facet="category" title="Generate and edit video, images and audio." href="/gemskills/?tag=category%3Amedia">category:media</a></div>
+          <p class="tag-meaning">Generate and edit video, images and audio.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="video" data-facet="topic" href="/gemskills/?tag=video">video</a><a class="tag" data-tag="ai-generation" data-facet="topic" href="/gemskills/?tag=ai-generation">ai-generation</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:runcomfy" data-facet="stack" href="/gemskills/?tag=stack%3Aruncomfy">stack:runcomfy</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:republished" data-facet="flag" title="A copy of another publisher&#39;s skill under a different org. Each copy found had hundreds of thousands of installs while its original had fewer than twenty, so treat its ranking with caution." href="/gemskills/?tag=flag%3Arepublished">flag:republished</a></div>
+          <p class="tag-meaning">A copy of another publisher&#39;s skill under a different org. Each copy found had hundreds of thousands of installs while its original had fewer than twenty, so treat its ranking with caution.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/genmedia-labs/skills/blob/c163a9fd3ab3c36193f634445592586df5b64f1e/video-edit/SKILL.md">genmedia-labs/skills at c163a9f</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: video-edit
+displayName: &#34;Video Edit — Pro Pack on RunComfy&#34;
+description: &#62;
+  Edit existing video on RunComfy — this skill is a smart router that
+  matches the user&#39;s intent to the right edit model in the RunComfy
+  catalog. Picks Wan 2.7 Edit-Video (general restyle / background swap
+  / packaging swap, identity + motion preservation), Kling 2.6 Pro
+  Motion Control (transfer precise motion from a reference video to a
+  target character), or Lucy Edit Restyle (lightweight identity-stable
+  restyle / outfit swap). Bundles each model&#39;s documented prompting
+  patterns so the skill gets sharper edits without burning iterations
+  on the wrong model. Calls `runcomfy run &#60;vendor&#62;/&#60;model&#62;/&#60;endpoint&#62;`
+  through the local RunComfy CLI. Triggers on &#34;video edit&#34;, &#34;edit
+  video&#34;, &#34;restyle video&#34;, &#34;swap video background&#34;, &#34;motion control&#34;,
+  &#34;outfit swap video&#34;, or any explicit ask to transform a video.
+homepage: https://www.runcomfy.com
+license: MIT</code></pre></details>
+        <div class="markdown"><h3>Video Edit — Pro Pack on RunComfy</h3>
+<p><a href="https://www.runcomfy.com/?utm_source=skills.sh&amp;utm_medium=skill&amp;utm_campaign=video-edit">runcomfy.com</a> · <a href="https://www.runcomfy.com/models/wan-ai/wan-2-7/edit-video?utm_source=skills.sh&amp;utm_medium=skill&amp;utm_campaign=video-edit">Wan 2.7 Edit-Video</a> · <a href="https://www.runcomfy.com/models/kling/kling-2-6/motion-control-pro?utm_source=skills.sh&amp;utm_medium=skill&amp;utm_campaign=video-edit">Kling Motion-Control Pro</a> · <a href="https://www.runcomfy.com/models/decart/lucy-edit/restyle?utm_source=skills.sh&amp;utm_medium=skill&amp;utm_campaign=video-edit">Lucy Edit Restyle</a> · <a href="https://github.com/agentspace-so/runcomfy-skills/tree/main/video-edit">GitHub</a></p>
+<p><strong>Video edit, intent-routed.</strong> This skill doesn't lock you to one model — it picks the right video-edit model in the RunComfy catalog based on what the user actually wants: general restyle, motion transfer from a reference clip, or lightweight identity-stable outfit / background swap.</p>
+<pre><code class="language-bash">npx skills add agentspace-so/runcomfy-skills --skill video-edit -g
+</code></pre>
+<h4>Pick the right model for the user's intent</h4>
+<table>
+<thead>
+<tr>
+<th>User intent</th>
+<th>Model</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Restyle a talking-head video — preserve face / pose / lip movement</td>
+<td><strong>Wan 2.7 Edit-Video</strong></td>
+<td>Strong identity + motion preservation; supports up to 1080p</td>
+</tr>
+<tr>
+<td>Swap product background, keep camera motion</td>
+<td><strong>Wan 2.7 Edit-Video</strong></td>
+<td>Camera motion preserved; one-direction edit honored</td>
+</tr>
+<tr>
+<td>Replace packaging design using a reference image</td>
+<td><strong>Wan 2.7 Edit-Video</strong> + <code>reference_image</code></td>
+<td>Reference-conditioned design transfer</td>
+</tr>
+<tr>
+<td>Apply cinematic color grade / commercial polish</td>
+<td><strong>Wan 2.7 Edit-Video</strong></td>
+<td>Good at single-direction global look changes</td>
+</tr>
+<tr>
+<td><strong>Transfer precise motion</strong> from a reference video to a target character</td>
+<td><strong>Kling 2.6 Pro Motion Control</strong></td>
+<td>Designed for motion mapping with identity hold</td>
+</tr>
+<tr>
+<td>Lip-sync motion of a target character to source video's lip movement</td>
+<td><strong>Kling 2.6 Pro Motion Control</strong></td>
+<td>Built for tight temporal coherence</td>
+</tr>
+<tr>
+<td><strong>Lightweight outfit / costume swap</strong> with identity preservation</td>
+<td><strong>Lucy Edit Restyle</strong></td>
+<td>Core strength is localized identity-stable edits</td>
+</tr>
+<tr>
+<td><strong>Identity-stable restyle</strong> (&quot;astronaut in desert&quot;, &quot;warm golden-hour lighting&quot;)</td>
+<td><strong>Lucy Edit Restyle</strong></td>
+<td>Specializes in temporal consistency for restyle</td>
+</tr>
+<tr>
+<td>Default if unspecified</td>
+<td><strong>Wan 2.7 Edit-Video</strong></td>
+<td>Most versatile, highest resolution</td>
+</tr>
+</tbody>
+</table>
+<p>The agent reads this table, classifies the user's intent, and picks the matching subsection below.</p>
+<h4>Prerequisites</h4>
+<ol>
+<li><strong>RunComfy CLI</strong> — <code>npm i -g @runcomfy/cli</code></li>
+<li><strong>RunComfy account</strong> — <code>runcomfy login</code>.</li>
+<li><strong>CI / containers</strong> — set <code>RUNCOMFY_TOKEN=&lt;token&gt;</code>.</li>
+<li><strong>A source video URL</strong> — formats and limits depend on the chosen route.</li>
+</ol>
+<hr>
+<h4>Route 1: Wan 2.7 Edit-Video — default for restyle / background / packaging</h4>
+<p><strong>Model</strong>: <code>wan-ai/wan-2-7/edit-video</code></p>
+<h5>Schema</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prompt</code></td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>Lead with preservation. One edit direction per call.</td>
+</tr>
+<tr>
+<td><code>video</code></td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>MP4/MOV URL, 2–10s, ≤100MB.</td>
+</tr>
+<tr>
+<td><code>reference_image</code></td>
+<td>string</td>
+<td>no</td>
+<td>—</td>
+<td>URL — use for direct design / appearance transfer only.</td>
+</tr>
+<tr>
+<td><code>resolution</code></td>
+<td>enum</td>
+<td>no</td>
+<td>(input)</td>
+<td><code>720p</code> or <code>1080p</code>.</td>
+</tr>
+<tr>
+<td><code>aspect_ratio</code></td>
+<td>enum</td>
+<td>no</td>
+<td>(input)</td>
+<td>W:H. Defaults to input.</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>int</td>
+<td>no</td>
+<td>0</td>
+<td><code>0</code> = match input; <code>2–10</code> = truncate from start.</td>
+</tr>
+<tr>
+<td><code>audio_setting</code></td>
+<td>enum</td>
+<td>no</td>
+<td><code>auto</code></td>
+<td><code>auto</code> or <code>origin</code> (preserve source audio).</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td>int</td>
+<td>no</td>
+<td>—</td>
+<td>Reproducibility.</td>
+</tr>
+</tbody>
+</table>
+<h5>Invoke</h5>
+<p><strong>Background swap, identity preserved, audio kept:</strong></p>
+<pre><code class="language-bash">runcomfy run wan-ai/wan-2-7/edit-video \
+  --input '{
+    &quot;prompt&quot;: &quot;Preserve the speaker'\''s face, pose, and lip movement; change the background to a modern office with neutral lighting.&quot;,
+    &quot;video&quot;: &quot;https://.../speaker.mp4&quot;,
+    &quot;audio_setting&quot;: &quot;origin&quot;
+  }' \
+  --output-dir &lt;absolute/path&gt;
+</code></pre>
+<p><strong>Packaging swap with reference image:</strong></p>
+<pre><code class="language-bash">runcomfy run wan-ai/wan-2-7/edit-video \
+  --input '{
+    &quot;prompt&quot;: &quot;Maintain the original framing and hand movement; replace the packaging design using the reference image.&quot;,
+    &quot;video&quot;: &quot;https://.../hand-holding-package.mp4&quot;,
+    &quot;reference_image&quot;: &quot;https://.../new-packaging.png&quot;,
+    &quot;audio_setting&quot;: &quot;origin&quot;
+  }' \
+  --output-dir &lt;absolute/path&gt;
+</code></pre>
+<h5>Prompting tips</h5>
+<ul>
+<li><strong>Preservation goals first</strong>: <code>&quot;Preserve [face / pose / motion / framing / lip movement]; [then state the change]&quot;</code>.</li>
+<li><strong>One edit direction per call.</strong> Compound edits drift on motion.</li>
+<li><strong><code>reference_image</code> only when justified</strong> (packaging swap, costume swap with target visual). Don't pass refs for general restyle.</li>
+<li><strong><code>audio_setting: &quot;origin&quot;</code></strong> for talking-head where you don't want soundtrack regenerated.</li>
+<li><strong>Source video constraints</strong>: 2–10s, ≤100MB.</li>
+</ul>
+<hr>
+<h4>Route 2: Kling 2.6 Pro Motion Control — when motion FROM a reference clip is the point</h4>
+<p><strong>Model</strong>: <code>kling/kling-2-6/motion-control-pro</code></p>
+<p>Use when the user wants to <strong>transfer the motion of a reference video</strong> onto a target character (driven by an image OR another video). This isn't restyle — it's motion mapping with identity hold.</p>
+<h5>Schema</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prompt</code></td>
+<td>string</td>
+<td>yes</td>
+<td>Describe target motion / style.</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>string</td>
+<td>yes (image orientation)</td>
+<td>Reference for character / background consistency.</td>
+</tr>
+<tr>
+<td><code>video</code></td>
+<td>string</td>
+<td>yes</td>
+<td><strong>Motion reference</strong>. 10–30s depending on orientation.</td>
+</tr>
+<tr>
+<td><code>keep_original_sound</code></td>
+<td>bool</td>
+<td>no</td>
+<td>Preserve audio from reference video.</td>
+</tr>
+<tr>
+<td><code>character_orientation</code></td>
+<td>enum</td>
+<td>yes</td>
+<td><code>image</code> (max 10s output) or <code>video</code> (max 30s output).</td>
+</tr>
+</tbody>
+</table>
+<h5>Invoke</h5>
+<pre><code class="language-bash">runcomfy run kling/kling-2-6/motion-control-pro \
+  --input '{
+    &quot;prompt&quot;: &quot;A young american woman dancing&quot;,
+    &quot;image&quot;: &quot;https://.../target-character.jpg&quot;,
+    &quot;video&quot;: &quot;https://.../motion-reference-dance.mp4&quot;,
+    &quot;character_orientation&quot;: &quot;image&quot;,
+    &quot;keep_original_sound&quot;: true
+  }' \
+  --output-dir &lt;absolute/path&gt;
+</code></pre>
+<h5>Prompting tips</h5>
+<ul>
+<li><strong>Subject must be &gt; 5% of frame</strong> in the image reference for clean identity hold.</li>
+<li><strong>Spatial constraints help</strong>: <code>&quot;character on left side, background motion right&quot;</code>.</li>
+<li><strong>Simplify</strong> if results drift between iterations — drop adjectives, keep core motion description.</li>
+<li><strong><code>character_orientation: &quot;image&quot;</code></strong> caps output at 10s; <code>&quot;video&quot;</code> allows 30s.</li>
+</ul>
+<hr>
+<h4>Route 3: Lucy Edit Restyle — lightweight identity-stable restyle / outfit swap</h4>
+<p><strong>Model</strong>: <code>decart/lucy-edit/restyle</code></p>
+<p>Use when the edit is <strong>localized style modification</strong> — outfit swap, scene relight, atmospheric restyle — and identity preservation is critical. Lighter-weight than Wan 2.7 Edit; capped at 720p.</p>
+<h5>Schema</h5>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prompt</code></td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>Natural-language edit instruction.</td>
+</tr>
+<tr>
+<td><code>video_url</code></td>
+<td>string</td>
+<td>yes</td>
+<td>—</td>
+<td>MP4/MOV/WEBM/GIF.</td>
+</tr>
+<tr>
+<td><code>resolution</code></td>
+<td>enum</td>
+<td>no</td>
+<td><code>720p</code></td>
+<td><code>720p</code> only on this tier.</td>
+</tr>
+</tbody>
+</table>
+<h5>Invoke</h5>
+<p><strong>Outfit swap:</strong></p>
+<pre><code class="language-bash">runcomfy run decart/lucy-edit/restyle \
+  --input '{
+    &quot;prompt&quot;: &quot;Change outfit to professional business attire; preserve face and motion.&quot;,
+    &quot;video_url&quot;: &quot;https://.../subject-walking.mp4&quot;
+  }' \
+  --output-dir &lt;absolute/path&gt;
+</code></pre>
+<p><strong>Atmospheric restyle:</strong></p>
+<pre><code class="language-bash">runcomfy run decart/lucy-edit/restyle \
+  --input '{
+    &quot;prompt&quot;: &quot;Make lighting warm and golden hour; preserve face, pose, and motion.&quot;,
+    &quot;video_url&quot;: &quot;https://.../subject-portrait.mp4&quot;
+  }' \
+  --output-dir &lt;absolute/path&gt;
+</code></pre>
+<h5>Prompting tips</h5>
+<ul>
+<li><strong>Localized change phrasing wins.</strong> &quot;Outfit&quot;, &quot;lighting&quot;, &quot;background&quot; — pick one bucket.</li>
+<li><strong>Preserve identity goals</strong> — <code>&quot;preserve face and motion&quot;</code> is enough; don't over-specify.</li>
+<li><strong>Avoid total replacement</strong> (&quot;astronaut in space&quot; works; &quot;swap subject for a different person&quot; doesn't). Lucy is built for localized style mods, not full character swap.</li>
+<li><strong>No aspect ratio control</strong> — output matches input. Cropping happens server-side if you don't pre-match.</li>
+</ul>
+<hr>
+<h4>Limitations</h4>
+<ul>
+<li><strong>Each route inherits its model's limits.</strong> Wan 2.7 Edit: 2–10s, 1080p ceiling. Kling: 10s (image orientation) or 30s (video orientation). Lucy: 720p ceiling, no aspect control.</li>
+<li><strong>No multi-route blending.</strong> This skill picks one model per call.</li>
+<li><strong>Brand-specific overrides</strong> — if the user named a specific model, route to the corresponding brand skill (<code>wan-2-7</code>) for fuller treatment.</li>
+</ul>
+<h4>Exit codes</h4>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>success</td>
+</tr>
+<tr>
+<td>64</td>
+<td>bad CLI args</td>
+</tr>
+<tr>
+<td>65</td>
+<td>bad input JSON / schema mismatch</td>
+</tr>
+<tr>
+<td>69</td>
+<td>upstream 5xx</td>
+</tr>
+<tr>
+<td>75</td>
+<td>retryable: timeout / 429</td>
+</tr>
+<tr>
+<td>77</td>
+<td>not signed in or token rejected</td>
+</tr>
+</tbody>
+</table>
+<p>Full reference: <a href="https://docs.runcomfy.com/cli/troubleshooting?utm_source=skills.sh&amp;utm_medium=skill&amp;utm_campaign=video-edit">docs.runcomfy.com/cli/troubleshooting</a>.</p>
+<h4>How it works</h4>
+<p>The skill picks one of Wan 2.7 Edit-Video / Kling 2.6 Pro Motion Control / Lucy Edit Restyle based on user intent and invokes <code>runcomfy run &lt;model_id&gt;</code> with the matching JSON body. The CLI POSTs to the Model API, polls the request, fetches the result, and downloads any <code>.runcomfy.net</code>/<code>.runcomfy.com</code> URL into <code>--output-dir</code>. <code>Ctrl-C</code> cancels the remote request before exit.</p>
+<h4>Security &amp; Privacy</h4>
+<ul>
+<li><strong>Token storage</strong>: <code>runcomfy login</code> writes the API token to <code>~/.config/runcomfy/token.json</code> with mode 0600 (owner-only read/write). Set <code>RUNCOMFY_TOKEN</code> env var to bypass the file entirely in CI / containers.</li>
+<li><strong>Input boundary</strong>: the user prompt is passed as a JSON string to the CLI via <code>--input</code>. The CLI does NOT shell-expand the prompt; it transmits the JSON body directly to the Model API over HTTPS. No shell injection surface from prompt content.</li>
+<li><strong>Third-party content</strong>: image / mask / video URLs you pass are fetched by the RunComfy model server, not by the CLI on your machine. Treat external URLs as untrusted; image-based prompt injection is a known risk for any image-edit / video-edit model.</li>
+<li><strong>Outbound endpoints</strong>: only <code>model-api.runcomfy.net</code> (request submission) and <code>*.runcomfy.net</code> / <code>*.runcomfy.com</code> (download whitelist for generated outputs). No telemetry, no callbacks.</li>
+<li><strong>Generated-file size cap</strong>: the CLI aborts any single download &gt; 2 GiB to prevent disk-fill from a malicious or runaway model output.</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mcp-builder · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re building an MCP server so AI agents can use an API or service through tools. It does: works in four phases: research the protocol and the API, implement, review and test, then write test questions for an agent. You get: an MCP server in TypeScript or Python, and an XML file of 10 hard questions with verified answers. Recommends: TypeScript, and when unsure, covering the API&#039;s endpoints broadly rather than offering a few all-in-one workflow tools. Needs: an Anthropic API key only to run the evaluation, which has Claude answer the questions using your server." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=anthropics%2Fskills">anthropics/skills</a></p>
+      <h1>mcp-builder</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re building an MCP server so AI agents can use an API or service through tools</dd></div><div><dt>It does</dt><dd>works in four phases: research the protocol and the API, implement, review and test, then write test questions for an agent</dd></div><div><dt>You get</dt><dd>an MCP server in TypeScript or Python, and an XML file of 10 hard questions with verified answers</dd></div><div><dt>Recommends</dt><dd>TypeScript, and when unsure, covering the API&#39;s endpoints broadly rather than offering a few all-in-one workflow tools</dd></div><div><dt>Needs</dt><dd>an Anthropic API key only to run the evaluation, which has Claude answer the questions using your server</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Anthropic&#39;s guide to building MCP servers. First the agent reads the MCP spec and the official SDK docs, then the service&#39;s API, and lists the endpoints to cover, most common first. Then it builds shared pieces (an authenticated API client, error helpers, pagination) and each tool: typed, validated inputs, structured output, consistent names with a common prefix, error messages that tell the agent what to try next, and hints marking a tool as read-only or destructive. It builds the server and tries it in MCP&#39;s inspector tool. Last comes the evaluation: 10 realistic questions about real data, each needing many read-only tool calls and having one stable answer. A bundled script runs them through Claude against your server, to show whether an agent can actually get work done with it. Separate guides hold the detailed patterns for TypeScript and Python.</p>
+      <p class="muted">Summarizes <a href="https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/mcp-builder">the skill at dbd4588</a>. Its SKILL.md has changed by 275 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/anthropics/skills --skill mcp-builder</code><button type="button" class="copy" data-copy="npx skills add https://github.com/anthropics/skills --skill mcp-builder">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/anthropics/skills/mcp-builder">skills.sh page</a> · <a href="https://github.com/anthropics/skills/tree/HEAD/skills/mcp-builder">Source on GitHub</a> · <a href="/gemskills/?repo=anthropics%2Fskills">All skills from anthropics/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>116,814 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>177,318 <span class="muted">anthropics/skills</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">2.7K</div>
+      <div class="stat-delta">+5% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 2,525; week to Aug 10: 2,678; week to Aug 17: 2,943; week to Aug 24: 3,374; week to Aug 31: 3,053; week to Sep 7: 2,869; week to Sep 14: 2,364; week to Sep 21: 2,658. Use the left and right arrow keys to read each week."
+        data-values="2525,2678,2943,3374,3053,2869,2364,2658" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,17.1 38.6,15.1 71.1,11.6 103.7,6.0 136.3,10.2 168.9,12.6 201.4,19.2 234.0,15.3" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="15.3" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>2,525</td></tr><tr><td>Aug 10</td><td>2,678</td></tr><tr><td>Aug 17</td><td>2,943</td></tr><tr><td>Aug 24</td><td>3,374</td></tr><tr><td>Aug 31</td><td>3,053</td></tr><tr><td>Sep 7</td><td>2,869</td></tr><tr><td>Sep 14</td><td>2,364</td></tr><tr><td>Sep 21</td><td>2,658</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:agents" data-facet="category" title="Build agents, orchestrate workers and give agents memory." href="/gemskills/?tag=category%3Aagents">category:agents</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Build agents, orchestrate workers and give agents memory.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="agent-development" data-facet="topic" href="/gemskills/?tag=agent-development">agent-development</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:mcp" data-facet="stack" href="/gemskills/?tag=stack%3Amcp">stack:mcp</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/SKILL.md">anthropics/skills at ca45fc4</a>. Checked daily, last changed Oct 29, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: mcp-builder
+description: Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).
+license: Complete terms in LICENSE.txt</code></pre></details>
+        <div class="markdown"><h3>MCP Server Development Guide</h3>
+<h4>Overview</h4>
+<p>Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.</p>
+<hr>
+<h3>Process</h3>
+<h4>🚀 High-Level Workflow</h4>
+<p>Creating a high-quality MCP server involves four main phases:</p>
+<h5>Phase 1: Deep Research and Planning</h5>
+<h6>1.1 Understand Modern MCP Design</h6>
+<p><strong>API Coverage vs. Workflow Tools:</strong>
+Balance comprehensive API endpoint coverage with specialized workflow tools. Workflow tools can be more convenient for specific tasks, while comprehensive coverage gives agents flexibility to compose operations. Performance varies by client—some clients benefit from code execution that combines basic tools, while others work better with higher-level workflows. When uncertain, prioritize comprehensive API coverage.</p>
+<p><strong>Tool Naming and Discoverability:</strong>
+Clear, descriptive tool names help agents find the right tools quickly. Use consistent prefixes (e.g., <code>github_create_issue</code>, <code>github_list_repos</code>) and action-oriented naming.</p>
+<p><strong>Context Management:</strong>
+Agents benefit from concise tool descriptions and the ability to filter/paginate results. Design tools that return focused, relevant data. Some clients support code execution which can help agents filter and process data efficiently.</p>
+<p><strong>Actionable Error Messages:</strong>
+Error messages should guide agents toward solutions with specific suggestions and next steps.</p>
+<h6>1.2 Study MCP Protocol Documentation</h6>
+<p><strong>Navigate the MCP specification:</strong></p>
+<p>Start with the sitemap to find relevant pages: <code>https://modelcontextprotocol.io/sitemap.xml</code></p>
+<p>Then fetch specific pages with <code>.md</code> suffix for markdown format (e.g., <code>https://modelcontextprotocol.io/specification/draft.md</code>).</p>
+<p>Key pages to review:</p>
+<ul>
+<li>Specification overview and architecture</li>
+<li>Transport mechanisms (streamable HTTP, stdio)</li>
+<li>Tool, resource, and prompt definitions</li>
+</ul>
+<h6>1.3 Study Framework Documentation</h6>
+<p><strong>Recommended stack:</strong></p>
+<ul>
+<li><strong>Language</strong>: TypeScript (high-quality SDK support and good compatibility in many execution environments e.g. MCPB. Plus AI models are good at generating TypeScript code, benefiting from its broad usage, static typing and good linting tools)</li>
+<li><strong>Transport</strong>: Streamable HTTP for remote servers, using stateless JSON (simpler to scale and maintain, as opposed to stateful sessions and streaming responses). stdio for local servers.</li>
+</ul>
+<p><strong>Load framework documentation:</strong></p>
+<ul>
+<li><strong>MCP Best Practices</strong>: <a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/mcp_best_practices.md">📋 View Best Practices</a> - Core guidelines</li>
+</ul>
+<p><strong>For TypeScript (recommended):</strong></p>
+<p>The TypeScript SDK has two major versions. Pick one before writing code:</p>
+<ul>
+<li><strong>v2</strong> (<code>@modelcontextprotocol/server</code>): the current stable release. Use it for new servers.</li>
+<li><strong>v1</strong> (<code>@modelcontextprotocol/sdk</code>): receives bug and security fixes only. Use it only when the project's <code>package.json</code> already depends on <code>@modelcontextprotocol/sdk</code>, or migrate that project with <code>npx @modelcontextprotocol/codemod@latest v1-to-v2 .</code></li>
+</ul>
+<p>If the project already uses v1, tell the user once, in a sentence or two, that v2 (<code>@modelcontextprotocol/server</code>) is the current stable release, that v1 receives only bug and security fixes, and that <code>npx @modelcontextprotocol/codemod@latest v1-to-v2 .</code> migrates the project. Then continue with v1 unless the user asks to migrate.</p>
+<p>Don't mix the two in one project: v1 code samples (imports from <code>@modelcontextprotocol/sdk/...</code>) don't apply to v2.</p>
+<ul>
+<li><strong>TypeScript SDK (v2)</strong>: Use WebFetch to load <code>https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md</code>; the full docs index is <code>https://ts.sdk.modelcontextprotocol.io/v2/llms.txt</code></li>
+<li><a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/node_mcp_server_v2.md">⚡ TypeScript Guide (v2)</a> - TypeScript patterns and examples</li>
+<li>For v1 projects only: <code>https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/v1.x/README.md</code> and the <a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/node_mcp_server.md">TypeScript Guide (v1)</a></li>
+</ul>
+<p><strong>For Python:</strong></p>
+<ul>
+<li><strong>Python SDK</strong>: Use WebFetch to load <code>https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md</code></li>
+<li><a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/python_mcp_server.md">🐍 Python Guide</a> - Python patterns and examples</li>
+</ul>
+<h6>1.4 Plan Your Implementation</h6>
+<p><strong>Understand the API:</strong>
+Review the service's API documentation to identify key endpoints, authentication requirements, and data models. Use web search and WebFetch as needed.</p>
+<p><strong>Tool Selection:</strong>
+Prioritize comprehensive API coverage. List endpoints to implement, starting with the most common operations.</p>
+<hr>
+<h5>Phase 2: Implementation</h5>
+<h6>2.1 Set Up Project Structure</h6>
+<p>See language-specific guides for project setup:</p>
+<ul>
+<li><a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/node_mcp_server_v2.md">⚡ TypeScript Guide (v2)</a> - Project structure, package.json, tsconfig.json (<a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/node_mcp_server.md">v1</a> for existing v1 projects)</li>
+<li><a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/python_mcp_server.md">🐍 Python Guide</a> - Module organization, dependencies</li>
+</ul>
+<h6>2.2 Implement Core Infrastructure</h6>
+<p>Create shared utilities:</p>
+<ul>
+<li>API client with authentication</li>
+<li>Error handling helpers</li>
+<li>Response formatting (JSON/Markdown)</li>
+<li>Pagination support</li>
+</ul>
+<h6>2.3 Implement Tools</h6>
+<p>For each tool:</p>
+<p><strong>Input Schema:</strong></p>
+<ul>
+<li>Use Zod (TypeScript) or Pydantic (Python)</li>
+<li>Include constraints and clear descriptions</li>
+<li>Add examples in field descriptions</li>
+</ul>
+<p><strong>Output Schema:</strong></p>
+<ul>
+<li>Define <code>outputSchema</code> where possible for structured data</li>
+<li>Use <code>structuredContent</code> in tool responses (TypeScript SDK feature)</li>
+<li>Helps clients understand and process tool outputs</li>
+</ul>
+<p><strong>Tool Description:</strong></p>
+<ul>
+<li>Concise summary of functionality</li>
+<li>Parameter descriptions</li>
+<li>Return type schema</li>
+</ul>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Async/await for I/O operations</li>
+<li>Proper error handling with actionable messages</li>
+<li>Support pagination where applicable</li>
+<li>Return both text content and structured data when using modern SDKs</li>
+</ul>
+<p><strong>Annotations:</strong></p>
+<ul>
+<li><code>readOnlyHint</code>: true/false</li>
+<li><code>destructiveHint</code>: true/false</li>
+<li><code>idempotentHint</code>: true/false</li>
+<li><code>openWorldHint</code>: true/false</li>
+</ul>
+<hr>
+<h5>Phase 3: Review and Test</h5>
+<h6>3.1 Code Quality</h6>
+<p>Review for:</p>
+<ul>
+<li>No duplicated code (DRY principle)</li>
+<li>Consistent error handling</li>
+<li>Full type coverage</li>
+<li>Clear tool descriptions</li>
+</ul>
+<h6>3.2 Build and Test</h6>
+<p><strong>TypeScript:</strong></p>
+<ul>
+<li>Run <code>npm run build</code> to verify compilation</li>
+<li>v2 projects: run the self-check script from the <a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/node_mcp_server_v2.md#verify-your-server">v2 guide</a> against the built server</li>
+<li>Test with MCP Inspector: <code>npx @modelcontextprotocol/inspector</code></li>
+</ul>
+<p><strong>Python:</strong></p>
+<ul>
+<li>Verify syntax: <code>python -m py_compile your_server.py</code></li>
+<li>Test with MCP Inspector</li>
+</ul>
+<p>See language-specific guides for detailed testing approaches and quality checklists.</p>
+<hr>
+<h5>Phase 4: Create Evaluations</h5>
+<p>After implementing your MCP server, create comprehensive evaluations to test its effectiveness.</p>
+<p><strong>Load <a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/evaluation.md">✅ Evaluation Guide</a> for complete evaluation guidelines.</strong></p>
+<h6>4.1 Understand Evaluation Purpose</h6>
+<p>Use evaluations to test whether LLMs can effectively use your MCP server to answer realistic, complex questions.</p>
+<h6>4.2 Create 10 Evaluation Questions</h6>
+<p>To create effective evaluations, follow the process outlined in the evaluation guide:</p>
+<ol>
+<li><strong>Tool Inspection</strong>: List available tools and understand their capabilities</li>
+<li><strong>Content Exploration</strong>: Use READ-ONLY operations to explore available data</li>
+<li><strong>Question Generation</strong>: Create 10 complex, realistic questions</li>
+<li><strong>Answer Verification</strong>: Solve each question yourself to verify answers</li>
+</ol>
+<h6>4.3 Evaluation Requirements</h6>
+<p>Ensure each question is:</p>
+<ul>
+<li><strong>Independent</strong>: Not dependent on other questions</li>
+<li><strong>Read-only</strong>: Only non-destructive operations required</li>
+<li><strong>Complex</strong>: Requiring multiple tool calls and deep exploration</li>
+<li><strong>Realistic</strong>: Based on real use cases humans would care about</li>
+<li><strong>Verifiable</strong>: Single, clear answer that can be verified by string comparison</li>
+<li><strong>Stable</strong>: Answer won't change over time</li>
+</ul>
+<h6>4.4 Output Format</h6>
+<p>Create an XML file with this structure:</p>
+<pre><code class="language-xml">&lt;evaluation&gt;
+  &lt;qa_pair&gt;
+    &lt;question&gt;Find discussions about AI model launches with animal codenames. One model needed a specific safety designation that uses the format ASL-X. What number X was being determined for the model named after a spotted wild cat?&lt;/question&gt;
+    &lt;answer&gt;3&lt;/answer&gt;
+  &lt;/qa_pair&gt;
+&lt;!-- More qa_pairs... --&gt;
+&lt;/evaluation&gt;
+</code></pre>
+<hr>
+<h3>Reference Files</h3>
+<h4>📚 Documentation Library</h4>
+<p>Load these resources as needed during development:</p>
+<h5>Core MCP Documentation (Load First)</h5>
+<ul>
+<li><strong>MCP Protocol</strong>: Start with sitemap at <code>https://modelcontextprotocol.io/sitemap.xml</code>, then fetch specific pages with <code>.md</code> suffix</li>
+<li><a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/mcp_best_practices.md">📋 MCP Best Practices</a> - Universal MCP guidelines including:
+<ul>
+<li>Server and tool naming conventions</li>
+<li>Response format guidelines (JSON vs Markdown)</li>
+<li>Pagination best practices</li>
+<li>Transport selection (streamable HTTP vs stdio)</li>
+<li>Security and error handling standards</li>
+</ul>
+</li>
+</ul>
+<h5>SDK Documentation (Load During Phase 1/2)</h5>
+<ul>
+<li><strong>Python SDK</strong>: Fetch from <code>https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md</code></li>
+<li><strong>TypeScript SDK (v2)</strong>: Fetch from <code>https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md</code>; full docs index at <code>https://ts.sdk.modelcontextprotocol.io/v2/llms.txt</code></li>
+<li><strong>TypeScript SDK (v1, existing v1 projects only)</strong>: Fetch from <code>https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/v1.x/README.md</code></li>
+</ul>
+<h5>Language-Specific Implementation Guides (Load During Phase 2)</h5>
+<ul>
+<li>
+<p><a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/python_mcp_server.md">🐍 Python Implementation Guide</a> - Complete Python/FastMCP guide with:</p>
+<ul>
+<li>Server initialization patterns</li>
+<li>Pydantic model examples</li>
+<li>Tool registration with <code>@mcp.tool</code></li>
+<li>Complete working examples</li>
+<li>Quality checklist</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/node_mcp_server_v2.md">⚡ TypeScript Implementation Guide (SDK v2)</a> - Complete TypeScript guide for <code>@modelcontextprotocol/server</code> with:</p>
+<ul>
+<li>Project setup and the server factory</li>
+<li>Tool design: Zod 4 schemas, output formats, pagination, errors</li>
+<li>A complete example serving stdio and Streamable HTTP, plus bearer auth</li>
+<li>Resources, prompts, and notifications</li>
+<li>A self-check script to verify the built server</li>
+<li>Links to SDK examples for advanced features</li>
+<li>A v1 → v2 translation table, migration steps, and a quality checklist</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/node_mcp_server.md">⚡ TypeScript Implementation Guide (SDK v1)</a> - The equivalent guide for existing <code>@modelcontextprotocol/sdk</code> projects</p>
+</li>
+</ul>
+<h5>Evaluation Guide (Load During Phase 4)</h5>
+<ul>
+<li><a href="https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/mcp-builder/reference/evaluation.md">✅ Evaluation Guide</a> - Complete evaluation creation guide with:
+<ul>
+<li>Question creation guidelines</li>
+<li>Answer verification strategies</li>
+<li>XML format specifications</li>
+<li>Example questions and answers</li>
+<li>Running an evaluation with the provided scripts</li>
+</ul>
+</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

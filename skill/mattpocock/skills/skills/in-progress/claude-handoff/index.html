@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>claude-handoff · Gem Skills</title>
+    <meta name="description" content="Use it when: the current conversation should continue in a fresh agent, starting right away. It does: summarizes the conversation, then starts a background Claude Code agent with that summary as its prompt. You get: a new, named agent already working in the same folder, which you manage with claude agents. Unlike handoff: that skill, by the same author, only writes the summary for you to pass on; this one also launches the next agent. Needs: Claude Code, whose claude --bg command starts background agents. Runs: only when you invoke it; it sits in its author&#039;s in-progress folder, so expect changes." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a></p>
+      <h1>claude-handoff</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>the current conversation should continue in a fresh agent, starting right away</dd></div><div><dt>It does</dt><dd>summarizes the conversation, then starts a background Claude Code agent with that summary as its prompt</dd></div><div><dt>You get</dt><dd>a new, named agent already working in the same folder, which you manage with claude agents</dd></div><div><dt>Unlike handoff</dt><dd>that skill, by the same author, only writes the summary for you to pass on; this one also launches the next agent</dd></div><div><dt>Needs</dt><dd>Claude Code, whose claude --bg command starts background agents</dd></div><div><dt>Runs</dt><dd>only when you invoke it; it sits in its author&#39;s in-progress folder, so expect changes</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The agent writes a summary of the conversation to your system&#39;s temp folder, then runs claude --bg with a descriptive name and that summary as the prompt. The new agent starts in the current folder and the command returns at once, so your session carries on while the new one works. The summary names the skills the next agent should load, points to specs, plans, issues, commits and diffs by path or URL instead of copying them, and removes API keys, passwords and personal details, since it becomes the new agent&#39;s prompt. Say what the next session is for, and it tailors the summary to that.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/claude-handoff">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill claude-handoff</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill claude-handoff">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/claude-handoff">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/in-progress/claude-handoff">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>298,145 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Jul 2, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">27.2K</div>
+      <div class="stat-delta">+32% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 20,517; week to Aug 10: 23,625; week to Aug 17: 20,366; week to Aug 24: 29,918; week to Aug 31: 32,460; week to Sep 7: 32,375; week to Sep 14: 29,286; week to Sep 21: 27,180. Use the left and right arrow keys to read each week."
+        data-values="20517,23625,20366,29918,32460,32375,29286,27180" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,22.2 38.6,18.0 71.1,22.4 103.7,9.4 136.3,6.0 168.9,6.1 201.4,10.3 234.0,13.2" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="13.2" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>20,517</td></tr><tr><td>Aug 10</td><td>23,625</td></tr><tr><td>Aug 17</td><td>20,366</td></tr><tr><td>Aug 24</td><td>29,918</td></tr><tr><td>Aug 31</td><td>32,460</td></tr><tr><td>Sep 7</td><td>32,375</td></tr><tr><td>Sep 14</td><td>29,286</td></tr><tr><td>Sep 21</td><td>27,180</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:planning" data-facet="category" title="Make the agent question you and write the plan down before it writes code." href="/gemskills/?tag=category%3Aplanning">category:planning</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Make the agent question you and write the plan down before it writes code.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:command" data-facet="type" title="A one-shot action you invoke by name, such as turning the conversation into a PRD." href="/gemskills/?tag=type%3Acommand">type:command</a></div>
+          <p class="tag-meaning">A one-shot action you invoke by name, such as turning the conversation into a PRD.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:claude-code" data-facet="needs" title="Uses Claude Code features such as hooks or background agents." href="/gemskills/?tag=needs%3Aclaude-code">needs:claude-code</a></div>
+          <p class="tag-meaning">Uses Claude Code features such as hooks or background agents.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="handoff" data-facet="topic" href="/gemskills/?tag=handoff">handoff</a><a class="tag" data-tag="multi-agent" data-facet="topic" href="/gemskills/?tag=multi-agent">multi-agent</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/claude-handoff/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: claude-handoff
+description: Hand the current conversation off to a fresh background agent that picks up the work immediately.
+argument-hint: &#34;What will the next session be used for?&#34;
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><p>Write a handoff summary of the current conversation so a fresh agent can continue the work. Save it to the temporary directory of the user's OS, then launch a background agent seeded with it as its prompt: <code>claude --bg --name &quot;&lt;descriptive name&gt;&quot; -- &quot;$(cat &lt;summary file&gt;)&quot;</code>. Passing the file keeps the shell from running backticks or expanding <code>$</code> in the summary. It starts in the current working directory and returns immediately; the user manages it with <code>claude agents</code>.</p>
+<p>Always pass <code>-n</code>/<code>--name</code> with a descriptive name (e.g. <code>--name &quot;Fix login bug&quot;</code>); it sets the display name shown in the job list, session picker, and terminal title.</p>
+<p>Include a &quot;suggested skills&quot; section in the summary, naming which skills the next agent should call the Skill tool for.</p>
+<p>Do not duplicate content already captured in other artifacts (specs, plans, ADRs, issues, commits, diffs). Reference them by path or URL instead.</p>
+<p>Redact any sensitive information, such as API keys, passwords, or personally identifiable information, since the summary becomes the agent's prompt.</p>
+<p>If the user passed arguments, treat them as a description of what the next session will focus on and tailor the summary accordingly.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

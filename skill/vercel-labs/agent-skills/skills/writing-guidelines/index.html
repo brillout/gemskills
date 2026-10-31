@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>writing-guidelines · Gem Skills</title>
+    <meta name="description" content="Use it when: you want docs or other prose checked against Vercel&#039;s writing handbook. It does: fetches the latest rules from Vercel&#039;s writing-guidelines repo, then reviews the files you name against every one. You get: terse findings grouped by file, each at a clickable file:line. Unlike web-design-guidelines: which runs the same kind of review on UI code. Needs: web access, since the rules are fetched fresh before each review." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=vercel-labs%2Fagent-skills">vercel-labs/agent-skills</a></p>
+      <h1>writing-guidelines</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want docs or other prose checked against Vercel&#39;s writing handbook</dd></div><div><dt>It does</dt><dd>fetches the latest rules from Vercel&#39;s writing-guidelines repo, then reviews the files you name against every one</dd></div><div><dt>You get</dt><dd>terse findings grouped by file, each at a clickable file:line</dd></div><div><dt>Unlike web-design-guidelines</dt><dd>which runs the same kind of review on UI code</dd></div><div><dt>Needs</dt><dd>web access, since the rules are fetched fresh before each review</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The skill itself is a short wrapper: the rules live in Vercel&#39;s separate writing-guidelines repo, and the agent fetches them before every review, so they can change between runs. You name a file or pattern, or it asks which files. In October 2026 the rules covered planning each page and declaring its type (tutorial, how-to, reference and so on), active voice and addressing the reader as &#34;you&#34;, banned words such as easy, simple and just, vague claims to replace with figures, and signs of AI-written prose such as recap transitions and choppy fragments. They also covered sentence-case headings, code blocks of at most 25 lines with a language tag, snake_case placeholders, units written as 64 KB, and no em dashes. Many rules are specific to Vercel&#39;s docs, such as its metadata fields and components, so it fits docs that follow Vercel&#39;s conventions best. It reports each issue and where it is, explaining only when the fix isn&#39;t obvious.</p>
+      <p class="muted">Summarizes <a href="https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/writing-guidelines">the skill at 063bee9</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/vercel-labs/agent-skills --skill writing-guidelines</code><button type="button" class="copy" data-copy="npx skills add https://github.com/vercel-labs/agent-skills --skill writing-guidelines">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/vercel-labs/agent-skills/writing-guidelines">skills.sh page</a> · <a href="https://github.com/vercel-labs/agent-skills/tree/HEAD/skills/writing-guidelines">Source on GitHub</a> · <a href="/gemskills/?repo=vercel-labs%2Fagent-skills">All skills from vercel-labs/agent-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>71,904 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>31,405 <span class="muted">vercel-labs/agent-skills</span></dd></div><div><dt>First seen</dt><dd>Jun 1, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">6.3K</div>
+      <div class="stat-delta">+82% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 3,454; week to Aug 10: 3,560; week to Aug 17: 3,724; week to Aug 24: 4,573; week to Aug 31: 5,872; week to Sep 7: 4,637; week to Sep 14: 4,404; week to Sep 21: 6,285. Use the left and right arrow keys to read each week."
+        data-values="3454,3560,3724,4573,5872,4637,4404,6285" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,25.8 38.6,25.1 71.1,23.9 103.7,18.0 136.3,8.9 168.9,17.5 201.4,19.2 234.0,6.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="6.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>3,454</td></tr><tr><td>Aug 10</td><td>3,560</td></tr><tr><td>Aug 17</td><td>3,724</td></tr><tr><td>Aug 24</td><td>4,573</td></tr><tr><td>Aug 31</td><td>5,872</td></tr><tr><td>Sep 7</td><td>4,637</td></tr><tr><td>Sep 14</td><td>4,404</td></tr><tr><td>Sep 21</td><td>6,285</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:writing" data-facet="category" title="Articles, docs, internal comms, research write-ups and prose that doesn&#39;t read as generated." href="/gemskills/?tag=category%3Awriting">category:writing</a></div>
+          <p class="tag-meaning">Articles, docs, internal comms, research write-ups and prose that doesn&#39;t read as generated.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="writing" data-facet="topic" href="/gemskills/?tag=writing">writing</a><a class="tag" data-tag="docs-writing" data-facet="topic" href="/gemskills/?tag=docs-writing">docs-writing</a><a class="tag" data-tag="code-review" data-facet="topic" href="/gemskills/?tag=code-review">code-review</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/writing-guidelines/SKILL.md">vercel-labs/agent-skills at 063bee9</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: writing-guidelines
+description: Review docs/prose for Writing Guidelines compliance. Use when asked to &#34;review my docs&#34;, &#34;check writing style&#34;, &#34;audit prose&#34;, &#34;review docs voice and tone&#34;, or &#34;check this page against the writing handbook&#34;.
+metadata:
+  author: vercel
+  version: &#34;1.0.0&#34;
+  argument-hint: &#60;file-or-pattern&#62;</code></pre></details>
+        <div class="markdown"><h3>Writing Guidelines</h3>
+<p>Review files for compliance with Writing Guidelines.</p>
+<h4>How It Works</h4>
+<ol>
+<li>Fetch the latest guidelines from the source URL below</li>
+<li>Read the specified files (or prompt user for files/pattern)</li>
+<li>Check against all rules in the fetched guidelines</li>
+<li>Output findings in the terse <code>file:line</code> format</li>
+</ol>
+<h4>Guidelines Source</h4>
+<p>Fetch fresh guidelines before each review:</p>
+<pre><code>https://raw.githubusercontent.com/vercel-labs/writing-guidelines/main/command.md
+</code></pre>
+<p>Use WebFetch to retrieve the latest rules. The fetched content contains all the rules and output format instructions.</p>
+<h4>Usage</h4>
+<p>When a user provides a file or pattern argument:</p>
+<ol>
+<li>Fetch guidelines from the source URL above</li>
+<li>Read the specified files</li>
+<li>Apply all rules from the fetched guidelines</li>
+<li>Output findings using the format specified in the guidelines</li>
+</ol>
+<p>If no files specified, ask the user which files to review.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

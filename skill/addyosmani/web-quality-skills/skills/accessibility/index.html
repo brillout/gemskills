@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>accessibility · Gem Skills</title>
+    <meta name="description" content="Use it when: you want a web page or app checked and fixed against WCAG 2.2, the web accessibility standard. It does: runs a Lighthouse audit, inspects the accessibility tree, tries the flow by keyboard, edits the code to fix what fails, then audits again. You get: fixed code, guided by rules and before-and-after HTML, CSS and JavaScript for each WCAG area. Works with: Chrome DevTools MCP if available, otherwise the Lighthouse CLI or axe. Unlike web-design-guidelines: Vercel&#039;s skill that reviews UI code against its design rules, it tests the rendered page and fixes what fails." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=addyosmani%2Fweb-quality-skills">addyosmani/web-quality-skills</a></p>
+      <h1>accessibility</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want a web page or app checked and fixed against WCAG 2.2, the web accessibility standard</dd></div><div><dt>It does</dt><dd>runs a Lighthouse audit, inspects the accessibility tree, tries the flow by keyboard, edits the code to fix what fails, then audits again</dd></div><div><dt>You get</dt><dd>fixed code, guided by rules and before-and-after HTML, CSS and JavaScript for each WCAG area</dd></div><div><dt>Works with</dt><dd>Chrome DevTools MCP if available, otherwise the Lighthouse CLI or axe</dd></div><div><dt>Unlike web-design-guidelines</dt><dd>Vercel&#39;s skill that reviews UI code against its design rules, it tests the rendered page and fixes what fails</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>When a rendered page is available, it starts from what actually fails: the failing elements in the Lighthouse report point to the component to fix, a snapshot of the accessibility tree shows names, roles, headings and landmarks, and the agent walks the flow with the keyboard. It warns that automated tools catch only some problems, so a score of 100 doesn&#39;t mean the page conforms. The rest is a reference organized by WCAG&#39;s four principles (perceivable, operable, understandable, robust), with before-and-after code: alt text, contrast ratios, keyboard access, visible focus, skip links, form labels, error messages, native elements over ARIA, live announcements. It flags what&#39;s new in WCAG 2.2: tap targets of at least 24 pixels, focus never hidden behind sticky headers, alternatives to dragging, not asking for the same information twice, logins that allow paste or passkeys. It ends with a manual checklist (screen readers, 200% zoom, reduced motion) and common issues ranked by impact.</p>
+      <p class="muted">Summarizes <a href="https://github.com/addyosmani/web-quality-skills/tree/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility">the skill at afa8da9</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/addyosmani/web-quality-skills --skill accessibility</code><button type="button" class="copy" data-copy="npx skills add https://github.com/addyosmani/web-quality-skills --skill accessibility">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/addyosmani/web-quality-skills/accessibility">skills.sh page</a> · <a href="https://github.com/addyosmani/web-quality-skills/tree/HEAD/skills/accessibility">Source on GitHub</a> · <a href="/gemskills/?repo=addyosmani%2Fweb-quality-skills">All skills from addyosmani/web-quality-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>54,520 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>2,814 <span class="muted">addyosmani/web-quality-skills</span></dd></div><div><dt>First seen</dt><dd>Jan 20, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">1.8K</div>
+      <div class="stat-delta">-9% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 1,957; week to Aug 10: 1,910; week to Aug 17: 1,706; week to Aug 24: 1,827; week to Aug 31: 2,080; week to Sep 7: 1,917; week to Sep 14: 1,947; week to Sep 21: 1,775. Use the left and right arrow keys to read each week."
+        data-values="1957,1910,1706,1827,2080,1917,1947,1775" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,8.6 38.6,9.6 71.1,13.9 103.7,11.4 136.3,6.0 168.9,9.4 201.4,8.8 234.0,12.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="12.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>1,957</td></tr><tr><td>Aug 10</td><td>1,910</td></tr><tr><td>Aug 17</td><td>1,706</td></tr><tr><td>Aug 24</td><td>1,827</td></tr><tr><td>Aug 31</td><td>2,080</td></tr><tr><td>Sep 7</td><td>1,917</td></tr><tr><td>Sep 14</td><td>1,947</td></tr><tr><td>Sep 21</td><td>1,775</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:design" data-facet="category" title="Taste for interfaces that don&#39;t look generated: direction, motion and accessibility." href="/gemskills/?tag=category%3Adesign">category:design</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Taste for interfaces that don&#39;t look generated: direction, motion and accessibility.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="accessibility" data-facet="topic" href="/gemskills/?tag=accessibility">accessibility</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/SKILL.md">addyosmani/web-quality-skills at afa8da9</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: accessibility
+description: Audit and improve web accessibility following WCAG 2.2 guidelines. Use when asked to &#34;improve accessibility&#34;, &#34;a11y audit&#34;, &#34;WCAG compliance&#34;, &#34;screen reader support&#34;, &#34;keyboard navigation&#34;, or &#34;make accessible&#34;.
+license: MIT
+metadata:
+  author: web-quality-skills
+  version: &#34;2.0&#34;</code></pre></details>
+        <div class="markdown"><h3>Accessibility (a11y)</h3>
+<p>Comprehensive accessibility guidelines based on WCAG 2.2 and Lighthouse accessibility audits. Goal: make content usable by everyone, including people with disabilities.</p>
+<h4>Evidence-led audit workflow</h4>
+<p>When a rendered page is available:</p>
+<ol>
+<li>Run a live Lighthouse Accessibility audit when that capability is available; with Chrome DevTools MCP, use <code>lighthouse_audit</code>. Use mobile navigation mode for a general public page or snapshot mode when reloading would lose authenticated or user-created state.</li>
+<li>Use failed audit nodes to localize the relevant component or template instead of searching the whole repository for generic patterns.</li>
+<li>Inspect a rendered accessibility-tree snapshot for names, roles, states, landmarks, and heading structure; with Chrome DevTools MCP, use <code>take_snapshot</code>. Exercise the affected flow with the keyboard.</li>
+<li>Fix the source, then re-run the same audit and manual interaction.</li>
+</ol>
+<p>If the live tools are unavailable, use Lighthouse CLI or axe for automated coverage and complete the same manual checks. Automated tools detect only a subset of accessibility barriers: a score of 100 is not WCAG conformance, and a low score does not replace issue-level evidence.</p>
+<h4>WCAG Principles: POUR</h4>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P</strong>erceivable</td>
+<td>Content can be perceived through different senses</td>
+</tr>
+<tr>
+<td><strong>O</strong>perable</td>
+<td>Interface can be operated by all users</td>
+</tr>
+<tr>
+<td><strong>U</strong>nderstandable</td>
+<td>Content and interface are understandable</td>
+</tr>
+<tr>
+<td><strong>R</strong>obust</td>
+<td>Content works with assistive technologies</td>
+</tr>
+</tbody>
+</table>
+<h4>Conformance levels</h4>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Requirement</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>Minimum accessibility</td>
+<td>Must pass</td>
+</tr>
+<tr>
+<td><strong>AA</strong></td>
+<td>Standard compliance</td>
+<td>Should pass (legal requirement in many jurisdictions)</td>
+</tr>
+<tr>
+<td><strong>AAA</strong></td>
+<td>Enhanced accessibility</td>
+<td>Nice to have</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>Perceivable</h4>
+<h5>Text alternatives (1.1)</h5>
+<p><strong>Images require alt text:</strong></p>
+<pre><code class="language-html">&lt;!-- ❌ Missing alt --&gt;
+&lt;img src=&quot;chart.png&quot;&gt;
+
+&lt;!-- ✅ Descriptive alt --&gt;
+&lt;img src=&quot;chart.png&quot; alt=&quot;Bar chart showing 40% increase in Q3 sales&quot;&gt;
+
+&lt;!-- ✅ Decorative image (empty alt) --&gt;
+&lt;img src=&quot;decorative-border.png&quot; alt=&quot;&quot; role=&quot;presentation&quot;&gt;
+
+&lt;!-- ✅ Complex image with longer description --&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;infographic.png&quot; alt=&quot;2024 market trends infographic&quot; 
+       aria-describedby=&quot;infographic-desc&quot;&gt;
+  &lt;figcaption id=&quot;infographic-desc&quot;&gt;
+    &lt;!-- Detailed description --&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+<p><strong>Icon buttons need accessible names:</strong></p>
+<pre><code class="language-html">&lt;!-- ❌ No accessible name --&gt;
+&lt;button&gt;&lt;svg&gt;&lt;!-- menu icon --&gt;&lt;/svg&gt;&lt;/button&gt;
+
+&lt;!-- ✅ Using aria-label --&gt;
+&lt;button aria-label=&quot;Open menu&quot;&gt;
+  &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;!-- menu icon --&gt;&lt;/svg&gt;
+&lt;/button&gt;
+
+&lt;!-- ✅ Using visually hidden text --&gt;
+&lt;button&gt;
+  &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;!-- menu icon --&gt;&lt;/svg&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Open menu&lt;/span&gt;
+&lt;/button&gt;
+</code></pre>
+<p><strong>Visually hidden class:</strong></p>
+<pre><code class="language-css">.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</code></pre>
+<h5>Color contrast (1.4.3, 1.4.6)</h5>
+<table>
+<thead>
+<tr>
+<th>Text Size</th>
+<th>AA minimum</th>
+<th>AAA enhanced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal text (&lt; 18px / &lt; 14px bold)</td>
+<td>4.5:1</td>
+<td>7:1</td>
+</tr>
+<tr>
+<td>Large text (≥ 18px / ≥ 14px bold)</td>
+<td>3:1</td>
+<td>4.5:1</td>
+</tr>
+<tr>
+<td>UI components &amp; graphics</td>
+<td>3:1</td>
+<td>3:1</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-css">/* ❌ Low contrast (2.5:1) */
+.low-contrast {
+  color: #999;
+  background: #fff;
+}
+
+/* ✅ Sufficient contrast (7:1) */
+.high-contrast {
+  color: #333;
+  background: #fff;
+}
+
+/* ✅ Focus states need contrast too (3:1 against background, WCAG 1.4.11) */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+</code></pre>
+<p><strong>Don't rely on color alone:</strong></p>
+<pre><code class="language-html">&lt;!-- ❌ Only color indicates error --&gt;
+&lt;input class=&quot;error-border&quot;&gt;
+&lt;style&gt;.error-border { border-color: red; }&lt;/style&gt;
+
+&lt;!-- ✅ Color + icon + text --&gt;
+&lt;div class=&quot;field-error&quot;&gt;
+  &lt;input aria-invalid=&quot;true&quot; aria-describedby=&quot;email-error&quot;&gt;
+  &lt;span id=&quot;email-error&quot; class=&quot;error-message&quot;&gt;
+    &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;!-- error icon --&gt;&lt;/svg&gt;
+    Please enter a valid email address
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h5>Media alternatives (1.2)</h5>
+<pre><code class="language-html">&lt;!-- Video with captions --&gt;
+&lt;video controls&gt;
+  &lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;track kind=&quot;captions&quot; src=&quot;captions.vtt&quot; srclang=&quot;en&quot; label=&quot;English&quot; default&gt;
+  &lt;track kind=&quot;descriptions&quot; src=&quot;descriptions.vtt&quot; srclang=&quot;en&quot; label=&quot;Descriptions&quot;&gt;
+&lt;/video&gt;
+
+&lt;!-- Audio with transcript --&gt;
+&lt;audio controls&gt;
+  &lt;source src=&quot;podcast.mp3&quot; type=&quot;audio/mp3&quot;&gt;
+&lt;/audio&gt;
+&lt;details&gt;
+  &lt;summary&gt;Transcript&lt;/summary&gt;
+  &lt;p&gt;Full transcript text...&lt;/p&gt;
+&lt;/details&gt;
+</code></pre>
+<hr>
+<h4>Operable</h4>
+<h5>Keyboard accessible (2.1)</h5>
+<p><strong>All functionality must be keyboard accessible.</strong> Prefer native interactive elements — <code>&lt;button&gt;</code>, <code>&lt;a href&gt;</code>, and form controls handle Enter/Space activation, focus, and assistive-tech semantics for free. Only add manual keyboard handling when you cannot use a native element.</p>
+<pre><code class="language-html">&lt;!-- ❌ Non-interactive element with click only: not focusable, no keyboard activation --&gt;
+&lt;div class=&quot;card&quot; onclick=&quot;handleAction()&quot;&gt;Open&lt;/div&gt;
+
+&lt;!-- ✅ Best: use a native button --&gt;
+&lt;button type=&quot;button&quot; onclick=&quot;handleAction()&quot;&gt;Open&lt;/button&gt;
+</code></pre>
+<pre><code class="language-javascript">// ✅ When you MUST use a non-interactive element (e.g. div with role=&quot;button&quot;),
+// make it focusable AND handle keyboard activation. Do NOT add this to a native
+// &lt;button&gt; — Enter/Space already fire click, so you'd double-trigger.
+element.setAttribute('role', 'button');
+element.setAttribute('tabindex', '0');
+element.addEventListener('click', handleAction);
+element.addEventListener('keydown', (e) =&gt; {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    handleAction();
+  }
+});
+</code></pre>
+<p><strong>No keyboard traps.</strong> Users must be able to Tab into and out of every component. Use the <a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/A11Y-PATTERNS.md#modal-focus-trap">modal focus trap pattern</a> for dialogs—the native <code>&lt;dialog&gt;</code> element handles this automatically.</p>
+<h5>Focus visible (2.4.7)</h5>
+<pre><code class="language-css">/* ❌ Never remove focus outlines */
+*:focus { outline: none; }
+
+/* ✅ Use :focus-visible for keyboard-only focus */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor; /* inherits text color → already contrast-checked */
+  outline-offset: 2px;
+}
+
+/* ✅ Or pick a brand color and verify ≥3:1 contrast against every background it lands on */
+button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0, 95, 204, 0.5);
+}
+</code></pre>
+<h5>Focus not obscured (2.4.11) — new in 2.2</h5>
+<p>When an element receives keyboard focus, it must not be entirely hidden by other author-created content such as sticky headers, footers, or overlapping panels. At Level AAA (2.4.12), no part of the focused element may be hidden.</p>
+<pre><code class="language-css">/* ✅ Account for sticky headers when scrolling to focused elements */
+:target {
+  scroll-margin-top: 80px;
+}
+
+/* ✅ Ensure focused items clear fixed/sticky bars */
+:focus {
+  scroll-margin-top: 80px;
+  scroll-margin-bottom: 60px;
+}
+</code></pre>
+<h5>Skip links (2.4.1)</h5>
+<p>Provide a skip link so keyboard users can bypass repetitive navigation. See the <a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/A11Y-PATTERNS.md#skip-link">skip link pattern</a> for full markup and styles.</p>
+<h5>Target size (2.5.8) — new in 2.2</h5>
+<p>Interactive targets must be at least <strong>24 × 24 CSS pixels</strong> (AA). Exceptions: inline text links, elements where the browser controls the size, and targets where a 24px circle centered on the bounding box does not overlap another target.</p>
+<pre><code class="language-css">/* ✅ Minimum target size */
+button,
+[role=&quot;button&quot;],
+input[type=&quot;checkbox&quot;] + label,
+input[type=&quot;radio&quot;] + label {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+/* ✅ Comfortable target size (recommended 44×44) */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+</code></pre>
+<h5>Dragging movements (2.5.7) — new in 2.2</h5>
+<p>Any action that requires dragging must have a single-pointer alternative (e.g., buttons, inputs). See the <a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/A11Y-PATTERNS.md#dragging-movements">dragging movements pattern</a> for a sortable-list example.</p>
+<h5>Timing (2.2)</h5>
+<pre><code class="language-javascript">// Allow users to extend time limits
+function showSessionWarning() {
+  const modal = createModal({
+    title: 'Session Expiring',
+    content: 'Your session will expire in 2 minutes.',
+    actions: [
+      { label: 'Extend session', action: extendSession },
+      { label: 'Log out', action: logout }
+    ],
+    timeout: 120000
+  });
+}
+</code></pre>
+<h5>Motion (2.3)</h5>
+<pre><code class="language-css">/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</code></pre>
+<hr>
+<h4>Understandable</h4>
+<h5>Page language (3.1.1)</h5>
+<pre><code class="language-html">&lt;!-- ❌ No language specified --&gt;
+&lt;html&gt;
+
+&lt;!-- ✅ Language specified --&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;!-- ✅ Language changes within page --&gt;
+&lt;p&gt;The French word for hello is &lt;span lang=&quot;fr&quot;&gt;bonjour&lt;/span&gt;.&lt;/p&gt;
+</code></pre>
+<h5>Consistent navigation (3.2.3)</h5>
+<pre><code class="language-html">&lt;!-- Navigation should be consistent across pages --&gt;
+&lt;nav aria-label=&quot;Main&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;/&quot; aria-current=&quot;page&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/products&quot;&gt;Products&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<h5>Consistent help (3.2.6) — new in 2.2</h5>
+<p>If a help mechanism (contact info, chat widget, FAQ link, self-help option) is repeated across multiple pages, it must appear in the <strong>same relative order</strong> each time. Users who rely on consistent placement shouldn't have to hunt for help on every page.</p>
+<h5>Form labels (3.3.2)</h5>
+<p>Every input needs a programmatically associated label. See the <a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/A11Y-PATTERNS.md#form-labels">form labels pattern</a> for explicit, implicit, and instructional examples.</p>
+<h5>Error handling (3.3.1, 3.3.3)</h5>
+<p>Announce errors to screen readers with <code>role=&quot;alert&quot;</code> or <code>aria-live</code>, set <code>aria-invalid=&quot;true&quot;</code> on invalid fields, and focus the first error on submit. See the <a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/A11Y-PATTERNS.md#error-handling">error handling pattern</a> for full markup and JS.</p>
+<h5>Redundant entry (3.3.7) — new in 2.2</h5>
+<p>Don't force users to re-enter information they already provided in the same session. Auto-populate from earlier steps, or let users select from previously entered values. Exceptions: security re-confirmation and content that has expired.</p>
+<pre><code class="language-html">&lt;!-- ✅ Auto-fill shipping address from billing --&gt;
+&lt;fieldset&gt;
+  &lt;legend&gt;Shipping address&lt;/legend&gt;
+  &lt;label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;same-as-billing&quot; checked&gt;
+    Same as billing address
+  &lt;/label&gt;
+  &lt;!-- Fields auto-populated when checked --&gt;
+&lt;/fieldset&gt;
+</code></pre>
+<h5>Accessible authentication (3.3.8) — new in 2.2</h5>
+<p>Login flows must not rely on cognitive function tests (e.g., remembering a password, solving a puzzle) unless at least one of:</p>
+<ul>
+<li>A copy-paste or autofill mechanism is available</li>
+<li>An alternative method exists (e.g., passkey, SSO, email link)</li>
+<li>The test uses object recognition or personal content (AA only; AAA removes this exception)</li>
+</ul>
+<pre><code class="language-html">&lt;!-- ✅ Allow paste in password fields --&gt;
+&lt;input type=&quot;password&quot; id=&quot;password&quot; autocomplete=&quot;current-password&quot;&gt;
+
+&lt;!-- ✅ Offer passwordless alternatives --&gt;
+&lt;button type=&quot;button&quot;&gt;Sign in with passkey&lt;/button&gt;
+&lt;button type=&quot;button&quot;&gt;Email me a login link&lt;/button&gt;
+</code></pre>
+<hr>
+<h4>Robust</h4>
+<h5>ARIA usage (4.1.2)</h5>
+<p><strong>Prefer native elements:</strong></p>
+<pre><code class="language-html">&lt;!-- ❌ ARIA role on div --&gt;
+&lt;div role=&quot;button&quot; tabindex=&quot;0&quot;&gt;Click me&lt;/div&gt;
+
+&lt;!-- ✅ Native button --&gt;
+&lt;button&gt;Click me&lt;/button&gt;
+
+&lt;!-- ❌ ARIA checkbox --&gt;
+&lt;div role=&quot;checkbox&quot; aria-checked=&quot;false&quot;&gt;Option&lt;/div&gt;
+
+&lt;!-- ✅ Native checkbox --&gt;
+&lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt; Option&lt;/label&gt;
+</code></pre>
+<p><strong>When ARIA is needed,</strong> use the correct roles and states. See the <a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/A11Y-PATTERNS.md#aria-tabs">ARIA tabs pattern</a> for a complete tablist example.</p>
+<h5>Live regions (4.1.3)</h5>
+<p>Use <code>aria-live</code> regions to announce dynamic content changes without moving focus. See the <a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/A11Y-PATTERNS.md#live-regions-and-notifications">live regions pattern</a> for markup and a <code>showNotification()</code> helper.</p>
+<hr>
+<h4>Testing checklist</h4>
+<h5>Automated testing</h5>
+<p>Prefer a live Lighthouse audit that returns failing rendered nodes directly to the agent. With Chrome DevTools MCP, this is <code>lighthouse_audit</code>. Otherwise:</p>
+<pre><code class="language-bash"># Lighthouse accessibility audit
+npx lighthouse https://example.com --only-categories=accessibility
+
+# axe-core
+npm install @axe-core/cli -g
+axe https://example.com
+</code></pre>
+<h5>Manual testing</h5>
+<ul>
+<li>[ ] <strong>Keyboard navigation:</strong> Tab through entire page, use Enter/Space to activate</li>
+<li>[ ] <strong>Screen reader:</strong> Test with VoiceOver (Mac), NVDA (Windows), or TalkBack (Android)</li>
+<li>[ ] <strong>Zoom:</strong> Content usable at 200% zoom</li>
+<li>[ ] <strong>High contrast:</strong> Test with Windows High Contrast Mode</li>
+<li>[ ] <strong>Reduced motion:</strong> Test with <code>prefers-reduced-motion: reduce</code></li>
+<li>[ ] <strong>Focus order:</strong> Logical and follows visual order</li>
+<li>[ ] <strong>Target size:</strong> Interactive elements meet 24×24px minimum</li>
+</ul>
+<p>See the <a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/A11Y-PATTERNS.md#screen-reader-commands">screen reader commands reference</a> for VoiceOver and NVDA shortcuts.</p>
+<hr>
+<h4>Common issues by impact</h4>
+<h5>Critical (fix immediately)</h5>
+<ol>
+<li>Missing form labels</li>
+<li>Missing image alt text</li>
+<li>Insufficient color contrast</li>
+<li>Keyboard traps</li>
+<li>No focus indicators</li>
+</ol>
+<h5>Serious (fix before launch)</h5>
+<ol>
+<li>Missing page language</li>
+<li>Missing heading structure</li>
+<li>Non-descriptive link text</li>
+<li>Auto-playing media</li>
+<li>Missing skip links</li>
+</ol>
+<h5>Moderate (fix soon)</h5>
+<ol>
+<li>Missing ARIA labels on icons</li>
+<li>Inconsistent navigation</li>
+<li>Missing error identification</li>
+<li>Timing without controls</li>
+<li>Missing landmark regions</li>
+</ol>
+<h4>References</h4>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG22/quickref/">WCAG 2.2 Quick Reference</a></li>
+<li><a href="https://www.w3.org/WAI/ARIA/apg/">WAI-ARIA Authoring Practices</a></li>
+<li><a href="https://dequeuniversity.com/rules/axe/">Deque axe Rules</a></li>
+<li><a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/web-quality-audit/SKILL.md">Web Quality Audit</a></li>
+<li><a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/WCAG.md">WCAG criteria reference</a></li>
+<li><a href="https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/skills/accessibility/references/A11Y-PATTERNS.md">Accessibility code patterns</a></li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

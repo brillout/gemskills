@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pptx · Gem Skills</title>
+    <meta name="description" content="Use it when: a PowerPoint file is involved: making a deck, editing one, filling a template, or pulling text out of slides. It does: creates decks with the pptxgenjs JavaScript library, and edits existing ones by unzipping them and changing the slide XML. You get: a .pptx that passes its validator and has been rendered to images and checked by eye. Design rules: a palette chosen for the topic, a visual on every slide, varied layouts, no lines under titles or decorative stripes. Needs: Node, Python and LibreOffice, for building, checking and rendering slides." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=anthropics%2Fskills">anthropics/skills</a></p>
+      <h1>pptx</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a PowerPoint file is involved: making a deck, editing one, filling a template, or pulling text out of slides</dd></div><div><dt>It does</dt><dd>creates decks with the pptxgenjs JavaScript library, and edits existing ones by unzipping them and changing the slide XML</dd></div><div><dt>You get</dt><dd>a .pptx that passes its validator and has been rendered to images and checked by eye</dd></div><div><dt>Design rules</dt><dd>a palette chosen for the topic, a visual on every slide, varied layouts, no lines under titles or decorative stripes</dd></div><div><dt>Needs</dt><dd>Node, Python and LibreOffice, for building, checking and rendering slides</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Anthropic&#39;s PowerPoint skill. Much of it is a list of pitfalls that break decks: for instance, a # in a hex color or a negative shadow offset corrupts the file, and some chart settings make PowerPoint discard the chart. Charts stay native, not pasted images. To edit a deck or fill a template, the agent unzips the file, maps your content onto the template&#39;s slides with a labelled thumbnail grid, adds and removes slides with bundled scripts before touching any text, then edits the XML and zips it back. Design guidance asks for one dominant color with a single contrasting one, a repeated visual motif, big number callouts, fonts that render reliably, and none of the usual signs of AI-made slides, such as text-only slides, centered body text or cream backgrounds. Every deck goes through checks: a search for leftover placeholder text, a validator that names the fix for each fault, and a render to images the agent inspects for overflowing, overlapping or cramped elements, ideally with a subagent&#39;s fresh eyes.</p>
+      <p class="muted">Summarizes <a href="https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pptx">the skill at dbd4588</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/anthropics/skills --skill pptx</code><button type="button" class="copy" data-copy="npx skills add https://github.com/anthropics/skills --skill pptx">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/anthropics/skills/pptx">skills.sh page</a> · <a href="https://github.com/anthropics/skills/tree/HEAD/skills/pptx">Source on GitHub</a> · <a href="/gemskills/?repo=anthropics%2Fskills">All skills from anthropics/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>224,487 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>177,318 <span class="muted">anthropics/skills</span></dd></div><div><dt>First seen</dt><dd>Jan 20, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">4.3K</div>
+      <div class="stat-delta">-28% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 5,963; week to Aug 10: 5,495; week to Aug 17: 4,872; week to Aug 24: 4,397; week to Aug 31: 4,345; week to Sep 7: 4,410; week to Sep 14: 4,058; week to Sep 21: 4,310. Use the left and right arrow keys to read each week."
+        data-values="5963,5495,4872,4397,4345,4410,4058,4310" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,9.5 71.1,14.1 103.7,17.6 136.3,17.9 168.9,17.5 201.4,20.1 234.0,18.2" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="18.2" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>5,963</td></tr><tr><td>Aug 10</td><td>5,495</td></tr><tr><td>Aug 17</td><td>4,872</td></tr><tr><td>Aug 24</td><td>4,397</td></tr><tr><td>Aug 31</td><td>4,345</td></tr><tr><td>Sep 7</td><td>4,410</td></tr><tr><td>Sep 14</td><td>4,058</td></tr><tr><td>Sep 21</td><td>4,310</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:documents" data-facet="category" title="Office files, notes and suites like Lark and Google Workspace." href="/gemskills/?tag=category%3Adocuments">category:documents</a></div>
+          <p class="tag-meaning">Office files, notes and suites like Lark and Google Workspace.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="slides" data-facet="topic" href="/gemskills/?tag=slides">slides</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:microsoft-office" data-facet="stack" href="/gemskills/?tag=stack%3Amicrosoft-office">stack:microsoft-office</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pptx/SKILL.md">anthropics/skills at dbd4588</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: pptx
+description: &#34;Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \&#34;deck,\&#34; \&#34;slides,\&#34; \&#34;presentation,\&#34; or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.&#34;
+license: Proprietary. LICENSE.txt has complete terms</code></pre></details>
+        <div class="markdown"><h3>PPTX creation, editing, and analysis</h3>
+<p>A <code>.pptx</code> is a ZIP archive of XML files. Choose your approach by task:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Create</strong> a new deck</td>
+<td>Write a <code>pptxgenjs</code> script — see gotchas below</td>
+</tr>
+<tr>
+<td><strong>Edit</strong> an existing deck, or build from a template</td>
+<td>unzip → edit <code>ppt/slides/slideN.xml</code> → zip</td>
+</tr>
+<tr>
+<td><strong>Read</strong> content</td>
+<td><code>markitdown deck.pptx</code> (one block per slide under <code>&lt;!-- Slide number: N --&gt;</code> markers); visual grid: <code>python scripts/thumbnail.py deck.pptx</code></td>
+</tr>
+</tbody>
+</table>
+<h4>Scripts</h4>
+<p>Paths are relative to this skill's directory. Everything else is plain Python, <code>node</code>, or shell.</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scripts/thumbnail.py deck.pptx [prefix]</code></td>
+<td>Labeled grid of every slide, for picking template layouts. <code>.pptx</code> only. Pass <code>prefix</code> — it defaults to <code>thumbnails</code>, which overwrites the grids of any other deck done in the same directory</td>
+</tr>
+<tr>
+<td><code>scripts/add_slide.py unpacked/ slide2.xml [--after slideN.xml]</code></td>
+<td>Duplicate a slide (or a <code>slideLayoutN.xml</code>) with all the package bookkeeping. Also takes a <code>.pptx</code> directly with <code>-o out.pptx</code></td>
+</tr>
+<tr>
+<td><code>scripts/clean.py unpacked/</code></td>
+<td>Delete slides, media, and rels no longer referenced. Run <strong>after</strong> <code>&lt;p:sldIdLst&gt;</code> is final</td>
+</tr>
+<tr>
+<td><code>scripts/office/validate.py deck.pptx [--original src.pptx]</code></td>
+<td>Schema, relationship, content-type, chart and slide checks; each failure names its fix. Pass <code>--original</code> for any template-derived deck — it baselines the schema checks against the template, so the template's own XSD errors don't read as yours</td>
+</tr>
+<tr>
+<td><code>scripts/office/soffice.py --headless --convert-to pdf deck.pptx</code></td>
+<td>LibreOffice wrapper — bare <code>soffice</code> hangs in this sandbox</td>
+</tr>
+</tbody>
+</table>
+<h4>Creating with pptxgenjs — gotchas</h4>
+<p><code>pptxgenjs</code> is preinstalled — do not run <code>npm install</code> first; write the script and <code>require('pptxgenjs')</code> directly. Only if that require fails: <code>npm install pptxgenjs</code>. The model knows the API; these are the footguns:</p>
+<ul>
+<li><strong>Set <code>pres.layout</code> before adding slides.</strong> The default canvas is <code>LAYOUT_16x9</code> = <strong>10&quot; × 5.625&quot;</strong>, not 13.3&quot; wide. Coordinates past the edge are written, not clamped — the shape just isn't on the slide. (<code>LAYOUT_WIDE</code> is 13.3&quot; × 7.5&quot;.)</li>
+<li><strong>Hex colors: never <code>#</code>, never 8 digits.</strong> <code>color: &quot;FF0000&quot;</code>. Both <code>&quot;#FF0000&quot;</code> and alpha baked into the hex (<code>&quot;00000020&quot;</code>) <strong>corrupt the file</strong>. For translucency: <code>transparency: 0-100</code> on fills and images, <code>opacity: 0.0-1.0</code> on shadows — each is silently ignored on the other.</li>
+<li><strong>pptxgenjs mutates option objects in place</strong> (converts values to EMU on first use). Never share one <code>shadow</code>/options object across two <code>add*</code> calls — build a fresh object each time.</li>
+<li><strong>Shadow <code>offset</code> must be ≥ 0</strong> — a negative offset corrupts the file. To cast a shadow upward, use <code>angle: 270</code> with a positive offset.</li>
+<li><strong><code>letterSpacing</code> is silently ignored</strong> — the real option is <code>charSpacing</code>.</li>
+<li><strong>Lists:</strong> <code>bullet: true</code> on each item, never a literal <code>•</code> (renders double bullets). Set <code>breakLine: true</code> on every array item except the last. Space bulleted paragraphs with <code>paraSpaceAfter</code>, not <code>lineSpacing</code> (huge gaps).</li>
+<li><strong>One <code>new pptxgen()</code> per output file</strong> — never reuse an instance.</li>
+<li><strong><code>rectRadius</code> only works on <code>ROUNDED_RECTANGLE</code></strong>, not <code>RECTANGLE</code>.</li>
+<li><strong>Gradient fills aren't supported</strong> — use a gradient image as the background instead.</li>
+<li><strong>Text boxes have built-in internal padding</strong> — set <code>margin: 0</code> whenever text must align with a shape, line, or icon at the same x.</li>
+<li><strong>Speaker notes go in <code>slide.addNotes(&quot;...&quot;)</code></strong> (plain text, once per slide), never in a text box on the slide.</li>
+<li><strong>Keep charts native.</strong> Use <code>addChart()</code> for everything PowerPoint can chart (pass an array of <code>{type, data, options}</code> for combos). For PowerPoint-native features the library doesn't expose (trendlines, error bars), compute the extra series yourself or post-process the generated OOXML — do not fall back to a rendered image. Only chart types PowerPoint has no native form for (Sankey, network, chord) go in as images.</li>
+<li><strong>Default charts render bare</strong> — no title, no data labels, dated palette. Set <code>showTitle</code> + <code>title</code>, <code>showValue: true</code> + <code>dataLabelPosition</code>, <code>chartColors: [...]</code> from your palette, and quiet the frame (<code>catAxisLabelColor</code>/<code>valAxisLabelColor</code>, <code>valGridLine: { color, size }</code>, <code>catGridLine: { style: &quot;none&quot; }</code>, <code>showLegend: false</code> for a single series).</li>
+<li><strong>On a stacked bar or column chart, <code>dataLabelPosition</code> must be <code>ctr</code>, <code>inEnd</code>, or <code>inBase</code>.</strong> <code>outEnd</code> <strong>corrupts the file</strong>.</li>
+<li><strong>A combo series using <code>secondaryValAxis</code>/<code>secondaryCatAxis</code> needs both <code>valAxes</code> and <code>catAxes</code> on the chart options, two entries each.</strong> Without them pptxgenjs writes axis <em>ids</em> it never declares, and PowerPoint <strong>discards that chart</strong> and reports the file as corrupt. Supplying only <code>valAxes</code> is not enough.</li>
+<li><strong>After <code>writeFile()</code>, run <code>python scripts/office/validate.py deck.pptx</code>.</strong> It reports the two chart faults above and the slide-XML defects PowerPoint refuses, and names the fix for each. Fix them in your generator, not by hand-editing the packed XML.</li>
+<li><strong>Never reorder the children of <code>&lt;p:presentation&gt;</code>.</strong> pptxgenjs writes <code>&lt;p:notesMasterIdLst&gt;</code> right after <code>&lt;p:sldIdLst&gt;</code> and points both masters at one theme part. PowerPoint reads that happily — move the element and the same deck becomes unopenable.</li>
+<li><strong>Icons:</strong> render <code>react-icons</code> to SVG (<code>ReactDOMServer.renderToStaticMarkup</code>), rasterize with <code>sharp</code> at ≥256px, and insert via <code>addImage({ data: &quot;image/png;base64,&quot; + buf.toString(&quot;base64&quot;) })</code> — the <code>image/png;base64,</code> prefix is required (<code>react-icons</code>, <code>react</code>, <code>react-dom</code>, and <code>sharp</code> are preinstalled — <code>npm install react-icons react react-dom sharp</code> only if a require fails).</li>
+</ul>
+<h4>Editing existing decks and templates</h4>
+<p>Pick layouts first: <code>python scripts/thumbnail.py template.pptx template-thumbs</code> writes a labeled grid of every slide and prints the file(s) it created — <code>template-thumbs.jpg</code>, split into <code>template-thumbs-N.jpg</code> past 12 slides. <strong>Always pass that second argument, named after the deck.</strong> It defaults to <code>thumbnails</code>, so two decks thumbnailed in one directory silently overwrite each other's grids — the first deck's are simply gone (template analysis only — visual QA needs the full-resolution renders from <a href="#converting-to-images">Converting to Images</a>; it only accepts <code>.pptx</code>, so copy a <code>.potx</code> to a <code>.pptx</code> name first). Use it with <code>markitdown</code> to map each content section onto a template slide, and vary the layouts — don't put every section on the same title-and-bullets slide.</p>
+<pre><code class="language-bash">python3 -c &quot;import sys,zipfile; zipfile.ZipFile(sys.argv[1]).extractall('unpacked')&quot; deck.pptx
+python scripts/add_slide.py unpacked/ slide2.xml --after slide2.xml   # duplicate a slide (or slideLayoutN.xml); prints the new slide's path
+# reorder / delete slides = edit &lt;p:sldIdLst&gt; in ppt/presentation.xml
+python scripts/clean.py unpacked/                                     # after deletions: removes orphaned slides, media, rels
+# edit slide content in ppt/slides/slideN.xml
+(cd unpacked &amp;&amp; rm -f ../out.pptx &amp;&amp; zip -Xr ../out.pptx .)           # zip from INSIDE the dir; rm first or deleted parts survive
+python scripts/office/validate.py out.pptx --original deck.pptx
+</code></pre>
+<ul>
+<li><strong>Do all structural work — add, delete, reorder — before editing any slide's content.</strong> <code>add_slide.py</code> copies a slide file verbatim, so duplicating after you edit clones the edited content; and <code>clean.py</code> deletes any slide missing from <code>&lt;p:sldIdLst&gt;</code>, including one you just wrote.</li>
+<li><strong>Never copy a slide file by hand</strong> — <code>add_slide.py</code> does every registration a new slide needs and reports what it made (<code>Created ppt/slides/slide17.xml from slide2.xml</code>). It also works directly on a file: <code>add_slide.py deck.pptx slide2.xml -o out.pptx</code> — <strong>pass <code>-o</code>, or it rewrites the input deck in place.</strong> A duplicated slide still <em>references</em> its source's chart/SmartArt/embedded-object parts rather than cloning them, so editing one slide's chart changes the other's.</li>
+<li><strong>If you use <code>python-pptx</code></strong>, three things it won't do: duplicate a slide (its only entry point is <code>add_slide(layout)</code>), preserve formatting through <code>text_frame.text = &quot;...&quot;</code> (that collapses the paragraph to a single unstyled run — assign <code>run.text</code> instead), or read the SVG/EMF most template art uses (<code>add_picture</code> raises <code>UnidentifiedImageError</code>).</li>
+<li>Legacy <code>.ppt</code> must be converted first: <code>python scripts/office/soffice.py --headless --convert-to pptx file.ppt</code>. <code>.potx</code> templates unpack and pack identically — keep the <code>.potx</code> extension on the output.</li>
+<li>To reuse a template icon or image, duplicate a slide or layout that already contains it.</li>
+</ul>
+<p>When filling in a template:</p>
+<ul>
+<li>If you script an XML transform, parse with <code>defusedxml.minidom</code> — round-tripping OOXML through <code>xml.etree.ElementTree</code> rewrites namespace prefixes and corrupts the deck.</li>
+<li><strong>Template slots ≠ source items.</strong> If the template shows 4 team members and you have 3, delete the 4th member's entire group (image + text boxes), not just its text — then check for orphaned visuals in QA.</li>
+<li>One <code>&lt;a:p&gt;</code> per list item — never concatenate items into a single paragraph. Copy the sibling <code>&lt;a:pPr&gt;</code> to preserve spacing, and put <code>b=&quot;1&quot;</code> on the <code>&lt;a:rPr&gt;</code> of titles, section headers, and inline labels (<code>Status:</code>, <code>Owner:</code>).</li>
+<li>Let bullets inherit from the layout; only add <code>&lt;a:buChar&gt;</code>, <code>&lt;a:buAutoNum&gt;</code> (numbered), or <code>&lt;a:buNone&gt;</code> to override — never a literal <code>•</code> in the text.</li>
+<li>Text with leading or trailing spaces needs <code>xml:space=&quot;preserve&quot;</code> on its <code>&lt;a:t&gt;</code>.</li>
+</ul>
+<h4>Design Ideas</h4>
+<p><strong>Don't create boring slides.</strong> Plain bullets on a white background won't impress anyone. Consider ideas from this list for each slide.</p>
+<h5>Before Starting</h5>
+<ul>
+<li><strong>Pick a bold, content-informed color palette</strong>: The palette should feel designed for THIS topic. If swapping your colors into a completely different presentation would still &quot;work,&quot; you haven't made specific enough choices.</li>
+<li><strong>Dominance over equality</strong>: One color should dominate (60-70% visual weight), with 1-2 supporting tones and one sharp accent. Never give all colors equal weight.</li>
+<li><strong>Dark/light contrast</strong>: Dark backgrounds for title + conclusion slides, light for content (&quot;sandwich&quot; structure). Or commit to dark throughout for a premium feel.</li>
+<li><strong>Commit to a visual motif</strong>: Pick ONE distinctive element and repeat it — rounded image frames, icons in colored circles. Carry it across every slide. <strong>Do not use a color bar or accent stripe as your motif</strong> (see Avoid list).</li>
+</ul>
+<h5>Color Palettes</h5>
+<p>Choose colors that match your topic — don't default to generic blue. Use these palettes as inspiration:</p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Primary</th>
+<th>Secondary</th>
+<th>Accent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Midnight Executive</strong></td>
+<td><code>1E2761</code> (navy)</td>
+<td><code>CADCFC</code> (ice blue)</td>
+<td><code>FFFFFF</code> (white)</td>
+</tr>
+<tr>
+<td><strong>Forest &amp; Moss</strong></td>
+<td><code>2C5F2D</code> (forest)</td>
+<td><code>97BC62</code> (moss)</td>
+<td><code>F5F5F5</code> (cream)</td>
+</tr>
+<tr>
+<td><strong>Coral Energy</strong></td>
+<td><code>F96167</code> (coral)</td>
+<td><code>F9E795</code> (gold)</td>
+<td><code>2F3C7E</code> (navy)</td>
+</tr>
+<tr>
+<td><strong>Warm Terracotta</strong></td>
+<td><code>B85042</code> (terracotta)</td>
+<td><code>E7E8D1</code> (sand)</td>
+<td><code>A7BEAE</code> (sage)</td>
+</tr>
+<tr>
+<td><strong>Ocean Gradient</strong></td>
+<td><code>065A82</code> (deep blue)</td>
+<td><code>1C7293</code> (teal)</td>
+<td><code>21295C</code> (midnight)</td>
+</tr>
+<tr>
+<td><strong>Charcoal Minimal</strong></td>
+<td><code>36454F</code> (charcoal)</td>
+<td><code>F2F2F2</code> (off-white)</td>
+<td><code>212121</code> (black)</td>
+</tr>
+<tr>
+<td><strong>Teal Trust</strong></td>
+<td><code>028090</code> (teal)</td>
+<td><code>00A896</code> (seafoam)</td>
+<td><code>02C39A</code> (mint)</td>
+</tr>
+<tr>
+<td><strong>Berry &amp; Cream</strong></td>
+<td><code>6D2E46</code> (berry)</td>
+<td><code>A26769</code> (dusty rose)</td>
+<td><code>ECE2D0</code> (cream)</td>
+</tr>
+<tr>
+<td><strong>Sage Calm</strong></td>
+<td><code>84B59F</code> (sage)</td>
+<td><code>69A297</code> (eucalyptus)</td>
+<td><code>50808E</code> (slate)</td>
+</tr>
+<tr>
+<td><strong>Cherry Bold</strong></td>
+<td><code>990011</code> (cherry)</td>
+<td><code>FCF6F5</code> (off-white)</td>
+<td><code>2F3C7E</code> (navy)</td>
+</tr>
+</tbody>
+</table>
+<h5>For Each Slide</h5>
+<p><strong>Every slide needs a visual element</strong> — image, chart, icon, or shape. Text-only slides are forgettable.</p>
+<p><strong>Layout options:</strong></p>
+<ul>
+<li>Two-column (text left, illustration on right)</li>
+<li>Icon + text rows (icon in colored circle, bold header, description below)</li>
+<li>2x2 or 2x3 grid (image on one side, grid of content blocks on other)</li>
+<li>Half-bleed image (full left or right side) with content overlay</li>
+</ul>
+<p><strong>Data display:</strong></p>
+<ul>
+<li>Large stat callouts (big numbers 60-72pt with small labels below)</li>
+<li>Comparison columns (before/after, pros/cons, side-by-side options)</li>
+<li>Timeline or process flow (numbered steps, arrows)</li>
+</ul>
+<p><strong>Visual polish:</strong></p>
+<ul>
+<li>Icons in small colored circles next to section headers</li>
+<li>Italic accent text for key stats or taglines</li>
+</ul>
+<h5>Typography</h5>
+<p><strong>Font names you write into the .pptx are rendered by the user's PowerPoint, not by this environment.</strong> Your visual QA renders via LibreOffice, which substitutes fonts it doesn't have — and for some fonts the substitute has different widths, so your QA preview can show text overflow (or fit) that the real deck won't have. To keep your QA trustworthy:</p>
+<ul>
+<li><strong>Safe fonts</strong> (render true-to-width in QA <em>and</em> ship with Office): <strong>Arial, Calibri, Cambria, Times New Roman, Courier New, Bookman Old Style, Century Schoolbook</strong>. Use these for body text and anything where fit matters.</li>
+<li><strong>Headers with personality at zero QA risk</strong>: pair a safe-list serif header (Cambria, Bookman Old Style, Century Schoolbook) with a safe-list sans body (Calibri or Arial). You get visual contrast without giving up reliable overflow checks.</li>
+<li><strong>If the user asks for a font outside the safe list</strong> (e.g. Georgia or Trebuchet MS): use it where the user asked, but size those containers with extra slack (~10%) and don't trust QA text-fit on those elements — the preview of that font is approximate. If the user hasn't specified, prefer safe-list fonts for body text.</li>
+<li><strong>QA-unreliable fonts</strong> (substitute has different widths — overflow checks can be wrong): Georgia, Trebuchet MS, Impact, Arial Black, Garamond, Consolas, Palatino Linotype. Calibri Light substitution varies by environment; treat as QA-unreliable. Fine for titles/accents with slack; don't trust QA text-fit on these.</li>
+<li><strong>Never default to Aptos</strong> — Office's post-2023 default has no metric-compatible substitute here <em>and</em> is missing from older Office installs, so it's unreliable on both ends.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slide title</td>
+<td>36-44pt bold</td>
+</tr>
+<tr>
+<td>Section header</td>
+<td>20-24pt bold</td>
+</tr>
+<tr>
+<td>Body text</td>
+<td>14-16pt</td>
+</tr>
+<tr>
+<td>Captions</td>
+<td>10-12pt muted</td>
+</tr>
+</tbody>
+</table>
+<h5>Spacing</h5>
+<ul>
+<li>0.5&quot; minimum margins</li>
+<li>0.3-0.5&quot; between content blocks</li>
+<li>Leave breathing room—don't fill every inch</li>
+</ul>
+<h5>Avoid (Common Mistakes)</h5>
+<ul>
+<li><strong>Don't repeat the same layout</strong> — vary columns, cards, and callouts across slides</li>
+<li><strong>Don't center body text</strong> — left-align paragraphs and lists; center only titles</li>
+<li><strong>Don't skimp on size contrast</strong> — titles need 36pt+ to stand out from 14-16pt body</li>
+<li><strong>Don't default to blue</strong> — pick colors that reflect the specific topic</li>
+<li><strong>Don't mix spacing randomly</strong> — choose 0.3&quot; or 0.5&quot; gaps and use consistently</li>
+<li><strong>Don't style one slide and leave the rest plain</strong> — commit fully or keep it simple throughout</li>
+<li><strong>Don't create text-only slides</strong> — add images, icons, charts, or visual elements; avoid plain title + bullets</li>
+<li><strong>Don't forget text box padding</strong> — when aligning lines or shapes with text edges, set <code>margin: 0</code> on the text box or offset the shape to account for padding</li>
+<li><strong>Don't use low-contrast elements</strong> — icons AND text need strong contrast against the background; avoid light text on light backgrounds or dark text on dark backgrounds</li>
+<li><strong>NEVER use accent lines under titles</strong> — these are a hallmark of AI-generated slides; use whitespace or background color instead</li>
+<li><strong>NEVER add decorative color bars or accent stripes</strong> — this includes: header/footer bars spanning the slide width, vertical sidebar stripes down one edge of the slide, thin accent stripes along one edge of a card or content block, and &quot;single-side borders&quot; on rectangles. These read as AI-generated filler. If you want to set a card apart, use a subtle background tint, a drop shadow, or an icon — not an edge stripe.</li>
+<li><strong>Don't default to cream/beige backgrounds</strong> — when no background is specified, use white (<code>FFFFFF</code>) or the user's brand palette; avoid warm-neutral defaults like <code>F5F5DC</code>, <code>FAF0E6</code>, <code>FAEBD7</code>, <code>FFF8E1</code></li>
+<li><strong>Don't ship text that overflows its shape</strong> — if text doesn't fit, reduce font size, split across slides, or enlarge the container; never leave content cut off or spilling past bounds</li>
+</ul>
+<h4>QA (Required)</h4>
+<p>Your first render usually has a few real issues — overlaps, overflow, misalignment. Find and fix those, re-render only the slides you changed, and stop.</p>
+<h5>Content QA</h5>
+<pre><code class="language-bash">markitdown output.pptx
+</code></pre>
+<p>Check for missing content, typos, wrong order.</p>
+<p><strong>When using templates, check for leftover placeholder text:</strong></p>
+<pre><code class="language-bash">markitdown output.pptx | grep -iE &quot;\bx{3,}\b|lorem|ipsum|\bTODO|\[insert|this.*(page|slide).*layout&quot;
+</code></pre>
+<p>If grep returns results, fix them before declaring success.</p>
+<h5>File QA (required)</h5>
+<pre><code class="language-bash">python scripts/office/validate.py output.pptx                      # built from scratch
+python scripts/office/validate.py output.pptx --original src.pptx  # built from a template
+</code></pre>
+<p><strong>If the deck came from a template, always pass <code>--original</code>.</strong> A template may itself
+contain parts the XSD rejects, so a bare run can report failures you never caused — and
+a genuine regression can hide among them. <code>--original</code> baselines
+the schema and slide checks against the template, suppressing errors it already had.
+The structural checks — relationships, content types, charts — ignore <code>--original</code> and
+report template-inherited problems either way, so read those on their own merits.</p>
+<p>pptxgenjs emits chart XML PowerPoint refuses to open, and every other tool
+accepts: python-pptx opens those decks, LibreOffice renders them, the XSD
+passes them. Every failure names its fix. Fix it in the generator and rebuild.</p>
+<h5>Visual QA</h5>
+<p>Convert the slides to images (see <a href="#converting-to-images">Converting to Images</a>) and inspect every one. After staring at the generating code you tend to see what you expect rather than what rendered, so look at the images fresh (a subagent works well for this if you have one). User-visible defects to look for:</p>
+<ul>
+<li><strong>Text overflow or text cut off at a box or slide boundary — check this first.</strong> It is the most common defect and always user-visible. (For a font the previewer renders unreliably per Typography, the preview is approximate: trust the ~10% slack you left, not its apparent fit.)</li>
+<li>Overlapping elements (text through shapes, lines through words, stacked elements)</li>
+<li>Source citations or footers colliding with content above</li>
+<li>Elements too close (&lt; 0.3&quot; gaps) or cards/sections nearly touching</li>
+<li>Uneven gaps (large empty area in one place, cramped in another)</li>
+<li>Insufficient margin from slide edges (&lt; 0.5&quot;)</li>
+<li>Columns or similar elements not aligned consistently</li>
+<li>Low-contrast text (e.g., light gray text on cream-colored background)</li>
+<li>Template decoration mispositioned after text replacement — e.g., a title underline positioned for one line, but the replaced title wrapped to two</li>
+<li>Low-contrast icons (e.g., dark icons on dark backgrounds without a contrasting circle)</li>
+<li>Text boxes too narrow causing excessive wrapping</li>
+<li>Leftover placeholder content</li>
+</ul>
+<h4>Converting to Images</h4>
+<p>Convert presentations to individual slide images for visual inspection:</p>
+<pre><code class="language-bash">python scripts/office/soffice.py --headless --convert-to pdf output.pptx
+rm -f slide-*.jpg
+pdftoppm -jpeg -r 150 output.pdf slide
+ls -1 &quot;$PWD&quot;/slide-*.jpg
+</code></pre>
+<p><strong>Pass the absolute paths printed above directly to the view tool.</strong> The <code>rm</code> clears stale images from prior runs. <code>pdftoppm</code> zero-pads based on page count: <code>slide-1.jpg</code> for decks under 10 pages, <code>slide-01.jpg</code> for 10-99, <code>slide-001.jpg</code> for 100+.</p>
+<p><strong>After fixes, rerun all four commands above</strong> — the PDF must be regenerated from the edited <code>.pptx</code> before <code>pdftoppm</code> can reflect your changes.</p>
+<h4>Dependencies</h4>
+<p><code>pptxgenjs</code> (npm, preinstalled — install only if <code>require('pptxgenjs')</code> fails) · <code>markitdown[pptx]</code>, <code>Pillow</code>, <code>defusedxml</code>, <code>lxml</code> (pip — text dump, thumbnail, clean, validate) · LibreOffice (<code>soffice</code>, auto-configured for sandboxed environments via <code>scripts/office/soffice.py</code>) · <code>pdftoppm</code> (Poppler)</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

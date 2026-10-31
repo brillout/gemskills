@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>workers-best-practices · Gem Skills</title>
+    <meta name="description" content="Applies Cloudflare Workers best practices." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=cloudflare%2Fskills">cloudflare/skills</a></p>
+      <h1>workers-best-practices</h1>
+      <p class="lede">Applies Cloudflare Workers best practices.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/cloudflare/skills --skill workers-best-practices</code><button type="button" class="copy" data-copy="npx skills add https://github.com/cloudflare/skills --skill workers-best-practices">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/cloudflare/skills/workers-best-practices">skills.sh page</a> · <a href="https://github.com/cloudflare/skills/tree/HEAD/skills/workers-best-practices">Source on GitHub</a> · <a href="/gemskills/?repo=cloudflare%2Fskills">All skills from cloudflare/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>85,726 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>2,876 <span class="muted">cloudflare/skills</span></dd></div><div><dt>First seen</dt><dd>Feb 12, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">6.8K</div>
+      <div class="stat-delta">+51% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 4,492; week to Aug 10: 6,195; week to Aug 17: 6,382; week to Aug 24: 6,533; week to Aug 31: 6,955; week to Sep 7: 7,337; week to Sep 14: 7,466; week to Sep 21: 6,795. Use the left and right arrow keys to read each week."
+        data-values="4492,6195,6382,6533,6955,7337,7466,6795" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,23.5 38.6,13.5 71.1,12.4 103.7,11.5 136.3,9.0 168.9,6.8 201.4,6.0 234.0,10.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="10.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>4,492</td></tr><tr><td>Aug 10</td><td>6,195</td></tr><tr><td>Aug 17</td><td>6,382</td></tr><tr><td>Aug 24</td><td>6,533</td></tr><tr><td>Aug 31</td><td>6,955</td></tr><tr><td>Sep 7</td><td>7,337</td></tr><tr><td>Sep 14</td><td>7,466</td></tr><tr><td>Sep 21</td><td>6,795</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:cloud" data-facet="category" title="Deploy, provision, observe and debug cloud apps." href="/gemskills/?tag=category%3Acloud">category:cloud</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Deploy, provision, observe and debug cloud apps.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="backend" data-facet="topic" href="/gemskills/?tag=backend">backend</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:cloudflare" data-facet="stack" href="/gemskills/?tag=stack%3Acloudflare">stack:cloudflare</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/SKILL.md">cloudflare/skills at 86505e4</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: workers-best-practices
+description: Cloudflare Workers best practices for production applications. Use when writing, reviewing, or configuring Workers.</code></pre></details>
+        <div class="markdown"><p>Your knowledge of Cloudflare Workers APIs, types, and configuration may be outdated. <strong>Prefer retrieval over pre-training</strong> when writing or reviewing Workers code.</p>
+<p>Use the project's installed versions, generated types, and Wrangler compatibility settings as the baseline for existing code. Retrieve relevant Cloudflare documentation to verify API, configuration, runtime behavior, and limit claims.</p>
+<h4>References</h4>
+<p>Read the sections relevant to the task:</p>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>When to use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/references/configuration.md">Configuration and observability</a></td>
+<td>Compatibility dates, bindings, generated types, secrets, logs, and traces</td>
+</tr>
+<tr>
+<td><a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/references/runtime-patterns.md">Runtime patterns</a></td>
+<td>Streaming, promise lifetime, request state, service calls, security, and runtime tests</td>
+</tr>
+<tr>
+<td><a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/references/platform-apis.md">Platform API checks</a></td>
+<td>Handler signatures, platform classes, binding access, and serialization</td>
+</tr>
+</tbody>
+</table>
+<p>For missing evidence, consult <a href="https://developers.cloudflare.com/workers/best-practices/workers-best-practices/index.md">Workers best practices</a> or find the affected product in the <a href="https://developers.cloudflare.com/directory/index.md">Cloudflare docs directory</a>. Use the installed Wrangler schema for config fields. A newer type package does not supersede the project's configured target.</p>
+<h4>Keep Compatibility Dates Current</h4>
+<p>Use today's date for new Workers. Encourage periodic updates for existing Workers, reviewing compatibility changes and running relevant tests. Assess existing behavior against its configured date and flags; see <a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/references/configuration.md#keep-compatibility_date-current">compatibility guidance</a>.</p>
+<h4>Enable Observability</h4>
+<p>Enable <a href="https://developers.cloudflare.com/workers/observability/logs/workers-logs/index.md">Workers Logs</a> and <a href="https://developers.cloudflare.com/workers/observability/traces/index.md">Traces</a> when creating or preparing a Worker for production. Set <code>observability.enabled</code> and <code>observability.traces.enabled</code> to <code>true</code>; the top-level setting alone does not enable traces. Use structured JSON logging and configure sampling for the workload. During reviews, flag missing logs or traces. See the <a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/references/configuration.md#enable-workers-logs-and-traces">configuration example</a>.</p>
+<h4>Anti-Patterns to Flag</h4>
+<table>
+<thead>
+<tr>
+<th>Anti-pattern</th>
+<th>Consequence and preferred pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>await response.text()</code> or similar buffering on unbounded data</td>
+<td>Can exhaust Worker memory; <a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/references/runtime-patterns.md#stream-request-and-response-bodies">stream large or unbounded bodies</a>.</td>
+</tr>
+<tr>
+<td>Hardcoded secrets in source or config</td>
+<td>Leaks credentials through version control; use Wrangler secrets.</td>
+</tr>
+<tr>
+<td><code>Math.random()</code> for security-sensitive tokens or IDs</td>
+<td>Predictable values; use <code>crypto.randomUUID()</code> or <code>crypto.getRandomValues()</code>.</td>
+</tr>
+<tr>
+<td>Async work started without awaiting, returning, or attaching it to <code>ctx.waitUntil()</code></td>
+<td>Work can be dropped and errors missed; tie it to the request or background-work lifetime.</td>
+</tr>
+<tr>
+<td>Module-level mutable request state</td>
+<td>Leaks data across requests and can cause I/O ownership errors; pass request state explicitly.</td>
+</tr>
+<tr>
+<td>Cloudflare REST API calls for operations available through Worker bindings</td>
+<td>Adds network and authentication overhead; use the available binding.</td>
+</tr>
+<tr>
+<td><code>ctx.passThroughOnException()</code> used as general error handling</td>
+<td>Can conceal Worker failures by forwarding to the origin; use explicit error handling and structured error responses.</td>
+</tr>
+<tr>
+<td>Hand-written <code>Env</code> that duplicates Wrangler bindings</td>
+<td>Can drift from configuration; generate binding types with <code>wrangler types</code>.</td>
+</tr>
+<tr>
+<td>Direct string comparison of secret values</td>
+<td>Can expose timing differences; use the <a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/references/runtime-patterns.md#use-web-crypto-for-secure-token-generation">Web Crypto comparison pattern</a>.</td>
+</tr>
+<tr>
+<td>Destructuring <code>ctx</code> methods, such as <code>const { waitUntil } = ctx</code></td>
+<td>Loses the receiver; call <code>ctx.waitUntil(...)</code>.</td>
+</tr>
+<tr>
+<td><code>any</code> on <code>Env</code> or handler parameters</td>
+<td>Hides binding and handler contract errors; use the project's generated and platform types.</td>
+</tr>
+<tr>
+<td><code>as unknown as T</code> to force a platform type match</td>
+<td>Hides incompatibilities; fix the underlying contract.</td>
+</tr>
+<tr>
+<td><code>implements</code> used in place of extending a platform base class</td>
+<td>Does not inherit runtime behavior, <code>this.ctx</code>, or <code>this.env</code>; use the appropriate base class.</td>
+</tr>
+<tr>
+<td>Unbound <code>env.X</code> in a platform class method</td>
+<td>Bindings are available through <code>this.env.X</code>; see <a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/references/platform-apis.md#binding-access--the-most-common-error">binding access patterns</a>.</td>
+</tr>
+<tr>
+<td>Applying one serialization rule across Queues, Workflow steps, storage, and WebSockets</td>
+<td>Can reject valid payloads or accept unsupported ones; check the <a href="https://github.com/cloudflare/skills/blob/86505e44f87d801aa1864a3c4109e9a8ae5c409f/skills/workers-best-practices/references/platform-apis.md#serialization-boundaries">specific API and encoding</a>.</td>
+</tr>
+</tbody>
+</table>
+<h4>Validation</h4>
+<p>Use the project's existing checks for affected Workers behavior: type-check binding or handler contract changes, and run relevant runtime tests for behavior changes. Preserve required repository checks; a narrow edit does not require a full Workers audit.</p>
+<h4>Scope</h4>
+<p>This skill covers Workers-specific best practices and code review. For related topics:</p>
+<ul>
+<li><strong>Durable Objects</strong>: load the <code>durable-objects</code> skill</li>
+<li><strong>Workflows</strong>: see <a href="https://developers.cloudflare.com/workflows/build/rules-of-workflows/index.md">Rules of Workflows</a></li>
+<li><strong>CLI commands</strong>: load the <code>cf-cli</code> skill, or the <code>wrangler</code> skill in a project with a Wrangler configuration file</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

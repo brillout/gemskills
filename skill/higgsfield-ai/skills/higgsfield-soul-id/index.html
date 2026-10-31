@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>higgsfield-soul-id · Gem Skills</title>
+    <meta name="description" content="Use it when: you want your face, or someone&#039;s, to stay recognizable across images and videos made on Higgsfield, a platform hosting many AI image, video and audio models. It does: trains a &quot;Soul&quot;, Higgsfield&#039;s personal model of one face, from 5 to 20 photos. You get: a Soul ID that the higgsfield-generate skill then uses to put that face in new images and videos. Needs: the higgsfield CLI and a paid Higgsfield plan." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=higgsfield-ai%2Fskills">higgsfield-ai/skills</a></p>
+      <h1>higgsfield-soul-id</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want your face, or someone&#39;s, to stay recognizable across images and videos made on Higgsfield, a platform hosting many AI image, video and audio models</dd></div><div><dt>It does</dt><dd>trains a &#34;Soul&#34;, Higgsfield&#39;s personal model of one face, from 5 to 20 photos</dd></div><div><dt>You get</dt><dd>a Soul ID that the higgsfield-generate skill then uses to put that face in new images and videos</dd></div><div><dt>Needs</dt><dd>the higgsfield CLI and a paid Higgsfield plan</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A one-time step before generating images or videos of a real person. The agent asks for a one-word name and 5 to 20 photos of the face from varied angles and lighting, and trains the Soul for still images by default, or for cinematic shots and video if that&#39;s what you&#39;ll use it for. Training takes minutes; the agent waits without status chatter and tells you when the Soul is ready. From then on, higgsfield-generate can use it in any generation. It can also list the Souls you already have. You don&#39;t need it for a one-off face swap from a single photo, or for an invented character with no real face to learn: higgsfield-generate handles both directly.</p>
+      <p class="muted">Summarizes <a href="https://github.com/higgsfield-ai/skills/tree/f83af0bc1d937c8119099a11f8ebbf5e6fb99819/higgsfield-soul-id">the skill at f83af0b</a>. Its SKILL.md has changed by 2 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/higgsfield-ai/skills --skill higgsfield-soul-id</code><button type="button" class="copy" data-copy="npx skills add https://github.com/higgsfield-ai/skills --skill higgsfield-soul-id">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/higgsfield-ai/skills/higgsfield-soul-id">skills.sh page</a> · <a href="https://github.com/higgsfield-ai/skills/tree/HEAD/higgsfield-soul-id">Source on GitHub</a> · <a href="/gemskills/?repo=higgsfield-ai%2Fskills">All skills from higgsfield-ai/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>153,598 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>1,078 <span class="muted">higgsfield-ai/skills</span></dd></div><div><dt>First seen</dt><dd>May 4, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">9.2K</div>
+      <div class="stat-delta">-16% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 10,904; week to Aug 10: 9,529; week to Aug 17: 7,943; week to Aug 24: 7,967; week to Aug 31: 8,296; week to Sep 7: 7,982; week to Sep 14: 10,667; week to Sep 21: 9,177. Use the left and right arrow keys to read each week."
+        data-values="10904,9529,7943,7967,8296,7982,10667,9177" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,11.5 71.1,17.9 103.7,17.9 136.3,16.5 168.9,17.8 201.4,7.0 234.0,13.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="13.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>10,904</td></tr><tr><td>Aug 10</td><td>9,529</td></tr><tr><td>Aug 17</td><td>7,943</td></tr><tr><td>Aug 24</td><td>7,967</td></tr><tr><td>Aug 31</td><td>8,296</td></tr><tr><td>Sep 7</td><td>7,982</td></tr><tr><td>Sep 14</td><td>10,667</td></tr><tr><td>Sep 21</td><td>9,177</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:media" data-facet="category" title="Generate and edit video, images and audio." href="/gemskills/?tag=category%3Amedia">category:media</a></div>
+          <p class="tag-meaning">Generate and edit video, images and audio.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="image" data-facet="topic" href="/gemskills/?tag=image">image</a><a class="tag" data-tag="ai-generation" data-facet="topic" href="/gemskills/?tag=ai-generation">ai-generation</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:higgsfield" data-facet="stack" href="/gemskills/?tag=stack%3Ahiggsfield">stack:higgsfield</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/higgsfield-ai/skills/blob/4d0757471a704dac8729ea3c2ef0f3f330e0d9b6/higgsfield-soul-id/SKILL.md">higgsfield-ai/skills at 4d07574</a>. Checked daily, last changed Oct 28, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>version: 0.14.0
+name: higgsfield-soul-id
+description: |
+  Train a Soul Character — a personalized model on a person&#39;s face that
+  Higgsfield uses for identity-faithful image and video generation.
+  Use when: &#34;create my Soul&#34;, &#34;train my face&#34;, &#34;make my digital twin&#34;,
+  &#34;build me an avatar&#34;, &#34;learn my appearance&#34;, &#34;create a character of me&#34;,
+  &#34;set up identity for video&#34;, &#34;I want my face in generated images&#34;.
+  Chain: train Soul (one-time, returns reference_id) → use in
+  higgsfield-generate via `--soul-id &#60;id&#62;` with models like
+  `text2image_soul_v2` or `soul_cinematic`.
+  NOT for: one-shot face swaps (use higgsfield-generate with --image),
+  named-character / non-photo avatars (use higgsfield-generate with prompt).
+argument-hint: &#34;[name] [photo paths...]&#34;
+allowed-tools: Bash</code></pre></details>
+        <div class="markdown"><h3>Higgsfield Soul Character</h3>
+<p>Train a face-faithful identity model. Reusable across all Soul-powered generations.</p>
+<h4>Step 0 — Bootstrap</h4>
+<p>Before any other command:</p>
+<ol>
+<li>If <code>higgsfield</code> is not on <code>$PATH</code>, install it:<pre><code class="language-bash">curl -fsSL https://raw.githubusercontent.com/higgsfield-ai/cli/main/install.sh | sh
+</code></pre>
+</li>
+<li>If <code>higgsfield account status</code> fails with <code>Session expired</code> / <code>Not authenticated</code>, ask the user to run <code>higgsfield auth login</code> (interactive) and wait for confirmation.</li>
+<li>Soul training requires a paid plan (Basic+). If <code>higgsfield account status</code> shows free plan, tell the user before submitting.</li>
+</ol>
+<h4>UX Rules</h4>
+<ol>
+<li>Be concise. No raw IDs in chat. Just say &quot;Soul ready&quot; with a name reference.</li>
+<li>Detect language and respond in it. CLI flags stay English.</li>
+<li>Ask for the smallest set of inputs: name + photos. Pick a sensible model variant.</li>
+<li>Polling is silent — training takes minutes. Don't repeat status updates.</li>
+</ol>
+<h4>Workflow</h4>
+<ol>
+<li><strong>Get name.</strong> One word, used for later reference. Ask if missing.</li>
+<li><strong>Get photos.</strong> 5–20 face photos, varied angles and lighting. Local paths or already-uploaded IDs both work — <code>--image</code> accepts either.</li>
+<li><strong>Pick variant.</strong>
+<ul>
+<li><code>--soul-2</code> — for image generation (default)</li>
+<li><code>--soul-cinematic</code> — for cinematic / video work
+Choose based on user's stated downstream use. Default to <code>--soul-2</code>.</li>
+</ul>
+</li>
+<li><strong>Submit.</strong><pre><code class="language-bash">higgsfield soul-id create --name &quot;&lt;name&gt;&quot; --soul-2 --image ./photo1.png --image ./photo2.png ...
+higgsfield soul-id create --name &quot;&lt;name&gt;&quot; --soul-2 --image &lt;upload_id&gt; --image &lt;upload_id&gt; ...
+</code></pre>
+CLI auto-uploads paths. Captures returned reference id.</li>
+<li><strong>Wait.</strong> <code>higgsfield soul-id wait &lt;id&gt;</code>. Silent. Default timeout 30m.</li>
+<li><strong>Deliver.</strong> &quot;Soul <code>&lt;name&gt;</code> ready. Use in generate with <code>--soul-id &lt;id&gt;</code>.&quot;</li>
+</ol>
+<h4>Use the Soul</h4>
+<p>Once trained, pass to <code>higgsfield-generate</code>:</p>
+<pre><code class="language-bash">higgsfield generate create text2image_soul_v2 --prompt &quot;...&quot; --soul-id &lt;ref_id&gt; --quality 2k --wait
+higgsfield generate create soul_cinematic --prompt &quot;...&quot; --soul-id &lt;ref_id&gt; --quality 2k --wait
+</code></pre>
+<p><code>--soul-id</code> is sent as the model's <code>custom_reference_id</code>. For a curated Soul style, list styles with <code>higgsfield preset list soul-v2</code> and pass the chosen id as <code>--style_id</code> on <code>text2image_soul_v2</code>. <code>--style_id</code> cannot be combined with <code>--image</code>.</p>
+<h4>Listing existing Souls</h4>
+<pre><code class="language-bash">higgsfield soul-id list                   # all references
+higgsfield soul-id get &lt;id&gt;               # one by id
+</code></pre>
+<h4>Errors</h4>
+<ul>
+<li><code>Minimum Basic plan required</code> — user is on free plan; tell them.</li>
+<li><code>Training failed</code> — check photos quality (5+ unique faces, well-lit).</li>
+<li><code>Session expired</code> → <code>higgsfield auth login</code>.</li>
+</ul>
+<h4>Reference docs</h4>
+<ul>
+<li><code>references/photo-guide.md</code> — what photos work best</li>
+<li><code>references/troubleshooting.md</code> — common training failures</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

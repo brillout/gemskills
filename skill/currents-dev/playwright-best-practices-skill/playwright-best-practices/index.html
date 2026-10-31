@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>playwright-best-practices · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re writing Playwright tests, debugging failing or flaky ones, or setting them up in CI. It does: points the agent to the one or two guides that fit the task, out of 57, instead of loading them all. Covers: end-to-end, component, API, visual, accessibility and security tests, plus Electron apps and browser extensions. You get: TypeScript tests that follow its patterns and are run until they pass, with important ones repeated five times to catch flakiness. Unlike: Anthropic&#039;s webapp-testing, which drives a local app with quick Python scripts, it&#039;s about building and keeping a test suite healthy." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=currents-dev%2Fplaywright-best-practices-skill">currents-dev/playwright-best-practices-skill</a></p>
+      <h1>playwright-best-practices</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re writing Playwright tests, debugging failing or flaky ones, or setting them up in CI</dd></div><div><dt>It does</dt><dd>points the agent to the one or two guides that fit the task, out of 57, instead of loading them all</dd></div><div><dt>Covers</dt><dd>end-to-end, component, API, visual, accessibility and security tests, plus Electron apps and browser extensions</dd></div><div><dt>You get</dt><dd>TypeScript tests that follow its patterns and are run until they pass, with important ones repeated five times to catch flakiness</dd></div><div><dt>Unlike</dt><dd>Anthropic&#39;s webapp-testing, which drives a local app with quick Python scripts, it&#39;s about building and keeping a test suite healthy</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A guide to Playwright testing in TypeScript. The SKILL.md itself is an index: what you&#39;re doing, such as writing a test, chasing a timeout, mocking an OAuth popup or splitting tests across CI machines, points to a few of 57 reference files. They cover the basics, debugging, test types, browser APIs, advanced patterns, test architecture, frameworks (React, Angular, Vue, Next.js) and CI. The references hold the substance: find elements by role or label rather than CSS, rely on assertions that retry instead of fixed waits, sort flaky tests by cause (timing, the CI environment, shared data between parallel workers, state leaking between tests) and confirm them with repeated runs, choose between page objects and fixtures, and fake dates, networks, payments or email. After writing or changing tests, the agent runs them, reads the trace when one fails, fixes it and reruns, and moves on only when everything passes.</p>
+      <p class="muted">Summarizes <a href="https://github.com/currents-dev/playwright-best-practices-skill/tree/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices">the skill at 283d5cb</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/currents-dev/playwright-best-practices-skill --skill playwright-best-practices</code><button type="button" class="copy" data-copy="npx skills add https://github.com/currents-dev/playwright-best-practices-skill --skill playwright-best-practices">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/currents-dev/playwright-best-practices-skill/playwright-best-practices">skills.sh page</a> · <a href="https://github.com/currents-dev/playwright-best-practices-skill/tree/HEAD/playwright-best-practices">Source on GitHub</a> · <a href="/gemskills/?repo=currents-dev%2Fplaywright-best-practices-skill">All skills from currents-dev/playwright-best-practices-skill</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>84,590 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>382 <span class="muted">currents-dev/playwright-best-practices-skill</span></dd></div><div><dt>First seen</dt><dd>Jan 29, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">2.4K</div>
+      <div class="stat-delta">+7% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 2,272; week to Aug 10: 2,444; week to Aug 17: 2,522; week to Aug 24: 2,561; week to Aug 31: 2,550; week to Sep 7: 2,380; week to Sep 14: 2,268; week to Sep 21: 2,433. Use the left and right arrow keys to read each week."
+        data-values="2272,2444,2522,2561,2550,2380,2268,2433" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,11.0 38.6,8.0 71.1,6.7 103.7,6.0 136.3,6.2 168.9,9.1 201.4,11.0 234.0,8.2" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="8.2" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>2,272</td></tr><tr><td>Aug 10</td><td>2,444</td></tr><tr><td>Aug 17</td><td>2,522</td></tr><tr><td>Aug 24</td><td>2,561</td></tr><tr><td>Aug 31</td><td>2,550</td></tr><tr><td>Sep 7</td><td>2,380</td></tr><tr><td>Sep 14</td><td>2,268</td></tr><tr><td>Sep 21</td><td>2,433</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="testing" data-facet="topic" href="/gemskills/?tag=testing">testing</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:playwright" data-facet="stack" href="/gemskills/?tag=stack%3Aplaywright">stack:playwright</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/SKILL.md">currents-dev/playwright-best-practices-skill at 283d5cb</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: playwright-best-practices
+description: Use when writing Playwright tests, fixing flaky tests, debugging failures, implementing Page Object Model, configuring CI/CD, optimizing performance, mocking APIs, handling authentication or OAuth, testing accessibility (axe-core), file uploads/downloads, date/time mocking, WebSockets, geolocation, permissions, multi-tab/popup flows, mobile/responsive layouts, touch gestures, GraphQL, error handling, offline mode, multi-user collaboration, third-party services (payments, email verification), console error monitoring, global setup/teardown, test annotations (skip, fixme, slow), test tags (@smoke, @fast, @critical, filtering with --grep), project dependencies, security testing (XSS, CSRF, auth), performance budgets (Web Vitals, Lighthouse), iframes, component testing, canvas/WebGL, service workers/PWA, test coverage, i18n/localization, Electron apps, or browser extension testing. Covers E2E, component, API, visual, accessibility, security, Electron, and extension testing.
+license: MIT
+metadata:
+  author: currents.dev
+  version: &#34;1.2&#34;</code></pre></details>
+        <div class="markdown"><h3>Playwright Best Practices</h3>
+<p>This skill provides comprehensive guidance for all aspects of Playwright test development, from writing new tests to debugging and maintaining existing test suites.</p>
+<h4>Activity-Based Reference Guide</h4>
+<p>Consult these references based on what you're doing:</p>
+<h5>Writing New Tests</h5>
+<p><strong>When to use</strong>: Creating new test files, writing test cases, implementing test scenarios</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Writing E2E tests</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-suite-structure.md">test-suite-structure.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/locators.md">locators.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/assertions-waiting.md">assertions-waiting.md</a></td>
+</tr>
+<tr>
+<td><strong>Writing component tests</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/component-testing.md">component-testing.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-suite-structure.md">test-suite-structure.md</a></td>
+</tr>
+<tr>
+<td><strong>Writing API tests</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/api-testing.md">api-testing.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-suite-structure.md">test-suite-structure.md</a></td>
+</tr>
+<tr>
+<td><strong>Writing GraphQL tests</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/graphql-testing.md">graphql-testing.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/api-testing.md">api-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Writing visual regression tests</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/visual-regression.md">visual-regression.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/canvas-webgl.md">canvas-webgl.md</a></td>
+</tr>
+<tr>
+<td><strong>Structuring test code with POM</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/page-object-model.md">page-object-model.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-suite-structure.md">test-suite-structure.md</a></td>
+</tr>
+<tr>
+<td><strong>Setting up test data/fixtures</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/fixtures-hooks.md">fixtures-hooks.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-data.md">test-data.md</a></td>
+</tr>
+<tr>
+<td><strong>Handling authentication</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/authentication.md">authentication.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/authentication-flows.md">authentication-flows.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing date/time features</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/clock-mocking.md">clock-mocking.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing file upload/download</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/file-operations.md">file-operations.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/file-upload-download.md">file-upload-download.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing forms/validation</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/forms-validation.md">forms-validation.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing drag and drop</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/drag-drop.md">drag-drop.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing accessibility</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/accessibility.md">accessibility.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing security (XSS, CSRF)</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/security-testing.md">security-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Using test annotations</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/annotations.md">annotations.md</a></td>
+</tr>
+<tr>
+<td><strong>Using test tags</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-tags.md">test-tags.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing iframes</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/browser-apis/iframes.md">iframes.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing canvas/WebGL</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/canvas-webgl.md">canvas-webgl.md</a></td>
+</tr>
+<tr>
+<td><strong>Internationalization (i18n)</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/i18n.md">i18n.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing Electron apps</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/electron.md">electron.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing browser extensions</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/browser-extensions.md">browser-extensions.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Mobile &amp; Responsive Testing</h5>
+<p><strong>When to use</strong>: Testing mobile devices, touch interactions, responsive layouts</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Device emulation</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/mobile-testing.md">mobile-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Touch gestures (swipe, tap)</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/mobile-testing.md">mobile-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Viewport/breakpoint testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/mobile-testing.md">mobile-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Mobile-specific UI</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/mobile-testing.md">mobile-testing.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/locators.md">locators.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Real-Time &amp; Browser APIs</h5>
+<p><strong>When to use</strong>: Testing WebSockets, geolocation, permissions, multi-tab flows</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WebSocket/real-time testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/browser-apis/websockets.md">websockets.md</a></td>
+</tr>
+<tr>
+<td><strong>Geolocation mocking</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/browser-apis/browser-apis.md">browser-apis.md</a></td>
+</tr>
+<tr>
+<td><strong>Permission handling</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/browser-apis/browser-apis.md">browser-apis.md</a></td>
+</tr>
+<tr>
+<td><strong>Clipboard testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/browser-apis/browser-apis.md">browser-apis.md</a></td>
+</tr>
+<tr>
+<td><strong>Camera/microphone mocking</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/browser-apis/browser-apis.md">browser-apis.md</a></td>
+</tr>
+<tr>
+<td><strong>Multi-tab/popup flows</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/multi-context.md">multi-context.md</a></td>
+</tr>
+<tr>
+<td><strong>OAuth popup handling</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/third-party.md">third-party.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/multi-context.md">multi-context.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Debugging &amp; Troubleshooting</h5>
+<p><strong>When to use</strong>: Test failures, element not found, timeouts, unexpected behavior</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Debugging test failures</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/debugging.md">debugging.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/assertions-waiting.md">assertions-waiting.md</a></td>
+</tr>
+<tr>
+<td><strong>Fixing flaky tests</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/flaky-tests.md">flaky-tests.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/debugging.md">debugging.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/assertions-waiting.md">assertions-waiting.md</a></td>
+</tr>
+<tr>
+<td><strong>Debugging flaky parallel runs</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/flaky-tests.md">flaky-tests.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/performance.md">performance.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/fixtures-hooks.md">fixtures-hooks.md</a></td>
+</tr>
+<tr>
+<td><strong>Ensuring test isolation / avoiding state leak</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/flaky-tests.md">flaky-tests.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/fixtures-hooks.md">fixtures-hooks.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/performance.md">performance.md</a></td>
+</tr>
+<tr>
+<td><strong>Fixing selector issues</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/locators.md">locators.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/debugging.md">debugging.md</a></td>
+</tr>
+<tr>
+<td><strong>Investigating timeout issues</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/assertions-waiting.md">assertions-waiting.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/debugging.md">debugging.md</a></td>
+</tr>
+<tr>
+<td><strong>Using trace viewer</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/debugging.md">debugging.md</a></td>
+</tr>
+<tr>
+<td><strong>Debugging race conditions</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/flaky-tests.md">flaky-tests.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/debugging.md">debugging.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/assertions-waiting.md">assertions-waiting.md</a></td>
+</tr>
+<tr>
+<td><strong>Debugging console/JS errors</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/console-errors.md">console-errors.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/debugging.md">debugging.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Error &amp; Edge Case Testing</h5>
+<p><strong>When to use</strong>: Testing error states, offline mode, network failures, validation</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Error boundary testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/error-testing.md">error-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Network failure simulation</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/error-testing.md">error-testing.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/network-advanced.md">network-advanced.md</a></td>
+</tr>
+<tr>
+<td><strong>Offline mode testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/error-testing.md">error-testing.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/browser-apis/service-workers.md">service-workers.md</a></td>
+</tr>
+<tr>
+<td><strong>Service worker testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/browser-apis/service-workers.md">service-workers.md</a></td>
+</tr>
+<tr>
+<td><strong>Loading state testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/error-testing.md">error-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Form validation testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/error-testing.md">error-testing.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Multi-User &amp; Collaboration Testing</h5>
+<p><strong>When to use</strong>: Testing features involving multiple users, roles, or real-time collaboration</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Multiple users in one test</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/multi-user.md">multi-user.md</a></td>
+</tr>
+<tr>
+<td><strong>Real-time collaboration</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/multi-user.md">multi-user.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/browser-apis/websockets.md">websockets.md</a></td>
+</tr>
+<tr>
+<td><strong>Role-based access testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/multi-user.md">multi-user.md</a></td>
+</tr>
+<tr>
+<td><strong>Concurrent action testing</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/multi-user.md">multi-user.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Architecture Decisions</h5>
+<p><strong>When to use</strong>: Choosing test patterns, deciding between approaches, planning test architecture</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>POM vs fixtures decision</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/architecture/pom-vs-fixtures.md">pom-vs-fixtures.md</a></td>
+</tr>
+<tr>
+<td><strong>Test type selection</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/architecture/test-architecture.md">test-architecture.md</a></td>
+</tr>
+<tr>
+<td><strong>Mock vs real services</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/architecture/when-to-mock.md">when-to-mock.md</a></td>
+</tr>
+<tr>
+<td><strong>Test suite structure</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-suite-structure.md">test-suite-structure.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Framework-Specific Testing</h5>
+<p><strong>When to use</strong>: Testing React, Angular, Vue, or Next.js applications</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Testing React apps</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/frameworks/react.md">react.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing Angular apps</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/frameworks/angular.md">angular.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing Vue/Nuxt apps</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/frameworks/vue.md">vue.md</a></td>
+</tr>
+<tr>
+<td><strong>Testing Next.js apps</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/frameworks/nextjs.md">nextjs.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Refactoring &amp; Maintenance</h5>
+<p><strong>When to use</strong>: Improving existing tests, code review, reducing duplication</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Refactoring to Page Object Model</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/page-object-model.md">page-object-model.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-suite-structure.md">test-suite-structure.md</a></td>
+</tr>
+<tr>
+<td><strong>Improving test organization</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-suite-structure.md">test-suite-structure.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/page-object-model.md">page-object-model.md</a></td>
+</tr>
+<tr>
+<td><strong>Extracting common setup/teardown</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/fixtures-hooks.md">fixtures-hooks.md</a></td>
+</tr>
+<tr>
+<td><strong>Replacing brittle selectors</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/locators.md">locators.md</a></td>
+</tr>
+<tr>
+<td><strong>Removing explicit waits</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/assertions-waiting.md">assertions-waiting.md</a></td>
+</tr>
+<tr>
+<td><strong>Creating test data factories</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-data.md">test-data.md</a></td>
+</tr>
+<tr>
+<td><strong>Configuration setup</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/configuration.md">configuration.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Infrastructure &amp; Configuration</h5>
+<p><strong>When to use</strong>: Setting up projects, configuring CI/CD, optimizing performance</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Configuring Playwright project</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/configuration.md">configuration.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/projects-dependencies.md">projects-dependencies.md</a></td>
+</tr>
+<tr>
+<td><strong>Setting up CI/CD pipelines</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/ci-cd.md">ci-cd.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/github-actions.md">github-actions.md</a></td>
+</tr>
+<tr>
+<td><strong>GitHub Actions setup</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/github-actions.md">github-actions.md</a></td>
+</tr>
+<tr>
+<td><strong>GitLab CI setup</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/gitlab.md">gitlab.md</a></td>
+</tr>
+<tr>
+<td><strong>Other CI providers</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/other-providers.md">other-providers.md</a></td>
+</tr>
+<tr>
+<td><strong>Docker/container setup</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/docker.md">docker.md</a></td>
+</tr>
+<tr>
+<td><strong>Global setup &amp; teardown</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/global-setup.md">global-setup.md</a></td>
+</tr>
+<tr>
+<td><strong>Project dependencies</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/projects-dependencies.md">projects-dependencies.md</a></td>
+</tr>
+<tr>
+<td><strong>Optimizing test performance</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/performance.md">performance.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-suite-structure.md">test-suite-structure.md</a></td>
+</tr>
+<tr>
+<td><strong>Configuring parallel execution</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/parallel-sharding.md">parallel-sharding.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/performance.md">performance.md</a></td>
+</tr>
+<tr>
+<td><strong>Isolating test data between workers</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/fixtures-hooks.md">fixtures-hooks.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/performance.md">performance.md</a></td>
+</tr>
+<tr>
+<td><strong>Test coverage</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/test-coverage.md">test-coverage.md</a></td>
+</tr>
+<tr>
+<td><strong>Test reporting/artifacts</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/infrastructure-ci-cd/reporting.md">reporting.md</a></td>
+</tr>
+</tbody>
+</table>
+<h5>Advanced Patterns</h5>
+<p><strong>When to use</strong>: Complex scenarios, API mocking, network interception</p>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Reference Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mocking API responses</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-suite-structure.md">test-suite-structure.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/network-advanced.md">network-advanced.md</a></td>
+</tr>
+<tr>
+<td><strong>Network interception</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/network-advanced.md">network-advanced.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/assertions-waiting.md">assertions-waiting.md</a></td>
+</tr>
+<tr>
+<td><strong>GraphQL mocking</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/network-advanced.md">network-advanced.md</a></td>
+</tr>
+<tr>
+<td><strong>HAR recording/playback</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/network-advanced.md">network-advanced.md</a></td>
+</tr>
+<tr>
+<td><strong>Custom fixtures</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/fixtures-hooks.md">fixtures-hooks.md</a></td>
+</tr>
+<tr>
+<td><strong>Advanced waiting strategies</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/assertions-waiting.md">assertions-waiting.md</a></td>
+</tr>
+<tr>
+<td><strong>OAuth/SSO mocking</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/third-party.md">third-party.md</a>, <a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/multi-context.md">multi-context.md</a></td>
+</tr>
+<tr>
+<td><strong>Payment gateway mocking</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/third-party.md">third-party.md</a></td>
+</tr>
+<tr>
+<td><strong>Email/SMS verification mocking</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/advanced/third-party.md">third-party.md</a></td>
+</tr>
+<tr>
+<td><strong>Failing on console errors</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/debugging/console-errors.md">console-errors.md</a></td>
+</tr>
+<tr>
+<td><strong>Security testing (XSS, CSRF)</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/security-testing.md">security-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Performance budgets &amp; Web Vitals</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/performance-testing.md">performance-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Lighthouse integration</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/testing-patterns/performance-testing.md">performance-testing.md</a></td>
+</tr>
+<tr>
+<td><strong>Test annotations (skip, fixme)</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/annotations.md">annotations.md</a></td>
+</tr>
+<tr>
+<td><strong>Test tags (@smoke, @fast)</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/test-tags.md">test-tags.md</a></td>
+</tr>
+<tr>
+<td><strong>Test steps for reporting</strong></td>
+<td><a href="https://github.com/currents-dev/playwright-best-practices-skill/blob/283d5cbc5d11aac1abda058b16ad22c317d54dc0/playwright-best-practices/core/annotations.md">annotations.md</a></td>
+</tr>
+</tbody>
+</table>
+<h4>Quick Decision Tree</h4>
+<pre><code>What are you doing?
+│
+├─ Writing a new test?
+│  ├─ E2E test → core/test-suite-structure.md, core/locators.md, core/assertions-waiting.md
+│  ├─ Component test → testing-patterns/component-testing.md
+│  ├─ API test → testing-patterns/api-testing.md, core/test-suite-structure.md
+│  ├─ GraphQL test → testing-patterns/graphql-testing.md
+│  ├─ Visual regression → testing-patterns/visual-regression.md
+│  ├─ Visual/canvas test → testing-patterns/canvas-webgl.md, core/test-suite-structure.md
+│  ├─ Accessibility test → testing-patterns/accessibility.md
+│  ├─ Mobile/responsive test → advanced/mobile-testing.md
+│  ├─ i18n/locale test → testing-patterns/i18n.md
+│  ├─ Electron app test → testing-patterns/electron.md
+│  ├─ Browser extension test → testing-patterns/browser-extensions.md
+│  ├─ Multi-user test → advanced/multi-user.md
+│  ├─ Form validation test → testing-patterns/forms-validation.md
+│  └─ Drag and drop test → testing-patterns/drag-drop.md
+│
+├─ Testing specific features?
+│  ├─ File upload/download → testing-patterns/file-operations.md, testing-patterns/file-upload-download.md
+│  ├─ Date/time dependent → advanced/clock-mocking.md
+│  ├─ WebSocket/real-time → browser-apis/websockets.md
+│  ├─ Geolocation/permissions → browser-apis/browser-apis.md
+│  ├─ OAuth/SSO mocking → advanced/third-party.md, advanced/multi-context.md
+│  ├─ Payments/email/SMS → advanced/third-party.md
+│  ├─ iFrames → browser-apis/iframes.md
+│  ├─ Canvas/WebGL/charts → testing-patterns/canvas-webgl.md
+│  ├─ Service workers/PWA → browser-apis/service-workers.md
+│  ├─ i18n/localization → testing-patterns/i18n.md
+│  ├─ Security (XSS, CSRF) → testing-patterns/security-testing.md
+│  └─ Performance/Web Vitals → testing-patterns/performance-testing.md
+│
+├─ Architecture decisions?
+│  ├─ POM vs fixtures → architecture/pom-vs-fixtures.md
+│  ├─ Test type selection → architecture/test-architecture.md
+│  ├─ Mock vs real services → architecture/when-to-mock.md
+│  └─ Test suite structure → core/test-suite-structure.md
+│
+├─ Framework-specific testing?
+│  ├─ React app → frameworks/react.md
+│  ├─ Angular app → frameworks/angular.md
+│  ├─ Vue/Nuxt app → frameworks/vue.md
+│  └─ Next.js app → frameworks/nextjs.md
+│
+├─ Authentication testing?
+│  ├─ Basic auth patterns → advanced/authentication.md
+│  └─ Complex flows (MFA, reset) → advanced/authentication-flows.md
+│
+├─ Test is failing/flaky?
+│  ├─ Flaky test investigation → debugging/flaky-tests.md
+│  ├─ Element not found → core/locators.md, debugging/debugging.md
+│  ├─ Timeout issues → core/assertions-waiting.md, debugging/debugging.md
+│  ├─ Race conditions → debugging/flaky-tests.md, debugging/debugging.md
+│  ├─ Flaky only with multiple workers → debugging/flaky-tests.md, infrastructure-ci-cd/performance.md
+│  ├─ State leak / isolation → debugging/flaky-tests.md, core/fixtures-hooks.md
+│  ├─ Console/JS errors → debugging/console-errors.md, debugging/debugging.md
+│  └─ General debugging → debugging/debugging.md
+│
+├─ Testing error scenarios?
+│  ├─ Network failures → debugging/error-testing.md, advanced/network-advanced.md
+│  ├─ Offline (unexpected) → debugging/error-testing.md
+│  ├─ Offline-first/PWA → browser-apis/service-workers.md
+│  ├─ Error boundaries → debugging/error-testing.md
+│  └─ Form validation → testing-patterns/forms-validation.md, debugging/error-testing.md
+│
+├─ Refactoring existing code?
+│  ├─ Implementing POM → core/page-object-model.md
+│  ├─ Improving selectors → core/locators.md
+│  ├─ Extracting fixtures → core/fixtures-hooks.md
+│  ├─ Creating data factories → core/test-data.md
+│  └─ Configuration setup → core/configuration.md
+│
+├─ Setting up infrastructure?
+│  ├─ CI/CD → infrastructure-ci-cd/ci-cd.md
+│  ├─ GitHub Actions → infrastructure-ci-cd/github-actions.md
+│  ├─ GitLab CI → infrastructure-ci-cd/gitlab.md
+│  ├─ Other CI providers → infrastructure-ci-cd/other-providers.md
+│  ├─ Docker/containers → infrastructure-ci-cd/docker.md
+│  ├─ Sharding/parallel → infrastructure-ci-cd/parallel-sharding.md
+│  ├─ Reporting/artifacts → infrastructure-ci-cd/reporting.md
+│  ├─ Global setup/teardown → core/global-setup.md
+│  ├─ Project dependencies → core/projects-dependencies.md
+│  ├─ Test performance → infrastructure-ci-cd/performance.md
+│  ├─ Test coverage → infrastructure-ci-cd/test-coverage.md
+│  └─ Project config → core/configuration.md, core/projects-dependencies.md
+│
+├─ Organizing tests?
+│  ├─ Skip/fixme/slow tests → core/annotations.md
+│  ├─ Test tags (@smoke, @fast) → core/test-tags.md
+│  ├─ Filtering tests (--grep) → core/test-tags.md
+│  ├─ Test steps → core/annotations.md
+│  └─ Conditional execution → core/annotations.md
+│
+└─ Running subset of tests?
+   ├─ By tag (@smoke, @critical) → core/test-tags.md
+   ├─ Exclude slow/flaky tests → core/test-tags.md
+   ├─ PR vs nightly tests → core/test-tags.md, infrastructure-ci-cd/ci-cd.md
+   └─ Project-specific filtering → core/test-tags.md, core/configuration.md
+</code></pre>
+<h4>Test Validation Loop</h4>
+<p>After writing or modifying tests:</p>
+<ol>
+<li><strong>Run tests</strong>: <code>npx playwright test --reporter=list</code></li>
+<li><strong>If tests fail</strong>:
+<ul>
+<li>Review error output and trace (<code>npx playwright show-trace</code>)</li>
+<li>Fix locators, waits, or assertions</li>
+<li>Re-run tests</li>
+</ul>
+</li>
+<li><strong>Only proceed when all tests pass</strong></li>
+<li><strong>Run multiple times</strong> for critical tests: <code>npx playwright test --repeat-each=5</code></li>
+</ol>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

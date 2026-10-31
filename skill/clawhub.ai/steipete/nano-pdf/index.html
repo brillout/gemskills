@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nano-pdf · Gem Skills</title>
+    <meta name="description" content="Use it when: a page of a PDF, such as a slide, needs a quick change described in plain words, like a new title or a fixed typo. It does: runs the nano-pdf CLI with the file, a page number and your instruction. You get: an edited PDF, which the skill says to check before sending. Needs: the nano-pdf CLI, installable with uv, and a paid Gemini API key. Unlike: Anthropic&#039;s pdf skill, which merges, splits, fills and reads PDFs with code, it hands one edit to an AI image model." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Fsteipete">clawhub.ai/steipete</a></p>
+      <h1>nano-pdf</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a page of a PDF, such as a slide, needs a quick change described in plain words, like a new title or a fixed typo</dd></div><div><dt>It does</dt><dd>runs the nano-pdf CLI with the file, a page number and your instruction</dd></div><div><dt>You get</dt><dd>an edited PDF, which the skill says to check before sending</dd></div><div><dt>Needs</dt><dd>the nano-pdf CLI, installable with uv, and a paid Gemini API key</dd></div><div><dt>Unlike</dt><dd>Anthropic&#39;s pdf skill, which merges, splits, fills and reads PDFs with code, it hands one edit to an AI image model</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A very short skill: it tells the agent to use the nano-pdf command-line tool to apply a natural-language edit to one page, as in nano-pdf edit deck.pdf 1 &#34;Change the title to &#39;Q3 Results&#39;&#34;. It warns that the tool counts pages from 0 or from 1 depending on its version, so an edit that lands on the wrong page should be retried with the other number, and that the output should be checked before it goes out. The rest is up to the tool. According to the tool&#39;s own page, it sends the page to Gemini 3 Pro Image, replaces it with the edited image, and adds the text back with OCR so it stays searchable, which is why it needs a paid Gemini key.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/steipete/nano-pdf.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @steipete/nano-pdf</code><button type="button" class="copy" data-copy="openclaw skills install @steipete/nano-pdf">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/steipete/skills/nano-pdf">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Fsteipete">All skills from clawhub.ai/steipete</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>121,736 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div><div><dt>Downloads</dt><dd>131,279 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:documents" data-facet="category" title="Office files, notes and suites like Lark and Google Workspace." href="/gemskills/?tag=category%3Adocuments">category:documents</a></div>
+          <p class="tag-meaning">Office files, notes and suites like Lark and Google Workspace.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="pdf" data-facet="topic" href="/gemskills/?tag=pdf">pdf</a><a class="tag" data-tag="documents" data-facet="topic" href="/gemskills/?tag=documents">documents</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/steipete/skills/nano-pdf">ClawHub</a>, version 1.0.0. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: nano-pdf
+description: Edit PDFs with natural-language instructions using the nano-pdf CLI.
+homepage: https://pypi.org/project/nano-pdf/
+metadata: {&#34;clawdbot&#34;:{&#34;emoji&#34;:&#34;📄&#34;,&#34;requires&#34;:{&#34;bins&#34;:[&#34;nano-pdf&#34;]},&#34;install&#34;:[{&#34;id&#34;:&#34;uv&#34;,&#34;kind&#34;:&#34;uv&#34;,&#34;package&#34;:&#34;nano-pdf&#34;,&#34;bins&#34;:[&#34;nano-pdf&#34;],&#34;label&#34;:&#34;Install nano-pdf (uv)&#34;}]}}</code></pre></details>
+        <div class="markdown"><h3>nano-pdf</h3>
+<p>Use <code>nano-pdf</code> to apply edits to a specific page in a PDF using a natural-language instruction.</p>
+<h4>Quick start</h4>
+<pre><code class="language-bash">nano-pdf edit deck.pdf 1 &quot;Change the title to 'Q3 Results' and fix the typo in the subtitle&quot;
+</code></pre>
+<p>Notes:</p>
+<ul>
+<li>Page numbers are 0-based or 1-based depending on the tool’s version/config; if the result looks off by one, retry with the other.</li>
+<li>Always sanity-check the output PDF before sending it out.</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

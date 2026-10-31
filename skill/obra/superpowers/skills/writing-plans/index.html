@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>writing-plans · Gem Skills</title>
+    <meta name="description" content="Use it when: you have a spec or approved design for a multi-step change, before any code is written. It does: breaks the work into small test-first tasks, each naming its files, function signatures, tests and the commands that prove it. You get: a plan file in the repo, checked against the spec, plus a recommendation for how to run it. Written for: whoever implements it, a person or a subagent, assumed never to have seen the codebase or the spec. Next: subagent-driven-development, a fresh subagent per task, or executing-plans, the agent working through it alone." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>writing-plans</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you have a spec or approved design for a multi-step change, before any code is written</dd></div><div><dt>It does</dt><dd>breaks the work into small test-first tasks, each naming its files, function signatures, tests and the commands that prove it</dd></div><div><dt>You get</dt><dd>a plan file in the repo, checked against the spec, plus a recommendation for how to run it</dd></div><div><dt>Written for</dt><dd>whoever implements it, a person or a subagent, assumed never to have seen the codebase or the spec</dd></div><div><dt>Next</dt><dd>subagent-driven-development, a fresh subagent per task, or executing-plans, the agent working through it alone</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 4 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · Before it: <a href="/gemskills/skill/obra/superpowers/skills/using-git-worktrees/">using-git-worktrees</a> · After it: <a href="/gemskills/skill/obra/superpowers/skills/subagent-driven-development/">subagent-driven-development</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The plan holds the decisions an implementer couldn&#39;t make alone: which files to create or change, the names and types each task shares with others, the exact values from the spec, and the tests that prove each task. Each task is one test cycle: write the failing test, run it and see it fail, write the code, run it and see it pass, commit, with the expected output of every command. The code itself is left to the implementer, except for an algorithm the tests don&#39;t pin down. The plan also lists the project-wide constraints and the five likeliest ways real use could break the software that no test covers yet, each then given a test. The agent checks the plan against the spec for gaps, mismatched names and bloat, fixes what it finds, and asks you to review it and choose how it runs: a fresh subagent and review per task, or the agent working through it inline with one review at the end.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/writing-plans">the skill at bb92a77</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill writing-plans</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill writing-plans">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/writing-plans">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/writing-plans">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>254,600 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">6.9K</div>
+      <div class="stat-delta">-12% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 7,836; week to Aug 10: 7,227; week to Aug 17: 7,122; week to Aug 24: 6,979; week to Aug 31: 6,425; week to Sep 7: 6,658; week to Sep 14: 6,394; week to Sep 21: 6,896. Use the left and right arrow keys to read each week."
+        data-values="7836,7227,7122,6979,6425,6658,6394,6896" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,9.4 71.1,10.0 103.7,10.8 136.3,13.9 168.9,12.6 201.4,14.1 234.0,11.3" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="11.3" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>7,836</td></tr><tr><td>Aug 10</td><td>7,227</td></tr><tr><td>Aug 17</td><td>7,122</td></tr><tr><td>Aug 24</td><td>6,979</td></tr><tr><td>Aug 31</td><td>6,425</td></tr><tr><td>Sep 7</td><td>6,658</td></tr><tr><td>Sep 14</td><td>6,394</td></tr><tr><td>Sep 21</td><td>6,896</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:planning" data-facet="category" title="Make the agent question you and write the plan down before it writes code." href="/gemskills/?tag=category%3Aplanning">category:planning</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Make the agent question you and write the plan down before it writes code.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="planning" data-facet="topic" href="/gemskills/?tag=planning">planning</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/writing-plans/SKILL.md">obra/superpowers at bb92a77</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: writing-plans
+description: Use when you have a spec or requirements for a multi-step task, before touching code</code></pre></details>
+        <div class="markdown"><h3>Writing Plans</h3>
+<h4>Overview</h4>
+<p>Write implementation plans for an engineer who has not seen this codebase or this spec. Assume they write idiomatic code in the project's language once they know the exact interface and the exact test, and that they will make a reasonable choice wherever the plan leaves one open. What they cannot know is what you decided: which files, which names and signatures, which values from the spec, which tests prove each task. Document those. Give them the whole plan as bite-sized tasks. DRY. YAGNI. TDD. Frequent commits.</p>
+<p><strong>Announce at start:</strong> &quot;I'm using the writing-plans skill to create the implementation plan.&quot;</p>
+<p><strong>Context:</strong> If working in an isolated worktree, it should have been created via the <code>superpowers:using-git-worktrees</code> skill at execution time.</p>
+<p><strong>Save plans to:</strong> <code>docs/superpowers/plans/YYYY-MM-DD-&lt;feature-name&gt;.md</code></p>
+<ul>
+<li>(User preferences for plan location override this default)</li>
+</ul>
+<h4>Scope Check</h4>
+<p>If the spec covers multiple independent subsystems, it should have been broken into sub-project specs during brainstorming. If it wasn't, suggest breaking this into separate plans — one per subsystem. Each plan should produce working, testable software on its own.</p>
+<h4>File Structure</h4>
+<p>Before defining tasks, map out which files will be created or modified and what each one is responsible for. This is where decomposition decisions get locked in.</p>
+<ul>
+<li>Design units with clear boundaries and well-defined interfaces. Each file should have one clear responsibility.</li>
+<li>You reason best about code you can hold in context at once, and your edits are more reliable when files are focused. Prefer smaller, focused files over large ones that do too much.</li>
+<li>Files that change together should live together. Split by responsibility, not by technical layer.</li>
+<li>In existing codebases, follow established patterns. If the codebase uses large files, don't unilaterally restructure - but if a file you're modifying has grown unwieldy, including a split in the plan is reasonable.</li>
+</ul>
+<p>This structure informs the task decomposition. Each task should produce self-contained changes that make sense independently.</p>
+<h4>Task Right-Sizing</h4>
+<p>A task is the smallest unit that carries its own test cycle and is worth a
+fresh reviewer's gate. When drawing task boundaries: fold setup,
+configuration, scaffolding, and documentation steps into the task whose
+deliverable needs them; split only where a reviewer could meaningfully
+reject one task while approving its neighbor. Each task ends with an
+independently testable deliverable.</p>
+<h4>Step Granularity</h4>
+<p><strong>Each step is one action with a checkable result:</strong></p>
+<ul>
+<li>&quot;Write the failing test&quot; - step</li>
+<li>&quot;Run it to make sure it fails&quot; - step</li>
+<li>&quot;Implement the minimal code to make the test pass&quot; - step</li>
+<li>&quot;Run the tests and make sure they pass&quot; - step</li>
+<li>&quot;Commit&quot; - step</li>
+</ul>
+<h4>Plan Document Header</h4>
+<p><strong>Every plan MUST start with this header:</strong></p>
+<pre><code class="language-markdown"># [Feature Name] Implementation Plan
+
+&gt; **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** [One sentence describing what this builds]
+
+**Architecture:** [2-3 sentences about approach]
+
+**Tech Stack:** [Key technologies/libraries]
+
+**Spec:** [path to the spec/design doc this plan implements — the plan
+argues from the spec, so the spec travels with it; executors read both]
+
+## Global Constraints
+
+[The spec's project-wide requirements — version floors, dependency limits,
+naming and copy rules, platform requirements — one line each, with exact
+values copied verbatim from the spec. Every task's requirements implicitly
+include this section.]
+
+## Review Focus
+
+[The five input classes or failure modes the spec implies but no task's
+tests exercise that are most likely to bite a person using this software
+— one line each, naming the input or condition and the behavior a
+reasonable person would expect, most likely first. The spec is a vision
+document: it says what the software must do, not everything it will
+meet, and its silence on an input is not permission for that input to
+break the program. Write the list here, once, with the spec in front of
+you. Then, for each line, add the test that pins it to the task that
+owns the code, in that task's own step style.]
+
+---
+</code></pre>
+<h4>Task Structure</h4>
+<pre><code class="language-markdown">### Task N: [Component Name]
+
+**Files:**
+- Create: `exact/path/to/file.py`
+- Modify: `exact/path/to/existing.py:123-145`
+- Test: `tests/exact/path/to/test.py`
+
+**Interfaces:**
+- Consumes: [what this task uses from earlier tasks — exact signatures]
+- Produces: [what later tasks rely on — exact function names, parameter
+  and return types. A task's implementer sees only their own task; this
+  block is how they learn the names and types neighboring tasks use.]
+
+- [ ] **Step 1: Write the failing test**
+
+```python
+def test_specific_behavior():
+    result = function(input)
+    assert result == expected
+```
+
+- [ ] **Step 2: Run test to verify it fails**
+
+Run: `pytest tests/path/test.py::test_name -v`
+Expected: FAIL with &quot;function not defined&quot;
+
+- [ ] **Step 3: Implement `function(input: InputType) -&gt; ResultType` in `exact/path/to/file.py`**
+
+One line on the approach when the signature and the test leave a choice
+(which library call, which data structure); a code block only for an
+algorithm they do not determine.
+
+- [ ] **Step 4: Run test to verify it passes**
+
+Run: `pytest tests/path/test.py::test_name -v`
+Expected: PASS
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add tests/path/test.py src/path/file.py
+git commit -m &quot;feat: add specific feature&quot;
+```
+</code></pre>
+<h4>What a Step Contains</h4>
+<p>A step is done when the implementer can write exactly one reasonable thing
+from it. That is the whole requirement: unambiguous, not complete. Each kind
+of step carries what makes it unambiguous and nothing more:</p>
+<ul>
+<li><strong>A test step:</strong> the test's name and its assertions, as code, with the
+spec's exact values in them.</li>
+<li><strong>A code step:</strong> the exact signature (name, parameters, return type), the
+file it lives in, and the specific values the spec pins. The implementer
+writes the body. A body appears only for an algorithm the signature and
+tests do not determine, or for exact copy the spec fixes.</li>
+<li><strong>A verification step:</strong> the command to run and the output that means it
+passed.</li>
+<li><strong>A reference to another task:</strong> that task's Interfaces block says what
+to use; the plan does not repeat that task's code.</li>
+</ul>
+<p>A plan is the set of decisions the implementer cannot make alone. A plan
+longer than the code it describes has written the code instead. Lines that
+decide nothing (&quot;TBD&quot;, &quot;handle edge cases&quot;, &quot;add appropriate validation&quot;,
+&quot;write tests for the above&quot;, a type or function no task defines) are the
+opposite failure, and the self-review catches both.</p>
+<h4>Self-Review</h4>
+<p>After writing the complete plan, look at the spec with fresh eyes and check the plan against it. This is a checklist you run yourself — not a subagent dispatch.</p>
+<p><strong>1. Spec coverage:</strong> Skim each section/requirement in the spec. Can you point to a task that implements it? List any gaps.</p>
+<p><strong>2. Step scan:</strong> Every step must let the implementer write exactly one reasonable thing, and no step may carry more than that: a line that decides nothing is a gap, a function body the signature and tests already determine is a transcript. Fix both.</p>
+<p><strong>3. Type consistency:</strong> Do the types, method signatures, and property names you used in later tasks match what you defined in earlier tasks? A function called <code>clearLayers()</code> in Task 3 but <code>clearFullLayers()</code> in Task 7 is a bug.</p>
+<p><strong>4. Review Focus:</strong> For each input class or failure mode the spec implies, is there a task whose tests exercise it? The five uncovered ones most likely to bite a person go in the Review Focus section, and each line there gets its test added to the owning task. An empty section means you checked and found none, not that you skipped the check.</p>
+<p><strong>5. Proportion:</strong> Compare the plan's length to the spec's. A plan several times longer than the spec it implements is a transcript of the program, not a plan. If code blocks are most of the document, replace bodies with signatures, test names and assertions, and check that each step is still unambiguous.</p>
+<p>If you find issues, fix them inline. No need to re-review — just fix and move on. If you find a spec requirement with no task, add the task.</p>
+<h4>Execution Handoff</h4>
+<p>After saving and self-reviewing the plan, link it for your human partner
+to read. If they have already explicitly supplied an execution method, ask
+them to review the plan and confirm it captures what they want; wait for that
+review before implementation, then use the preserved method. Otherwise, ask
+them to review the plan and choose an execution method before implementation.</p>
+<p><strong>When no execution method has already been supplied:</strong></p>
+<p><strong>&quot;Plan complete and saved to <code>docs/superpowers/plans/&lt;filename&gt;.md</code>. Please review the plan. Which execution approach would you prefer?</strong></p>
+<ul>
+<li><strong>Subagent-driven</strong> - A fresh subagent implements each task and a fresh reviewer checks it before the next one starts, then a whole-branch review at the end. Most thorough; costs a fresh context per task and per review.</li>
+<li><strong>Native</strong> - I implement every task myself in this session, the way this harness runs work, then one fresh reviewer on the most capable model checks the whole branch. Cheapest and fastest; no independent review until the end. Runs well with a mid-tier session model, since the plan carries the design.</li>
+</ul>
+<p><strong>For this plan I recommend &lt;one of the two&gt;, because &lt;one sentence from the plan: how much the tasks depend on each other's interfaces, how many there are, what a shipped mistake would cost&gt;. Does the plan capture what you want, and which approach should we use?&quot;</strong></p>
+<p><strong>When an execution method has already been supplied:</strong></p>
+<p><strong>&quot;Plan complete and saved to <code>docs/superpowers/plans/&lt;filename&gt;.md</code>. Please review the plan. Does it capture what you want?&quot;</strong></p>
+<p><strong>If Subagent-driven chosen:</strong></p>
+<ul>
+<li><strong>REQUIRED SUB-SKILL:</strong> Use superpowers:subagent-driven-development</li>
+</ul>
+<p><strong>If Native chosen:</strong></p>
+<ul>
+<li><strong>REQUIRED SUB-SKILL:</strong> Use superpowers:executing-plans</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

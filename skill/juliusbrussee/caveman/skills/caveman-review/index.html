@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>caveman-review · Gem Skills</title>
+    <meta name="description" content="Use it when: you want code review comments short enough to paste straight into a pull request. It does: writes one line per finding: the line number, the problem and a concrete fix, optionally tagged as a bug, risk, nit or question. You get: comments ready to paste, like &quot;L42: 🔴 bug: user can be null after .find(). Add guard before .email.&quot;. Switches to prose: for security findings, design disagreements and authors new to the code who need the why. Won&#039;t: write the fix, approve the pull request or run linters." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">juliusbrussee/caveman</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a></p>
+      <h1>caveman-review</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want code review comments short enough to paste straight into a pull request</dd></div><div><dt>It does</dt><dd>writes one line per finding: the line number, the problem and a concrete fix, optionally tagged as a bug, risk, nit or question</dd></div><div><dt>You get</dt><dd>comments ready to paste, like &#34;L42: 🔴 bug: user can be null after .find(). Add guard before .email.&#34;</dd></div><div><dt>Switches to prose</dt><dd>for security findings, design disagreements and authors new to the code who need the why</dd></div><div><dt>Won&#39;t</dt><dd>write the fix, approve the pull request or run linters</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 3 of 12 in the <a href="/gemskills/bundle/juliusbrussee/caveman/">Caveman</a> bundle · Before it: <a href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-commit/">caveman-commit</a> · After it: <a href="/gemskills/skill/juliusbrussee/caveman/skills/caveman-compress/">caveman-compress</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Caveman is a skill set whose main mode makes the agent reply in short, plain fragments to save tokens. That mode keeps anything saved outside the chat, PR comments included, in normal prose; this skill makes review comments terse too. Each finding is one line, L&#60;line&#62;: &#60;problem&#62;. &#60;fix&#62;., with the file name added on diffs that span several files, and an optional severity: 🔴 bug for broken behavior, 🟡 risk for fragile code such as a race or a swallowed error, 🔵 nit for style the author can ignore, ❓ q for a genuine question. It drops openers like &#34;I noticed that&#34;, hedging, praise on every comment and descriptions of what the line already does. It keeps exact line numbers, function and variable names in backticks, and a concrete fix rather than &#34;consider refactoring&#34;. Security issues, architectural disagreements and reviews for newcomers get a normal paragraph, then the terse lines resume. It stays in this style until you say &#34;stop caveman-review&#34; or &#34;normal mode&#34;.</p>
+      <p class="muted">Summarizes <a href="https://github.com/juliusbrussee/caveman/tree/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman-review">the skill at bad48a0</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/juliusbrussee/caveman --skill caveman-review</code><button type="button" class="copy" data-copy="npx skills add https://github.com/juliusbrussee/caveman --skill caveman-review">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/juliusbrussee/caveman/caveman-review">skills.sh page</a> · <a href="https://github.com/juliusbrussee/caveman/tree/HEAD/skills/caveman-review">Source on GitHub</a> · <a href="/gemskills/?repo=juliusbrussee%2Fcaveman">All skills from juliusbrussee/caveman</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>365,862 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>106,976 <span class="muted">juliusbrussee/caveman</span></dd></div><div><dt>First seen</dt><dd>Apr 8, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">14.2K</div>
+      <div class="stat-delta">-7% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 15,187; week to Aug 10: 15,505; week to Aug 17: 10,403; week to Aug 24: 9,723; week to Aug 31: 9,947; week to Sep 7: 12,349; week to Sep 14: 13,445; week to Sep 21: 14,195. Use the left and right arrow keys to read each week."
+        data-values="15187,15505,10403,9723,9947,12349,13445,14195" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.9 38.6,6.0 71.1,20.5 103.7,22.4 136.3,21.8 168.9,15.0 201.4,11.8 234.0,9.7" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="9.7" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>15,187</td></tr><tr><td>Aug 10</td><td>15,505</td></tr><tr><td>Aug 17</td><td>10,403</td></tr><tr><td>Aug 24</td><td>9,723</td></tr><tr><td>Aug 31</td><td>9,947</td></tr><tr><td>Sep 7</td><td>12,349</td></tr><tr><td>Sep 14</td><td>13,445</td></tr><tr><td>Sep 21</td><td>14,195</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:debugging" data-facet="category" title="Find root causes, review code and test what you built." href="/gemskills/?tag=category%3Adebugging">category:debugging</a><a class="tag" data-tag="category:output-style" data-facet="category" title="Change how the agent replies: shorter, clearer, fewer tokens." href="/gemskills/?tag=category%3Aoutput-style">category:output-style</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find root causes, review code and test what you built.</p><p class="tag-meaning">Change how the agent replies: shorter, clearer, fewer tokens.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:guidelines" data-facet="type" title="Knowledge and rules the agent applies while it works: best practices, design principles, API references." href="/gemskills/?tag=type%3Aguidelines">type:guidelines</a></div>
+          <p class="tag-meaning">Knowledge and rules the agent applies while it works: best practices, design principles, API references.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="code-review" data-facet="topic" href="/gemskills/?tag=code-review">code-review</a><a class="tag" data-tag="output-style" data-facet="topic" href="/gemskills/?tag=output-style">output-style</a><a class="tag" data-tag="token-saving" data-facet="topic" href="/gemskills/?tag=token-saving">token-saving</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/juliusbrussee/caveman/blob/bad48a0e1df55e05e3f52249afa35ecc1909ee76/skills/caveman-review/SKILL.md">juliusbrussee/caveman at bad48a0</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: caveman-review
+description: &#62;
+  Compressed code review - one line per finding with location, problem and fix.
+  Use for /caveman-review, &#34;review this PR&#34;, or &#34;review the diff&#34;.</code></pre></details>
+        <div class="markdown"><p>Write code review comments terse and actionable. One line per finding. Location, problem, fix. No throat-clearing.</p>
+<h4>Rules</h4>
+<p><strong>Format:</strong> <code>L&lt;line&gt;: &lt;problem&gt;. &lt;fix&gt;.</code> — or <code>&lt;file&gt;:L&lt;line&gt;: ...</code> when reviewing multi-file diffs.</p>
+<p><strong>Severity prefix (optional, when mixed):</strong></p>
+<ul>
+<li><code>🔴 bug:</code> — broken behavior, will cause incident</li>
+<li><code>🟡 risk:</code> — works but fragile (race, missing null check, swallowed error)</li>
+<li><code>🔵 nit:</code> — style, naming, micro-optim. Author can ignore</li>
+<li><code>❓ q:</code> — genuine question, not a suggestion</li>
+</ul>
+<p><strong>Drop:</strong></p>
+<ul>
+<li>&quot;I noticed that...&quot;, &quot;It seems like...&quot;, &quot;You might want to consider...&quot;</li>
+<li>&quot;This is just a suggestion but...&quot; — use <code>nit:</code> instead</li>
+<li>&quot;Great work!&quot;, &quot;Looks good overall but...&quot; — say it once at the top, not per comment</li>
+<li>Restating what the line does — the reviewer can read the diff</li>
+<li>Hedging (&quot;perhaps&quot;, &quot;maybe&quot;, &quot;I think&quot;) — if unsure use <code>q:</code></li>
+</ul>
+<p><strong>Keep:</strong></p>
+<ul>
+<li>Exact line numbers</li>
+<li>Exact symbol/function/variable names in backticks</li>
+<li>Concrete fix, not &quot;consider refactoring this&quot;</li>
+<li>The <em>why</em> if the fix isn't obvious from the problem statement</li>
+</ul>
+<h4>Examples</h4>
+<p>❌ &quot;I noticed that on line 42 you're not checking if the user object is null before accessing the email property. This could potentially cause a crash if the user is not found in the database. You might want to add a null check here.&quot;</p>
+<p>✅ <code>L42: 🔴 bug: user can be null after .find(). Add guard before .email.</code></p>
+<p>❌ &quot;It looks like this function is doing a lot of things and might benefit from being broken up into smaller functions for readability.&quot;</p>
+<p>✅ <code>L88-140: 🔵 nit: 50-line fn does 4 things. Extract validate/normalize/persist.</code></p>
+<p>❌ &quot;Have you considered what happens if the API returns a 429? I think we should probably handle that case.&quot;</p>
+<p>✅ <code>L23: 🟡 risk: no retry on 429. Wrap in withBackoff(3).</code></p>
+<h4>Auto-Clarity</h4>
+<p>Drop terse mode for: security findings (CVE-class bugs need full explanation + reference), architectural disagreements (need rationale, not just a one-liner), and onboarding contexts where the author is new and needs the &quot;why&quot;. In those cases write a normal paragraph, then resume terse for the rest.</p>
+<h4>Boundaries</h4>
+<p>Reviews only — does not write the code fix, does not approve/request-changes, does not run linters. Output the comment(s) ready to paste into the PR. &quot;stop caveman-review&quot; or &quot;normal mode&quot;: revert to verbose review style.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

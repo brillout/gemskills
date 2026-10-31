@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to-tickets · Gem Skills</title>
+    <meta name="description" content="Use it when: you have a plan or spec and want it split into tickets agents can build one at a time. It does: slices the work into thin end-to-end tickets, each naming the tickets that must finish first, and checks the split with you. You get: tickets on your tracker linked by &quot;blocked by&quot; relations, or one Markdown file per ticket in the repo. Needs: an issue tracker set up by setup-matt-pocock-skills. Runs: only when you call it." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>to-tickets</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you have a plan or spec and want it split into tickets agents can build one at a time</dd></div><div><dt>It does</dt><dd>slices the work into thin end-to-end tickets, each naming the tickets that must finish first, and checks the split with you</dd></div><div><dt>You get</dt><dd>tickets on your tracker linked by &#34;blocked by&#34; relations, or one Markdown file per ticket in the repo</dd></div><div><dt>Needs</dt><dd>an issue tracker set up by setup-matt-pocock-skills</dd></div><div><dt>Runs</dt><dd>only when you call it</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 12 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/to-spec/">to-spec</a> · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/triage/">triage</a></p>
+    <p class="note">Only works inside its bundle: Publishes to the issue tracker, with the ready-for-agent label, that setup-matt-pocock-skills configures. Install <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It usually takes a spec from to-spec, which describes the whole feature, and cuts it into pieces. Each ticket is a tracer bullet: a narrow but complete path through every layer (schema, API, UI, tests) that works and can be checked on its own, and fits in one agent session started from scratch. Building one layer at a time is ruled out, and any refactoring that eases the work comes first. A wide refactor, such as renaming a column used everywhere, is split differently: add the new form beside the old, move callers over in batches, then delete the old form, so CI stays green throughout. Before publishing, it shows you the numbered list, with what each ticket delivers and what blocks it, and revises until you approve. Tickets go out blockers first, labelled ready-for-agent, with acceptance criteria and no file paths; on a local tracker they&#39;re numbered files under .scratch/. An agent can then take any ticket whose blockers are done.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/to-tickets">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill to-tickets</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill to-tickets">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/to-tickets">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/to-tickets">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>528,635 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Jul 2, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">39.3K</div>
+      <div class="stat-delta">-18% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 47,726; week to Aug 10: 57,752; week to Aug 17: 47,951; week to Aug 24: 53,136; week to Aug 31: 48,625; week to Sep 7: 46,658; week to Sep 14: 42,170; week to Sep 21: 39,283. Use the left and right arrow keys to read each week."
+        data-values="47726,57752,47951,53136,48625,46658,42170,39283" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,13.6 38.6,6.0 71.1,13.5 103.7,9.5 136.3,13.0 168.9,14.5 201.4,17.9 234.0,20.1" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="20.1" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>47,726</td></tr><tr><td>Aug 10</td><td>57,752</td></tr><tr><td>Aug 17</td><td>47,951</td></tr><tr><td>Aug 24</td><td>53,136</td></tr><tr><td>Aug 31</td><td>48,625</td></tr><tr><td>Sep 7</td><td>46,658</td></tr><tr><td>Sep 14</td><td>42,170</td></tr><tr><td>Sep 21</td><td>39,283</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:planning" data-facet="category" title="Make the agent question you and write the plan down before it writes code." href="/gemskills/?tag=category%3Aplanning">category:planning</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Make the agent question you and write the plan down before it writes code.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:command" data-facet="type" title="A one-shot action you invoke by name, such as turning the conversation into a PRD." href="/gemskills/?tag=type%3Acommand">type:command</a></div>
+          <p class="tag-meaning">A one-shot action you invoke by name, such as turning the conversation into a PRD.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:remote" data-facet="effect" title="Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service." href="/gemskills/?tag=effect%3Aremote">effect:remote</a></div>
+          <p class="tag-meaning">Its own steps change something outside your machine: post, send, deploy, provision, file issues, drive a website, or upload data to a service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:issue-tracker" data-facet="needs" title="Reads or writes an issue tracker, GitHub Issues by default." href="/gemskills/?tag=needs%3Aissue-tracker">needs:issue-tracker</a></div>
+          <p class="tag-meaning">Reads or writes an issue tracker, GitHub Issues by default.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="planning" data-facet="topic" href="/gemskills/?tag=planning">planning</a><a class="tag" data-tag="issue-tracking" data-facet="topic" href="/gemskills/?tag=issue-tracking">issue-tracking</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/to-tickets/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: to-tickets
+description: Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><h3>To Tickets</h3>
+<p>Break a plan, spec, or conversation into a set of <strong>tickets</strong>: tracer-bullet vertical slices, each declaring the tickets that <strong>block</strong> it.</p>
+<p>The issue tracker and triage label vocabulary should have been provided to you. If not, tell the user to run <code>/setup-matt-pocock-skills</code>.</p>
+<h4>Process</h4>
+<h5>1. Gather context</h5>
+<p>Work from whatever is already in the conversation context. If the user passes a reference (a spec path, an issue number or URL) as an argument, fetch it and read its full body and comments.</p>
+<h5>2. Explore the codebase (optional)</h5>
+<p>If you have not already explored the codebase, do so to understand the current state of the code. Ticket titles and descriptions should use the project's domain glossary vocabulary, and respect ADRs in the area you're touching.</p>
+<p>Look for opportunities to prefactor the code to make the implementation easier. &quot;Make the change easy, then make the easy change.&quot;</p>
+<h5>3. Draft vertical slices</h5>
+<p>Break the work into <strong>tracer bullet</strong> tickets.</p>
+<p>&lt;vertical-slice-rules&gt;</p>
+<ul>
+<li>Each slice cuts a narrow but COMPLETE path through every layer (schema, API, UI, tests): vertical, NOT a horizontal slice of one layer</li>
+<li>A completed slice is demoable or verifiable on its own</li>
+<li>Each slice is sized to fit in a single fresh context window</li>
+<li>Any prefactoring should be done first</li>
+</ul>
+<p>&lt;/vertical-slice-rules&gt;</p>
+<p>Give each ticket its <strong>blocking edges</strong>: the other tickets that must complete before it can start. A ticket with no blockers can start immediately.</p>
+<p><strong>Wide refactors are the exception to vertical slicing.</strong> A <strong>wide refactor</strong> is one mechanical change (rename a column, retype a shared symbol) whose <strong>blast radius</strong> fans across the whole codebase, so a single edit breaks thousands of call sites at once and no vertical slice can land green. Don't force it into a tracer bullet; sequence it as <strong>expand–contract</strong>. First expand: add the new form beside the old so nothing breaks. Then migrate the call sites over in batches sized by blast radius (per package, per directory), each batch its own ticket blocked by the expand, keeping CI green batch to batch because the old form still exists. Finally contract: delete the old form once no caller remains, in a ticket blocked by every migrate batch. When even the batches can't stay green alone, keep the sequence but let them share an integration branch that all block a final integrate-and-verify ticket; green is promised only there.</p>
+<h5>4. Quiz the user</h5>
+<p>Present the proposed breakdown as a numbered list. For each ticket, show:</p>
+<ul>
+<li><strong>Title</strong>: short descriptive name</li>
+<li><strong>Blocked by</strong>: which other tickets (if any) must complete first</li>
+<li><strong>What it delivers</strong>: the end-to-end behaviour this ticket makes work</li>
+</ul>
+<p>Ask the user:</p>
+<ul>
+<li>Does the granularity feel right? (too coarse / too fine)</li>
+<li>Are the blocking edges correct: does each ticket only depend on tickets that genuinely gate it?</li>
+<li>Should any tickets be merged or split further?</li>
+</ul>
+<p>Iterate until the user approves the breakdown.</p>
+<h5>5. Publish the tickets to the configured tracker</h5>
+<p>Publish the approved tickets. <strong>How</strong> depends on the tracker <code>/setup-matt-pocock-skills</code> configured; the tickets are the same either way, only the shape of the blocking edges changes:</p>
+<ul>
+<li><strong>Local files</strong> → write one file per ticket under <code>.scratch/&lt;feature-slug&gt;/issues/&lt;NN&gt;-&lt;slug&gt;.md</code>, numbered from <code>01</code> in dependency order (blockers first). Each file's &quot;Blocked by&quot; lists the numbers/titles it depends on. Use the per-ticket file template below: one ticket per file, never a single combined file.</li>
+<li><strong>A real issue tracker (GitHub, Linear, …)</strong> → publish one issue per ticket in dependency order (blockers first) so each ticket's blocking edges can reference real identifiers. Use the platform's native blocking relationship where it has one; otherwise set each ticket's &quot;Blocked by&quot; to the blocking issues. If the source was an existing issue, make each ticket its sub-issue (tracker doc's operation). Apply the <code>ready-for-agent</code> triage label unless instructed otherwise; the tickets are agent-grabbable by construction.</li>
+</ul>
+<p>Work the <strong>frontier</strong>: any ticket whose blockers are all done. For a purely linear chain that means top to bottom.</p>
+<p>Do NOT close or modify any parent issue.</p>
+<p>&lt;local-ticket-template&gt;</p>
+<h3>&lt;NN&gt;: &lt;Ticket title&gt;</h3>
+<p><strong>What to build:</strong> the end-to-end behaviour this ticket makes work, from the user's perspective, not a layer-by-layer implementation list.</p>
+<p><strong>Blocked by:</strong> the numbers/titles of the tickets that gate this one, or &quot;None (can start immediately)&quot;.</p>
+<p><strong>Status:</strong> ready-for-agent</p>
+<ul>
+<li>[ ] Acceptance criterion 1</li>
+<li>[ ] Acceptance criterion 2</li>
+</ul>
+<p>&lt;/local-ticket-template&gt;</p>
+<p>&lt;issue-template&gt;</p>
+<h4>Parent</h4>
+<p>A reference to the parent issue on the tracker (if the source was an existing issue, otherwise omit this section).</p>
+<h4>What to build</h4>
+<p>The end-to-end behaviour this ticket makes work, from the user's perspective, not layer-by-layer implementation.</p>
+<h4>Acceptance criteria</h4>
+<ul>
+<li>[ ] Criterion 1</li>
+<li>[ ] Criterion 2</li>
+</ul>
+<h4>Blocked by</h4>
+<ul>
+<li>A reference to each blocking ticket, or &quot;None (can start immediately)&quot;. Omit this section when blockers were set as native edges.</li>
+</ul>
+<p>&lt;/issue-template&gt;</p>
+<p>In either form, avoid specific file paths or code snippets: they go stale fast. Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it and note briefly that it came from a prototype. Trim to the decision-rich parts, not a working demo, just the important bits.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

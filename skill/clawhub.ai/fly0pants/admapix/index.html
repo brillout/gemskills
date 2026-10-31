@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>admapix · Gem Skills</title>
+    <meta name="description" content="Use it when: you research app advertising: competitors&#039; ad creatives, app-store rankings, download and revenue estimates, market data. It does: calls the AdMapix API with curl and returns its raw JSON. Needs: an AdMapix account and its API key in ADMAPIX_API_KEY. Won&#039;t: summarize, rank or build pages itself: the agent analyzes the data afterwards, and only if you ask. Languages: Chinese and English; setup help comes in the language you write in." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=clawhub.ai%2Ffly0pants">clawhub.ai/fly0pants</a></p>
+      <h1>admapix</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you research app advertising: competitors&#39; ad creatives, app-store rankings, download and revenue estimates, market data</dd></div><div><dt>It does</dt><dd>calls the AdMapix API with curl and returns its raw JSON</dd></div><div><dt>Needs</dt><dd>an AdMapix account and its API key in ADMAPIX_API_KEY</dd></div><div><dt>Won&#39;t</dt><dd>summarize, rank or build pages itself: the agent analyzes the data afterwards, and only if you ask</dd></div><div><dt>Languages</dt><dd>Chinese and English; setup help comes in the language you write in</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>AdMapix is an ad-intelligence service for apps; this skill is a thin client for its read API. The agent picks from over 30 endpoints: search and count ad creatives by keyword, country, channel or format; look up an app, its developer, similar apps and the SDKs it uses; pull app-store rankings (free, paid, grossing); get download and revenue estimates by date or country; and query market-level totals. It reads an endpoint&#39;s reference file before its first call, and turns plain requests (video ads, the games industry, last 30 days) into the request codes AdMapix expects. Responses come back untouched, field names and all, and download and revenue figures must be presented as third-party estimates. If the key is missing it makes no call: it shows how to sign up and set the key, and never accepts the key in chat. When AdMapix&#39;s MCP tool is installed, it searches creatives through that instead of curl.</p>
+      <p class="muted">Summarizes <a href="https://github.com/brillout/gemskills/blob/aca4fea96aada6bf2117708ec6537d44df7d91e0/data/skill-snapshots/clawhub.ai/fly0pants/admapix.md">the skill at aca4fea</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>openclaw skills install @fly0pants/admapix</code><button type="button" class="copy" data-copy="openclaw skills install @fly0pants/admapix">Copy</button></div>
+          <p class="links"><a href="https://clawhub.ai/fly0pants/skills/admapix">ClawHub page</a> · <a href="/gemskills/?repo=clawhub.ai%2Ffly0pants">All skills from clawhub.ai/fly0pants</a></p>
+          <dl class="facts"><div><dt>Downloads</dt><dd>133,509 <span class="muted">on ClawHub, Sep 21, 2026</span></dd></div><div><dt>Downloads</dt><dd>313,925 <span class="muted">on Tencent SkillHub, Sep 21, 2026</span></dd></div></dl>
+        </div>
+        
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:marketing" data-facet="category" title="SEO, copy, conversion, social media and e-commerce." href="/gemskills/?tag=category%3Amarketing">category:marketing</a></div>
+          <p class="tag-meaning">SEO, copy, conversion, social media and e-commerce.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="marketing" data-facet="topic" href="/gemskills/?tag=marketing">marketing</a><a class="tag" data-tag="research" data-facet="topic" href="/gemskills/?tag=research">research</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:admapix" data-facet="stack" href="/gemskills/?tag=stack%3Aadmapix">stack:admapix</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://clawhub.ai/fly0pants/skills/admapix">ClawHub</a>, version 1.0.30. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: admapix
+description: &#34;AdMapix raw data layer for ad creatives, apps, rankings, downloads/revenue, and market metadata. Returns structured JSON from the AdMapix API; the calling agent composes and analyzes. Use for 搜广告, 找素材, 广告素材, 竞品分析, 排行榜, 下载量, 收入, 市场分析, App数据, ad creative, search ads, app intelligence, rankings, downloads, revenue, market data.&#34;
+metadata: {&#34;openclaw&#34;:{&#34;primaryEnv&#34;:&#34;ADMAPIX_API_KEY&#34;}}</code></pre></details>
+        <div class="markdown"><h3>AdMapix Data Layer</h3>
+<p>A thin client over the AdMapix read API. It fetches <strong>raw structured data</strong> and returns it as JSON. It does <strong>not</strong> analyze, summarize, rank, generate pages, or run autonomous research — the calling agent (e.g. Claude Code, Codex) decides which endpoints to call, composes multi-call workflows from the metadata, and does any analysis itself.</p>
+<p><strong>Out of scope</strong> (never done inside this skill): HTML/H5 page generation, hosted &quot;deep research&quot;, autonomous multi-step research, summaries, insights, recommendations, dashboards, message-send.</p>
+<h4>Auth</h4>
+<p>Use <code>ADMAPIX_API_KEY</code> as the <code>X-API-Key</code> header. Never print or expose the key.</p>
+<pre><code class="language-bash">admapix_auth_header=&quot;X-API-Key: ${ADMAPIX_API_KEY}&quot;
+# GET
+curl -s &quot;https://api.admapix.com/api/data/{endpoint}?{params}&quot; -H &quot;$admapix_auth_header&quot;
+# POST
+curl -s -X POST &quot;https://api.admapix.com/api/data/{endpoint}&quot; \
+  -H &quot;$admapix_auth_header&quot; -H &quot;Content-Type: application/json&quot; -d '{...}'
+</code></pre>
+<p>For creative search, prefer the <code>admapix.search_creatives</code> MCP tool when available; otherwise call <code>POST /api/data/search</code> directly.</p>
+<h5>Step 1 — Check the key</h5>
+<p>Before any API call, verify the key is configured (without printing its value):</p>
+<pre><code class="language-bash">[ -n &quot;${ADMAPIX_API_KEY:-}&quot; ] &amp;&amp; echo ok || echo missing
+</code></pre>
+<h5>Step 2 — If missing, show the setup guide</h5>
+<p>If the key is missing (and no MCP tool is available), do <strong>not</strong> call the API. Show the user how to get and configure a key — in their language — then ask them to retry. Detect language from the user's message.</p>
+<p><strong>中文用户：</strong></p>
+<blockquote>
+<p>🔑 需要先配置 AdMapix API Key 才能使用：</p>
+<ol>
+<li>打开 <a href="https://www.admapix.com">https://www.admapix.com</a> 注册账号</li>
+<li>登录后在控制台找到 <strong>API Keys</strong>，创建一个 Key</li>
+<li>选择一种方式配置：
+<ul>
+<li><strong>OpenClaw / ClawHub</strong>：在终端运行 <code>openclaw config set skills.entries.admapix.apiKey &quot;你的_API_KEY&quot;</code></li>
+<li><strong>通用环境变量</strong>：在终端运行 <code>export ADMAPIX_API_KEY=&quot;你的_API_KEY&quot;</code></li>
+</ul>
+</li>
+<li>配置完成后重新发起查询 ✅</li>
+</ol>
+</blockquote>
+<p><strong>English users:</strong></p>
+<blockquote>
+<p>🔑 You need an AdMapix API Key to get started:</p>
+<ol>
+<li>Sign up at <a href="https://www.admapix.com">https://www.admapix.com</a></li>
+<li>After signing in, open <strong>API Keys</strong> in your dashboard and create one</li>
+<li>Configure it one of these ways:
+<ul>
+<li><strong>OpenClaw / ClawHub</strong>: run <code>openclaw config set skills.entries.admapix.apiKey &quot;YOUR_API_KEY&quot;</code> in your terminal</li>
+<li><strong>Generic env var</strong>: run <code>export ADMAPIX_API_KEY=&quot;YOUR_API_KEY&quot;</code> in your terminal</li>
+</ul>
+</li>
+<li>Re-run your query after setup ✅</li>
+</ol>
+</blockquote>
+<p>If the host provides a secure secret/config command, point the user to that instead. Never accept, echo, or store the key from chat — keep it out of responses, logs, and links. For programmatic callers, also return the <code>missing_api_key</code> error (see Error Handling).</p>
+<h4>Endpoint Catalog</h4>
+<p>Each endpoint is a raw data source. <strong>Read the listed reference file before using an endpoint you have not called yet</strong> — it carries the exact params and response fields. Compose multiple calls as needed; the skill itself stays single-call-per-request and returns raw JSON.</p>
+<h5>Creatives / ads — <code>references/api-creative.md</code></h5>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/data/search</code></td>
+<td>POST</td>
+<td>Search ad creatives</td>
+</tr>
+<tr>
+<td><code>/api/data/count</code></td>
+<td>POST</td>
+<td>Count creatives for a query</td>
+</tr>
+<tr>
+<td><code>/api/data/count-all</code></td>
+<td>POST</td>
+<td>Counts broken down by dimension</td>
+</tr>
+<tr>
+<td><code>/api/data/distribute</code></td>
+<td>POST</td>
+<td>Creative distribution breakdown</td>
+</tr>
+<tr>
+<td><code>/api/data/distribute-dims</code></td>
+<td>GET</td>
+<td>Available distribute dimensions</td>
+</tr>
+<tr>
+<td><code>/api/data/content-detail</code></td>
+<td>GET</td>
+<td>Single creative detail (`related=imagevideo</td>
+</tr>
+<tr>
+<td><code>/api/data/item-apps</code></td>
+<td>POST</td>
+<td>Apps associated with a creative</td>
+</tr>
+<tr>
+<td><code>/api/data/screen-types</code></td>
+<td>GET</td>
+<td>Screen / element type codes</td>
+</tr>
+<tr>
+<td><code>/api/data/page-config</code></td>
+<td>GET</td>
+<td>Search page config</td>
+</tr>
+</tbody>
+</table>
+<h5>Metadata / filters — <code>references/api-creative.md</code> + <code>references/param-mappings.md</code></h5>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/data/filter-options</code></td>
+<td>GET</td>
+<td><strong>All filter metadata</strong>: <code>countries</code>, <code>mediaChannels</code>, <code>adTypes</code>, <code>device</code>, <code>tradeLevel(Tree)</code>, <code>productModel</code>, etc. Pull this to discover valid codes for any filter.</td>
+</tr>
+</tbody>
+</table>
+<h5>Apps / products / companies — <code>references/api-product.md</code></h5>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/data/unified-product-search</code></td>
+<td>POST</td>
+<td>Unified app/product search</td>
+</tr>
+<tr>
+<td><code>/api/data/product-search</code></td>
+<td>POST</td>
+<td>Product search</td>
+</tr>
+<tr>
+<td><code>/api/data/company-search</code></td>
+<td>POST</td>
+<td>Developer / company search</td>
+</tr>
+<tr>
+<td><code>/api/data/app-detail</code></td>
+<td>GET</td>
+<td>App detail by <code>unifiedProductId</code></td>
+</tr>
+<tr>
+<td><code>/api/data/developer-detail</code></td>
+<td>GET</td>
+<td>Developer detail</td>
+</tr>
+<tr>
+<td><code>/api/data/app-profile</code></td>
+<td>GET</td>
+<td>App profile</td>
+</tr>
+<tr>
+<td><code>/api/data/similar-apps</code></td>
+<td>POST</td>
+<td>Similar apps</td>
+</tr>
+<tr>
+<td><code>/api/data/sdk-detail</code></td>
+<td>GET</td>
+<td>SDKs used by a package</td>
+</tr>
+<tr>
+<td><code>/api/data/product-content-search</code></td>
+<td>POST</td>
+<td>Creatives for a product</td>
+</tr>
+<tr>
+<td><code>/api/data/product-content-counts</code></td>
+<td>POST</td>
+<td>Creative counts for a product</td>
+</tr>
+<tr>
+<td><code>/api/data/product-list</code>, <code>/for-product-list</code>, <code>/product-agg-list</code></td>
+<td>POST</td>
+<td>Product lists / aggregations</td>
+</tr>
+</tbody>
+</table>
+<h5>Rankings — <code>references/api-ranking.md</code></h5>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/data/store-rank</code></td>
+<td>POST</td>
+<td>App-store rankings (free / paid / grossing)</td>
+</tr>
+<tr>
+<td><code>/api/data/generic-rank</code></td>
+<td>POST</td>
+<td>Generic ranking lists</td>
+</tr>
+<tr>
+<td><code>/api/data/store-categories</code></td>
+<td>GET</td>
+<td>Store category codes</td>
+</tr>
+<tr>
+<td><code>/api/data/store-countries</code></td>
+<td>GET</td>
+<td>Store country codes</td>
+</tr>
+</tbody>
+</table>
+<h5>Downloads &amp; revenue (third-party estimates) — <code>references/api-download-revenue.md</code></h5>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/data/download-date</code>, <code>download-detail</code>, <code>download-country</code></td>
+<td>GET/POST</td>
+<td>Download estimates by date / detail / country</td>
+</tr>
+<tr>
+<td><code>/api/data/revenue-date</code>, <code>revenue-detail</code>, <code>revenue-country</code></td>
+<td>GET/POST</td>
+<td>Revenue estimates by date / detail / country</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ Download/revenue figures are third-party <strong>estimates</strong>, not official data. Return the raw numbers as-is; the calling agent must note they are estimates when presenting.</p>
+</blockquote>
+<h5>Distribution — <code>references/api-distribution.md</code></h5>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/data/app-distribution</code></td>
+<td>POST</td>
+<td>App-level distribution</td>
+</tr>
+<tr>
+<td><code>/api/data/global-promote</code></td>
+<td>POST</td>
+<td>Global promotion data</td>
+</tr>
+</tbody>
+</table>
+<h5>Market — <code>references/api-market.md</code></h5>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/data/market-search</code></td>
+<td>POST</td>
+<td>Market-level search / aggregation</td>
+</tr>
+</tbody>
+</table>
+<h4>Parameter Mapping</h4>
+<p>Read <code>references/param-mappings.md</code> to translate natural language into codes:</p>
+<ul>
+<li>creative type (<code>010</code>=video, etc.), industry (<code>trade_level1</code>: <code>602</code>=Game, <code>607</code>=Finance…), country / region groups, relative date ranges, sorting, page size.</li>
+<li>For codes not in param-mappings (sub-industries, media channels, devices, store categories…), pull <code>GET /api/data/filter-options</code> or the endpoint-specific dimension call (e.g. <code>store-categories</code>).</li>
+</ul>
+<p>For the creative <code>search</code> endpoint, <code>page_size</code> is capped at <strong>10</strong> (clamp any larger request down to 10; use <code>page</code> for more). Other list endpoints use their own documented ranges.</p>
+<h4>Output Rules</h4>
+<p>Return the API response as <strong>raw structured JSON</strong> — keep the API field names; do not rename, drop, summarize, rank, or editorialize. The calling agent composes and analyzes.</p>
+<ul>
+<li>Response shapes vary by endpoint. Creative search via direct API returns <code>pageIndex</code> / <code>pageSize</code> / <code>totalSize</code> / <code>list</code>; the MCP tool additionally wraps it with <code>request</code> / <code>page</code> / <code>page_size</code>. <code>totalSize</code> may be <code>null</code> on filtered queries — use the length of <code>list</code>.</li>
+<li>An empty <code>list</code> is a valid result (no matches), not an error.</li>
+<li>Pass through extra fields (e.g. <code>gptCorrect</code> spelling suggestions) unchanged; do not silently swap a keyword.</li>
+</ul>
+<p>Do not: generate H5 / landing / card / dashboard pages, hide records behind links, run hosted &quot;deep research&quot; or autonomous multi-step research, or produce analysis / recommendations unless the user explicitly asks after receiving the data.</p>
+<h4>Error Handling</h4>
+<p><strong>Agent-level</strong> (no request was made — no MCP tool and <code>ADMAPIX_API_KEY</code> is missing):</p>
+<pre><code class="language-json">{ &quot;error&quot;: { &quot;code&quot;: &quot;missing_api_key&quot;, &quot;message&quot;: &quot;Missing ADMAPIX_API_KEY environment variable&quot;, &quot;retry&quot;: false } }
+</code></pre>
+<p><strong>API-level</strong> (the call returned a non-2xx status). The API responds with <code>{ &quot;detail&quot;: &quot;...&quot;, &quot;code&quot;: &quot;...&quot; }</code>; surface it plus the HTTP status, and never print the key. HTTP 401 with <code>INVALID_API_KEY</code> / <code>NOT_AUTHENTICATED</code> means the key is missing, malformed, or disabled — do not retry:</p>
+<pre><code class="language-json">{ &quot;error&quot;: { &quot;code&quot;: &quot;invalid_api_key&quot;, &quot;http_status&quot;: 401, &quot;message&quot;: &quot;Invalid API key format&quot;, &quot;retry&quot;: false } }
+</code></pre>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

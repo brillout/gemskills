@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>using-git-worktrees · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re starting feature work or about to run a plan, and want your current branch left untouched. It does: sets up a git worktree, a second checkout of the repo on its own branch, after asking you. You get: that separate checkout, with dependencies installed and the tests passing as a baseline. Prefers: your coding agent&#039;s built-in worktree tool, when it has one, over running git worktree add itself." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=obra%2Fsuperpowers">obra/superpowers</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a></p>
+      <h1>using-git-worktrees</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re starting feature work or about to run a plan, and want your current branch left untouched</dd></div><div><dt>It does</dt><dd>sets up a git worktree, a second checkout of the repo on its own branch, after asking you</dd></div><div><dt>You get</dt><dd>that separate checkout, with dependencies installed and the tests passing as a baseline</dd></div><div><dt>Prefers</dt><dd>your coding agent&#39;s built-in worktree tool, when it has one, over running git worktree add itself</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 3 of 14 in the <a href="/gemskills/bundle/obra/superpowers/">Superpowers</a> bundle · Before it: <a href="/gemskills/skill/obra/superpowers/skills/brainstorming/">brainstorming</a> · After it: <a href="/gemskills/skill/obra/superpowers/skills/writing-plans/">writing-plans</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Work in a worktree can&#39;t disturb the branch you&#39;re on. The agent first checks whether it&#39;s already in one, and if so uses it as is. Otherwise it asks whether you want one, unless your instructions already say. It uses your coding agent&#39;s own worktree tool when there is one, since the tool can&#39;t track a worktree made by hand. Failing that, it creates one under .worktrees/ at the project root (or worktrees/, or wherever your instructions say), after checking that the folder is git-ignored and committing a .gitignore change if not. If a sandbox blocks it, it says so and works in your current checkout. It then installs dependencies for Node, Rust, Python or Go and runs the tests; if they fail, it reports and asks before going on. Its counterpart, finishing-a-development-branch, merges or opens a PR at the end and removes the worktree.</p>
+      <p class="muted">Summarizes <a href="https://github.com/obra/superpowers/tree/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/using-git-worktrees">the skill at bb92a77</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/obra/superpowers --skill using-git-worktrees</code><button type="button" class="copy" data-copy="npx skills add https://github.com/obra/superpowers --skill using-git-worktrees">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/obra/superpowers/using-git-worktrees">skills.sh page</a> · <a href="https://github.com/obra/superpowers/tree/HEAD/skills/using-git-worktrees">Source on GitHub</a> · <a href="/gemskills/?repo=obra%2Fsuperpowers">All skills from obra/superpowers</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>195,200 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>289,267 <span class="muted">obra/superpowers</span></dd></div><div><dt>First seen</dt><dd>Jan 19, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">5.8K</div>
+      <div class="stat-delta">-11% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 6,559; week to Aug 10: 6,198; week to Aug 17: 5,810; week to Aug 24: 6,949; week to Aug 31: 5,623; week to Sep 7: 5,861; week to Sep 14: 5,837; week to Sep 21: 5,842. Use the left and right arrow keys to read each week."
+        data-values="6559,6198,5810,6949,5623,5861,5837,5842" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,8.5 38.6,10.8 71.1,13.2 103.7,6.0 136.3,14.4 168.9,12.9 201.4,13.0 234.0,13.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="13.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>6,559</td></tr><tr><td>Aug 10</td><td>6,198</td></tr><tr><td>Aug 17</td><td>5,810</td></tr><tr><td>Aug 24</td><td>6,949</td></tr><tr><td>Aug 31</td><td>5,623</td></tr><tr><td>Sep 7</td><td>5,861</td></tr><tr><td>Sep 14</td><td>5,837</td></tr><tr><td>Sep 21</td><td>5,842</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="git" data-facet="topic" href="/gemskills/?tag=git">git</a><a class="tag" data-tag="agent-workflows" data-facet="topic" href="/gemskills/?tag=agent-workflows">agent-workflows</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:git" data-facet="stack" href="/gemskills/?tag=stack%3Agit">stack:git</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/using-git-worktrees/SKILL.md">obra/superpowers at bb92a77</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: using-git-worktrees
+description: Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback</code></pre></details>
+        <div class="markdown"><h3>Using Git Worktrees</h3>
+<h4>Overview</h4>
+<p>Ensure work happens in an isolated workspace. Prefer your platform's native worktree tools. Fall back to manual git worktrees only when no native tool is available.</p>
+<p><strong>Core principle:</strong> Detect existing isolation first. Then use native tools. Then fall back to git. Never fight the harness.</p>
+<p><strong>Announce at start:</strong> &quot;I'm using the using-git-worktrees skill to set up an isolated workspace.&quot;</p>
+<h4>Step 0: Detect Existing Isolation</h4>
+<p><strong>Before creating anything, check if you are already in an isolated workspace.</strong></p>
+<pre><code class="language-bash">GIT_DIR=$(cd &quot;$(git rev-parse --git-dir)&quot; 2&gt;/dev/null &amp;&amp; pwd -P)
+GIT_COMMON=$(cd &quot;$(git rev-parse --git-common-dir)&quot; 2&gt;/dev/null &amp;&amp; pwd -P)
+BRANCH=$(git branch --show-current)
+</code></pre>
+<p><strong>Submodule guard:</strong> <code>GIT_DIR != GIT_COMMON</code> is also true inside git submodules. Before concluding &quot;already in a worktree,&quot; verify you are not in a submodule:</p>
+<pre><code class="language-bash"># If this returns a path, you're in a submodule, not a worktree — treat as normal repo
+git rev-parse --show-superproject-working-tree 2&gt;/dev/null
+</code></pre>
+<p><strong>If <code>GIT_DIR != GIT_COMMON</code> (and not a submodule):</strong> You are already in a linked worktree. Skip to Step 2 (Project Setup). Do NOT create another worktree.</p>
+<p>Report with branch state:</p>
+<ul>
+<li>On a branch: &quot;Already in isolated workspace at <code>&lt;path&gt;</code> on branch <code>&lt;name&gt;</code>.&quot;</li>
+<li>Detached HEAD: &quot;Already in isolated workspace at <code>&lt;path&gt;</code> (detached HEAD, externally managed). Branch creation needed at finish time.&quot;</li>
+</ul>
+<p><strong>If <code>GIT_DIR == GIT_COMMON</code> (or in a submodule):</strong> You are in a normal repo checkout.</p>
+<p>Has the user already indicated their worktree preference in your instructions? If not, ask for consent before creating a worktree:</p>
+<blockquote>
+<p>&quot;Would you like me to set up an isolated worktree? It protects your current branch from changes.&quot;</p>
+</blockquote>
+<p>Honor any existing declared preference without asking. If the user declines consent, work in place and skip to Step 2.</p>
+<h4>Step 1: Create Isolated Workspace</h4>
+<p><strong>You have two mechanisms. Try them in this order.</strong></p>
+<h5>1a. Native Worktree Tools (preferred)</h5>
+<p>The user has asked for an isolated workspace (Step 0 consent). Do you already have a way to create a worktree? It might be a tool with a name like <code>EnterWorktree</code>, <code>WorktreeCreate</code>, a <code>/worktree</code> command, or a <code>--worktree</code> flag. If you do, use it and skip to Step 2.</p>
+<p>Native tools handle directory placement, branch creation, and cleanup automatically. Using <code>git worktree add</code> when you have a native tool creates phantom state your harness can't see or manage.</p>
+<p>Only proceed to Step 1b if you have no native worktree tool available.</p>
+<h5>1b. Git Worktree Fallback</h5>
+<p><strong>Only use this if Step 1a does not apply</strong> — you have no native worktree tool available. Create a worktree manually using git.</p>
+<h6>Directory Selection</h6>
+<p>Follow this priority order. Explicit user preference always beats observed filesystem state.</p>
+<ol>
+<li>
+<p><strong>Check your instructions for a declared worktree directory preference.</strong> If the user has already specified one, use it without asking.</p>
+</li>
+<li>
+<p><strong>Check for an existing project-local worktree directory:</strong></p>
+<pre><code class="language-bash">ls -d .worktrees 2&gt;/dev/null     # Preferred (hidden)
+ls -d worktrees 2&gt;/dev/null      # Alternative
+</code></pre>
+<p>If found, use it. If both exist, <code>.worktrees</code> wins.</p>
+</li>
+<li>
+<p><strong>If there is no other guidance available</strong>, default to <code>.worktrees/</code> at the project root.</p>
+</li>
+</ol>
+<h6>Safety Verification (project-local directories only)</h6>
+<p><strong>MUST verify directory is ignored before creating worktree:</strong></p>
+<pre><code class="language-bash">git check-ignore -q .worktrees 2&gt;/dev/null || git check-ignore -q worktrees 2&gt;/dev/null
+</code></pre>
+<p><strong>If NOT ignored:</strong> Add to .gitignore, commit the change, then proceed.</p>
+<p><strong>Why critical:</strong> Prevents accidentally committing worktree contents to repository.</p>
+<h6>Create the Worktree</h6>
+<pre><code class="language-bash"># Determine path based on chosen location
+path=&quot;$LOCATION/$BRANCH_NAME&quot;
+
+git worktree add &quot;$path&quot; -b &quot;$BRANCH_NAME&quot;
+cd &quot;$path&quot;
+</code></pre>
+<p><strong>Sandbox fallback:</strong> If <code>git worktree add</code> fails with a permission error (sandbox denial), tell the user the sandbox blocked worktree creation and you're working in the current directory instead. Then run setup and baseline tests in place.</p>
+<h4>Step 2: Project Setup</h4>
+<p>Auto-detect and run appropriate setup:</p>
+<pre><code class="language-bash"># Node.js
+if [ -f package.json ]; then npm install; fi
+
+# Rust
+if [ -f Cargo.toml ]; then cargo build; fi
+
+# Python
+if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+if [ -f pyproject.toml ]; then poetry install; fi
+
+# Go
+if [ -f go.mod ]; then go mod download; fi
+</code></pre>
+<h4>Step 3: Verify Clean Baseline</h4>
+<p>Run tests to ensure workspace starts clean:</p>
+<pre><code class="language-bash"># Use project-appropriate command
+npm test / cargo test / pytest / go test ./...
+</code></pre>
+<p><strong>If tests fail:</strong> Report failures, ask whether to proceed or investigate.</p>
+<p><strong>If tests pass:</strong> Report ready.</p>
+<h5>Report</h5>
+<pre><code>Worktree ready at &lt;full-path&gt;
+Tests passing (&lt;N&gt; tests, 0 failures)
+Ready to implement &lt;feature-name&gt;
+</code></pre>
+<h4>Quick Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Already in linked worktree</td>
+<td>Skip creation (Step 0)</td>
+</tr>
+<tr>
+<td>In a submodule</td>
+<td>Treat as normal repo (Step 0 guard)</td>
+</tr>
+<tr>
+<td>Native worktree tool available</td>
+<td>Use it (Step 1a)</td>
+</tr>
+<tr>
+<td>No native tool</td>
+<td>Git worktree fallback (Step 1b)</td>
+</tr>
+<tr>
+<td><code>.worktrees/</code> exists</td>
+<td>Use it (verify ignored)</td>
+</tr>
+<tr>
+<td><code>worktrees/</code> exists</td>
+<td>Use it (verify ignored)</td>
+</tr>
+<tr>
+<td>Both exist</td>
+<td>Use <code>.worktrees/</code></td>
+</tr>
+<tr>
+<td>Neither exists</td>
+<td>Check instruction file, then default <code>.worktrees/</code></td>
+</tr>
+<tr>
+<td>Directory not ignored</td>
+<td>Add to .gitignore + commit</td>
+</tr>
+<tr>
+<td>Permission error on create</td>
+<td>Sandbox fallback, work in place</td>
+</tr>
+<tr>
+<td>Tests fail during baseline</td>
+<td>Report failures + ask</td>
+</tr>
+<tr>
+<td>No package.json/Cargo.toml</td>
+<td>Skip dependency install</td>
+</tr>
+</tbody>
+</table>
+<h4>Common Rationalizations</h4>
+<table>
+<thead>
+<tr>
+<th>Excuse</th>
+<th>Reality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;I'm obviously not in a worktree — no need to check&quot;</td>
+<td>Run Step 0. Harness-created isolation and submodules both fool eyeballing; the detection commands settle it.</td>
+</tr>
+<tr>
+<td>&quot;<code>git worktree add</code> is quicker than hunting for a native tool&quot;</td>
+<td>A native tool (e.g. <code>EnterWorktree</code>) owns placement, branching, and cleanup. Bypassing it is the #1 mistake — it creates phantom state your harness can't see or manage.</td>
+</tr>
+<tr>
+<td>&quot;The worktree directory is surely ignored already&quot;</td>
+<td>Run <code>git check-ignore</code>. An unignored worktree directory commits the whole tree into the repo.</td>
+</tr>
+<tr>
+<td>&quot;Any directory name works&quot;</td>
+<td>Explicit instructions beat an existing project-local directory, which beats the <code>.worktrees/</code> default.</td>
+</tr>
+<tr>
+<td>&quot;The workspace is fresh — baseline tests can wait&quot;</td>
+<td>A dirty baseline makes every later failure ambiguous. Run the tests now; proceeding past failures is your human partner's call.</td>
+</tr>
+</tbody>
+</table>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

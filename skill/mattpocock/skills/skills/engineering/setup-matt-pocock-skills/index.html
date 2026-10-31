@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setup-matt-pocock-skills · Gem Skills</title>
+    <meta name="description" content="Use it when: you&#039;re about to use Matt Pocock&#039;s engineering skills in a repo for the first time. It does: asks where your issues live, which status labels to use and where the glossary and decision records go, then writes it all down. You get: an &quot;Agent skills&quot; section in CLAUDE.md or AGENTS.md, pointing to config files under docs/agents/. Runs: only when you call it, normally once per repo." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>setup-matt-pocock-skills</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you&#39;re about to use Matt Pocock&#39;s engineering skills in a repo for the first time</dd></div><div><dt>It does</dt><dd>asks where your issues live, which status labels to use and where the glossary and decision records go, then writes it all down</dd></div><div><dt>You get</dt><dd>an &#34;Agent skills&#34; section in CLAUDE.md or AGENTS.md, pointing to config files under docs/agents/</dd></div><div><dt>Runs</dt><dd>only when you call it, normally once per repo</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 1 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/ask-matt/">ask-matt</a></p>
+    <p class="note">Only works inside its bundle: Writes the tracker, label and domain-doc settings under docs/agents/ that the other skills read; on its own, nothing uses them. Install <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>The bundle&#39;s skills that file specs and tickets, or sort incoming issues, need to know where issues go and where the project&#39;s glossary and decision records (ADRs) live; this skill records it for them. The agent first looks around: the git remote, an existing CLAUDE.md or AGENTS.md, glossary and ADR folders, signs of a monorepo. Then it asks one question at a time, each with a recommended answer you can accept in a word. Where do issues live: GitHub (through the gh CLI), GitLab (through glab), Markdown files under .scratch/ in the repo, or something else you describe, like Jira or Linear? If the bundle&#39;s triage skill is installed: keep its five default status labels, such as needs-triage and ready-for-agent, or map them to labels you already use? Only in a monorepo does it offer a separate glossary per part of the codebase. It shows you drafts before writing, edits whichever of CLAUDE.md or AGENTS.md already exists, and creates missing labels on GitHub or GitLab. You can edit the files by hand later; rerun it only to switch trackers or start over.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/setup-matt-pocock-skills">the skill at 5beb35b</a>. Its SKILL.md has changed by 98 words since.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/setup-matt-pocock-skills">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/setup-matt-pocock-skills">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>867,591 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Apr 28, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">38.6K</div>
+      <div class="stat-delta">-20% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 48,211; week to Aug 10: 61,714; week to Aug 17: 49,250; week to Aug 24: 52,155; week to Aug 31: 48,879; week to Sep 7: 46,685; week to Sep 14: 41,541; week to Sep 21: 38,605. Use the left and right arrow keys to read each week."
+        data-values="48211,61714,49250,52155,48879,46685,41541,38605" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,15.6 38.6,6.0 71.1,14.9 103.7,12.8 136.3,15.2 168.9,16.7 201.4,20.4 234.0,22.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="22.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>48,211</td></tr><tr><td>Aug 10</td><td>61,714</td></tr><tr><td>Aug 17</td><td>49,250</td></tr><tr><td>Aug 24</td><td>52,155</td></tr><tr><td>Aug 31</td><td>48,879</td></tr><tr><td>Sep 7</td><td>46,685</td></tr><tr><td>Sep 14</td><td>41,541</td></tr><tr><td>Sep 21</td><td>38,605</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:skill-tools" data-facet="category" title="Find, write, vet and route to other skills." href="/gemskills/?tag=category%3Askill-tools">category:skill-tools</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Find, write, vet and route to other skills.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:setup" data-facet="type" title="One-time configuration or scaffolding of a project, account or tool." href="/gemskills/?tag=type%3Asetup">type:setup</a></div>
+          <p class="tag-meaning">One-time configuration or scaffolding of a project, account or tool.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="issue-tracking" data-facet="topic" href="/gemskills/?tag=issue-tracking">issue-tracking</a><a class="tag" data-tag="docs-writing" data-facet="topic" href="/gemskills/?tag=docs-writing">docs-writing</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/setup-matt-pocock-skills/SKILL.md">mattpocock/skills at 59db609</a>. Checked daily, last changed Oct 28, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: setup-matt-pocock-skills
+description: &#34;Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.&#34;
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><h3>Setup Matt Pocock's Skills</h3>
+<p>Scaffold the per-repo configuration that the engineering skills assume:</p>
+<ul>
+<li><strong>Issue tracker</strong>: where issues live (GitHub by default; local markdown is also supported out of the box)</li>
+<li><strong>Triage labels</strong>: the strings used for the five canonical triage roles</li>
+<li><strong>Domain docs</strong>: where <code>GLOSSARY.md</code> and ADRs live, and the consumer rules for reading them</li>
+</ul>
+<p>This is a prompt-driven skill, not a deterministic script. Explore, present what you found, confirm with the user, then write.</p>
+<h4>Process</h4>
+<h5>1. Explore</h5>
+<p>Look at the current repo to understand its starting state. Read whatever exists; don't assume:</p>
+<ul>
+<li><code>git remote -v</code> and <code>.git/config</code>: is this a GitHub repo? Which one?</li>
+<li><code>AGENTS.md</code> and <code>CLAUDE.md</code> at the repo root: does either exist? Is there already an <code>## Agent skills</code> section in either?</li>
+<li><code>GLOSSARY.md</code> and <code>GLOSSARY-MAP.md</code> at the repo root, and the legacy <code>CONTEXT.md</code> / <code>CONTEXT-MAP.md</code>. If a legacy file exists, offer to <code>git mv</code> it to its <code>GLOSSARY</code> name and rewrite those names in <code>docs/agents/domain.md</code>.</li>
+<li><code>docs/adr/</code> and any <code>src/*/docs/adr/</code> directories</li>
+<li><code>docs/agents/</code>: does this skill's prior output already exist?</li>
+<li><code>.scratch/</code>: a sign that a local-markdown issue tracker convention is already in use</li>
+<li>Is the <code>triage</code> skill installed? (a <code>triage</code> skill folder alongside this one, or <code>triage</code> in your available skills.) This decides whether Section B runs at all.</li>
+<li>Monorepo signals: a <code>pnpm-workspace.yaml</code>, a <code>workspaces</code> field in <code>package.json</code>, or a populated <code>packages/*</code> with its own <code>src/</code>. These are present only in a genuinely large multi-package repo; their absence means single-context, which is almost every repo.</li>
+</ul>
+<h5>2. Present findings and ask</h5>
+<p>Summarise what's present and what's missing. Then take the sections in order. One section, one answer, then the next.</p>
+<p>Lead each section with the recommended answer so the user can accept it in a word. Give a one-line explainer only when the choice genuinely branches; skip the section entirely when exploration already settled it (Section B when <code>triage</code> isn't installed, Section C when there's no monorepo).</p>
+<p><strong>Section A: Issue tracker.</strong></p>
+<blockquote>
+<p>Explainer: The &quot;issue tracker&quot; is where issues live for this repo. Skills like <code>to-tickets</code>, <code>triage</code>, and <code>to-spec</code> read from and write to it. They need to know whether to call <code>gh issue create</code>, write a markdown file under <code>.scratch/</code>, or follow some other workflow you describe. Pick the place you actually track work for this repo.</p>
+</blockquote>
+<p>Default posture: these skills were designed for GitHub. If a <code>git remote</code> points at GitHub, propose that. If a <code>git remote</code> points at GitLab (<code>gitlab.com</code> or a self-hosted host), propose GitLab. Otherwise (or if the user prefers), offer:</p>
+<ul>
+<li><strong>GitHub</strong>: issues live in the repo's GitHub Issues (uses the <code>gh</code> CLI)</li>
+<li><strong>GitLab</strong>: issues live in the repo's GitLab Issues (uses the <a href="https://gitlab.com/gitlab-org/cli"><code>glab</code></a> CLI)</li>
+<li><strong>Local markdown</strong>: issues live as files under <code>.scratch/&lt;feature&gt;/</code> in this repo (good for solo projects or repos without a remote)</li>
+<li><strong>Other</strong> (Jira, Linear, etc.): ask the user to describe the workflow in one paragraph; the skill will record it as freeform prose</li>
+</ul>
+<p>Record the choice in <code>docs/agents/issue-tracker.md</code>. The GitHub and GitLab templates carry a &quot;PRs as a request surface&quot; flag, defaulted <strong>off</strong>. Leave it off and don't raise it: a user who wants external PRs in the triage queue can flip the flag in the file later.</p>
+<p>A GitHub or GitLab tracker needs a reachable repo. When the user picks one and no <code>git remote</code> points at that host, get the repo URL from them and wire it up (<code>git init</code> if needed, <code>git remote add origin &lt;url&gt;</code>) before going further. Done when <code>gh repo view</code> / <code>glab repo view</code> prints the project from inside this directory; if it can't, stop and tell the user what's missing.</p>
+<p><strong>Section B: Triage label vocabulary.</strong> Skip this section entirely if the <code>triage</code> skill isn't installed (exploration told you), since an uninstalled skill needs no labels.</p>
+<p>If it is installed, ask exactly one question:</p>
+<blockquote>
+<p>Do you want to keep the default triage labels? (recommended: <strong>yes</strong>)</p>
+</blockquote>
+<p>The defaults are the five canonical roles, each label string equal to its name: <code>needs-triage</code>, <code>needs-info</code>, <code>ready-for-agent</code>, <code>ready-for-human</code>, <code>wontfix</code>. On <strong>yes</strong>, write them as-is. Only if the user says no, usually because their tracker already uses other names (e.g. <code>bug:triage</code> for <code>needs-triage</code>), collect the overrides so <code>triage</code> applies existing labels instead of creating duplicates.</p>
+<p><strong>Section C: Domain docs.</strong> Default to <strong>single-context</strong> (one <code>GLOSSARY.md</code> + <code>docs/adr/</code> at the repo root). This fits almost every repo; write it without asking.</p>
+<p>Offer <strong>multi-context</strong> (a root <code>GLOSSARY-MAP.md</code> pointing to per-context <code>GLOSSARY.md</code> files) only when exploration found monorepo signals. Then confirm which layout they want.</p>
+<h5>3. Confirm and edit</h5>
+<p>Show the user a draft of:</p>
+<ul>
+<li>The <code>## Agent skills</code> block to add to whichever of <code>CLAUDE.md</code> / <code>AGENTS.md</code> is being edited (see step 4 for selection rules)</li>
+<li>The contents of <code>docs/agents/issue-tracker.md</code>, <code>docs/agents/domain.md</code>, and <code>docs/agents/triage-labels.md</code> (the last only when <code>triage</code> is installed)</li>
+</ul>
+<p>Let them edit before writing.</p>
+<h5>4. Write</h5>
+<p><strong>Pick the file to edit:</strong></p>
+<ul>
+<li>If <code>CLAUDE.md</code> exists, edit it.</li>
+<li>Else if <code>AGENTS.md</code> exists, edit it.</li>
+<li>If neither exists, ask the user which one to create; don't pick for them.</li>
+</ul>
+<p>Never create <code>AGENTS.md</code> when <code>CLAUDE.md</code> already exists (or vice versa); always edit the one that's already there.</p>
+<p>If an <code>## Agent skills</code> block already exists in the chosen file, update its contents in-place rather than appending a duplicate. Don't overwrite user edits to the surrounding sections.</p>
+<p>The block:</p>
+<pre><code class="language-markdown">## Agent skills
+
+### Issue tracker
+
+[one-line summary of where issues are tracked]. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+[one-line summary of the label vocabulary]. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+[one-line summary of layout: &quot;single-context&quot; or &quot;multi-context&quot;]. See `docs/agents/domain.md`.
+</code></pre>
+<p>Include the <code>### Triage labels</code> sub-block, and write <code>docs/agents/triage-labels.md</code>, only when <code>triage</code> is installed and Section B ran. When it isn't, both are omitted.</p>
+<p>When Section B ran on GitHub or GitLab, create each configured label the tracker lacks (<code>gh label create</code> / <code>glab label create</code>).</p>
+<p>Then write the docs files using the seed templates in this skill folder as a starting point:</p>
+<ul>
+<li><a href="https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md">issue-tracker-github.md</a>: GitHub issue tracker</li>
+<li><a href="https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md">issue-tracker-gitlab.md</a>: GitLab issue tracker</li>
+<li><a href="https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md">issue-tracker-local.md</a>: local-markdown issue tracker</li>
+<li><a href="https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/setup-matt-pocock-skills/triage-labels.md">triage-labels.md</a>: label mapping (only if <code>triage</code> is installed)</li>
+<li><a href="https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/setup-matt-pocock-skills/domain.md">domain.md</a>: domain doc consumer rules + layout</li>
+</ul>
+<p>For &quot;other&quot; issue trackers, write <code>docs/agents/issue-tracker.md</code> from scratch using the user's description.</p>
+<h5>5. Done</h5>
+<p>Tell the user the setup is complete and which engineering skills will now read from these files. Mention they can edit <code>docs/agents/*.md</code> directly later; re-running this skill is only necessary if they want to switch issue trackers or restart from scratch.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setup-ts-deep-modules · Gem Skills</title>
+    <meta name="description" content="Use it when: you want each package in a TypeScript repo used only through its entry files, enforced by a check. It does: adds dependency-cruiser rules: outside code may import only a package&#039;s top-level files, never its subfolders, and imports may not form cycles. You get: a lint:boundaries check run with your type check, an example package, a README, and a pointer from AGENTS.md or CLAUDE.md. Proves: the rules work, by adding a forbidden import and watching the check fail. Runs: only when you invoke it; it sits in its author&#039;s in-progress folder, so expect changes." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a></p>
+      <h1>setup-ts-deep-modules</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want each package in a TypeScript repo used only through its entry files, enforced by a check</dd></div><div><dt>It does</dt><dd>adds dependency-cruiser rules: outside code may import only a package&#39;s top-level files, never its subfolders, and imports may not form cycles</dd></div><div><dt>You get</dt><dd>a lint:boundaries check run with your type check, an example package, a README, and a pointer from AGENTS.md or CLAUDE.md</dd></div><div><dt>Proves</dt><dd>the rules work, by adding a forbidden import and watching the check fail</dd></div><div><dt>Runs</dt><dd>only when you invoke it; it sits in its author&#39;s in-progress folder, so expect changes</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A deep module is a lot of behavior behind a small interface, and this skill makes that a rule a tool can enforce. Each folder under src/packages (or packages) is a package: its top-level files, such as index.ts or client.ts, are its public entry points, and everything in a subfolder, by convention lib/ for code and tests/ for tests, is private. dependency-cruiser, a tool that checks imports, then fails when outside code reaches into a subfolder or when imports form a cycle. Tests, even a package&#39;s own, must also go through its entry files, like any outside caller. Files inside a package still import each other freely, and several small entry files are preferred to one index that re-exports everything. The agent installs it with your package manager, merges into an existing config rather than overwriting it, adds the check to the command that already runs your type check, and leaves tsconfig alone. It&#39;s done only once the check passes, fails on a deliberate bad import, then passes again. It doesn&#39;t decide which packages may depend on which; that&#39;s left for you.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/setup-ts-deep-modules">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill setup-ts-deep-modules</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill setup-ts-deep-modules">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/setup-ts-deep-modules">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/in-progress/setup-ts-deep-modules">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>253,987 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Jul 10, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">26.3K</div>
+      <div class="stat-delta">+36% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 19,373; week to Aug 10: 20,981; week to Aug 17: 18,497; week to Aug 24: 28,319; week to Aug 31: 31,287; week to Sep 7: 30,957; week to Sep 14: 28,222; week to Sep 21: 26,285. Use the left and right arrow keys to read each week."
+        data-values="19373,20981,18497,28319,31287,30957,28222,26285" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,22.8 38.6,20.5 71.1,24.0 103.7,10.2 136.3,6.0 168.9,6.5 201.4,10.3 234.0,13.0" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="13.0" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>19,373</td></tr><tr><td>Aug 10</td><td>20,981</td></tr><tr><td>Aug 17</td><td>18,497</td></tr><tr><td>Aug 24</td><td>28,319</td></tr><tr><td>Aug 31</td><td>31,287</td></tr><tr><td>Sep 7</td><td>30,957</td></tr><tr><td>Sep 14</td><td>28,222</td></tr><tr><td>Sep 21</td><td>26,285</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:setup" data-facet="type" title="One-time configuration or scaffolding of a project, account or tool." href="/gemskills/?tag=type%3Asetup">type:setup</a></div>
+          <p class="tag-meaning">One-time configuration or scaffolding of a project, account or tool.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="architecture" data-facet="topic" href="/gemskills/?tag=architecture">architecture</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:typescript" data-facet="stack" href="/gemskills/?tag=stack%3Atypescript">stack:typescript</a><a class="tag" data-tag="stack:dependency-cruiser" data-facet="stack" href="/gemskills/?tag=stack%3Adependency-cruiser">stack:dependency-cruiser</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/setup-ts-deep-modules/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: setup-ts-deep-modules
+description: Wire dependency-cruiser into a TypeScript repo so each package is a deep module, with implementation hidden in subfolders and reachable only through its entry-point files. User-invoked.
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><h3>Setup TS Deep Modules</h3>
+<p>Make every package in this repo a <strong>deep module</strong>: a lot of behaviour behind a small interface. A package's public surface is its <strong>entry points</strong> (the files at the package root), and everything in its subfolders is hidden. This skill installs <a href="https://github.com/sverweij/dependency-cruiser">dependency-cruiser</a> and the rules that make the entry points the only way in, then proves the rules bite.</p>
+<p>For the vocabulary (deep module, interface, seam, depth), call the Skill tool with &quot;codebase-design&quot; and use its language throughout.</p>
+<h4>The shape this enforces</h4>
+<pre><code>src/packages/
+  &lt;name&gt;/
+    index.ts        ← an entry point (public). Import this from outside.
+    client.ts       ← another entry point. Packages may expose SEVERAL.
+    lib/            ← implementation: hidden from outside, free to import each other.
+    tests/          ← co-located tests + fixtures (a subfolder, so private).
+</code></pre>
+<p>The public surface is the package's <strong>root files</strong>, not one designated <code>index.ts</code>. By convention implementation lives in <code>lib/</code> and tests in <code>tests/</code>, giving every package the same two-folder shape. The rule itself is general, though: <em>anything</em> in <em>any</em> subfolder is private, so you never extend the config to add a folder.</p>
+<p>Four rules, all <code>error</code>:</p>
+<ol>
+<li><strong>Entry-point boundary</strong>: code outside a package (app code or another package) may import only that package's entry points (its root files), never anything in its subfolders.</li>
+<li><strong>Intra-package freedom</strong>: a package's own files import each other freely.</li>
+<li><strong>Tests through the entry points</strong>: files under <code>&lt;pkg&gt;/tests/</code> may import any package's entry points and their own <code>tests/</code> fixtures, but never any package's subfolder internals (not even their own). Integration tests across packages are fine; deep imports are not.</li>
+<li><strong>No cycles</strong>: no dependency cycles.</li>
+</ol>
+<p><strong>Entry points, not a barrel.</strong> Because the public surface is <em>every</em> root file, a package can expose several small entry points (<code>index.ts</code>, <code>client.ts</code>, <code>server.ts</code>) instead of funnelling everything through one giant <code>index.ts</code>. Barrel files that re-export a whole subtree are discouraged; keep entry points small and hide implementation in subfolders.</p>
+<p>Layering (which packages may depend on which) is a <em>different</em> concern and is left as a commented stub in the config for this repo to fill in.</p>
+<h4>Steps</h4>
+<h5>1. Detect the environment</h5>
+<ul>
+<li><strong>Package manager</strong>: <code>pnpm-lock.yaml</code> → pnpm, <code>yarn.lock</code> → yarn, <code>bun.lockb</code> → bun, else npm. Use it for every command below (<code>pnpm</code>/<code>yarn</code>/<code>npm run</code>/<code>bunx</code>).</li>
+<li><strong>Packages root</strong>: if <code>src/</code> exists use <code>src/packages</code>, else <code>packages</code>. Confirm the choice with the user if the repo already has a different obvious convention.</li>
+<li><strong>Existing config</strong>: check for a <code>.dependency-cruiser.*</code> file. If one exists, do <strong>not</strong> overwrite it: merge the four rules and the options in, and tell the user what you added.</li>
+</ul>
+<p><strong>Done when:</strong> package manager, packages root, and existing-config status are all known.</p>
+<h5>2. Install dependency-cruiser</h5>
+<p>Install <code>dependency-cruiser</code> as a devDependency with the detected package manager.</p>
+<p><strong>Done when:</strong> <code>dependency-cruiser</code> is in <code>devDependencies</code>.</p>
+<h5>3. Write the config</h5>
+<p>Copy <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs"><code>dependency-cruiser.config.cjs</code></a> to the repo root as <code>.dependency-cruiser.cjs</code>. Set <code>PACKAGES_ROOT</code> to the root detected in step 1. The rules are path-depth based and extension-agnostic, so nothing else needs adapting.</p>
+<p><strong>Done when:</strong> <code>.dependency-cruiser.cjs</code> exists with the correct <code>PACKAGES_ROOT</code>, and the four forbidden rules are present.</p>
+<h5>4. Wire it into the checks</h5>
+<ul>
+<li>Add a <code>lint:boundaries</code> script: <code>depcruise &lt;packages-root&gt;</code> (or <code>depcruise src</code>).</li>
+<li>Fold it into the repo's umbrella check command, the one that already runs typecheck (e.g. a <code>check</code> / <code>ci</code> / <code>validate</code> script). Do <strong>not</strong> touch <code>tsconfig</code> or add path aliases.</li>
+<li>If there is no umbrella script, add <code>lint:boundaries</code> and tell the user to include it in CI.</li>
+</ul>
+<p><strong>Done when:</strong> <code>lint:boundaries</code> exists and runs as part of the same command as typecheck.</p>
+<h5>5. Scaffold the example package</h5>
+<p>Create a committed <code>&lt;packages-root&gt;/example/</code> as a copy-me template:</p>
+<ul>
+<li><code>index.ts</code> is an entry point. Export one function that delegates to an internal file (so the package is visibly <em>deep</em>, not a pass-through).</li>
+<li><code>lib/impl.ts</code>: an internal file in a <strong>subfolder</strong>, imported by <code>index.ts</code>, not reachable from outside.</li>
+<li><code>tests/example.test.ts</code> imports <strong>only</strong> <code>../index</code> (an entry point) and asserts against the public function.</li>
+</ul>
+<p>Tell the user this is a starter template to copy or delete.</p>
+<p><strong>Done when:</strong> the example package exists, exposes its behaviour through a root entry point, and hides <code>impl</code> in a subfolder.</p>
+<h5>6. Prove the rules bite</h5>
+<p>This is the completion criterion for the whole skill: a config that doesn't fail on a violation is worthless.</p>
+<ol>
+<li>Run <code>lint:boundaries</code>. It must <strong>pass</strong> on the clean example.</li>
+<li>Temporarily add a deep import to <code>tests/example.test.ts</code> (e.g. <code>import { thing } from &quot;../lib/impl&quot;</code>). Run <code>lint:boundaries</code> again; it must <strong>fail</strong> with <code>tests-through-entrypoints</code>.</li>
+<li>Revert the deep import. Run once more, and it must <strong>pass</strong>.</li>
+</ol>
+<p><strong>Done when:</strong> you have observed a pass, then a fail on the deep import, then a pass again. If step 2 does not fail, the rules are not wired correctly, so fix before finishing.</p>
+<h5>7. Document the convention</h5>
+<p>Write a <code>README.md</code> <strong>in the packages folder</strong> (<code>&lt;packages-root&gt;/README.md</code>, next to the packages it governs) covering: the <code>src/packages/&lt;name&gt;/</code> layout (entry points at the root, <code>lib/</code> for implementation, <code>tests/</code> for tests), &quot;import only through a package's entry points (its root files)&quot;, and how to run <code>lint:boundaries</code>. <strong>Discourage barrel files</strong> explicitly: expose several small entry points instead of re-exporting a whole subtree through one index. Keep it to the copy-me snippet plus the four rules in one paragraph each.</p>
+<p>Then add a <strong>context pointer</strong> to it from the repo's agent-instructions file (<code>CLAUDE.md</code> if present, else <code>AGENTS.md</code>, creating <code>AGENTS.md</code> if neither exists). One line is enough, e.g. <code>Packages are deep modules: see [src/packages/README.md](./src/packages/README.md) before adding or importing one.</code> This is what makes an agent discover the boundary rule instead of tripping over it.</p>
+<p><strong>Done when:</strong> <code>&lt;packages-root&gt;/README.md</code> exists and discourages barrels, and the repo's <code>CLAUDE.md</code>/<code>AGENTS.md</code> links to it.</p>
+<h4>Notes</h4>
+<ul>
+<li>The config's <code>$1</code> back-references (dependency-cruiser's group matching) are what let a package reach its own internals while outsiders can't. Don't flatten them into separate per-package rules.</li>
+<li>Public vs private is decided by <strong>depth</strong>: a package's root files are entry points; anything in a subfolder is private. The conventional subfolders are <code>lib/</code> (implementation) and <code>tests/</code>, but the rule doesn't hardcode them: any subfolder is private, so a new folder never needs a config change. Adding an entry point is just adding a root file (no barrel).</li>
+<li>Packages are <strong>flat</strong>: one tier of immediate children under the root. A package's internals may nest as deep as you like; a package may not contain another package.</li>
+<li>Use <code>.cjs</code> (not <code>.js</code>) so the config's <code>module.exports</code> works even in <code>&quot;type&quot;: &quot;module&quot;</code> repos.</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

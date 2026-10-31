@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>implement · Gem Skills</title>
+    <meta name="description" content="Use it when: a spec or ticket is ready and you want the agent to build it now, in this session. It does: builds it test-first, type-checks as it goes, runs the full test suite, then reviews the result. You get: commits on your current branch, already through a code review. Needs: two skills by the same author: tdd, its rules for test-first work, and code-review, which checks the diff against the spec and the repo&#039;s standards. Runs: only when you invoke it; the agent won&#039;t start it on its own." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>implement</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a spec or ticket is ready and you want the agent to build it now, in this session</dd></div><div><dt>It does</dt><dd>builds it test-first, type-checks as it goes, runs the full test suite, then reviews the result</dd></div><div><dt>You get</dt><dd>commits on your current branch, already through a code review</dd></div><div><dt>Needs</dt><dd>two skills by the same author: tdd, its rules for test-first work, and code-review, which checks the diff against the spec and the repo&#39;s standards</dd></div><div><dt>Runs</dt><dd>only when you invoke it; the agent won&#39;t start it on its own</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 14 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/triage/">triage</a> · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/implement-spec/">implement-spec</a></p>
+    <p class="note">Only works inside its bundle: Builds through tdd and closes with code-review, loading both as steps. Install <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> instead.</p>
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>A short skill that strings two others together. Point it at a spec, a set of tickets or a ticket number; it fetches a ticket from your issue tracker and states its title before starting, and asks if the reference is unclear. It builds with the tdd skill where it can, testing at interfaces agreed with you, runs type checks and single test files as it goes and the full suite once at the end. Then it runs the code-review skill over the work and commits to the current branch. One agent does it all, unlike implement-spec, which hands each ticket of a spec to its own subagent.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/implement">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill implement</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill implement">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/implement">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/implement">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>589,967 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Jun 17, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">39.5K</div>
+      <div class="stat-delta">-13% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 45,430; week to Aug 10: 55,168; week to Aug 17: 45,552; week to Aug 24: 47,229; week to Aug 31: 45,948; week to Sep 7: 46,038; week to Sep 14: 42,131; week to Sep 21: 39,487. Use the left and right arrow keys to read each week."
+        data-values="45430,55168,45552,47229,45948,46038,42131,39487" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,13.8 38.6,6.0 71.1,13.7 103.7,12.3 136.3,13.4 168.9,13.3 201.4,16.4 234.0,18.5" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="18.5" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>45,430</td></tr><tr><td>Aug 10</td><td>55,168</td></tr><tr><td>Aug 17</td><td>45,552</td></tr><tr><td>Aug 24</td><td>47,229</td></tr><tr><td>Aug 31</td><td>45,948</td></tr><tr><td>Sep 7</td><td>46,038</td></tr><tr><td>Sep 14</td><td>42,131</td></tr><tr><td>Sep 21</td><td>39,487</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="implementation" data-facet="topic" href="/gemskills/?tag=implementation">implementation</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/implement/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: implement
+description: &#34;Implement a piece of work based on a spec or set of tickets.&#34;
+disable-model-invocation: true</code></pre></details>
+        <div class="markdown"><p>Implement the work described by the user in the spec or tickets.</p>
+<p>If the user passes a ticket reference, fetch it from the issue tracker and state its title before starting. If the reference is ambiguous, ask.</p>
+<p>Call the Skill tool with &quot;tdd&quot; where possible, at pre-agreed seams.</p>
+<p>Run typechecking regularly, single test files regularly, and the full test suite once at the end.</p>
+<p>Once done, call the Skill tool with &quot;code-review&quot; to review the work.</p>
+<p>Commit your work to the current branch.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

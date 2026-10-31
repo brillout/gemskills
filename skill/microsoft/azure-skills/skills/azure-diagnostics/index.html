@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>azure-diagnostics · Gem Skills</title>
+    <meta name="description" content="Debugs Azure production issues with AppLens, Azure Monitor and resource health." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=microsoft%2Fazure-skills">microsoft/azure-skills</a></p>
+      <h1>azure-diagnostics</h1>
+      <p class="lede">Debugs Azure production issues with AppLens, Azure Monitor and resource health.</p>
+      
+      
+      
+      
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/microsoft/azure-skills --skill azure-diagnostics</code><button type="button" class="copy" data-copy="npx skills add https://github.com/microsoft/azure-skills --skill azure-diagnostics">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/microsoft/azure-skills/azure-diagnostics">skills.sh page</a> · <a href="https://github.com/microsoft/azure-skills/tree/HEAD/skills/azure-diagnostics">Source on GitHub</a> · <a href="/gemskills/?repo=microsoft%2Fazure-skills">All skills from microsoft/azure-skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>592,202 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>1,489 <span class="muted">microsoft/azure-skills</span></dd></div><div><dt>First seen</dt><dd>Jan 29, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">12.5K</div>
+      <div class="stat-delta">-24% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 16,428; week to Aug 10: 16,308; week to Aug 17: 15,389; week to Aug 24: 13,751; week to Aug 31: 13,741; week to Sep 7: 12,175; week to Sep 14: 12,836; week to Sep 21: 12,465. Use the left and right arrow keys to read each week."
+        data-values="16428,16308,15389,13751,13741,12175,12836,12465" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,6.3 71.1,8.8 103.7,13.2 136.3,13.2 168.9,17.4 201.4,15.6 234.0,16.6" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="16.6" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>16,428</td></tr><tr><td>Aug 10</td><td>16,308</td></tr><tr><td>Aug 17</td><td>15,389</td></tr><tr><td>Aug 24</td><td>13,751</td></tr><tr><td>Aug 31</td><td>13,741</td></tr><tr><td>Sep 7</td><td>12,175</td></tr><tr><td>Sep 14</td><td>12,836</td></tr><tr><td>Sep 21</td><td>12,465</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:cloud" data-facet="category" title="Deploy, provision, observe and debug cloud apps." href="/gemskills/?tag=category%3Acloud">category:cloud</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Deploy, provision, observe and debug cloud apps.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:none" data-facet="effect" title="Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code." href="/gemskills/?tag=effect%3Anone">effect:none</a></div>
+          <p class="tag-meaning">Adds no side effects of its own. It shapes how the agent thinks, writes or reviews. Guidelines and routers are always effect:none, even when the task they support edits code.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a><a class="tag" data-tag="needs:account" data-facet="needs" title="An account, API key or paid plan with an outside service." href="/gemskills/?tag=needs%3Aaccount">needs:account</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p><p class="tag-meaning">An account, API key or paid plan with an outside service.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="observability" data-facet="topic" href="/gemskills/?tag=observability">observability</a><a class="tag" data-tag="debugging" data-facet="topic" href="/gemskills/?tag=debugging">debugging</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:azure" data-facet="stack" href="/gemskills/?tag=stack%3Aazure">stack:azure</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Flags</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="flag:tool-docs" data-facet="flag" title="Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count." href="/gemskills/?tag=flag%3Atool-docs">flag:tool-docs</a></div>
+          <p class="tag-meaning">Documentation for agents of one product: how to build with it, configure it, deploy to it or operate it, so it only helps once you use that product. A skill that gets a job done through a tool, such as browsing, testing, scraping, searching or generating media, doesn&#39;t count.</p>
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/SKILL.md">microsoft/azure-skills at 5be6708</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: azure-diagnostics
+description: &#34;Debug Azure production issues on Azure using AppLens, Azure Monitor, resource health, and safe triage. WHEN: debug production issues, troubleshoot app service, app service high CPU, app service deployment failure, troubleshoot container apps, container app 503 or target port mismatch, troubleshoot functions, function telemetry missing or stopped after a config/connection-string change, troubleshoot AKS, VM RDP, Linux SSH, VM black screen, can&#39;t connect to VM, reset VM password, NSG or firewall blocking, kubectl cannot connect, kube-system/CoreDNS failures, pod pending, crashloop, node not ready, upgrade failures, analyze logs, KQL, insights, image pull failures, cold start issues, health probe failures, resource health, root cause of errors, troubleshoot event hubs, troubleshoot service bus, messaging SDK error, AMQP connection failure, message lock lost, lock renewal during long-running processing, service bus dead letter.&#34;
+license: MIT
+metadata:
+  author: Microsoft
+  version: &#34;1.2.11&#34;</code></pre></details>
+        <div class="markdown"><h3>Azure Diagnostics</h3>
+<blockquote>
+<p><strong>AUTHORITATIVE GUIDANCE — MANDATORY COMPLIANCE</strong></p>
+<p>This document is the <strong>official source</strong> for debugging and troubleshooting Azure production issues. Follow these instructions to diagnose and resolve common Azure service problems systematically.</p>
+</blockquote>
+<h4>Triggers</h4>
+<p>Activate this skill when user wants to:</p>
+<ul>
+<li>Debug or troubleshoot production issues</li>
+<li>Diagnose errors in Azure services</li>
+<li>Analyze application logs or metrics</li>
+<li>Fix image pull, cold start, or health probe issues</li>
+<li>Investigate why Azure resources are failing</li>
+<li>Find root cause of application errors</li>
+<li>Troubleshoot App Service issues (high CPU, deployment failures, crashes, slow responses, TLS/custom domains)</li>
+<li>Respond to prompts like &quot;troubleshoot app service&quot;, &quot;app service high CPU&quot;, or &quot;app service deployment failure&quot;</li>
+<li>Troubleshoot Azure Function Apps (invocation failures, timeouts, binding errors)</li>
+<li>Find the App Insights or Log Analytics workspace linked to a Function App</li>
+<li>Troubleshoot AKS clusters, nodes, pods, ingress, or Kubernetes networking issues</li>
+<li>Troubleshoot Azure VM connectivity issues (RDP/SSH failures, port 3389/22 timeouts, NSG or firewall blocking, credential resets)</li>
+<li>Troubleshoot Azure Messaging SDK issues (Event Hubs, Service Bus connection failures, AMQP errors, message lock issues)</li>
+<li>Root-cause a symptom that looks like a healthy-runtime-but-wrong-destination problem (e.g., telemetry/messages stop flowing to the expected resource after a config change) — invoke this skill for the matrix even when MCP tools could answer the surface question alone</li>
+</ul>
+<h4>Rules</h4>
+<ol>
+<li>Start with systematic diagnosis flow</li>
+<li>Use supplied evidence first. If the user requests evidence-only analysis or prohibits live Azure access, do not query or modify Azure. Diagnose from the supplied logs, metrics, and timeline; identify assumptions and provide optional verification steps.</li>
+<li>Use AppLens (MCP) for AI-powered diagnostics when available</li>
+<li>Check resource health before deep-diving into logs</li>
+<li>Select appropriate troubleshooting guide based on service type</li>
+<li>Document findings and attempted remediation steps</li>
+<li>Prefer bundled diagnostic scripts over ad hoc calls for permitted live collection when identifiers are known. If supplied evidence suffices or live access is prohibited, don't run them; otherwise run the applicable script first.</li>
+<li>Route AKS incidents to the dedicated AKS troubleshooting document</li>
+<li>Keep baseline AKS diagnostics available even when the optional <code>aks-skills</code>
+add-on is absent, declined, or unsupported by the host</li>
+</ol>
+<hr>
+<h4>Quick Diagnosis Flow</h4>
+<ol>
+<li><strong>Identify symptoms</strong> - What's failing?</li>
+<li><strong>Check resource health</strong> - Is Azure healthy?</li>
+<li><strong>Review logs</strong> - What do logs show?</li>
+<li><strong>Analyze metrics</strong> - Performance patterns?</li>
+<li><strong>Investigate recent changes</strong> - What changed?</li>
+</ol>
+<hr>
+<h4>Troubleshooting Guides by Service</h4>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Common Issues</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Container Apps</strong></td>
+<td>Image pull failures, cold starts, health probes, port mismatches</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/references/container-apps/README.md">container-apps/</a></td>
+</tr>
+<tr>
+<td><strong>App Service</strong></td>
+<td>High CPU, deployment failures, crashes, slow responses, TLS/custom domains</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/references/app-service/README.md">app-service/</a></td>
+</tr>
+<tr>
+<td><strong>Function Apps</strong></td>
+<td>App details, invocation failures, timeouts, binding errors, cold starts, missing app settings</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/references/functions/README.md">functions/</a></td>
+</tr>
+<tr>
+<td><strong>AKS</strong></td>
+<td>Cluster access, nodes, <code>kube-system</code>, scheduling, crash loops, ingress, DNS, upgrades</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/troubleshooting/aks/aks-troubleshooting.md">AKS Troubleshooting</a></td>
+</tr>
+<tr>
+<td><strong>Compute</strong></td>
+<td>VM RDP/SSH connectivity, NSG/firewall blocks, credential resets, VM agent/tooling issues</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/troubleshooting/compute/vm-troubleshooting.md">VM Connectivity Troubleshooting</a></td>
+</tr>
+<tr>
+<td><strong>Messaging</strong></td>
+<td>Event Hubs &amp; Service Bus SDK errors, AMQP failures, message lock, connectivity</td>
+<td><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/troubleshooting/messaging/README.md">Messaging Troubleshooting</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4>Routing</h4>
+<ul>
+<li>Keep Container Apps and Function Apps diagnostics in this parent skill.</li>
+<li>Route active AKS incidents, AKS-specific intake, evidence gathering, and remediation guidance to <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/troubleshooting/aks/aks-troubleshooting.md">AKS Troubleshooting</a>.</li>
+<li>Route Azure VM RDP/SSH connectivity, NSG/firewall, credential reset, and VM agent troubleshooting to <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/troubleshooting/compute/vm-troubleshooting.md">VM Connectivity Troubleshooting</a>.</li>
+<li>Route Azure Messaging SDK troubleshooting (Event Hubs, Service Bus) to <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/troubleshooting/messaging/README.md">Messaging Troubleshooting</a>.</li>
+</ul>
+<hr>
+<h4>Quick Reference</h4>
+<h5>Common Diagnostic Commands</h5>
+<pre><code class="language-bash"># Check resource health
+az resource show --ids RESOURCE_ID
+# View activity log
+az monitor activity-log list -g RG --max-events 20
+# Container Apps logs
+az containerapp logs show --name APP -g RG --follow
+# Function App logs (query App Insights traces)
+az monitor app-insights query --apps APP-INSIGHTS -g RG \
+  --analytics-query &quot;traces | where timestamp &gt; ago(1h) | order by timestamp desc | take 50&quot;
+</code></pre>
+<h5>AppLens (MCP Tools)</h5>
+<p>For AI-powered diagnostics, use:</p>
+<pre><code>mcp_azure_mcp_applens
+  intent: &quot;diagnose issues with &lt;resource-name&gt;&quot;
+  command: &quot;diagnose&quot;
+  parameters:
+    resourceId: &quot;&lt;resource-id&gt;&quot;
+
+Provides:
+- Automated issue detection
+- Root cause analysis
+- Remediation recommendations
+</code></pre>
+<h5>Azure Monitor (MCP Tools)</h5>
+<p>For querying logs and metrics:</p>
+<pre><code>mcp_azure_mcp_monitor
+  intent: &quot;query logs for &lt;resource-name&gt;&quot;
+  command: &quot;logs_query&quot;
+  parameters:
+    workspaceId: &quot;&lt;workspace-id&gt;&quot;
+    query: &quot;&lt;KQL-query&gt;&quot;
+</code></pre>
+<p>See <a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/references/kql-queries.md">kql-queries.md</a> for common diagnostic queries.</p>
+<hr>
+<h4>Check Azure Resource Health</h4>
+<h5>Using MCP</h5>
+<pre><code>mcp_azure_mcp_resourcehealth
+  intent: &quot;check health status of &lt;resource-name&gt;&quot;
+  command: &quot;get&quot;
+  parameters:
+    resourceId: &quot;&lt;resource-id&gt;&quot;
+</code></pre>
+<h5>Using CLI</h5>
+<pre><code class="language-bash"># Check specific resource health
+az resource show --ids RESOURCE_ID
+
+# Check recent activity
+az monitor activity-log list -g RG --max-events 20
+</code></pre>
+<hr>
+<h4>References</h4>
+<ul>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/references/kql-queries.md">KQL Query Library</a></li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/references/azure-resource-graph.md">Azure Resource Graph Queries</a></li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/references/app-service/README.md">App Service Troubleshooting</a></li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/references/functions/README.md">Function Apps Troubleshooting</a></li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/troubleshooting/compute/vm-troubleshooting.md">VM Connectivity Troubleshooting</a></li>
+<li><a href="https://github.com/microsoft/azure-skills/blob/5be6708de8c5af9dd54b175b98ea00ed2d35deae/skills/azure-diagnostics/troubleshooting/messaging/README.md">Messaging Troubleshooting</a></li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

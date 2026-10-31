@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>computer-use · Gem Skills</title>
+    <meta name="description" content="Use it when: a task needs a desktop app&#039;s or browser window&#039;s interface, and no command, file or API can do it. It does: clicks, types, opens menus, answers dialogs and takes screenshots in native apps and outside browser windows such as Chrome, Edge or Safari. Needs: Orca, Stably&#039;s desktop app for working with many coding agents in parallel, installed; it starts Orca if it isn&#039;t running. Unlike orca-cli: which drives the browser built into Orca, this works on other windows on your screen." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=stablyai%2Forca">stablyai/orca</a></p>
+      <h1>computer-use</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>a task needs a desktop app&#39;s or browser window&#39;s interface, and no command, file or API can do it</dd></div><div><dt>It does</dt><dd>clicks, types, opens menus, answers dialogs and takes screenshots in native apps and outside browser windows such as Chrome, Edge or Safari</dd></div><div><dt>Needs</dt><dd>Orca, Stably&#39;s desktop app for working with many coding agents in parallel, installed; it starts Orca if it isn&#39;t running</dd></div><div><dt>Unlike orca-cli</dt><dd>which drives the browser built into Orca, this works on other windows on your screen</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>It gives an agent a way to work with apps that only have a graphical interface. Through the orca computer command, the agent reads a visible window as its accessibility tree, the structured list of buttons, fields and menus that screen readers use, then clicks, types, picks menu items, answers dialogs and takes screenshots. The SKILL.md itself is a short stub: it has the agent load the guide that matches the installed Orca version, so the instructions follow the app. It tells the agent to prefer the shell, files, git, HTTP or an existing CLI whenever one of those can do the job, and to reach for the interface only when nothing else can. It also guards against a Linux pitfall: outside Orca&#39;s own terminals, a bare orca command usually starts the GNOME screen reader of the same name.</p>
+      <p class="muted">Summarizes <a href="https://github.com/stablyai/orca/tree/997d34b04389665795966ec4c0325b5cbfabf9ee/skills/computer-use">the skill at 997d34b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/stablyai/orca --skill computer-use</code><button type="button" class="copy" data-copy="npx skills add https://github.com/stablyai/orca --skill computer-use">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/stablyai/orca/computer-use">skills.sh page</a> · <a href="https://github.com/stablyai/orca/tree/HEAD/skills/computer-use">Source on GitHub</a> · <a href="/gemskills/?repo=stablyai%2Forca">All skills from stablyai/orca</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>164,501 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>73,597 <span class="muted">stablyai/orca</span></dd></div><div><dt>First seen</dt><dd>May 12, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">14.9K</div>
+      <div class="stat-delta">-17% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 18,057; week to Aug 10: 10,113; week to Aug 17: 9,981; week to Aug 24: 9,607; week to Aug 31: 9,709; week to Sep 7: 28,375; week to Sep 14: 18,821; week to Sep 21: 14,913. Use the left and right arrow keys to read each week."
+        data-values="18057,10113,9981,9607,9709,28375,18821,14913" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,22.0 38.6,34.3 71.1,34.5 103.7,35.1 136.3,34.9 168.9,6.0 201.4,20.8 234.0,26.9" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="26.9" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>18,057</td></tr><tr><td>Aug 10</td><td>10,113</td></tr><tr><td>Aug 17</td><td>9,981</td></tr><tr><td>Aug 24</td><td>9,607</td></tr><tr><td>Aug 31</td><td>9,709</td></tr><tr><td>Sep 7</td><td>28,375</td></tr><tr><td>Sep 14</td><td>18,821</td></tr><tr><td>Sep 21</td><td>14,913</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:browser" data-facet="category" title="Drive browsers, scrape pages and search the web." href="/gemskills/?tag=category%3Abrowser">category:browser</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Drive browsers, scrape pages and search the web.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="computer-use" data-facet="topic" href="/gemskills/?tag=computer-use">computer-use</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:orca" data-facet="stack" href="/gemskills/?tag=stack%3Aorca">stack:orca</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/stablyai/orca/blob/997d34b04389665795966ec4c0325b5cbfabf9ee/skills/computer-use/SKILL.md">stablyai/orca at 997d34b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: computer-use
+description: &#62;-
+  Drives the GUI of a visible local app window through `orca computer`: accessibility
+  tree, clicks, typing, menus, dialogs, and screenshots in native apps and external
+  browser windows (Chrome, Edge, Safari) or webviews. Prefer a programmatic path
+  (shell, filesystem, git, HTTP, existing CLIs) whenever it can complete the task.
+  Use only when a visible window needs GUI control those cannot reach. Do not use
+  for Orca&#39;s embedded browser (`orca-cli`).</code></pre></details>
+        <div class="markdown"><h3>Computer Use</h3>
+<p>This discovery stub loads the version-matched guide from the Orca executable used for this session.</p>
+<h4>Resolve the CLI for this session</h4>
+<p>Choose the executable once and reuse it for every later command:</p>
+<ul>
+<li>If the <code>ORCA_CLI_COMMAND</code> environment variable is set, use its value. Orca exports this
+for managed WSL sessions.</li>
+<li>Otherwise, in a dev checkout whose session exposes <code>ORCA_DEV_REPO_ROOT</code>, use <code>orca-dev</code>.</li>
+<li>Otherwise, on Linux outside an Orca-managed terminal, use <code>orca-ide</code>. Never run bare
+<code>orca</code> there — outside Orca's terminals it normally resolves to the
+GNOME Orca screen reader (<code>/usr/bin/orca</code>) and starts speech on the user's machine.</li>
+<li>Otherwise, use <code>orca</code>.</li>
+</ul>
+<p>Below, <code>ORCA</code> is a placeholder for the executable you resolved. Substitute it before
+running anything; do not create a shell variable or run <code>ORCA</code> literally. This works the
+same way in POSIX shells, PowerShell, and cmd.exe.</p>
+<p>If the selected executable cannot run, report its exact error and stop. Do not fall through
+to another executable, which could silently target a different Orca build.</p>
+<h4>Load the version-matched guide before running Orca commands</h4>
+<pre><code class="language-text">ORCA skills get computer-use
+</code></pre>
+<p>Prefer <code>--json</code>. Use the selected executable's <code>--help</code> for commands or flags the guide does
+not cover. If a command reports that Orca is not running, start it with <code>ORCA open --json</code>
+and retry. If it fails with <code>runtime_access_denied</code>, your sandbox blocked the connection:
+re-run it with escalated permissions, and do not run <code>ORCA open</code> or restart Orca. If
+<code>skills get</code> is unknown, explain that updating Orca restores the guide; use <code>--help</code> for
+read-only discovery and do not guess unsupported commands.</p>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

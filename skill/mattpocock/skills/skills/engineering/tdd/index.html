@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tdd · Gem Skills</title>
+    <meta name="description" content="Use it when: you want a feature or bug fix built test-first, or ask for red-green-refactor or integration tests. It does: has you agree which public interfaces get tested, then loops: one failing test, then just enough code to pass it. You get: code built in small slices, with tests that check behavior and survive refactoring. Unlike test-driven-development: the TDD skill in obra&#039;s Superpowers set refactors inside the loop; this one leaves refactoring for a later code review. Runs: by itself whenever you ask for test-first work." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=mattpocock%2Fskills">mattpocock/skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a></p>
+      <h1>tdd</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you want a feature or bug fix built test-first, or ask for red-green-refactor or integration tests</dd></div><div><dt>It does</dt><dd>has you agree which public interfaces get tested, then loops: one failing test, then just enough code to pass it</dd></div><div><dt>You get</dt><dd>code built in small slices, with tests that check behavior and survive refactoring</dd></div><div><dt>Unlike test-driven-development</dt><dd>the TDD skill in obra&#39;s Superpowers set refactors inside the loop; this one leaves refactoring for a later code review</dd></div><div><dt>Runs</dt><dd>by itself whenever you ask for test-first work</dd></div></dl></section>
+      
+    <p class="in-bundle">Skill 16 of 22 in the <a href="/gemskills/bundle/mattpocock/skills@engineering/">Engineering workflow</a> bundle · Before it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/implement-spec/">implement-spec</a> · After it: <a href="/gemskills/skill/mattpocock/skills/skills/engineering/codebase-design/">codebase-design</a></p>
+    
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Less a procedure than the rulebook for each red-green cycle: write a failing test (red), then make it pass (green). Before any test, the agent proposes which public interfaces to test at, the places where behavior can be observed without reaching inside, each with a note on what it catches and misses. You confirm them, and no test goes anywhere else. Then it works in vertical slices: one test, then the least code that passes it, then the next, each shaped by what the last one taught. Tests check what the code does through its interface, not how: no mocks of your own modules (only of outside systems such as payment APIs or the clock), no private methods, no checking the database behind the interface&#39;s back. It also bans tests that can&#39;t fail because they compute the expected value the same way the code does, and writing all the tests before any code. Test names follow the project&#39;s glossary if there is one.</p>
+      <p class="muted">Summarizes <a href="https://github.com/mattpocock/skills/tree/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/tdd">the skill at 5beb35b</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/mattpocock/skills --skill tdd</code><button type="button" class="copy" data-copy="npx skills add https://github.com/mattpocock/skills --skill tdd">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/mattpocock/skills/tdd">skills.sh page</a> · <a href="https://github.com/mattpocock/skills/tree/HEAD/skills/engineering/tdd">Source on GitHub</a> · <a href="/gemskills/?repo=mattpocock%2Fskills">All skills from mattpocock/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>939,371 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>266,454 <span class="muted">mattpocock/skills</span></dd></div><div><dt>First seen</dt><dd>Feb 10, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">41.7K</div>
+      <div class="stat-delta">-17% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 49,935; week to Aug 10: 63,627; week to Aug 17: 52,249; week to Aug 24: 57,225; week to Aug 31: 51,673; week to Sep 7: 49,590; week to Sep 14: 44,259; week to Sep 21: 41,660. Use the left and right arrow keys to read each week."
+        data-values="49935,63627,52249,57225,51673,49590,44259,41660" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,15.5 38.6,6.0 71.1,13.9 103.7,10.4 136.3,14.3 168.9,15.7 201.4,19.4 234.0,21.2" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="21.2" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>49,935</td></tr><tr><td>Aug 10</td><td>63,627</td></tr><tr><td>Aug 17</td><td>52,249</td></tr><tr><td>Aug 24</td><td>57,225</td></tr><tr><td>Aug 31</td><td>51,673</td></tr><tr><td>Sep 7</td><td>49,590</td></tr><tr><td>Sep 14</td><td>44,259</td></tr><tr><td>Sep 21</td><td>41,660</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:engineering" data-facet="category" title="Test-first work, implementation from specs, git hygiene and scope control." href="/gemskills/?tag=category%3Aengineering">category:engineering</a><a class="tag" data-tag="category:software-engineering" data-facet="category" title="Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills." href="/gemskills/?tag=category%3Asoftware-engineering">category:software-engineering</a></div>
+          <p class="tag-meaning">Test-first work, implementation from specs, git hygiene and scope control.</p><p class="tag-meaning">Everything for building software: planning, coding, debugging, design, frameworks, cloud, agents and skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:workflow" data-facet="type" title="A multi-step process the agent follows: interview, debug, run a TDD loop, review." href="/gemskills/?tag=type%3Aworkflow">type:workflow</a></div>
+          <p class="tag-meaning">A multi-step process the agent follows: interview, debug, run a TDD loop, review.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:none" data-facet="needs" title="Instructions only. Works in any agent that supports skills." href="/gemskills/?tag=needs%3Anone">needs:none</a></div>
+          <p class="tag-meaning">Instructions only. Works in any agent that supports skills.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:community" data-facet="by" title="Everyone else. Unverified vendor claims default to community." href="/gemskills/?tag=by%3Acommunity">by:community</a></div>
+          <p class="tag-meaning">Everyone else. Unverified vendor claims default to community.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="tdd" data-facet="topic" href="/gemskills/?tag=tdd">tdd</a><a class="tag" data-tag="testing" data-facet="topic" href="/gemskills/?tag=testing">testing</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/tdd/SKILL.md">mattpocock/skills at 5beb35b</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: tdd
+description: Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions &#34;red-green-refactor&#34;, or wants integration tests.</code></pre></details>
+        <div class="markdown"><h3>Test-Driven Development</h3>
+<p>TDD is the red → green loop. This skill is the reference that makes that loop produce tests worth keeping: what a good test is, where tests go, the anti-patterns, and the rules of the loop. Every section applies on every cycle: consult them before and during the loop, not after.</p>
+<p>When exploring the codebase, read <code>GLOSSARY.md</code> (if it exists) so test names and interface vocabulary match the project's domain language, and respect ADRs in the area you're touching.</p>
+<h4>What a good test is</h4>
+<p>Tests verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't. A good test reads like a specification: &quot;user can checkout with valid cart&quot; tells you exactly what capability exists, and it survives refactors because it doesn't care about internal structure.</p>
+<p>See <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/tdd/tests.md">tests.md</a> for examples and <a href="https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/tdd/mocking.md">mocking.md</a> for mocking guidelines.</p>
+<h4>Seams: where tests go</h4>
+<p>A <strong>seam</strong> is the public boundary you test at: the interface where you observe behavior without reaching inside. Tests live at seams, never against internals.</p>
+<p><strong>Test only at pre-agreed seams.</strong> Before writing any test, write down the seams under test and confirm them with the user. No test is written at an unconfirmed seam. You can't test everything, so agreeing the seams up front is how testing effort lands on the critical paths and complex logic instead of every edge case.</p>
+<p>Ask: &quot;What's the public interface, and which seams should we test?&quot; Give each proposed seam a one-line note on what it catches and what it misses.</p>
+<p>When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with &quot;codebase-design&quot; for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.</p>
+<h4>Anti-patterns</h4>
+<ul>
+<li><strong>Implementation-coupled</strong>: mocks internal collaborators, tests private methods, or verifies through a side channel (querying the database instead of using the interface). The tell: the test breaks when you refactor but behavior hasn't changed.</li>
+<li><strong>Tautological</strong>: the assertion recomputes the expected value the way the code does (<code>expect(add(a, b)).toBe(a + b)</code>, a snapshot derived by hand the same way, a constant asserted equal to itself), so it passes by construction and can never disagree with the code. Expected values must come from an independent source of truth: a known-good literal, a worked example, the spec.</li>
+<li><strong>Horizontal slicing</strong>: writing all tests first, then all implementation. Bulk tests verify <em>imagined</em> behavior: you test the <em>shape</em> of things rather than user-facing behavior, the tests go insensitive to real changes, and you commit to test structure before understanding the implementation. Work in <strong>vertical slices</strong> instead: one test → one implementation → repeat, each test a <strong>tracer bullet</strong> that responds to what the last cycle taught you.</li>
+</ul>
+<h4>Rules of the loop</h4>
+<ul>
+<li><strong>Red before green.</strong> Write the failing test first, then only enough code to pass it. Don't anticipate future tests or add speculative features.</li>
+<li><strong>One slice at a time.</strong> One seam, one test, one minimal implementation per cycle.</li>
+<li><strong>Refactoring is not part of the loop.</strong> It belongs to the review stage (see the <code>code-review</code> skill), not the red → green implementation cycle.</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>

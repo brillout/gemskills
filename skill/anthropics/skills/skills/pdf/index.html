@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/gemskills/assets/static/style-da232d78.4u3wePzv.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pdf · Gem Skills</title>
+    <meta name="description" content="Use it when: you need to do something with a PDF: pull out text or tables, merge, split, fill a form, or create one. It does: picks the right Python library or command-line tool for the task and runs it. You get: the extracted text or tables, or a new PDF: merged, split, rotated, watermarked, password-protected or filled in. Forms: fills a form&#039;s own fields when it has them, or writes text in the right places on a form that has none. Scanned PDFs: turns pages into images and reads them with OCR. Needs: Python PDF libraries such as pypdf, plus common command-line PDF tools." />
+    <link rel="icon" type="image/svg+xml" href="/gemskills/gem.svg" />
+  </head>
+  <body>
+    <header id="topbar">
+      <a id="brand" href="/gemskills/">
+        <img src="/gemskills/gem.svg" alt="" width="30" height="30" />
+        <span>Gem Skills</span>
+      </a>
+      <nav id="views" aria-label="Views"><a href="/gemskills/" aria-current="page">Top</a><a href="/gemskills/hot/">Hot</a><a href="/gemskills/new/">New</a><a href="/gemskills/tags/">Tags</a></nav>
+      <a id="source-link" href="https://github.com/brillout/gemskills">GitHub</a>
+    </header>
+    <main id="app">
+    <div class="page skill-page">
+      <p class="crumbs"><a href="/gemskills/">Skills</a> <span aria-hidden="true">/</span> <a href="/gemskills/?repo=anthropics%2Fskills">anthropics/skills</a></p>
+      <h1>pdf</h1>
+      <section class="at-a-glance" aria-label="At a glance"><dl class="glance"><div><dt>Use it when</dt><dd>you need to do something with a PDF: pull out text or tables, merge, split, fill a form, or create one</dd></div><div><dt>It does</dt><dd>picks the right Python library or command-line tool for the task and runs it</dd></div><div><dt>You get</dt><dd>the extracted text or tables, or a new PDF: merged, split, rotated, watermarked, password-protected or filled in</dd></div><div><dt>Forms</dt><dd>fills a form&#39;s own fields when it has them, or writes text in the right places on a form that has none</dd></div><div><dt>Scanned PDFs</dt><dd>turns pages into images and reads them with OCR</dd></div><div><dt>Needs</dt><dd>Python PDF libraries such as pypdf, plus common command-line PDF tools</dd></div></dl></section>
+      
+      
+      
+      
+    <section class="tldr" aria-labelledby="tldr">
+      <h2 id="tldr">TLDR</h2>
+      <p>Mostly ready-to-use code for common PDF jobs. Python libraries handle merging, splitting, rotating, watermarking, metadata and passwords; extracting text with its layout, and tables that can go straight into a spreadsheet; and creating new PDFs, from a single page to multi-page reports. Command-line tools cover the same ground, plus pulling out embedded images. Scanned pages are converted to images and read with OCR. Filling a form has its own strict procedure in a separate file. The agent first checks whether the PDF has fillable fields. If it does, it lists them, renders the pages as images to work out what each field means, writes the values to a JSON file and fills them with a script that validates them. If not, it adds text at the right coordinates, read from the PDF&#39;s structure when possible and estimated from the page images otherwise. A further reference covers JavaScript libraries and more advanced command-line options.</p>
+      <p class="muted">Summarizes <a href="https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pdf">the skill at dbd4588</a>.</p>
+    </section>
+      <div class="details-grid">
+        <div>
+          <div class="install"><code>npx skills add https://github.com/anthropics/skills --skill pdf</code><button type="button" class="copy" data-copy="npx skills add https://github.com/anthropics/skills --skill pdf">Copy</button></div>
+          <p class="links"><a href="https://skills.sh/anthropics/skills/pdf">skills.sh page</a> · <a href="https://github.com/anthropics/skills/tree/HEAD/skills/pdf">Source on GitHub</a> · <a href="/gemskills/?repo=anthropics%2Fskills">All skills from anthropics/skills</a></p>
+          <dl class="facts"><div><dt>Installs</dt><dd>199,049 <span class="muted">on skills.sh, Sep 21, 2026</span></dd></div><div><dt>Repo stars</dt><dd>177,318 <span class="muted">anthropics/skills</span></dd></div><div><dt>First seen</dt><dd>Jan 20, 2026 <span class="muted">on skills.sh</span></dd></div></dl>
+        </div>
+        
+    <figure class="stat">
+      <figcaption class="stat-label">Weekly installs</figcaption>
+      <div class="stat-value">3.6K</div>
+      <div class="stat-delta">-27% over 8 weeks · week to Sep 21</div>
+      <div class="spark" tabindex="0" role="group"
+        aria-label="Weekly installs, week to Aug 3: 4,908; week to Aug 10: 4,761; week to Aug 17: 4,206; week to Aug 24: 3,750; week to Aug 31: 3,965; week to Sep 7: 4,047; week to Sep 14: 3,710; week to Sep 21: 3,563. Use the left and right arrow keys to read each week."
+        data-values="4908,4761,4206,3750,3965,4047,3710,3563" data-weeks="Aug 3|Aug 10|Aug 17|Aug 24|Aug 31|Sep 7|Sep 14|Sep 21">
+        <svg viewBox="0 0 240 56" aria-hidden="true">
+          <line class="spark-base" x1="6" x2="234" y1="50" y2="50" />
+          <polyline class="spark-line" points="6.0,6.0 38.6,7.3 71.1,12.3 103.7,16.4 136.3,14.5 168.9,13.7 201.4,16.7 234.0,18.1" />
+          <line class="spark-cross" y1="0" y2="56" x1="0" x2="0" visibility="hidden" />
+          <circle class="spark-now" r="4" cx="234.0" cy="18.1" />
+          <circle class="spark-hover" r="4" visibility="hidden" />
+        </svg>
+        <div class="spark-tip" aria-live="polite" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="spark-table">
+        <summary>Weekly values</summary>
+        <table>
+          <thead><tr><th scope="col">Week to</th><th scope="col">Installs</th></tr></thead>
+          <tbody><tr><td>Aug 3</td><td>4,908</td></tr><tr><td>Aug 10</td><td>4,761</td></tr><tr><td>Aug 17</td><td>4,206</td></tr><tr><td>Aug 24</td><td>3,750</td></tr><tr><td>Aug 31</td><td>3,965</td></tr><tr><td>Sep 7</td><td>4,047</td></tr><tr><td>Sep 14</td><td>3,710</td></tr><tr><td>Sep 21</td><td>3,563</td></tr></tbody>
+        </table>
+      </details>
+    </figure>
+      </div>
+      <table class="tag-detail">
+      <tr>
+        <th scope="row">Category</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="category:documents" data-facet="category" title="Office files, notes and suites like Lark and Google Workspace." href="/gemskills/?tag=category%3Adocuments">category:documents</a></div>
+          <p class="tag-meaning">Office files, notes and suites like Lark and Google Workspace.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Type</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="type:tool" data-facet="type" title="Operates a CLI, API, app or bundled script to get something done." href="/gemskills/?tag=type%3Atool">type:tool</a></div>
+          <p class="tag-meaning">Operates a CLI, API, app or bundled script to get something done.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Effect</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="effect:local" data-facet="effect" title="Its own steps create or change files, git state or local tools." href="/gemskills/?tag=effect%3Alocal">effect:local</a></div>
+          <p class="tag-meaning">Its own steps create or change files, git state or local tools.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Needs</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="needs:cli" data-facet="needs" title="A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI." href="/gemskills/?tag=needs%3Acli">needs:cli</a></div>
+          <p class="tag-meaning">A specific command-line tool or desktop app must be installed, such as gh, agent-browser, LibreOffice, Obsidian or a vendor CLI.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="by:official" data-facet="by" title="A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates." href="/gemskills/?tag=by%3Aofficial">by:official</a></div>
+          <p class="tag-meaning">A verified publisher on its registry (skills.sh, ClawHub or Tencent SkillHub), or the company or maintainer behind the product the skill operates.</p>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Topics</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="pdf" data-facet="topic" href="/gemskills/?tag=pdf">pdf</a><a class="tag" data-tag="documents" data-facet="topic" href="/gemskills/?tag=documents">documents</a></div>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Stack</th>
+        <td>
+          <div class="tags"><a class="tag" data-tag="stack:python" data-facet="stack" href="/gemskills/?tag=stack%3Apython">stack:python</a></div>
+          
+        </td>
+      </tr></table>
+      <section class="skill-md" aria-labelledby="skill-md">
+        <h2 id="skill-md">SKILL.md</h2>
+        <p class="muted">From <a href="https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/pdf/SKILL.md">anthropics/skills at dbd4588</a>. Checked daily, last changed Oct 20, 2026.</p>
+        <details class="frontmatter"><summary>Frontmatter</summary><pre><code>name: pdf
+description: Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.
+license: Proprietary. LICENSE.txt has complete terms</code></pre></details>
+        <div class="markdown"><h3>PDF Processing Guide</h3>
+<h4>Overview</h4>
+<p>This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.</p>
+<h4>Quick Start</h4>
+<pre><code class="language-python">from pypdf import PdfReader, PdfWriter
+
+# Read a PDF
+reader = PdfReader(&quot;document.pdf&quot;)
+print(f&quot;Pages: {len(reader.pages)}&quot;)
+
+# Extract text
+text = &quot;&quot;
+for page in reader.pages:
+    text += page.extract_text()
+</code></pre>
+<h4>Python Libraries</h4>
+<h5>pypdf - Basic Operations</h5>
+<h6>Merge PDFs</h6>
+<pre><code class="language-python">from pypdf import PdfWriter, PdfReader
+
+writer = PdfWriter()
+for pdf_file in [&quot;doc1.pdf&quot;, &quot;doc2.pdf&quot;, &quot;doc3.pdf&quot;]:
+    reader = PdfReader(pdf_file)
+    for page in reader.pages:
+        writer.add_page(page)
+
+with open(&quot;merged.pdf&quot;, &quot;wb&quot;) as output:
+    writer.write(output)
+</code></pre>
+<h6>Split PDF</h6>
+<pre><code class="language-python">reader = PdfReader(&quot;input.pdf&quot;)
+for i, page in enumerate(reader.pages):
+    writer = PdfWriter()
+    writer.add_page(page)
+    with open(f&quot;page_{i+1}.pdf&quot;, &quot;wb&quot;) as output:
+        writer.write(output)
+</code></pre>
+<h6>Extract Metadata</h6>
+<pre><code class="language-python">reader = PdfReader(&quot;document.pdf&quot;)
+meta = reader.metadata
+print(f&quot;Title: {meta.title}&quot;)
+print(f&quot;Author: {meta.author}&quot;)
+print(f&quot;Subject: {meta.subject}&quot;)
+print(f&quot;Creator: {meta.creator}&quot;)
+</code></pre>
+<h6>Rotate Pages</h6>
+<pre><code class="language-python">reader = PdfReader(&quot;input.pdf&quot;)
+writer = PdfWriter()
+
+page = reader.pages[0]
+page.rotate(90)  # Rotate 90 degrees clockwise
+writer.add_page(page)
+
+with open(&quot;rotated.pdf&quot;, &quot;wb&quot;) as output:
+    writer.write(output)
+</code></pre>
+<h5>pdfplumber - Text and Table Extraction</h5>
+<h6>Extract Text with Layout</h6>
+<pre><code class="language-python">import pdfplumber
+
+with pdfplumber.open(&quot;document.pdf&quot;) as pdf:
+    for page in pdf.pages:
+        text = page.extract_text()
+        print(text)
+</code></pre>
+<h6>Extract Tables</h6>
+<pre><code class="language-python">with pdfplumber.open(&quot;document.pdf&quot;) as pdf:
+    for i, page in enumerate(pdf.pages):
+        tables = page.extract_tables()
+        for j, table in enumerate(tables):
+            print(f&quot;Table {j+1} on page {i+1}:&quot;)
+            for row in table:
+                print(row)
+</code></pre>
+<h6>Advanced Table Extraction</h6>
+<pre><code class="language-python">import pandas as pd
+
+with pdfplumber.open(&quot;document.pdf&quot;) as pdf:
+    all_tables = []
+    for page in pdf.pages:
+        tables = page.extract_tables()
+        for table in tables:
+            if table:  # Check if table is not empty
+                df = pd.DataFrame(table[1:], columns=table[0])
+                all_tables.append(df)
+
+# Combine all tables
+if all_tables:
+    combined_df = pd.concat(all_tables, ignore_index=True)
+    combined_df.to_excel(&quot;extracted_tables.xlsx&quot;, index=False)
+</code></pre>
+<h5>reportlab - Create PDFs</h5>
+<h6>Basic PDF Creation</h6>
+<pre><code class="language-python">from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+
+c = canvas.Canvas(&quot;hello.pdf&quot;, pagesize=letter)
+width, height = letter
+
+# Add text
+c.drawString(100, height - 100, &quot;Hello World!&quot;)
+c.drawString(100, height - 120, &quot;This is a PDF created with reportlab&quot;)
+
+# Add a line
+c.line(100, height - 140, 400, height - 140)
+
+# Save
+c.save()
+</code></pre>
+<h6>Create PDF with Multiple Pages</h6>
+<pre><code class="language-python">from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
+from reportlab.lib.styles import getSampleStyleSheet
+
+doc = SimpleDocTemplate(&quot;report.pdf&quot;, pagesize=letter)
+styles = getSampleStyleSheet()
+story = []
+
+# Add content
+title = Paragraph(&quot;Report Title&quot;, styles['Title'])
+story.append(title)
+story.append(Spacer(1, 12))
+
+body = Paragraph(&quot;This is the body of the report. &quot; * 20, styles['Normal'])
+story.append(body)
+story.append(PageBreak())
+
+# Page 2
+story.append(Paragraph(&quot;Page 2&quot;, styles['Heading1']))
+story.append(Paragraph(&quot;Content for page 2&quot;, styles['Normal']))
+
+# Build PDF
+doc.build(story)
+</code></pre>
+<h6>Subscripts and Superscripts</h6>
+<p><strong>IMPORTANT</strong>: Never use Unicode subscript/superscript characters (₀₁₂₃₄₅₆₇₈₉, ⁰¹²³⁴⁵⁶⁷⁸⁹) in ReportLab PDFs. The built-in fonts do not include these glyphs, causing them to render as solid black boxes.</p>
+<p>Instead, use ReportLab's XML markup tags in Paragraph objects:</p>
+<pre><code class="language-python">from reportlab.platypus import Paragraph
+from reportlab.lib.styles import getSampleStyleSheet
+
+styles = getSampleStyleSheet()
+
+# Subscripts: use &lt;sub&gt; tag
+chemical = Paragraph(&quot;H&lt;sub&gt;2&lt;/sub&gt;O&quot;, styles['Normal'])
+
+# Superscripts: use &lt;super&gt; tag
+squared = Paragraph(&quot;x&lt;super&gt;2&lt;/super&gt; + y&lt;super&gt;2&lt;/super&gt;&quot;, styles['Normal'])
+</code></pre>
+<p>For canvas-drawn text (not Paragraph objects), manually adjust font the size and position rather than using Unicode subscripts/superscripts.</p>
+<h4>Command-Line Tools</h4>
+<h5>pdftotext (poppler-utils)</h5>
+<pre><code class="language-bash"># Extract text
+pdftotext input.pdf output.txt
+
+# Extract text preserving layout
+pdftotext -layout input.pdf output.txt
+
+# Extract specific pages
+pdftotext -f 1 -l 5 input.pdf output.txt  # Pages 1-5
+</code></pre>
+<h5>qpdf</h5>
+<pre><code class="language-bash"># Merge PDFs
+qpdf --empty --pages file1.pdf file2.pdf -- merged.pdf
+
+# Split pages
+qpdf input.pdf --pages . 1-5 -- pages1-5.pdf
+qpdf input.pdf --pages . 6-10 -- pages6-10.pdf
+
+# Rotate pages
+qpdf input.pdf output.pdf --rotate=+90:1  # Rotate page 1 by 90 degrees
+
+# Remove password
+qpdf --password=mypassword --decrypt encrypted.pdf decrypted.pdf
+</code></pre>
+<h5>pdftk (if available)</h5>
+<pre><code class="language-bash"># Merge
+pdftk file1.pdf file2.pdf cat output merged.pdf
+
+# Split
+pdftk input.pdf burst
+
+# Rotate
+pdftk input.pdf rotate 1east output rotated.pdf
+</code></pre>
+<h4>Common Tasks</h4>
+<h5>Extract Text from Scanned PDFs</h5>
+<pre><code class="language-python"># Requires: pip install pytesseract pdf2image
+import pytesseract
+from pdf2image import convert_from_path
+
+# Convert PDF to images
+images = convert_from_path('scanned.pdf')
+
+# OCR each page
+text = &quot;&quot;
+for i, image in enumerate(images):
+    text += f&quot;Page {i+1}:\n&quot;
+    text += pytesseract.image_to_string(image)
+    text += &quot;\n\n&quot;
+
+print(text)
+</code></pre>
+<h5>Add Watermark</h5>
+<pre><code class="language-python">from pypdf import PdfReader, PdfWriter
+
+# Create watermark (or load existing)
+watermark = PdfReader(&quot;watermark.pdf&quot;).pages[0]
+
+# Apply to all pages
+reader = PdfReader(&quot;document.pdf&quot;)
+writer = PdfWriter()
+
+for page in reader.pages:
+    page.merge_page(watermark)
+    writer.add_page(page)
+
+with open(&quot;watermarked.pdf&quot;, &quot;wb&quot;) as output:
+    writer.write(output)
+</code></pre>
+<h5>Extract Images</h5>
+<pre><code class="language-bash"># Using pdfimages (poppler-utils)
+pdfimages -j input.pdf output_prefix
+
+# This extracts all images as output_prefix-000.jpg, output_prefix-001.jpg, etc.
+</code></pre>
+<h5>Password Protection</h5>
+<pre><code class="language-python">from pypdf import PdfReader, PdfWriter
+
+reader = PdfReader(&quot;input.pdf&quot;)
+writer = PdfWriter()
+
+for page in reader.pages:
+    writer.add_page(page)
+
+# Add password
+writer.encrypt(&quot;userpassword&quot;, &quot;ownerpassword&quot;)
+
+with open(&quot;encrypted.pdf&quot;, &quot;wb&quot;) as output:
+    writer.write(output)
+</code></pre>
+<h4>Quick Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Best Tool</th>
+<th>Command/Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Merge PDFs</td>
+<td>pypdf</td>
+<td><code>writer.add_page(page)</code></td>
+</tr>
+<tr>
+<td>Split PDFs</td>
+<td>pypdf</td>
+<td>One page per file</td>
+</tr>
+<tr>
+<td>Extract text</td>
+<td>pdfplumber</td>
+<td><code>page.extract_text()</code></td>
+</tr>
+<tr>
+<td>Extract tables</td>
+<td>pdfplumber</td>
+<td><code>page.extract_tables()</code></td>
+</tr>
+<tr>
+<td>Create PDFs</td>
+<td>reportlab</td>
+<td>Canvas or Platypus</td>
+</tr>
+<tr>
+<td>Command line merge</td>
+<td>qpdf</td>
+<td><code>qpdf --empty --pages ...</code></td>
+</tr>
+<tr>
+<td>OCR scanned PDFs</td>
+<td>pytesseract</td>
+<td>Convert to image first</td>
+</tr>
+<tr>
+<td>Fill PDF forms</td>
+<td>pdf-lib or pypdf (see FORMS.md)</td>
+<td>See FORMS.md</td>
+</tr>
+</tbody>
+</table>
+<h4>Next Steps</h4>
+<ul>
+<li>For advanced pypdfium2 usage, see REFERENCE.md</li>
+<li>For JavaScript libraries (pdf-lib), see REFERENCE.md</li>
+<li>If you need to fill out a PDF form, follow the instructions in FORMS.md</li>
+<li>For troubleshooting guides, see REFERENCE.md</li>
+</ul>
+</div>
+      </section>
+    </div></main>
+    <script src="/gemskills/assets/entries/pages_skill_client.pfkkD86v.js" type="module" async></script>
+  </body>
+</html>
